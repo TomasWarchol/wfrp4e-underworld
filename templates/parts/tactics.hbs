@@ -1,0 +1,530 @@
+<div class="tactics-panel flexcol">
+  
+  <!-- ═══════ BANER ŚWITY BOJOWEJ HERSZTA ═══════ -->
+  <div class="tactics-header-banner">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+      <h3 style="margin-bottom: 0;">
+        <i class="fas fa-chess-knight"></i> {{localize "UNDERWORLD.TacticsTab.Title"}}
+      </h3>
+      <div class="tactics-view-controls">
+        <button type="button" class="btn-filter-retinue-tactics" data-action="toggle-retinue-tactics" aria-pressed="false" title="{{localize 'UNDERWORLD.Tactics.ShowActiveHint'}}">
+          <i class="fas fa-user-check"></i> {{localize "UNDERWORLD.Tactics.ActiveOnly"}}
+        </button>
+        <button type="button" class="btn-toggle-tactics" data-action="toggle-all-tactics" aria-expanded="true" title="{{localize 'UNDERWORLD.Tactics.CollapseAllHint'}}">
+          <i class="fas fa-compress-alt"></i> {{localize "UNDERWORLD.Tactics.CollapseAll"}}
+        </button>
+      </div>
+      <span style="font-size: 0.8rem; background: rgba(0,0,0,0.4); padding: 2px 8px; border-radius: 10px; border: 1px solid #9e856f;">
+        {{localize "UNDERWORLD.Chat.Footer"}}: <strong>{{retinueCount}}/{{maxRetinue}}</strong>
+      </span>
+    </div>
+
+    <!-- Skład aktywnej Świty u boku Herszta -->
+    <div class="active-retinue-bar">
+      {{#if activeRetinue.length}}
+        <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+          <span style="font-size: 0.8rem; color: #d8c2b0;">{{localize "UNDERWORLD.TacticsTab.AtYourSide"}}</span>
+          {{#each activeRetinue}}
+            <div class="retinue-chip" style="display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.12); padding: 2px 6px; border-radius: 4px; border: 1px solid #8e735b; font-size: 0.82rem;">
+              <img src="{{this.img}}" style="width: 20px; height: 20px; border-radius: 2px; object-fit: cover;" />
+              <strong>{{this.name}}</strong>
+              {{{underworldRoleBadge this.role}}}
+            </div>
+          {{/each}}
+        </div>
+      {{else}}
+        <div style="background: rgba(183, 28, 28, 0.25); border: 1px solid #e57373; border-radius: 4px; padding: 6px 8px; font-size: 0.82rem; color: #ffcdd2;">
+          <i class="fas fa-exclamation-triangle"></i> {{{localize "UNDERWORLD.TacticsTab.NoRetinue"}}}
+        </div>
+      {{/if}}
+    </div>
+
+    <p class="notes" style="margin-top: 0; margin-bottom: 0;">
+      {{{localize "UNDERWORLD.TacticsTab.HowTo"}}}
+    </p>
+  </div>
+
+  <div class="tactics-filter-empty" role="status" hidden>
+    <i class="fas fa-user-slash"></i> {{localize "UNDERWORLD.TacticsTab.FilterEmpty"}}
+  </div>
+
+  <!-- ═══════ SEKCJA 1: OFENSYWNE I PRZEŁAMUJĄCE ═══════ -->
+  <div class="tactic-group">
+    <h4 class="tactic-group-title"><i class="fas fa-skull-crossbones"></i> {{localize "UNDERWORLD.TacticsTab.Offensive"}}</h4>
+    <div class="tactic-cards-grid">
+
+      <!-- Zajście z Flanki (Cień) -->
+      <div data-order-id="flank" class="tactic-card {{#if tacticalOrders.flank.executor}}tactic-has-retinue{{/if}} {{#if tacticalOrders.flank.isUnlocked}}tactic-unlocked{{else}}tactic-locked{{/if}}">
+        <div class="tactic-card-header">
+          <strong><i class="fas fa-shoe-prints"></i> {{tacticalOrders.flank.name}}</strong>
+          <span class="tactic-cost advantage"><i class="fas fa-bolt"></i> {{localize "UNDERWORLD.TacticsTab.Cost1"}}</span>
+        </div>
+        <p class="tactic-desc">{{tacticalOrders.flank.desc}}</p>
+        <div class="tactic-effect-summary">
+          <strong>{{localize "UNDERWORLD.TacticsTab.Effect"}}:</strong> {{tacticalOrders.flank.effect}}
+        </div>
+        {{#if tacticalOrders.flank.isUnlocked}}
+          <div class="tactic-executor-bar">
+            <i class="fas fa-check-circle color-green"></i> {{localize "UNDERWORLD.TacticsTab.Executes"}}: <strong>{{tacticalOrders.flank.executor.name}}</strong> ({{{underworldRoleBadge tacticalOrders.flank.executor.role}}})
+          </div>
+          <button type="button" class="btn-order-tactic" data-action="order-tactic" data-order="flank">
+            <i class="fas fa-bullhorn"></i> {{localize "UNDERWORLD.TacticsTab.Issue"}}
+          </button>
+        {{else}}
+          <div class="tactic-locked-bar">
+            <i class="fas fa-lock"></i> {{localize "UNDERWORLD.TacticsTab.Requires"}}: <strong>{{tacticalOrders.flank.reqRoleNames}}</strong>
+          </div>
+          <button type="button" class="btn-order-tactic btn-disabled" disabled>
+            <i class="fas fa-lock"></i> {{localize "UNDERWORLD.TacticsTab.Locked"}}
+          </button>
+        {{/if}}
+      </div>
+
+      <!-- Salwa z Ukrycia (Cień / Strzelec) -->
+      <div data-order-id="volley" class="tactic-card {{#if tacticalOrders.volley.executor}}tactic-has-retinue{{/if}} {{#if tacticalOrders.volley.isUnlocked}}tactic-unlocked{{else}}tactic-locked{{/if}}">
+        <div class="tactic-card-header">
+          <strong><i class="fas fa-crosshairs"></i> {{tacticalOrders.volley.name}}</strong>
+          <span class="tactic-cost advantage-high"><i class="fas fa-bolt"></i> {{localize "UNDERWORLD.TacticsTab.Cost2"}}</span>
+        </div>
+        <p class="tactic-desc">{{tacticalOrders.volley.desc}}</p>
+        <div class="tactic-effect-summary">
+          <strong>{{localize "UNDERWORLD.TacticsTab.Effect"}}:</strong> {{tacticalOrders.volley.effect}}
+        </div>
+        {{#if tacticalOrders.volley.isUnlocked}}
+          <div class="tactic-executor-bar">
+            <i class="fas fa-check-circle color-green"></i> {{localize "UNDERWORLD.TacticsTab.Executes"}}: <strong>{{tacticalOrders.volley.executor.name}}</strong> ({{{underworldRoleBadge tacticalOrders.volley.executor.role}}})
+          </div>
+          <button type="button" class="btn-order-tactic" data-action="order-tactic" data-order="volley">
+            <i class="fas fa-bullhorn"></i> {{localize "UNDERWORLD.TacticsTab.Issue"}}
+          </button>
+        {{else}}
+          <div class="tactic-locked-bar">
+            <i class="fas fa-lock"></i> {{localize "UNDERWORLD.TacticsTab.Requires"}}: <strong>{{tacticalOrders.volley.reqRoleNames}}</strong>
+          </div>
+          <button type="button" class="btn-order-tactic btn-disabled" disabled>
+            <i class="fas fa-lock"></i> {{localize "UNDERWORLD.TacticsTab.Locked"}}
+          </button>
+        {{/if}}
+      </div>
+
+      <!-- Cios w Nerkę (Cień) -->
+      <div data-order-id="kidneystrike" class="tactic-card {{#if tacticalOrders.kidneystrike.executor}}tactic-has-retinue{{/if}} {{#if tacticalOrders.kidneystrike.isUnlocked}}tactic-unlocked{{else}}tactic-locked{{/if}}">
+        <div class="tactic-card-header">
+          <strong><i class="fas fa-tint"></i> {{tacticalOrders.kidneystrike.name}}</strong>
+          <span class="tactic-cost advantage"><i class="fas fa-bolt"></i> {{localize "UNDERWORLD.TacticsTab.Cost1"}}</span>
+        </div>
+        <p class="tactic-desc">{{tacticalOrders.kidneystrike.desc}}</p>
+        <div class="tactic-effect-summary">
+          <strong>{{localize "UNDERWORLD.TacticsTab.Effect"}}:</strong> {{tacticalOrders.kidneystrike.effect}}
+        </div>
+        {{#if tacticalOrders.kidneystrike.isUnlocked}}
+          <div class="tactic-executor-bar">
+            <i class="fas fa-check-circle color-green"></i> {{localize "UNDERWORLD.TacticsTab.Executes"}}: <strong>{{tacticalOrders.kidneystrike.executor.name}}</strong> ({{{underworldRoleBadge tacticalOrders.kidneystrike.executor.role}}})
+          </div>
+          <button type="button" class="btn-order-tactic" data-action="order-tactic" data-order="kidneystrike">
+            <i class="fas fa-bullhorn"></i> {{localize "UNDERWORLD.TacticsTab.Issue"}}
+          </button>
+        {{else}}
+          <div class="tactic-locked-bar">
+            <i class="fas fa-lock"></i> {{localize "UNDERWORLD.TacticsTab.Requires"}}: <strong>{{tacticalOrders.kidneystrike.reqRoleNames}}</strong>
+          </div>
+          <button type="button" class="btn-order-tactic btn-disabled" disabled>
+            <i class="fas fa-lock"></i> {{localize "UNDERWORLD.TacticsTab.Locked"}}
+          </button>
+        {{/if}}
+      </div>
+
+      <!-- Podcięcie z Nóg (Ochroniarz) -->
+      <div data-order-id="trip" class="tactic-card {{#if tacticalOrders.trip.executor}}tactic-has-retinue{{/if}} {{#if tacticalOrders.trip.isUnlocked}}tactic-unlocked{{else}}tactic-locked{{/if}}">
+        <div class="tactic-card-header">
+          <strong><i class="fas fa-person-falling"></i> {{tacticalOrders.trip.name}}</strong>
+          <span class="tactic-cost advantage"><i class="fas fa-bolt"></i> {{localize "UNDERWORLD.TacticsTab.Cost1"}}</span>
+        </div>
+        <p class="tactic-desc">{{tacticalOrders.trip.desc}}</p>
+        <div class="tactic-effect-summary">
+          <strong>{{localize "UNDERWORLD.TacticsTab.Effect"}}:</strong> {{tacticalOrders.trip.effect}}
+        </div>
+        {{#if tacticalOrders.trip.isUnlocked}}
+          <div class="tactic-executor-bar">
+            <i class="fas fa-check-circle color-green"></i> {{localize "UNDERWORLD.TacticsTab.Executes"}}: <strong>{{tacticalOrders.trip.executor.name}}</strong> ({{{underworldRoleBadge tacticalOrders.trip.executor.role}}})
+          </div>
+          <button type="button" class="btn-order-tactic" data-action="order-tactic" data-order="trip">
+            <i class="fas fa-bullhorn"></i> {{localize "UNDERWORLD.TacticsTab.Issue"}}
+          </button>
+        {{else}}
+          <div class="tactic-locked-bar">
+            <i class="fas fa-lock"></i> {{localize "UNDERWORLD.TacticsTab.Requires"}}: <strong>{{tacticalOrders.trip.reqRoleNames}}</strong>
+          </div>
+          <button type="button" class="btn-order-tactic btn-disabled" disabled>
+            <i class="fas fa-lock"></i> {{localize "UNDERWORLD.TacticsTab.Locked"}}
+          </button>
+        {{/if}}
+      </div>
+
+      <!-- Taran i Przełom (Ochroniarz) -->
+      <div data-order-id="bullrush" class="tactic-card {{#if tacticalOrders.bullrush.executor}}tactic-has-retinue{{/if}} {{#if tacticalOrders.bullrush.isUnlocked}}tactic-unlocked{{else}}tactic-locked{{/if}}">
+        <div class="tactic-card-header">
+          <strong><i class="fas fa-shield-alt"></i> {{tacticalOrders.bullrush.name}}</strong>
+          <span class="tactic-cost advantage"><i class="fas fa-bolt"></i> {{localize "UNDERWORLD.TacticsTab.Cost1"}}</span>
+        </div>
+        <p class="tactic-desc">{{tacticalOrders.bullrush.desc}}</p>
+        <div class="tactic-effect-summary">
+          <strong>{{localize "UNDERWORLD.TacticsTab.Effect"}}:</strong> {{tacticalOrders.bullrush.effect}}
+        </div>
+        {{#if tacticalOrders.bullrush.isUnlocked}}
+          <div class="tactic-executor-bar">
+            <i class="fas fa-check-circle color-green"></i> {{localize "UNDERWORLD.TacticsTab.Executes"}}: <strong>{{tacticalOrders.bullrush.executor.name}}</strong> ({{{underworldRoleBadge tacticalOrders.bullrush.executor.role}}})
+          </div>
+          <button type="button" class="btn-order-tactic" data-action="order-tactic" data-order="bullrush">
+            <i class="fas fa-bullhorn"></i> {{localize "UNDERWORLD.TacticsTab.Issue"}}
+          </button>
+        {{else}}
+          <div class="tactic-locked-bar">
+            <i class="fas fa-lock"></i> {{localize "UNDERWORLD.TacticsTab.Requires"}}: <strong>{{tacticalOrders.bullrush.reqRoleNames}}</strong>
+          </div>
+          <button type="button" class="btn-order-tactic btn-disabled" disabled>
+            <i class="fas fa-lock"></i> {{localize "UNDERWORLD.TacticsTab.Locked"}}
+          </button>
+        {{/if}}
+      </div>
+
+      <!-- Ostrzał Nękający (Strzelec) -->
+      <div data-order-id="cover" class="tactic-card {{#if tacticalOrders.cover.executor}}tactic-has-retinue{{/if}} {{#if tacticalOrders.cover.isUnlocked}}tactic-unlocked{{else}}tactic-locked{{/if}}">
+        <div class="tactic-card-header">
+          <strong><i class="fas fa-bullseye"></i> {{tacticalOrders.cover.name}}</strong>
+          <span class="tactic-cost free"><i class="fas fa-dice"></i> {{localize "UNDERWORLD.Orders.Dialog.Leadership"}}</span>
+        </div>
+        <p class="tactic-desc">{{tacticalOrders.cover.desc}}</p>
+        <div class="tactic-effect-summary">
+          <strong>{{localize "UNDERWORLD.TacticsTab.Effect"}}:</strong> {{tacticalOrders.cover.effect}}
+        </div>
+        {{#if tacticalOrders.cover.isUnlocked}}
+          <div class="tactic-executor-bar">
+            <i class="fas fa-check-circle color-green"></i> {{localize "UNDERWORLD.TacticsTab.Executes"}}: <strong>{{tacticalOrders.cover.executor.name}}</strong> ({{{underworldRoleBadge tacticalOrders.cover.executor.role}}})
+          </div>
+          <button type="button" class="btn-order-tactic" data-action="order-tactic" data-order="cover">
+            <i class="fas fa-bullhorn"></i> {{localize "UNDERWORLD.TacticsTab.Issue"}}
+          </button>
+        {{else}}
+          <div class="tactic-locked-bar">
+            <i class="fas fa-lock"></i> {{localize "UNDERWORLD.TacticsTab.Requires"}}: <strong>{{tacticalOrders.cover.reqRoleNames}}</strong>
+          </div>
+          <button type="button" class="btn-order-tactic btn-disabled" disabled>
+            <i class="fas fa-lock"></i> {{localize "UNDERWORLD.TacticsTab.Locked"}}
+          </button>
+        {{/if}}
+      </div>
+
+      <!-- Strzał Rozbrajający (Strzelec) -->
+      <div data-order-id="disarm" class="tactic-card {{#if tacticalOrders.disarm.executor}}tactic-has-retinue{{/if}} {{#if tacticalOrders.disarm.isUnlocked}}tactic-unlocked{{else}}tactic-locked{{/if}}">
+        <div class="tactic-card-header">
+          <strong><i class="fas fa-hand-holding-box"></i> {{tacticalOrders.disarm.name}}</strong>
+          <span class="tactic-cost advantage-high"><i class="fas fa-bolt"></i> {{localize "UNDERWORLD.TacticsTab.Cost2"}}</span>
+        </div>
+        <p class="tactic-desc">{{tacticalOrders.disarm.desc}}</p>
+        <div class="tactic-effect-summary">
+          <strong>{{localize "UNDERWORLD.TacticsTab.Effect"}}:</strong> {{tacticalOrders.disarm.effect}}
+        </div>
+        {{#if tacticalOrders.disarm.isUnlocked}}
+          <div class="tactic-executor-bar">
+            <i class="fas fa-check-circle color-green"></i> {{localize "UNDERWORLD.TacticsTab.Executes"}}: <strong>{{tacticalOrders.disarm.executor.name}}</strong> ({{{underworldRoleBadge tacticalOrders.disarm.executor.role}}})
+          </div>
+          <button type="button" class="btn-order-tactic" data-action="order-tactic" data-order="disarm">
+            <i class="fas fa-bullhorn"></i> {{localize "UNDERWORLD.TacticsTab.Issue"}}
+          </button>
+        {{else}}
+          <div class="tactic-locked-bar">
+            <i class="fas fa-lock"></i> {{localize "UNDERWORLD.TacticsTab.Requires"}}: <strong>{{tacticalOrders.disarm.reqRoleNames}}</strong>
+          </div>
+          <button type="button" class="btn-order-tactic btn-disabled" disabled>
+            <i class="fas fa-lock"></i> {{localize "UNDERWORLD.TacticsTab.Locked"}}
+          </button>
+        {{/if}}
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════ SEKCJA 2: KONTROLA WALKI I DYWERSJA ═══════ -->
+  <div class="tactic-group">
+    <h4 class="tactic-group-title"><i class="fas fa-theater-masks"></i> {{localize "UNDERWORLD.TacticsTab.Control"}}</h4>
+    <div class="tactic-cards-grid">
+
+      <!-- Zmyłka / Kradzież Przewagi (Prowokator) -->
+      <div data-order-id="distract" class="tactic-card {{#if tacticalOrders.distract.executor}}tactic-has-retinue{{/if}} {{#if tacticalOrders.distract.isUnlocked}}tactic-unlocked{{else}}tactic-locked{{/if}}">
+        <div class="tactic-card-header">
+          <strong><i class="fas fa-mask"></i> {{tacticalOrders.distract.name}}</strong>
+          <span class="tactic-cost advantage"><i class="fas fa-bolt"></i> {{localize "UNDERWORLD.TacticsTab.Cost1"}}</span>
+        </div>
+        <p class="tactic-desc">{{tacticalOrders.distract.desc}}</p>
+        <div class="tactic-effect-summary">
+          <strong>{{localize "UNDERWORLD.TacticsTab.Effect"}}:</strong> {{tacticalOrders.distract.effect}}
+        </div>
+        {{#if tacticalOrders.distract.isUnlocked}}
+          <div class="tactic-executor-bar">
+            <i class="fas fa-check-circle color-green"></i> {{localize "UNDERWORLD.TacticsTab.Executes"}}: <strong>{{tacticalOrders.distract.executor.name}}</strong> ({{{underworldRoleBadge tacticalOrders.distract.executor.role}}})
+          </div>
+          <button type="button" class="btn-order-tactic" data-action="order-tactic" data-order="distract">
+            <i class="fas fa-bullhorn"></i> {{localize "UNDERWORLD.TacticsTab.Issue"}}
+          </button>
+        {{else}}
+          <div class="tactic-locked-bar">
+            <i class="fas fa-lock"></i> {{localize "UNDERWORLD.TacticsTab.Requires"}}: <strong>{{tacticalOrders.distract.reqRoleNames}}</strong>
+          </div>
+          <button type="button" class="btn-order-tactic btn-disabled" disabled>
+            <i class="fas fa-lock"></i> {{localize "UNDERWORLD.TacticsTab.Locked"}}
+          </button>
+        {{/if}}
+      </div>
+
+      <!-- Zasłona Dymna (Prowokator) -->
+      <div data-order-id="smoke" class="tactic-card {{#if tacticalOrders.smoke.executor}}tactic-has-retinue{{/if}} {{#if tacticalOrders.smoke.isUnlocked}}tactic-unlocked{{else}}tactic-locked{{/if}}">
+        <div class="tactic-card-header">
+          <strong><i class="fas fa-smog"></i> {{tacticalOrders.smoke.name}}</strong>
+          <span class="tactic-cost advantage"><i class="fas fa-bolt"></i> {{localize "UNDERWORLD.TacticsTab.Cost1"}}</span>
+        </div>
+        <p class="tactic-desc">{{tacticalOrders.smoke.desc}}</p>
+        <div class="tactic-effect-summary">
+          <strong>{{localize "UNDERWORLD.TacticsTab.Effect"}}:</strong> {{tacticalOrders.smoke.effect}}
+        </div>
+        {{#if tacticalOrders.smoke.isUnlocked}}
+          <div class="tactic-executor-bar">
+            <i class="fas fa-check-circle color-green"></i> {{localize "UNDERWORLD.TacticsTab.Executes"}}: <strong>{{tacticalOrders.smoke.executor.name}}</strong> ({{{underworldRoleBadge tacticalOrders.smoke.executor.role}}})
+          </div>
+          <button type="button" class="btn-order-tactic" data-action="order-tactic" data-order="smoke">
+            <i class="fas fa-bullhorn"></i> {{localize "UNDERWORLD.TacticsTab.Issue"}}
+          </button>
+        {{else}}
+          <div class="tactic-locked-bar">
+            <i class="fas fa-lock"></i> {{localize "UNDERWORLD.TacticsTab.Requires"}}: <strong>{{tacticalOrders.smoke.reqRoleNames}}</strong>
+          </div>
+          <button type="button" class="btn-order-tactic btn-disabled" disabled>
+            <i class="fas fa-lock"></i> {{localize "UNDERWORLD.TacticsTab.Locked"}}
+          </button>
+        {{/if}}
+      </div>
+
+      <!-- Piasek w Oczy (Prowokator) -->
+      <div data-order-id="sand" class="tactic-card {{#if tacticalOrders.sand.executor}}tactic-has-retinue{{/if}} {{#if tacticalOrders.sand.isUnlocked}}tactic-unlocked{{else}}tactic-locked{{/if}}">
+        <div class="tactic-card-header">
+          <strong><i class="fas fa-eye-slash"></i> {{tacticalOrders.sand.name}}</strong>
+          <span class="tactic-cost advantage"><i class="fas fa-bolt"></i> {{localize "UNDERWORLD.TacticsTab.Cost1"}}</span>
+        </div>
+        <p class="tactic-desc">{{tacticalOrders.sand.desc}}</p>
+        <div class="tactic-effect-summary">
+          <strong>{{localize "UNDERWORLD.TacticsTab.Effect"}}:</strong> {{tacticalOrders.sand.effect}}
+        </div>
+        {{#if tacticalOrders.sand.isUnlocked}}
+          <div class="tactic-executor-bar">
+            <i class="fas fa-check-circle color-green"></i> {{localize "UNDERWORLD.TacticsTab.Executes"}}: <strong>{{tacticalOrders.sand.executor.name}}</strong> ({{{underworldRoleBadge tacticalOrders.sand.executor.role}}})
+          </div>
+          <button type="button" class="btn-order-tactic" data-action="order-tactic" data-order="sand">
+            <i class="fas fa-bullhorn"></i> {{localize "UNDERWORLD.TacticsTab.Issue"}}
+          </button>
+        {{else}}
+          <div class="tactic-locked-bar">
+            <i class="fas fa-lock"></i> {{localize "UNDERWORLD.TacticsTab.Requires"}}: <strong>{{tacticalOrders.sand.reqRoleNames}}</strong>
+          </div>
+          <button type="button" class="btn-order-tactic btn-disabled" disabled>
+            <i class="fas fa-lock"></i> {{localize "UNDERWORLD.TacticsTab.Locked"}}
+          </button>
+        {{/if}}
+      </div>
+
+      <!-- Okrzyk Bojowy (Herszt / Prawa Ręka) -->
+      <div data-order-id="rally" class="tactic-card tactic-unlocked tactic-has-retinue">
+        <div class="tactic-card-header">
+          <strong><i class="fas fa-fist-raised"></i> {{tacticalOrders.rally.name}}</strong>
+          <span class="tactic-cost free"><i class="fas fa-dice"></i> {{localize "UNDERWORLD.TacticsTab.LeadershipAction"}}</span>
+        </div>
+        <p class="tactic-desc">{{tacticalOrders.rally.desc}}</p>
+        <div class="tactic-effect-summary">
+          <strong>{{localize "UNDERWORLD.TacticsTab.Effect"}}:</strong> {{tacticalOrders.rally.effect}}
+        </div>
+        <div class="tactic-executor-bar">
+          <i class="fas fa-star" style="color: #f5d696;"></i> 
+          {{#if tacticalOrders.rally.executor}}
+            {{localize "UNDERWORLD.TacticsTab.Assists"}}: <strong>{{tacticalOrders.rally.executor.name}}</strong> ({{localize "UNDERWORLD.Ranks.lieutenant.Name"}})
+          {{else}}
+            {{localize "UNDERWORLD.TacticsTab.PersonalAlways"}}
+          {{/if}}
+        </div>
+        <button type="button" class="btn-order-tactic" data-action="order-tactic" data-order="rally">
+          <i class="fas fa-bullhorn"></i> {{localize "UNDERWORLD.TacticsTab.Issue"}}
+        </button>
+      </div>
+
+      <!-- Koordynacja Szyku (Prawa Ręka) -->
+      <div data-order-id="coordinate" class="tactic-card {{#if tacticalOrders.coordinate.executor}}tactic-has-retinue{{/if}} {{#if tacticalOrders.coordinate.isUnlocked}}tactic-unlocked{{else}}tactic-locked{{/if}}">
+        <div class="tactic-card-header">
+          <strong><i class="fas fa-users-cog"></i> {{tacticalOrders.coordinate.name}}</strong>
+          <span class="tactic-cost advantage"><i class="fas fa-bolt"></i> {{localize "UNDERWORLD.TacticsTab.Cost1"}}</span>
+        </div>
+        <p class="tactic-desc">{{tacticalOrders.coordinate.desc}}</p>
+        <div class="tactic-effect-summary">
+          <strong>{{localize "UNDERWORLD.TacticsTab.Effect"}}:</strong> {{tacticalOrders.coordinate.effect}}
+        </div>
+        {{#if tacticalOrders.coordinate.isUnlocked}}
+          <div class="tactic-executor-bar">
+            <i class="fas fa-check-circle color-green"></i> {{localize "UNDERWORLD.TacticsTab.Executes"}}: <strong>{{tacticalOrders.coordinate.executor.name}}</strong> ({{{underworldRoleBadge tacticalOrders.coordinate.executor.role}}})
+          </div>
+          <button type="button" class="btn-order-tactic" data-action="order-tactic" data-order="coordinate">
+            <i class="fas fa-bullhorn"></i> {{localize "UNDERWORLD.TacticsTab.Issue"}}
+          </button>
+        {{else}}
+          <div class="tactic-locked-bar">
+            <i class="fas fa-lock"></i> {{localize "UNDERWORLD.TacticsTab.Requires"}}: <strong>{{tacticalOrders.coordinate.reqRoleNames}}</strong>
+          </div>
+          <button type="button" class="btn-order-tactic btn-disabled" disabled>
+            <i class="fas fa-lock"></i> {{localize "UNDERWORLD.TacticsTab.Locked"}}
+          </button>
+        {{/if}}
+      </div>
+
+      <!-- Odwet Szajki (Prawa Ręka) -->
+      <div data-order-id="retaliation" class="tactic-card {{#if tacticalOrders.retaliation.executor}}tactic-has-retinue{{/if}} {{#if tacticalOrders.retaliation.isUnlocked}}tactic-unlocked{{else}}tactic-locked{{/if}}">
+        <div class="tactic-card-header">
+          <strong><i class="fas fa-bolt"></i> {{tacticalOrders.retaliation.name}}</strong>
+          <span class="tactic-cost advantage"><i class="fas fa-bolt"></i> {{localize "UNDERWORLD.TacticsTab.Cost1"}}</span>
+        </div>
+        <p class="tactic-desc">{{tacticalOrders.retaliation.desc}}</p>
+        <div class="tactic-effect-summary">
+          <strong>{{localize "UNDERWORLD.TacticsTab.Effect"}}:</strong> {{tacticalOrders.retaliation.effect}}
+        </div>
+        {{#if tacticalOrders.retaliation.isUnlocked}}
+          <div class="tactic-executor-bar">
+            <i class="fas fa-check-circle color-green"></i> {{localize "UNDERWORLD.TacticsTab.Executes"}}: <strong>{{tacticalOrders.retaliation.executor.name}}</strong> ({{{underworldRoleBadge tacticalOrders.retaliation.executor.role}}})
+          </div>
+          <button type="button" class="btn-order-tactic" data-action="order-tactic" data-order="retaliation">
+            <i class="fas fa-bullhorn"></i> {{localize "UNDERWORLD.TacticsTab.Issue"}}
+          </button>
+        {{else}}
+          <div class="tactic-locked-bar">
+            <i class="fas fa-lock"></i> {{localize "UNDERWORLD.TacticsTab.Requires"}}: <strong>{{tacticalOrders.retaliation.reqRoleNames}}</strong>
+          </div>
+          <button type="button" class="btn-order-tactic btn-disabled" disabled>
+            <i class="fas fa-lock"></i> {{localize "UNDERWORLD.TacticsTab.Locked"}}
+          </button>
+        {{/if}}
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════ SEKCJA 3: OCHRONNE I RATUNKOWE ═══════ -->
+  <div class="tactic-group">
+    <h4 class="tactic-group-title"><i class="fas fa-shield-alt"></i> {{localize "UNDERWORLD.TacticsTab.Protection"}}</h4>
+    <div class="tactic-cards-grid">
+
+      <!-- Żywa Tarcza (Ochroniarz) -->
+      <div data-order-id="meatshield" class="tactic-card danger-card {{#if tacticalOrders.meatshield.executor}}tactic-has-retinue{{/if}} {{#if tacticalOrders.meatshield.isUnlocked}}tactic-unlocked{{else}}tactic-locked{{/if}}">
+        <div class="tactic-card-header">
+          <strong><i class="fas fa-user-shield"></i> {{tacticalOrders.meatshield.name}}</strong>
+          <span class="tactic-cost sacrifice"><i class="fas fa-heart-broken"></i> {{localize "UNDERWORLD.TacticsTab.WoundRisk"}}</span>
+        </div>
+        <p class="tactic-desc">{{tacticalOrders.meatshield.desc}}</p>
+        <div class="tactic-effect-summary">
+          <strong>{{localize "UNDERWORLD.TacticsTab.Effect"}}:</strong> {{tacticalOrders.meatshield.effect}}
+        </div>
+        {{#if tacticalOrders.meatshield.isUnlocked}}
+          <div class="tactic-executor-bar">
+            <i class="fas fa-shield-alt color-green"></i> {{localize "UNDERWORLD.TacticsTab.GuardReady"}}: <strong>{{tacticalOrders.meatshield.executor.name}}</strong>
+          </div>
+          <button type="button" class="btn-order-tactic btn-danger" data-action="order-tactic" data-order="meatshield">
+            <i class="fas fa-shield-virus"></i> {{localize "UNDERWORLD.Orders.Dialog.MeatShieldButton"}}
+          </button>
+        {{else}}
+          <div class="tactic-locked-bar">
+            <i class="fas fa-lock"></i> {{localize "UNDERWORLD.TacticsTab.Requires"}}: <strong>{{tacticalOrders.meatshield.reqRoleNames}}</strong>
+          </div>
+          <button type="button" class="btn-order-tactic btn-disabled" disabled>
+            <i class="fas fa-lock"></i> {{localize "UNDERWORLD.TacticsTab.Locked"}}
+          </button>
+        {{/if}}
+      </div>
+
+      <!-- Bojowe Zaopatrzenie (Szabrownik) -->
+      <div data-order-id="resupply" class="tactic-card {{#if tacticalOrders.resupply.executor}}tactic-has-retinue{{/if}} {{#if tacticalOrders.resupply.isUnlocked}}tactic-unlocked{{else}}tactic-locked{{/if}}">
+        <div class="tactic-card-header">
+          <strong><i class="fas fa-toolbox"></i> {{tacticalOrders.resupply.name}}</strong>
+          <span class="tactic-cost advantage"><i class="fas fa-bolt"></i> {{localize "UNDERWORLD.TacticsTab.Cost1"}}</span>
+        </div>
+        <p class="tactic-desc">{{tacticalOrders.resupply.desc}}</p>
+        <div class="tactic-effect-summary">
+          <strong>{{localize "UNDERWORLD.TacticsTab.Effect"}}:</strong> {{tacticalOrders.resupply.effect}}
+        </div>
+        {{#if tacticalOrders.resupply.isUnlocked}}
+          <div class="tactic-executor-bar">
+            <i class="fas fa-check-circle color-green"></i> {{localize "UNDERWORLD.TacticsTab.Executes"}}: <strong>{{tacticalOrders.resupply.executor.name}}</strong> ({{{underworldRoleBadge tacticalOrders.resupply.executor.role}}})
+          </div>
+          <button type="button" class="btn-order-tactic" data-action="order-tactic" data-order="resupply">
+            <i class="fas fa-bullhorn"></i> {{localize "UNDERWORLD.TacticsTab.Issue"}}
+          </button>
+        {{else}}
+          <div class="tactic-locked-bar">
+            <i class="fas fa-lock"></i> {{localize "UNDERWORLD.TacticsTab.Requires"}}: <strong>{{tacticalOrders.resupply.reqRoleNames}}</strong>
+          </div>
+          <button type="button" class="btn-order-tactic btn-disabled" disabled>
+            <i class="fas fa-lock"></i> {{localize "UNDERWORLD.TacticsTab.Locked"}}
+          </button>
+        {{/if}}
+      </div>
+
+      <!-- Barykada i Odwrót (Szabrownik) -->
+      <div data-order-id="retreat" class="tactic-card {{#if tacticalOrders.retreat.executor}}tactic-has-retinue{{/if}} {{#if tacticalOrders.retreat.isUnlocked}}tactic-unlocked{{else}}tactic-locked{{/if}}">
+        <div class="tactic-card-header">
+          <strong><i class="fas fa-door-closed"></i> {{tacticalOrders.retreat.name}}</strong>
+          <span class="tactic-cost advantage"><i class="fas fa-bolt"></i> {{localize "UNDERWORLD.TacticsTab.Cost1"}}</span>
+        </div>
+        <p class="tactic-desc">{{tacticalOrders.retreat.desc}}</p>
+        <div class="tactic-effect-summary">
+          <strong>{{localize "UNDERWORLD.TacticsTab.Effect"}}:</strong> {{tacticalOrders.retreat.effect}}
+        </div>
+        {{#if tacticalOrders.retreat.isUnlocked}}
+          <div class="tactic-executor-bar">
+            <i class="fas fa-check-circle color-green"></i> {{localize "UNDERWORLD.TacticsTab.Executes"}}: <strong>{{tacticalOrders.retreat.executor.name}}</strong> ({{{underworldRoleBadge tacticalOrders.retreat.executor.role}}})
+          </div>
+          <button type="button" class="btn-order-tactic" data-action="order-tactic" data-order="retreat">
+            <i class="fas fa-bullhorn"></i> {{localize "UNDERWORLD.TacticsTab.Issue"}}
+          </button>
+        {{else}}
+          <div class="tactic-locked-bar">
+            <i class="fas fa-lock"></i> {{localize "UNDERWORLD.TacticsTab.Requires"}}: <strong>{{tacticalOrders.retreat.reqRoleNames}}</strong>
+          </div>
+          <button type="button" class="btn-order-tactic btn-disabled" disabled>
+            <i class="fas fa-lock"></i> {{localize "UNDERWORLD.TacticsTab.Locked"}}
+          </button>
+        {{/if}}
+      </div>
+
+      <!-- Gorzka Nalewka Bojowa (Szabrownik / Felczer) -->
+      <div data-order-id="draught" class="tactic-card {{#if tacticalOrders.draught.executor}}tactic-has-retinue{{/if}} {{#if tacticalOrders.draught.isUnlocked}}tactic-unlocked{{else}}tactic-locked{{/if}}">
+        <div class="tactic-card-header">
+          <strong><i class="fas fa-flask"></i> {{tacticalOrders.draught.name}}</strong>
+          <span class="tactic-cost advantage"><i class="fas fa-bolt"></i> {{localize "UNDERWORLD.TacticsTab.Cost1"}}</span>
+        </div>
+        <p class="tactic-desc">{{tacticalOrders.draught.desc}}</p>
+        <div class="tactic-effect-summary">
+          <strong>{{localize "UNDERWORLD.TacticsTab.Effect"}}:</strong> {{tacticalOrders.draught.effect}}
+        </div>
+        {{#if tacticalOrders.draught.isUnlocked}}
+          <div class="tactic-executor-bar">
+            <i class="fas fa-check-circle color-green"></i> {{localize "UNDERWORLD.TacticsTab.Executes"}}: <strong>{{tacticalOrders.draught.executor.name}}</strong> ({{{underworldRoleBadge tacticalOrders.draught.executor.role}}})
+          </div>
+          <button type="button" class="btn-order-tactic" data-action="order-tactic" data-order="draught">
+            <i class="fas fa-bullhorn"></i> {{localize "UNDERWORLD.TacticsTab.Issue"}}
+          </button>
+        {{else}}
+          <div class="tactic-locked-bar">
+            <i class="fas fa-lock"></i> {{localize "UNDERWORLD.TacticsTab.Requires"}}: <strong>{{tacticalOrders.draught.reqRoleNames}}</strong>
+          </div>
+          <button type="button" class="btn-order-tactic btn-disabled" disabled>
+            <i class="fas fa-lock"></i> {{localize "UNDERWORLD.TacticsTab.Locked"}}
+          </button>
+        {{/if}}
+      </div>
+
+    </div>
+  </div>
+
+</div>

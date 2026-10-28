@@ -1,0 +1,198 @@
+[
+  {
+    "id": "mid-kopalnie-01",
+    "text": "W Middenheimie mówi się, że w głębokich kopalniach pod Fauschlagiem robotnicy słyszeli nocami piski i drapanie pazurów w litej skale.",
+    "category": "tajemnica",
+    "location": "Middenheim",
+    "source": "Górnik z Fauschlagu",
+    "truth": "prawda",
+    "displayed": false
+  },
+  {
+    "id": "mid-graf-02",
+    "text": "Graf Boris Todbringer coraz rzadziej pojawia się publicznie. W kuluarach pałacu szepcze się o postępującej apatii i czarnej melancholii władcy.",
+    "category": "polityka",
+    "location": "Middenheim",
+    "source": "Medyk dworski",
+    "truth": "półprawda",
+    "displayed": false
+  },
+  {
+    "id": "alt-podatki-03",
+    "text": "Z Altdorfu nadeszły wieści o nowych podatkach wojennych narzuconych przez kanclerza. Szlachta z Middenlandu głośno mówi o zdradzie.",
+    "category": "polityka",
+    "location": "Altdorf",
+    "source": "Poborca myta",
+    "truth": "prawda",
+    "displayed": false
+  },
+  {
+    "id": "car-kulty-04",
+    "text": "Kultyści Purpurowej Dłoni i Żółtej Korony nawiązują kontakty z bandami dezerterów i banitów w lasach wokół Carroburga.",
+    "category": "kulty",
+    "location": "Carroburg",
+    "source": "Zbieg z lasu",
+    "truth": "prawda",
+    "displayed": false
+  },
+  {
+    "id": "kem-reik-05",
+    "text": "Na rzece Reik wstrzymano ruch barek handlowych; poborcy myta w Kemperbadzie żądają potrójnej opłaty wojennej pod groźbą konfiskaty.",
+    "category": "handel",
+    "location": "Kemperbad",
+    "source": "Flisak rzeki Reik",
+    "truth": "prawda",
+    "displayed": false
+  },
+  {
+    "id": "alt-tunele-06",
+    "text": "W zaułkach kupieckich widziano podejrzanych jegomościów w płaszczach, skupujących stare plany krasnoludzkich tuneli i kanałów pod miastem.",
+    "category": "tajemnica",
+    "location": "Altdorf",
+    "source": "Antykwariusz",
+    "truth": "prawda",
+    "displayed": false
+  },
+  {
+    "id": "str-dezercja-07",
+    "text": "Oddział Straży Dróg pod Altdorfem zdezerterował z pełnym rynsztunkiem i bronią palną po tym, jak dowódca ulotnił się z ich całym żołdem.",
+    "category": "wojsko",
+    "location": "Reikland",
+    "source": "Były strażnik dróg",
+    "truth": "prawda",
+    "displayed": false
+  },
+  {
+    "id": "nul-pies-08",
+    "text": "W szynku 'Pod Skaczącym Psem' ktoś oferuje wysokie nagrody w złocie za informacje o tajemniczych zgonach wśród medyków i uczonych.",
+    "category": "zlecenia",
+    "location": "Nuln",
+    "source": "Karczmarz",
+    "truth": "prawda",
+    "displayed": false
+  },
+  {
+    "id": "alt-niebiosa-09",
+    "text": "Magowie z Kolegium Niebios w stolicy ostrzegają przed nietypowym układem konstelacji – zapowiadają krwawy konflikt bratobójczy w Reiklandzie.",
+    "category": "magia",
+    "location": "Altdorf",
+    "source": "Uczeń astrologa",
+    "truth": "prawda",
+    "displayed": false
+  },
+  {
+    "id": "del-krasnoludy-10",
+    "text": "Przemytnicy z rzeki Delb donoszą, że krasnoludzkie twierdze w Górach Środkowych zamykają bramy przed uchodźcami z nizin.",
+    "category": "krasnoludy",
+    "location": "Góry Środkowe",
+    "source": "Kupiec żelazny",
+    "truth": "prawda",
+    "displayed": false
+  },
+  {
+    "id": "tra-wojsko-11",
+    "text": "Na trakcie z Middenheim do Altdorfu widziano kolumny żołnierzy Middenlandu z pełnym oblężniczym taborem – idą na południe.",
+    "category": "wojsko",
+    "location": "Middenland",
+    "source": "Woźnica pocztowy",
+    "truth": "prawda",
+    "displayed": false
+  },
+  {
+    "id": "sig-relikwie-12",
+    "text": "Łowcy nagród szukają człowieka z bliznami na twarzy, który podobno kradnie relikwie Sigmara z przydrożnych kapliczek.",
+    "category": "religia",
+    "location": "Reikland",
+    "source": "Kapłan wędrowny",
+    "displayed": false
+  },
+  {
+    "id": "mar-podatek-13",
+    "text": "Kupcy z Marienburga opowiadają o nowym podatku wojennym – kto nie zapłaci, temu konfiskują statek i cały ładunek.",
+    "category": "handel",
+    "location": "Marienburg",
+    "source": "Faktor handlowy",
+    "displayed": false
+  },
+  {
+    "id": "dra-swiatla-14",
+    "text": "Plotki mówią o dziwnych zielonkawych światłach nad Drakwaldem. Leśnicy twierdzą, że to wiedźmi ogień, ale uczeni mówią o spaczeniowej burzy.",
+    "category": "chaos",
+    "location": "Drakwald",
+    "source": "Drwal z Drakwaldu",
+    "displayed": false
+  },
+  {
+    "id": "rec-herold-15",
+    "text": "Ktoś widział heroldów w barwach Imperatora, którzy jeżdżą po wsiach i rekrutują chłopów obietnicą 5 szylingów dziennie i gorącego posiłku.",
+    "category": "wojsko",
+    "location": "Wsie Reiklandu",
+    "displayed": false
+  },
+  {
+    "id": "tav-zlotnik-16",
+    "text": "Miejscowy złotnik to w rzeczywistości paser obsługujący gildię cieni. Ma ukrytą skrytkę pod podłogą warsztatu za podwójnym zamkiem.",
+    "category": "przestępczość",
+    "source": "Pijany złodziejaszek",
+    "displayed": false
+  },
+  {
+    "id": "tav-przejscie-17",
+    "text": "Istnieje zapomniane przejście pod murami miejskimi, którego używali przemytnicy jeszcze za czasów Wielkiej Zarazy.",
+    "category": "przejścia",
+    "source": "Stary przemytnik",
+    "displayed": false
+  },
+  {
+    "id": "tav-piraci-18",
+    "text": "Na rzece grasuje banda rzecznych piratów z zielonymi chustami – atakują wyłącznie barki przewożące proch i broń palną z Nuln.",
+    "category": "piraci",
+    "source": "Kupiec rusznikarz",
+    "displayed": false
+  },
+  {
+    "id": "tav-brama-19",
+    "text": "Od tygodnia brakuje ludzi na zmianie wartowniczej – zachodnia brama po północy jest pilnowana przez jednego, wiecznie śpiącego staruszka.",
+    "category": "straż",
+    "source": "Żołnierz z warty",
+    "displayed": false
+  },
+  {
+    "id": "tav-trucizna-20",
+    "text": "Ktoś widział w nocy postać w czarnej szacie wrzucającą podejrzany woreczek do miejskiej studni na placu targowym.",
+    "category": "tajemnica",
+    "source": "Praczka z zaułka",
+    "displayed": false
+  },
+  {
+    "id": "tav-karty-21",
+    "text": "Karciarz w rogu szynku przegrywa celowo – to trik. Obserwuje, kto wyciąga złoty bilon i daje dyskretny znak chłopakom czekającym w cieniu bramy.",
+    "category": "przestępczość",
+    "displayed": false
+  },
+  {
+    "id": "syl-marsz-22",
+    "text": "Podróżny z Sylvanii opowiada o nocnych marszach nieumarłych na wschodzie. Nikt mu nie wierzy, ale sam drży ze strachu na widok każdego cienia.",
+    "category": "nieumarli",
+    "location": "Wschodnie pogranicze",
+    "displayed": false
+  },
+  {
+    "id": "alt-mandragora-23",
+    "text": "Kolegium Alchemii w Altdorfie zaoferowało astronomiczną sumę za dostarczenie nienaruszonego korzenia mandragory z głębi Lasu Cieni.",
+    "category": "alchemia",
+    "displayed": false
+  },
+  {
+    "id": "ube-mnisi-24",
+    "text": "W klasztorze Sigmara pod Ubersreikiem mnisi zamknęli się od środka i biją w dzwony o północy. Nikt nie wie, co tam zobaczyli.",
+    "category": "tajemnica",
+    "displayed": false
+  },
+  {
+    "id": "alt-proch-25",
+    "text": "Jeden ze szlacheckich rodów w stolicy potajemnie skupuje wielkie zapasy czarnego prochu i siarki, płacąc złotem bez targowania.",
+    "category": "spisek",
+    "displayed": false
+  }
+]

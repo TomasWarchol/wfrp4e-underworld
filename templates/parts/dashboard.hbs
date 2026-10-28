@@ -1,0 +1,253 @@
+<div class="dashboard-container flexcol">
+  <div class="dashboard-grid">
+    <!-- LEWA KOLUMNA: OBOZOWISKO, MORALE I ZAPASY -->
+    <div class="stats-panel flexcol">
+      <!-- Standard Kwater -->
+      <div class="dashboard-card camp-standard-card">
+        <div class="card-mini-header">
+          <i class="fas fa-campground text-gold"></i>
+          <strong>{{localize "UNDERWORLD.DashTab.CampStandard"}}</strong>
+        </div>
+        <div class="card-mini-body">
+          <select name="camp.type" class="styled-camp-select">
+            {{#bajerySelect gang.camp.type}}
+            <option value="makeshift">⛺ {{localize "UNDERWORLD.DashTab.Makeshift" place=terrain.makeshiftLabel}} ({{#if terrain.coldMakeshift}}-2{{else}}-1{{/if}} {{localize "UNDERWORLD.DashTab.MoralePerCamp"}})</option>
+            <option value="basic">🏕️ {{localize "UNDERWORLD.DashTab.Basic"}}</option>
+            <option value="comfortable">🏰 {{localize "UNDERWORLD.DashTab.Comfortable" place=terrain.comfortableLabel cost=comfortableCostLabel}}</option>
+            {{/bajerySelect}}
+          </select>
+          <div class="card-caption">{{{localize "UNDERWORLD.DashTab.CampCaption" terrain=terrain.name}}}</div>
+        </div>
+      </div>
+
+      <!-- Morale Szajki ze Wskaźnikiem Paskowym -->
+      <div class="dashboard-card morale-card">
+        <div class="card-mini-header" style="justify-content: space-between;">
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <i class="fas fa-heart text-danger"></i>
+            <strong>{{localize "UNDERWORLD.DashTab.Morale"}}</strong>
+          </div>
+          <span class="morale-tier-badge {{#if (bajeryGte gang.morale 8)}}tier-high{{else if (bajeryGte gang.morale 5)}}tier-med{{else if (bajeryGte gang.morale 3)}}tier-low{{else}}tier-critical{{/if}}">
+            {{#if (bajeryGte gang.morale 8)}}{{localize "UNDERWORLD.DashTab.TierFanatic"}}{{else if (bajeryGte gang.morale 5)}}{{localize "UNDERWORLD.DashTab.TierDiscipline"}}{{else if (bajeryGte gang.morale 3)}}{{localize "UNDERWORLD.DashTab.TierGrumbling"}}{{else}}{{localize "UNDERWORLD.DashTab.TierMutiny"}}{{/if}}
+          </span>
+        </div>
+
+        <div class="card-mini-body">
+          <div class="morale-meter-row">
+            {{#if isGM}}
+              <input type="number" name="morale" value="{{gang.morale}}" min="0" max="10" class="numeric-badge-input" title="{{localize 'UNDERWORLD.DashTab.SetMorale'}}"/>
+            {{else}}
+              <div class="numeric-badge-display" title="{{localize 'UNDERWORLD.DashTab.MoraleLevel'}}">{{gang.morale}}</div>
+            {{/if}}
+
+            <!-- DRABINA MORALE ZE STOPNIAMI I CZASZKAMI -->
+            <div class="morale-ladder-track" title="{{localize 'UNDERWORLD.DashTab.MoraleLevelValue' value=gang.morale}}">
+              <div class="morale-notch {{#if (bajeryGte gang.morale 1)}}active{{/if}} tier-danger" title="{{localize 'UNDERWORLD.DashTab.Notch.I'}}"><span>I</span><i class="fas fa-skull-crossbones"></i></div>
+              <div class="morale-notch {{#if (bajeryGte gang.morale 2)}}active{{/if}} tier-danger" title="{{localize 'UNDERWORLD.DashTab.Notch.II'}}"><span>II</span><i class="fas fa-skull"></i></div>
+              <div class="morale-notch {{#if (bajeryGte gang.morale 3)}}active{{/if}} tier-warning" title="{{localize 'UNDERWORLD.DashTab.Notch.III'}}"><span>III</span></div>
+              <div class="morale-notch {{#if (bajeryGte gang.morale 4)}}active{{/if}} tier-warning" title="{{localize 'UNDERWORLD.DashTab.Notch.IV'}}"><span>IV</span></div>
+              <div class="morale-notch {{#if (bajeryGte gang.morale 5)}}active{{/if}} tier-stable" title="{{localize 'UNDERWORLD.DashTab.Notch.V'}}"><span>V</span></div>
+              <div class="morale-notch {{#if (bajeryGte gang.morale 6)}}active{{/if}} tier-stable" title="{{localize 'UNDERWORLD.DashTab.Notch.VI'}}"><span>VI</span></div>
+              <div class="morale-notch {{#if (bajeryGte gang.morale 7)}}active{{/if}} tier-stable" title="{{localize 'UNDERWORLD.DashTab.Notch.VII'}}"><span>VII</span></div>
+              <div class="morale-notch {{#if (bajeryGte gang.morale 8)}}active{{/if}} tier-zeal" title="{{localize 'UNDERWORLD.DashTab.Notch.VIII'}}"><span>VIII</span></div>
+              <div class="morale-notch {{#if (bajeryGte gang.morale 9)}}active{{/if}} tier-zeal" title="{{localize 'UNDERWORLD.DashTab.Notch.IX'}}"><span>IX</span></div>
+              <div class="morale-notch {{#if (bajeryGte gang.morale 10)}}active{{/if}} tier-zeal" title="{{localize 'UNDERWORLD.DashTab.Notch.X'}}"><span>X</span><i class="fas fa-fire"></i></div>
+            </div>
+            <span class="meter-max-label">/ 10</span>
+          </div>
+
+          <div class="morale-flavor-text">
+            {{#if (bajeryGte gang.morale 8)}}
+              <i class="fas fa-fist-raised text-green"></i> {{localize "UNDERWORLD.DashTab.FlavorHigh"}}
+            {{else if (bajeryGte gang.morale 5)}}
+              <i class="fas fa-check text-green"></i> {{localize "UNDERWORLD.DashTab.FlavorMid"}}
+            {{else if (bajeryGte gang.morale 3)}}
+              <i class="fas fa-exclamation-triangle text-warning"></i> {{localize "UNDERWORLD.DashTab.FlavorLow"}}
+            {{else}}
+              <i class="fas fa-skull text-danger"></i> <strong>{{localize "UNDERWORLD.DashTab.TierMutiny"}}</strong> {{localize "UNDERWORLD.DashTab.FlavorCritical"}}
+            {{/if}}
+          </div>
+        </div>
+      </div>
+
+      <!-- Zapasy Żywności ze Wskaźnikiem Spiżarni -->
+      <div class="dashboard-card supplies-card">
+        <div class="card-mini-header" style="justify-content: space-between;">
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <i class="fas fa-bread-slice text-gold"></i>
+            <strong>{{localize "UNDERWORLD.DashTab.Larder"}}</strong>
+          </div>
+          <span class="supply-price-tag" title="{{localize 'UNDERWORLD.DashTab.PriceHint'}}">
+            <i class="fas fa-tag"></i> {{localize "UNDERWORLD.DashTab.OneRation"}} = <strong>{{supplyPriceFormatted}}</strong>
+          </span>
+        </div>
+
+        <div class="card-mini-body">
+          <div class="supplies-meter-row">
+            {{#if isGM}}
+              <input type="number" name="supplies" value="{{gang.supplies}}" min="0" max="30" class="numeric-badge-input" title="{{localize 'UNDERWORLD.DashTab.SetSupplies'}}"/>
+            {{else}}
+              <div class="numeric-badge-display" title="{{localize 'UNDERWORLD.DashTab.Rations'}}">{{gang.supplies}}</div>
+            {{/if}}
+
+            <div class="meter-bar-wrapper">
+              <div class="meter-bar supplies-progress-bar" style="width: calc(({{gang.supplies}} / 30) * 100%);"></div>
+            </div>
+            <span class="meter-max-label">/ 30 {{localize "UNDERWORLD.DashTab.RationsUnit"}}</span>
+          </div>
+
+          <div class="supplies-status-desc">
+            {{#if (bajeryGte gang.supplies 10)}}
+              <i class="fas fa-utensils text-green"></i> {{{localize "UNDERWORLD.DashTab.SuppliesFull" days=gang.supplies}}}
+            {{else if (bajeryGte gang.supplies 3)}}
+              <i class="fas fa-exclamation-circle text-warning"></i> {{localize "UNDERWORLD.DashTab.SuppliesLow"}}
+            {{else}}
+              <i class="fas fa-drumstick-bite text-danger"></i> {{{localize "UNDERWORLD.DashTab.SuppliesNone"}}}
+            {{/if}}
+          </div>
+
+          <div class="supplies-actions-row">
+            <button type="button" class="btn-theme-action btn-buy-supplies" data-action="buy-supplies" title="{{localize 'UNDERWORLD.DashTab.BuyHint'}}">
+              <i class="fas fa-shopping-basket"></i> {{localize "UNDERWORLD.SuppliesDialog.Buy"}}
+            </button>
+            {{#if isGM}}
+              <button type="button" class="btn-theme-action btn-gm-price" data-action="set-supply-price" title="{{localize 'UNDERWORLD.DashTab.PriceSetHint'}}">
+                <i class="fas fa-coins"></i> {{localize "UNDERWORLD.DashTab.SetPrice"}}
+              </button>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRAWA KOLUMNA: SKRZYNIA SKARBCA I FINANSE SZAJKI -->
+    <div class="treasury-panel flexcol">
+      <div class="dashboard-card chest-card">
+        <div class="chest-card-header">
+          <div class="chest-title-group">
+            <i class="fas fa-coins text-gold-glow"></i>
+            <h3 class="chest-title">{{localize "UNDERWORLD.Upgrade.Stash"}}</h3>
+          </div>
+          {{#unless isGM}}
+            <span class="lock-indicator" title="{{localize 'UNDERWORLD.DashTab.LockedHint'}}"><i class="fas fa-lock"></i> {{localize "UNDERWORLD.DashTab.Locked"}}</span>
+          {{/unless}}
+        </div>
+
+        <!-- Drewniano-Żelazna Skrzynia na Monety -->
+        <div class="ironbound-chest">
+          <div class="chest-compartment gc-compartment">
+            <div class="coin-icon-circle gc-icon"><i class="fas fa-coins"></i></div>
+            <div class="coin-meta">
+              <span class="coin-title">{{localize "UNDERWORLD.DashTab.Crowns"}}</span>
+              <span class="coin-abbr">{{localize "UNDERWORLD.DashTab.CrownsAbbr"}}</span>
+            </div>
+            {{#if isGM}}
+              <input type="number" name="treasury.gc" value="{{gang.treasury.gc}}" min="0" class="coin-input gc-input" />
+            {{else}}
+              <div class="coin-val-display gc-val">{{gang.treasury.gc}}</div>
+            {{/if}}
+          </div>
+
+          <div class="chest-compartment ss-compartment">
+            <div class="coin-icon-circle ss-icon"><i class="fas fa-circle"></i></div>
+            <div class="coin-meta">
+              <span class="coin-title">{{localize "UNDERWORLD.DashTab.Shillings"}}</span>
+              <span class="coin-abbr">{{localize "UNDERWORLD.DashTab.ShillingsAbbr"}}</span>
+            </div>
+            {{#if isGM}}
+              <input type="number" name="treasury.ss" value="{{gang.treasury.ss}}" min="0" class="coin-input ss-input" />
+            {{else}}
+              <div class="coin-val-display ss-val">{{gang.treasury.ss}}</div>
+            {{/if}}
+          </div>
+
+          <div class="chest-compartment d-compartment">
+            <div class="coin-icon-circle d-icon"><i class="fas fa-dot-circle"></i></div>
+            <div class="coin-meta">
+              <span class="coin-title">{{localize "UNDERWORLD.DashTab.Pennies"}}</span>
+              <span class="coin-abbr">{{localize "UNDERWORLD.DashTab.PenniesAbbr"}}</span>
+            </div>
+            {{#if isGM}}
+              <input type="number" name="treasury.d" value="{{gang.treasury.d}}" min="0" class="coin-input d-input" />
+            {{else}}
+              <div class="coin-val-display d-val">{{gang.treasury.d}}</div>
+            {{/if}}
+          </div>
+        </div>
+
+        <!-- Sakwa Postaci Gracza -->
+        <div class="player-purse-strip">
+          <div class="purse-label">
+            <i class="fas fa-wallet text-green"></i>
+            <span>{{localize "UNDERWORLD.TreasuryDialog.YourPurse"}}:</span>
+          </div>
+          <strong class="purse-amount">{{actorMoneyFormatted}}</strong>
+        </div>
+
+        <!-- Przycisk Wpłaty i Pobrania -->
+        <div class="treasury-buttons-grid">
+          <button type="button" class="btn-treasury-action btn-deposit" data-action="deposit-treasury" title="{{localize 'UNDERWORLD.DashTab.DepositHint'}}">
+            <i class="fas fa-arrow-down"></i> {{localize "UNDERWORLD.DashTab.Deposit"}}
+          </button>
+          <button type="button" class="btn-treasury-action btn-withdraw" data-action="withdraw-treasury" title="{{localize 'UNDERWORLD.DashTab.WithdrawHint'}}">
+            <i class="fas fa-arrow-up"></i> {{localize "UNDERWORLD.DashTab.Withdraw"}}
+          </button>
+        </div>
+      </div>
+
+      <!-- Akcje Obozowe: Nocny Postój i Edytor MG -->
+      <div class="camp-action-buttons flexcol">
+        {{#if dailyQueue}}
+          {{#if isGM}}
+          <button type="button" class="btn-hero-camp-rest" data-action="resolve-queue" title="{{localize 'UNDERWORLD.DashTab.ResolveQueueHint'}}">
+            <i class="fas fa-gavel"></i>
+            <span>{{localize "UNDERWORLD.DashTab.ResolveQueue" count=plannedCount}}</span>
+          </button>
+          {{else if plannedCount}}
+          <div class="queue-pending-note" style="text-align: center; font-size: 0.82rem; color: #6d5440; margin-bottom: 4px;">
+            <i class="fas fa-hourglass-half"></i> {{localize "UNDERWORLD.DashTab.Pending"}}: <strong>{{plannedCount}}</strong>
+          </div>
+          {{/if}}
+        {{/if}}
+        {{#if isWeekly}}
+        <button type="button" class="btn-hero-camp-rest" data-action="camp-rest" title="{{localize 'UNDERWORLD.DashTab.ResolveWeekHint'}}">
+          <i class="fas fa-calendar-week"></i>
+          <span>{{#if isGM}}{{localize "UNDERWORLD.DashTab.ResolveWeek"}}{{else}}{{localize "UNDERWORLD.DashTab.WeekByGM"}}{{/if}}</span>
+        </button>
+        {{else}}
+        <button type="button" class="btn-hero-camp-rest" data-action="camp-rest" title="{{localize 'UNDERWORLD.DashTab.NightHint'}}">
+          <i class="fas fa-moon"></i>
+          <span>{{localize "UNDERWORLD.DashTab.Night"}}</span>
+        </button>
+        {{/if}}
+
+        {{#if isGM}}
+          <button type="button" class="btn-gm-world-editor" data-action="open-world-editor" title="{{localize 'UNDERWORLD.DashTab.TablesHint'}}">
+            <i class="fas fa-table-list text-gold"></i>
+            <span>{{localize "UNDERWORLD.DashTab.Tables"}}</span>
+          </button>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+
+  <!-- DZIENNIK I KRONIKA OSTATNICH ZDARZEŃ -->
+  <div class="history-log-panel">
+    <div class="history-log-header">
+      <i class="fas fa-history text-gold"></i>
+      <h4>{{localize "UNDERWORLD.DashTab.Chronicle"}}</h4>
+    </div>
+    <ul class="history-list">
+      {{#each gang.history}}
+        <li class="history-item">
+          <span class="history-date"><i class="fas fa-calendar-alt"></i> {{this.date}}</span>
+          <span class="history-summary">{{this.logSummary}}</span>
+        </li>
+      {{else}}
+        <li class="history-empty">
+          <i class="fas fa-feather"></i> {{localize "UNDERWORLD.DashTab.ChronicleEmpty"}}
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>

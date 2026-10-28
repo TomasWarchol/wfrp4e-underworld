@@ -1,0 +1,209 @@
+<div class="roster-panel flexcol">
+  <!-- NAGŁÓWEK ŚWITY I PRZYCISKI ZARZĄDZANIA -->
+  <div class="roster-top-bar">
+    <div class="roster-top-info">
+      <h3 class="roster-panel-title"><i class="fas fa-users text-gold"></i> {{localize "UNDERWORLD.RosterTab.Title"}}</h3>
+      <span class="roster-summary-counts">
+        {{localize "UNDERWORLD.RosterTab.Total"}}: <strong>{{gang.roster.length}}</strong> · {{localize "UNDERWORLD.RosterTab.ReadyForJobs"}}: <strong class="text-green">{{availableOutlaws.length}}</strong> · {{localize "UNDERWORLD.TasksTab.InRetinue"}}: <strong>{{retinueCount}}</strong>
+      </span>
+    </div>
+
+    <div class="roster-top-actions">
+      <button type="button" class="btn-theme-action btn-toggle-all-roster" data-action="toggle-all-roster" title="{{localize 'UNDERWORLD.RosterTab.ToggleAllHint'}}">
+        <i class="fas fa-compress-arrows-alt"></i> {{localize "UNDERWORLD.RosterTab.ToggleAll"}}
+      </button>
+
+      {{#if isGM}}
+        <button type="button" class="btn-theme-action btn-recruit-chat" data-action="open-recruitment" title="{{localize 'UNDERWORLD.RosterTab.RecruitHint'}}">
+          <i class="fas fa-user-plus"></i> {{localize "UNDERWORLD.RosterTab.Recruit"}}
+        </button>
+        <button type="button" class="btn-theme-action btn-add-npc" data-action="add-npc" title="{{localize 'UNDERWORLD.RosterTab.AddHint'}}">
+          <i class="fas fa-plus"></i> {{localize "UNDERWORLD.RosterTab.Add"}}
+        </button>
+      {{/if}}
+    </div>
+  </div>
+
+  <div class="roster-drop-zone-hint">
+    <i class="fas fa-link text-gold"></i>
+    <span>{{localize "UNDERWORLD.RosterTab.DropHint"}}</span>
+  </div>
+
+  <!-- LISTA KART POPLECZNIKÓW -->
+  <div class="npc-cards-grid">
+    {{#each gang.roster}}
+    <div class="npc-card-box {{#if (bajeryEq this.status 'dead')}}npc-dead{{else if (bajeryEq this.status 'wounded')}}npc-wounded{{else if (bajeryEq this.status 'arrested')}}npc-wounded{{/if}} {{#if this.isCollapsed}}collapsed{{/if}}" data-npc-id="{{this.id}}">
+      <!-- LEWA: PORTRET / MEDALION -->
+      <div class="npc-portrait-column">
+        <div class="avatar-medallion {{#if this.actorId}}is-linked{{/if}}" 
+             data-action="{{#if this.actorId}}open-actor{{else}}select-actor{{/if}}" 
+             data-actor-id="{{this.actorId}}" 
+             title="{{#if this.actorId}}{{localize 'UNDERWORLD.RosterTab.OpenActor' name=this.actorName}}{{else}}{{localize 'UNDERWORLD.RosterTab.ClickToLink'}}{{/if}}">
+          <img src="{{this.img}}" alt="{{this.name}}" class="avatar-img" />
+          {{#if this.actorId}}
+            <span class="medallion-link-icon" title="{{localize 'UNDERWORLD.RosterTab.Linked'}}"><i class="fas fa-link"></i></span>
+          {{/if}}
+        </div>
+
+      </div>
+
+      <!-- PRAWA: DANE, ROLA, CECHY I PASEK AKCJI -->
+      <div class="npc-info-column flexcol">
+        <!-- GÓRNY PASEK KARTY: IMIĘ I PRZYBORNIK AKCJI -->
+        <div class="npc-card-header-row">
+          <div class="npc-name-wrapper">
+            <button type="button" class="npc-collapse-toggle-btn" data-action="toggle-npc-collapse" data-npc-id="{{this.id}}" title="{{localize 'UNDERWORLD.RosterTab.ToggleOne'}}">
+              <i class="fas fa-chevron-down toggle-icon"></i>
+            </button>
+            <input class="npc-name-input" type="text" name="roster.{{@index}}.name" value="{{this.name}}" placeholder="{{localize 'UNDERWORLD.RosterTab.NamePlaceholder'}}" title="{{localize 'UNDERWORLD.RosterTab.NameTitle'}}"/>
+            <!-- Ranga, rola i bieżący stan – zawsze w nagłówku karty -->
+            <div class="npc-header-badges">
+              {{{underworldRankChip this.rank}}}
+              <span class="npc-role-chip">{{{underworldRoleBadge this.role}}}</span>
+              {{{underworldAssignmentBadge this.assignment this.status}}}
+            </div>
+          </div>
+
+          <!-- PRZYBORNIK AKCJI -->
+          <div class="npc-toolbar-actions">
+            {{#if ../isGM}}
+            <select class="npc-status-select" name="roster.{{@index}}.status" title="{{localize 'UNDERWORLD.RosterTab.StatusTitle'}}">
+              {{#bajerySelect this.status}}
+              <option value="ready">{{localize "UNDERWORLD.Status.Ready"}}</option>
+              <option value="busy">{{localize "UNDERWORLD.Status.Busy"}}</option>
+              <option value="resting">{{localize "UNDERWORLD.Status.Resting"}}</option>
+              <option value="wounded">{{localize "UNDERWORLD.Status.Wounded"}}</option>
+              <option value="arrested">{{localize "UNDERWORLD.Status.Arrested"}}</option>
+              <option value="dead">{{localize "UNDERWORLD.Status.Dead"}}</option>
+              {{/bajerySelect}}
+            </select>
+            {{/if}}
+
+            <div class="npc-collapsible-tools">
+              {{#if this.actorId}}
+                <button type="button" class="tool-btn btn-view-sheet" data-action="open-actor" data-actor-id="{{this.actorId}}" title="{{localize 'UNDERWORLD.RosterTab.OpenSheet'}}">
+                  <i class="fas fa-address-card"></i>
+                </button>
+                <button type="button" class="tool-btn btn-unlink-actor" data-action="unlink-actor" title="{{localize 'UNDERWORLD.RosterTab.Unlink'}}">
+                  <i class="fas fa-unlink"></i>
+                </button>
+              {{else}}
+                <button type="button" class="tool-btn btn-link-actor" data-action="select-actor" title="{{localize 'UNDERWORLD.RosterTab.LinkActor'}}">
+                  <i class="fas fa-link"></i>
+                </button>
+              {{/if}}
+
+              <button type="button" class="tool-btn btn-upgrade" data-action="upgrade-npc" data-npc-id="{{this.id}}" title="{{localize 'UNDERWORLD.RosterTab.UpgradeHint'}}">
+                <i class="fas fa-hammer text-gold"></i> {{localize "UNDERWORLD.RosterTab.Upgrade"}}
+              </button>
+
+              {{#if (bajeryEq this.assignment "retinue")}}
+                <button type="button" class="tool-btn btn-retinue-on" data-action="toggle-retinue" data-npc-id="{{this.id}}" title="{{localize 'UNDERWORLD.RosterTab.LeaveRetinue'}}">
+                  <i class="fas fa-user-shield"></i> {{localize "UNDERWORLD.TasksTab.InRetinue"}}
+                </button>
+              {{else}}
+                <button type="button" class="tool-btn btn-retinue-off" data-action="toggle-retinue" data-npc-id="{{this.id}}" title="{{localize 'UNDERWORLD.RosterTab.JoinRetinueHint'}}">
+                  <i class="fas fa-shield-alt"></i> {{localize "UNDERWORLD.RosterTab.JoinRetinue"}}
+                </button>
+              {{/if}}
+
+              {{#if ../isGM}}
+                {{#if (bajeryEq this.status "busy")}}
+                  <button type="button" class="tool-btn btn-free" data-action="free-npc" data-npc-id="{{this.id}}" title="{{localize 'UNDERWORLD.RosterTab.Free'}}">
+                    <i class="fas fa-undo"></i>
+                  </button>
+                {{else if (bajeryEq this.assignment "guard")}}
+                  <button type="button" class="tool-btn btn-free" data-action="free-npc" data-npc-id="{{this.id}}" title="{{localize 'UNDERWORLD.RosterTab.OffWatch'}}">
+                    <i class="fas fa-undo"></i>
+                  </button>
+                {{/if}}
+                <a class="npc-delete-btn" data-action="delete-npc" title="{{localize 'UNDERWORLD.RosterTab.Delete'}}"><i class="fas fa-trash"></i></a>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+
+        <!-- SEKCJA ROZWIJALNA (Ranga, DO, Rola, Cechy) -->
+        <div class="npc-expandable-body">
+          <!-- PASEK RANGI, DO I EKWIPUNKU -->
+          <div class="npc-submeta-row">
+            <div class="submeta-badges-group">
+              {{{underworldRankBadge this.rank this.operationalXP}}}
+              {{{underworldGearIcons this.gear}}}
+            </div>
+
+            {{#if this.customBonus}}
+              <span class="bonus-tag" title="{{localize 'UNDERWORLD.RosterTab.BonusHint'}}">
+                <i class="fas fa-graduation-cap"></i> +{{this.customBonus}}
+              </span>
+            {{/if}}
+          </div>
+
+          <!-- ROLA I CECHY BANITY -->
+          <div class="npc-traits-grid">
+            <!-- Rola w szajce -->
+            <div class="trait-line">
+              <span class="trait-line-label"><i class="fas fa-id-badge text-gold"></i> {{localize "UNDERWORLD.Upgrade.Role"}}:</span>
+              <div class="trait-line-content">
+                {{#if ../isGM}}
+                  <select class="npc-role-select" name="roster.{{@index}}.role" title="{{localize 'UNDERWORLD.RosterTab.RoleTitle'}}">
+                    {{{underworldRoleSelectOptions this.role}}}
+                  </select>
+                {{else}}
+                  {{{underworldRoleBadge this.role}}}
+                  <input type="hidden" name="roster.{{@index}}.role" value="{{this.role}}"/>
+                {{/if}}
+              </div>
+            </div>
+
+            <!-- Zalety -->
+            <div class="trait-line">
+              <span class="trait-line-label text-green"><i class="fas fa-plus-circle"></i> {{localize "UNDERWORLD.Mod.Strengths"}}:</span>
+              <div class="trait-line-content badges-wrap">
+                {{{underworldStrengthBadges this.strengths this.strength}}}
+                <input type="hidden" name="roster.{{@index}}.strength" value="{{this.strength}}"/>
+              </div>
+            </div>
+
+            <!-- Wady -->
+            <div class="trait-line">
+              <span class="trait-line-label text-danger"><i class="fas fa-minus-circle"></i> {{localize "UNDERWORLD.Mod.Flaws"}}:</span>
+              <div class="trait-line-content badges-wrap">
+                {{{underworldFlawBadges this.flaws this.flaw}}}
+                <input type="hidden" name="roster.{{@index}}.flaw" value="{{this.flaw}}"/>
+              </div>
+            </div>
+
+            <!-- Fabularne Atuty za DO -->
+            {{#if this.narrativePerks}}
+              {{#if this.narrativePerks.length}}
+                <div class="trait-line">
+                  <span class="trait-line-label text-purple"><i class="fas fa-feather-alt"></i> {{localize "UNDERWORLD.RosterTab.Perks"}}:</span>
+                  <div class="trait-line-content badges-wrap">
+                    {{{underworldPerkBadges this.narrativePerks}}}
+                  </div>
+                </div>
+              {{/if}}
+            {{/if}}
+          </div>
+        </div>
+
+        <!-- Pola ukryte dla spójności zapisu -->
+        <input type="hidden" name="roster.{{@index}}.id" value="{{this.id}}"/>
+        <input type="hidden" name="roster.{{@index}}.actorId" value="{{this.actorId}}"/>
+        <input type="hidden" name="roster.{{@index}}.img" value="{{this.img}}"/>
+        <input type="hidden" name="roster.{{@index}}.assignment" value="{{this.assignment}}"/>
+        <input type="hidden" name="roster.{{@index}}.rank" value="{{this.rank}}"/>
+        <input type="hidden" name="roster.{{@index}}.operationalXP" value="{{this.operationalXP}}"/>
+        <input type="hidden" name="roster.{{@index}}.customBonus" value="{{this.customBonus}}"/>
+      </div>
+    </div>
+    {{else}}
+      <div class="empty-roster-banner">
+        <i class="fas fa-users-slash text-gold" style="font-size: 2rem; margin-bottom: 8px;"></i>
+        <h4>{{localize "UNDERWORLD.RosterTab.EmptyTitle"}}</h4>
+        <p>{{localize "UNDERWORLD.RosterTab.EmptyText"}}</p>
+      </div>
+    {{/each}}
+  </div>
+</div>

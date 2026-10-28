@@ -1,0 +1,85 @@
+{
+  "id": "wfrp4e-underworld",
+  "title": "WFRP4e – Underworld Crew",
+  "description": "Run a mobile outlaw crew in Warhammer Fantasy Roleplay 4e: send followers on jobs across city, village, forest and mountains, fence hot loot, manage Heat and Morale, make camp each night (or resolve a whole Crew Week) and give tactical orders in combat. English and Polish.",
+  "version": "1.8.0",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "14",
+    "maximum": "14"
+  },
+  "authors": [
+    {
+      "name": "Tomek (TomasWarchol)",
+      "url": "https://github.com/TomasWarchol",
+      "discord": "tomek"
+    }
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "wfrp4e",
+        "type": "system",
+        "compatibility": {
+          "minimum": "9.0.0"
+        }
+      }
+    ],
+    "requires": [
+      {
+        "id": "wfrp4e-companion-lib",
+        "type": "module",
+        "manifest": "https://github.com/TomasWarchol/wfrp4e-companion-lib/releases/latest/download/module.json",
+        "compatibility": {
+          "minimum": "1.0.0"
+        }
+      }
+    ]
+  },
+  "esmodules": [
+    "wfrp4e-underworld.mjs"
+  ],
+  "styles": [
+    "styles/underworld.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "pl",
+      "name": "Polski",
+      "path": "lang/pl.json"
+    }
+  ],
+  "packs": [
+    {
+      "name": "underworld-tables",
+      "label": "UNDERWORLD.Packs.Tables",
+      "path": "packs/underworld-tables",
+      "type": "RollTable",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ],
+  "flags": {
+    "hotReload": {
+      "extensions": [
+        "css",
+        "hbs",
+        "json"
+      ]
+    }
+  },
+  "url": "https://github.com/TomasWarchol/wfrp4e-underworld",
+  "manifest": "https://github.com/TomasWarchol/wfrp4e-underworld/releases/latest/download/module.json",
+  "download": "https://github.com/TomasWarchol/wfrp4e-underworld/releases/latest/download/module.zip",
+  "bugs": "https://github.com/TomasWarchol/wfrp4e-underworld/issues",
+  "readme": "https://github.com/TomasWarchol/wfrp4e-underworld/blob/main/README.md",
+  "changelog": "https://github.com/TomasWarchol/wfrp4e-underworld/blob/main/CHANGELOG.md",
+  "license": "https://github.com/TomasWarchol/wfrp4e-underworld/blob/main/LICENSE"
+}

@@ -1,0 +1,15 @@
+# Foundry compendium databases: keep the data, skip runtime lock and log files
+packs/**/LOCK
+packs/**/LOG
+packs/**/LOG.old
+
+# Build output
+module.zip
+*.zip
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+node_modules/
