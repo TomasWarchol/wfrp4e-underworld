@@ -1,0 +1,2108 @@
+{
+  "UNDERWORLD": {
+    "Terrains": {
+      "city": {
+        "Name": "Miasto",
+        "Fence": "Paser z doków",
+        "Comfortable": "Prywatne kwatery w gospodzie",
+        "Makeshift": "Zaułek / slumsy",
+        "Raid": "Obława straży miejskiej!"
+      },
+      "village": {
+        "Name": "Wieś",
+        "Fence": "Kramarz na jarmarku",
+        "Comfortable": "Izba u chłopa",
+        "Makeshift": "Stodoła / stóg siana",
+        "Raid": "Chłopi donieśli – sołtys prowadzi straż!"
+      },
+      "forest": {
+        "Name": "Las",
+        "Fence": "Leśni handlarze",
+        "Comfortable": "Ziemianka banitów",
+        "Makeshift": "Biwak pod gołym niebem",
+        "Raid": "Łowcy nagród na tropie!"
+      },
+      "mountains": {
+        "Name": "Góry",
+        "Fence": "Krasnoludzcy przemytnicy",
+        "Comfortable": "Schronisko na przełęczy",
+        "Makeshift": "Nawis skalny",
+        "Raid": "Patrol strażników przełęczy!"
+      }
+    },
+    "Tiers": {
+      "easy": {
+        "Name": "Łatwy cel",
+        "Desc": "+20 do testu, połowa łupu"
+      },
+      "normal": {
+        "Name": "Zwykły cel",
+        "Desc": "bez zmian"
+      },
+      "rich": {
+        "Name": "Bogaty cel",
+        "Desc": "−20 do testu, podwójny łup, każda porażka grozi wpadką"
+      }
+    },
+    "Tokens": {
+      "recon": {
+        "Name": "Rozpoznanie",
+        "Desc": "+20 do następnej kradzieży lub napadu"
+      },
+      "commotion": {
+        "Name": "Zamieszanie",
+        "Desc": "+20 do następnego zlecenia z testem (dziś); drużyna też może skorzystać"
+      },
+      "lead": {
+        "Name": "Trop",
+        "Desc": "Bogaty cel bez kary −20"
+      },
+      "Gained": "Żeton <strong>{name}</strong>: {desc}.",
+      "UntilWeekEnd": "do końca tygodnia",
+      "ExpiresTonight": "wygasa tej nocy"
+    },
+    "LootCategories": {
+      "valuables": "Kosztowności",
+      "goods": "Towary",
+      "weapons": "Broń",
+      "documents": "Dokumenty",
+      "contraband": "Kontrabanda",
+      "metal": "Kruszec"
+    },
+    "LootNames": {
+      "valuables": [
+        "Srebrny lichtarz z kaplicy",
+        "Sygnet z herbem rodu",
+        "Sakiewka z pierścieniami",
+        "Złoty medalion z portretem",
+        "Szkatułka z perłami",
+        "Srebrna tabakiera",
+        "Kielich z cynowym zdobieniem",
+        "Bransoleta z bursztynem"
+      ],
+      "goods": [
+        "Bela altdorfskiego sukna",
+        "Skrzynka przypraw z Araby",
+        "Beczułka wina z Averlandu",
+        "Worek soli",
+        "Kosz woskowych świec",
+        "Zwój skór",
+        "Skrzynia gwoździ",
+        "Baryłka bretońskiej brandy"
+      ],
+      "weapons": [
+        "Pęk mieczy z kuźni",
+        "Kusza z kołowrotem",
+        "Rapier z ozdobnym koszem",
+        "Skrzynka grotów",
+        "Para pistoletów z Nuln",
+        "Topór z runami"
+      ],
+      "documents": [
+        "Weksle kupieckie",
+        "Pieczęć cechowa",
+        "Listy miłosne radnego",
+        "Akt własności kamienicy",
+        "Glejt podróżny z pieczęcią",
+        "Księga rachunkowa gildii"
+      ],
+      "contraband": [
+        "Skrzynka czarnego lotosu",
+        "Zakazane pamflety",
+        "Fiolki trucizny",
+        "Mandragora w słoju",
+        "Kradzione relikwie"
+      ],
+      "metal": [
+        "Sztaby żelaza",
+        "Worek rudy srebra",
+        "Krasnoludzkie sztabki miedzi",
+        "Bryłki złota",
+        "Skrzynia cynowych sztab"
+      ]
+    },
+    "Missions": {
+      "scout": {
+        "Name": "Zwiad Terenu",
+        "Reward": "Rozpoznanie +20, plotka",
+        "Names": {
+          "city": "Zwiad Dzielnicy",
+          "village": "Zwiad Okolicy",
+          "forest": "Zwiad Szlaku",
+          "mountains": "Zwiad Przełęczy"
+        },
+        "Desc": "Rozpoznanie terenu przed skokiem: patrole, kryjówki, słabe punkty. Sukces daje żeton Rozpoznania."
+      },
+      "shadow": {
+        "Name": "Śledzenie Celu",
+        "Reward": "raport, Rozpoznanie +20",
+        "Desc": "Dyskretna obserwacja konkretnej osoby. Sukces daje żeton Rozpoznania.",
+        "InputLabel": "Kogo śledzić? (imię, rola, opis)",
+        "InputPlaceholder": "np. Kupiec z Marienburga"
+      },
+      "tavern": {
+        "Name": "Nasłuch w Szynku",
+        "Reward": "plotka; SL 3+: Trop",
+        "Names": {
+          "village": "Wypytanie Chłopów"
+        },
+        "Desc": "Kilka kolejek i nadstawione ucho. Wybitny sukces daje Trop do bogatego celu.",
+        "Descs": {
+          "village": "Rozmowy przy studni i w karczmie. Wybitny sukces daje Trop do bogatego celu."
+        }
+      },
+      "outlaw_contact": {
+        "Name": "Kontakt z Banitami",
+        "Reward": "2 kandydatów do szajki",
+        "Desc": "Odszukanie leśnej bandy i wymiana wieści. Sukces przyprowadza chętnych do szajki."
+      },
+      "procure": {
+        "Name": "Szaber i Zbieractwo",
+        "Reward": "1d3 racji + 1d8+1 ss",
+        "Names": {
+          "village": "Szaber po Polach",
+          "forest": "Zbieractwo w Lesie",
+          "mountains": "Szaber w Ruinach"
+        },
+        "Desc": "Przeszukiwanie opuszczonych miejsc i zbieranie tego, co leży. Zapasy i drobne monety."
+      },
+      "pickpocket": {
+        "Name": "Kieszonkarstwo",
+        "Reward": "monety (1d10+5 ss × cel), czasem kosztowność",
+        "Names": {
+          "village": "Kradzież na Jarmarku"
+        },
+        "Desc": "Lekkie palce w tłumie. Gotówka od razu, a czasem coś do upłynnienia."
+      },
+      "burglary": {
+        "Name": "Włamanie",
+        "Reward": "łup do sprzedaży",
+        "Desc": "Nocne wejście do domu, kantoru lub świątyni. Łup trzeba później upłynnić u pasera.",
+        "InputLabel": "Gdzie włamanie? (opcjonalnie)",
+        "InputPlaceholder": "np. kantor kupca, kamienica radnego"
+      },
+      "farm_theft": {
+        "Name": "Kradzież z Obejścia",
+        "Reward": "racje + towar",
+        "Desc": "Kury, worki zboża, narzędzia ze stodoły. Zapasy od razu i towar na jarmark."
+      },
+      "poaching": {
+        "Name": "Kłusownictwo",
+        "Reward": "1d3+1 racji",
+        "Names": {
+          "mountains": "Polowanie na Kozice"
+        },
+        "Desc": "Wnyki i łuk w pańskim lesie. Świeże mięso dla szajki.",
+        "Descs": {
+          "mountains": "Polowanie na skalnych półkach. Świeże mięso dla szajki."
+        }
+      },
+      "highway_robbery": {
+        "Name": "Napad na Trakcie",
+        "Reward": "łup do sprzedaży",
+        "Names": {
+          "mountains": "Napad na Karawanę"
+        },
+        "Desc": "Zatrzymać wóz, rozbroić eskortę, zabrać towar. Ryzyko ran przy porażce."
+      },
+      "mine_raid": {
+        "Name": "Grabież Kopalni",
+        "Reward": "kruszec do sprzedaży",
+        "Desc": "Nocny wypad do sztolni lub składu rudy. Krasnoludzcy przemytnicy dobrze płacą za kruszec."
+      },
+      "fence": {
+        "Name": "Upłynnienie Łupów",
+        "Reward": "gotówka za łupy (stawka pasera)",
+        "Names": {
+          "city": "Paser z Doków",
+          "village": "Handel na Jarmarku",
+          "forest": "Leśni Handlarze",
+          "mountains": "Krasnoludzcy Przemytnicy"
+        },
+        "Desc": "Sprzedaż łupów. Cena zależy od pasera, testu Targowania i tego, czy towar jest jeszcze gorący."
+      },
+      "intimidate": {
+        "Name": "Zastraszanie / Wymuszenie",
+        "Reward": "1d8+4 ss",
+        "Desc": "Jednorazowe wymuszenie od kramarza lub karczmarza."
+      },
+      "racket": {
+        "Name": "Haracz",
+        "Reward": "co noc 1d6 ss (dopóki trwa)",
+        "Desc": "Objęcie ulicy „ochroną”. Codzienny dochód, ale konkurencja może się upomnieć o swoje.",
+        "InputLabel": "Który rewir? (ulica, targ, dzielnica)",
+        "InputPlaceholder": "np. Targ Rybny"
+      },
+      "rumor_spread": {
+        "Name": "Szerzenie Plotek",
+        "Reward": "plotka w obiegu (bez testu)",
+        "Desc": "Puszczenie w obieg wieści, która zmyli wrogów albo napędzi klientów.",
+        "InputLabel": "Jaką plotkę puścić w obieg?",
+        "InputPlaceholder": "np. Straż szuka kogoś na południu"
+      },
+      "bribe": {
+        "Name": "Przekupstwo",
+        "Reward": "uwolnienie z aresztu, Rozgłos −1 lub przysługa",
+        "Names": {
+          "mountains": "Łapówka dla Strażników Przełęczy"
+        },
+        "Desc": "Łapówka dla strażnika, urzędnika lub celnika: uwolnić aresztowanego, uciszyć sprawę albo kupić przysługę."
+      },
+      "theman": {
+        "Name": "Siatka „Człowieka”",
+        "Reward": "gryps do syndykatu (bez testu)",
+        "Desc": "Zaszyfrowany gryps do lokalnej komórki syndykatu."
+      },
+      "distract": {
+        "Name": "Dywersja i Zadyma",
+        "Reward": "Zamieszanie +20 (dziś)",
+        "Names": {
+          "village": "Podpalenie Stodoły",
+          "forest": "Zastawienie Zasadzki",
+          "mountains": "Lawina Kamieni"
+        },
+        "Desc": "Odwrócenie uwagi przed skokiem. Sukces daje żeton Zamieszania na dziś."
+      },
+      "sabotage": {
+        "Name": "Sabotaż",
+        "Reward": "zniszczony cel",
+        "Desc": "Zniszczenie mostu, wozu, magazynu lub machiny.",
+        "InputLabel": "Co sabotować?",
+        "InputPlaceholder": "np. most na trakcie, wóz z zaopatrzeniem"
+      },
+      "smuggle": {
+        "Name": "Przemyt",
+        "Reward": "2d10+5 ss (w górach ×1,5)",
+        "Names": {
+          "mountains": "Przemyt przez Przełęcz"
+        },
+        "Desc": "Przeprowadzenie towaru lub ludzi przez kontrolę. Dobra zapłata, wpadka kończy się aresztem.",
+        "InputLabel": "Co przemycić i dokąd?",
+        "InputPlaceholder": "np. skrzynię broni przez zachodnią bramę"
+      },
+      "forge": {
+        "Name": "Fałszowanie Dokumentów",
+        "Reward": "fałszywy dokument",
+        "Desc": "Glejty, listy żelazne, weksle i pieczęcie.",
+        "InputLabel": "Jaki dokument sfałszować?",
+        "InputPlaceholder": "np. glejt podróżny z pieczęcią Grafa"
+      },
+      "cover_tracks": {
+        "Name": "Maskowanie Śladów",
+        "Reward": "Rozgłos −1, spokojniejsza noc",
+        "Desc": "Zacieranie tropów i zmiana miejsca obozu. Jedyny sposób, by samemu obniżyć Rozgłos."
+      },
+      "tend_wounded": {
+        "Name": "Opieka nad Rannymi",
+        "Reward": "Ranny → Odpoczywa (bez testu)",
+        "Desc": "Zmiana opatrunków i zioła dla rannego towarzysza."
+      }
+    },
+    "MissionCategories": {
+      "intel": {
+        "Name": "Wywiad",
+        "Hint": "Rozpoznanie i informacje"
+      },
+      "resources": {
+        "Name": "Zasoby i Łupy",
+        "Hint": "Pieniądze, zapasy, towar do sprzedania"
+      },
+      "influence": {
+        "Name": "Wpływy",
+        "Hint": "Zastraszanie, łapówki, kontakty"
+      },
+      "operations": {
+        "Name": "Operacje",
+        "Hint": "Akcja bezpośrednia"
+      },
+      "camp": {
+        "Name": "Obóz",
+        "Hint": "Zarządzanie bazą"
+      }
+    },
+    "TerrainRumors": {
+      "village": {
+        "v-r1": {
+          "Text": "Pastuch z Altenhof przysięga, że widział w lesie postać z rogami, która niosła owcę na ramieniu jak dziecko.",
+          "Category": "zwierzoludzie"
+        },
+        "v-r2": {
+          "Text": "Poborca hrabiego przyjedzie w przyszłym tygodniu – i tym razem ma ze sobą sześciu zbrojnych.",
+          "Category": "podatki"
+        },
+        "v-r3": {
+          "Text": "Córka młynarza leczy dotykiem. Kapłan Sigmara już o nią pytał w karczmie.",
+          "Category": "czarownice"
+        },
+        "v-r4": {
+          "Text": "W ruinach starej wieży za bagnem dziadkowie chowali kosztowności przed wojną. Nikt nie wrócił, kto szukał.",
+          "Category": "skarby"
+        },
+        "v-r5": {
+          "Text": "Kupiec bławatny ze Streissen jedzie na jarmark z pełnym wozem – i tylko dwoma pachołkami.",
+          "Category": "handel"
+        },
+        "v-r6": {
+          "Text": "Sołtys bierze od przemytników działkę za przymykanie oka na ścieżkę przez moczary.",
+          "Category": "władza"
+        },
+        "v-r7": {
+          "Text": "Na sąsiednim folwarku padło bydło. Mówią, że to klątwa, ale woda w studni śmierdzi siarką.",
+          "Category": "zaraza"
+        },
+        "v-r8": {
+          "Text": "Łowca czarownic zatrzymał się w gospodzie. Pyta o obcych, którzy przybyli w tym miesiącu.",
+          "Category": "straż"
+        }
+      },
+      "forest": {
+        "f-r1": {
+          "Text": "Banda Rudego Ottona rozbiła obóz przy starym dębie. Płacą za wieści o konwojach.",
+          "Category": "banici"
+        },
+        "f-r2": {
+          "Text": "Kamienie znaczone krwią pojawiły się przy trakcie. Gajowy mówi, by nie chodzić tamtędy po zmroku.",
+          "Category": "zwierzoludzie"
+        },
+        "f-r3": {
+          "Text": "Konwój z solą wyjeżdża z Kemperbadu za trzy dni. Eskorta to najemnicy, którym zalegają z żołdem.",
+          "Category": "trakt"
+        },
+        "f-r4": {
+          "Text": "Hrabia wyznaczył nagrodę za kłusowników. Dwóch wisi już przy rozstaju.",
+          "Category": "łowcy"
+        },
+        "f-r5": {
+          "Text": "W wąwozie leży rozbity wóz poczty. Nikt nie zabrał skrzyni, bo wszyscy boją się tego, co ją rozbiło.",
+          "Category": "skarby"
+        },
+        "f-r6": {
+          "Text": "Nocą w lesie widać światła i słychać bębny. Drwale omijają polanę przy źródle.",
+          "Category": "kult"
+        },
+        "f-r7": {
+          "Text": "Zielarka z chaty na skraju lasu kupi każdą mandragorę i nie zadaje pytań.",
+          "Category": "zioła"
+        },
+        "f-r8": {
+          "Text": "Patrol drogowców szuka zbiegłego więźnia. Za wskazanie kryjówki płacą srebrem.",
+          "Category": "straż"
+        }
+      },
+      "mountains": {
+        "m-r1": {
+          "Text": "Krasnoludzki klan z Karak Hirn szuka ludzi do przeniesienia ładunku przez przełęcz – bez zadawania pytań.",
+          "Category": "krasnoludy"
+        },
+        "m-r2": {
+          "Text": "Na wschodnim zboczu widziano dymy ognisk. Pasterze mówią o zielonoskórych.",
+          "Category": "orkowie"
+        },
+        "m-r3": {
+          "Text": "Opuszczona sztolnia nad wioską wciąż ma żyłę srebra. Właściciel zmarł, a spadkobiercy siedzą w Nuln.",
+          "Category": "kopalnie"
+        },
+        "m-r4": {
+          "Text": "Za dwa dni przyjdzie śnieżyca. Kto nie zejdzie z przełęczy, ten zostanie na niej do wiosny.",
+          "Category": "pogoda"
+        },
+        "m-r5": {
+          "Text": "Strażnicy przełęczy biorą myto od każdego wozu – i drugie, nieoficjalne, od tych, którzy nie chcą być przeszukani.",
+          "Category": "straż"
+        },
+        "m-r6": {
+          "Text": "Pod lawiną z zeszłego roku leży karawana z Tilei. Wiosną spod śniegu wystają koła.",
+          "Category": "skarby"
+        },
+        "m-r7": {
+          "Text": "W jaskini nad wodospadem mieszka coś dużego. Kozy znikają, a ślady są większe od ludzkiej dłoni.",
+          "Category": "potwory"
+        },
+        "m-r8": {
+          "Text": "W karczmie na przełęczy można sprzedać wszystko – pod warunkiem, że krasnolud za ladą dostanie swoją dolę.",
+          "Category": "handel"
+        }
+      }
+    },
+    "TerrainEvents": {
+      "village": {
+        "v-e1": {
+          "Title": "Psy sołtysa",
+          "Text": "Psy z zagrody szczekały całą noc. Nikt się nie wyspał."
+        },
+        "v-e2": {
+          "Title": "Gościnna wdowa",
+          "Text": "Wdowa z chaty na skraju przyniosła garnek kaszy w zamian za porąbane drewno."
+        },
+        "v-e3": {
+          "Title": "Dożynki",
+          "Text": "We wsi świętują. Szajka pije za darmo i słucha, kto ma najpełniejszą stodołę."
+        },
+        "v-e4": {
+          "Title": "Kradzież u złodziei",
+          "Text": "Rano brakuje worka z zapasami. Ślady małych bosych stóp prowadzą do wsi."
+        },
+        "v-e5": {
+          "Title": "Pobór",
+          "Text": "Ludzie hrabiego szukają chłopów do wojska. Szajka chowa się w lesie do świtu."
+        },
+        "v-e6": {
+          "Title": "Zgubiona sakiewka",
+          "Text": "Pijany kupiec zgubił sakiewkę na drodze do karczmy."
+        },
+        "v-e7": {
+          "Title": "Chłopska bójka",
+          "Text": "Parobcy chcieli przegonić obcych. Skończyło się na kilku siniakach i szacunku."
+        },
+        "v-e8": {
+          "Title": "Mgła z bagien",
+          "Text": "Gęsta mgła i dziwne światła nad bagnem. Wartownicy przysięgają, że coś ich obserwowało."
+        }
+      },
+      "forest": {
+        "f-e1": {
+          "Title": "Wilki",
+          "Text": "Wataha krążyła wokół obozu do świtu. Ogień trzeba było podsycać całą noc."
+        },
+        "f-e2": {
+          "Title": "Dzik we wnykach",
+          "Text": "Rano w sidłach szamocze się młody dzik. Mięsa wystarczy na kilka dni."
+        },
+        "f-e3": {
+          "Title": "Pieśni przy ognisku",
+          "Text": "Ktoś wyciągnął fujarkę. Ballada o Robercie z Wissenlandu podniosła wszystkich na duchu."
+        },
+        "f-e4": {
+          "Title": "Znaki zwierzoludzi",
+          "Text": "Na drzewach wokół obozu ktoś wyrył krwią znaki. Nikt nie słyszał intruzów."
+        },
+        "f-e5": {
+          "Title": "Zabity posłaniec",
+          "Text": "W rowie przy trakcie leży martwy posłaniec. W torbie zostało kilka monet."
+        },
+        "f-e6": {
+          "Title": "Ulewa",
+          "Text": "Ulewa zalała obóz. Mokre koce, mokry prowiant i ponure miny."
+        },
+        "f-e7": {
+          "Title": "Leśni bracia",
+          "Text": "Banici z sąsiedniej bandy przyszli na wymianę: mięso za wieści z miasta."
+        },
+        "f-e8": {
+          "Title": "Grzyby",
+          "Text": "Zbieracz z szajki znalazł polanę pełną grzybów. Na szczęście kucharz rozpoznał trujące."
+        }
+      },
+      "mountains": {
+        "m-e1": {
+          "Title": "Mróz",
+          "Text": "Noc była tak zimna, że woda zamarzła w bukłakach."
+        },
+        "m-e2": {
+          "Title": "Lawina",
+          "Text": "Huk lawiny obudził obóz. Ścieżka w dół jest zasypana – trzeba kopać."
+        },
+        "m-e3": {
+          "Title": "Krasnoludzki handlarz",
+          "Text": "Krasnolud z mułem zatrzymał się przy ogniu i sprzedał suchary po uczciwej cenie."
+        },
+        "m-e4": {
+          "Title": "Orli krzyk",
+          "Text": "Orzeł porwał z obozu worek z suszonym mięsem."
+        },
+        "m-e5": {
+          "Title": "Widok z przełęczy",
+          "Text": "O świcie mgła opadła i widać całe Imperium. Nawet najgorsi zbóje zamilkli na chwilę."
+        },
+        "m-e6": {
+          "Title": "Ślady orków",
+          "Text": "W śniegu odciśnięte ciężkie buty i krew. Ktoś walczył tu niedawno."
+        },
+        "m-e7": {
+          "Title": "Grota",
+          "Text": "Zwiadowca znalazł suchą grotę z zapasem drewna po pasterzach."
+        },
+        "m-e8": {
+          "Title": "Zgubione sztabki",
+          "Text": "W szczelinie przy ścieżce błyszczy srebrna sztabka – ktoś ją zgubił przy przeprawie."
+        }
+      }
+    },
+    "Content": {
+      "Rumors": [
+        "W Middenheimie mówi się, że w głębokich kopalniach pod Fauschlagiem robotnicy słyszeli nocami piski i drapanie pazurów w skale.",
+        "Graf Boris Todbringer coraz rzadziej pojawia się publicznie. W kuluarach pałacu szepcze się o postępującej apatii i czarnej melancholii władcy.",
+        "Z Altdorfu nadeszły wieści o nowych podatkach wojennych narzuconych przez kanclerza. Szlachta z Middenlandu głośno mówi o zdradzie.",
+        "Kultyści Purpurowej Dłoni i Żółtej Korony nawiązują kontakty z bandami dezerterów i banitów w lasach wokół Carroburga.",
+        "Na rzece Reik wstrzymano ruch barek handlowych; poborcy myta w Kemperbadzie żądają potrójnej opłaty wojenną monetą pod groźbą konfiskaty.",
+        "W zaułkach kupieckich widziano podejrzanych jegomościów w płaszczach, skupujących stare plany krasnoludzkich tuneli i kanałów.",
+        "Oddział Straży Dróg pod Altdorfem zdezerterował z pełnym rynsztunkiem i bronią palną po tym, jak dowódca zniknął z ich żołdem.",
+        "W szynku 'Pod Skaczącym Psem' ktoś oferuje wysokie nagrody w złocie za informacje o tajemniczych zgonach wśród medyków i uczonych.",
+        "Magowie z Kolegium Niebios w stolicy ostrzegają przed nietypowym układem konstelacji – zapowiadają krwawy konflikt bratobójczy w Reiklandzie.",
+        "Przemytnicy z rzeki Delb donoszą, że krasnoludzkie twierdze w Górach Środkowych zamykają bramy przed uchodźcami z nizin.",
+        "Na trakcie z Middenheim do Altdorfu widziano kolumny żołnierzy Middenlandu z pełnym oblężniczym taborem – idą na południe.",
+        "Łowcy nagród szukają człowieka z bliznami na twarzy, który podobno kradnie relikwie Sigmara z przydrożnych kapliczek.",
+        "Kupcy z Marienburga opowiadają o nowym podatku wojennym – kto nie zapłaci, temu konfiskują statek i ładunek.",
+        "Plotki mówią o dziwnych światłach nad Drakwaldem. Leśnicy twierdzą, że to wiedźmi ogień, ale uczeni mówią o Warpowej burzy.",
+        "Ktoś widział heroldów w barwach Imperatora, którzy jeżdżą po wsiach i rekrutują chłopów obietnicą 5 szylingów dziennie i gorącego posiłku."
+      ],
+      "TavernGossip": [
+        "Karczmarz szepcze, że miejscowy złotnik to w rzeczywistości paser obsługujący złodziejski cech. Ma skrytkę pod podłogą warsztatu.",
+        "Pijany żołnierz opowiada o tajnym przejściu pod murami miejskimi, które używali przemytnicy jeszcze za czasów wielkiej zarazy.",
+        "Kupiec z Nuln narzeka, że na rzece grasuje banda rzecznych piratów z zielonymi chustami – atakują tylko barki z bronią palną.",
+        "Stara praczka mówi, że córka burmistrza spotyka się potajemnie z elfim kupcem z Marienburga. Skandal gotowy do wybuchu.",
+        "Dwóch strażników dyskutuje o brakach w zmianie wartowniczej – od tygodnia nie ma kto pilnować zachodniej bramy po północy.",
+        "Bard śpiewa pieśń o Karlu Franzu – ale zmienia słowa na drwiące. Połowa sali się śmieje, połowa zaciska pięści.",
+        "Kelnerka mówi, że wczoraj widziała, jak ktoś w szacie z kapturem wrzucał coś do miejskiej studni na placu rynkowym.",
+        "Handlarz końmi oferuje dyskretnie 'specjalne usługi' – za odpowiednią cenę przemyci ludzi w fałszywym dnie wozu.",
+        "Kapłan Sigmara siedzi sam w kącie i pije. Kiedy ktoś go zagaduje, mamrocze o 'zdradzie w świątyni' i 'fałszywych prorokach'.",
+        "Karciarz w rogu sali przegrywa celowo – to trik. Obserwuje, kto ma pełny sakiewek i podaje sygnał kieszonkarzowi pod drzwiami.",
+        "Z kuchni karczmy dochodzą kłótnie – kucharz oskarża dostawcę o trujące mięso. 'To nie wołowina, ty draniu, to szczurze łapy!'",
+        "Podróżny z Sylvania opowiada o nocnych marszach umarłych na wschodzie. Nikt mu nie wierzy, ale sam drży ze strachu."
+      ],
+      "ShadowResults": [
+        "Cel odwiedził dyskretnie magazyn na tyłach portu, gdzie spotkał się z nieznanym mężczyzną w skórzanej kurtce. Wymienili się zawiniątkami.",
+        "Cel kupił na targu dużą ilość suszonych zapasów i lin – jakby szykował się do długiej podróży w dzicz.",
+        "Cel spotkał się z kobietą w ciemnej opończy pod mostem. Rozmawiali szeptem i rozeszli się w przeciwnych kierunkach.",
+        "Cel wszedł do budynku oznaczonego znakiem młota Sigmara, ale wyszedł tylnym wyjściem przebrany w inne ubranie.",
+        "Cel wysłał list przez kuriera. Kurier pojechał na zachód, w stronę traktu do Marienburga.",
+        "Cel prowadził długą rozmowę ze strażnikiem przy bramie. Wyglądało na to, że znają się dobrze – strażnik wpuścił go po cichu.",
+        "Cel odwiedził dom publiczny 'Pod Złotą Panną', ale nie dla rozrywki – spotkał się na piętrze z mężczyzną o wojskowej postawie.",
+        "Cel spędził dwie godziny w bibliotece świątyni Vérenay, czytając stare pergaminy. Przepisał coś i schował notatki za pazuchę.",
+        "Cel kupił na czarnym rynku fiolkę niezidentyfikowanej cieczy od starej zielarki. Zapłacił dwa razy więcej niż wypadało.",
+        "Cel poszedł do kuźni krasnoluda i zamówił duplikat klucza. Krasnoludowi nie spodobał się ten interes, ale pieniądze go przekonały."
+      ],
+      "IntimidationResults": [
+        "Karczmarz trzęsie się ze strachu i oddaje całą dzienną kasę. Nie powie nikomu – przynajmniej na razie.",
+        "Kupiec płaci haracze bez mrugnięcia okiem – widać, że nie pierwszy raz. Daje informację o konkurencji w prezencie.",
+        "Rzemieślnik płaci, ale jest wściekły. Może poskarżyć się straży, jeśli znajdzie odwagę.",
+        "Wieśniak oddaje ostatnie grosze i błaga o litość. Ludzie ze szajki czują się nieswojo (-1 Morale).",
+        "Strażnik miejski zgadza się przymknąć oko w zamian za regularne 'datki'. Przydatny kontakt na przyszłość.",
+        "Handlarz płaci, ale ostrzega: 'Mój brat jest w Straży Dróg. Lepiej, żebyśmy się nie spotkali ponownie.'"
+      ],
+      "ForgeDocuments": [
+        "Glejt podróżny z pieczęcią Grafa von Todtbringera – upoważnia do swobodnego przejazdu przez Middenland.",
+        "List polecający od 'Gildii Kupców z Altdorfu' – otwiera drzwi w handlowych kręgach.",
+        "Fałszywy nakaz aresztowania z podpisem sędziego – przydatny do zastraszenia lub porwania celu.",
+        "Podrobiony patent oficerski Armii Reiklandu – daje prawo do rekwizycji koni i zapasów.",
+        "Sfałszowana pieczęć celna – pozwala ominąć opłaty na rogatkach i mostach.",
+        "List żelazny od 'Zakonu Rycerzy Pantery' – gwarantuje bezpieczeństwo na ich terytoriach.",
+        "Fałszywy testament szlachcica – może posłużyć do wyłudzenia spadku lub zajęcia posiadłości.",
+        "Dokument odpustu z pieczęcią Świątyni Sigmara – ceniony przez pobożnych, wart kilka koron na czarnym rynku."
+      ],
+      "SmuggleComplications": [
+        "Kontrola na bramie jest luźna – strażnik drzemie na posterunku. Przemyt przechodzi gładko.",
+        "Straż zwiększyła czujność po nocnym alarmie. Trzeba czekać i spróbować o świcie.",
+        "Celnik podejrzliwie przygląda się ładunkowi, ale łapówka w wysokości 2 szylingów załatwia sprawę.",
+        "Patrol na drodze zatrzymuje podróżnych i sprawdza wozy. Na szczęście podwójna podłoga wytrzymuje inspekcję.",
+        "Przemyt idzie dobrze, ale konkurencyjny gang zauważa trasę i może chcieć ją przejąć.",
+        "Straż portowa używa psów tropiących – jeden z nich prawie zwęszył ukryty towar.",
+        "Kontrabanda jest na miejscu, ale odbiorca nie pojawia się o umówionej porze. Trzeba czekać w ryzykownym miejscu.",
+        "Wszystko poszło gładko. Odbiorca jest zadowolony i daje napiwek oraz informację o następnej robocie."
+      ],
+      "CampEvents": [
+        {
+          "Title": "Spokojna noc",
+          "Text": "Warty czuwały, ogień palił się jasno. Ludzie wypoczęli bez przeszkód."
+        },
+        {
+          "Title": "Niepokojące wycie w ciemności",
+          "Text": "Z gęstwiny dobiegały odgłosy dzikich bestii lub zwierzoludzi. Wartownicy trzymali broń w pogotowiu."
+        },
+        {
+          "Title": "Kłótnia przy kociołku",
+          "Text": "Dwóch podwładnych pokłóciło się o ostatnią miskę kaszy. Herszt musiał interweniować."
+        },
+        {
+          "Title": "Znaleziony tobołek",
+          "Text": "W pobliżu obozu znaleziono porzucony w rowie tobołek z suszonym mięsem i sucharami."
+        },
+        {
+          "Title": "Nocny złodziej",
+          "Text": "Ktoś pod osłoną mgły podszedł pod obozowisko. Jeśli warty były czujne – uciekł spłoszony."
+        },
+        {
+          "Title": "Deszcz jak z cebra",
+          "Text": "Ulewa zmocz wszystko i wszystkich. Prowizoryczne schronienia przeciekają. Ludzie przeklnają pogodę."
+        },
+        {
+          "Title": "Opowieści przy ogniu",
+          "Text": "Ktoś zaczął opowiadać historię o dawnych bitwach i bohaterach. Wszyscy słuchali z zapartym tchem."
+        },
+        {
+          "Title": "Patrol w pobliżu",
+          "Text": "Oddział straży przejechał nieopodal obozu. Na szczęście nie zauważyli ognia – albo udawali, że nie widzą."
+        },
+        {
+          "Title": "Stado wilków",
+          "Text": "Wilki otoczyły obóz nocą. Warty musiały hałasować i machać pochodniami, żeby je odpędzić."
+        },
+        {
+          "Title": "Szczęśliwe znalezisko",
+          "Text": "Jeden z wartowników znalazł na ścieżce sakiewkę z kilkoma monetami – ktoś zgubił ją w pośpiechu."
+        }
+      ],
+      "RumorSources": [
+        "Karczmarz z podłym wzrokiem",
+        "Przekupka z targu rybnego",
+        "Pijany żołnierz z garnizonu",
+        "Uciekinier z Drakwaldu",
+        "Flisak z rzeki Reik",
+        "Praczka z zaułka ubogich",
+        "Kupiec korzenny z Nuln",
+        "Stary żebrak spod bramy",
+        "Czeladnik kowalski",
+        "Strażnik bramy miejskiej",
+        "Wędrowny kramarz",
+        "Były skazaniec z lochów",
+        "Stara zielarka",
+        "Karciarz z szynku",
+        "Goniec pocztowy z Altdorfu"
+      ],
+      "RecruitNames": [
+        "Hans 'Kosa' Weber",
+        "Greta 'Zwinna' Keller",
+        "Wilhelm 'Kafar' Braun",
+        "Otto 'Szczur' Meyer",
+        "Klara 'Cicha' Richter",
+        "Dieter 'Płomień' Wagner",
+        "Fritz 'Szuler' Schmidt",
+        "Elsa 'Jastrząb' Koch",
+        "Konrad 'Żelazny' Bauer",
+        "Liesel 'Igła' Wolf",
+        "Bruno 'Baryła' Becker",
+        "Gretchen 'Żmija' Hoffmann",
+        "Jürgen 'Drab' Schulz",
+        "Katrin 'Wrona' Frank",
+        "Stephan 'Wilk' Klein",
+        "Martha 'Brzytwa' Schwarz",
+        "Rolf 'Kłusownik' Zimmermann",
+        "Albrecht 'Szybki' Hartmann",
+        "Gerda 'Wilczyca' Lange",
+        "Udo 'Topór' Werner"
+      ]
+    },
+    "Ranks": {
+      "rookie": {
+        "Name": "Żółtodziób",
+        "Desc": "Świeży banita bez większego doświadczenia na szlaku."
+      },
+      "seasoned": {
+        "Name": "Zaprawiony",
+        "Desc": "+10 do testów we wszystkich zleceniach."
+      },
+      "veteran": {
+        "Name": "Weteran",
+        "Desc": "+20 do testów + 50% szans na ocalenie przed raną."
+      },
+      "lieutenant": {
+        "Name": "Prawa Ręka",
+        "Desc": "+30 do testów, autorytet (+1 Morale szajki), rozkazy dowódcze (unikalna ranga — limit 1 na szajkę; wymaga ponad 60-80 dni służby)."
+      }
+    },
+    "Gear": {
+      "armor": {
+        "Name": "Pancerz Skórzany",
+        "Bonus": "50% szans na uniknięcie rany przy wpadce lub 'Żywej Tarczy'."
+      },
+      "weapon": {
+        "Name": "Dobra Broń",
+        "Bonus": "+10 do walki, zastraszania, dywersji i sabotażu."
+      },
+      "lockpicks": {
+        "Name": "Wytrychy i Narzędzia",
+        "Bonus": "+10 do szabru, kieszonkarstwa i sabotażu."
+      },
+      "disguise": {
+        "Name": "Płaszcz i Przebranie",
+        "Bonus": "+10 do śledzenia, przemytu, podsłuchu i fałszowania."
+      },
+      "medkit": {
+        "Name": "Torba Felczera",
+        "Bonus": "Leczy rannych natychmiast do stanu 'Gotowy' w opiece nad rannymi."
+      },
+      "horse": {
+        "Name": "Wierzchowiec / Koń",
+        "Bonus": "+1 dodatkowa racja żywnościowa z każdej misji zaopatrzeniowej."
+      }
+    },
+    "Roles": {
+      "bodyguard": {
+        "Name": "Rębacz / Ochroniarz",
+        "Desc": "Brutalna siła i twarda skóra. Osłania Herszta w zwarciu i toruje przejście taranem."
+      },
+      "shadow": {
+        "Name": "Cień / Nożownik",
+        "Desc": "Skrytobójca z ciemnych zaułków. Działa bezszelestnie, wbija nóż w plecy i śledzi cele bez śladu."
+      },
+      "marksman": {
+        "Name": "Kłusownik / Strzelec",
+        "Desc": "Myśliwy i snajper. Ubezpiecza kompanów z dystansu, zdejmuje wartowników i poluje w głuszy."
+      },
+      "provocateur": {
+        "Name": "Szuler / Prowokator",
+        "Desc": "Karczemny krętacz i kuglarz. Mąci w głowach straży, wywołuje zamieszki i kradnie inicjatywę."
+      },
+      "scavenger": {
+        "Name": "Szabrownik / Felczer",
+        "Desc": "Zbieracz i opatrywacz. Zszywa połamane kości, warzy maści i odnajduje łupy tam, gdzie inni widzą śmieci."
+      },
+      "smuggler": {
+        "Name": "Woźnica / Przemytnik",
+        "Desc": "Mistrz traktów i ucieczek. Zna leśne skróty, potrafi zorganizować wóz i bezpiecznie wywieźć trefny towar."
+      },
+      "saboteur": {
+        "Name": "Podpalacz / Sabotażysta",
+        "Desc": "Pirotechnik i niszczyciel. Wznieca pożary, pali mosty pod odwrót i wysadza wozy zaopatrzeniowe."
+      }
+    },
+    "Strengths": {
+      "tough": {
+        "Name": "Twardziel",
+        "Desc": "+10 do walki i zastraszania"
+      },
+      "stealthy": {
+        "Name": "Cichy jak cień",
+        "Desc": "+10 do zwiadów, śledzenia i przemytu"
+      },
+      "nimble": {
+        "Name": "Złote ręce",
+        "Desc": "+10 do szabru, fałszerstw i kieszonkarstwa"
+      },
+      "talkative": {
+        "Name": "Gładka gęba",
+        "Desc": "+10 do plotek, szynku i paserstwa"
+      },
+      "eagle_eye": {
+        "Name": "Sokole oko",
+        "Desc": "+10 do zwiadów, sabotażu i warty"
+      },
+      "trusted_face": {
+        "Name": "Zaufana twarz",
+        "Desc": "+10 do przekupstwa i paserstwa"
+      },
+      "local_knowledge": {
+        "Name": "Zna teren",
+        "Desc": "+10 do zwiadów i zaopatrzenia"
+      },
+      "field_medic": {
+        "Name": "Polowy medyk",
+        "Desc": "+10 do opieki nad rannymi; 50% szans na natychmiastowe leczenie"
+      },
+      "brutal": {
+        "Name": "Brutalny",
+        "Desc": "+20 do zastraszania, -10 do plotek/szynku"
+      },
+      "war_veteran": {
+        "Name": "Weteran wojenny",
+        "Desc": "+10 do walki, warty i dywersji"
+      },
+      "horse_thief": {
+        "Name": "Złodziej koni",
+        "Desc": "+10 do przemytu i zaopatrzenia; mistrz ucieczek wozem"
+      },
+      "iron_will": {
+        "Name": "Nieugięty",
+        "Desc": "+10 do warty i dywersji; odporny na ból"
+      },
+      "keen_senses": {
+        "Name": "Przenikliwy",
+        "Desc": "+10 do nasłuchu w szynku i zwiadów; wyczuwa szpiegów"
+      },
+      "quick_escape": {
+        "Name": "Szybki jak łasica",
+        "Desc": "+10 do kradzieży, dywersji i ucieczek przed strażą"
+      },
+      "arsonist": {
+        "Name": "Podpalacz",
+        "Desc": "+20 do sabotażu budynków, mostów i wozów"
+      },
+      "juggler": {
+        "Name": "Kuglarz",
+        "Desc": "+10 do dywersji i szerzenia plotek"
+      },
+      "poacher": {
+        "Name": "Kłusownik",
+        "Desc": "+10 do zaopatrzenia i zwiadu; przynosi dodatkową rację żywności"
+      },
+      "drinking_buddy": {
+        "Name": "Kamrat do kielicha",
+        "Desc": "+10 do szynku i plotek; łatwo nawiązuje kontakty"
+      },
+      "tight_lipped": {
+        "Name": "Trzyma język za zębami",
+        "Desc": "Przesłuchiwany przez straż nigdy nie zdradzi kryjówki szajki"
+      },
+      "knife_master": {
+        "Name": "Sztyletnik",
+        "Desc": "+10 do cichego śledzenia, kradzieży i walki w zaułkach"
+      }
+    },
+    "Flaws": {
+      "coward": {
+        "Name": "Tchórz",
+        "Desc": "-10 do walki i dywersji"
+      },
+      "alcoholic": {
+        "Name": "Alkoholik",
+        "Desc": "-10 do zwiadów i warty; 20% szans na niedyspozycję po postoju",
+        "Camp": "pije na umór i jest niedyspozycyjny"
+      },
+      "kleptomaniac": {
+        "Name": "Kleptoman",
+        "Desc": "-1 Morale po misji; 15% szans na kradzież ze skarbca",
+        "Camp": "okrada skarbiec szajki (1 SS)"
+      },
+      "loudmouth": {
+        "Name": "Gadulski",
+        "Desc": "-10 do śledzenia i przemytu (zdradza pozycję)"
+      },
+      "wanted": {
+        "Name": "Poszukiwany",
+        "Desc": "+1 Rozgłos po wpadce; ryzyko rozpoznania"
+      },
+      "gambler": {
+        "Name": "Hazardzista",
+        "Desc": "Po postoju 25% szans na utratę 1d6 SS ze skarbca",
+        "Camp": "przegrywa w karty pieniądze szajki"
+      },
+      "lazy": {
+        "Name": "Leniwy",
+        "Desc": "-10 do zaopatrzenia i szabru"
+      },
+      "vengeful": {
+        "Name": "Mściwy",
+        "Desc": "-1 Morale po przegranej misji"
+      },
+      "old_slow": {
+        "Name": "Stary i powolny",
+        "Desc": "-10 do zwiadów i śledzenia"
+      },
+      "traitor": {
+        "Name": "Zdrajca",
+        "Desc": "10% szans na wyciek informacji przy misji szpiegowskiej (+1 Rozgłos)",
+        "Camp": "wyciekają informacje o szajce — +1 Rozgłos"
+      },
+      "brawler": {
+        "Name": "Pieniacz",
+        "Desc": "Wywołuje burdy; 15% szans na bójkę w obozie (-1 Morale)",
+        "Camp": "wywołuje awanturę w obozie (-1 Morale)"
+      },
+      "superstitious": {
+        "Name": "Przesądny",
+        "Desc": "-10 do nocnego śledzenia i sabotażu z obawy przed złymi znakami"
+      },
+      "repulsive": {
+        "Name": "Odrażający",
+        "Desc": "-10 do szynku, plotek i paserstwa (odpycha ludzi)"
+      },
+      "glutton": {
+        "Name": "Żarłok",
+        "Desc": "Pożera podwójną rację żywności podczas każdego nocnego postoju",
+        "Camp": "zjada dodatkową rację zapasów"
+      },
+      "one_eyed": {
+        "Name": "Jednooki",
+        "Desc": "-10 do zwiadów i warty z powodu martwego pola widzenia"
+      },
+      "afraid_horses": {
+        "Name": "Boi się koni",
+        "Desc": "-10 do przemytu i ucieczek wozem"
+      },
+      "in_debt": {
+        "Name": "Nałogowy dłużnik",
+        "Desc": "10% szans po postoju, że wierzyciele węszy wokół kryjówki (+1 Rozgłos)",
+        "Camp": "wierzyciele depczą mu po piętach — +1 Rozgłos"
+      },
+      "clumsy": {
+        "Name": "Ciężka ręka",
+        "Desc": "-10 do szabru i fałszerstw; psuje narzędzia i niszczy łupy"
+      },
+      "panicker": {
+        "Name": "Panikarz",
+        "Desc": "Dodatkowa utrata -1 Morale, gdy jego misja zakończy się wpadką"
+      },
+      "bloodthirsty": {
+        "Name": "Krwiożerczy",
+        "Desc": "Każda udana dywersja lub zastraszanie daje +1 Rozgłos przez niepotrzebne okrucieństwo"
+      }
+    },
+    "Perks": {
+      "craft_chirurgeon": {
+        "Name": "Dawny Fach: Medyk / Cyrulik",
+        "Desc": "Zanim zszedł na trakt, zszywał rany i składał kości. Podczas nocnego postoju automatycznie leczy 1 rannego poplecznika bez zużycia zapasów."
+      },
+      "craft_blacksmith": {
+        "Name": "Dawny Fach: Kowal / Płatnerz",
+        "Desc": "Praca przy miechu i kowadle daje krzepę i znajomość oręża. Daje stałe +10 do zleceń z bronią oraz 50% zniżki na rynsztunek dla szajki."
+      },
+      "craft_innkeeper": {
+        "Name": "Dawny Fach: Szynkarz / Piwowar",
+        "Desc": "Zna sekrety warzenia trunków i ludzkie języki. Podczas każdego nocnego postoju podnosi Morale szajki o +1, a nasłuch w szynku przynosi dodatkową plotkę."
+      },
+      "craft_merchant": {
+        "Name": "Dawny Fach: Faktor Handlowy / Kupiec",
+        "Desc": "Zna szlaki handlowe, cła i kalkulację zysków. Zwiększa zysk z paserstwa, kradzieży i szabru o +2 SS za każde udane zlecenie."
+      },
+      "craft_woodsman": {
+        "Name": "Dawny Fach: Leśnik / Kłusownik",
+        "Desc": "Doskonała znajomość ostępów. Co nocny postój w lesie dostarcza darmową +1 rację dziczyzny, a maskowanie śladów ma +20."
+      },
+      "craft_scribe": {
+        "Name": "Dawny Fach: Kancelista / Pisarz",
+        "Desc": "Potrafi czytać, pisać i podrabiać urzędowe pisma. Daje +20 do fałszowania dokumentów oraz +10 do przekupstwa straży i urzędników."
+      },
+      "blood_brotherhood": {
+        "Name": "Przysięga Krwi z Hersztem",
+        "Desc": "Złożył krwawy rytuał wierności. Nigdy nie zdradzi, nie ulega panice w obozie i może raz na sesję przyjąć Ranę Krytyczną wymierzoną w Herszta."
+      },
+      "infamous_moniker": {
+        "Name": "Krwawy Przydomek",
+        "Desc": "Na traktach krążą o nim przerażające opowieści. Daje +20 do wymuszeń, zastraszania kupców i dywersji."
+      },
+      "battle_scarred": {
+        "Name": "Zahartowany w Boju (Wojenne Blizny)",
+        "Desc": "Przeżył wiele ran i potyczek. Nawet będąc rannym, nie obniża Morale szajki i może pełnić nocną wartę w obozowisku bez kar."
+      },
+      "guard_contacts": {
+        "Name": "Wtyka w Miejskiej Straży",
+        "Desc": "Ma dłużnika lub krewnego wśród miejskich pachołków. Obniża ryzyko obławy straży o połowę i daje ostrzeżenie przed nalotem."
+      },
+      "shadow_tongue": {
+        "Name": "Podziemny Gryps (Złodziejski Żargon)",
+        "Desc": "Biegle operuje tajnymi znakami i gwarą rynsztoka. Zwiększa powodzenie wywiadu, śledzenia celu i paserstwa o +10."
+      },
+      "cold_blooded": {
+        "Name": "Zimna Krew (Stalowe Nerwy)",
+        "Desc": "Bezwzględny opanowany profesjonalista. W razie niepowodzenia misji operacyjnej ignoruje pierwszą komplikację lub utratę morale szajki."
+      }
+    },
+    "MissionFallback": "Zlecenie",
+    "RecruitFallback": "Banita #{n}",
+    "Units": {
+      "SS": "SS",
+      "GC": "ZK",
+      "BP": "bp",
+      "OXP": "DO"
+    },
+    "Rumor": {
+      "DefaultLocation": "Lokalne",
+      "DefaultCategory": "ogólne"
+    },
+    "CampEvent": {
+      "DefaultTitle": "Zdarzenie nocy",
+      "QuietTitle": "Spokojna noc",
+      "QuietText": "Warty czuwały bez przeszkód."
+    },
+    "Notify": {
+      "RumorPoolReset": "Wszystkie plotki z puli zostały już wyświetlone! Pula plotek została odświeżona.",
+      "SelectCharacter": "Wybierz token postaci lub stwórz postać gracza, aby otworzyć panel szajki!",
+      "OwnCharacterOnly": "Możesz otworzyć Podziemie wyłącznie dla postaci, którą kontrolujesz.",
+      "Locked": "Ta funkcja nie została jeszcze odblokowana dla Twojej postaci przez Mistrza Gry.",
+      "OpenFailed": "Błąd podczas otwierania panelu szajki: {error}",
+      "SelectChiefForCamp": "Wybierz token postaci Herszta, aby zarządzić nocny postój.",
+      "SelectChief": "Wybierz token postaci Herszta na mapie.",
+      "NoAccess": "Nie masz dostępu do szajki tej postaci.",
+      "NotReadyForJob": "{name} nie jest gotowy do wykonania tej misji.",
+      "NotReadyForAssignment": "{name} nie jest gotowy do przydziału.",
+      "GMResolvesWeek": "Tydzień szajki rozpatruje Mistrz Gry.",
+      "WeekAlreadyResolved": "Tydzień tej szajki został już rozpatrzony dla tego dnia świata. Przesuń czas gry.",
+      "GMResolvesQueue": "Przydziały rozpatruje Mistrz Gry.",
+      "NoPendingAssignments": "Brak przydziałów oczekujących na rozpatrzenie.",
+      "NotEnoughFunds": "Za mało funduszy w skarbcu! Potrzeba {cost} ss.",
+      "CampAlreadyResolved": "Nocny postój tej szajki został już rozstrzygnięty dla tego dnia świata.",
+      "CampWaitsForQueue": "Część przydziałów czeka na rozpatrzenie przez MG – postój po ich rozstrzygnięciu."
+    },
+    "Orders": {
+      "Effects": {
+        "DropsWeapon": "upuszcza trzymaną broń",
+        "NoTarget": "Nie wskazano celu – nałóż efekt ręcznie (wskaż token klawiszem T przed wydaniem rozkazu).",
+        "GMFailed": "MG nie mógł zastosować efektów – nałóż je ręcznie.",
+        "DefenceTitle": "obrona przed rozkazem",
+        "TestFailed": "{name}: test {test} – <strong>porażka</strong>.",
+        "TestPassed": "{name}: test {test} – sukces, unika efektu.",
+        "GainsCondition": "{name}: otrzymuje stan <strong>{condition}</strong>.",
+        "LosesCondition": "{name}: traci stan <strong>{condition}</strong>.",
+        "NoCondition": "{name}: nie ma stanu {condition}.",
+        "Advantage": "{name}: Przewaga {value}."
+      },
+      "meatshield": {
+        "Name": "Żywa Tarcza!",
+        "Desc": "Bezwzględny odruch – pociągnięcie poplecznika prosto pod śmiertelny cios.",
+        "Effect": "Cios trafia poplecznika zamiast Herszta. Poplecznik zostaje ranny (chyba że uratuje go pancerz lub ranga weterana)."
+      },
+      "trip": {
+        "Name": "Podcięcie z Nóg",
+        "Desc": "Goryl rzuca się pod nogi wroga lub wsuwa drąg między jego piszczele.",
+        "Effect": "Przeciwnik musi zdać test Zwinności lub natychmiast otrzymuje Stan Powalony (Prone)."
+      },
+      "bullrush": {
+        "Name": "Taran i Przełom",
+        "Desc": "Goryl szarżuje z impetem, wbijając się w szeregi wroga wielką tarczą lub cielskiem.",
+        "Effect": "Wróg zostaje odepchnięty o 2 metry, traci 1 Przewagę, a Herszt natychmiast zamyka dystans do zwarcia bez testu."
+      },
+      "flank": {
+        "Name": "Zajście z Flanki",
+        "Desc": "Cień wślizguje się z boku za plecy wroga, odciągając jego gardę i tarczę.",
+        "Effect": "Cel traci gardę – nie może wykonać Uniku ani Parowania przeciwko najbliższemu atakowi Herszta!"
+      },
+      "volley": {
+        "Name": "Salwa z Ukrycia",
+        "Desc": "Ukryci w mroku strzelcy posyłają grad bełtów, kamieni i zatrutych noży.",
+        "Effect": "Wybrany cel zostaje ostrzelany: trafienie dystansowe o Obrażeniach 4 + SL testu Dowodzenia. Cel może się bronić testem Uniku."
+      },
+      "kidneystrike": {
+        "Name": "Cios w Nerkę",
+        "Desc": "Bezszelestny skok z mroku i precyzyjne pchnięcie sztyletem pod żebra rywala.",
+        "Effect": "Przeciwnik natychmiast otrzymuje Stan Krwawienie (Bleeding) oraz traci 1 punkt Przewagi!"
+      },
+      "cover": {
+        "Name": "Ostrzał Nękający",
+        "Desc": "Ciągły grad bełtów z kuszy zmuszający rywali do kulenia się za osłonami.",
+        "Effect": "Wróg otrzymuje karę -10 do wszystkich testów do końca swojej tury i traci 1 punkt Przewagi."
+      },
+      "disarm": {
+        "Name": "Strzał Rozbrajający",
+        "Desc": "Pewna ręka – precyzyjny bełt trafia prosto w dłoń, rękojeść broni lub pas rywala.",
+        "Effect": "Przeciwnik musi zdać natychmiastowy Trudny (-10) test Siły lub upuszcza trzymaną broń na ziemię!"
+      },
+      "distract": {
+        "Name": "Zmyłka / Kradzież Przewagi",
+        "Desc": "Prowokator drze się wniebogłosy, rzuca kamieniami i wykrzykuje obelgi o matce wroga.",
+        "Effect": "Herszt zyskuje +2 Przewagi, a prowokowany wróg traci 1 Przewagę!"
+      },
+      "smoke": {
+        "Name": "Zasłona Dymna",
+        "Desc": "Rzucenie torebek z pieprzem, sadzą lub odpalenie alchemicznej świecy dymnej.",
+        "Effect": "Dym zasłania pole walki do końca następnej rundy: wrogowie mają -10 do Percepcji i testów Broni Zasięgowej. Drużyna może wycofać się ze zwarcia bez testu."
+      },
+      "sand": {
+        "Name": "Piasek w Oczy",
+        "Desc": "Niespodziewany rzut garścią żwiru, sproszkowanego szkła i popiołu prosto w ślepia.",
+        "Effect": "Przeciwnik otrzymuje Stan Oślepiony (Blinded). Może go usunąć dopiero po zdaniu testu Odporności na koniec tury."
+      },
+      "resupply": {
+        "Name": "Bojowe Zaopatrzenie",
+        "Desc": "Szabrownik podbiega pod ostrzałem, wręczając nową broń, bełt lub alchemiczny eliksir.",
+        "Effect": "Natychmiastowe darmowe przeładowanie broni, podanie przedmiotu do ręki lub opatrzenie 1 Krwawienia."
+      },
+      "retreat": {
+        "Name": "Barykada i Odwrót",
+        "Desc": "Poplecznik przewraca stragan, podpala beczki w zaułku lub zatrzaskuje kratę.",
+        "Effect": "Blokada pościgu – drużyna może natychmiast zerwać kontakt bojowy i bezpiecznie opuścić starcie."
+      },
+      "draught": {
+        "Name": "Gorzka Nalewka Bojowa",
+        "Desc": "Łyk śmierdzącego, palącego gardło bimbru felczera ze szponem drapieżnika.",
+        "Effect": "Herszt lub wskazany sojusznik usuwa 1 Stan Zmęczony (Fatigued) albo ignoruje go do końca następnej rundy."
+      },
+      "rally": {
+        "Name": "Okrzyk Bojowy",
+        "Desc": "Herszt ryczy rozkaz, motywując kompanów i budząc strach u przeciwników.",
+        "Effect": "Usuwa ze wskazanego sojusznika Stan Złamany (Broken). Herszt zyskuje Przewagę równą SL testu (minimum 1)."
+      },
+      "coordinate": {
+        "Name": "Koordynacja Szyku",
+        "Desc": "Prawa Ręka przejmuje komendę nad linią, wskazując luki w obronie przeciwnika.",
+        "Effect": "Herszt i do trzech sojuszników w promieniu 6 metrów mogą wykonać darmowy ruch o połowę Szybkości; wychodząc ze zwarcia nie muszą zdawać testu."
+      },
+      "retaliation": {
+        "Name": "Odwet Szajki",
+        "Desc": "Wściekły kontratak! Poplecznik natychmiast rzuca się pomścić ranionego przywódcę.",
+        "Effect": "Jeśli Herszt lub sojusznik otrzyma obrażenia, Prawa Ręka natychmiast kontratakuje LUB Herszt zyskuje +2 Przewagi w rewanżu."
+      },
+      "Order": "Rozkaz",
+      "Flavor": "Rozkaz Taktyczny Świty",
+      "NoLeadership": "Ogłada (brak Dowodzenia)",
+      "Notify": {
+        "NoAdvantage": "Postać nie ma wystarczającej Przewagi na ten rozkaz.",
+        "AlreadyThisRound": "Herszt wydał już rozkaz w tej rundzie (rozkaz zużywa jego Akcję).",
+        "NotInRetinue": "Wybrany wykonawca nie należy do aktywnej Świty.",
+        "NeedsMember": "Do tego rozkazu potrzebny jest odpowiedni członek aktywnej Świty.",
+        "WrongRole": "Wybrany wykonawca nie spełnia wymagań tego rozkazu.",
+        "NoTest": "Nie można wykonać testu Dowodzenia WFRP4e dla tej postaci."
+      },
+      "MeatShield": {
+        "Armour": "solidny pancerz skórzany",
+        "Veteran": "doświadczenie weterana",
+        "Saved": "{name} rzuca się pod cios, lecz {reason} pochłania impet ataku! Poplecznik unika rany i pozostaje w gotowości!",
+        "Wounded": "{name} przyjmuje cios na siebie i zostaje ciężko ranny!",
+        "Nobody": "Nikt z twoich ludzi nie jest w stanie rzucić się pod cios!"
+      },
+      "Dialog": {
+        "NeedRoles": "Do wydania rozkazu „{order}” potrzebujesz w Świcie: {roles}!",
+        "Executor": "Wykonawca",
+        "ChiefHimself": "Herszt osobiście",
+        "PersonalOrder": "Rozkaz osobisty przywódcy",
+        "Follower": "Podwładny",
+        "MeatShieldWarning": "<strong>Uwaga:</strong> {name} rzuci się pod cios miecza, ryzykując ciężkie rany lub śmierć!",
+        "MeatShieldButton": "Rzuć pod cios!",
+        "TargetHint": "Wskaż cel (klawisz T na tokenie) przed wydaniem rozkazu – stan nałoży się automatycznie.",
+        "ChooseMethod": "Wybierz sposób wydania rozkazu:",
+        "LeadershipHint": "Herszt wykonuje test Dowodzenia. Sukces – rozkaz działa; porażka – brak efektu. Rozkaz zużywa Akcję Herszta (jeden na rundę).",
+        "Advantage": "Wydaj Przewagę",
+        "AdvantageHint": "Automatyczny sukces bez rzutu kością. Koszt: <strong>{cost} pkt</strong> (Masz obecnie: <strong>{current}</strong>).",
+        "Direct": "Zwykły Rozkaz",
+        "DirectHint": "Ogłoszenie na czacie do decyzji MG (bez testu).",
+        "Leadership": "Test Dowodzenia",
+        "Issue": "Wydaj Rozkaz!",
+        "Issued": "Wydano rozkaz: {order}!"
+      }
+    },
+    "Tables": {
+      "Folder": "Szajka",
+      "Rumors": {
+        "Name": "Szajka: Plotki i Wieści",
+        "Desc": "Plotki zdobywane przez szajkę (zwiad, nasłuch, wypytywanie). Wylosowane plotki nie powtarzają się, dopóki nie zresetujesz tabeli.",
+        "Result": "Plotka"
+      },
+      "Events": {
+        "Name": "Szajka: Wydarzenia Postoju",
+        "Desc": "Wydarzenia nocnego postoju lub Tygodnia Szajki. Flagi wyniku (Morale, zapasy, monety) zmieniają stan szajki.",
+        "Result": "Wydarzenie"
+      },
+      "Created": "Szajka: utworzono {count} tabel plotek i wydarzeń w zakładce Tabele (folder „{folder}”)."
+    },
+    "Title": "Szajka",
+    "None": "Brak",
+    "Badges": {
+      "scout": "Zwiad",
+      "shadow": "Śledzenie",
+      "tavern": "Szynk",
+      "procure": "Szaber",
+      "pickpocket": "Kradzież",
+      "fence": "Paser",
+      "burglary": "Włamanie",
+      "farm_theft": "Obejście",
+      "poaching": "Kłusownictwo",
+      "highway_robbery": "Napad",
+      "mine_raid": "Kopalnia",
+      "outlaw_contact": "Banici",
+      "racket": "Haracz",
+      "intimidate": "Wymuszenie",
+      "rumor_spread": "Plotki",
+      "bribe": "Łapówka",
+      "distract": "Dywersja",
+      "sabotage": "Sabotaż",
+      "smuggle": "Przemyt",
+      "forge": "Fałszerz",
+      "cover_tracks": "Maskowanie",
+      "tend_wounded": "Opatrunki",
+      "guard": "Warta",
+      "retinue": "Świta Herszta"
+    },
+    "Status": {
+      "Busy": "Zajęty",
+      "Resting": "Odpoczywa",
+      "Wounded": "Ranny",
+      "Dead": "Martwy",
+      "Arrested": "Aresztowany",
+      "Ready": "Dostępny"
+    },
+    "Risk": {
+      "low": "Ryzyko: niskie",
+      "stealth": "Wpadka: Rozgłos, areszt",
+      "violent": "Wpadka: rany",
+      "Result": {
+        "FaceRemembered": "Ktoś zapamiętał twarz – Rozgłos +1.",
+        "Arrested": "{name} wpada w ręce straży – <strong>Aresztowany</strong> na {time}. Rozgłos +1.",
+        "Chase": "Pościg i krzyki na ulicy – Rozgłos +1.",
+        "WoundedLoud": "{name} zostaje <strong>Ranny</strong>, a o bijatyce mówi cała dzielnica – Rozgłos +1.",
+        "Wounded": "{name} wraca pobity – <strong>Ranny</strong>."
+      }
+    },
+    "Meta": {
+      "Target": "Próg {value}",
+      "TargetHint": "Próg testu uproszczonego (przed modyfikatorami szajki)",
+      "SkillHint": "Umiejętność przy teście z karty członka"
+    },
+    "Notoriety": {
+      "0": {
+        "Name": "Cienie / Duchy",
+        "Desc": "Straż miejska i łowcy głów nie mają pojęcia o waszym istnieniu."
+      },
+      "1": {
+        "Name": "Lokalne Plotki",
+        "Desc": "Drobne szepty w szynkach. Brak bezpośrednich podejrzeń."
+      },
+      "2": {
+        "Name": "Zwrócenie Uwagi",
+        "Desc": "Wzmożone patrole w rewirze. Łapówki dla straży kosztują podwójnie."
+      },
+      "3": {
+        "Name": "Listy Gończe",
+        "Desc": "Rysopisy popleczników na tablicach ogłoszeń. Ryzyko aresztowania na ulicy."
+      },
+      "4": {
+        "Name": "Polowanie Łowców",
+        "Desc": "Zawodowi łowcy głów i inkwizycja depczą po piętach świcie."
+      },
+      "5": {
+        "Name": "Obława / Stan Wyjątkowy",
+        "Desc": "Otwarte polowanie! Blokady bram, naloty na meliny i patrole z psami."
+      }
+    },
+    "Relation": {
+      "favorite": {
+        "Name": "Faworyci Patrona",
+        "Desc": "Pełne zaufanie, ochrona i dostęp do lukratywnych zleceń."
+      },
+      "trusted": {
+        "Name": "Zaufani Wykonawcy",
+        "Desc": "Sprawdzeni w boju. Regularne zlecenia i premie."
+      },
+      "neutral": {
+        "Name": "Tylko Interesy",
+        "Desc": "Ściśle biznesowe relacje. Grosz za robotę, bez sentymentów."
+      },
+      "strained": {
+        "Name": "Napięte Relacje",
+        "Desc": "Patron patrzy na ręce. Spóźnienia grożą gniewem."
+      },
+      "hostile": {
+        "Name": "Na Cenzurowanym",
+        "Desc": "Zagrożenie karą lub eliminacją! Musicie dowieść wierności."
+      }
+    },
+    "Settings": {
+      "Cut": {
+        "Name": "Procent Doli dla Człowieka",
+        "Hint": "Jaki procent zysku brutto z operacji odbiera syndykat Człowieka (domyślnie 25%)."
+      },
+      "Cycle": {
+        "Name": "Rytm szajki",
+        "Hint": "Dzienny: każde zlecenie rozstrzyga się od razu, a co noc odbywa się postój. Tygodniowy: gracze planują przydziały, a MG rozpatruje cały tydzień jednym raportem (zlecenia, obóz, obława, dezercja) – łupy i ryzyko liczą się raz na tydzień.",
+        "Daily": "Dzienny (każdy dzień osobno)",
+        "Weekly": "Tygodniowy (Tydzień Szajki)"
+      },
+      "Queue": {
+        "Name": "Kolejka MG w trybie dziennym",
+        "Hint": "Gdy włączone, zlecenia wysłane przez graczy nie rozstrzygają się od razu – czekają, aż MG kliknie „Rozpatrz Przydziały” (albo rozegra nocny postój). Zlecenia wysyłane przez MG rozstrzygają się od razu. Nie dotyczy Tygodnia Szajki."
+      }
+    },
+    "Recruit": {
+      "AlreadyChosen": "Z tej oferty zwerbowano już: {name}!",
+      "NoActor": "Nie znaleziono aktora szajki powiązanego z tą rekrutacją!",
+      "NoCandidate": "Nie znaleziono danych wybranego kandydata!",
+      "Joined": "{name} dołączył(a) do szajki!",
+      "ChatTitle": "Rekrutacja zakończona sukcesem!",
+      "ChatText": "<strong>{user}</strong> zwerbował(a) banitę: <strong>{name}</strong> ({role}) do szajki.",
+      "InProgress": "Werbowanie...",
+      "Flavor": "Rekrutacja: Nowe Twarze w Szajce"
+    },
+    "ThisMember": "Ten członek",
+    "Cycle": {
+      "NightOne": "{count} noc",
+      "NightMany": "{count} noce",
+      "WeekOne": "{count} tydzień",
+      "WeekMany": "{count} tygodnie"
+    },
+    "Mod": {
+      "MoraleFanatic": "Morale: Fanatyzm",
+      "MoraleGrumbling": "Morale: Szemranie",
+      "MoraleMutiny": "Morale: Bunt",
+      "Heat": "Rozgłos {value}",
+      "Strengths": "Zalety",
+      "RoleSpecialty": "Specjalizacja roli",
+      "InfamousMoniker": "Krwawy Przydomek",
+      "ShadowTongue": "Podziemny Gryps",
+      "CraftBlacksmith": "Dawny Fach: Kowal",
+      "CraftScribe": "Dawny Fach: Kancelista",
+      "CraftWoodsman": "Dawny Fach: Leśnik",
+      "CraftInnkeeper": "Dawny Fach: Szynkarz",
+      "Rank": "Ranga szajki",
+      "Weapon": "Broń",
+      "Lockpicks": "Wytrychy",
+      "Disguise": "Przebranie",
+      "GMBonus": "Bonus MG",
+      "Flaws": "Wady",
+      "RichWithLead": "Bogaty cel – Trop znosi karę"
+    },
+    "Ops": {
+      "ToTreasury": "Do skarbca trafiło {amount}.",
+      "PatronCut": "Dola Patrona ({percent}%): {cut} · do skarbca: {net}."
+    },
+    "Loot": {
+      "Hot": "gorący towar",
+      "ItemDesc": "Łup szajki: {origin}.",
+      "ItemDescHot": "Łup szajki: {origin} – gorący towar, ktoś go szuka.",
+      "Transferred": "{item} trafia do ekwipunku: {actor}.",
+      "DiscardTitle": "Pozbyć się łupu?",
+      "DiscardText": "Wyrzucić, oddać albo ukryć na dobre <strong>{name}</strong> (~{value} ss)? Łup zniknie z kryjówki szajki."
+    },
+    "Report": {
+      "QueueTitle": "Raport przydziałów szajki",
+      "QueueFlavor": "Przydziały Świty rozpatrzone przez MG",
+      "MissionFlavor": "Przydział Świty"
+    },
+    "Card": {
+      "Scout": {
+        "Success": "Zwiadowca przeczesał okolicę i wrócił z cennymi wieściami.",
+        "Fail": "Zwiadowca musiał się ukrywać – wrócił bez konkretów."
+      },
+      "Shadow": {
+        "Unknown": "nieznany",
+        "Target": "cel",
+        "Success": "{name} śledził(a) cel: <strong>{target}</strong>. Raport:",
+        "Fail": "{name} próbował(a) śledzić <strong>{target}</strong>, ale został(a) zauważony(a) i musiał(a) się wycofać."
+      },
+      "Tavern": {
+        "Success": "{name} postawił(a) kilka kolejek w karczmie ({cost} ss ze skarbca) i wyciągnął(a) ciekawe informacje.",
+        "Fail": "{name} siedział(a) w szynku cały dzień, ale nie udało się niczego wartościowego usłyszeć."
+      },
+      "Procure": {
+        "HorseBonus": " (w tym +1 racja dzięki jucznemu wierzchowcowi)",
+        "Success": "Sukces! Przyniesiono {supplies} racji{horse} i {coins} srebrnych szylingów.",
+        "Fail": "Nic wartościowego nie udało się znaleźć bez wszczynania alarmu."
+      },
+      "Pickpocket": {
+        "Success": "{name} okradł(a) kilka ofiar – gotówka: {coins} ss.",
+        "Extra": "Do tego: {loot}.",
+        "Fail": "{name} został(a) prawie przyłapany(a) na gorącym uczynku! Morale -1."
+      },
+      "Loot": {
+        "Haul": "Łup: {loot}.",
+        "Supplies": "Zapasy +{value}.",
+        "HotHint": "Gorący towar najlepiej przetrzymać, zanim trafi do pasera."
+      },
+      "Burglary": {
+        "Success": "{name} wchodzi i wychodzi przed świtem z łupem.",
+        "SuccessAt": "{name} wchodzi do: <em>{place}</em> i wychodzi przed świtem z łupem.",
+        "Fail": "{name} nie poradził(a) sobie z zamkiem albo spłoszył go pies – trzeba było uciekać."
+      },
+      "FarmTheft": {
+        "Success": "{name} wraca nocą z pełnym workiem z chłopskiej zagrody.",
+        "Fail": "Psy podniosły wrzask, zanim {name} dotarł(a) do stodoły."
+      },
+      "Highway": {
+        "Success": "Wóz zatrzymany, eskorta rzuciła broń – {name} zabiera, co najcenniejsze.",
+        "Fail": "Eskorta okazała się twardsza, niż wyglądała. {name} ledwo uszedł(-szła) z życiem."
+      },
+      "MineRaid": {
+        "Success": "{name} wynosi ze sztolni urobek, zanim zmieni się warta.",
+        "Fail": "Strażnicy kopalni usłyszeli kroki w chodniku. {name} musiał(a) uciekać po ciemku."
+      },
+      "Poaching": {
+        "Success": "{name} wraca z upolowaną zwierzyną – zapasy +{value}.",
+        "Fail": "Zwierzyna się spłoszyła, a gajowy chodził po lesie do zmroku. {name} wraca z pustymi rękami."
+      },
+      "Outlaws": {
+        "Note": "{name} przyprowadza ludzi z leśnej bandy.",
+        "Success": "{name} odnalazł(a) leśną bandę. Dwóch chętnych czeka na decyzję – propozycje na czacie.",
+        "Fail": "Banici nie ufają obcym. {name} wraca bez nikogo."
+      },
+      "Racket": {
+        "DefaultDistrict": "Dzielnica Portowa",
+        "Success": "Rewir <strong>{district}</strong> płaci za „ochronę”. Co noc w mieście skarbiec dostaje {daily} ss (tydzień: {weekly}), dopóki konkurencja nie upomni się o swoje.",
+        "Fail": "Rewir <strong>{district}</strong> ma już swoich „opiekunów”. {name} odchodzi z niczym."
+      },
+      "Fence": {
+        "NothingToSell": "{fence}: brak łupów, które da się tu sprzedać.",
+        "Success": "{fence} kupuje towar. {sold}.",
+        "Fail": "{fence} kręci nosem i nie chce ryzykować.",
+        "Confiscated": "Gorący towar przepadł: {items}.",
+        "Returned": "Łupy wracają do kryjówki."
+      },
+      "Intimidate": {
+        "Success": "{name} skutecznie zastrasza ofiarę – łup: {coins} ss.",
+        "Fail": "{name} próbował(a) nastraszyć cel, ale napotkał(a) opór. Ludzie szemrzą (Morale -1)."
+      },
+      "RumorSpread": {
+        "Default": "tajemnicza wieść",
+        "Success": "{name} puścił(a) w obieg plotkę: <em>„{rumor}”</em>. Do wieczora cała okolica o tym mówi."
+      },
+      "Bribe": {
+        "NotArrested": "Ten członek szajki nie siedzi w areszcie.",
+        "Released": "Klucznik „zgubił” klucze – <strong>{name}</strong> wychodzi z lochu.",
+        "HeatDown": "Raport o szajce ląduje w piecu – Rozgłos −1.",
+        "Favor": "Przysługa kupiona: <em>{favor}</em>.",
+        "FavorDefault": "przysługa",
+        "Paid": "{name} wręcza łapówkę ({cost} ss).",
+        "Fail": "{name} wręcza łapówkę ({cost} ss), ale urzędnik bierze pieniądze i nic nie robi."
+      },
+      "TheMan": {
+        "Courier": "Uliczny Kurier",
+        "Role": "Łącznik",
+        "Note": "Zaszyfrowany gryps przekazano do lokalnej komórki syndykatu „Człowieka”. Odpowiedź nadejdzie drogą konspiracyjną."
+      },
+      "Diversion": {
+        "Success": "{name} wywołuje zamieszanie (bójka w szynku, fałszywy alarm, zrzucone beczki). Straż jest zaabsorbowana; drużyna może wykorzystać okazję.",
+        "Fail": "{name} próbuje odwrócić uwagę, ale straż szybko opanowuje zamieszanie."
+      },
+      "Sabotage": {
+        "Default": "obiekt",
+        "Success": "{name} skutecznie sabotował(a) cel: <strong>{target}</strong>. Zniszczenia utrudnią wrogom działanie.",
+        "Fail": "{name} próbował(a) sabotować <strong>{target}</strong>, ale napotkał(a) problemy – cel jest nienaruszony."
+      },
+      "Smuggle": {
+        "Default": "ładunek",
+        "Success": "{name} przemycił(a): <em>{cargo}</em>. Odbiorca zapłacił {coins} ss.",
+        "Fail": "{name} próbował(a) przemycić: <em>{cargo}</em>, ale towar został skonfiskowany lub trzeba było go porzucić!"
+      },
+      "Forge": {
+        "Success": "{name} spreparował(a) dokument: <strong>{doc}</strong>. Pieczęć wygląda wiarygodnie, atrament wysechł – gotowe do użycia.",
+        "Fail": "{name} próbował(a) sfałszować: <strong>{doc}</strong>, ale efekt jest kiepski – każdy urzędnik z odrobiną doświadczenia wykryje podróbkę."
+      },
+      "CoverTracks": {
+        "HeatDown": "Ślady szajki się zacierają – Rozgłos -1.",
+        "Success": "{name} zaciera tropy i zmienia miejsce obozu. Szansa na nocne komplikacje i obławę jest zmniejszona.",
+        "Fail": "{name} nie zdołał(a) skutecznie zatrzeć śladów."
+      },
+      "Tend": {
+        "Medkit": "{name} wykorzystał(a) profesjonalną torbę felczera i zioła, opatrując rany {wounded}. Stan: <strong>Ranny → W pełni Gotowy!</strong> Może działać od zaraz!",
+        "Resting": "{name} opiekuje się rannym {wounded} – zmienił(a) opatrunki, podał(a) zioła. Stan: <strong>Ranny → Odpoczywający</strong>. Jutro będzie gotowy do działania.",
+        "Nobody": "{name} sprawdził(a) stan rannych, ale wszyscy są już pod opieką lub w pełni sił. Dzień spędzony na segregacji bandaży i maści."
+      }
+    },
+    "Camp": {
+      "Shelter": {
+        "Basic": "Podstawowe (Namioty / Stajnia)",
+        "Makeshift": "Prowizoryczne ({place})",
+        "Frost": "przenikliwy mróz",
+        "Comfortable": "Wygodne ({place})",
+        "BasicNoFunds": "Podstawowe (brak środków na prywatne kwatery)",
+        "NoFundsNotify": "W skarbcu brakuje {cost} SS na wygodne kwatery. Zastosowano podstawowy nocleg."
+      },
+      "Food": {
+        "Fasting": "Głodówka – ludzie nie jedzą (-1 Morale)",
+        "External": "Posiłek z innego źródła (karczma, gościna, polowanie)",
+        "Used": "Wydano {used} racji (pozostało: {left})",
+        "Empty": "Brak zapasów! Ludzie poszli spać głodni (-1 Morale)",
+        "Brewer": "(Szynkarz {name} polał wyśmienity trunek: +1 Morale)",
+        "Woodsman": "(Leśnik {name} upolował zająca: +1 darmowa racja)"
+      },
+      "Heal": {
+        "Rested": "{name} (wypoczął – gotowy)",
+        "Week": "{name} (rany zagojone po tygodniu)",
+        "Chirurgeon": "{name} (wyleczony do stanu Gotowy przez medyka {medic}!)",
+        "Healing": "{name} (leczy rany)",
+        "JustArrested": "{name} (świeżo aresztowany – {time} w lochu)",
+        "Released": "{name} (wypuszczony z lochu – gotowy)",
+        "StillArrested": "{name} (w areszcie jeszcze {time})"
+      },
+      "Perk": {
+        "Poacher": "<strong>{name}</strong> <em>(Kłusownik)</em>: upolował zająca na kolację (+1 racja zapasów).",
+        "OldCraft": "<strong>{name}</strong> <em>(Dawny Fach)</em>: przygotował opatrunki i leśne zioła lecznicze wspomagając rekonwalescencję."
+      },
+      "Flaw": {
+        "Resting": "status: odpoczywa",
+        "Lost": "utracono ~{value} SS",
+        "Ration": "-1 racja zapasów",
+        "EmptyLarder": ", lecz w spiżarni było pusto! <em>(-1 Morale)</em>"
+      },
+      "Log": "Nocny Postój [{shelter}]. Warty: {watch}. {food}. Morale: {morale}/10. Rozgłos: {heat}/5.",
+      "TitleWeek": "Tydzień Szajki",
+      "TitleNight": "Nocny Postój i Odpoczynek Świty",
+      "NoWatch": "Brak wartowników (obóz niestrzeżony!)",
+      "AllHealthy": "Wszyscy w pełni sił",
+      "FlavorWeek": "Raport: Tydzień Szajki",
+      "FlavorNight": "Koniec Dnia: Nocny Spoczynek Świty",
+      "GMResolvesWeekHint": "Tydzień szajki rozpatruje Mistrz Gry. Zaplanuj przydziały w zakładce Przydziały.",
+      "CostPerWeek": "{cost} ss / tydzień",
+      "NoHealthy": "Brak zdrowych popleczników w obozie!",
+      "Terrain": "Teren",
+      "Lodging": "Miejsce / Kwatery",
+      "Sentries": "Wartownicy",
+      "Meal": "Posiłek i Zapasy",
+      "Recovery": "Regeneracja sił",
+      "State": "Stan świty",
+      "StateLine": "Morale: {morale}/10, Rozgłos: {heat}/5, Zapasy: {supplies}",
+      "WeekJobs": "Zlecenia tygodnia",
+      "Desertion": "Dezercja!",
+      "NightEvent": "Wydarzenie nocy",
+      "FlawsShowed": "Wady dały o sobie znać:",
+      "EndOfDay": "Koniec Dnia"
+    },
+    "Raid": {
+      "Escaped": "Wartownicy w porę podnieśli alarm – szajka uciekła zaułkami, porzucając {lost} racji zapasów.",
+      "Arrested": "Straż wpadła do niestrzeżonego obozu – <strong>{name}</strong> zostaje aresztowany(a) na {time}.",
+      "Seized": "Strażnicy „zabezpieczyli” {amount} ze skarbca.",
+      "HotLost": "Przepadł gorący towar: {items}.",
+      "Morale": "Morale -1.",
+      "Settled": "Po obławie straż uznaje sprawę za załatwioną – Rozgłos -1.",
+      "Summary": "Obława straży."
+    },
+    "Racket": {
+      "Dormant": "Szajka jest poza miastem – haracz czeka na powrót.",
+      "Income": "Haracz z rewiru {district}: {income} ss.",
+      "Lost": "Konkurencyjny gang przejął rewir po nocnej bijatyce – haracz przepadł, Rozgłos +1."
+    },
+    "Desertion": {
+      "Taken": ", zabierając {amount} ze skarbca",
+      "Text": "<strong>{name}</strong> nie wierzy już w Herszta i znika przed świtem{taken}.",
+      "Summary": "Dezercja: {name}."
+    },
+    "Reminder": {
+      "Title": "Wybiła 3:00 w Nocy – Czas na Nocny Postój!",
+      "Text": "Minął kolejny dzień w Starym Świecie. Świta powinna odpocząć, wyznaczyć warty i zdecydować o racjach.",
+      "Button": "Rozpocznij Nocny Postój / Odpoczynek",
+      "Speaker": "Zegar Starego Świata",
+      "Flavor": "Czas i Kalendarz: Godzina 3:00 w Nocy"
+    },
+    "Treasury": {
+      "PurseShort": "Nie masz wystarczająco monet w sakwie! Masz: {have}, wymagane: {need}",
+      "DeductFailed": "Nie udało się odliczyć monet z ekwipunku postaci!",
+      "Generous": "Szajka widzi hojność Herszta — nastroje w obozie rosną! (+1 Morale)",
+      "SaveFailedPurse": "Nie udało się zapisać skarbca. Monety zwrócono do sakwy.",
+      "Deposited": "Wpłacono {amount} do skarbca szajki.",
+      "DepositTitle": "Wpłata do Skarbca Szajki",
+      "DepositText": "<strong>{name}</strong> wpłaca do wspólnego skarbca: <strong>{amount}</strong>.",
+      "NewBalance": "Nowy stan skarbca szajki: <strong>{amount}</strong>.",
+      "FlavorDeposit": "Finanse Szajki",
+      "StashShort": "W skarbcu szajki nie ma tylu monet! Dostępne: {have}",
+      "CreditFailed": "Nie udało się dodać monet do sakwy postaci; skarbiec nie został zmieniony.",
+      "SmallWithdrawal": "Pobrano drobne wydatki. Poplecznicy nie mają z tym problemu.",
+      "WithdrawTest": "Wypłata ze skarbca",
+      "AuthorityHeld": "Herszt użył autorytetu, by uciszyć szepty. Test Dowodzenia zdany (Rzut: {roll} vs {target}). Morale nienaruszone.",
+      "AuthorityLost": "Ludzie szemrzą po kątach, że Herszt podkrada wspólny łup! Test Dowodzenia nieudany (Rzut: {roll} vs {target}). Szajka traci -{loss} Morale!",
+      "SaveFailedStash": "Nie udało się zapisać skarbca. Monety zwrócono do wspólnej kasy.",
+      "Withdrawn": "Pobrano {amount} ze skarbca.",
+      "WithdrawTitle": "Wypłata ze Skarbca Szajki",
+      "WithdrawText": "<strong>{name}</strong> wyciąga ze wspólnej kasy: <strong>{amount}</strong>.",
+      "Remaining": "Pozostało w skarbcu: <strong>{amount}</strong>.",
+      "FlavorWithdraw": "Podział Łupów"
+    },
+    "Supplies": {
+      "Full": "Spiżarnia jest już pełna! (Maksymalnie 30 racji)",
+      "StashShort": "W skarbcu szajki brakuje monet! Wymagane: {need}, dostępne: {have}",
+      "SourcePurse": "osobista sakwa gracza",
+      "SourceStash": "skarbiec szajki",
+      "Bought": "Kupiono {count} racji zapasów za {cost}.",
+      "ChatTitle": "Zakup Zapasów Obozowych",
+      "ChatBought": "Zakupiono <strong>{count}</strong> racji żywności.",
+      "ChatCost": "Koszt: <strong>{cost}</strong> (źródło: {source}).",
+      "ChatLarder": "Aktualny stan spiżarni: <strong>{value} / 30</strong> racji.",
+      "Flavor": "Zaopatrzenie Obozowiska",
+      "PriceSet": "Cena 1 racji zapasów została ustawiona na: {price}."
+    },
+    "WindowTitle": "WFRP4e – Szajka",
+    "DefaultGangName": "Szajka",
+    "Or": "lub",
+    "Expand": "Rozwiń",
+    "Collapse": "Zwiń",
+    "Roster": {
+      "NewFollower": "Nowy Podwładny",
+      "Linked": "Połączono aktora „{actor}” z postacią „{name}”.",
+      "Added": "Dodano aktora „{actor}” do świty.",
+      "Busy": "{name} jest już zajęty(a) na innym zadaniu!",
+      "GMOnlyDelete": "Tylko MG może usuwać członków szajki.",
+      "DeleteTitle": "Usuń członka szajki",
+      "DeleteText": "Czy na pewno usunąć <strong>{name}</strong> ze szajki?",
+      "DeleteNote": "Powiązany aktor Foundry nie zostanie usunięty.",
+      "ReadyAgain": "{name} jest ponownie Dostępny.",
+      "LinkedMissing": "Powiązany aktor nie istnieje lub został usunięty.",
+      "Unlinked": "Odłączono aktora od „{name}”."
+    },
+    "Retinue": {
+      "Left": "{name} opuścił(a) Świtę Herszta.",
+      "Joined": "{name} dołączył(a) do Świty Herszta!",
+      "Full": "Świta Herszta może liczyć maksymalnie 3 popleczników!",
+      "Expand": "Rozwiń świtę",
+      "Collapse": "Zwiń świtę",
+      "CannotJoin": "{name} nie może dołączyć do Świty (stan: {status})!"
+    },
+    "Tactics": {
+      "AutoHint": "Efekt nakłada się automatycznie na wskazany token (klawisz T)",
+      "ExpandOne": "Rozwiń opis taktyki",
+      "CollapseOne": "Zwiń opis taktyki",
+      "ShowAllHint": "Pokaż wszystkie taktyki",
+      "ShowActiveHint": "Pokaż tylko taktyki obsługiwane przez osoby w świcie",
+      "ShowAll": "Pokaż wszystkie",
+      "ActiveOnly": "Tylko aktywne",
+      "ExpandAllHint": "Rozwiń wszystkie karty taktyk",
+      "CollapseAllHint": "Zwiń wszystkie karty taktyk",
+      "ExpandAll": "Rozwiń taktyki",
+      "CollapseAll": "Zwiń taktyki"
+    },
+    "Mission": {
+      "NotInTerrain": "„{label}” nie jest dostępne w terenie: {terrain}.",
+      "Done": "Misja „{label}” – wykonano.",
+      "NobodyFree": "Brak dostępnych ludzi! Wszyscy są zajęci na zadaniach.",
+      "CommotionNote": "{name}: +{bonus} do tego testu (żeton zostanie zużyty).",
+      "Title": "Misja",
+      "Who": "Kogo wysłać?",
+      "Send": "Wyślij",
+      "PlannedWeek": "Zaplanowano: „{label}”. Wynik pojawi się w raporcie tygodnia.",
+      "Queued": "Przydział „{label}” czeka na rozpatrzenie przez MG.",
+      "DoneCheckChat": "Misja „{label}” – wykonano! Sprawdź czat.",
+      "Unknown": "Nieznany typ misji: {type}",
+      "NoFollower": "Nie wybrano poplecznika!"
+    },
+    "Tier": {
+      "LeadApplies": "{name}: bez kary, podwójny łup",
+      "ReconNote": "{name}: +{bonus} (żeton zostanie zużyty)",
+      "LeadNote": "{name}: bogaty cel bez kary −20 (zużywany tylko przy bogatym celu)",
+      "Which": "Jaki cel?"
+    },
+    "Fence": {
+      "NothingChosen": "Nie wybrano żadnego łupu do sprzedaży.",
+      "NoLoot": "Szajka nie ma żadnych łupów do sprzedania.",
+      "Hot": "gorący",
+      "Refuses": "nie kupi",
+      "RateOf": "({rate}% z {value})",
+      "WhatToSell": "Co sprzedać?",
+      "Rate": "{fence}: stawka {rate}%",
+      "Hint": "Każdy SL testu Targowania to +5 pkt stawki. Gorący towar −20 pkt; przy wpadce (SL −2 lub gorzej) paser może go zatrzymać."
+    },
+    "Bribe": {
+      "WhatFor": "Za co płacimy?",
+      "Hush": "Uciszenie sprawy: Rozgłos −1 (20 ss)",
+      "Favor": "Przysługa (kwota w opisie, domyślnie 5 ss)",
+      "WhoToFree": "Kogo wyciągnąć?",
+      "WhatFavor": "Jaka przysługa i za ile?",
+      "FavorPlaceholder": "np. Strażnik przy bramie przymknie oko, 5 ss",
+      "LostOnFail": "Łapówka przepada także przy nieudanym teście.",
+      "Release": "Uwolnienie z aresztu (15 ss)"
+    },
+    "Terrain": {
+      "RacketWaits": "Haracz w mieście czeka na powrót szajki.",
+      "Changed": "Szajka zmienia teren: {terrain}. Paser: {fence}."
+    },
+    "Tend": {
+      "NobodyFree": "Brak dostępnych ludzi do opieki!",
+      "NoWounded": "Wszyscy członkowie świty są zdrowi – nie ma rannych do opatrzenia.",
+      "Who": "Kto będzie opiekować się rannym?",
+      "Whom": "Którego rannego leczyć?",
+      "Start": "Rozpocznij opiekę",
+      "Planned": "Opieka nad rannym zaplanowana – rozpatrzy ją MG.",
+      "Started": "Opieka nad rannym rozpoczęta! Sprawdź czat."
+    },
+    "Free": "za darmo",
+    "CampDialog": {
+      "Planned": "Zaplanowane zlecenia: <strong>{count}</strong>. Zostaną rozpatrzone po kolei, a potem tydzień w obozie – wszystko w jednym raporcie.",
+      "AdvanceTime": "Przesuń czas świata o 7 dni po rozpatrzeniu",
+      "Shelter": "Poziom odpoczynku (Miejsce noclegu):",
+      "MoraleFrost": "-2 Morale, mróz",
+      "Makeshift": "Prowizoryczne ({place}) [{effect}, darmowe]",
+      "Basic": "Podstawowe (Namioty / stajnia) [Morale stabilne]",
+      "Comfortable": "Wygodne ({place}) [+1 Morale, koszt: {cost}]",
+      "Watch": "Wartownicy na tę noc:",
+      "WatchHint": "(Czuwają podczas snu)",
+      "NoWatchWarning": "Brak wartowników zwiększa ryzyko nocnych komplikacji i kradzieży.",
+      "Food": "Wyżywienie i Zaopatrzenie:",
+      "UseSupplies": "Wydaj zapasy ze spiżarni szajki:",
+      "Available": "/ {value} dostępnych",
+      "Fasting": "Ludzie nie jedzą",
+      "FastingHint": "(-1 do Morale)",
+      "External": "Zapasy z innego źródła",
+      "ExternalHint": "(karczma, gościna, kłusownictwo)",
+      "TitleWeek": "Tydzień Szajki – rozpatrzenie",
+      "TitleNight": "Nocny Postój / Odpoczynek Obozowiska",
+      "ResolveWeek": "Rozpatrz Tydzień",
+      "StartRest": "Rozpocznij Odpoczynek",
+      "WeekDone": "Tydzień szajki rozpatrzony – raport na czacie.",
+      "NightDone": "Nocny postój rozstrzygnięty! Przydziały zresetowane na nowy dzień."
+    },
+    "LinkDialog": {
+      "NoActors": "Brak innych aktorów w świecie do połączenia.",
+      "Title": "Połącz Aktora z Postacią Świty",
+      "Choose": "Wybierz aktora z bazy świata:",
+      "Available": "Dostępni Aktorzy:",
+      "Link": "Połącz"
+    },
+    "RecruitDialog": {
+      "Intro": "Przedstaw graczom propozycje banitów na czacie. Gracze będą mogli wybrać jednego rekruta, który dołączy do szajki.",
+      "Count": "Liczba kandydatów do przedstawienia:",
+      "Candidates": "{count} kandydatów",
+      "Standard": "standard",
+      "Wide": "duży wybór",
+      "Note": "Fabuła / Notatka od MG (opcjonalnie):",
+      "NotePlaceholder": "np. W przydrożnej karczmie 'Pod Zdechłym Psem' kręci się kilku podejrzanych typów szukających zajęcia...",
+      "Title": "Rekrutacja Nowych Banitów dla Graczy",
+      "Send": "Wyślij Propozycje na Czat",
+      "Sent": "Wysłano {count} propozycji rekrutów na czat."
+    },
+    "Upgrade": {
+      "CurrentRank": "Aktualna ranga",
+      "Achieved": "Osiągnięta",
+      "Appointed": "Mianowano: {name}",
+      "PromoteFor": "Awansuj za {cost} {unit}",
+      "Requires": "Wymaga {cost} {unit} (masz {have})",
+      "AppointLt": "Mianuj Prawicą",
+      "Promote": "Awansuj",
+      "NeedsPrevious": "Wymaga wcześniejszej rangi",
+      "ChosenCraft": "Wybrany fach",
+      "OneCraftHint": "Banita może posiadać tylko jeden dawny zawód",
+      "Chosen": "Wybrano: {name}",
+      "ChooseCraftFor": "Wybierz ten fach za {cost} {unit}",
+      "Choose": "Wybierz",
+      "Selected": "Wybrany",
+      "Bought": "Wykupione",
+      "Owned": "Posiadany",
+      "BuyFor": "Wykup za {cost} {unit}",
+      "Buy": "Wykup",
+      "RemoveStrength": "Usuń zaletę",
+      "NoStrengths": "Brak zalet",
+      "RemoveFlaw": "Usuń wadę",
+      "NoFlaws": "Brak wad",
+      "PickStrength": "Wybierz Zaletę do dodania",
+      "AddStrength": "Dodaj Zaletę",
+      "PickFlaw": "Wybierz Wadę do dodania",
+      "AddFlaw": "Dodaj Wadę",
+      "TransferHint": "Przenieś do innego poplecznika",
+      "Transfer": "Przenieś",
+      "SellHint": "Sprzedaj (zwrot 50% ceny do skarbca)",
+      "Sell": "Sprzedaj",
+      "GearLimit": "Limit {max}/{max} — zdejmij coś, aby kupić nowe",
+      "NotEnoughCoin": "Za mało monet w skarbcu",
+      "BuyFromStash": "Kup za fundusze ze skarbca",
+      "BuyGear": "Kup",
+      "GMPanel": "Panel Mistrza Gry",
+      "GrantXP": "Przyznaj / Ustaw {unit}:",
+      "ManualBonus": "Ręczny bonus (+/-):",
+      "Role": "Rola",
+      "AvailableXP": "Dostępne {unit}",
+      "Stash": "Skarbiec Szajki",
+      "RankSection": "Ranga i Awans",
+      "RankSectionHint": "(Kupowane za zdobyte {unit})",
+      "CraftSection": "Dawny Fach z Przeszłości",
+      "CraftSectionHint": "(Maksymalnie 1 zawód na banitę)",
+      "CraftIntro": "Przeszłość i rzemiosło sprzed zejścia na drogę bezprawia. Każdy banita może wybrać tylko jeden dawny fach.",
+      "PerkSection": "Fabularne Ulepszenia i Cechy Bojowe",
+      "TraitSection": "Zalety i Wady Banity",
+      "GearSection": "Rynsztunek",
+      "Slots": "({count}/{max} slotów)",
+      "OneLieutenant": "W szajce może być tylko jedna Prawa Ręka ({name})!",
+      "Promoted": "{name} awansował(a) na nową rangę!",
+      "NotEnoughXPRank": "Za mało {unit} na ten awans!",
+      "HasCraft": "Ten banita ma już wybrany dawny fach ({name})! Postać może mieć tylko jeden fach z przeszłości.",
+      "PerkGained": "{name} zdobył(a) atut: „{perk}”!",
+      "NotEnoughXP": "Za mało {unit}! Wymaga {cost} {unit} (masz {have} {unit}).",
+      "StrengthAdded": "Dodano zaletę dla {name}.",
+      "StrengthRemoved": "Usunięto zaletę z postaci {name}.",
+      "FlawAdded": "Dodano wadę dla {name}.",
+      "FlawRemoved": "Usunięto wadę z postaci {name}.",
+      "GearBought": "Kupiono {gear} dla {name}.",
+      "GearSold": "Sprzedano {gear}. Zwrócono {refund} do skarbca.",
+      "NoFreeSlot": "Brak innych popleczników z wolnym slotem ekwipunku!",
+      "Give": "Przekaż",
+      "GiveText": "Przekaż <strong>{gear}</strong> od <strong>{name}</strong> do:",
+      "GearGiven": "{gear} przekazany z {from} → {to}.",
+      "XPAdded": "+{amount} {unit} dla {name} (pamiętaj kliknąć „Zapisz Zmiany”)",
+      "Title": "Rozwój i Rynsztunek: {name}",
+      "Save": "Zapisz Zmiany"
+    },
+    "Close": "Zamknij",
+    "TreasuryDialog": {
+      "YourPurse": "Twoja osobista sakwa",
+      "DepositHow": "Ile chcesz wpłacić do wspólnego skarbca?",
+      "DepositHint": "Wpłata ponad 1 ZK (20 SS) nagradzana jest <strong>+1 Morale</strong> dla całej szajki!",
+      "Deposit": "Wpłać Monety",
+      "AmountZero": "Wprowadź kwotę większą niż 0!",
+      "Balance": "Stan skarbca szajki",
+      "WithdrawHow": "Ile monet chcesz pobrać do swojej sakwy?",
+      "MutinyRisk": "<strong>Ryzyko Buntu:</strong> Banici pilnują wspólnego łupu! Pobranie powyżej 10 SS wymaga zdania testu Dowodzenia przez Herszta. W razie niepowodzenia szajka traci <strong>1–2 Morale</strong>!",
+      "Withdraw": "Pobierz Monety"
+    },
+    "SuppliesDialog": {
+      "Price": "Cena za 1 rację zapasów: <strong>{price}</strong>",
+      "Current": "Aktualne zapasy: <strong>{value} / 30</strong> racji",
+      "HowMany": "Ile racji kupujesz? (Maks: {max})",
+      "Source": "Źródło finansowania:",
+      "FromStash": "Skarbiec Szajki (dostępne: {amount})",
+      "FromPurse": "Twoja Sakwa (dostępne: {amount})",
+      "Title": "Kupno Zapasów do Obozowiska",
+      "Buy": "Kup Zapasy"
+    },
+    "PriceDialog": {
+      "Intro": "Ustal koszt zakupu 1 racji żywności na lokalnym rynku w miedzianych pensach (bp):",
+      "Unit": "pensów (bp)",
+      "Hint": "Podpowiedź: 12 bp = 1 Srebrny Szyling (standard). Podczas zarazy/zimy: 24 bp (2 SS). Na urodzajnych nizinach: 6 bp.",
+      "Title": "Ustal Cenę Zapasów (Panel MG)",
+      "Save": "Zapisz Cenę"
+    },
+    "Chat": {
+      "Success": "Sukces",
+      "Failure": "Porażka",
+      "SuccessLower": "sukces",
+      "FailureLower": "porażka",
+      "SheetTest": "Test z karty członka",
+      "GangTest": "Test uproszczony szajki",
+      "Modifiers": "modyfikatory",
+      "Capped": "limit",
+      "Rumor": "Wieść / plotka",
+      "Preparation": "Przygotowanie",
+      "Consequences": "Skutki wpadki",
+      "Footer": "Świta Herszta"
+    },
+    "RecruitCard": {
+      "Title": "Nowe Twarze w Szajce: Rekrutacja",
+      "Intro": "Mistrz Gry przedstawił kandydatów. Wybierzcie banitę, który dołączy do waszej kompanii!",
+      "Recruited": "ZWERBOWANO",
+      "DecidedBy": "Decyzję podjął(a)",
+      "Joined": "Postać dołączyła do szajki!",
+      "Strength": "Zaleta",
+      "Flaw": "Wada",
+      "Recruit": "Zwerbuj {name}",
+      "Footer": "Rekrutacja Szajki"
+    },
+    "TacticCard": {
+      "Gives": "{name} wydaje rozkaz:",
+      "Executor": "Wykonawca ze Świty:",
+      "Success": "SUKCES",
+      "Failure": "PORAŻKA",
+      "Roll": "Rzut",
+      "Target": "ST",
+      "AdvantageGained": "Zyskano +{value} Przewagi w walce!",
+      "AdvantageSpent": "Wydano {value} pkt Przewagi – Rozkaz wchodzi automatycznie!",
+      "NotHeard": "Ludzie nie usłyszeli rozkazu w zgiełku walki – <strong>brak efektu</strong>.",
+      "Effect": "Efekt w Walce:",
+      "TargetEffects": "Efekty na celach:",
+      "UsesAction": "Rozkaz zużywa Akcję Herszta w tej rundzie."
+    },
+    "Sheet": {
+      "LeaderTitle": "Herszt / Przywódca: {name}",
+      "ChiefTitle": "Herszt Szajki",
+      "Chief": "HERSZT",
+      "Eyebrow": "Karta szajki",
+      "NamePlaceholder": "Nazwa Szajki / Świty",
+      "NameTitle": "Kliknij, aby zmienić nazwę szajki",
+      "MottoPlaceholder": "Zawołanie / Motto...",
+      "MottoTitle": "Motto szajki",
+      "Leader": "Przywódca",
+      "MoraleTitle": "Morale Szajki: {value}/10",
+      "Morale": "Morale",
+      "SuppliesTitle": "Zapasy Żywności w Spiżarni: {value}/30 racji",
+      "Supplies": "Zapasy"
+    },
+    "Tabs": {
+      "Info": "Informacje",
+      "Camp": "Obozowisko",
+      "Roster": "Świta",
+      "Tasks": "Przydziały",
+      "Loot": "Łupy",
+      "Tactics": "Taktyka"
+    },
+    "LootTab": {
+      "TerrainHint": "Teren zmienia dostępne zlecenia, plotki, wydarzenia nocy, koszt noclegu i pasera.",
+      "TerrainGM": "Teren ustawia MG.",
+      "TerrainLabel": "Teren szajki",
+      "Rate": "Stawka {rate}% wartości",
+      "Likes": "Chętnie",
+      "Refuses": "Nie kupi",
+      "InHideout": "Łupy w kryjówce",
+      "Value": "Wartość",
+      "FenceNow": "Paser da teraz ok.",
+      "SendToFence": "Wyślij do pasera",
+      "HotHint": "Gorący towar: paser płaci mniej, obława w niestrzeżonym obozie go zabiera. Stygnie z każdą nocą.",
+      "FenceKeen": "paser chętny",
+      "CannotSellHere": "tu nie sprzedasz",
+      "GiveChief": "Przekaż Hersztowi jako przedmiot",
+      "Discard": "Pozbądź się łupu",
+      "Empty": "Kryjówka jest pusta. Łupy przynoszą włamania, kradzieże z obejść, napady na trakcie i grabieże kopalń.",
+      "PrepIncome": "Przygotowanie i dochody",
+      "NoTokens": "Brak żetonów przygotowania",
+      "RacketDormant": "uśpiony poza miastem",
+      "HelpRecon": "<strong>Rozpoznanie</strong> (Zwiad, Śledzenie): +20 do następnej kradzieży lub napadu.",
+      "HelpCommotion": "<strong>Zamieszanie</strong> (Dywersja): +20 do następnego zlecenia z testem tego dnia. Drużyna graczy też może z niego skorzystać.",
+      "HelpLead": "<strong>Trop</strong> (Zwiad lub Szynk z SL 3+): bogaty cel bez kary −20.",
+      "HelpHotWeek": "<strong>Gorący towar</strong> stygnie po tygodniu. Do tego czasu paser płaci o 20 pkt mniej.",
+      "HelpHotNight": "<strong>Gorący towar</strong> stygnie po dwóch nocach. Do tego czasu paser płaci o 20 pkt mniej."
+    },
+    "TasksTab": {
+      "Intro": "Wyślij ludzi w teren lub weź do swojej osobistej świty. Każdego poplecznika można przypisać do <strong>jednego zadania dziennie</strong>.",
+      "Available": "Dostępnych ludzi w obozie",
+      "HotCount": "{count} gorące",
+      "Escort": "Osobista Eskorta",
+      "UnlocksTactics": "Odblokowuje Taktykę w Walce",
+      "RetinueHint": "Poplecznicy przypisani do Świty idą krok w krok z Hersztem w trakcie dnia gry i odblokowują swoje unikalne rozkazy bojowe w zakładce <strong>Taktyka</strong> (maks. 3 osoby). Nie mogą w tym czasie wyruszać na odrębne misje.",
+      "InRetinue": "W Świcie",
+      "Join": "Dołącz",
+      "TierHint": "Wybór celu: łatwy, zwykły lub bogaty",
+      "Tier": "cel",
+      "Assign": "Przydziel",
+      "Watch": "Warta Obozowa",
+      "WatchHint": "Osoby wyznaczone na wartę czuwają podczas snu drużyny. Każdy poplecznik może mieć tylko jedno zadanie na dobę."
+    },
+    "RosterTab": {
+      "Title": "Poplecznicy i Kompania",
+      "Total": "Razem",
+      "ReadyForJobs": "Gotowi do zleceń",
+      "ToggleAllHint": "Zwiń lub rozwiń szczegóły wszystkich popleczników",
+      "ToggleAll": "Zwiń / Rozwiń",
+      "RecruitHint": "Otwórz okno propozycji rekrutów dla graczy na czat",
+      "Recruit": "Rekrutacja na Czat",
+      "AddHint": "Mistrz Gry: Dodaj nowego pustego poplecznika",
+      "Add": "Dodaj Poplecznika",
+      "DropHint": "Przeciągnij aktora postaci lub BN z paska Foundry na kartę, aby połączyć go z poplecznikiem",
+      "OpenActor": "Kliknij, aby otworzyć kartę aktora: {name}",
+      "ClickToLink": "Kliknij, aby połączyć z aktorem",
+      "Linked": "Powiązany z aktorem w świecie",
+      "ToggleOne": "Zwiń / Rozwiń szczegóły banity",
+      "NamePlaceholder": "Imię poplecznika...",
+      "NameTitle": "Kliknij, aby edytować imię",
+      "StatusTitle": "MG: zmień stan",
+      "OpenSheet": "Otwórz kartę postaci aktora",
+      "Unlink": "Odłącz aktora od tej pozycji",
+      "LinkActor": "Połącz z aktorem z gry",
+      "UpgradeHint": "Rozwój, Rangi, Fabularne Atuty za DO i Zbrojownia",
+      "Upgrade": "Rozwój",
+      "LeaveRetinue": "Odeślij ze Świty Herszta do obozu",
+      "JoinRetinueHint": "Dołącz do osobistej Świty Herszta (odblokowuje Taktykę)",
+      "JoinRetinue": "Do Świty",
+      "Free": "MG: Uwolnij z misji do stanu Gotowy",
+      "OffWatch": "MG: Zdejmij z warty",
+      "Delete": "Usuń banitę ze świty",
+      "BonusHint": "Modyfikator specjalistyczny do rzutów",
+      "RoleTitle": "Mistrz Gry: Wybierz rolę poplecznika",
+      "Perks": "Atuty",
+      "EmptyTitle": "Brak popleczników w świcie!",
+      "EmptyText": "Skorzystaj z rekrutacji lub przeciągnij postać z paska bocznego Foundry VTT."
+    },
+    "InfoTab": {
+      "Profile": "Profil i Teren Działań",
+      "Type": "Charakter / Typ Grupy:",
+      "Types": {
+        "underworld": "Szajka Półświatka (złodziejstwo, haracze, spryt miejski)",
+        "mercenaries": "Zbrojna Kompania / Świta (najemnicy, eskorta, siła)",
+        "outlaws": "Banda Banitów (leśne zasadzki, gościńce, kłusownictwo)",
+        "smugglers": "Flotylla Przemytników (barki rzeczne, kanały, kontrabanda)",
+        "investigators": "Siatka Informatorów (plotki, cienie, wywiad)",
+        "cult": "Sekretne Bractwo (spiski, okultyzm, tajemnice)"
+      },
+      "Hideout": "Główna Kryjówka / Baza Operacyjna:",
+      "HideoutPlaceholder": "np. Piwnica pod 'Podpitym Szczurem', Wozownia...",
+      "Territory": "Rewir / Obszar Operacyjny:",
+      "TerritoryPlaceholder": "np. Doki Altdorfu, Szlak wzdłuż rzeki Teufel...",
+      "LawTitle": "Czujność Prawa i Rozgłos",
+      "GMOnlyHeat": "Tylko Mistrz Gry może modyfikować rozgłos",
+      "GMOnly": "Tylko MG",
+      "SetByGMHint": "Wskaźnik wyznaczany wyłącznie przez Mistrza Gry",
+      "SetByGM": "Ustala MG",
+      "HeatLevel": "Poziom Rozgłosu (Czujność Straży):",
+      "HeatShort": {
+        "0": "Niewidoczni dla władz",
+        "1": "Drobne szepty w szynkach",
+        "2": "Więcej patroli, łapówki x2",
+        "3": "Rysopisy na tablicach ogłoszeń",
+        "4": "Zawodowcy na tropie świty",
+        "5": "Blokady bram i naloty"
+      },
+      "Bounty": "List Gończy / Nagroda za Głowę Herszta:",
+      "BountyPlaceholder": "np. 15 Złotych Koron za Herszta żywego lub martwego",
+      "BountyHint": "Wysokość nagrody ustala Mistrz Gry",
+      "Factions": "Frakcje: Sojusznicy i Rywale",
+      "Allies": "Sojusznicy, Wtyki i Kontakty:",
+      "AlliesPlaceholder": "Skorumpowani strażnicy, karczmarze, paserzy, cyrulicy...",
+      "Rivals": "Wrogowie i Konkurencyjne Gangi:",
+      "RivalsPlaceholder": "Konkurencyjne szajki, wrogi cech, łowcy nagród...",
+      "Patron": "Przełożony / Patron i Mocodawca",
+      "GMOnlyPatron": "Tylko Mistrz Gry może modyfikować dane Patrona",
+      "PatronSetByGM": "Szczegóły o Patronie ustala Mistrz Gry",
+      "PatronName": "Imię Przełożonego / Patrona:",
+      "PatronNamePlaceholder": "np. 'Człowiek', Paser Salzer, Graf Boris...",
+      "PatronTitle": "Pozycja / Tytuł Patrona:",
+      "PatronTitlePlaceholder": "np. Władca Podziemia, Protektor Szlachecki, Sierżant Straży...",
+      "PatronRelation": "Zaufanie i Relacja z Patronem:",
+      "RelationShort": {
+        "favorite": "Faworyci (Pełne zaufanie, ochrona i protekcja)",
+        "trusted": "Zaufani (Sprawdzeni wykonawcy, premie)",
+        "neutral": "Tylko Interesy (Ściśle biznesowe relacje)",
+        "strained": "Napięte (Podejrzliwość, patron patrzy na ręce)",
+        "hostile": "Na Cenzurowanym (Zagrożenie karą lub zdradą)"
+      },
+      "PatronCut": "Dola / Haracz dla Patrona:",
+      "PatronCutPlaceholder": "np. 25% doli z operacji, 5 ZK miesięcznie...",
+      "PatronNotes": "Kontakt i Zobowiązania wobec Patrona:",
+      "PatronNotesPlaceholder": "Zasady kontaktu, hasła, haki, zlecenia specjalne, martwe skrzynki...",
+      "CodeTitle": "Zasady, Kodeks i Kronika",
+      "Code": "Kodeks Szajki / Zasady Wewnętrzne:",
+      "CodePlaceholder": "Przysięgi krwi, zasady podziału łupów, zakaz donoszenia...",
+      "Notes": "Kronika / Notatki Herszta:",
+      "NotesPlaceholder": "Historia powstania świty, dawne przysięgi, cele drużyny..."
+    },
+    "DashTab": {
+      "CampStandard": "Standard Kwater / Obozowiska",
+      "Makeshift": "Prowizoryczne ({place}",
+      "MoralePerCamp": "Morale/postój)",
+      "Basic": "Podstawowe (Namioty, stajnia, prosta gospoda)",
+      "Comfortable": "Wygodne ({place}, +1 Morale, {cost})",
+      "CampCaption": "Wpływa na regenerację sił i nastroje w szajce podczas odpoczynku. Teren: <strong>{terrain}</strong> (zmiana w zakładce Łupy).",
+      "Morale": "Morale Szajki",
+      "TierFanatic": "Fanatyzm",
+      "TierDiscipline": "Dyscyplina",
+      "TierGrumbling": "Szemranie",
+      "TierMutiny": "BUNT!",
+      "SetMorale": "MG: Ustaw poziom morale",
+      "MoraleLevel": "Poziom morale",
+      "MoraleLevelValue": "Poziom Morale: {value} / 10",
+      "Notch": {
+        "I": "Stopień I: Krwawy Bunt",
+        "II": "Stopień II: Nóż w Plecy",
+        "III": "Stopień III: Szemranie",
+        "IV": "Stopień IV: Chwiejność",
+        "V": "Stopień V: Dyscyplina",
+        "VI": "Stopień VI: Żelazny Rygor",
+        "VII": "Stopień VII: Bezwzględne Posłuszeństwo",
+        "VIII": "Stopień VIII: Braterstwo Krwi",
+        "IX": "Stopień IX: Ślepe Oddanie",
+        "X": "Stopień X: Fanatyczny Szał"
+      },
+      "FlavorHigh": "Ludzie pójdą za Hersztem w ogień! Gotowi na każde poświęcenie.",
+      "FlavorMid": "Stabilna dyscyplina. Szajka wykonuje polecenia bez marudzenia.",
+      "FlavorLow": "Ludzie szemrzą po kątach, brakuje im grosza i gorzały.",
+      "FlavorCritical": "Ryzyko dezercji lub noża w plecy przy pierwszej okazji!",
+      "Larder": "Spiżarnia i Zapasy",
+      "PriceHint": "Cena zakupu 1 racji na lokalnym rynku",
+      "OneRation": "1 racja",
+      "SetSupplies": "MG: Ustaw stan zapasów",
+      "Rations": "Liczba racji",
+      "RationsUnit": "racji",
+      "SuppliesFull": "Pełne kociołki. Zapasy wystarczą na ok. <strong>{days}</strong> dni postoju.",
+      "SuppliesLow": "Zapasy topnieją. Warto uzupełnić prowiant przed wyruszeniem na szlak.",
+      "SuppliesNone": "<strong>Głód!</strong> Brak jedzenia obniża morale po każdym postoju!",
+      "BuyHint": "Kup racje żywnościowe ze skarbca lub własnej sakwy",
+      "PriceSetHint": "Mistrz Gry: Ustal lokalną cenę 1 racji",
+      "SetPrice": "Ustal Cenę",
+      "LockedHint": "Wartości skarbca są zablokowane dla gracza – korzystaj z przycisków Wpłać/Pobierz",
+      "Locked": "Bezpieczna Kasa",
+      "Crowns": "KORONY",
+      "CrownsAbbr": "ZK (Złoto)",
+      "Shillings": "SZYLINGI",
+      "ShillingsAbbr": "SS (Srebro)",
+      "Pennies": "PENSY",
+      "PenniesAbbr": "bp (Miedź)",
+      "DepositHint": "Przelej monety ze swojej sakwy do wspólnego skarbca szajki (+1 Morale przy hojnych datkach)",
+      "Deposit": "Wpłać ze swojej sakwy",
+      "WithdrawHint": "Pobierz monety ze skarbca szajki (Pobranie > 10 SS wymaga testu Dowodzenia — ryzyko utraty Morale!)",
+      "Withdraw": "Pobierz do sakwy",
+      "ResolveQueueHint": "Mistrz Gry: rozpatrz przydziały zaplanowane przez graczy (jeden raport na czacie)",
+      "ResolveQueue": "Rozpatrz Przydziały ({count})",
+      "Pending": "Przydziały czekające na MG",
+      "ResolveWeekHint": "Mistrz Gry: rozpatrz zaplanowane zlecenia i tydzień w obozie jednym raportem",
+      "ResolveWeek": "Rozpatrz Tydzień Szajki",
+      "WeekByGM": "Tydzień rozpatruje MG",
+      "NightHint": "Rozegraj nocny postój: warty, wyżywienie, leczenie rannych i losowe zdarzenie nocy",
+      "Night": "Nocny Postój i Odpoczynek",
+      "TablesHint": "Mistrz Gry: otwórz tabele losowe plotek i wydarzeń postoju (RollTable, folder szajki)",
+      "Tables": "Tabele Plotek i Wydarzeń (MG)",
+      "Chronicle": "Kronika Zdarzeń Obozowiska",
+      "ChronicleEmpty": "Brak odnotowanych zdarzeń. Szajka dopiero wyrusza na trakt..."
+    },
+    "TacticsTab": {
+      "Title": "Rozkazy Taktyczne w Walce",
+      "AtYourSide": "Przy Twoim boku:",
+      "NoRetinue": "<strong>Brak popleczników w Świcie!</strong> Herszt walczy sam. Rozkazy specjalistyczne są zablokowane. Przypisz ludzi w zakładce <em>Przydziały</em>.",
+      "HowTo": "Rozkazy wydajesz poprzez <strong>Test Dowodzenia</strong> Herszta (porażka oznacza brak efektu; jeden rozkaz na rundę, zużywa Akcję Herszta) lub wydając <strong>Przewagę</strong> (automatyczny sukces).",
+      "FilterEmpty": "Żadna aktywna osoba w świcie nie odblokowuje taktyk. Dodaj poplecznika do świty lub pokaż wszystkie taktyki.",
+      "Offensive": "Taktyka Ofensywna i Przełamanie",
+      "Control": "Kontrola Walki i Dywersja",
+      "Protection": "Ochrona i Zaopatrzenie",
+      "Cost1": "1 Przewaga / 🎲 Dowodzenie",
+      "Cost2": "2 Przewagi / 🎲 Dowodzenie (-10)",
+      "LeadershipAction": "Akcja Dowodzenia",
+      "Effect": "Efekt",
+      "Executes": "Wykonuje",
+      "Issue": "Wydaj Rozkaz",
+      "Requires": "Wymaga w Świcie",
+      "Locked": "Zablokowane",
+      "Assists": "Asystuje",
+      "PersonalAlways": "Rozkaz osobisty Herszta (dostępny zawsze)",
+      "WoundRisk": "Ryzyko Rany Poplecznika",
+      "GuardReady": "Ochroniarz w gotowości"
+    },
+    "Packs": {
+      "Tables": "Szajka – Plotki i Wydarzenia"
+    }
+  }
+}

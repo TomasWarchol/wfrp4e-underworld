@@ -1,0 +1,25 @@
+<div class="wfrp4e-underworld chat-card camp-rest-card">
+  <div class="card-header" style="border-bottom: 1px solid #7c5e44; padding-bottom: 6px; margin-bottom: 8px;">
+    <h3 style="margin: 0; color: #4a2810; font-size: 1.1rem;"><i class="fas fa-tasks"></i> {{title}}</h3>
+  </div>
+
+  <ul style="margin: 4px 0 0 0; padding-left: 16px; font-size: 0.85rem;">
+    {{#each missions}}
+    <li style="margin: 4px 0;">
+      <strong>{{this.title}}</strong> – {{this.npcName}}:
+      {{#if this.isSuccess}}<span style="color: #1b5e20; font-weight: bold;">{{localize "UNDERWORLD.Chat.SuccessLower"}}</span>{{else}}<span style="color: #b71c1c; font-weight: bold;">{{localize "UNDERWORLD.Chat.FailureLower"}}</span>{{/if}}
+      {{#if this.roll}}<span style="color: #665544;">({{this.roll}} vs {{this.target}}, SL {{this.sl}})</span>{{/if}}
+      <div style="margin: 1px 0;">{{{this.notes}}}</div>
+      {{#if this.rollSummary}}<div style="font-size: 0.8rem; color: #514432;"><i class="fas fa-dice"></i> {{this.rollSummary}}</div>{{/if}}
+      {{#if this.rumor}}<div style="font-style: italic; color: #2b1f16;">„{{this.rumor}}”</div>{{/if}}
+      {{#each this.gains}}<div style="color: #1b5e20;"><i class="fas fa-chess-knight"></i> {{{this}}}</div>{{/each}}
+      {{#each this.consequences}}<div style="color: #b71c1c;"><i class="fas fa-exclamation-triangle"></i> {{{this}}}</div>{{/each}}
+      {{#if this.operationalXpGained}}<div style="font-size: 0.8rem; color: #3f1857;">+{{this.operationalXpGained}} {{localize "UNDERWORLD.Units.OXP"}}</div>{{/if}}
+    </li>
+    {{/each}}
+  </ul>
+
+  <div class="card-footer" style="border-top: 1px dashed #8e735b; padding-top: 4px; margin-top: 6px; font-size: 0.8rem; color: #5e584f; text-align: right;">
+    {{localize "UNDERWORLD.Chat.Footer"}} • WFRP 4e
+  </div>
+</div>

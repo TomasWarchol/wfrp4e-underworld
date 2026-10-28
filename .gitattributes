@@ -1,0 +1,6 @@
+# Text files stay LF; Foundry compendium databases are binary
+* text=auto eol=lf
+packs/** binary
+*.webp binary
+*.png binary
+*.jpg binary

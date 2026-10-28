@@ -1,0 +1,183 @@
+<div class="info-tab-container flexcol">
+  <!-- SIATKA KART (2 KOLUMNY) -->
+  <div class="info-grid">
+    <!-- LEWA KOLUMNA: Profil, Teren, Rozgłos i Frakcje -->
+    <div class="info-column flexcol">
+      <!-- KARTA 1: PROFIL I BAZA -->
+      <div class="info-card">
+        <div class="card-title-row">
+          <h4 class="card-title"><i class="fas fa-theater-masks"></i> {{localize "UNDERWORLD.InfoTab.Profile"}}</h4>
+        </div>
+        
+        <div class="info-field">
+          <label><i class="fas fa-users-cog"></i> {{localize "UNDERWORLD.InfoTab.Type"}}</label>
+          <select name="type">
+            {{#bajerySelect gang.type}}
+            <option value="underworld">{{localize "UNDERWORLD.InfoTab.Types.underworld"}}</option>
+            <option value="mercenaries">{{localize "UNDERWORLD.InfoTab.Types.mercenaries"}}</option>
+            <option value="outlaws">{{localize "UNDERWORLD.InfoTab.Types.outlaws"}}</option>
+            <option value="smugglers">{{localize "UNDERWORLD.InfoTab.Types.smugglers"}}</option>
+            <option value="investigators">{{localize "UNDERWORLD.InfoTab.Types.investigators"}}</option>
+            <option value="cult">{{localize "UNDERWORLD.InfoTab.Types.cult"}}</option>
+            {{/bajerySelect}}
+          </select>
+        </div>
+
+        <div class="info-field">
+          <label><i class="fas fa-warehouse"></i> {{localize "UNDERWORLD.InfoTab.Hideout"}}</label>
+          <input type="text" name="hideout" value="{{gang.hideout}}" placeholder="{{localize 'UNDERWORLD.InfoTab.HideoutPlaceholder'}}"/>
+        </div>
+
+        <div class="info-field">
+          <label><i class="fas fa-map-marked-alt"></i> {{localize "UNDERWORLD.InfoTab.Territory"}}</label>
+          <input type="text" name="territory" value="{{gang.territory}}" placeholder="{{localize 'UNDERWORLD.InfoTab.TerritoryPlaceholder'}}"/>
+        </div>
+      </div>
+
+      <!-- KARTA 2: CZUJNOŚĆ PRAWA I ROZGŁOS (TYLKO MG EDYTUJE) -->
+      <div class="info-card">
+        <div class="card-title-row">
+          <h4 class="card-title"><i class="fas fa-gavel"></i> {{localize "UNDERWORLD.InfoTab.LawTitle"}}</h4>
+          {{#if isGM}}
+            <span class="badge-gm-only" title="{{localize 'UNDERWORLD.InfoTab.GMOnlyHeat'}}"><i class="fas fa-crown"></i> {{localize "UNDERWORLD.InfoTab.GMOnly"}}</span>
+          {{else}}
+            <span class="badge-locked" title="{{localize 'UNDERWORLD.InfoTab.SetByGMHint'}}"><i class="fas fa-lock"></i> {{localize "UNDERWORLD.InfoTab.SetByGM"}}</span>
+          {{/if}}
+        </div>
+        
+        <div class="info-field">
+          <label><i class="fas fa-balance-scale"></i> {{localize "UNDERWORLD.InfoTab.HeatLevel"}}</label>
+          {{#if isGM}}
+            <select name="notoriety" class="gm-editable-select">
+              {{#bajerySelect gang.notoriety}}
+              <option value="0">0 – {{localize "UNDERWORLD.Notoriety.0.Name"}} ({{localize "UNDERWORLD.InfoTab.HeatShort.0"}})</option>
+              <option value="1">1 – {{localize "UNDERWORLD.Notoriety.1.Name"}} ({{localize "UNDERWORLD.InfoTab.HeatShort.1"}})</option>
+              <option value="2">2 – {{localize "UNDERWORLD.Notoriety.2.Name"}} ({{localize "UNDERWORLD.InfoTab.HeatShort.2"}})</option>
+              <option value="3">3 – {{localize "UNDERWORLD.Notoriety.3.Name"}} ({{localize "UNDERWORLD.InfoTab.HeatShort.3"}})</option>
+              <option value="4">4 – {{localize "UNDERWORLD.Notoriety.4.Name"}} ({{localize "UNDERWORLD.InfoTab.HeatShort.4"}})</option>
+              <option value="5">5 – {{localize "UNDERWORLD.Notoriety.5.Name"}} ({{localize "UNDERWORLD.InfoTab.HeatShort.5"}})</option>
+              {{/bajerySelect}}
+            </select>
+          {{else}}
+            <div class="readonly-display-field">
+              {{{underworldNotorietyBadge gang.notoriety}}}
+            </div>
+          {{/if}}
+        </div>
+
+        <div class="info-field">
+          <label><i class="fas fa-scroll"></i> {{localize "UNDERWORLD.InfoTab.Bounty"}}</label>
+          {{#if isGM}}
+            <input type="text" name="bounty" value="{{gang.bounty}}" placeholder="{{localize 'UNDERWORLD.InfoTab.BountyPlaceholder'}}"/>
+          {{else}}
+            <input type="text" value="{{gang.bounty}}" disabled class="input-readonly" title="{{localize 'UNDERWORLD.InfoTab.BountyHint'}}"/>
+          {{/if}}
+        </div>
+      </div>
+
+      <!-- KARTA 3: FRAKCJE: SOJUSZNICY I WROGOWIE -->
+      <div class="info-card">
+        <div class="card-title-row">
+          <h4 class="card-title"><i class="fas fa-people-arrows"></i> {{localize "UNDERWORLD.InfoTab.Factions"}}</h4>
+        </div>
+        
+        <div class="info-field">
+          <label><i class="fas fa-hand-holding-heart"></i> {{localize "UNDERWORLD.InfoTab.Allies"}}</label>
+          <textarea name="allies" rows="2" placeholder="{{localize 'UNDERWORLD.InfoTab.AlliesPlaceholder'}}">{{gang.allies}}</textarea>
+        </div>
+
+        <div class="info-field">
+          <label><i class="fas fa-skull"></i> {{localize "UNDERWORLD.InfoTab.Rivals"}}</label>
+          <textarea name="rivals" rows="2" placeholder="{{localize 'UNDERWORLD.InfoTab.RivalsPlaceholder'}}">{{gang.rivals}}</textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRAWA KOLUMNA: Patron, Zobowiązania, Kodeks i Kronika -->
+    <div class="info-column flexcol">
+      <!-- KARTA 4: PRZEŁOŻONY / PATRON (TYLKO MG EDYTUJE) -->
+      <div class="info-card patron-card">
+        <div class="card-title-row">
+          <h4 class="card-title"><i class="fas fa-user-secret"></i> {{localize "UNDERWORLD.InfoTab.Patron"}}</h4>
+          {{#if isGM}}
+            <span class="badge-gm-only" title="{{localize 'UNDERWORLD.InfoTab.GMOnlyPatron'}}"><i class="fas fa-crown"></i> {{localize "UNDERWORLD.InfoTab.GMOnly"}}</span>
+          {{else}}
+            <span class="badge-locked" title="{{localize 'UNDERWORLD.InfoTab.PatronSetByGM'}}"><i class="fas fa-lock"></i> {{localize "UNDERWORLD.InfoTab.SetByGM"}}</span>
+          {{/if}}
+        </div>
+
+        <div class="info-field">
+          <label><i class="fas fa-user-tie"></i> {{localize "UNDERWORLD.InfoTab.PatronName"}}</label>
+          {{#if isGM}}
+            <input type="text" name="patron.name" value="{{gang.patron.name}}" placeholder="{{localize 'UNDERWORLD.InfoTab.PatronNamePlaceholder'}}"/>
+          {{else}}
+            <input type="text" value="{{gang.patron.name}}" disabled class="input-readonly"/>
+          {{/if}}
+        </div>
+
+        <div class="info-field">
+          <label><i class="fas fa-id-badge"></i> {{localize "UNDERWORLD.InfoTab.PatronTitle"}}</label>
+          {{#if isGM}}
+            <input type="text" name="patron.title" value="{{gang.patron.title}}" placeholder="{{localize 'UNDERWORLD.InfoTab.PatronTitlePlaceholder'}}"/>
+          {{else}}
+            <input type="text" value="{{gang.patron.title}}" disabled class="input-readonly"/>
+          {{/if}}
+        </div>
+
+        <div class="info-field">
+          <label><i class="fas fa-handshake"></i> {{localize "UNDERWORLD.InfoTab.PatronRelation"}}</label>
+          {{#if isGM}}
+            <select name="patron.relation" class="gm-editable-select">
+              {{#bajerySelect gang.patron.relation}}
+              <option value="favorite">🌟 {{localize "UNDERWORLD.InfoTab.RelationShort.favorite"}}</option>
+              <option value="trusted">🤝 {{localize "UNDERWORLD.InfoTab.RelationShort.trusted"}}</option>
+              <option value="neutral">⚖️ {{localize "UNDERWORLD.InfoTab.RelationShort.neutral"}}</option>
+              <option value="strained">⚠️ {{localize "UNDERWORLD.InfoTab.RelationShort.strained"}}</option>
+              <option value="hostile">☠️ {{localize "UNDERWORLD.InfoTab.RelationShort.hostile"}}</option>
+              {{/bajerySelect}}
+            </select>
+          {{else}}
+            <div class="readonly-display-field">
+              {{{underworldRelationBadge gang.patron.relation}}}
+            </div>
+          {{/if}}
+        </div>
+
+        <div class="info-field">
+          <label><i class="fas fa-percentage"></i> {{localize "UNDERWORLD.InfoTab.PatronCut"}}</label>
+          {{#if isGM}}
+            <input type="text" name="patron.cut" value="{{gang.patron.cut}}" placeholder="{{localize 'UNDERWORLD.InfoTab.PatronCutPlaceholder'}}"/>
+          {{else}}
+            <input type="text" value="{{gang.patron.cut}}" disabled class="input-readonly"/>
+          {{/if}}
+        </div>
+
+        <div class="info-field">
+          <label><i class="fas fa-envelope-open-text"></i> {{localize "UNDERWORLD.InfoTab.PatronNotes"}}</label>
+          {{#if isGM}}
+            <textarea name="patron.notes" rows="3" placeholder="{{localize 'UNDERWORLD.InfoTab.PatronNotesPlaceholder'}}">{{gang.patron.notes}}</textarea>
+          {{else}}
+            <textarea disabled class="input-readonly" rows="3">{{gang.patron.notes}}</textarea>
+          {{/if}}
+        </div>
+      </div>
+
+      <!-- KARTA 5: KODEKS I KRONIKA -->
+      <div class="info-card">
+        <div class="card-title-row">
+          <h4 class="card-title"><i class="fas fa-book-open"></i> {{localize "UNDERWORLD.InfoTab.CodeTitle"}}</h4>
+        </div>
+        
+        <div class="info-field">
+          <label><i class="fas fa-shield-alt"></i> {{localize "UNDERWORLD.InfoTab.Code"}}</label>
+          <textarea name="code" rows="2" placeholder="{{localize 'UNDERWORLD.InfoTab.CodePlaceholder'}}">{{gang.code}}</textarea>
+        </div>
+
+        <div class="info-field">
+          <label><i class="fas fa-feather-alt"></i> {{localize "UNDERWORLD.InfoTab.Notes"}}</label>
+          <textarea name="notes" rows="3" placeholder="{{localize 'UNDERWORLD.InfoTab.NotesPlaceholder'}}">{{gang.notes}}</textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

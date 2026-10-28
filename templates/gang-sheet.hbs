@@ -1,0 +1,91 @@
+<div class="underworld-sheet-form">
+  <!-- GŁÓWNY BANER WOJENNY SZAJKI (WIDOCZNY WE WSZYSTKICH ZAKŁADKACH) -->
+  <header class="sheet-header underworld-master-header">
+    <div class="master-banner-inner">
+      <!-- Lewa: Herszt -->
+      <div class="boss-frame-wrapper">
+        <img class="boss-master-avatar" src="{{actor.img}}" alt="{{actor.name}}" title="{{localize 'UNDERWORLD.Sheet.LeaderTitle' name=actor.name}}"/>
+        <div class="boss-crown-badge" title="{{localize 'UNDERWORLD.Sheet.ChiefTitle'}}"><i class="fas fa-crown"></i> {{localize "UNDERWORLD.Sheet.Chief"}}</div>
+      </div>
+
+      <!-- Środek: Tożsamość Szajki -->
+      <div class="gang-identity-col">
+        <div class="gang-eyebrow"><i class="fas fa-shield-alt"></i> {{localize "UNDERWORLD.Sheet.Eyebrow"}}</div>
+        <div class="gang-name-row">
+          <input type="text" name="name" value="{{gang.name}}" class="master-gang-name" placeholder="{{localize 'UNDERWORLD.Sheet.NamePlaceholder'}}" title="{{localize 'UNDERWORLD.Sheet.NameTitle'}}"/>
+        </div>
+        <div class="gang-motto-row">
+          <i class="fas fa-quote-left text-muted"></i>
+          <input type="text" name="motto" value="{{gang.motto}}" class="master-gang-motto" placeholder="{{localize 'UNDERWORLD.Sheet.MottoPlaceholder'}}" title="{{localize 'UNDERWORLD.Sheet.MottoTitle'}}"/>
+          <i class="fas fa-quote-right text-muted"></i>
+        </div>
+        <div class="master-submeta">
+          <span class="submeta-item"><i class="fas fa-user-shield"></i> {{localize "UNDERWORLD.Sheet.Leader"}}: <strong>{{actor.name}}</strong></span>
+          <span class="submeta-divider">•</span>
+          <span class="submeta-item">{{{underworldNotorietyBadge gang.notoriety}}}</span>
+          <span class="submeta-divider">•</span>
+          <span class="submeta-item">{{{underworldRelationBadge gang.patron.relation}}}</span>
+          <span class="submeta-divider">•</span>
+          <span class="submeta-item"><span class="uw-terrain-badge"><i class="{{terrain.icon}}"></i> {{terrain.name}}</span></span>
+        </div>
+      </div>
+
+      <!-- Prawa: Szybki Pasek Kluczowych Zasobów -->
+      <div class="master-quick-stats">
+        <div class="stat-pill morale-pill" title="{{localize 'UNDERWORLD.Sheet.MoraleTitle' value=gang.morale}}">
+          <i class="fas fa-heart text-danger"></i>
+          <span class="stat-label">{{localize "UNDERWORLD.Sheet.Morale"}}:</span>
+          <strong>{{gang.morale}}</strong><small>/10</small>
+        </div>
+
+        <div class="stat-pill supplies-pill" title="{{localize 'UNDERWORLD.Sheet.SuppliesTitle' value=gang.supplies}}">
+          <i class="fas fa-bread-slice text-gold"></i>
+          <span class="stat-label">{{localize "UNDERWORLD.Sheet.Supplies"}}:</span>
+          <strong>{{gang.supplies}}</strong><small>/30</small>
+        </div>
+
+        <div class="stat-pill treasury-pill" title="{{localize 'UNDERWORLD.Upgrade.Stash'}}">
+          <i class="fas fa-coins text-gold"></i>
+          <span class="treasury-short-val"><strong>{{{underworldFormatCoins gang.treasury}}}</strong></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAWIGACJA ZAKŁADKOWA -->
+  <nav class="sheet-tabs tabs underworld-tabs" data-group="primary">
+    <a class="item" data-action="tab" data-group="primary" data-tab="info"><i class="fas fa-scroll"></i> {{localize "UNDERWORLD.Tabs.Info"}}</a>
+    <a class="item" data-action="tab" data-group="primary" data-tab="dashboard"><i class="fas fa-campground"></i> {{localize "UNDERWORLD.Tabs.Camp"}}</a>
+    <a class="item" data-action="tab" data-group="primary" data-tab="roster"><i class="fas fa-users"></i> {{localize "UNDERWORLD.Tabs.Roster"}} <span class="tab-counter">({{gang.roster.length}})</span></a>
+    <a class="item" data-action="tab" data-group="primary" data-tab="tasks"><i class="fas fa-tasks"></i> {{localize "UNDERWORLD.Tabs.Tasks"}} <span class="tab-counter">({{availableOutlaws.length}})</span></a>
+    <a class="item" data-action="tab" data-group="primary" data-tab="loot"><i class="fas fa-sack-xmark"></i> {{localize "UNDERWORLD.Tabs.Loot"}} <span class="tab-counter">({{lootCount}})</span></a>
+    <a class="item" data-action="tab" data-group="primary" data-tab="tactics"><i class="fas fa-chess-knight"></i> {{localize "UNDERWORLD.Tabs.Tactics"}} <span class="tab-counter">({{retinueCount}}/{{maxRetinue}})</span></a>
+  </nav>
+
+  <!-- ZAWARTOŚĆ ZAKŁADEK -->
+  <section class="sheet-body underworld-sheet-body">
+    <div class="tab" data-group="primary" data-tab="info">
+      {{> "modules/wfrp4e-underworld/templates/parts/info.hbs"}}
+    </div>
+
+    <div class="tab" data-group="primary" data-tab="dashboard">
+      {{> "modules/wfrp4e-underworld/templates/parts/dashboard.hbs"}}
+    </div>
+
+    <div class="tab" data-group="primary" data-tab="roster">
+      {{> "modules/wfrp4e-underworld/templates/parts/roster.hbs"}}
+    </div>
+
+    <div class="tab" data-group="primary" data-tab="tasks">
+      {{> "modules/wfrp4e-underworld/templates/parts/tasks.hbs"}}
+    </div>
+
+    <div class="tab" data-group="primary" data-tab="loot">
+      {{> "modules/wfrp4e-underworld/templates/parts/loot.hbs"}}
+    </div>
+
+    <div class="tab" data-group="primary" data-tab="tactics">
+      {{> "modules/wfrp4e-underworld/templates/parts/tactics.hbs"}}
+    </div>
+  </section>
+</div>

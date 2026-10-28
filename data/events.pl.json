@@ -1,0 +1,98 @@
+[
+  {
+    "id": "ev-spokoj-01",
+    "title": "Spokojna noc",
+    "text": "Warty czuwały, ogień palił się jasno. Ludzie wypoczęli bez przeszkód w cieple obozowiska.",
+    "morale": 1,
+    "supplies": 0,
+    "coinsSS": 0
+  },
+  {
+    "id": "ev-wycie-02",
+    "title": "Niepokojące wycie w ciemności",
+    "text": "Z gęstwiny dobiegały odgłosy dzikich bestii lub zwierzoludzi. Wartownicy trzymali broń w pogotowiu do świtu.",
+    "morale": 0,
+    "supplies": 0,
+    "coinsSS": 0
+  },
+  {
+    "id": "ev-klotnia-03",
+    "title": "Kłótnia przy kociołku",
+    "text": "Dwóch podwładnych pokłóciło się o ostatnią miskę zupy i kawał słoniny. Herszt musiał osobiście interweniować.",
+    "morale": -1,
+    "supplies": 0,
+    "coinsSS": 0
+  },
+  {
+    "id": "ev-tobolek-04",
+    "title": "Znaleziony tobołek",
+    "text": "W pobliżu obozu znaleziono porzucony w rowie tobołek podróżny z suszonym mięsem i sucharami.",
+    "morale": 1,
+    "supplies": 2,
+    "coinsSS": 0
+  },
+  {
+    "id": "ev-zlodziej-05",
+    "title": "Nocny złodziej",
+    "text": "Ktoś pod osłoną mgły podszedł pod obozowisko. Czujny wartownik w porę krzyknął i spłoszył intruza.",
+    "morale": 0,
+    "supplies": 0,
+    "coinsSS": 0
+  },
+  {
+    "id": "ev-ulewa-06",
+    "title": "Deszcz jak z cebra",
+    "text": "Nocna ulewa zmoczyła wszystko i wszystkich. Prowizoryczne szałasy przeciekają, a ognisko zgasło. Ludzie klną pod nosem.",
+    "morale": -1,
+    "supplies": 0,
+    "coinsSS": 0
+  },
+  {
+    "id": "ev-opowiesci-07",
+    "title": "Opowieści przy ogniu",
+    "text": "Jeden ze zbirów zaczął opowiadać barwną historię o starych bitwach i sprytnych rabunkach. Wszyscy słuchali z zachwytem.",
+    "morale": 1,
+    "supplies": 0,
+    "coinsSS": 0
+  },
+  {
+    "id": "ev-patrol-08",
+    "title": "Patrol w pobliżu",
+    "text": "Oddział straży przejechał traktem nieopodal obozu. Na szczęście nie zauważyli zamaskowanego ognia.",
+    "morale": 0,
+    "supplies": 0,
+    "coinsSS": 0
+  },
+  {
+    "id": "ev-wilki-09",
+    "title": "Stado wilków",
+    "text": "Głośne stado wilków podeszło pod obóz. Warty musiały machać płonącymi gałęziami i hałasować, żeby odprawić drapieżniki.",
+    "morale": -1,
+    "supplies": 0,
+    "coinsSS": 0
+  },
+  {
+    "id": "ev-sakiewka-10",
+    "title": "Szczęśliwe znalezisko",
+    "text": "Jeden z wartowników znalazł przy pniu drzewa zgubioną przez kupca skórzaną sakiewkę z kilkoma srebrnikami.",
+    "morale": 1,
+    "supplies": 0,
+    "coinsSS": 5
+  },
+  {
+    "id": "ev-wedrowiec-11",
+    "title": "Zabłąkany wędrowiec",
+    "text": "Do ogniska podszedł przemoczony chłopak prosząc o schronienie przed chłodem. W podzięce zostawił garść suszonych grzybów.",
+    "morale": 1,
+    "supplies": 1,
+    "coinsSS": 0
+  },
+  {
+    "id": "ev-kramarz-12",
+    "title": "Wędrowny kramarz",
+    "text": "Nad ranem obóz minął stary kramarz z osiołkiem, oferując tanie suchary i plotki z najbliższego miasteczka.",
+    "morale": 0,
+    "supplies": 1,
+    "coinsSS": 0
+  }
+]

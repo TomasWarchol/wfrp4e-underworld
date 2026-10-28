@@ -1,0 +1,71 @@
+<div class="wfrp4e-underworld chat-card tactic-card-chat">
+  <div class="tactic-chat-header" style="display: flex; align-items: center; gap: 8px; border-bottom: 2px solid #5a3d28; padding-bottom: 6px; margin-bottom: 8px;">
+    <img src="{{actor.img}}" class="tactic-chat-avatar" alt="{{actor.name}}" style="width: 36px; height: 36px; border-radius: 50%; border: 1px solid #ffd700; object-fit: cover;" />
+    <div class="tactic-chat-title-col">
+      <div style="font-size: 0.8rem; text-transform: uppercase; color: #7c5838; font-weight: bold;">{{localize "UNDERWORLD.TacticCard.Gives" name=actor.name}}</div>
+      <h3 style="margin: 0; font-size: 1.15rem; color: #3b2616; border: none; padding: 0;">{{order.name}}</h3>
+    </div>
+  </div>
+
+  <div class="tactic-desc" style="font-style: italic; color: #4a3b2f; font-size: 0.85rem; margin-bottom: 8px;">
+    <p style="margin: 0;">„{{order.desc}}"</p>
+  </div>
+
+  {{#if executor}}
+    <div class="tactic-executor-card" style="display: flex; align-items: center; gap: 8px; background: rgba(46, 125, 50, 0.08); border: 1px solid #2e7d32; border-radius: 4px; padding: 4px 8px; margin-bottom: 8px;">
+      <img src="{{executor.img}}" style="width: 28px; height: 28px; border-radius: 3px; object-fit: cover; border: 1px solid #2e7d32;" />
+      <div style="min-width: 0; flex: 1;">
+        <div style="font-size: 0.8rem; text-transform: uppercase; color: #1b5e20; font-weight: bold;">{{localize "UNDERWORLD.TacticCard.Executor"}}</div>
+        <div style="font-size: 0.85rem; font-weight: bold; color: #1b5e20; display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+          <span>{{executor.name}}</span>
+          {{{underworldRoleBadge executor.role}}}
+        </div>
+      </div>
+    </div>
+  {{/if}}
+
+  {{#if rollResult}}
+    <div class="tactic-roll-box" style="margin-bottom: 8px; padding: 6px 8px; border-radius: 4px; border: 1px solid {{#if rollResult.isSuccess}}#2e7d32{{else}}#c62828{{/if}}; background: {{#if rollResult.isSuccess}}rgba(46, 125, 50, 0.1){{else}}rgba(198, 40, 40, 0.1){{/if}};">
+      <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.85rem; font-weight: bold; color: {{#if rollResult.isSuccess}}#1b5e20{{else}}#b71c1c{{/if}};">
+        <span><i class="fas {{#if rollResult.isSuccess}}fa-check-circle{{else}}fa-times-circle{{/if}}"></i> {{localize "UNDERWORLD.Orders.Dialog.Leadership"}}</span>
+        <span>{{#if rollResult.isSuccess}}{{localize "UNDERWORLD.TacticCard.Success"}} ({{rollResult.sl}} SL){{else}}{{localize "UNDERWORLD.TacticCard.Failure"}} ({{rollResult.sl}} SL){{/if}}</span>
+      </div>
+      <div style="font-size: 0.8rem; color: #554433; margin-top: 2px;">
+        {{localize "UNDERWORLD.TacticCard.Roll"}}: <strong>{{rollResult.roll}}</strong> vs {{localize "UNDERWORLD.TacticCard.Target"}}: <strong>{{rollResult.target}}</strong> ({{rollResult.skillName}})
+      </div>
+      {{#if (bajeryGt rollResult.advantageGained 0)}}
+        <div style="margin-top: 4px; font-size: 0.8rem; font-weight: bold; color: #bf360c; display: flex; align-items: center; gap: 4px;">
+          <i class="fas fa-bolt"></i> {{localize "UNDERWORLD.TacticCard.AdvantageGained" value=rollResult.advantageGained}}
+        </div>
+      {{/if}}
+    </div>
+  {{else if (bajeryEq method "advantage")}}
+    <div class="tactic-advantage-spent-box" style="margin-bottom: 8px; padding: 6px 8px; border-radius: 4px; border: 1px solid #f57c00; background: rgba(245, 124, 0, 0.12); font-size: 0.85rem; font-weight: bold; color: #bf360c; display: flex; align-items: center; gap: 6px;">
+      <i class="fas fa-bolt"></i> {{localize "UNDERWORLD.TacticCard.AdvantageSpent" value=order.advantageCost}}
+    </div>
+  {{/if}}
+
+  {{#if orderFailed}}
+  <div class="tactic-effect" style="background: rgba(198, 40, 40, 0.08); border: 1px solid #c62828; border-radius: 4px; padding: 6px 8px; font-size: 0.85rem; color: #b71c1c;">
+    <i class="fas fa-times-circle"></i> {{{localize "UNDERWORLD.TacticCard.NotHeard"}}}
+  </div>
+  {{else}}
+  <div class="tactic-effect" style="background: rgba(255, 255, 255, 0.65); border: 1px solid #a8947f; border-radius: 4px; padding: 6px 8px;">
+    <h4 style="margin: 0 0 3px 0; font-size: 0.85rem; color: #5a3d28; display: flex; align-items: center; gap: 4px;">
+      <i class="fas fa-gavel"></i> {{localize "UNDERWORLD.TacticCard.Effect"}}
+    </h4>
+    <p style="margin: 0; font-size: 0.85rem; color: #2b1f15;">{{{order.effect}}}</p>
+  </div>
+  {{/if}}
+  {{#if automationLines.length}}
+  <div style="margin-top: 6px; background: rgba(46, 125, 50, 0.06); border: 1px solid #2e7d32; border-radius: 4px; padding: 4px 8px; font-size: 0.82rem;">
+    <strong><i class="fas fa-crosshairs"></i> {{localize "UNDERWORLD.TacticCard.TargetEffects"}}</strong>
+    <ul style="margin: 2px 0 0 0; padding-left: 16px;">
+      {{#each automationLines}}<li>{{{this}}}</li>{{/each}}
+    </ul>
+  </div>
+  {{/if}}
+  {{#if inCombat}}
+  <div style="margin-top: 4px; font-size: 0.8rem; color: #5e584f;"><i class="fas fa-hourglass-half"></i> {{localize "UNDERWORLD.TacticCard.UsesAction"}}</div>
+  {{/if}}
+</div>
