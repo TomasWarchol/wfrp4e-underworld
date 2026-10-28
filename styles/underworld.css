@@ -6065,6 +6065,8 @@
 :is(html, #uw) .uw-callout-danger .uw-callout-title { color: var(--uw-danger); }
 :is(html, #uw) .uw-callout-rumor { border-left-color: var(--uw-green); background: rgba(46, 82, 35, 0.1); }
 :is(html, #uw) .uw-rumor-text { font-style: italic; }
+:is(html, #uw) .uw-callout-title > span { white-space: nowrap; }
+:is(html, #uw) .uw-rumor-source { margin: 3px 0 4px; }
 :is(html, #uw) .uw-card-footer {
   display: flex;
   justify-content: space-between;
