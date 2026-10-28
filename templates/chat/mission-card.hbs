@@ -29,8 +29,8 @@
   <div class="uw-callout uw-callout-rumor">
     <div class="uw-callout-title">
       <span><i class="fas fa-comment-dots"></i> {{localize "UNDERWORLD.Chat.Rumor"}}</span>
-      {{#if rumorData.source}}<span class="uw-chip"><i class="fas fa-user-secret"></i> {{rumorData.source}}</span>{{/if}}
     </div>
+    {{#if rumorData.source}}<div class="uw-rumor-source"><span class="uw-chip"><i class="fas fa-user-secret"></i> {{rumorData.source}}</span></div>{{/if}}
     <div class="uw-rumor-text">„{{rumor}}”</div>
     {{#if rumorData.location}}<div class="uw-card-rolls"><i class="fas fa-map-marker-alt"></i> {{rumorData.location}}</div>{{/if}}
   </div>
