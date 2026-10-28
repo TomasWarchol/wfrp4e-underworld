@@ -940,37 +940,6 @@ export class UnderworldOperations {
     return card;
   }
 
-  /** Kontakt z banitami (las) – dwóch kandydatów do szajki na czacie */
-  static async executeOutlawContactMission(actor, npcId) {
-    const r = await this._prepareMission(actor, npcId, "outlaw_contact", MISSION_INFO.outlaw_contact.target);
-    if (!r) return;
-    await GangData.saveGang(actor, r.gang);
-    if (r.isSuccess) await this.postRecruitProposals(actor, 2, t("Card.Outlaws.Note", { name: r.npc.name }));
-    const card = {
-      ...this._baseCard(r, missionName(MISSIONS.outlaw_contact, this.getTerrain(r.gang))),
-      notes: r.isSuccess
-        ? t("Card.Outlaws.Success", { name: escapeHTML(r.npc.name) })
-        : t("Card.Outlaws.Fail", { name: escapeHTML(r.npc.name) })
-    };
-    await this.postMissionChatCard(actor, card);
-    return card;
-  }
-
-  /** Propozycje rekrutów na czacie (ten sam format co rekrutacja MG). */
-  static async postRecruitProposals(actor, count, gmNote = "") {
-    const candidates = UnderworldTables.generateRecruitCandidates(count);
-    const html = await foundry.applications.handlebars.renderTemplate("modules/wfrp4e-underworld/templates/chat/recruit-proposals.hbs", {
-      actorId: actor.id, gmNote, candidates, chosen: null
-    });
-    return ChatMessage.create({
-      user: game.user.id,
-      speaker: ChatMessage.getSpeaker({ actor }),
-      content: html,
-      flavor: t("Recruit.Flavor"),
-      flags: { "wfrp4e-underworld": { isRecruitment: true, actorId: actor.id, candidates, gmNote, chosen: null } }
-    });
-  }
-
   /** Haracz (miasto) – codzienny dochód z rewiru */
   static async executeRacketMission(actor, npcId, input) {
     const r = await this._prepareMission(actor, npcId, "racket", MISSION_INFO.racket.target);

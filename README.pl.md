@@ -72,7 +72,6 @@ Teren: **M** – miasto, **W** – wieś, **L** – las, **G** – góry. Nazwy 
 | Zwiad | MWLG | 55 | Percepcja | niskie | plotka, żeton **Rozpoznanie**; SL 3+: **Trop** |
 | Śledzenie Celu | MW | 50 | Skradanie | kradzież | raport, żeton **Rozpoznanie** |
 | Nasłuch w Szynku / Wypytanie Chłopów | MW | 55 | Plotkowanie | niskie | plotka (koszt 1d2 ss); SL 3+: **Trop** |
-| Kontakt z Banitami | L | 45 | Plotkowanie | niskie | 2 kandydatów do szajki na czacie |
 | Szaber i Zbieractwo | MWLG | 50 | Skradanie | kradzież | 1d3 racji + 1d8+1 ss |
 | Kieszonkarstwo 🎯 | MW | 45 | Zwinne Palce | kradzież | 1d10+5 ss × cel; szansa na kosztowność (bogaty cel: 60%) |
 | Włamanie 🎯 | M | 40 | Otwieranie Zamków | kradzież | łup do sprzedaży (SL 3+: dwa) |

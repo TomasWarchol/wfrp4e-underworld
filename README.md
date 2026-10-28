@@ -69,7 +69,6 @@ Terrain: **C** – city, **V** – village, **F** – forest, **M** – mountain
 | Scout the Area | CVFM | 55 | Perception | low | rumour, **Recon** token; SL 3+: **Lead** |
 | Shadow a Target | CV | 50 | Stealth | stealth | report, **Recon** token |
 | Listen at the Tavern / Question the Peasants | CV | 55 | Gossip | low | rumour (costs 1d2 s); SL 3+: **Lead** |
-| Contact the Outlaws | F | 45 | Gossip | low | 2 recruit candidates in the chat |
 | Scavenge and Forage | CVFM | 50 | Stealth | stealth | 1d3 rations + 1d8+1 s |
 | Pickpocketing 🎯 | CV | 45 | Sleight of Hand | stealth | 1d10+5 s × target; chance of a valuable |
 | Burglary 🎯 | C | 40 | Pick Lock | stealth | loot to sell (SL 3+: two) |
