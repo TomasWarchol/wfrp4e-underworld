@@ -151,11 +151,6 @@
           "village": "Rozmowy przy studni i w karczmie. Wybitny sukces daje Trop do bogatego celu."
         }
       },
-      "outlaw_contact": {
-        "Name": "Kontakt z Banitami",
-        "Reward": "2 kandydatów do szajki",
-        "Desc": "Odszukanie leśnej bandy i wymiana wieści. Sukces przyprowadza chętnych do szajki."
-      },
       "procure": {
         "Name": "Szaber i Zbieractwo",
         "Reward": "1d3 racji + 1d8+1 ss",
@@ -1177,7 +1172,6 @@
       "poaching": "Kłusownictwo",
       "highway_robbery": "Napad",
       "mine_raid": "Kopalnia",
-      "outlaw_contact": "Banici",
       "racket": "Haracz",
       "intimidate": "Wymuszenie",
       "rumor_spread": "Plotki",
@@ -1385,11 +1379,6 @@
       "Poaching": {
         "Success": "{name} wraca z upolowaną zwierzyną – zapasy +{value}.",
         "Fail": "Zwierzyna się spłoszyła, a gajowy chodził po lesie do zmroku. {name} wraca z pustymi rękami."
-      },
-      "Outlaws": {
-        "Note": "{name} przyprowadza ludzi z leśnej bandy.",
-        "Success": "{name} odnalazł(a) leśną bandę. Dwóch chętnych czeka na decyzję – propozycje na czacie.",
-        "Fail": "Banici nie ufają obcym. {name} wraca bez nikogo."
       },
       "Racket": {
         "DefaultDistrict": "Dzielnica Portowa",

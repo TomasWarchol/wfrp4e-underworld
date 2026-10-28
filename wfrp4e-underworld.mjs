@@ -158,7 +158,6 @@ Hooks.once("init", async function () {
       poaching: { icon: "fas fa-paw", label: "Badges.poaching", cls: "procure" },
       highway_robbery: { icon: "fas fa-road", label: "Badges.highway_robbery", cls: "intimidate" },
       mine_raid: { icon: "fas fa-hammer", label: "Badges.mine_raid", cls: "intimidate" },
-      outlaw_contact: { icon: "fas fa-people-group", label: "Badges.outlaw_contact", cls: "tavern" },
       racket: { icon: "fas fa-store", label: "Badges.racket", cls: "intimidate" },
       intimidate: { icon: "fas fa-fist-raised", label: "Badges.intimidate", cls: "intimidate" },
       rumor_spread: { icon: "fas fa-comment-dots", label: "Badges.rumor_spread", cls: "rumor" },

@@ -2,7 +2,7 @@
   "id": "wfrp4e-underworld",
   "title": "WFRP4e – Underworld Crew",
   "description": "Run a mobile outlaw crew in Warhammer Fantasy Roleplay 4e: send followers on jobs across city, village, forest and mountains, fence hot loot, manage Heat and Morale, make camp each night (or resolve a whole Crew Week) and give tactical orders in combat. English and Polish.",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "compatibility": {
     "minimum": "13",
     "verified": "14",

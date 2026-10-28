@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.8.1
+- Removed the **Contact the Outlaws** job: recruiting new followers is always the GM's decision (the GM's *Recruit via Chat* proposals stay).
+- Rumour card: the source now sits under the heading instead of squeezing it.
+
 ## 1.8.0
 - English name: **WFRP4e – Underworld Crew**. Full English and Polish interface; other languages fall back to English.
 - All texts (jobs, terrains, loot, rumours, events, roles, traits, perks, orders, chat cards) moved to the language files.

@@ -151,11 +151,6 @@
           "village": "Talk at the well and in the inn. An outstanding success grants a Lead to a rich target."
         }
       },
-      "outlaw_contact": {
-        "Name": "Contact the Outlaws",
-        "Reward": "2 recruits for the crew",
-        "Desc": "Find a forest band and trade news. Success brings willing recruits to the crew."
-      },
       "procure": {
         "Name": "Scavenge and Forage",
         "Reward": "1d3 rations + 1d8+1 s",
@@ -1177,7 +1172,6 @@
       "poaching": "Poaching",
       "highway_robbery": "Robbery",
       "mine_raid": "Mine",
-      "outlaw_contact": "Outlaws",
       "racket": "Racket",
       "intimidate": "Extortion",
       "rumor_spread": "Rumours",
@@ -1385,11 +1379,6 @@
       "Poaching": {
         "Success": "{name} comes back with game – supplies +{value}.",
         "Fail": "The game was spooked, and the gamekeeper walked the woods until dusk. {name} comes back empty-handed."
-      },
-      "Outlaws": {
-        "Note": "{name} brings people from a forest band.",
-        "Success": "{name} found a forest band. Two volunteers await a decision – proposals in the chat.",
-        "Fail": "Outlaws don't trust strangers. {name} comes back alone."
       },
       "Racket": {
         "DefaultDistrict": "the Docks District",

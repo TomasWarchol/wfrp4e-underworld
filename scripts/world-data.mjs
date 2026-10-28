@@ -102,10 +102,6 @@ export const MISSIONS = {
     target: 55, skill: "NAME.Gossip", risk: "low",
     leadOnGreat: true
   },
-  outlaw_contact: {
-    id: "outlaw_contact", category: "intel", icon: "fas fa-people-group", terrains: ["forest"], fn: "executeOutlawContactMission",
-    target: 45, skill: "NAME.Gossip", risk: "low"
-  },
 
   // ─── ZASOBY I ŁUPY ───
   procure: {
