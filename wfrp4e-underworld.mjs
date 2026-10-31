@@ -207,7 +207,7 @@ Hooks.once("init", async function () {
   });
 
   Handlebars.registerHelper("underworldRoleSelectOptions", function (currentRole) {
-    const norm = UnderworldTables.normalizeRole(currentRole);
+    const norm = currentRole ? UnderworldTables.normalizeRole(currentRole) : null;
     const roles = UnderworldTables.ROLES_CONFIG;
     let html = "";
     for (const [key, cfg] of Object.entries(roles)) {

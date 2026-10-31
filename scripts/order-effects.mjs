@@ -27,7 +27,29 @@ export const ORDER_AUTOMATION = {
   distract: { apply: [{ advantage: -1 }] },
   disarm: { test: { characteristic: "s", difficulty: "difficult" }, onFail: [{ note: "Orders.Effects.DropsWeapon" }] },
   rally: { ally: true, apply: [{ remove: "broken" }] },
-  draught: { ally: true, apply: [{ remove: "fatigued" }] }
+  draught: { ally: true, apply: [{ remove: "fatigued" }] },
+  bodyblock: { ally: true, apply: [{ advantage: 1 }] },
+  grapple: { test: { characteristic: "s", difficulty: "challenging" }, onFail: [{ add: "entangled" }] },
+  circle: { ally: true, apply: [{ remove: "surprised" }, { advantage: 1 }] },
+  parry: { ally: true, apply: [{ advantage: 1 }] },
+  riposte: { apply: [{ advantage: -1 }] },
+  challenge: { test: { characteristic: "wp", difficulty: "challenging" }, onFail: [{ note: "Orders.Effects.MustFace" }] },
+  pindown: { test: { characteristic: "wp", difficulty: "challenging" }, onFail: [{ add: "surprised" }] },
+  fireoil: { test: { characteristic: "ag", difficulty: "challenging" }, onFail: [{ add: "ablaze" }] },
+  caltrops: { test: { characteristic: "ag", difficulty: "average" }, onFail: [{ add: "prone" }] },
+  collapse: { test: { characteristic: "ag", difficulty: "difficult" }, onFail: [{ add: "stunned" }] },
+  wagonwall: { ally: true, apply: [{ advantage: 1 }] },
+  spooked: { apply: [{ advantage: -1 }] },
+  getaway: { ally: true, apply: [{ remove: "prone" }] },
+  spot: { ally: true, apply: [{ advantage: 1 }] },
+  lure: { test: { characteristic: "int", difficulty: "challenging" }, onFail: [{ advantage: -1 }, { note: "Orders.Effects.Lured" }] },
+  snare: { test: { characteristic: "ag", difficulty: "average" }, onFail: [{ add: "entangled" }] },
+  forgedorder: { test: { characteristic: "int", difficulty: "challenging" }, onFail: [{ add: "surprised" }] },
+  payoff: { test: { characteristic: "wp", difficulty: "challenging" }, onFail: [{ note: "Orders.Effects.StandsDown" }] },
+  salve: { ally: true, apply: [{ remove: "bleeding" }] },
+  fumes: { test: { characteristic: "t", difficulty: "challenging" }, onFail: [{ add: "fatigued" }] },
+  evileye: { test: { characteristic: "wp", difficulty: "challenging" }, onFail: [{ advantage: -1 }, { note: "Orders.Effects.EvilEye" }] },
+  regroup: { ally: true, apply: [{ remove: "surprised" }, { advantage: 1 }] }
 };
 
 export class OrderEffects {

@@ -55,6 +55,9 @@
   <div style="background: rgba(120, 80, 40, 0.1); border-left: 3px solid #7c5e44; padding: 6px 8px; margin-top: 6px; border-radius: 2px; font-size: 0.85rem;">
     <strong>{{localize "UNDERWORLD.Camp.NightEvent"}}: {{event.title}}</strong>
     <p style="margin: 2px 0; font-style: italic;">{{event.text}}</p>
+    {{#if event.roleNote}}<p style="margin: 2px 0; font-size: 0.8rem;"><i class="fas fa-id-badge"></i> {{{event.roleNote}}}</p>{{/if}}
+    {{#if event.followUp}}<p style="margin: 2px 0; font-size: 0.78rem; color: #775533;"><i class="fas fa-link"></i> {{localize "UNDERWORLD.CampEvent.FollowUp"}}</p>{{/if}}
+    {{#if event.next}}<p style="margin: 2px 0; font-size: 0.78rem; color: #775533;"><i class="fas fa-link"></i> {{localize "UNDERWORLD.CampEvent.HookSet"}}</p>{{/if}}
   </div>
   {{/if}}
 

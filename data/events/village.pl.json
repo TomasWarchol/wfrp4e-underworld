@@ -1,0 +1,2900 @@
+[
+ {
+  "id": "v-001",
+  "title": "Cisza w stodole",
+  "text": "Noc w stodole minęła spokojnie, tylko sowa hukała na belce. Wszyscy spali w sianie jak króle.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-002",
+  "title": "Dziury w dachu",
+  "text": "Deszcz przebił się przez słomiany dach i zmoczył część posłań. Połowa szajki spała na mokro.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-003",
+  "title": "Wiejski pies",
+  "text": "Kudłaty burek całą noc szczekał przy płocie, a rano zaprzyjaźnił się z szajką za kawałek słoniny.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-004",
+  "title": "Dziecko z mlekiem",
+  "text": "Dziewczynka z sąsiedniej zagrody przyniosła dzban mleka i spytała, czy to prawda, że jesteście bandytami. Dostała chleb i zachowała tajemnicę.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-005",
+  "title": "Pasterz",
+  "text": "Pasterz z owcami przepędził stado tuż obok. Jedna owca zgubiła się i znalazła w waszym obejściu. Pasterz udał, że jej nie widzi.",
+  "morale": 0,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-006",
+  "title": "Jarmark we wsi",
+  "text": "We wsi urządzono mały jarmark. Kramy ze skórami, serami i miodem kusiły, a kieszenie wieśniaków były pełne.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": 4
+ },
+ {
+  "id": "v-007",
+  "title": "Kapłan Taala",
+  "text": "Wiejski kapłan Taala przechodził z koszem ziół i poprosił o niewiele: żeby nie palić w lesie. Nikt się nie sprzeciwił.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-008",
+  "title": "Zagubiona krowa",
+  "text": "Krowa przeszła przez płot i weszła prosto w wasze obozowisko. Nikt nie zdołał jej odprowadzić, zanim nie została wydojona.",
+  "morale": 0,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-009",
+  "title": "Poborca",
+  "text": "Poborca podatkowy z hrabiego przejechał przez wieś z dwoma pachołkami i zabrał to, co mógł. Wieśniacy mieli twarze jak z kamienia.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-010",
+  "title": "Burza z gradem",
+  "text": "Grad zniszczył część upraw i wiele dachów. Wieśniacy płakali, a szajka miała wrażenie, że jest tu niepożądana.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-011",
+  "title": "Dożynki",
+  "text": "Wieś obchodziła dożynki. Śpiewy, tańce i piwo lało się strumieniami. Szajka stała z boku, ale ktoś wcisnął jej dzban.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-012",
+  "title": "Wilki",
+  "text": "Wilki wyły w pobliskim lesie całą noc. Konie szarpały uwięzi, a straże pilnowały ognisk do świtu.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-013",
+  "title": "Zaginiona owca",
+  "text": "Wieśniacy szukali zaginionej owcy z latarniami. Szajka zachowała się cicho, a owca przez dwa dni służyła za zapas.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-014",
+  "title": "Stara wdowa",
+  "text": "Wdowa z sąsiedniej chaty zapukała z prośbą o drewno na opał. W zamian dała worek suszonych jabłek i opowieść o dawnych czasach.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-015",
+  "title": "Dziwny kamień",
+  "text": "Przy studni leżał kamień z wyrytym znakiem, którego nikt nie rozpoznawał. Wieśniacy omijali go szerokim łukiem.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-016",
+  "title": "Młynarz",
+  "text": "Młynarz przyniósł worek mąki i spytał, czy nie potrzeba. Jego oczy zdradzały, że chętnie wyprzedaje towar, którego nie powinien.",
+  "morale": 0,
+  "supplies": 3,
+  "coinsSS": -2
+ },
+ {
+  "id": "v-017",
+  "title": "Pożar stogu",
+  "text": "Ktoś podpalił stóg siana na polu sąsiada. Wieś rzuciła się do gaszenia, a kilku popleczników, nieproszonych, też pomagało.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-018",
+  "title": "Wesele",
+  "text": "We wsi trwało wesele. Do północy bawiło się całe sąsiedztwo, a o świcie nikt nie pamiętał, kto jest kto.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-019",
+  "title": "Zgubiony cielak",
+  "text": "Cielak wyrwał się z obórki i pognał prosto w las. Wasi ludzie złapali go po godzinie. Właściciel dał sery w nagrodę.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-020",
+  "title": "Pijany woźnica",
+  "text": "Pijany woźnica wywrócił wóz na drodze i beczki potoczyły się do rowu. Nikt nie liczył, ile ich było.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 1
+ },
+ {
+  "id": "v-021",
+  "title": "Chory koń",
+  "text": "Koń chłopa z sąsiedztwa zachorował i padł. Gospodarz rozpaczał, a mięso trzeba było użyć szybko.",
+  "morale": -1,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-022",
+  "title": "Kowal",
+  "text": "Kowal z wioski naostrzył waszym ludziom noże za darmo. Odmówił zapłaty, bo „wszyscy tu mamy swoje grzechy”.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-023",
+  "title": "Zbłąkany podróżny",
+  "text": "Podróżny z mapą szukał drogi do Altdorfu. Szajka wskazała mu kierunek, a on zostawił kilka drobnych monet.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "v-024",
+  "title": "Kłótnia o miedzę",
+  "text": "Dwaj sąsiedzi pokłócili się o miedzę i rzucali kamieniami. Wasi ludzie założyli się, który wygra.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "v-025",
+  "title": "Bociany",
+  "text": "Bociany odleciały, a wieśniacy twierdzili, że zima przyjdzie wcześnie. Kilku popleczników zaczęło szukać cieplejszych okryć.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-026",
+  "title": "Targ zwierząt",
+  "text": "Na wiejskim targu sprzedawano kury, gęsi i prosięta. Jeden z popleczników wrócił z kurą pod pachą i niewinną miną.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-027",
+  "title": "Ścieżka przez pola",
+  "text": "Ścieżka przez pola prowadziła od drogi do waszego obozu, ale nikt nią nie przyszedł. Wieśniacy mieli własne sprawy.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-028",
+  "title": "Dym z komina",
+  "text": "Z komina pobliskiej chaty unosił się zapach pieczonego chleba. Kilku popleczników zakradło się po bochenek.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-029",
+  "title": "Odwiedziny leśniczego",
+  "text": "Leśniczy z hrabiego sprawdził, czy nie palicie w lesie. Wszystko wyglądało dobrze, więc odszedł, życząc dobrej nocy.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-030",
+  "title": "Spłoszone konie",
+  "text": "Coś spłoszyło konie w stajni. Cała wieś wybiegła z latarniami, ale nic nie znaleźli. Szajka szczęśliwie nie była winna.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-031",
+  "title": "Zbrojny jeździec",
+  "text": "Samotny jeździec w zbroi przejechał przez wieś bez słowa. Wieśniacy zamknęli drzwi, a szajka wstrzymała oddech.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-032",
+  "title": "Nowina o wojnie",
+  "text": "Do wsi dotarł posłaniec z wieściami o zielonoskórych na wschodniej granicy. Wieśniacy zaczęli ukrywać zboże, a część szajki wolała ruszyć dalej.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-033",
+  "title": "Spalona chata",
+  "text": "Chata na skraju wsi spłonęła, a jej mieszkańcy zniknęli. Wieśniacy mówią, że to sprawka nieczystej siły, a wy znaleźliście w popiele monety.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "v-034",
+  "title": "Dzieci w stogu",
+  "text": "Dzieci bawiły się w chowanego w stogu siana i znalazły waszego człowieka śpiącego w środku. Obiecał im dwie śliwki za milczenie.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-035",
+  "title": "Biesiada u sołtysa",
+  "text": "Sołtys wydał ucztę na cześć gości z miasta i zaprosił cały obóz. Szajka grała rolę zacnych kupców, a jedzenie było wyśmienite.",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-036",
+  "title": "Gęsi",
+  "text": "Stado gęsi napadło na waszego człowieka, który próbował się do nich zbliżyć. Wszyscy się śmiali, a on długo się dąsał.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-037",
+  "title": "Studnia",
+  "text": "Studnia we wsi wyschła i wieśniacy musieli czerpać wodę z waszego potoku. Szajka dostała kilka drobnych prezentów.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": 1
+ },
+ {
+  "id": "v-038",
+  "title": "Przesąd o czarnym kocie",
+  "text": "Czarny kot przeszedł przez obozowisko i połowa szajki zaczęła szukać drewna do zrobienia znaku ochronnego.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-039",
+  "title": "Cichy pogrzeb",
+  "text": "We wsi pochowano staruszka. Wszyscy szli za trumną w milczeniu, a szajka zdjęła czapki i ukłoniła się z szacunkiem.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-040",
+  "title": "Skrzypek wiejski",
+  "text": "Wiejski skrzypek zagrał wieczorem pod gołym niebem i połowa wsi zeszła się, by posłuchać. Muzyka była paskudna i wszyscy się świetnie bawili.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-041",
+  "title": "Kupiec wędrowny",
+  "text": "Kupiec wędrowny z wozem towarów rozłożył kramik przy drodze. Szajka wypatrzyła parę rzeczy, które mogły się przydać.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": 3
+ },
+ {
+  "id": "v-042",
+  "title": "Pogłoska o upiorze",
+  "text": "Dzieci mówiły o upiorze w opuszczonym młynie. Starsi uciszali je, ale w nocy sami nie wychodzili z chat.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-043",
+  "title": "Gospodyni z jajkami",
+  "text": "Gospodyni sprzedawała jajka z kosza i targowała się zawzięcie. Szajka dostała pół kosza za pół ceny, bo „mężczyźni muszą jeść”.",
+  "morale": 0,
+  "supplies": 3,
+  "coinsSS": -1
+ },
+ {
+  "id": "v-044",
+  "title": "Pijany parobek",
+  "text": "Pijany parobek wymachuje widłami i wykrzykuje groźby pod waszym obozem. Ktoś zaraz zostanie ranny.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -2,
+  "role": "bodyguard",
+  "okText": "Ochroniarz zabrał mu widły jedną ręką, a drugą nalał mu mleka. Parobek wyszedł zawstydzony.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "v-045",
+  "title": "Wiejscy chuligani",
+  "text": "Banda wiejskich chuliganów szuka zaczepki wśród obcych. Jeśli ktoś ich nie powstrzyma, wieś nigdy was nie zapomni.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "bodyguard",
+  "okText": "Ochroniarz stanął przed nimi i spojrzał. Chuligani spuścili głowy, a najodważniejszy zaproponował przyjaźń i pożyczył siano.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 2
+  }
+ },
+ {
+  "id": "v-046",
+  "title": "Złodziej koni",
+  "text": "Złodziej koni zakradł się do stajni sąsiada i teraz próbuje skłonić was do udziału. Jeśli wpadnie, wskaże na was.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "Cień przechwycił złodzieja w ciemności, zabrał mu łup i odesłał w drugą stronę, a konie wróciły na swoje miejsce z nagrodą dla znalazcy.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "v-047",
+  "title": "Donosiciel wiejski",
+  "text": "Wiejski donosiciel zaczął węszyć wokół waszego obozu i zapisuje wszystko na kartce. Rano pójdzie do dworu.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "Cień pożyczył od donosiciela jego kartkę i zwrócił ją rano z nowymi, bardzo nudnymi zapiskami. Donosiciel nie chciał się już mieszać.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "v-048",
+  "title": "Lisy w kurniku",
+  "text": "Lis wpadł do kurnika sąsiada i hałas obudził całą wieś. Jeśli nikt go nie ustrzeli, wieśniacy zaczną szukać winnych.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "Strzelec trafił lisa jednym strzałem z dużej odległości. Wieśniacy ucieszyli się i zostawili dwie kury w podziękowaniu.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 1
+  }
+ },
+ {
+  "id": "v-049",
+  "title": "Jeleń w zbożu",
+  "text": "Jeleń zeżarł pół pola pszenicy i wieśniacy chcą go zabić, ale nie mają wprawy. Hrabia zabrania polowań.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "Strzelec zabił jelenia cicho i bezbłędnie. Wieśniacy zrobili ucztę i przysięgli milczenie, a szajka dostała najlepsze kawałki.",
+  "ok": {
+   "morale": 1,
+   "supplies": 4,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "v-050",
+  "title": "Kłótnia o sąsiedztwo",
+  "text": "Dwie wiejskie rodziny kłócą się od tygodnia i ściągają coraz więcej ludzi. Wieś jest o krok od bójki.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "Prowokator przekonał obie strony, że winien jest ktoś trzeci, i wszyscy razem zakpili z obcego. Szajka uciekła z hojnym darem za „mediację”.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "v-051",
+  "title": "Wędrowny kuglarz",
+  "text": "Kuglarz konkuruje z waszym człowiekiem o uwagę wiejskiej widowni. Przegrana to utrata autorytetu.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "Prowokator zrobił z kuglarza pośmiewisko, a potem zaprosił go na wspólne występy. Tłum zapłacił podwójnie.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "v-052",
+  "title": "Chory chłopak",
+  "text": "Syn gospodarza ma wysoką gorączkę, a lekarza nie ma w promieniu dnia drogi. Ojciec prosi was o pomoc.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "Szabrownik użył ziół z torby i kilku starych sztuczek. Chłopak dostał potu i wrócił do zdrowia. Gospodarz dał jedzenie i srebro.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "v-053",
+  "title": "Zapadnięta piwnica",
+  "text": "Piwnica wiejskiego domu zapadła się i wieśniacy nie mogą wydostać zapasów. Zima jest blisko.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "Szabrownik w trzy godziny wyciągnął wszystko, co się dało, a część zapasów zostawił „na pamiątkę”.",
+  "ok": {
+   "morale": 1,
+   "supplies": 3,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "v-054",
+  "title": "Zepsuty wóz kupca",
+  "text": "Wóz kupca rozbił się na drodze i towar leży w rowie. Kupiec się boi, że ktoś go okradnie.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "Woźnica naprawił oś w godzinę i załadował towar. Kupiec w zamian dał hojny napiwek i obietnicę, że poleci was znajomym.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "v-055",
+  "title": "Kontrola na moście",
+  "text": "Strażnicy hrabiego kontrolują ludzi na moście i rewidują wozy. Wasze zapasy muszą przejść na drugą stronę.",
+  "morale": -1,
+  "supplies": -2,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "Woźnica znał bród poniżej mostu i sprowadził wóz tam. Kontrola nie dostrzegła niczego, a zapasy dotarły na drugi brzeg.",
+  "ok": {
+   "morale": 1,
+   "supplies": 3,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "v-056",
+  "title": "Płot hrabiego",
+  "text": "Hrabia kazał postawić płot przez wiejskie pola, odcinając wieś od lasu. Wieśniacy są wściekli i szukają kogoś, kto go zniszczy.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "Podpalacz spalił płot w jedną noc, bez ofiar i śladów. Wieśniacy zapłacili mu ukradkiem, z wdzięcznością w oczach.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "v-057",
+  "title": "Stary młyn",
+  "text": "Opuszczony młyn przy rzece zaczyna się walić i zagraża wsi. Ktoś musi go zburzyć, zanim zabije dziecko.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "Podpalacz zburzył młyn kontrolowaną eksplozją i uratował wieś. W gruzach znalazł zapomniane skrytki z mąką i monetami.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "v-058",
+  "title": "Szlak zbójników",
+  "text": "Zwiadowca zauważył ślady, których nie powinno tu być: świeże, od wielu ludzi, w stronę wsi. Ktoś szykuje napad.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "Zwiadowca poszedł śladem, ostrzegł wieśniaków i poprowadził ich do zasadzki. Napad się nie udał, a wdzięczna wieś hojnie wynagrodziła szajkę.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "v-059",
+  "title": "Zabłąkany pielgrzym",
+  "text": "Pielgrzym zgubił drogę i krąży po lesie. Jeśli nikt go nie znajdzie, wilki zrobią to za nas.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "Zwiadowca odnalazł pielgrzyma przed świtem i odprowadził do wsi. W podzięce dostał błogosławieństwo i garść monet.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "v-060",
+  "title": "Wiejski spór sądowy",
+  "text": "Dwaj chłopi wlekli się do sądu o granicę pola. Obie strony szukają kogoś, kto sfałszuje akt własności.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "fixer",
+  "okText": "Paser sprzedał obu stronom „akty” i ustalił ugodę. Obaj mieli poczucie sprawiedliwości, a szajka miała kieszenie pełne.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "v-061",
+  "title": "Cenne znalezisko",
+  "text": "Chłop znalazł w polu starą monetę i nie wie, ile jest warta. Handlarz oferuje trzy miedziaki.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "fixer",
+  "okText": "Paser rozpoznał rzadką monetę, namówił chłopa do uczciwej ceny i wziął prowizję. Wszyscy wyszli zadowoleni.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "v-062",
+  "title": "Zaraza w oborze",
+  "text": "Wieśniacy mają chore krowy i szukają kogoś, kto się zna. Jeśli bydło padnie, wieś umrze z głodu.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "Znachor ustalił przyczynę, przygotował maść i napój i po dwóch dniach krowy wróciły do zdrowia. Wieś zapłaciła mu serami i srebrem.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "v-063",
+  "title": "Rzekoma czarownica",
+  "text": "Wieśniacy wskazują na starą Hilde i chcą ją spalić za czary. Jeśli nikt nie zareaguje, będzie dymić stos.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "Znachor udał inkwizytora, przesłuchał Hilde i uznał ją niewinną „na podstawie dowodów”. Wieśniacy zapłacili za wyrok.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "v-064",
+  "title": "Wyzwanie parobka",
+  "text": "Najsilniejszy parobek we wsi wyzwał waszego człowieka na zapasy. Przegrana to utrata honoru, wygrana to wrogość.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "duelist",
+  "okText": "Szermierz przyjął wyzwanie i po kilku efektownych chwytach pozwolił parobkowi „prawie wygrać”. Wieś pokochała gościa.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "v-065",
+  "title": "Pojedynek o dziewczynę",
+  "text": "Dwóch parobków wyzwało się na pojedynek o dziewczynę z wioski. Jeśli dojdzie do krwi, straż hrabiego przyjedzie szybciej, niż trzeba.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "duelist",
+  "okText": "Szermierz wystąpił jako sekundant, nauczył ich stosować drewniane miecze i rozstrzygnął spór w żartobliwy sposób. Wieś bawiła się dobrze.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 2
+  }
+ },
+ {
+  "id": "v-066",
+  "title": "Obcy w karczmie",
+  "text": "W wiejskiej karczmie siedzi samotny obcy z naciągniętym kapturem i pije w milczeniu. Z nikim nie rozmawia.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "v-067"
+ },
+ {
+  "id": "v-067",
+  "title": "Obcy ponownie",
+  "text": "Obcy w kapturze przyszedł do obozu i położył na ziemi sakiewkę. Mówi: „Potrzebuję przysługi i będę pamiętał”.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 6,
+  "only": true
+ },
+ {
+  "id": "v-068",
+  "title": "Zgubiona szkatułka",
+  "text": "Dzieci znalazły w polu szkatułkę ze złamanym zamkiem i przyniosły do obozu. Ktoś jej szuka.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2,
+  "next": "v-069"
+ },
+ {
+  "id": "v-069",
+  "title": "Właściciel szkatułki",
+  "text": "Do obozu przyszedł wójt i zapytał o szkatułkę. Obiecuje nagrodę, ale w jego oczach widać niepokój.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 5,
+  "only": true
+ },
+ {
+  "id": "v-070",
+  "title": "Zbiegły parobek",
+  "text": "Parobek ze wsi prosi o schronienie przed hrabiowskim zarządcą. Mówi, że ukradł z kuchni kawał szynki i chciał tylko spróbować.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0,
+  "next": "v-071"
+ },
+ {
+  "id": "v-071",
+  "title": "Zarządca szuka",
+  "text": "Zarządca hrabiego przyjechał konno i pyta o zbiegłego parobka. Obiecuje srebro, ale dodaje, że za ukrywanie grozi kara.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 4,
+  "only": true
+ },
+ {
+  "id": "v-072",
+  "title": "Trzask ognia",
+  "text": "Przy ognisku kilku popleczników opowiadało zasłyszane historie o strzygach i utopcach. Do rana nikt nie chciał wychodzić na stronę sam.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-073",
+  "title": "Zbieranie runa",
+  "text": "Dziewczęta ze wsi zbierały grzyby tuż przy obozie. Wasi ludzie udawali drwali, ale jedna z nich patrzyła podejrzanie długo.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-074",
+  "title": "Gołąbek z wiadomością",
+  "text": "Gołąb z listem do dworu pomylił kierunek i wylądował w obozie. Kartka z wiadomością dotyczyła nadchodzących podatków.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "v-075",
+  "title": "Stado gęsi",
+  "text": "Gęsi przeszły przez obóz z hałasem i zabrały pół wiadra ziarna. Ktoś musiał się za nimi gonić.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-076",
+  "title": "Dziwne ślady",
+  "text": "Rano przy obozie znaleziono odciski kopyt rozmiarów końskich, ale z trzema palcami. Wieśniacy przeżegnali się i odeszli.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-077",
+  "title": "Zaginiony chłopiec",
+  "text": "Zaginął chłopiec ze wsi i całe sąsiedztwo go szuka. Jeden z waszych znalazł go śpiącego w stogu i odprowadził do domu.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "v-078",
+  "title": "Brodzenie po wodzie",
+  "text": "Strumień wezbrał po deszczu i przecięcie go wymagało czasu. Nikt nie narzekał, bo woda była zimna i czysta.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-079",
+  "title": "Ofiara dla Taala",
+  "text": "Wieśniacy zostawili przy lesie wiązkę zboża i dzban miodu jako ofiarę dla Taala. Szajka nie śmiała jej ruszyć.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-080",
+  "title": "Wrony na polu",
+  "text": "Stado wron obsiadło pole i wieśniacy wyszli z hałasem je przepędzić. W tym zamieszaniu łatwo było wziąć co nieco ze spiżarni.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-081",
+  "title": "Pochód dzieci",
+  "text": "Dzieci ze wsi niosły latarenki i śpiewały pieśń o zimie. Szajka nie wiedziała, czy się śmiać, czy płakać.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-082",
+  "title": "Spłonęła stodoła",
+  "text": "Stodoła sąsiada spłonęła od uderzenia pioruna. Cała wieś gasiła, a szajka dostała podziękowania za pomoc.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "v-083",
+  "title": "Zepsuta oś",
+  "text": "Oś wozu pękła i trzeba było wzywać kowala. Dzień stracony, ale kowal dał dobrą cenę za pomoc w drobnej robocie.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -2
+ },
+ {
+  "id": "v-084",
+  "title": "Pogańska pieśń",
+  "text": "Z wnętrza lasu dochodził śpiew w nieznanym języku. Wieśniacy zatkali uszy, a wasi ludzie nie spali do świtu.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-085",
+  "title": "Zakład o zboże",
+  "text": "Dwóch wieśniaków założyło się, kto wyżej podrzuci sierp. Wasz człowiek wygrał i dostał worek owsa.",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-086",
+  "title": "Ludzie hrabiego",
+  "text": "Ludzie hrabiego rozstawili na drodze zapory i legitymują każdego. Wieś jest wzburzona, ale wy macie dobrą kryjówkę.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-087",
+  "title": "Wiejskie święto",
+  "text": "Wieś obchodzi święto Rhyi. Wszyscy tańczą, pieką chleby w kształcie kłosów i rozdają je gościom.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-088",
+  "title": "Grzmot",
+  "text": "Grzmot wstrząsnął ziemią i kilka krów padło na pastwisku. Wieśniacy mówią o gniewie bogów.",
+  "morale": -1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-089",
+  "title": "Złamana noga",
+  "text": "Wieśniak złamał nogę przy wozie, a jego rodzina została bez opieki. Szajka podzieliła się zapasami.",
+  "morale": 1,
+  "supplies": -2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-090",
+  "title": "Pasieka",
+  "text": "Pasieka sąsiada została napadnięta przez niedźwiedzia. Wieśniak biegał z garnkiem, a wasi ludzie przyglądali się z bezpiecznej odległości.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-091",
+  "title": "Rzeźnia",
+  "text": "Wieśniacy ubili świnię i zaprosili sąsiadów na kiszki i kaszankę. Szajka też dostała swoją porcję.",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-092",
+  "title": "Kruki nad polem",
+  "text": "Kruki krążyły nad polem, gdzie dawno temu odbyła się bitwa. Starzy ludzie szeptali, że coś się tam budzi.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-093",
+  "title": "Spóźniony kurier",
+  "text": "Kurier cesarski przejechał przez wieś i zostawił na ławce zgubiony list. Prosiło się o to, żeby go zatrzymać.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "v-094",
+  "title": "Dwa wozy",
+  "text": "Dwa wozy zderzyły się na drodze i woźnice zaczęli się bić. Szajka patrzyła, a po bijatyce zgarnęła resztki ładunku.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 2
+ },
+ {
+  "id": "v-095",
+  "title": "Pogrzebany skarb",
+  "text": "Dziadek ze wsi opowiadał historię o skarbie zakopanym pod starym dębem. Przez noc kilku popleczników kopało, znajdując tylko korzenie.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "v-096",
+  "title": "Zgubiona kosa",
+  "text": "Kosa pożyczona od wieśniaka zginęła w trawie. Szukali jej do wieczora i znaleźli dopiero rano.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-097",
+  "title": "Powrót żołnierza",
+  "text": "Żołnierz wracający z wojny zatrzymał się w wiosce. Opowiadał o bitwach i pokazywał blizny, a wasi ludzie słuchali z zapartym tchem.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-098",
+  "title": "Zagroda z końmi",
+  "text": "Rolnik pokazał waszym ludziom swoje konie i zaproponował sprzedaż jednego. Kobyłka była piękna, ale cena zbyt wysoka.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -2
+ },
+ {
+  "id": "v-099",
+  "title": "Dymy ku niebu",
+  "text": "Daleko na horyzoncie widać słupy dymu. Nikt nie wie, czy to pożar, czy napad, ale wieśniacy zamknęli drzwi.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-100",
+  "title": "Młocka",
+  "text": "Wieśniacy młócili zboże całą noc przy pochodniach. Szajka pomogła i dostała za to worek ziarna.",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-101",
+  "title": "Bajarz",
+  "text": "Wędrowny bajarz zasiadł pod lipą i opowiadał historie. Zebrała się cała wieś, a wy zrobiliście dobry użytek z tłumu.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "v-102",
+  "title": "Szczupak w stawie",
+  "text": "Wieśniacy złowili ogromnego szczupaka i podzielili się nim z całą wsią. Szajka też dostała kawał.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-103",
+  "title": "Zniknęło siano",
+  "text": "Rano okazało się, że sąsiedzki stóg siana zniknął. Wieśniacy podejrzewali szajkę, ale nic nie mogli udowodnić.",
+  "morale": -1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-104",
+  "title": "Wzburzony tłum",
+  "text": "Wieśniacy zebrali się z widłami, bo ktoś im powiedział, że wasi ludzie kradną dzieci. Jeśli nikt ich nie uspokoi, dojdzie do rozlewu krwi.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "bodyguard",
+  "okText": "Ochroniarz stanął przed tłumem z założonymi rękami i zapytał, kto pierwszy chce sprawdzić. Nikt nie chciał, a wieśniacy rozeszli się zawstydzeni.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "v-105",
+  "title": "Wywrócony wóz",
+  "text": "Wóz z dachówkami przewrócił się na drodze, przygniatając woźnicę. Jeśli nikt nie podniesie wozu, człowiek umrze.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "bodyguard",
+  "okText": "Ochroniarz podniósł wóz na plecach, wyciągnął woźnicę i dostał od uratowanego sakiewkę oraz obietnicę przysługi.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "v-106",
+  "title": "Kradzież w nocy",
+  "text": "Ktoś kradnie z waszych zapasów po cichu, jednego worka dziennie. Nikt go jeszcze nie widział.",
+  "morale": -1,
+  "supplies": -2,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "Cień czuwał całą noc, pochwycił złodzieja i okazało się, że to wieśniak z głodu. Cień zrobił z niego informatora i dostał garść wieści.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "v-107",
+  "title": "Ślad za obozem",
+  "text": "Ktoś w ciemności idzie waszym śladem od kilku godzin, zatrzymując się, gdy wy się zatrzymujecie.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "Cień zaszedł od tyłu, schwycił śledzącego za gardło i wydobył z niego, że wysłał go łowca nagród. Zwędzony mu list był wart zachodu.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "v-108",
+  "title": "Kłusownik",
+  "text": "Hrabiowski leśniczy szuka kłusowników i pyta o wasze strzały. Bez dobrej odpowiedzi będzie kłopot.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "Strzelec pokazał mu kilka zająców złowionych „w pułapkach”, zaprosił na kolację i wysłał z workiem mięsa. Leśniczy nic nie podejrzewał.",
+  "ok": {
+   "morale": 1,
+   "supplies": 3,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "v-109",
+  "title": "Wilk przy owcach",
+  "text": "Wilk skradał się wokół zagrody i wieśniacy boją się o stado. Strzał musi być pewny i nie ściągnąć niczyjej uwagi.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "Strzelec zabił wilka jednym strzałem z dystansu. Pasterz zapłacił skórą i kilkoma srebrnikami, a wieś powiesiła ją na ścianie jako trofeum.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "v-110",
+  "title": "Wiejska plotka",
+  "text": "Po wsi krąży plotka, że szajka kradnie i zabija. Wieśniacy zaczynają zamykać drzwi na zasuwy.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "Prowokator puścił w obieg własną plotkę, że to sprawka konkurencyjnej szajki. Wieś się uspokoiła, a „informator” dostał wynagrodzenie.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "v-111",
+  "title": "Pijana biesiada",
+  "text": "W karczmie zgromadzili się pijani wieśniacy, którzy mają zamiar iść pod obóz i „wyjaśnić sprawy”. Trzeba ich zająć czymś innym.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "Prowokator zorganizował zawody w piciu i śpiewie, a wieśniacy do rana zapomnieli o obozie. Szajka dostała pożyczkę „na dalszą drogę”.",
+  "ok": {
+   "morale": 1,
+   "supplies": 1,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "v-112",
+  "title": "Zgubione narzędzia",
+  "text": "Rolnik zgubił wszystkie narzędzia podczas burzy. Bez nich nie zasieje, a od tego zależą wszyscy sąsiedzi.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "Szabrownik w ciągu dnia znalazł wszystkie narzędzia, naprawił zepsute i zrobił kilka nowych z odpadków. Rolnik zapłacił jedzeniem i srebrem.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "v-113",
+  "title": "Zardzewiałe żelastwo",
+  "text": "Na polu wyorano stary pancerz i zardzewiałe miecze. Wieśniacy nie wiedzą, co z nimi zrobić.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "Szabrownik oczyścił i naprawił to, co się dało, sprzedał kowalowi i oddał połowę wieśniakom. Nikt nie pytał o pochodzenie.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "v-114",
+  "title": "Beczki w rowie",
+  "text": "Beczki z solą leżą w rowie przy drodze. Ktoś je tam ukrył albo zgubił, a dziś rano pytają o nie ludzie hrabiego.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "Woźnica zabrał beczki, zanim przyszli ludzie hrabiego, schował je w stodole i sprzedał sól w sąsiedniej wsi za dobrą cenę.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "v-115",
+  "title": "Wóz pod strażą",
+  "text": "Wóz z wymytą zawartością stoi na drodze, a przy nim śpi strażnik. Jeśli ktoś go obudzi, będzie kłopot, jeśli nie, szansa.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "Woźnica przeprowadził wóz bez hałasu, zostawiając strażnika w błogim śnie. Ładunek okazał się cenny.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "v-116",
+  "title": "Zablokowana droga",
+  "text": "Wielki głaz zablokował drogę do wsi po osunięciu. Wieśniacy próbują go ruszyć od trzech dni.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "Podpalacz podłożył ładunek i rozbił głaz na kawałki. Wieśniacy ujrzeli w tym cud i ofiarowali szajce świeże jedzenie.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "v-117",
+  "title": "Stajnia hrabiego",
+  "text": "W stajni hrabiego stoją konie, które przydałyby się szajce. Stajenny pilnuje, ale jest chciwy.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "Podpalacz wzniecił mały pożar w oborze obok, a w zamieszaniu wyprowadził dwa konie. Sprzedaż przyniosła dobre pieniądze.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "v-118",
+  "title": "Nowe pole",
+  "text": "Ktoś zaorał pole w nocy i zasiał coś dziwnego. Wieśniacy się boją, a pole wygląda na rytualne.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "Zwiadowca zbadał pole, rozpoznał zwykłą mieszankę ziół i uspokoił wieśniaków. W podzięce dostał zapłatę i wskazówkę o ukrytych drogach.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "v-119",
+  "title": "Opuszczona chata",
+  "text": "W lesie niedaleko stoi opuszczona chata. Szajka mogłaby tam przenocować, ale nikt nie wie, kto tam bywał.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "Zwiadowca ostrożnie sprawdził chatę, usunął pułapki i znalazł w środku ukryty zapas jedzenia i kilka monet po poprzednich lokatorach.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "v-120",
+  "title": "Fałszywy akt",
+  "text": "Ktoś próbuje wykorzystać fałszywy akt własności, żeby odebrać ziemię sąsiadowi. Sprawa ma ścigać was, bo pieczęć wygląda znajomo.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "fixer",
+  "okText": "Paser zbadał dokument, wskazał szczegółowo błędy i zażądał opłaty za „ekspertyzę”. Wieśniak odzyskał ziemię, a szajka dostała zapłatę.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "v-121",
+  "title": "Sprzedaż wełny",
+  "text": "Wieśniak ma duży zapas wełny, której nie może sprzedać z powodu monopolu miejscowego kupca. Szuka pośrednika.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "fixer",
+  "okText": "Paser znalazł kupca w sąsiednim mieście, wynegocjował cenę i wziął prowizję. Wieśniak był zadowolony, a monopolista wściekły.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "v-122",
+  "title": "Zagubiona dusza",
+  "text": "Wieśniak twierdzi, że jego zmarły ojciec nawiedza go po nocach. Rodzina prosi o pomoc.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "Znachor odprawił „egzorcyzm” z solą, dymem i trzema modlitwami. Ojciec ucichł, a rodzina zapłaciła hojnie.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "v-123",
+  "title": "Zatruty dobytek",
+  "text": "Studnia w sąsiedztwie została zatruta i bydło ginie. Wieśniacy podejrzewają złe czary.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "Znachor wykrył naturalną przyczynę, wskazał szkodliwe zioło w wodzie i oczyścił studnię. Wieś zapłaciła mu w mięsie i srebrze.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "v-124",
+  "title": "Pojedynek na widłach",
+  "text": "Dwóch wieśniaków pojedynkuje się na widły o honor córki. Ktoś zaraz zginie.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "duelist",
+  "okText": "Szermierz wkroczył z wdziękiem, rozbroił obu jednym ruchem i zaproponował rozstrzygnięcie przez piwo. Wieś uznała go za bohatera.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "v-125",
+  "title": "Konkurs fechtunku",
+  "text": "Młodzi wieśniacy urządzili konkurs na kije i proszą waszego człowieka o zademonstrowanie. Przegrana ośmieszy szajkę.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "duelist",
+  "okText": "Szermierz z uśmiechem pokonał wszystkich, a potem udzielił kilku lekcji. Wieśniacy odwdzięczyli się chlebem i monetami.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "v-126",
+  "title": "Ranny wędrowiec",
+  "text": "Na drodze leży ranny wędrowiec z mieczem u boku. Mówi, że napadli go zbójcy i prosi o wodę.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0,
+  "next": "v-127"
+ },
+ {
+  "id": "v-127",
+  "title": "Wędrowiec odwdzięcza",
+  "text": "Wędrowiec odzyskał siły i wyjawił, że jest synem miejscowego rycerza. Obiecuje dobre słowo u ojca i zostawia nagrodę.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 6,
+  "only": true
+ },
+ {
+  "id": "v-128",
+  "title": "Znaleziony medalion",
+  "text": "Dziecko znalazło w trawie złoty medalion z wyrytym imieniem. Szajka obejrzała go z uwagą.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "v-129"
+ },
+ {
+  "id": "v-129",
+  "title": "Szlachcianka szuka",
+  "text": "Młoda szlachcianka przyjechała konno i pyta o medalion po zmarłej matce. Zapłaci każdą cenę.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 9,
+  "only": true
+ },
+ {
+  "id": "v-130",
+  "title": "Wizyta kapłana",
+  "text": "Kapłan Sigmara zatrzymał się na nocleg i przy kolacji wspomniał, że szuka heretyków. Patrzył na was dłużej, niż wypada.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "v-131"
+ },
+ {
+  "id": "v-131",
+  "title": "Kapłan wraca",
+  "text": "Kapłan wrócił ze strażnikami i mówi, że znalazł śmiertelnego heretyka w sąsiedniej wsi. Prosi o pomoc w przeszukaniu lasu.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -2,
+  "only": true
+ },
+ {
+  "id": "v-132",
+  "title": "Krzyk w nocy",
+  "text": "W nocy w wiosce rozległ się dziki krzyk, a rano nikt nie chciał o nim mówić. Wygląda na to, że ktoś coś ukrywa.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "v-133"
+ },
+ {
+  "id": "v-133",
+  "title": "Prawda wychodzi",
+  "text": "Wieśniak przyznał, że ktoś z jego rodziny zachorował na dziwną chorobę. Prosi, żebyście nikomu nie mówili, i płaci za milczenie.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 5,
+  "only": true
+ },
+ {
+  "id": "v-134",
+  "title": "Spadająca gwiazda",
+  "text": "Na niebie błysnęła spadająca gwiazda i spadła gdzieś w pola. Wieśniacy szepczą o znaku.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "v-135"
+ },
+ {
+  "id": "v-135",
+  "title": "Kawałek nieba",
+  "text": "W miejscu upadku gwiazdy znaleziono kawałek dziwnego, ciężkiego kamienia. Alchemik z miasta zapłaci każdą cenę.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 9,
+  "only": true
+ },
+ {
+  "id": "v-136",
+  "title": "Chłodny poranek",
+  "text": "Rosa pokryła ziemię, a oddech unosił się parą. Wszyscy wstali sztywni, ale ognisko jeszcze żarzyło się dobrze.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-137",
+  "title": "Burza nad polami",
+  "text": "Burza przeszła nad polami z hukiem i ulewą. Szajka siedziała w stodole, patrząc na niebo rozdarte błyskawicami.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-138",
+  "title": "Księżyc w pełni",
+  "text": "Pełnia świeciła tak jasno, że można było czytać. Straże widziały wszystko, ale i wy byliście widoczni jak na dłoni.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-139",
+  "title": "Poranna mgła",
+  "text": "Mgła okryła pola i drogę. Wieśniacy wychodzący do pracy mijali was o dwa kroki, nie zauważając.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "v-140",
+  "title": "Sowa",
+  "text": "Sowa usiadła na belce i patrzyła na was całą noc. Starzy ludzie mówią, że to zły omen, ale rano odleciała.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-141",
+  "title": "Przypadkowy gość",
+  "text": "Wędrowny kupiec przechodził obok i zapytał o drogę. Opowiedział nowiny z miasta za kilka groszy i poszedł dalej.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "v-142",
+  "title": "Śpiewający parobkowie",
+  "text": "Parobkowie wracali z karczmy z pieśnią na ustach. Kilku wpadło do rowu i zasnęło, reszta poszła dalej.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-143",
+  "title": "Pech z wozem",
+  "text": "Koło wozu wpadło w dziurę i oś trzasnęła. Trzeba było poświęcić kilka godzin na naprawę.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-144",
+  "title": "Sprytny lis",
+  "text": "Lis zakradł się do obozu i zniknął z kawałem mięsa. Nikt nie zdołał go złapać, ale wszyscy podziwiali jego sprawność.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-145",
+  "title": "Odwiedziny proboszcza",
+  "text": "Proboszcz przeszedł z koszykiem i prosił o datki na naprawę dachu kościoła. Dostał drobne i pobłogosławił szajkę.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": -1
+ },
+ {
+  "id": "v-146",
+  "title": "Zimny wiatr",
+  "text": "Zimny wiatr wył w kominie i okiennice trzeszczały. Nikt nie spał spokojnie.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-147",
+  "title": "Sąsiedzka pomoc",
+  "text": "Sąsiad pomógł wam naprawić dach i nic nie chciał w zamian, tylko żebyście go pamiętali. Dobry człowiek.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-148",
+  "title": "Pochód owiec",
+  "text": "Przez drogę przeszło stado owiec, a za nim pastuch z psem. Przez godzinę nikt nie mógł się przecisnąć.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-149",
+  "title": "Uwiązany koń",
+  "text": "Wieśniacy zostawili konia uwiązanego do płotu i poszli do karczmy. Koń stał grzecznie całą noc i nikt się o niego nie upomniał.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "v-150",
+  "title": "Pijany kapłan",
+  "text": "Wiejski kapłan wrócił z wesela, zataczając się i śpiewając psalmy. Szajka odprowadziła go do plebanii.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "v-151",
+  "title": "Kopanie rowu",
+  "text": "Wieśniacy kopali rów melioracyjny koło waszego obozu. Przy okazji wykopali garść starych monet i kilka kości.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "v-152",
+  "title": "Młody kupiec",
+  "text": "Młody kupiec zatrzymał się w obozie i zachwalał swoje towary. Szajka kupiła kilka drobnostek i usłyszała nowiny.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": -2
+ },
+ {
+  "id": "v-153",
+  "title": "Dąb w ogniu",
+  "text": "Piorun trafił w stary dąb, który spłonął jak pochodnia. Do rana żar lśnił czerwono, a ludzie szeptali o gniewie Taala.",
+  "morale": -1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-154",
+  "title": "Dwa konie",
+  "text": "Dwa konie biegły przez pole bez jeźdźców. Wieśniacy złapali jednego, drugi zniknął w lesie.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "v-155",
+  "title": "Rzeka wylewa",
+  "text": "Rzeka wylała i woda zalała łąki. Szajka musiała przenieść obóz na wyżej położone tereny, ale znaleziono tam dobre miejsce.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-156",
+  "title": "Księga w stodole",
+  "text": "W stodole znaleziono starą księgę zapisaną w nieznanym języku. Wieśniacy chcieli ją spalić, ale szajka ją zabrała.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "v-157",
+  "title": "Niedziela",
+  "text": "Cała wieś poszła do kościoła, a ulice były puste. Szajka mogła swobodnie przejść przez wieś i obejrzeć okolicę.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "v-158",
+  "title": "Chmura komarów",
+  "text": "Chmura komarów zawisła nad obozem, nie pozwalając nikomu spać. Rano wszyscy byli opuchnięci i zdenerwowani.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-159",
+  "title": "Wieść od posłańca",
+  "text": "Posłaniec w barwach hrabiego zatrzymał się na chwilę i podał wieść, że w okolicy grasują zbóje. Szajka podziękowała i zachowała powagę.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-160",
+  "title": "Cmentarz",
+  "text": "Szajka rozbiła obóz blisko wiejskiego cmentarza. Noc była cicha, ale niektórzy twierdzili, że słyszeli kroki na grobach.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-161",
+  "title": "Pieśń żniwiarzy",
+  "text": "Żniwiarze śpiewali przez całą noc przy pochodniach. Szajka zasnęła przy rytmicznych dźwiękach kos.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-162",
+  "title": "Targowisko",
+  "text": "W pobliskim miasteczku odbył się targ. Szajka wysłała dwóch ludzi, którzy wrócili z sakiewką pełną, ale wyraźnie nerwowi.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 5
+ },
+ {
+  "id": "v-163",
+  "title": "Żywy kozioł",
+  "text": "Wieśniak z kozłem na sznurku pytał, czy ktoś go kupi. Kozioł był zły i uparty, ale mięsa miał pod dostatkiem.",
+  "morale": 0,
+  "supplies": 3,
+  "coinsSS": -2
+ },
+ {
+  "id": "v-164",
+  "title": "Wizyta zakonnika",
+  "text": "Wędrowny zakonnik w szarym habicie prosił o nocleg. Opowiadał piękne historie i rano zostawił po sobie kilka pożytecznych rad.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-165",
+  "title": "Pijany rycerz",
+  "text": "Pijany rycerz wjechał w obóz na koniu i wrzeszczy, że jesteście banitami. Jeśli ktoś go nie uciszy, ściągnie wieś.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "bodyguard",
+  "okText": "Ochroniarz zdjął rycerza z konia, podał mu kubek wody i odprowadził. Rano rycerz przeprosił i zostawił sakiewkę w ramach „zadośćuczynienia”.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "v-166",
+  "title": "Bójka w karczmie",
+  "text": "W karczmie wybuchła bójka i jeden z waszych jest w jej środku. Jeśli nie zostanie wyciągnięty, trafi do lochu.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "bodyguard",
+  "okText": "Ochroniarz wszedł do karczmy, chwycił swojego jedną ręką i wyniósł go na zewnątrz, jakby nic się nie stało. Zbierał podziękowania.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 2
+  }
+ },
+ {
+  "id": "v-167",
+  "title": "Zasadzka zbójców",
+  "text": "Zbójcy zaplanowali zasadzkę na drodze do wsi, a wasi ludzie mają tamtędy przechodzić o świcie.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "Cień wykrył zasadzkę, obszedł ją od tyłu, rozbroił zbójców w ciemności i zabrał ich łup.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "v-168",
+  "title": "Zagadkowy znak",
+  "text": "Na waszym płocie pojawił się znak namalowany krwią. Wieśniacy odwracają wzrok.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "Cień rozpoznał w znaku podpis lokalnej bandy i podrzucił im wiadomość, że szajka nie szuka kłopotów. Znak zniknął.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "v-169",
+  "title": "Spłoszona zwierzyna",
+  "text": "Dzik wpadł na pole i niszczy zbiory, atakując każdego, kto się zbliża. Wieśniacy boją się go.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "Strzelec ustrzelił dzika z bezpiecznej odległości. Wieś zrobiła ucztę, a szajka dostała najlepsze kawałki i nieco kiełbas.",
+  "ok": {
+   "morale": 1,
+   "supplies": 4,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "v-170",
+  "title": "Zbłąkane stado",
+  "text": "Stado krów uciekło z zagrody i biegnie w stronę lasu. Bez szybkiej reakcji padną łupem wilków.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "Strzelec zatrzymał stado celnym strzałem w ziemię przed czołem, a wieśniacy dziękowali mu mlekiem i srebrem.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "v-171",
+  "title": "Zakłopotany wójt",
+  "text": "Wójt zaprasza na naradę, na której chce ustalić, co zrobić z obozowiskiem. Wszyscy patrzą na was krzywo.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "Prowokator wygłosił przemowę o patriotyzmie i wspólnym wrogu, a wójt i wieśniacy zaprosili szajkę do wspólnego stołu.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "v-172",
+  "title": "Wiejskie targi",
+  "text": "Na wiejskim jarmarku kupcy kłócą się o miejsca. Zamieszanie można wykorzystać albo przekuć w awanturę.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "Prowokator zaczął kłótnię w jednym końcu rynku, a w drugim szajka zgarnęła kilka rzeczy, nim ktokolwiek zauważył.",
+  "ok": {
+   "morale": 1,
+   "supplies": 1,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "v-173",
+  "title": "Zepsuty młyn",
+  "text": "Młyn wiejski stanął, bo pękło koło. Bez mąki wieś nie przeżyje zimy.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "Szabrownik naprawił koło z pozyskanych desek, a młynarz w podzięce dał worek mąki i parę srebrników.",
+  "ok": {
+   "morale": 1,
+   "supplies": 3,
+   "coinsSS": 2
+  }
+ },
+ {
+  "id": "v-174",
+  "title": "Porzucony wóz",
+  "text": "Na drodze stoi porzucony wóz bez koni. W środku leżą jakieś skrzynie, a nikt się nie zgłasza.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "Szabrownik zbadał wóz, rozmontował, co się dało, i wyniósł skrzynie do obozu. W środku były zapasy i kilka monet.",
+  "ok": {
+   "morale": 1,
+   "supplies": 3,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "v-175",
+  "title": "Zakazany handel",
+  "text": "Wieśniacy chcą sprzedać swoją sól poza hrabiowskim monopolem i szukają sposobu, by przerzucić ją przez granicę.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "Woźnica zorganizował nocny przemyt ukrytymi szlakami i dostał dobrą prowizję.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "v-176",
+  "title": "Zniszczona droga",
+  "text": "Deszcz zniszczył drogę i wozy grzęzną w błocie. Wieśniacy potrzebują kogoś, kto zna okoliczne ścieżki.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "Woźnica poprowadził kilka wozów alternatywną drogą, a wieśniacy zapłacili za przewodnictwo. Szajka zyskała reputację ludzi, którym można zaufać.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "v-177",
+  "title": "Stary stóg",
+  "text": "Niedaleko obozu stoi stary stóg, w którym ktoś ukrył coś cennego. Jeśli podpalić go z odpowiedniej strony, wszystko zniknie.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "Podpalacz wydobył skarb z siana i podpalił je z daleka, żeby ukryć ślady. Skarb się opłacał.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "v-178",
+  "title": "Stara studnia",
+  "text": "Wieśniacy chcą zasypać starą studnię, w której podobno mieszka coś niedobrego. Trzeba to zrobić tak, żeby nic nie wyszło.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "Podpalacz zasypał studnię, podpalił dymiącą mieszankę i zamknął pokrywę. Wieśniacy odetchnęli i zapłacili za spokój.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "v-179",
+  "title": "Nowa droga",
+  "text": "Droga prowadząca przez las stała się zbyt niebezpieczna dla kupców. Wieśniacy szukają alternatywy.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "Zwiadowca wytyczył nową drogę przez pola i mokradła, a wieśniacy zapłacili za rozpoznanie.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "v-180",
+  "title": "Wilcze legowisko",
+  "text": "Zwiadowca znalazł wilcze legowisko niedaleko wsi. Jeśli wilki ruszą na polowanie, będzie rzeź.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "Zwiadowca zorganizował pułapkę i odpędził wilki od wsi. Wieśniacy dziękowali mięsem i monetami.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "v-181",
+  "title": "Dług wieśniaka",
+  "text": "Wieśniak jest winien pieniądze karczmarzowi i nie może spłacić. Ten grozi, że zabierze mu ziemię.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "fixer",
+  "okText": "Paser negocjował spłatę w ratach, a karczmarz dostał „gwarancję” szajki. Wieśniak odzyskał spokój, a szajka zyskała zaufanie.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "v-182",
+  "title": "Poszukiwany list",
+  "text": "W wiosce pojawił się poszukiwany list gończy z podobizną jednego z waszych. Jeśli ktoś go zobaczy, będzie kłopot.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "fixer",
+  "okText": "Paser wymienił plakat na identyczny z innym nazwiskiem i dopisał „niewinny”. Nikt nic nie zauważył.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "v-183",
+  "title": "Grzechotka",
+  "text": "Dziecko ma dziwną wysypkę i matka błaga o pomoc. Wieśniacy mówią o przeklętej krwi.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "Znachor rozpoznał zwykłą wysypkę, zalecił kąpiele ziołowe i uspokoił wieś. Matka zapłaciła mu czym mogła.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "v-184",
+  "title": "Bezpłodna ziemia",
+  "text": "Pola jednego z wieśniaków nie rodzą od trzech lat. Wieśniak liczy na cud albo przynajmniej na dobrą radę.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "Znachor posypał pole „proszkiem szczęścia” i zalecił zmianę uprawy. Plon następnego roku zadowolił wszystkich, a szajka dostała zapłatę.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "v-185",
+  "title": "Zazdrosny mąż",
+  "text": "Zazdrosny mąż chce wyzwać na pojedynek jednego z waszych, bo ten spojrzał na jego żonę. Sprawa jest niewinna, ale mąż jest uparty.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "duelist",
+  "okText": "Szermierz rozbroił męża z uśmiechem i zaprosił go na wspólne picie. Obaj rozeszli się jak przyjaciele.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "v-186",
+  "title": "Turniej wiejski",
+  "text": "Wieś urządza turniej na kije i szable i oferuje nagrodę dla zwycięzcy. Chcieliby, żeby wasz człowiek się wykazał.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "duelist",
+  "okText": "Szermierz wygrał turniej z wdziękiem, oddał pół nagrody przegranemu i zdobył serca widzów.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "v-187",
+  "title": "Nocny jeździec",
+  "text": "W nocy ktoś przejechał galopem przez wieś i rzucił na dziedziniec sakwę. Nie zatrzymał się.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "v-188"
+ },
+ {
+  "id": "v-188",
+  "title": "Sakwa otwarta",
+  "text": "Wewnątrz sakwy znaleziono dokumenty zapieczętowane herbem lokalnego szlachcica i kilka srebrników. Ktoś będzie jej szukał.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 4,
+  "only": true
+ },
+ {
+  "id": "v-189",
+  "title": "Obcy wóz",
+  "text": "Nieznany wóz stoi pod lasem bez woźnicy. Konie są spokojne, ale ładunek zakryty plandeką.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "v-190"
+ },
+ {
+  "id": "v-190",
+  "title": "Woźnica się znalazł",
+  "text": "Woźnica wrócił z kłopotami: zbójcy go napadli i zabrali ładunek. Prosi o pomoc w odzyskaniu go, za hojną zapłatę.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 6,
+  "only": true
+ },
+ {
+  "id": "v-191",
+  "title": "Gołębnik dworu",
+  "text": "Gołąb z dworu pomylił kierunki i wylądował w obozie. Kartka przy nóżce zawiera szyfrowaną wiadomość.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "v-192"
+ },
+ {
+  "id": "v-192",
+  "title": "Szyfr rozwiązany",
+  "text": "Wiadomość zdekodowano: dwór planuje wysłać wojsko do wsi. Można ostrzec wieśniaków albo sprzedać wiadomość.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 5,
+  "only": true
+ },
+ {
+  "id": "v-193",
+  "title": "Dziecko bez matki",
+  "text": "Mała dziewczynka siedzi przy waszym ognisku i nie chce odejść. Nie mówi nic, tylko patrzy.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0,
+  "next": "v-194"
+ },
+ {
+  "id": "v-194",
+  "title": "Rodzina dziewczynki",
+  "text": "Wieśniak przyszedł po dziewczynkę z łzami w oczach i podziękował szajce darami. Jego żona zmarła tej nocy.",
+  "morale": -1,
+  "supplies": 2,
+  "coinsSS": 3,
+  "only": true
+ },
+ {
+  "id": "v-195",
+  "title": "Pożyczka od lichwiarza",
+  "text": "Wiejski lichwiarz oferuje wam pożyczkę na poczekaniu. Warunki wyglądają na korzystne.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 4,
+  "next": "v-196"
+ },
+ {
+  "id": "v-196",
+  "title": "Spłata i procent",
+  "text": "Lichwiarz przyszedł po zwrot z zaskakująco wysokim procentem. Ma ze sobą dwóch rosłych ludzi.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -6,
+  "only": true
+ },
+ {
+  "id": "v-197",
+  "title": "Stary żołnierz",
+  "text": "Stary żołnierz z drewnianą nogą przechodził przez wieś i opowiadał o bitwach pod Altdorfem. Szajka słuchała z szacunkiem.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-198",
+  "title": "Burza gradowa",
+  "text": "Grad wielkości kurzych jaj bił po dachu stodoły. Rano pola były zniszczone, a wieśniacy ponurzy.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-199",
+  "title": "Zagubiony chłopak",
+  "text": "Chłopak zgubił się w polach i trafił do obozu. Dostał chleba, a rano szajka odprowadziła go do wsi.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-200",
+  "title": "Dziki ptak",
+  "text": "Wielki ptak usiadł na dachu stodoły i krzyczał ochryple. Wszyscy się kłócili, czy to orzeł, czy sęp, a rano odleciał.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-201",
+  "title": "Wiosenny deszcz",
+  "text": "Ciepły deszcz padał całą noc, zmywając kurz z dróg. Rano powietrze pachniało ziemią i końmi.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-202",
+  "title": "Fałszywy mnich",
+  "text": "Mnich z wyciągniętą ręką żebrał o jałmużnę, ale spod habitu wystawał miecz. Szajka nie zadawała pytań.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "v-203",
+  "title": "Pochód strzygi",
+  "text": "Wieśniacy twierdzili, że widzieli strzygę idącą ścieżką. Rano znaleziono tylko ślady wielkiego psa.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-204",
+  "title": "Zimowy zapas",
+  "text": "Wieśniacy zbierali zapasy na zimę i przyszli prosić o pomoc przy zbiorze. Szajka pomogła i dostała część plonów.",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-205",
+  "title": "Kłopot z wołem",
+  "text": "Wół jednego z gospodarzy zerwał się z uwięzi i rozniósł pół zagrody. Szajka złapała go i dostała nagrodę w postaci kiełbasy.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-206",
+  "title": "Niespodziewany ślub",
+  "text": "Dwoje popleczników z różnych stron obozu zaręczyło się nagle i zaprosiło wszystkich na wesele. Okazja do zabawy.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": -2
+ },
+ {
+  "id": "v-207",
+  "title": "Śmieci przy drodze",
+  "text": "Przy drodze ktoś zostawił stos śmieci, w którym znalazły się całkiem użyteczne rzeczy. Szabrownicy mieli używanie.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 2
+ },
+ {
+  "id": "v-208",
+  "title": "Wiejska wróżka",
+  "text": "Stara kobieta wróżyła z kart na rynku i wasz człowiek poszedł sprawdzić swoją przyszłość. Wrócił blady jak ściana.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -1
+ },
+ {
+  "id": "v-209",
+  "title": "Mały pożar",
+  "text": "Ognisko wymknęło się spod kontroli i spłonęła część zapasów. Wszyscy się tłumaczyli, że to nie ich wina.",
+  "morale": -1,
+  "supplies": -2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-210",
+  "title": "Pogłoski o armii",
+  "text": "Do wsi dotarł handlarz z wieścią, że armia zmierza na północ. Wszyscy zaczęli pakować co cenniejsze.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "v-211",
+  "title": "Żniwa",
+  "text": "Szajka pomogła przy żniwach, w zamian za nocleg i wyżywienie. Wieśniacy byli zdziwieni, że obcy ludzie wiedzą, jak trzymać kosę.",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": 1
+ },
+ {
+  "id": "v-212",
+  "title": "Chłopak z psem",
+  "text": "Chłopak z psem przeszedł przez obóz i spytał, czy nie widzieliście jego owcy. Pies ją znalazł zaraz potem pod waszym wozem.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "v-213",
+  "title": "Pomór",
+  "text": "Wieśniacy mówią o pomorze bydła w sąsiedniej wsi. Wszyscy zaczęli unikać obcych, a wasza obecność stała się niezręczna.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-214",
+  "title": "Wizyta lekarza",
+  "text": "Wędrowny medyk przejeżdżał przez wieś i sprzedawał mikstury. Połowa była bezwartościowa, połowa działała.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -2
+ },
+ {
+  "id": "v-215",
+  "title": "Przybłęda",
+  "text": "Chudy kundel z oderwanym uchem przybłąkał się do obozu. Zjadł resztki i został.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-216",
+  "title": "Wieczorna modlitwa",
+  "text": "Wieśniacy zebrali się na wieczorną modlitwę pod krzyżem przydrożnym. Szajka stała z tyłu, nie wiedząc, co zrobić z rękami.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-217",
+  "title": "Dym z wsi",
+  "text": "Dym z komina karczmy ciągnął się nad obozem. Wszyscy zgłodnieli i połowa poszła poprosić o resztki.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": -1
+ },
+ {
+  "id": "v-218",
+  "title": "Złowrogi śmiech",
+  "text": "W nocy ktoś zaśmiał się głośno za płotem. Nikt go nie widział, ale wszyscy poczuli ciarki.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-219",
+  "title": "Kowal na jarmarku",
+  "text": "Kowal wystawił na jarmarku nowe sierpy. Szajka kupiła dwa i nauczyła się je ostrzyć.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -2
+ },
+ {
+  "id": "v-220",
+  "title": "Pierwszy śnieg",
+  "text": "Pierwszy śnieg przykrył pola i drogi. Wieś zamilkła, a w obozie zrobiło się cicho i uroczyście.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-221",
+  "title": "Przechodzący kupiec",
+  "text": "Kupiec z Marienburga pytał o ceny zboża. Wieśniacy ustalili cenę zawyżoną, a szajka dostała prowizję za pośrednictwo.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "v-222",
+  "title": "Zdechła krowa",
+  "text": "Krowa padła w nocy i wieśniacy nie mogli jej pochować. Szajka pomogła w zamian za część mięsa.",
+  "morale": 0,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-223",
+  "title": "Mała awantura",
+  "text": "Dwóch pijaków pokłóciło się o miejsce przy ognisku. Szajka wyrzuciła obu, a potem zjadła ich kolację.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-224",
+  "title": "Rudy chłopiec",
+  "text": "Rudy chłopiec z wioski ciągle kręcił się wokół obozu. W końcu przyznał, że chciałby do was dołączyć. Szajka go wyśmiała i dała bochenek.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-225",
+  "title": "Garncarz",
+  "text": "Garncarz z wioski sprzedawał naczynia po okazyjnej cenie. Szajka kupiła kilka garnków i parę misek.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": -2
+ },
+ {
+  "id": "v-226",
+  "title": "Źle wróży",
+  "text": "Kruk usiadł na sztandarze wiszącym przy drodze i krakał. Wieśniacy plują przez lewe ramię, a szajka nerwowo patrzy w niebo.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-227",
+  "title": "Złamany most",
+  "text": "Most na rzece pękł pod ciężkim wozem. Wieśniacy ruszyli go naprawiać, a szajka dołączyła i zyskała ich przychylność.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-228",
+  "title": "Misterny sidła",
+  "text": "Wieśniacy rozstawili sidła na zające wokół obozu. Połowa popleczników wpadła w nie przez przypadek.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-229",
+  "title": "Wiejskie przysłowie",
+  "text": "Staruszek przy ognisku wyrzekł przysłowie, które nikomu nie było znane, ale wszyscy poczuli, że ma w sobie prawdę.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-230",
+  "title": "Pasterz z fletem",
+  "text": "Pasterz grał na flecie przy ognisku i połowa szajki zasnęła od tych dźwięków. Najlepszy sen od tygodni.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-231",
+  "title": "Zaginiony młody wół",
+  "text": "Młody wół zginął ze stada, a właściciel obiecuje nagrodę. Szajka znalazła go, związanego w lesie, i wiedziała, kto za tym stoi.",
+  "morale": 0,
+  "supplies": 3,
+  "coinsSS": 3
+ },
+ {
+  "id": "v-232",
+  "title": "Jarmark zwierząt",
+  "text": "Na jarmarku sprzedawano konie i woły. Szajka wypatrzyła kilka okazji, a jeden z popleczników kupił nawet kozę.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": -2
+ },
+ {
+  "id": "v-233",
+  "title": "Kamienna kapliczka",
+  "text": "Przy drodze stała kamienna kapliczka z wyrytymi imionami zmarłych. Szajka zatrzymała się na chwilę i zapaliła świeczkę.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": -1
+ },
+ {
+  "id": "v-234",
+  "title": "Sąsiad plotkarz",
+  "text": "Sąsiad plotkarz opowiadał wszystkim o obcych w obozie. Połowa wsi przyszła zobaczyć, a druga połowa zamknęła drzwi.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-235",
+  "title": "Trzask piorunów",
+  "text": "Wielka burza zniszczyła połowę dachów we wsi. Szajka pomogła przy naprawach i zasłużyła na wdzięczność.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "v-236",
+  "title": "Zagubiony pierścień",
+  "text": "Wieśniak zgubił obrączkę w trawie i prosił o pomoc w poszukiwaniach. Szajka znalazła ją po godzinie i dostała kilka srebrników.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "v-237",
+  "title": "Odpust",
+  "text": "Z okazji święta w sąsiedniej wsi odbył się odpust. Na jarmarku było pełno ludzi, a szajka ruszyła na „zbiórkę”.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 5
+ },
+ {
+  "id": "v-238",
+  "title": "Zardzewiały miecz",
+  "text": "Dziecko znalazło w polu zardzewiały miecz z wygrawerowanym herbem. Szajka kupiła go za garść ziarna.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 3
+ },
+ {
+  "id": "v-239",
+  "title": "Śpiewak gawędziarz",
+  "text": "Wędrowny śpiewak opowiadał o dawnych bohaterach i zbójcach. Szajka podsłuchała kilka ciekawych szczegółów o okolicy.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-240",
+  "title": "Dziwny dzik",
+  "text": "Rano w polu znaleziono martwego dzika o dwóch głowach. Wieśniacy przepędzili wszystkich z okolicy, a szajka zebrała się szybko.",
+  "morale": -2,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-241",
+  "title": "Zagroda świń",
+  "text": "Świnie wyrwały się z zagrody i buszowały po obozie. Kilku wieśniaków przyszło je zabrać i zostało na kolację.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-242",
+  "title": "Nieszczęsny wędrowiec",
+  "text": "Wędrowiec z bolącą stopą prosił o schronienie. Szajka go opatrzyła, a on opowiedział, że nocą widział dziwne światła w lesie.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-243",
+  "title": "Zgubione dziecko",
+  "text": "Dziecko zgubiło się w polu, a szajka je znalazła. Rodzice płakali ze szczęścia i dali wszystko, co mieli w spiżarni.",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-244",
+  "title": "Cień na polu",
+  "text": "Wieczorem na polu dostrzeżono cień bez właściciela. Wieśniacy uciekli w popłochu, a szajka wzięła zapasy.",
+  "morale": -1,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-245",
+  "title": "Zepsuty zegar",
+  "text": "Zegar na wieży kościelnej stanął, a wieśniacy nie wiedzą, która godzina. Ktoś mógłby go naprawić.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "v-246"
+ },
+ {
+  "id": "v-246",
+  "title": "Zegar naprawiony",
+  "text": "Zegar znów chodzi, a wieś zorganizowała dla szajki ucztę wdzięczności. Wójt obiecał, że odwdzięczy się przysługą.",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": 0,
+  "only": true
+ },
+ {
+  "id": "v-247",
+  "title": "Strach na wróble",
+  "text": "Strach na wróble w polu każdego ranka stoi w innym miejscu. Wieśniacy się go boją.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "v-248"
+ },
+ {
+  "id": "v-248",
+  "title": "Strach się ujawnia",
+  "text": "Okazało się, że strach na wróble kryje wejście do podziemnej piwnicy. Szajka znalazła w niej zapasy i kilka monet.",
+  "morale": 0,
+  "supplies": 3,
+  "coinsSS": 5,
+  "only": true
+ },
+ {
+  "id": "v-249",
+  "title": "Mała rewolta",
+  "text": "Wieśniacy szemrzą przeciw zarządcy i szukają kogoś, kto poprowadziłby ich do dworu. Patrzą na szajkę.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "v-250"
+ },
+ {
+  "id": "v-250",
+  "title": "Rewolta wybucha",
+  "text": "Wieśniacy ruszyli na dwór z widłami. Szajka ma do wyboru: dołączyć, wycofać się albo sprzedać wiadomość zarządcy.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 5,
+  "only": true
+ },
+ {
+  "id": "v-251",
+  "title": "Wizyta bliźniaków",
+  "text": "Dwóch identycznych mężczyzn przyjechało do wsi i prosi o nocleg. Każdy twierdzi, że jest prawdziwym właścicielem posiadłości.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "v-252"
+ },
+ {
+  "id": "v-252",
+  "title": "Prawdziwy dziedzic",
+  "text": "Okazało się, że jeden z bliźniaków jest oszustem. Prawdziwy dziedzic odwdzięczył się szajce hojnie.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 9,
+  "only": true
+ },
+ {
+  "id": "v-253",
+  "title": "Zgubiony pies myśliwski",
+  "text": "Piękny pies myśliwski w obroży ze srebrem błąka się wokół obozu. Ktoś zapłaci za jego powrót.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0,
+  "next": "v-254"
+ },
+ {
+  "id": "v-254",
+  "title": "Myśliwi szukają",
+  "text": "Grupa myśliwych w kosztownych strojach pyta o zaginionego psa. Ich przywódca ma srogą minę i hojną sakiewkę.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 6,
+  "only": true
+ },
+ {
+  "id": "v-255",
+  "title": "Sąsiedzka kłótnia o kurę",
+  "text": "Dwie gospodynie wydarły sobie kurę i obie dostały dziobem. Cała wieś się zbiegła, a szajka zgarnęła resztę kur.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-256",
+  "title": "Nowy sołtys",
+  "text": "We wsi wybrano nowego sołtysa i świętowano do rana. Szajka dostała kilka dzbanów piwa za „życzenia”.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-257",
+  "title": "Łaskawy dzień",
+  "text": "Słońce świeciło cały dzień, ptaki śpiewały, a wieśniacy bez przeszkód pozwalali szajce przechodzić. Taki dzień rzadko się zdarza.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-258",
+  "title": "Zerwane liny",
+  "text": "Liny przy studni zerwały się i wiadro spadło w głąb. Szajka pomogła je wyciągnąć za kilka datków.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "v-259",
+  "title": "Ranek bez wiatru",
+  "text": "Powietrze było nieruchome, dym unosił się pionowo w niebo. Wszyscy zauważyli, że ptaki ucichły.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-260",
+  "title": "Przemarsz najemników",
+  "text": "Oddział najemników przeszedł przez wieś, żądając jedzenia i noclegu. Wieśniacy dali wszystko i drżeli ze strachu.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-261",
+  "title": "Opuszczony dwór",
+  "text": "W pobliskim lesie stoi opuszczony dwór. Szajka obejrzała go z daleka, a jeden z popleczników twierdził, że widział w oknie świecę.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-262",
+  "title": "Wesoły handlarz",
+  "text": "Wesoły handlarz soli zatrzymał się i opowiadał dowcipy. Szajka kupiła trochę soli i śmiała się do łez.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": -1
+ },
+ {
+  "id": "v-263",
+  "title": "Obce psy",
+  "text": "Obce psy pojawiły się na skraju obozu i patrzyły w milczeniu. Gdy ktoś rzucił kość, odeszły i nigdy nie wróciły.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-264",
+  "title": "Młodzieńcza przygoda",
+  "text": "Młody wieśniak przyznał, że chciałby opuścić wioskę i dołączyć do kogoś, kto żyje na wolności. Szajka dała mu dobrą radę i bochen chleba.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-265",
+  "title": "Zaginiony kupiec",
+  "text": "Kupiec zaginął na drodze do wsi, a jego wóz stoi pusty. Wieśniacy boją się zbliżyć, szajka zrobiła inwentarz.",
+  "morale": -1,
+  "supplies": 2,
+  "coinsSS": 4
+ },
+ {
+  "id": "v-266",
+  "title": "Praca w polu",
+  "text": "Szajka pomogła przy sianokosach i wieśniacy się odwdzięczyli. Obóz miał w nocy ciepłą strawę i słodkie mleko.",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-267",
+  "title": "Zapomniany kuferek",
+  "text": "Podróżny zostawił kuferek w karczmie i odjechał. Karczmarz boi się go otworzyć, a szajka mogłaby tu pomóc.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "v-268",
+  "title": "Chata zbójców",
+  "text": "W lesie odkryto porzuconą chatę zbójców z resztkami zapasów. Wieśniacy boją się tam iść, ale szajka nie.",
+  "morale": 0,
+  "supplies": 3,
+  "coinsSS": 2
+ },
+ {
+  "id": "v-269",
+  "title": "Tęcza nad polami",
+  "text": "Po burzy nad polami rozciągnęła się szeroka tęcza. Wieśniacy mówili, że to znak dobrych plonów, a szajka poczuła się dobrze.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-270",
+  "title": "Dym z lasu",
+  "text": "Z lasu unosił się dym, jakby ktoś palił ognisko. Wieśniacy nikogo nie widzieli, a jednak dym był codziennie.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-271",
+  "title": "Jarmarczny kuglarz",
+  "text": "Kuglarz na jarmarku połykał ogień. Szajka klaskała, a kieszonkowcy mieli dobry dzień.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "v-272",
+  "title": "Kłótnia małżeńska",
+  "text": "Z jednej z chat dobiegały krzyki małżonków. Rano mąż miał podbite oko, a żona uśmiechała się szeroko.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-273",
+  "title": "Tajemnicza paczka",
+  "text": "Na progu stodoły ktoś zostawił paczkę owiniętą w płótno. W środku było zboże i kartka z napisem „Za dobre serce”.",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-274",
+  "title": "Szkoła we wsi",
+  "text": "Nauczyciel prowadził dzieci przez pole i pokazywał im ptaki. Szajka z zainteresowaniem słuchała lekcji, a nawet nauczyła się kilku nazw.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-275",
+  "title": "Zgubiony list",
+  "text": "Do obozu wpadł list, który wiatr zdmuchnął komuś z ręki. Adresowany do kapitana lokalnych strażników.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "v-276",
+  "title": "Wieczorne śpiewy",
+  "text": "Wieśniacy śpiewali pieśni przy ogniskach, a szajka dołączyła, zaskakując wszystkich pięknym głosem jednego z popleczników.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-277",
+  "title": "Złodziej jabłek",
+  "text": "Chłopiec został przyłapany na kradzieży jabłek w sadzie. Szajka wstawiła się za nim i dostała kilka jabłek w nagrodę.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-278",
+  "title": "Sprzedawca amuletów",
+  "text": "Wędrowny sprzedawca amuletów zachwalał swoje towary jako chroniące przed wszystkim złym. Szajka kupiła jeden, na wszelki wypadek.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": -2
+ },
+ {
+  "id": "v-279",
+  "title": "Miód",
+  "text": "Pszczelarz zaprosił do swej pasieki i poczęstował miodem. Wszyscy wrócili lepkimi palcami i dobrym humorem.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-280",
+  "title": "Ścieżka przez bagno",
+  "text": "Przewodnik z wioski wskazał wam ścieżkę przez bagno, którą omijają urzędnicy. Szajka mogła się tamtędy wymknąć.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "v-281",
+  "title": "Wiejska burda",
+  "text": "W karczmie wybuchła burda, bo ktoś oskarżył sąsiada o kradzież kozy. Szajka zjadła kolację bez przeszkód.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-282",
+  "title": "Zabłąkany strażnik",
+  "text": "Strażnik z hrabiego zabłądził w nocy i zapytał o drogę. Szajka wskazała mu fałszywy kierunek i zachowała dobrą minę.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-283",
+  "title": "Kosa śmierci",
+  "text": "Wieśniacy odprawiali rytuał przeciw nieszczęściu, który zawieszano kosę nad drzwiami. Szajka patrzyła z niepokojem.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-284",
+  "title": "Opowieść o upiorze",
+  "text": "Dziadek opowiedział przy ognisku historię o upiorze, który co rok nawiedza wieś. Dziś jest ten dzień.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-285",
+  "title": "Krówka",
+  "text": "Wieśniak przyprowadził krowę, prosząc o pomoc przy porodzie cielęcia. Szajka pomogła i dostała mleka na tydzień.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-286",
+  "title": "Wrzask kobiety",
+  "text": "Rano rozległ się krzyk kobiety. Okazało się, że znalazła pająka w misce. Wszyscy się śmiali jeszcze długo.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-287",
+  "title": "Drzwi bez zamka",
+  "text": "W jednej z chat drzwi nie miały zamka, a wieśniacy twierdzili, że nikt nigdy nie kradnie. Szajka musiała się powstrzymać.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-288",
+  "title": "Odwiedziny dalekiej rodziny",
+  "text": "Do wsi przyjechała rodzina z miasta, w ładnych strojach, z sakiewkami. Szajka obserwowała ich z uwagą.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "v-289",
+  "title": "Zagubiona gęś",
+  "text": "Gęś z obłąkańczym spojrzeniem biegała po obozie i gdakała. Ktoś ją schwytał, a wieczorem na kolację była pieczeń.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-290",
+  "title": "Kłopoty ze studnią",
+  "text": "Studnia we wsi zawaliła się i wieśniacy mieli problem z wodą. Szajka pomogła ją odbudować.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "v-291",
+  "title": "Nocna zmora",
+  "text": "Jeden z popleczników obudził się z krzykiem, twierdząc, że coś siedziało mu na piersi. Reszta spała niespokojnie.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-292",
+  "title": "Zagubiony kapelusz",
+  "text": "Wiatr porwał kapelusz jednemu z gości z miasta. Szajka go złapała i zwróciła, zyskując jego wdzięczność.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "v-293",
+  "title": "Wiejski bard",
+  "text": "Bard grał na lutni i opowiadał o upadku dawnych miast. Szajka siedziała w zadumie, a potem długo nie rozmawiała.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-294",
+  "title": "Przydrożna karczma",
+  "text": "W przydrożnej karczmie dawali wyjątkowo dobre piwo za nieprzyzwoicie niską cenę. Nikt nie pytał, dlaczego.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": -1
+ },
+ {
+  "id": "v-295",
+  "title": "Pożegnanie",
+  "text": "Starszy poplecznik postanowił odejść i osiąść na wsi. Przed odejściem zostawił całą swoją zdobycz szajce.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 6
+ },
+ {
+  "id": "v-296",
+  "title": "Powrót do domu",
+  "text": "Jeden z popleczników zobaczył swoją rodzinną wioskę z daleka i zamyślił się. Cały dzień milczał.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-297",
+  "title": "Wieczór przy ognisku",
+  "text": "Szajka usiadła przy ognisku i wspominała dawne czasy. Wszyscy poczuli, że razem mogą wszystko.",
+  "morale": 2,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-298",
+  "title": "Zapach pieczonego mięsa",
+  "text": "Z sąsiedniej wsi dobiegał zapach pieczonej baraniny. Kilku popleczników poszło „zbadać sprawę” i wróciło najedzonych.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-299",
+  "title": "Zgubiony dukat",
+  "text": "Złoty dukat błyszczał w trawie przy drodze. Szajka podniosła go, choć wiedziała, że ktoś może jej szukać.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 8
+ },
+ {
+  "id": "v-300",
+  "title": "Cicha nocka",
+  "text": "Noc minęła bez żadnych wydarzeń. Wszyscy spali spokojnie, a rano odpoczęci ruszyli w dalszą drogę.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ }
+]

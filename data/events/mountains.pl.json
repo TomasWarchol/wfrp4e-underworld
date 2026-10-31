@@ -1,0 +1,2900 @@
+[
+ {
+  "id": "m-001",
+  "title": "Cisza gór",
+  "text": "Noc w górach była mroźna i cicha, tylko wiatr szumiał między skałami. Wszyscy spali ściśnięci przy ogniu.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-002",
+  "title": "Śnieżyca",
+  "text": "Śnieżyca zasypała przełęcz w ciągu jednej nocy. Rano obóz był przykryty białą pierzyną, a ruszyć było trudno.",
+  "morale": -1,
+  "supplies": -2,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-003",
+  "title": "Lawina w oddali",
+  "text": "Gdzieś w dolinie runęła lawina z hukiem, który wstrząsnął obozem. Wszyscy zamarli, czekając na ciąg dalszy.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-004",
+  "title": "Kozy górskie",
+  "text": "Stado kóz górskich przeszło po skałach nad obozem. Strzelcy wstrzymali oddech, ale kozice były poza zasięgiem.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-005",
+  "title": "Orzeł",
+  "text": "Orzeł przeleciał nad obozem z wielką zdobyczą w szponach. Wszyscy patrzyli w niebo, a potem nastała cisza.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-006",
+  "title": "Skalne odłamki",
+  "text": "Od zbocza oderwały się kamienie i potoczyły w dół, rozrzucając zapasy. Szajka musiała gonić wszystko po stoku.",
+  "morale": -1,
+  "supplies": -2,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-007",
+  "title": "Krasnoludzka karawana",
+  "text": "Karawana krasnoludów przeszła przez przełęcz z mułami pełnymi towarów. Nikt nie odważył się zaczepić tych brodatych straży.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "m-008",
+  "title": "Mroźny wiatr",
+  "text": "Wiatr był tak ostry, że łzy zamarzały na policzkach. Wszyscy zawinęli twarze w szale i marzyli o cieple.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-009",
+  "title": "Kamienny strażnik",
+  "text": "Obok ścieżki stał kamienny posąg krasnoluda z toporem. Szajka minęła go z szacunkiem, nie dotykając.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-010",
+  "title": "Świstak",
+  "text": "Świstaki gwizdały na wzgórzu jak wartownicy. Szajka śmiała się, aż jeden z nich rzucił się do ucieczki.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-011",
+  "title": "Zamarznięty strumień",
+  "text": "Strumień zamarzł i nie było wody do picia. Trzeba było topić śnieg, co pochłonęło pół dnia opału.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-012",
+  "title": "Słońce w górach",
+  "text": "Słońce wzeszło nad szczytami i pomalowało śnieg na różowo. Wszyscy patrzyli w milczeniu, a ktoś uśmiechnął się pierwszy raz od tygodni.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-013",
+  "title": "Zagubiony pasterz",
+  "text": "Pasterz z owcami zgubił się w górach i szedł do waszego obozu na ślepo. Szajka dała mu wody i wskazała drogę.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-014",
+  "title": "Dym w dolinie",
+  "text": "Z doliny unosił się cienki słup dymu. Szajka patrzyła, nie wiedząc, czy to osada, czy pożar.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-015",
+  "title": "Rykowisko",
+  "text": "Górskie rogacze ryczały w nocy tak głośno, że echo niosło się przez całe doliny. Nikt nie mógł zasnąć.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-016",
+  "title": "Krasnoludzki znak",
+  "text": "Na skale wyryto krasnoludzki znak, a pod nim zaznaczono kierunek. Szajka nie wiedziała, czy jest to ostrzeżenie, czy przewodnik.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-017",
+  "title": "Rozbity wóz",
+  "text": "Pod urwiskiem leżał rozbity wóz kupiecki. Szajka zeszła nisko i zebrała kilka rzeczy, które się uchowały.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "m-018",
+  "title": "Wyjące wilki",
+  "text": "Wilki w górach wyją inaczej niż w lesie: dłużej i niżej. Szajka dorzuciła do ognia i nasłuchiwała.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-019",
+  "title": "Zapach siarki",
+  "text": "Z jaskini w skale wydobywał się zapach siarki. Kilku popleczników chciało zajrzeć, ale reszta ich powstrzymała.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-020",
+  "title": "Wędrowiec z Kisleva",
+  "text": "Samotny wędrowiec z Kisleva schronił się w obozie przed śnieżycą. Dzielił się wódką i opowieściami o zimie.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": -1
+ },
+ {
+  "id": "m-021",
+  "title": "Spadająca skała",
+  "text": "Wielka skała stoczyła się przez obóz, mijając namioty o włos. Nikt nie ucierpiał, ale wszyscy drżeli.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-022",
+  "title": "Stary szlak",
+  "text": "Szajka natknęła się na szlak wyrąbany w skale przez dawnych górali. Szedł prosto i bezpiecznie przez przełęcz.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-023",
+  "title": "Zamarznięty trup",
+  "text": "Na zboczu leżał zamarznięty trup wędrowca w grubym płaszczu. Szajka go pochowała pod kamieniami i zabrała to, co mogło się przydać.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "m-024",
+  "title": "Dziury w śniegu",
+  "text": "Wokół obozu pojawiły się dziury w śniegu, jakby coś chodziło na dwóch nogach i ciężko. Rano ślady znikły.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-025",
+  "title": "Mgła w dolinie",
+  "text": "Mgła wypełniła dolinę niczym mleko, a szczyty wyglądały jak wyspy. Szajka stała na zboczu i patrzyła.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-026",
+  "title": "Jaskinia",
+  "text": "W skale znaleziono suchą jaskinię z zapasem drewna. Szajka rozpaliła ogień i spała ciepło.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-027",
+  "title": "Chata górala",
+  "text": "Góral zaprosił szajkę do swojej chaty i poczęstował oscypkiem. Rozmowa była krótka, ale ciepła.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-028",
+  "title": "Grzmot w górach",
+  "text": "Grzmot w górach rozbrzmiewał jak walące się światy. Szajka kulila się pod płachtą, a wszystko trwało godzinami.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-029",
+  "title": "Złote promienie",
+  "text": "Zachodzące słońce zaświeciło na szczycie jak złota korona. Wszyscy zamilkli, a niektórzy się przeżegnali.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-030",
+  "title": "Poszukiwacz złota",
+  "text": "Poszukiwacz ze starą łopatą szperał w strumieniu. Szajka poczęstowała go ogniem i dowiedziała się, gdzie szukać żył.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "m-031",
+  "title": "Pijany krasnolud",
+  "text": "Pijany krasnolud wszedł do obozu i domaga się, żeby ktoś z nim zawalczył. Jeśli nie dostanie bójki, obrazi się na całe życie.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -2,
+  "role": "bodyguard",
+  "okText": "Ochroniarz przyjął wyzwanie, wytrzymał kilka solidnych ciosów i obaj rozeszli się jak starzy przyjaciele. Krasnolud zostawił sakiewkę i beczułkę.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "m-032",
+  "title": "Przełęcz zablokowana",
+  "text": "Kilka głazów zablokowało przejście, a droga w tył jest zasypana. Bez siły nie da się ich ruszyć.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0,
+  "role": "bodyguard",
+  "okText": "Ochroniarz własnymi rękami zepchnął największy głaz w przepaść. Droga się otworzyła, a za nią znaleziono ukryty skład.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "m-033",
+  "title": "Zwiad goblinów",
+  "text": "Mały oddział goblinów kręci się blisko obozu. Jeśli nas zauważą, sprowadzą resztę plemienia.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "Cień wyszedł w mrok, wyciął po cichu trzech goblinów i zabrał ich łup. Reszta się wycofała.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "m-034",
+  "title": "Włamywacz",
+  "text": "Ktoś zakradł się do waszego obozu i szuka cennych rzeczy. Wszyscy śpią, a on jest coraz bliżej skrzyni.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -4,
+  "role": "shadow",
+  "okText": "Cień obudził się w odpowiednim momencie, schwytał włamywacza i odebrał mu własną sakwę. Włamywacz uciekł bez butów.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 2
+  }
+ },
+ {
+  "id": "m-035",
+  "title": "Orzeł na czatach",
+  "text": "Wielki orzeł krąży nad obozem i wypatruje zdobyczy. Jeśli dostrzeże coś małego, zaatakuje.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "Strzelec ustrzelił orła z odległości i szajka miała ucztę. Pióra zdobiły namioty przez cały tydzień.",
+  "ok": {
+   "morale": 1,
+   "supplies": 4,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "m-036",
+  "title": "Gryząca zimnica",
+  "text": "Zimno jest tak ostre, że zapasy zamarzły. Mięso ze stoku jest jedyną nadzieją.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "Strzelec upolował dwa górskie kozły i wrócił z całym mięsem. Zapasy były lepsze niż kiedykolwiek.",
+  "ok": {
+   "morale": 1,
+   "supplies": 3,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "m-037",
+  "title": "Górale w karczmie",
+  "text": "Górale w przydrożnej karczmie nie lubią obcych. Jeśli szajka nie zdoła ich zaskarbić, będą kłopoty.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "Prowokator opowiedział kilka sprośnych żartów i założył się o butelkę, kto szybciej wypije. Górale się śmiali, a szajka została serdecznie przyjęta.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "m-038",
+  "title": "Niezwykły gość",
+  "text": "Dziwny człowiek w kolorowych szatach zatrzymał się w obozie i twierdzi, że jest wielkim czarodziejem. Szajka się waha.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "Prowokator zagrał rolę wiernego ucznia, a „czarodziej” przeprowadził widowiskowy pokaz. Szajka dostała garść monet za statystowanie.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "m-039",
+  "title": "Zawalona kopalnia",
+  "text": "W pobliżu zawaliła się stara kopalnia, a w środku utknęli ludzie. Potrzebna jest pomoc przy wydobyciu.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "Szabrownik odkopał wszystkich i znalazł w gruzach kilka cennych rzeczy. Ocaleni dali nagrodę w kruszcu.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "m-040",
+  "title": "Zardzewiałe narzędzia",
+  "text": "W starej chacie górniczej leżą narzędzia, które mogłyby się przydać. Bez umiejętności naprawy są bezużyteczne.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "Szabrownik naprawił narzędzia, naostrzył i sprzedał część krasnoludom. Zysk był niezły.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "m-041",
+  "title": "Górska przełęcz",
+  "text": "Przełęcz jest pilnowana przez celników, ale wasz towar musi przejść. Trzeba znaleźć sposób.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -2,
+  "role": "smuggler",
+  "okText": "Woźnica znał stary szlak przemytników przez wąwóz. Towar przeszedł niezauważony, a sprzedaż po drugiej stronie przyniosła znaczący zysk.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "m-042",
+  "title": "Muły",
+  "text": "Karawana mułów zgubiła przewodnika i błądzi po zboczu. Właściciele płacą za pomoc.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "Woźnica opanował muły głosem i uspokoił je, potem wyprowadził na szlak. Właściciele zapłacili i obiecali polecać.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "m-043",
+  "title": "Skalny most",
+  "text": "Kamienny most nad przepaścią prowadzi do kopalni, której strzeże wojsko. Jeśli go zniszczyć, wojsko się opóźni.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "Podpalacz podłożył ładunek pod filar i wysadził most w nocy. Opóźnienie dało szajce czas, a wdzięczni górnicy zapłacili.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "m-044",
+  "title": "Zaśnieżony szlak",
+  "text": "Szlak jest zasypany śniegiem i lodem, a droga potrzebna jest już teraz. Potrzebny jest sposób na szybkie oczyszczenie.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "Podpalacz rozpalił duże ogniska wzdłuż szlaku i roztopił lód w godzinę. Droga się otworzyła, a po drodze znaleziono zapomniany skład.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "m-045",
+  "title": "Zagubiona przełęcz",
+  "text": "Szajka zgubiła przełęcz i krąży po grani. Mgła gęstnieje, a zapasy się kurczą.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "Zwiadowca odczytał kierunek wiatru, ślady zwierząt i kamienie, i wyprowadził wszystkich na szlak. Po drodze znalazł jaskinię z zapasem drewna.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "m-046",
+  "title": "Ślad wielkiej stopy",
+  "text": "Na śniegu widać ślad wielkiej stopy, dwa razy większej niż ludzka. Co to jest, nikt nie wie.",
+  "morale": -2,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "Zwiadowca zbadał ślady i stwierdził, że należą do niedźwiedzia ze zdeformowaną łapą. Ostrzegł szajkę i wskazał bezpieczną drogę.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "m-047",
+  "title": "Handlarz kruszcu",
+  "text": "Handlarz z krasnoludzkiego targu oferuje szajce kilka bryłek rudy w dobrej cenie. Pytanie, skąd pochodzą.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -3,
+  "role": "fixer",
+  "okText": "Paser sprawdził pochodzenie rudy, wynegocjował cenę i odsprzedał z zyskiem krasnoludzkiemu kowalowi. Wszyscy wyszli zadowoleni.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 8
+  }
+ },
+ {
+  "id": "m-048",
+  "title": "Skradziony ładunek",
+  "text": "Szajka zdobyła ładunek wozu z nieznanymi znakami. Jeśli ktoś rozpozna godło, będzie awantura.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "fixer",
+  "okText": "Paser rozpoznał znaki gildii kupieckiej, zatarł je i sprzedał ładunek w innym mieście. Nikt się nie zorientował.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "m-049",
+  "title": "Choroba wysokogórska",
+  "text": "Kilku popleczników cierpi na bóle głowy i zawroty. Powietrze jest zbyt rzadkie, a droga jeszcze długa.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "Znachor podał im wywar z górskich ziół i kazał oddychać powoli. Po kilku godzinach wszyscy poczuli się lepiej, a znachor zebrał kilka monet.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 2
+  }
+ },
+ {
+  "id": "m-050",
+  "title": "Zimowa gorączka",
+  "text": "Jeden z popleczników gorączkuje od dwóch dni. Zapasy lekarstw się kończą, a droga jest długa.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "Znachor ugotował wywar z kory i miodu, okładał chorego mokrymi szmatami i zdołał zbić gorączkę. Pacjent zapłacił, czym mógł.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "m-051",
+  "title": "Wyzwanie górala",
+  "text": "Wysoki góral w skórzanym kaftanie wyzywa szajkę na pojedynek na kije. Jeśli nikt się nie zgłosi, szajka okryje się wstydem.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "duelist",
+  "okText": "Szermierz przyjął wyzwanie i po efektownej walce uzyskał remis. Góral z szacunkiem uścisnął mu dłoń i zostawił sakiewkę.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "m-052",
+  "title": "Pojedynek na krawędzi",
+  "text": "Rycerz-łupieżca żąda pojedynku na wąskiej półce nad przepaścią. Ktoś może spaść.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "duelist",
+  "okText": "Szermierz wykorzystał przepaść jako broń, zmusił rycerza do poddania się i zabrał mu miecz oraz sakiewkę.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "m-053",
+  "title": "Krasnoludzki posłaniec",
+  "text": "Zdyszany krasnolud z zapieczętowaną kartką prosi o schronienie przed wichurą. Niewiele mówi.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0,
+  "next": "m-054"
+ },
+ {
+  "id": "m-054",
+  "title": "Odpowiedź starego klanu",
+  "text": "Po kilku dniach przychodzi inny krasnolud z podziękowaniem od klanu. Zostawia sakwę i obietnicę, że szajka będzie mile widziana w ich twierdzy.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 7,
+  "only": true
+ },
+ {
+  "id": "m-055",
+  "title": "Znaleziony hełm",
+  "text": "Pod skałą leży stary krasnoludzki hełm z wygrawerowanym symbolem. Wydaje się bardzo stary.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "m-056"
+ },
+ {
+  "id": "m-056",
+  "title": "Starszy krasnolud",
+  "text": "Do obozu zbliża się stary krasnolud z siwą brodą i pyta o hełm. Mówi, że należał do jego przodka i że zapłaci.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 9,
+  "only": true
+ },
+ {
+  "id": "m-057",
+  "title": "Szlak w śniegu",
+  "text": "W śniegu widać świeże ślady kilku osób, które idą w stronę przełęczy. Nie wiadomo, kim są.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "m-058"
+ },
+ {
+  "id": "m-058",
+  "title": "Kupcy zbiegli",
+  "text": "Ślady prowadzą do zbiegłych kupców, którzy uciekli przed rabusiami. Proszą o ochronę i oferują część swojego towaru.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 4,
+  "only": true
+ },
+ {
+  "id": "m-059",
+  "title": "Złota żyła",
+  "text": "W skale widać nitkę złota błyszczącą w świetle. Skalna szczelina jest wąska.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "m-060"
+ },
+ {
+  "id": "m-060",
+  "title": "Krasnoludzkie roszczenia",
+  "text": "Po kilku dniach do obozu przyszli krasnoludzcy górnicy twierdzący, że żyła należy do nich. Ich przywódca ma topór i wielkie poczucie godności.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -4,
+  "only": true
+ },
+ {
+  "id": "m-061",
+  "title": "Obcy ogień",
+  "text": "W oddali na zboczu widać ognisko. Przy nim kilka postaci, które siedzą nieruchomo.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "m-062"
+ },
+ {
+  "id": "m-062",
+  "title": "Ogień się zbliża",
+  "text": "Ognisko zbliżyło się, a nieruchome postacie okazały się zamarzniętymi ciałami wędrowców, którzy próbowali się ogrzać. Wszyscy są martwi od tygodni.",
+  "morale": -2,
+  "supplies": 0,
+  "coinsSS": 3,
+  "only": true
+ },
+ {
+  "id": "m-063",
+  "title": "Zamieć",
+  "text": "Zamieć wyła przez całą noc i nikt nie opuścił schronienia. Rano świat był biały, a cisza przytłaczająca.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-064",
+  "title": "Kruki górskie",
+  "text": "Wielkie kruki górskie przyglądały się obozowi ze skał. Co jakiś czas jeden zawołał, jakby liczył.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-065",
+  "title": "Krasnoludzki posterunek",
+  "text": "Przy przełęczy stoi posterunek krasnoludzki. Strażnicy pytają o cel podróży, ale szajka ma dobrą odpowiedź.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -2
+ },
+ {
+  "id": "m-066",
+  "title": "Zimna kąpiel",
+  "text": "Jeden z popleczników poślizgnął się i wpadł do górskiego jeziora. Jego krzyk rozległ się po całej dolinie.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-067",
+  "title": "Rozpadlina",
+  "text": "Szajka natknęła się na rozpadlinę, której nie ma na mapie. Trzeba było ją obejść, tracąc pół dnia.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-068",
+  "title": "Ogień w jaskini",
+  "text": "W jaskini rozpalono wielkie ognisko, które wydawało się płonąć bez końca. Szajka spała ciepło, ale niespokojnie.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-069",
+  "title": "Świst nad przełęczą",
+  "text": "Wiatr świstał nad przełęczą tak przeraźliwie, że wydawało się, że ktoś woła. Kilku popleczników zatykało uszy.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-070",
+  "title": "Krasnoludzka pieśń",
+  "text": "Z oddali dobiegała ponura krasnoludzka pieśń, wygrywana na rogach. Szajka siedziała bez słowa, a pieśń trwała do świtu.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-071",
+  "title": "Zamarznięte wodospady",
+  "text": "Wodospad zamarzł na rzeźbioną kolumnę lodu. Szajka podziwiała jego piękno, a ktoś odłupał kawałek na napój.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-072",
+  "title": "Kamienna chata",
+  "text": "W skale wykuto prostą chatę z paleniskiem i półką. Ktoś mieszkał tu kiedyś i zostawił wszystko w porządku.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-073",
+  "title": "Spadająca gwiazda",
+  "text": "Spadająca gwiazda przecięła niebo, rozświetlając szczyty. Wszyscy zamilkli, a niektórzy wypowiedzieli życzenia.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-074",
+  "title": "Dzwony owiec",
+  "text": "Z doliny dochodziło brzęczenie dzwonków owiec. Szajka patrzyła, jak pasterze zaganiają stado na noc.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-075",
+  "title": "Rzeka w wąwozie",
+  "text": "Rzeka huczała w wąwozie tak głośno, że rozmowa była niemożliwa. Szajka porozumiewała się gestami.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-076",
+  "title": "Tajemnicze światła",
+  "text": "Na górskim stoku tańczyły światła, wędrując w górę i w dół. Nikt nie poszedł sprawdzić.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-077",
+  "title": "Mróz i cisza",
+  "text": "Noc była tak mroźna, że drzewa pękały od wewnątrz. Każdy trzask brzmiał jak strzał.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-078",
+  "title": "Ranny jeleń",
+  "text": "Ranny jeleń stoczył się ze skały i padł tuż obok obozu. Szajka zrobiła z niego ucztę.",
+  "morale": 1,
+  "supplies": 4,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-079",
+  "title": "Wędrowny handlarz",
+  "text": "Handlarz z mułem pełnym towarów zatrzymał się w obozie. Szajka kupiła sól i suszone mięso za dobrą cenę.",
+  "morale": 0,
+  "supplies": 3,
+  "coinsSS": -2
+ },
+ {
+  "id": "m-080",
+  "title": "Zbiegły górnik",
+  "text": "Górnik uciekający przed hrabiowskim nadzorcą prosił o schronienie. Szajka dała mu chleb i wskazała drogę przez przełęcz.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-081",
+  "title": "Szczurze legowisko",
+  "text": "W jaskini znaleziono ogromne legowisko szczurów. Szajka cofnęła się, nie odważając się zbadać go bliżej.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-082",
+  "title": "Kamienny dom",
+  "text": "Zrujnowany kamienny dom stał na zboczu. Dach się zawalił, ale ściany jeszcze trzymały, dając osłonę od wiatru.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-083",
+  "title": "Ślad kozła",
+  "text": "Szajka poszła śladem górskiego kozła na odludną półkę, gdzie znalazła kilka kolorowych kamieni. Nie były cenne, ale piękne.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "m-084",
+  "title": "Eksplozja w oddali",
+  "text": "Gdzieś w górach zagrzmiała eksplozja i dym uniósł się nad zboczem. Krasnoludzcy saperzy mieli swoje sprawy.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-085",
+  "title": "Stary górnik",
+  "text": "Siwy górnik z kilofem opowiadał o zawalonych tunelach pod górą. Jego słowa brzmiały jak ostrzeżenie.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-086",
+  "title": "Gęsta mgła",
+  "text": "Mgła spadła nagle i szajka musiała się związać linami, żeby się nie pogubić. Ruch był powolny.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-087",
+  "title": "Śnieg do pasa",
+  "text": "Śnieg sięgał pasa i każdy krok wymagał wysiłku. Do obozu dotarli wyczerpani.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-088",
+  "title": "Lodowa korona",
+  "text": "Szczyt pokryła lodowa korona, a słońce rozświetliło ją na pomarańczowo. Wszyscy patrzyli z podziwem.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-089",
+  "title": "Biały lis",
+  "text": "Biały lis przemknął po śniegu jak duch i zniknął. Nikt nie był pewien, czy go widział.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-090",
+  "title": "Złamany krzyż",
+  "text": "Przy ścieżce stał złamany krzyż z imionami zmarłych. Szajka dokleiła do niego świeży kawałek drewna.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": -1
+ },
+ {
+  "id": "m-091",
+  "title": "Niedźwiedź jaskiniowy",
+  "text": "Niedźwiedź wyszedł z gawry i idzie w stronę obozu, zły po zimowym śnie. Jeśli go nikt nie zatrzyma, ktoś zginie.",
+  "morale": -1,
+  "supplies": -2,
+  "coinsSS": 0,
+  "role": "bodyguard",
+  "okText": "Ochroniarz stanął na przeciw niedźwiedzia z tarczą i wrzasnął z całych sił. Zwierzę zawahało się i wycofało. W gawrze znaleziono błyskotki.",
+  "ok": {
+   "morale": 1,
+   "supplies": 4,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "m-092",
+  "title": "Spadający odłamek",
+  "text": "Ogromny odłamek skały spada w stronę obozu. Jeśli ktoś go nie zatrzyma, przygniecie namioty.",
+  "morale": -1,
+  "supplies": -2,
+  "coinsSS": 0,
+  "role": "bodyguard",
+  "okText": "Ochroniarz podparł skałę barkiem i zatrzymał ją na kilka sekund, tyle, żeby wszyscy zdążyli uciec. Nikt nie ucierpiał.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "m-093",
+  "title": "Zasadzka goblinów",
+  "text": "Gobliny zaplanowały zasadzkę na wąskiej ścieżce. Szajka ma tamtędy przejść jutro.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "Cień wyprzedził szajkę, wykrył zasadzkę i wyeliminował wartowników. Szajka przeszła bez przeszkód i zabrała łup z obozowiska.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "m-094",
+  "title": "Złodziej z gór",
+  "text": "Ktoś kradnie zapasy ze skrzyń każdej nocy. Zniknęło już pół worka mąki.",
+  "morale": -1,
+  "supplies": -2,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "Cień czuwał w mroku i złapał złodzieja: był to głodny górski lis. Zamiast go zabić, nakarmił go i zyskał ostrzegawcze towarzystwo.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "m-095",
+  "title": "Orły w niebie",
+  "text": "Orły krążą nad szajką i wyraźnie szykują się do ataku. Wartownicy są zaniepokojeni.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "Strzelec zestrzelił dwa orły szybko, pozostałe uciekły. Szajka miała pieczone mięso i pióra do strzał.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "m-096",
+  "title": "Zagubiony kozioł",
+  "text": "Górski kozioł o ogromnych rogach utknął na półce nad obozem. Jest nie do zdobycia bez celnego strzału.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "Strzelec trafił kozła strzałą w serce z dużej odległości. Skóra i rogi były warte kilka monet.",
+  "ok": {
+   "morale": 1,
+   "supplies": 4,
+   "coinsSS": 2
+  }
+ },
+ {
+  "id": "m-097",
+  "title": "Kłótnia górników",
+  "text": "Dwóch górników pokłóciło się o żyłę kruszcu. Jeśli nikt ich nie rozdzieli, dojdzie do rozlewu krwi.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "Prowokator przekonał obu, że kłótnia jest sprawą szlachetnego rzemiosła, i zaproponował konkurs na najlepsze znaleziska. Obaj się zgodzili i zapłacili za rozstrzygnięcie.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "m-098",
+  "title": "Podejrzany pielgrzym",
+  "text": "Pielgrzym z kosturem i grubym płaszczem zwraca zbyt wielką uwagę na wasze rzeczy. Albo jest szpiegiem, albo złodziejem.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "Prowokator zaprosił go do rozmowy, a po godzinie pielgrzym przyznał się, że jest agentem celników. Szajka ofiarowała mu datek za milczenie.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "m-099",
+  "title": "Dziwne bryłki",
+  "text": "W strumieniu leżą dziwne czarne bryłki, ciężkie i zimne. Nikt nie wie, co to jest.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "Szabrownik zbadał bryłki i rozpoznał rzadki kruszec. Szajka sprzedała go krasnoludom za dobrą cenę.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "m-100",
+  "title": "Zardzewiałe zbroje",
+  "text": "W jaskini leżą zardzewiałe zbroje starożytnych wojowników. Są stare, ale kilka elementów można naprawić.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "Szabrownik naprawił kilka elementów i sprzedał je kowalowi. Zysk był spory, a pozostałe elementy ozdobiły obóz.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 8
+  }
+ },
+ {
+  "id": "m-101",
+  "title": "Szmugiel przez grań",
+  "text": "Towar trzeba przenieść przez grań, ale droga jest wąska i śliska. Mułom grozi upadek.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "Woźnica poprowadził muły szlakiem znanym tylko jemu, przewiązując im oczy. Wszystkie dotarły bezpiecznie, a zapłata była hojna.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "m-102",
+  "title": "Wywrócony wóz",
+  "text": "Wóz z kruszcem przewrócił się na stromym zboczu, a towar leży rozsypany. Właściciele błagają o pomoc.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "Woźnica przeładował wóz, naprawił koło i wyprowadził go na szlak. Właściciele zapłacili w kruszcu.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "m-103",
+  "title": "Krasnoludzka tama",
+  "text": "Krasnoludy zbudowały tamę, która odcina wodę dla okolicznych wsi. Wieśniacy proszą o pomoc.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "Podpalacz podminował tamę i wysadził ją tak, by woda spłynęła do wsi. Wieśniacy zapłacili w jedzeniu i monetach.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "m-104",
+  "title": "Spadający głaz",
+  "text": "Wielki głaz wisi nad ścieżką do kopalni i grozi zawaleniem. Ktoś mógłby go wykorzystać.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "Podpalacz podłożył ładunek tak, by głaz spadł w odpowiednim momencie na patrol. Szajka zebrała łup bez żadnych ofiar własnych.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "m-105",
+  "title": "Zniknięcie kompana",
+  "text": "Jeden z popleczników zniknął w nocy, zostawiając tylko ślady w śniegu. Trzeba go odnaleźć, zanim zamarznie.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "Zwiadowca poszedł śladem i znalazł kompana w jaskini, z zawrotem głowy i nogą w pułapce. Uratowany podzielił się znaleziskiem.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "m-106",
+  "title": "Droga na skróty",
+  "text": "Szajka potrzebuje skrótu przez góry, bo wojsko zbliża się od zachodu. Droga musi być bezpieczna i szybka.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "Zwiadowca poprowadził szajkę ukrytą ścieżką, o której nikt nie wiedział. Wojsko stracili z oczu, a szajka znalazła po drodze dobre miejsce na obóz.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "m-107",
+  "title": "Skradziony kruszec",
+  "text": "Ktoś oferuje szajce sztabki kruszcu z kradzieży w kopalni. Wygląda to na okazję, ale ryzykowne.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -3,
+  "role": "fixer",
+  "okText": "Paser zbadał pochodzenie, skontaktował się z handlarzem z innego miasta i odsprzedał z dużym zyskiem. Wszyscy się wzbogacili.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 9
+  }
+ },
+ {
+  "id": "m-108",
+  "title": "Sfałszowany dokument",
+  "text": "Wędrowiec oferuje dokument z krasnoludzkim herbem, który ma otwierać drogi. Wygląda autentycznie.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -2,
+  "role": "fixer",
+  "okText": "Paser zbadał pieczęć, rozpoznał falsyfikat i sprzedał go komuś, kto go potrzebował. Zyskał na tym i nie podpadł nikomu.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "m-109",
+  "title": "Rana od niedźwiedzia",
+  "text": "Jeden z popleczników ma głęboką ranę od niedźwiedzich pazurów. Krwawi i blednie.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "Znachor zszył ranę, przemył ją wywarem i okrył ziołami. Pacjent przeżył, a wdzięczność wyraził ofiarując swoje jedyne cenne rzeczy.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "m-110",
+  "title": "Zimowa melancholia",
+  "text": "Część szajki popada w ponury nastrój, widząc tylko biel i skały. Mówią o beznadziei.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "Znachor przyrządził napar z dziwnych ziół i opowiedział barwną opowieść o ciepłym lecie. Nastrój się poprawił, a śmiech wrócił.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "m-111",
+  "title": "Pojedynek z krasnoludem",
+  "text": "Krasnolud wyzwał waszych ludzi na pojedynek na topory. Jeśli odmówicie, urażona duma krasnoludzka będzie tematem przez wieki.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "duelist",
+  "okText": "Szermierz zgodził się na pojedynek na pałki i pokonał krasnoluda w pierwszej rundzie, po czym ukłonił się i ofiarował mu piwo. Krasnolud zaakceptował.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "m-112",
+  "title": "Hrabia na górskiej ścieżce",
+  "text": "Hrabia ze świtą zatrzymał się na wąskiej ścieżce i żąda prawa pierwszeństwa. Szajka nie chce ustąpić.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "duelist",
+  "okText": "Szermierz wystąpił i w sposób kurtuazyjny zaproponował pojedynek na słowa. Hrabia przegrał z wdziękiem i zostawił sakiewkę.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "m-113",
+  "title": "Zgubiony pies",
+  "text": "Duży pies w skórzanej obroży przybłąkał się do obozu z poranioną łapą. Wygląda na cenionego psa pasterskiego.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0,
+  "next": "m-114"
+ },
+ {
+  "id": "m-114",
+  "title": "Pasterze przybywają",
+  "text": "Po kilku dniach przychodzą pasterze szukający psa. Dziękują i nagradzają szajkę kilkoma serami i monetami.",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": 3,
+  "only": true
+ },
+ {
+  "id": "m-115",
+  "title": "Dziwny jaskiniowy odgłos",
+  "text": "Z jaskini dobiega nieregularne stukanie, jakby ktoś kuł w skale. Nikt nie wie, kto to.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "m-116"
+ },
+ {
+  "id": "m-116",
+  "title": "Kowal ze skały",
+  "text": "Okazuje się, że to ukryty krasnolud wyrabiający cenne przedmioty. Proponuje handel i prosi o dyskrecję.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 7,
+  "only": true
+ },
+ {
+  "id": "m-117",
+  "title": "Dziecko w śniegu",
+  "text": "W śniegu przy ścieżce znaleziono dziecko owinięte w koc. Wyziębione, ale żyje.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0,
+  "next": "m-118"
+ },
+ {
+  "id": "m-118",
+  "title": "Rodzice dziecka",
+  "text": "Rodzice dziecka, górale, przyszli po nie i płakali ze szczęścia. Dali wszystko, co mieli, i obiecali ukryć szajkę przed wojskiem.",
+  "morale": 2,
+  "supplies": 2,
+  "coinsSS": 2,
+  "only": true
+ },
+ {
+  "id": "m-119",
+  "title": "Zniszczony posąg",
+  "text": "Posąg krasnoluda został rozbity młotem. Odłamki leżą wokół, a na postumencie widać świeże ślady.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "m-120"
+ },
+ {
+  "id": "m-120",
+  "title": "Krasnoludzka wendeta",
+  "text": "Grupa krasnoludów ściga winnych zniszczenia posągu. Jeśli szajka zostanie wzięta za sprawców, będzie źle.",
+  "morale": -2,
+  "supplies": 0,
+  "coinsSS": -2,
+  "only": true
+ },
+ {
+  "id": "m-121",
+  "title": "Obca pieśń",
+  "text": "Z wnętrza góry rozlega się niski śpiew, nie ludzki. Szajka stoi przy skale i nasłuchuje.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "m-122"
+ },
+ {
+  "id": "m-122",
+  "title": "Wejście do kopalni",
+  "text": "Szajka znalazła ukryte wejście do porzuconej kopalni. W środku zapach wilgoci i stare narzędzia, a także kilka skrzyń.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": 7,
+  "only": true
+ },
+ {
+  "id": "m-123",
+  "title": "Przełęcz w chmurach",
+  "text": "Szajka stanęła nad chmurami. Poniżej leżał biały dywan, a wyżej tylko słońce i skały.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-124",
+  "title": "Pękające lody",
+  "text": "Lód na jeziorze pękał z trzaskiem jak strzały armat. Szajka obozowała na brzegu i nie spała do rana.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-125",
+  "title": "Żmija",
+  "text": "Żmija wygrzewała się na kamieniu i syknęła, gdy ktoś się zbliżył. Wszyscy odsunęli się ostrożnie.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-126",
+  "title": "Skalne rzeźby",
+  "text": "Wietrzne erozje wyrzeźbiły w skałach kształty podobne do ludzkich twarzy. Szajka patrzyła z dreszczem.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-127",
+  "title": "Mały wodospad",
+  "text": "Wodospad szemrał obok obozu, a woda była lodowata i czysta. Wszyscy napełnili bukłaki i umyli twarze.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-128",
+  "title": "Zapomniany obóz",
+  "text": "Szajka natknęła się na obozowisko porzucone w pośpiechu: z kociołkiem, kilkoma kocami i jeszcze ciepłym popiołem.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 2
+ },
+ {
+  "id": "m-129",
+  "title": "Jaskinia nietoperzy",
+  "text": "W jaskini wisiały tysiące nietoperzy. Szajka obeszła ją szerokim łukiem, nie chcąc ich płoszyć.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-130",
+  "title": "Zimowy sen",
+  "text": "Szajka zasnęła w ciszy tak głębokiej, że rano nikt nie pamiętał snów. Odpoczęli doskonale.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-131",
+  "title": "Okrzyki z dolin",
+  "text": "Z dołu dochodziły okrzyki ludzi, którzy się zgubili w śnieżycy. Szajka zeszła ich szukać i doprowadziła do obozu.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 2
+ },
+ {
+  "id": "m-132",
+  "title": "Szczyt",
+  "text": "Szajka weszła na szczyt, z którego widać było całą dolinę. Wszyscy poczuli się wielcy i nieśmiertelni.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-133",
+  "title": "Szarańcza górska",
+  "text": "Chmura owadów przeleciała nad doliną. Szajka patrzyła na nie jak na dziwy.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-134",
+  "title": "Krasnoludzki cmentarz",
+  "text": "Szajka natknęła się na krasnoludzki cmentarz, gdzie każdy grób miał wyryte runy. Nikt nie odważył się niczego dotknąć.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-135",
+  "title": "Wędrowiec z kijem",
+  "text": "Stary pielgrzym z kijem przeszedł przez przełęcz i pomachał ręką. Odpowiedzieli mu tym samym.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-136",
+  "title": "Chmura dymu",
+  "text": "Nad doliną uniosła się chmura dymu z kopalni. Szajka wiedziała, że gdzieś w pobliżu jest osada.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "m-137",
+  "title": "Grzmiące górskie echo",
+  "text": "Okrzyk jednego z popleczników powrócił echem kilka razy. Zaczęła się zabawa, a potem ktoś kazał wszystkim się uciszyć.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-138",
+  "title": "Skamieliny",
+  "text": "Wśród skał leżały skamieliny dziwnych stworzeń. Szabrownik zebrał kilka, wierząc, że ktoś je kupi.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "m-139",
+  "title": "Świeży ślad",
+  "text": "Na śniegu widać było świeży ślad buta, prowadzący do obozu i z powrotem. Ktoś nas obserwował, ale nic nie zabrał.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-140",
+  "title": "Szron i słońce",
+  "text": "Poranek był mroźny, ale słoneczny, a szron lśnił na każdej skale. Szajka wstała z nowymi siłami.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-141",
+  "title": "Wrzask orłów",
+  "text": "Orły zawołały się nad doliną, a echo przetoczyło się po zboczach. Wszyscy podnieśli głowy.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-142",
+  "title": "Kamienne schody",
+  "text": "W skale wykuto kamienne schody, które prowadziły do wąskiego tarasu. Szajka tam spała, chroniona przed wiatrem.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-143",
+  "title": "Pnącza w jaskini",
+  "text": "W głębi jaskini rosły pnącza, jakby słońce kiedyś tu docierało. Szajka patrzyła na nie z niedowierzaniem.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-144",
+  "title": "Mgła i szepty",
+  "text": "Mgła wypełniła przełęcz, a w niej rozlegały się szepty. Szajka zatrzymała się i czekała, aż się rozwieje.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-145",
+  "title": "Złote kwiaty",
+  "text": "Wśród skał rosły złote kwiaty, o których mówiono, że przynoszą szczęście. Szajka zebrała kilka.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "m-146",
+  "title": "Żywy kamień",
+  "text": "Kamień na ścieżce poruszył się, a potem znowu znieruchomiał. Wszyscy się odsunęli i szli dalej, nie oglądając się.",
+  "morale": -2,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-147",
+  "title": "Kamienne igły",
+  "text": "Skalne iglice sterczały jak palce. Szajka obozowała między nimi, chroniona od wiatru.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-148",
+  "title": "Biały puch",
+  "text": "Śnieg padał cicho przez całą noc, tłumiąc każdy dźwięk. Rano świat był nieskazitelnie biały.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-149",
+  "title": "Dobre piwo",
+  "text": "Wędrowny krasnolud poczęstował szajkę piwem wartym tysiąc koron. Nikt nie narzekał, że nie ma nic na przekąskę.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-150",
+  "title": "Skalny bastion",
+  "text": "Szajka rozbiła obóz na szczycie wzgórza, skąd widać było każde podejście. Czuła się bezpieczna.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-151",
+  "title": "Gwiazdy",
+  "text": "Niebo było tak czyste, że widać było każdą gwiazdę. Wszyscy leżeli na plecach i patrzyli w górę, milcząc.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-152",
+  "title": "Wędrowny bard",
+  "text": "Bard z lutnią zatrzymał się na nocleg i grał do późna. Szajka śpiewała razem z nim, a zimno przestało się liczyć.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-153",
+  "title": "Rozwścieczony troll",
+  "text": "Troll wyszedł z jaskini i idzie w stronę obozu, wymachując maczugą. Jeśli ktoś go nie zatrzyma, obóz będzie zgnieciony.",
+  "morale": -2,
+  "supplies": -2,
+  "coinsSS": 0,
+  "role": "bodyguard",
+  "okText": "Ochroniarz stanął przed trollem i wciągnął go w pułapkę, w którą wpadły kamienie. Troll zginął, a w jaskini znaleziono skarby.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "m-154",
+  "title": "Przeprawa przez lód",
+  "text": "Lodowy most prowadzi nad przepaścią, a zapasy są ciężkie. Ktoś musi je przenieść.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0,
+  "role": "bodyguard",
+  "okText": "Ochroniarz przeniósł wszystkie skrzynie na własnych plecach, jedną po drugiej, i nie stracił ani jednej.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "m-155",
+  "title": "Szpieg w obozie",
+  "text": "Podejrzany wędrowiec krąży wokół obozu i zbiera informacje. Jeśli zdąży uciec, zdradzi waszą pozycję.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "Cień wyśledził go w nocy, ogłuszył i przeszukał jego rzeczy. Znalazł mapę i zapłatę od wroga.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "m-156",
+  "title": "Zbocze i cień",
+  "text": "Na zboczu pojawiła się postać w ciemnym płaszczu, która obserwuje obóz. Nie rusza się od kilku godzin.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "Cień wspiął się po skałach, podszedł od tyłu i odkrył, że to posąg w płaszczu zostawionym przez poprzednich podróżnych. W płaszczu były monety.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "m-157",
+  "title": "Orli kuszenie",
+  "text": "Orzeł zabrał jednemu z popleczników czapkę i krąży z nią nad obozem. Wszyscy się śmieją, ale czapka była cenna.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "Strzelec trafił orła tak, że ten upuścił czapkę, nie raniąc się. Czapka wróciła do właściciela.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 2
+  }
+ },
+ {
+  "id": "m-158",
+  "title": "Kamienny dzik",
+  "text": "Na zboczu pojawił się wielki dzik, który niszczy to, co spotka. Dąży w stronę obozu.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "Strzelec zabił dzika jednym strzałem w czoło. Mięsa było tyle, że wystarczyło na tydzień.",
+  "ok": {
+   "morale": 1,
+   "supplies": 4,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "m-159",
+  "title": "Szlachecka karawana",
+  "text": "Karawana szlachecka zatrzymała się na przełęczy i szuka rozrywki. Wszyscy się nudzą.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "Prowokator zorganizował konkurs wyścigu na mułach, który rozbawił całą karawanę. Szlachta zapłaciła hojnie i obiecała dobre słowo u hrabiego.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "m-160",
+  "title": "Plotki w osadzie",
+  "text": "W górskiej osadzie krąży plotka, że szajka rabuje podróżnych. Mieszkańcy patrzą wilkiem.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "Prowokator rozpuścił przeciwne plotki: że w okolicy grasuje inna szajka. Mieszkańcy uwierzyli, a szajka dostała w nagrodę zapasy.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "m-161",
+  "title": "Wóz rozbity o skały",
+  "text": "Wóz kupca rozbił się na skałach, a towar się rozsypał. Pożytek z niego może odnieść ktoś zaradny.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "Szabrownik zebrał wszystko, co się nadawało, i spakował do worków. Wrócił z zapasami i monetami.",
+  "ok": {
+   "morale": 1,
+   "supplies": 3,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "m-162",
+  "title": "Zgubiony ekwipunek",
+  "text": "Na zboczu leży plecak wspinacza z ekwipunkiem i linami. Właściciela nie widać.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "Szabrownik przejrzał plecak, wyciągnął użyteczne rzeczy i resztę odłożył na wypadek, gdyby ktoś się zgłosił. Zyski były niezłe.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "m-163",
+  "title": "Przemyt przez śnieg",
+  "text": "Towar musi dotrzeć na drugą stronę przełęczy, ale śnieg zasypał szlak. Potrzebny jest pomysł.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "Woźnica zrobił z desek sanie i przeciągnął towar po śniegu. Sprzedaż po drugiej stronie przyniosła duży zysk.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "m-164",
+  "title": "Muł w przepaści",
+  "text": "Muł z cennym ładunkiem poślizgnął się i wisi nad przepaścią na linie. Jeśli się zerwie, towar przepadnie.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "Woźnica wciągnął muła na górę ręcznie, ratując zarówno zwierzę, jak i ładunek. Właściciel zapłacił hojnie.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "m-165",
+  "title": "Zamek na wzgórzu",
+  "text": "Zamek hrabiego stoi na wzgórzu, a w jego piwnicach kryje się skarb. Muru nie da się obejść.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "Podpalacz podłożył ładunek pod mur w nocy i rozwalił go wybuchem. W zamieszaniu szajka zabrała skarb i uciekła.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 8
+  }
+ },
+ {
+  "id": "m-166",
+  "title": "Oblodzona ścieżka",
+  "text": "Ścieżka do kopalni jest oblodzona i niebezpieczna. Ktoś musi ją rozmrozić, nim kupcy spadną.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "Podpalacz rozpalił ogniska wzdłuż ścieżki i roztopił lód. Kupcy przeszli bezpiecznie i zapłacili za trud.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "m-167",
+  "title": "Mapa skarbu",
+  "text": "W starej chacie znaleziono mapę z krzyżykiem. Ślady na niej wyglądają na prawdziwe.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "Zwiadowca poszedł za mapą i dotarł do jaskini, w której znalazł skrzynię monet. Szajka wzbogaciła się.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 8
+  }
+ },
+ {
+  "id": "m-168",
+  "title": "Zagubiona karawana",
+  "text": "Karawana kupców zgubiła się w śnieżycy i błądzi po zboczu. Szuka przewodnika.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "Zwiadowca znalazł karawanę po śladach i wyprowadził ją na szlak. Kupcy w podzięce dali część towaru.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "m-169",
+  "title": "Falsyfikat sztabki",
+  "text": "Handlarz oferuje sztabkę złota po przystępnej cenie. Przy bliższym oglądzie wygląda podejrzanie.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -4,
+  "role": "fixer",
+  "okText": "Paser rozpoznał falsyfikat i zażądał uczciwej ceny albo zwrotu. Handlarz zapłacił odszkodowanie i uciekł.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "m-170",
+  "title": "Skup skór",
+  "text": "Handlarz skór kupuje wszystko, co szajka ma na sprzedaż, ale oferuje bardzo niską cenę. Szajka musi się targować.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -1,
+  "role": "fixer",
+  "okText": "Paser targował się godzinę, wskazując wady towaru konkurencji, i wyciągnął cenę dwukrotnie wyższą niż początkowa.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "m-171",
+  "title": "Ostry kaszel",
+  "text": "Kilku popleczników kaszle od kilku dni, a ich oddechy są świszczące. Jeśli się pogorszy, nie ujdą dalej.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "Znachor zaparzył ziołowy napar z miodem i cebulą, a rano wszyscy odetchnęli lżej. Kilku zapłaciło mu za receptę.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 2
+  }
+ },
+ {
+  "id": "m-172",
+  "title": "Przesąd o górze",
+  "text": "Szajka znalazła się w miejscu, które według legend jest przeklęte. Połowa odmawia kontynuowania.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "Znachor odprawił rytuał oczyszczenia z solą i ziołami, a następnie wskazał bezpieczną ścieżkę. Szajka poszła dalej.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "m-173",
+  "title": "Hrabiowski strażnik",
+  "text": "Hrabiowski strażnik zatrzymał szajkę na przełęczy i żąda myta. Jest uparty i dumny.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -3,
+  "role": "duelist",
+  "okText": "Szermierz wyzwał strażnika na pojedynek na słowa i fechtunek, pokonał go w kilka ruchów i został przepuszczony za darmo.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "m-174",
+  "title": "Ścieżka honoru",
+  "text": "Dwóch rycerzy blokuje wąską ścieżkę i żąda od szajki przysięgi wierności. Odmowa to zniewaga.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "duelist",
+  "okText": "Szermierz zaproponował wspólny turniej, wygrał z oboma i został uznany za godnego przyjaciela. Rycerze dali nagrodę.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "m-175",
+  "title": "Dziwna tablica",
+  "text": "Na skale ktoś umieścił tablicę z kilkoma słowami w nieznanym alfabecie. Zdaje się nową.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "m-176"
+ },
+ {
+  "id": "m-176",
+  "title": "Tłumaczenie",
+  "text": "Wędrowny uczony przetłumaczył tablicę: wskazuje ona ukryty skarb. Prosi o towarzyszenie i oferuje podział.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 5,
+  "only": true
+ },
+ {
+  "id": "m-177",
+  "title": "Skrzynia na stoku",
+  "text": "Na stoku znaleziono skrzynię zawieszoną na linie nad przepaścią. Nikt nie wie, jak się tam znalazła.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "m-178"
+ },
+ {
+  "id": "m-178",
+  "title": "Co w skrzyni",
+  "text": "Skrzynia, po odzyskaniu, zawierała zapasy i list z prośbą do znalazcy: „Przekaż moją wiadomość do Karaz-a-Karak”. Obiecano zapłatę.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 4,
+  "only": true
+ },
+ {
+  "id": "m-179",
+  "title": "Samotny kozioł",
+  "text": "Kozioł o poszarpanych rogach wędruje wokół obozu bez śladu strachu. Patrzy na was spokojnie.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "m-180"
+ },
+ {
+  "id": "m-180",
+  "title": "Kozioł prowadzi",
+  "text": "Kozioł poprowadził szajkę ścieżką wśród skał do ukrytej doliny z żyznymi pastwiskami i źródłem. Odpoczynek tam był cudowny.",
+  "morale": 2,
+  "supplies": 3,
+  "coinsSS": 0,
+  "only": true
+ },
+ {
+  "id": "m-181",
+  "title": "Strumień z ciałami",
+  "text": "W zamarzniętym strumieniu wmarzły ciała kilku zwierząt. Wszystkie wyglądają, jakby ktoś je ułożył.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "m-182"
+ },
+ {
+  "id": "m-182",
+  "title": "Krąg na lodzie",
+  "text": "Po roztopieniu lodu odsłonił się krąg z kamieni z dziwnym symbolem. Szajka postanowiła nie zostawać tu na noc.",
+  "morale": -2,
+  "supplies": 0,
+  "coinsSS": 0,
+  "only": true
+ },
+ {
+  "id": "m-183",
+  "title": "Obóz w jaskini",
+  "text": "Szajka rozpaliła ognisko w jaskini, a dym uchodził przez szczelinę w stropie. Było ciepło i sucho.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-184",
+  "title": "Mieszkańcy osady",
+  "text": "Górale z pobliskiej osady przyszli do obozu z darami. Niechętnie, ale uprzejmie.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-185",
+  "title": "Rozbite lustro",
+  "text": "Jeden z popleczników rozbił małe lusterko i przez resztę dnia chodził blady jak ściana. Uznał, że czeka go nieszczęście.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-186",
+  "title": "Grzmiący lód",
+  "text": "Lodowiec zagrzmiał w oddali, a ziemia zadrżała. Wszyscy zamarli, czekając na ciąg dalszy.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-187",
+  "title": "Krasnoludzkie piwo",
+  "text": "Karawana krasnoludzka sprzedała szajce kilka beczek ciemnego piwa po okazyjnej cenie. Wszyscy się cieszyli.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": -2
+ },
+ {
+  "id": "m-188",
+  "title": "Alpejskie róże",
+  "text": "Na zboczu zakwitły róże alpejskie, choć jeszcze leżał śnieg. Szajka wzięła to za dobry znak.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-189",
+  "title": "Poszukiwacze",
+  "text": "Dwóch poszukiwaczy skarbów szukało kruszcu w strumieniu. Szajka obserwowała ich z ukrycia i postanowiła im nie przeszkadzać.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "m-190",
+  "title": "Obrywająca się półka",
+  "text": "Półka skalna, na której stał obóz, zaczęła się obrywać. Wszyscy przenieśli się dalej, tracąc część zapasów.",
+  "morale": -1,
+  "supplies": -2,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-191",
+  "title": "Lawina śnieżna",
+  "text": "Lawina przetoczyła się obok obozu o kilka metrów. Wszyscy byli bladzi i milczący.",
+  "morale": -2,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-192",
+  "title": "Spłoszone muły",
+  "text": "Muły zerwały się z uwięzi i uciekły w góry. Szajka goniła je pół dnia.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-193",
+  "title": "Kamienny złom",
+  "text": "Szajka znalazła stary krasnoludzki wózek na szynach. Był zardzewiały, ale koła nadal się kręciły.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "m-194",
+  "title": "Dym z wysokiego komina",
+  "text": "Z wysokiej skały wznosił się dym, jakby tam ktoś mieszkał. Nikt się nie odważył sprawdzić.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-195",
+  "title": "Grota z kryształami",
+  "text": "W grocie znaleziono kryształy, które lśniły w świetle pochodni jak tysiące świec. Szajka wyłamała kilka.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "m-196",
+  "title": "Pokrzywdzony kupiec",
+  "text": "Kupiec, któremu zrabowano wóz, błąkał się po przełęczy i prosił o schronienie. Szajka dała mu koc i bochenek.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-197",
+  "title": "Szczekanie psów",
+  "text": "W oddali szczekały psy pasterskie, a ich szczekanie niosło się po całej dolinie. Szajka wstała, nasłuchując.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-198",
+  "title": "Świeży chleb",
+  "text": "Góralska rodzina poczęstowała szajkę świeżym chlebem z dymiącego pieca. Nikt nie pytał, kim jesteście.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-199",
+  "title": "Powieszony kozioł",
+  "text": "Martwy kozioł wisiał na drzewie, a pod nim ślady rytualne. Szajka nie rozbiła obozu w pobliżu.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-200",
+  "title": "Zamarznięty jeździec",
+  "text": "Na zboczu siedział na koniu zamarznięty jeździec, a jego twarz była pokryta szronem. Szajka go pochowała i zabrała jego konia.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 5
+ },
+ {
+  "id": "m-201",
+  "title": "Pierwsze promienie",
+  "text": "Pierwsze promienie słońca dotarły do doliny i ogrzały obóz. Wszyscy wstali z uśmiechami.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-202",
+  "title": "Czerwony śnieg",
+  "text": "Śnieg wokół obozu zabarwił się na czerwono, jakby pokryty pyłem. Szajka nie zjadła niczego, co z nim miało kontakt.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-203",
+  "title": "Kapliczka górska",
+  "text": "Mała kapliczka z kamienia stała na szczycie, a przy niej leżały świeże kwiaty. Szajka dołożyła swoje.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": -1
+ },
+ {
+  "id": "m-204",
+  "title": "Złamany nóż",
+  "text": "W szczelinie skały tkwił złamany nóż o dziwnym kształcie. Szajka patrzyła na niego, ale nikt go nie wyjął.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-205",
+  "title": "Kobieta w czerni",
+  "text": "Kobieta w czarnej chuście przeszła przez przełęcz, nie odpowiadając na powitanie. W powietrzu został zapach ziół.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-206",
+  "title": "Krew na kamieniu",
+  "text": "Na kamieniu przy ścieżce leżała świeża krew, a obok kawałek rozdartego ubrania. Szajka poszła dalej ostrożniej.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-207",
+  "title": "Ciepłe źródło",
+  "text": "Gorące źródło buchało parą w skale. Szajka zażyła kąpieli i odpoczęła jak nigdy.",
+  "morale": 2,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-208",
+  "title": "Śnieżna pustynia",
+  "text": "Nieskończona biel rozciągała się na wszystkie strony. Wszyscy poczuli się maleńcy i zagubieni.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-209",
+  "title": "Chata z drewna",
+  "text": "Mała chata z drewna z kominkiem i zapasami drewna czekała na zbłąkanych podróżnych. Szajka zjadła ciepły posiłek.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-210",
+  "title": "Kowal z gór",
+  "text": "Górski kowal naostrzył szajce noże i zreperował sprzęt za symboliczną opłatą. Był gadatliwy i wesoły.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": -1
+ },
+ {
+  "id": "m-211",
+  "title": "Wędrówka w nocy",
+  "text": "Szajka szła nocą, bo w dzień wiał zbyt zimny wiatr. Księżyc świecił jasno i droga była widoczna.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-212",
+  "title": "Pokrzywione drzewa",
+  "text": "Drzewa na zboczu rosły pokrzywione od wiatru, jakby ktoś je zginał. Szajka szła między nimi w milczeniu.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-213",
+  "title": "Przybłęda",
+  "text": "Chuda kozica przybłąkała się do obozu i została. Szajka nazwała ją Hildą.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-214",
+  "title": "Pieśń wiatru",
+  "text": "Wiatr wygrywał w szczelinach skały melodię podobną do śpiewu. Szajka siedziała w milczeniu i słuchała.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-215",
+  "title": "Skarb górnika",
+  "text": "Stary górnik umierając wskazał szajce kryjówkę ze swoimi oszczędnościami. W skrzynce znaleziono monety i prosty zegarek.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 6
+ },
+ {
+  "id": "m-216",
+  "title": "Stuk kilofów",
+  "text": "Z głębi góry dochodził stukot kilofów, równomierny i niepokojący. Nikt nie wiedział, kto tam pracuje.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-217",
+  "title": "Wędrowiec z Nuln",
+  "text": "Wędrowny inżynier z Nuln mierzył góry swoimi przyrządami. Szajka patrzyła z zaciekawieniem, a on opowiedział o nowych drogach.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "m-218",
+  "title": "Zerwany most",
+  "text": "Most linowy przez przepaść był zerwany. Szajka musiała znaleźć obejście, tracąc cały dzień.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-219",
+  "title": "Nietypowy ślad",
+  "text": "Na śniegu widać było ślady nieznanego zwierzęcia, kroczącego na tylnych łapach. Szajka poszła w przeciwnym kierunku.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-220",
+  "title": "Opuszczona osada",
+  "text": "Wioska pod szczytem stała pusta, drzwi uchylone, a w piecach jeszcze tliły się węgle. Szajka nie została na noc.",
+  "morale": -2,
+  "supplies": 1,
+  "coinsSS": 2
+ },
+ {
+  "id": "m-221",
+  "title": "Spojrzenie z góry",
+  "text": "Wielki ptak siedział na szczycie skały i patrzył w dół. Szajka postanowiła nie wchodzić na tę stronę.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-222",
+  "title": "Wędrowny filozof",
+  "text": "Siwy brodacz w płaszczu rozprawiał o sensie życia przy ognisku. Nikt go nie rozumiał, ale wszyscy kiwali głowami.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-223",
+  "title": "Górskie jeziorko",
+  "text": "Kryształowe jeziorko leżało w kotlinie, otoczone skałami. Szajka umyła się i napiła do syta.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-224",
+  "title": "Spadające kamyki",
+  "text": "Nad obozem spadały drobne kamyki, jakby ktoś chodził po skałach. Rano nie było żadnych śladów.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-225",
+  "title": "Stary posąg",
+  "text": "Posąg bohatera z toporem stał pośrodku nieczynnej drogi. Szajka złożyła mu cześć i ruszyła dalej.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-226",
+  "title": "Przeszukana jaskinia",
+  "text": "Szajka znalazła jaskinię, którą ktoś przeszukał przed nimi. Nic cennego nie zostało, ale dach był suchy.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-227",
+  "title": "Ostry świst",
+  "text": "Powietrze przecięło ostre świsnięcie, a potem uderzenie w skałę tuż obok. Ktoś strzelił z procy lub kuszy.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-228",
+  "title": "Zbiegli niewolnicy",
+  "text": "Grupka zbiegłych pracowników kopalni prosiła o jedzenie. Szajka podzieliła się tym, co miała.",
+  "morale": 1,
+  "supplies": -2,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-229",
+  "title": "Wizyta lawiny",
+  "text": "Mała lawina zasypała część obozu. Wszyscy wykopali się sami i śmiali się nerwowo.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-230",
+  "title": "Krasnoludzka droga",
+  "text": "Szajka znalazła krasnoludzką drogę z równymi kamieniami i uważnie wyrytymi runami. Szła nią z szacunkiem.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-231",
+  "title": "Walka orłów",
+  "text": "Dwa orły walczyły w powietrzu nad obozem, a pióra spadały jak śnieg. Szajka patrzyła z podziwem.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-232",
+  "title": "Kamienna kapsuła",
+  "text": "Kamienna kapsuła z zapieczętowanym listem tkwiła w szczelinie. Szajka wyjęła go i przeczytała: „Dla tego, kto znajdzie”.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "m-233",
+  "title": "Wyziębienie",
+  "text": "Jeden z popleczników wyziębił się tak, że stracił czucie w palcach. Szajka rozgrzała go przy ognisku i dała ciepły napój.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-234",
+  "title": "Podgórska wioska",
+  "text": "Wioska u stóp góry była rozświetlona ogniskami, a z karczmy dochodził śpiew. Szajka wzięła tę kolejną noc za wygraną.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-235",
+  "title": "Dym i krasnoludy",
+  "text": "Krasnoludzcy kowale rozpalili piece na zboczu, a dym unosił się jak mgła. Hałas młotów trwał całą noc.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-236",
+  "title": "Podejrzana mgiełka",
+  "text": "Z jaskini unosiła się zielonkawa mgiełka, która pachniała zgnilizną. Szajka cofnęła się o sto kroków.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-237",
+  "title": "Czarny kamień",
+  "text": "Czarny kamień wystawał ze zbocza, zimny jak lód nawet w pełnym słońcu. Nikt go nie dotknął.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-238",
+  "title": "Przemarzłe konie",
+  "text": "Konie szajki stały skostniałe i parowały w mroźnym powietrzu. Rano trzeba było je rozgrzewać przez godzinę.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-239",
+  "title": "Obcy w chacie",
+  "text": "W chacie na zboczu mieszka samotny stary mężczyzna, który nie otwiera drzwi. Dym z komina unosi się dzień i noc.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "m-240"
+ },
+ {
+  "id": "m-240",
+  "title": "Pustelnik otwiera",
+  "text": "Po kilku dniach pustelnik wyszedł z chaty i zaprosił szajkę do środka. Okazało się, że potrzebuje pomocy w naprawie dachu i płaci monetami.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 4,
+  "only": true
+ },
+ {
+  "id": "m-241",
+  "title": "Wyjący wiatr",
+  "text": "W nocy usłyszano wycie, które zdawało się dochodzić z wnętrza góry. Wszyscy zakrywali uszy.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "m-242"
+ },
+ {
+  "id": "m-242",
+  "title": "Źródło wycia",
+  "text": "Szajka znalazła szczelinę, z której wiał wiatr. W środku leżały szkielety i kilka starych monet.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 5,
+  "only": true
+ },
+ {
+  "id": "m-243",
+  "title": "Skrzydlaty cień",
+  "text": "Wielki cień przeleciał nad obozem, zasłaniając księżyc. Wszyscy zamarli.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "m-244"
+ },
+ {
+  "id": "m-244",
+  "title": "Gniazdo giganta",
+  "text": "Szajka znalazła gniazdo ogromnego ptaka z kośćmi owiec i... złotym pierścieniem. Ptak go nie pilnował, ale mógł wrócić w każdej chwili.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 6,
+  "only": true
+ },
+ {
+  "id": "m-245",
+  "title": "Zamarznięty skarb",
+  "text": "W bryle lodu widać błyszczący przedmiot. Lód jest gruby, a przedmiot wygląda cennie.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "m-246"
+ },
+ {
+  "id": "m-246",
+  "title": "Lód topnieje",
+  "text": "Po kilku dniach słońce stopiło lód i odsłoniło złotą rzeźbę. Ktoś musi ją zabrać, zanim zrobią to inni.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 8,
+  "only": true
+ },
+ {
+  "id": "m-247",
+  "title": "Zapach śniegu",
+  "text": "Powietrze pachniało czystym śniegiem. Wszyscy oddychali głęboko, a nawet najbardziej zmęczeni uśmiechnęli się.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-248",
+  "title": "Kozica z młodymi",
+  "text": "Kozica z dwoma młodymi pasła się na stoku. Szajka patrzyła, jak skaczą po skałach z lekkością tancerzy.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-249",
+  "title": "Obcy w płaszczu",
+  "text": "Obcy w futrzanym płaszczu przeszedł przez obóz bez słowa i zniknął w śnieżycy. Zostawił przy ognisku złotą monetę.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 5
+ },
+ {
+  "id": "m-250",
+  "title": "Stuknięcie w skałę",
+  "text": "Ktoś lub coś stukało w skałę nad obozem rytmicznie, trzy razy, po czym zamilkło. Nikt nie spał do rana.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-251",
+  "title": "Spadająca belka",
+  "text": "Belka ze starej kopalni spadła z półki i rozbiła się tuż obok obozu. Wszyscy się odsunęli.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-252",
+  "title": "Ruiny wieży",
+  "text": "Ruiny starej wieży strażniczej stały nad przełęczą. Szajka obejrzała je i nie znalazła nic cennego, ale miejsce było suche.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-253",
+  "title": "Spadek temperatury",
+  "text": "Temperatura spadła tak gwałtownie, że woda w bukłakach zamarzła w kilka minut. Wszyscy trzęśli się przy ogniu.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-254",
+  "title": "Przyjazny góral",
+  "text": "Góral z zaśnieżoną brodą zaprosił szajkę do swojej chaty i opowiedział o ścieżkach, których nie ma na mapach. Wszyscy słuchali z uwagą.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-255",
+  "title": "Podróżny z Bretonii",
+  "text": "Podróżny z Bretonii zatrzymał się na nocleg i opowiadał o rycerzach i damach. Był zabawny i bardzo głodny.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-256",
+  "title": "Padlina w śniegu",
+  "text": "W śniegu leżała padlina górskiej kozicy, nietknięta przez drapieżniki. Szajka obeszła ją z daleka, nie wiedząc, co ją zabiło.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-257",
+  "title": "Zasypana kapliczka",
+  "text": "Z zaspy wystawał dach małej kapliczki. Szajka odkopała wejście i znalazła w środku suche drewno i ogarek świecy.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-258",
+  "title": "Wiatr w szczelinach",
+  "text": "Wiatr gwizdał w szczelinach skały tak głośno, że rozmowa była niemożliwa. Nikt nie spał spokojnie.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-259",
+  "title": "Zgubiony wędrowiec",
+  "text": "Wędrowiec z odmrożonymi palcami wszedł do obozu, ledwo żywy. Szajka go ogrzała i nakarmiła.",
+  "morale": 1,
+  "supplies": -2,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-260",
+  "title": "Zagłodzony wilk",
+  "text": "Wychudzony wilk patrzył na obóz z odległości kilku kroków. Rzucono mu kawałek mięsa, a on odszedł bez słowa.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-261",
+  "title": "Szron na brodach",
+  "text": "Rano wszyscy mieli szron na brodach i brwiach. Śmiali się z siebie, ale nikt nie chciał opuszczać posłania.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-262",
+  "title": "Miejsce spoczynku",
+  "text": "Na przełęczy leżał stary grobowiec z kamienia, a na nim wyryte krasnoludzkie runy. Szajka obeszła go z szacunkiem.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-263",
+  "title": "Ciężka noc",
+  "text": "Zimno i wiatr nie dawały spać, a drzewa skrzypiały jak kości. Rano wszyscy mieli podkrążone oczy.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-264",
+  "title": "Rzeźba ze śniegu",
+  "text": "Ktoś wyrzeźbił ze śniegu figurę niedźwiedzia, wielkości człowieka. Szajka nie wiedziała, czy się śmiać, czy bać.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-265",
+  "title": "Pół dnia w tunelu",
+  "text": "Szajka przeszła przez długi tunel wykuty w skale. W środku było cicho, sucho i dziwnie ciepło.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-266",
+  "title": "Złe wiatry",
+  "text": "Wiatr zmienił kierunek i przyniósł zapach dymu i spalenizny. Szajka się niepokoiła, ale nic się nie wydarzyło.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-267",
+  "title": "Obóz kupców",
+  "text": "Kupcy z karawany pozwolili szajce rozłożyć się przy ich ognisku. Wymieniono plotki i trochę żywności.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-268",
+  "title": "Szczekający pies",
+  "text": "Zbłąkany pies szczekał na szajkę z oddali, a potem uciekł. Nikt nie wiedział, skąd się wziął.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-269",
+  "title": "Kamienne korytarze",
+  "text": "Szajka znalazła stare kamienne korytarze, wykute w skale przez nieznanych budowniczych. Wejścia były zasypane, ale jeden prowadził do suchego pomieszczenia.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "m-270",
+  "title": "Pierwsza gwiazda",
+  "text": "Pierwsza gwiazda zabłysła nad szczytami, a obóz ucichł. Ktoś zaczął cicho nucić starą pieśń.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-271",
+  "title": "Dzieci pasterzy",
+  "text": "Dzieci pasterzy bawiły się na zboczu w chowanego. Szajka obserwowała z daleka i dostrzegła, że jedno z nich bardzo przypomina jednego z popleczników.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-272",
+  "title": "Wędrowiec bez cienia",
+  "text": "W świetle pochodni wędrowiec, który przysiadł się do ogniska, nie rzucał cienia. Szajka cicho się wycofała.",
+  "morale": -2,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-273",
+  "title": "Spadająca lawina",
+  "text": "Lawina spadła z odległego szczytu z hukiem, a potem zapanowała cisza. Wszyscy patrzyli w stronę, skąd dobiegał dźwięk.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-274",
+  "title": "Pochód mułów",
+  "text": "Długi pochód mułów przeszedł przez przełęcz, a przewodnik skłonił głowę na powitanie. Szajka odwzajemniła gest.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-275",
+  "title": "Skamieniały las",
+  "text": "Szajka natknęła się na obszar pokryty skamieniałymi pniami. Drzewa wyglądały, jakby ktoś zatrzymał czas.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-276",
+  "title": "Zagubiona chusta",
+  "text": "Na kamieniu leżała kobieca chusta, wyhaftowana w piękne wzory. Szajka zabrała ją i czekała, ale nikt się nie zgłosił.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "m-277",
+  "title": "Mróz i radość",
+  "text": "Mróz był tak silny, że wszyscy skakali i klaskali, żeby się rozgrzać. Wyglądało to jak taniec i szajka śmiała się do rana.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-278",
+  "title": "Pomruki z głębi",
+  "text": "Z głębi góry dochodziły głuche pomruki, jakby coś poruszało się pod ziemią. Szajka obozowała na skraju doliny.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-279",
+  "title": "Pieśń pasterza",
+  "text": "Z dala dochodziła pieśń pasterza, grana na rogu. Wszyscy zamilkli, wsłuchując się w melodię.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-280",
+  "title": "Zasypany wóz",
+  "text": "Wóz kupiecki zasypany do połowy leżał obok ścieżki. Szajka go odkopała i zabrała kilka rzeczy, które się uchowały.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": 3
+ },
+ {
+  "id": "m-281",
+  "title": "Samotna chata",
+  "text": "Samotna chata stała w zagłębieniu, a z komina unosił się dym. Szajka obeszła ją, nie zakłócając spokoju mieszkańców.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-282",
+  "title": "Cztery wrony",
+  "text": "Cztery wrony siedziały na krawędzi skały i patrzyły w dół. Szajka cofnęła się i wybrała inną drogę.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-283",
+  "title": "Lód w bukłakach",
+  "text": "Lód w bukłakach topił się wolno i nikt nie mógł się napić. Szajka musiała topić go w kociołku.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-284",
+  "title": "Latarnie na przełęczy",
+  "text": "Na przełęczy ktoś postawił latarnie, które świeciły całą noc. Szajka nie wiedziała, czy to przewodnik, czy pułapka.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-285",
+  "title": "Dwa kozły",
+  "text": "Dwa kozły walczyły na skale, uderzając się rogami. Szajka założyła się, który wygra.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-286",
+  "title": "Sakwa pod skałą",
+  "text": "Pod skałą ktoś ukrył sakwę z kilkoma monetami i listem. Szajka wzięła monety, a list zostawiła.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "m-287",
+  "title": "Obrywane skały",
+  "text": "Skały nad szlakiem osypywały się w nocy, a rano szlak był zasypany kamieniami. Szajka mozolnie je usuwała.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-288",
+  "title": "Miodowe zorze",
+  "text": "Zorza polarna rozświetliła niebo zielenią i różem. Szajka patrzyła, nie wierząc własnym oczom.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-289",
+  "title": "Wędrowiec z lampą",
+  "text": "Samotny wędrowiec z lampą szedł przez przełęcz, nie reagując na wołanie. Szajka patrzyła, jak znika w ciemności.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-290",
+  "title": "Zatrzaśnięta jaskinia",
+  "text": "Wejście do jaskini zatrzasnęło się za jednym z popleczników, uwięziwszy go na kilka godzin. Wyciągnięto go przez dziurę.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-291",
+  "title": "Dzwoneczek",
+  "text": "Gdzieś w górach dzwonił dzwoneczek owcy, mimo że owiec nie było. Szajka postanowiła nie szukać źródła.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-292",
+  "title": "Skarb w kamieniu",
+  "text": "Jeden z popleczników rozłupał kamień i znalazł w środku błyszczący kryształ. Nie był cenny, ale piękny.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "m-293",
+  "title": "Rzeka lodu",
+  "text": "Szajka przeszła po zamarzniętej rzece, która trzeszczała pod stopami. Wszyscy przeszli bez szwanku.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-294",
+  "title": "Odgłosy kowala",
+  "text": "Z oddali dochodziły dźwięki młotów kowalskich, rytmiczne i spokojne. Szajka zasnęła przy tym rytmie.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-295",
+  "title": "Zmęczony posłaniec",
+  "text": "Posłaniec w barwach cesarza zatrzymał się w obozie na odpoczynek. Mówił, że wiezie ważne wieści, ale nie chciał zdradzić jakie.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-296",
+  "title": "Pół dnia w mgle",
+  "text": "Szajka szła przez mgłę, trzymając się za ręce. Na szczęście nikt się nie zgubił.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-297",
+  "title": "Duch z szybu",
+  "text": "Z zamkniętego szybu kopalnianego dochodziły jęki. Szajka wolała nie sprawdzać, czy to wiatr.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-298",
+  "title": "Zaspa",
+  "text": "Wielka zaspa zablokowała szlak i szajka musiała ją odkopać. Praca zajęła pół dnia.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-299",
+  "title": "Garść złotego pyłu",
+  "text": "W kieszeni jednego z popleczników znaleziono garść złotego pyłu. Nikt nie wiedział, skąd się wziął.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "m-300",
+  "title": "Tajemnicza paczka",
+  "text": "Pod skałą leżała paczka zapakowana w skórę, z dwoma monetami i notatką: „Dla potrzebujących”. Szajka podziękowała nieznanemu dobroczyńcy.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 2
+ }
+]

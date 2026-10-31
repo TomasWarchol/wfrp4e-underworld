@@ -749,6 +749,22 @@
       "saboteur": {
         "Name": "Podpalacz / Sabotażysta",
         "Desc": "Pirotechnik i niszczyciel. Wznieca pożary, pali mosty pod odwrót i wysadza wozy zaopatrzeniowe."
+      },
+      "scout": {
+        "Name": "Zwiadowca / Tropiciel",
+        "Desc": "Leśny i gościńcowy tropiciel. Czyta ślady, wypatruje pościgu i prowadzi szajkę ścieżkami, którymi nie chodzą strażnicy."
+      },
+      "fixer": {
+        "Name": "Paser / Fałszerz",
+        "Desc": "Człowiek od papierów, pieczęci i dobrze ulokowanych koron. Podrabia listy żelazne, kupuje przychylność i upłynnia, co trzeba."
+      },
+      "charlatan": {
+        "Name": "Szarlatan / Znachor",
+        "Desc": "Wędrowny znachor, zielarz i sprzedawca cudownych maści. Leczy, zagaduje i straszy gawiedź starymi gusłami."
+      },
+      "duelist": {
+        "Name": "Zawadiaka / Szermierz",
+        "Desc": "Dawny pojedynkowicz albo najemny rębajło. Ma niewiele honoru, ale za to rapier w ręku; walczy z wdziękiem i na pokaz."
       }
     },
     "Strengths": {
@@ -831,6 +847,46 @@
       "knife_master": {
         "Name": "Sztyletnik",
         "Desc": "+10 do cichego śledzenia, kradzieży i walki w zaułkach"
+      },
+      "lockpick": {
+        "Name": "Wytrychy w Palcach",
+        "Desc": "+10 do włamań i kieszonkostwa"
+      },
+      "smooth_liar": {
+        "Name": "Gładkie Kłamstwa",
+        "Desc": "+10 do przekupstwa, fałszerstw i paserstwa"
+      },
+      "surefooted": {
+        "Name": "Pewny Krok",
+        "Desc": "+10 do zwiadu, grabieży kopalni i zacierania śladów"
+      },
+      "night_owl": {
+        "Name": "Nocny Marek",
+        "Desc": "+10 do śledzenia, włamań i zwiadu"
+      },
+      "pack_rat": {
+        "Name": "Zapobiegliwy",
+        "Desc": "+10 do zbieractwa i kradzieży z obejścia"
+      },
+      "ox_strong": {
+        "Name": "Silny jak Wół",
+        "Desc": "+10 do napadów, grabieży kopalni i zastraszania"
+      },
+      "animal_friend": {
+        "Name": "Przyjaciel Zwierząt",
+        "Desc": "+10 do przemytu, kradzieży z obejścia i zbieractwa"
+      },
+      "steady_nerves": {
+        "Name": "Stalowe Nerwy",
+        "Desc": "+10 do dywersji, przekupstwa i zacierania śladów"
+      },
+      "haggler": {
+        "Name": "Targowniś",
+        "Desc": "+10 do paserstwa i haraczu"
+      },
+      "lucky": {
+        "Name": "Szczęściarz",
+        "Desc": "+10 do kieszonkostwa, przemytu i zacierania śladów"
       }
     },
     "Flaws": {
@@ -920,6 +976,46 @@
       "bloodthirsty": {
         "Name": "Krwiożerczy",
         "Desc": "Każda udana dywersja lub zastraszanie daje +1 Rozgłos przez niepotrzebne okrucieństwo"
+      },
+      "hothead": {
+        "Name": "Zapalczywy",
+        "Desc": "−10 do zacierania śladów i przekupstwa"
+      },
+      "squeamish": {
+        "Name": "Wrażliwy Żołądek",
+        "Desc": "−10 do zastraszania i opatrywania rannych"
+      },
+      "snorer": {
+        "Name": "Chrapiący",
+        "Desc": "−10 do śledzenia i zwiadu"
+      },
+      "bad_leg": {
+        "Name": "Chora Noga",
+        "Desc": "−10 do kieszonkostwa, przemytu i grabieży kopalni"
+      },
+      "greedy": {
+        "Name": "Chciwiec",
+        "Desc": "10% szans co noc na zgarnięcie drobnych ze skarbca"
+      },
+      "homesick": {
+        "Name": "Tęskniący za Domem",
+        "Desc": "Porażka tego członka kosztuje 1 Morale"
+      },
+      "witchhunter_mark": {
+        "Name": "Na Liście Łowców Czarownic",
+        "Desc": "Porażka podnosi Rozgłos"
+      },
+      "proud": {
+        "Name": "Dumny",
+        "Desc": "−10 do paserstwa, przekupstwa i karczem"
+      },
+      "jinxed": {
+        "Name": "Pechowiec",
+        "Desc": "−10 do kieszonkostwa, włamań i zwiadu"
+      },
+      "nightmares": {
+        "Name": "Koszmary",
+        "Desc": "15% szans co noc, że będzie niezdolny do służby"
       }
     },
     "Perks": {
@@ -987,7 +1083,12 @@
     "CampEvent": {
       "DefaultTitle": "Zdarzenie nocy",
       "QuietTitle": "Spokojna noc",
-      "QuietText": "Warty czuwały bez przeszkód."
+      "QuietText": "Warty czuwały bez przeszkód.",
+      "NoSpecialist": "Nie ma tu nikogo, kto znałby się na tym jako <strong>{role}</strong>.",
+      "RoleSaved": "<strong>{name}</strong> ({role}) radzi sobie z tym (k100 {roll} ≤ {target}).",
+      "RoleFailed": "<strong>{name}</strong> ({role}) próbuje, ale nie daje rady (k100 {roll} > {target}).",
+      "FollowUp": "Ciąg dalszy wczorajszych wydarzeń.",
+      "HookSet": "Ta sprawa jeszcze da o sobie znać."
     },
     "Notify": {
       "RumorPoolReset": "Wszystkie plotki z puli zostały już wyświetlone! Pula plotek została odświeżona.",
@@ -1019,7 +1120,11 @@
         "GainsCondition": "{name}: otrzymuje stan <strong>{condition}</strong>.",
         "LosesCondition": "{name}: traci stan <strong>{condition}</strong>.",
         "NoCondition": "{name}: nie ma stanu {condition}.",
-        "Advantage": "{name}: Przewaga {value}."
+        "Advantage": "{name}: Przewaga {value}.",
+        "MustFace": "rzuca się na szermierza i ignoruje resztę szajki do końca rundy",
+        "Lured": "daje się zwabić – MG wyznacza, dokąd biegnie",
+        "StandsDown": "wycofuje się z walki (MG decyduje: odchodzi albo zmienia stronę)",
+        "EvilEye": "ma −10 do ataków do końca rundy"
       },
       "meatshield": {
         "Name": "Żywa Tarcza!",
@@ -1142,6 +1247,116 @@
         "Leadership": "Test Dowodzenia",
         "Issue": "Wydaj Rozkaz!",
         "Issued": "Wydano rozkaz: {order}!"
+      },
+      "bodyblock": {
+        "Name": "Zasłona Ciałem",
+        "Desc": "Ochroniarz zachodzi Herszta od frontu i przyjmuje uderzenia na tarczę i na plecy.",
+        "Effect": "Do końca rundy pierwszy atak wręcz na Herszta trafia ochroniarza zamiast niego. Herszt zyskuje 1 Przewagi (ma chwilę, by złapać oddech)."
+      },
+      "grapple": {
+        "Name": "Chwyt za Kark",
+        "Desc": "Goryl łapie przeciwnika wpół albo za kołnierz i nie puszcza.",
+        "Effect": "Przeciwnik musi zdać test Siły albo zyskuje stan Oplątany."
+      },
+      "circle": {
+        "Name": "Krąg Ochrony",
+        "Desc": "Ludzie zamykają krąg wokół Herszta, plecami do siebie, twarzami do wroga.",
+        "Effect": "Herszt traci stan Zaskoczony (jeśli go ma) i zyskuje 1 Przewagi. Nikt nie podejdzie go od tyłu."
+      },
+      "parry": {
+        "Name": "Parada",
+        "Desc": "Szermierz wchodzi między Herszta a przeciwnika i odbija cios klingą.",
+        "Effect": "Pierwszy atak wręcz na Herszta w tej rundzie ma −20 do trafienia. Herszt zyskuje 1 Przewagi."
+      },
+      "riposte": {
+        "Name": "Riposta",
+        "Desc": "Zawadiaka prowokuje atak, żeby w tej samej chwili odpowiedzieć szybkim pchnięciem.",
+        "Effect": "Wskazany przeciwnik traci 1 Przewagi. Jeśli w tej rundzie zaatakuje Herszta i nie trafi, Herszt może od razu zadać mu cios z kontry."
+      },
+      "challenge": {
+        "Name": "Wyzwanie na Pojedynek",
+        "Desc": "Szermierz z uśmiechem obraża przeciwnika i wzywa go do honorowej walki.",
+        "Effect": "Przeciwnik musi zdać test Siły Woli; przy porażce rzuca się na szermierza i ignoruje resztę szajki do końca rundy."
+      },
+      "pindown": {
+        "Name": "Przygwożdżenie Ogniem",
+        "Desc": "Seria strzałów tuż nad głową zmusza do przylgnięcia do ziemi.",
+        "Effect": "Wskazany cel musi zdać test Siły Woli albo zyskuje stan Zaskoczony (kryje się i nie rusza z miejsca)."
+      },
+      "fireoil": {
+        "Name": "Beczułka Oleju",
+        "Desc": "Podpalacz toczy w przeciwników beczułkę lampowego oleju i rzuca za nią zapaloną szmatę.",
+        "Effect": "Cel musi zdać test Zwinności albo zyskuje stan Płonący."
+      },
+      "caltrops": {
+        "Name": "Żelazne Kolce",
+        "Desc": "Garść kolców rzucona pod nogi szarżujących.",
+        "Effect": "Cel musi zdać test Zwinności albo zyskuje stan Powalony."
+      },
+      "collapse": {
+        "Name": "Podcięta Belka",
+        "Desc": "Podpora zerwana na linie, ciężar skrzyń albo kawał dachu spada na głowy.",
+        "Effect": "Cel musi zdać (trudny) test Zwinności albo zyskuje stan Ogłuszony."
+      },
+      "wagonwall": {
+        "Name": "Wóz w Poprzek",
+        "Desc": "Woźnica zatrzymuje wóz tak, by zasłonić Herszta od ognia.",
+        "Effect": "Wóz daje osłonę: ataki dystansowe na Herszta w tej rundzie mają −10. Herszt zyskuje 1 Przewagi."
+      },
+      "spooked": {
+        "Name": "Spłoszone Konie",
+        "Desc": "Trzask bata i konie wroga stają dęba.",
+        "Effect": "Wskazany przeciwnik konny lub stojący przy wozie traci 1 Przewagi. Jeśli dosiada konia, MG może zażądać testu Jeździectwa – porażka to stan Powalony."
+      },
+      "getaway": {
+        "Name": "Wciągnięcie na Wóz",
+        "Desc": "Woźnica chwyta Herszta za ramię i wyrywa go z kłębowiska prosto na kozioł.",
+        "Effect": "Herszt traci stan Powalony i może oddalić się o 4 metry bez prowokowania ataków okazyjnych."
+      },
+      "spot": {
+        "Name": "Słaby Punkt",
+        "Desc": "Zwiadowca wskazuje szczelinę w pancerzu, lukę w szeregu albo kulejącą nogę.",
+        "Effect": "Pierwszy atak Herszta w tej rundzie zyskuje +10 do trafienia. Herszt zyskuje 1 Przewagi."
+      },
+      "lure": {
+        "Name": "Wabik",
+        "Desc": "Zwiadowca pokazuje się w oknie albo na grzbiecie wzgórza i znika, ściągając uwagę wroga.",
+        "Effect": "Przeciwnik musi zdać test Inteligencji; przy porażce traci 1 Przewagi i daje się zwabić."
+      },
+      "snare": {
+        "Name": "Wnyki i Sidła",
+        "Desc": "Naciągnięta linka z pętlą na ścieżce pościgu.",
+        "Effect": "Cel musi zdać test Zwinności albo zyskuje stan Oplątany."
+      },
+      "forgedorder": {
+        "Name": "Fałszywy Rozkaz",
+        "Desc": "Paser macha lakowaną pieczęcią i wrzeszczy rozkaz w imieniu miejscowego wójta.",
+        "Effect": "Cel musi zdać test Inteligencji albo zyskuje stan Zaskoczony (zamarł, nie wiedząc, komu wierzyć)."
+      },
+      "payoff": {
+        "Name": "Hojny Datek",
+        "Desc": "Paser wciska żołdakowi sakiewkę i szepcze, ile mogłoby ich być więcej.",
+        "Effect": "Przeciwnik-człowiek musi zdać test Siły Woli; przy porażce wycofuje się z walki (MG decyduje, czy odejdzie, czy zmieni stronę). Sakiewka (1d10 ss) przepada."
+      },
+      "salve": {
+        "Name": "Maść Znachora",
+        "Desc": "Znachor smaruje ranę cuchnącą, ale zadziwiająco skuteczną maścią.",
+        "Effect": "Herszt (lub wskazany sojusznik) traci stan Krwawienie."
+      },
+      "fumes": {
+        "Name": "Cuchnące Wyziewy",
+        "Desc": "Szarlatan rozbija flaszkę z płynem o woni zgniłych jaj i zdechłego kota.",
+        "Effect": "Cel musi zdać test Wytrzymałości albo zyskuje stan Zmęczony."
+      },
+      "evileye": {
+        "Name": "Zły Urok",
+        "Desc": "Znachor wyszeptuje klątwę po staremu i pokazuje palcem.",
+        "Effect": "Przesądny cel musi zdać test Siły Woli albo traci 1 Przewagi i do końca rundy ma −10 do ataków."
+      },
+      "regroup": {
+        "Name": "Przegrupowanie",
+        "Desc": "Prawa Ręka klaszcze, gwiżdże i szajka wraca do szyku.",
+        "Effect": "Herszt traci stan Zaskoczony i zyskuje 1 Przewagi; sojusznicy ze Świty mogą przemieścić się o 2 metry bez kosztu."
       }
     },
     "Tables": {
@@ -1156,7 +1371,8 @@
         "Desc": "Wydarzenia nocnego postoju lub Tygodnia Szajki. Flagi wyniku (Morale, zapasy, monety) zmieniają stan szajki.",
         "Result": "Wydarzenie"
       },
-      "Created": "Szajka: utworzono {count} tabel plotek i wydarzeń w zakładce Tabele (folder „{folder}”)."
+      "Created": "Szajka: utworzono {count} tabel plotek i wydarzeń w zakładce Tabele (folder „{folder}”).",
+      "EventsUpgraded": "Tabela wydarzeń (teren: {terrain}) została zastąpiona nową wersją ({count} wpisów)."
     },
     "Title": "Szajka",
     "None": "Brak",
@@ -1769,7 +1985,12 @@
       "GearGiven": "{gear} przekazany z {from} → {to}.",
       "XPAdded": "+{amount} {unit} dla {name} (pamiętaj kliknąć „Zapisz Zmiany”)",
       "Title": "Rozwój i Rynsztunek: {name}",
-      "Save": "Zapisz Zmiany"
+      "Save": "Zapisz Zmiany",
+      "SecondRole": "Druga rola",
+      "SecondRoleHint": "(kupowana za DO, wymaga rangi 1)",
+      "SecondRoleIntro": "Poplecznik, który wiele widział, potrafi więcej niż jedno. Druga rola daje dostęp do jej rozkazów i specjalizacji (premia za specjalizację liczy się raz).",
+      "SecondRoleNeedsRank": "Wymaga rangi 1",
+      "SecondRoleGained": "{name} zyskuje drugą rolę: {role}!"
     },
     "Close": "Zamknij",
     "TreasuryDialog": {

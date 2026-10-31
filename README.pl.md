@@ -166,7 +166,9 @@ W trybie dziennym raz na dzień świata (o 3:00 czasu gry moduł przypomina o ni
 2. **Warty**: wartownicy dostają +3 DO; bez warty nocne kłopoty są częstsze.
 3. **Wyżywienie**: racje ze spiżarni, inne źródło albo głodówka (−1 Morale).
 4. **Regeneracja**: Odpoczywa → Gotowy, Ranny → Odpoczywa, areszt skraca się o noc; przydziały się zerują.
-5. **Wydarzenie nocy** z tabeli bieżącego terenu: szansa zależy od terenu (np. miasto 60% bez warty, 40% z wartą), o połowę mniej po Maskowaniu Śladów.
+5. **Wydarzenie nocy** z tabeli bieżącego terenu (po **300 wydarzeń** na miasto, wieś, las i góry): szansa zależy od terenu (np. miasto 60% bez warty, 40% z wartą), o połowę mniej po Maskowaniu Śladów. Część wydarzeń to:
+   * **Zdarzenia dla ról** (po 6 na rolę w każdej tabeli): jeśli w szajce jest zdolny członek z daną rolą (główną lub drugą), rzuca k100 (50 + 10 za rangę, maks. 80). Sukces zamienia skutki zdarzenia na korzystne i dopisuje rozwiązanie; porażka albo brak specjalisty zostawia skutki podstawowe.
+   * **Łańcuchy** (18 na teren): wydarzenie A zostawia hak, a najbliższej nocy z wydarzeniem pada jego ciąg dalszy B. Wpisy B nie wypadają losowo.
 6. **Obława** od progu Rozgłosu terenu (20% na progu, +20% za każdy punkt wyżej): z wartą szajka ucieka, tracąc 1d3 racji; bez warty jeden człowiek trafia do aresztu, straż zabiera 1d6 ss i cały gorący towar, spada Morale. Po obławie Rozgłos −1.
 7. **Haracz** (tylko w mieście) i upływ czasu: żetony przygotowania wygasają, łupy stygną.
 8. **Wady i zalety** członków (kradzież ze skarbca, niedyspozycja, plotkarstwo, kłusownictwo…).
@@ -176,7 +178,7 @@ W trybie dziennym raz na dzień świata (o 3:00 czasu gry moduł przypomina o ni
 
 ## ⚔️ Świta i rozkazy taktyczne
 
-Do Świty Herszta należy do 3 członków. Rozkazy (np. Podcięcie z Nóg, Zajście z Flanki, Zasłona Dymna, Okrzyk Bojowy) wymagają w Świcie członka o odpowiedniej roli lub Prawej Ręki. Rozkaz można wydać:
+Do Świty Herszta należy do 3 członków. Jest **39 rozkazów** w trzech grupach (ofensywne, kontrola, ochrona), a w szajce **11 ról**: Ochroniarz, Cień, Strzelec, Prowokator, Szabrownik, Woźnica, Podpalacz oraz Zwiadowca, Paser / Fałszerz, Szarlatan / Znachor i Zawadiaka / Szermierz. Rozkaz wymaga w Świcie członka z odpowiednią rolą (**główną lub drugą**) albo Prawej Ręki; wiele rozkazów jest wspólnych dla kilku ról (np. Zasłona Dymna: Prowokator, Podpalacz, Woźnica). Rozkaz można wydać:
 
 * **testem Dowodzenia** Herszta – porażka oznacza brak efektu,
 * **za Przewagę** – automatyczny sukces,
@@ -195,6 +197,15 @@ Podczas walki Herszt wydaje **jeden rozkaz na rundę** – rozkaz zużywa jego A
 | Strzał Rozbrajający | Trudny (−10) test Siły celu; porażka → upuszcza broń (opis) |
 | Okrzyk Bojowy | usuwa stan **Złamany (Broken)** ze wskazanego sojusznika |
 | Gorzka Nalewka Bojowa | usuwa 1 stan **Zmęczony** ze wskazanego sojusznika (bez celu – z Herszta) |
+| Chwyt za Kark, Wnyki i Sidła | test Siły / Zwinności celu; porażka → **Oplątany** |
+| Przygwożdżenie Ogniem, Fałszywy Rozkaz | test Siły Woli / Inteligencji celu; porażka → **Zaskoczony** |
+| Beczułka Oleju | test Zwinności; porażka → **Płonący** |
+| Żelazne Kolce | test Zwinności; porażka → **Powalony** |
+| Podcięta Belka | trudny test Zwinności; porażka → **Ogłuszony** |
+| Cuchnące Wyziewy | test Wytrzymałości; porażka → **Zmęczony** |
+| Zasłona Ciałem, Parada, Wóz w Poprzek, Słaby Punkt | Herszt +1 Przewagi |
+| Krąg Ochrony, Przegrupowanie | Herszt traci **Zaskoczony** i zyskuje +1 Przewagi |
+| Maść Znachora, Wciągnięcie na Wóz | zdejmują **Krwawienie** / **Powalony** |
 
 Pozostałe rozkazy (np. Salwa z Ukrycia, Zasłona Dymna, Żywa Tarcza) rozstrzyga MG według opisu na karcie. Testy obronne celów to zwykłe okna testów WFRP4e u MG.
 
@@ -203,20 +214,21 @@ Pozostałe rozkazy (np. Salwa z Ukrycia, Zasłona Dymna, Żywa Tarcza) rozstrzyg
 ## 📈 Rozwój popleczników
 
 * **Rangi** za DO: 120 / 300 / 650 DO (+10 / +20 / +30 do testów); ranga 3 to unikalna **Prawa Ręka**.
+* **Druga rola** za 80 DO (od rangi 1): poplecznik zyskuje rozkazy i specjalizację drugiej roli (premia za specjalizację liczy się raz). MG może ją też nadać w kartotece Świty.
 * **Dawny Fach** (jeden na członka) i **atuty fabularne** za DO.
 * **Rynsztunek** ze skarbca (maks. 2 przedmioty): Pancerz Skórzany, Dobra Broń, Wytrychy, Przebranie, Torba Felczera, Wierzchowiec. Można go sprzedać (50%) lub przekazać.
-* **Zalety i wady** nadaje MG.
+* **Zalety i wady** nadaje MG (30 zalet i 30 wad).
 
 ## 🤝 Rekrutacja
 
-MG wysyła na czat propozycje 2–5 kandydatów. Kandydata może wybrać MG albo gracz-właściciel Herszta (wybór zatwierdza klient MG, więc MG musi być w grze).
+Nowych członków przyjmuje wyłącznie decyzja MG: żadne zlecenie ani wydarzenie nie dodaje ludzi do szajki. MG wysyła na czat propozycje 2–5 kandydatów. Kandydata może wybrać MG albo gracz-właściciel Herszta (wybór zatwierdza klient MG, więc MG musi być w grze).
 
 ## 🛠️ Narzędzia MG
 
 * Ręczna edycja Morale, Rozgłosu, skarbca, statusów i bonusów członków.
 * **Tabele plotek i wydarzeń (RollTable)**: moduł tworzy w zakładce **Tabele** folder „Szajka” z parą tabel dla każdego terenu, np. „Szajka: Plotki i Wieści – Las” (bez powtórzeń – reset przyciskiem tabeli) i „Szajka: Wydarzenia Postoju – Las”. Każda tabela powstaje tylko raz, więc usunięta nie wraca. Tabele z wcześniejszych wersji modułu (bez terenu w nazwie) liczą się jako miejskie i zachowują Twoje zmiany. Wzorcowe kopie są w kompendium **„Szajka – Tabele”**. Tabele edytujesz jak każdą tabelę Foundry; skutki wydarzenia (Morale, zapasy, monety) są we flagach wyniku `wfrp4e-underworld`, a teren we fladze `terrain` tabeli. Przycisk **Tabele Plotek i Wydarzeń (MG)** w Obozowisku otwiera tabele bieżącego terenu. Gdy usuniesz tabelę świata, moduł losuje z kompendium.
 * **Teren** szajki przełączasz w zakładce **Łupy**.
-* **Własna baza plotek**: plik `data/rumors.pl.json` (i `data/events.pl.json`) zastępuje wbudowane miejskie plotki i wydarzenia dla języka polskiego. Dla innego języka dodaj `rumors.<kod>.json`.
+* **Własna baza plotek i wydarzeń**: plik `data/rumors.pl.json` (i `data/events.pl.json`) zastępuje wbudowane miejskie plotki i wydarzenia dla języka polskiego; dla innego języka dodaj `rumors.<kod>.json` / `events.<kod>.json`. Wbudowane tabele wydarzeń leżą w `data/events/<teren>.<język>.json` (pola: `title`, `text`, `morale`, `supplies`, `coinsSS`, opcjonalnie `role`, `okText`, `ok`, `next`, `only`).
 * Ustawienia świata: **Procent Doli dla Człowieka**, **Rytm szajki** (dzienny / tygodniowy), **Kolejka MG w trybie dziennym**.
 
 ## 📜 Makra

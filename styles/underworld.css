@@ -1898,6 +1898,10 @@
 :is(html, #uw) .role-badge.role-scavenger{ background: #744210; color: #fefcbf; border-color: #59330b; }
 :is(html, #uw) .role-badge.role-smuggler{ background: var(--uw-text-brown); color: var(--uw-cream); border-color: var(--uw-umber); }
 :is(html, #uw) .role-badge.role-saboteur{ background: #9c4221; color: var(--uw-paper); border-color: #7b2d12; }
+:is(html, #uw) .role-badge.role-scout{ background: #3d5a2a; color: var(--uw-white); border-color: #2a3f1c; }
+:is(html, #uw) .role-badge.role-fixer{ background: #8a6d1f; color: var(--uw-white); border-color: #5f4a12; }
+:is(html, #uw) .role-badge.role-charlatan{ background: #5a3a6a; color: var(--uw-white); border-color: #3e2650; }
+:is(html, #uw) .role-badge.role-duelist{ background: #8b2c3a; color: var(--uw-white); border-color: #5f1d28; }
 :is(html, #uw) .role-badge.role-lieutenant{ background: var(--uw-red); color: var(--uw-white); border-color: #63171b; }
 
 /* Odznaki Zalet, Wad i Fabularnych Atutów */

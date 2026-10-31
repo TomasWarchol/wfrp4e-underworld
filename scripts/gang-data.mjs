@@ -41,6 +41,7 @@ export class GangData {
       loot: [],
       tokens: {},
       racket: null,
+      eventHook: null,
       roster: [],
       history: []
     };
