@@ -1,0 +1,2900 @@
+[
+ {
+  "id": "v-001",
+  "title": "Quiet in the barn",
+  "text": "The night in the barn passed peacefully, only an owl hooting on a beam. Everyone slept in the hay like kings.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-002",
+  "title": "Holes in the roof",
+  "text": "Rain broke through the thatch and soaked part of the bedding. Half the crew slept wet.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-003",
+  "title": "The village dog",
+  "text": "A shaggy mutt barked at the fence all night and by morning made friends with the crew for a bit of bacon.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-004",
+  "title": "The child with milk",
+  "text": "A girl from the next farm brought a jug of milk and asked if it's true you're bandits. She got bread and kept the secret.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-005",
+  "title": "The shepherd",
+  "text": "A shepherd drove his flock close by. One sheep got lost and ended up in your yard. The shepherd pretended not to see it.",
+  "morale": 0,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-006",
+  "title": "The village fair",
+  "text": "A small fair was held in the village. Stalls of hides, cheese and honey tempted, and the peasants' pockets were full.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": 4
+ },
+ {
+  "id": "v-007",
+  "title": "The priest of Taal",
+  "text": "A village priest of Taal passed with a basket of herbs and asked little: not to light fires in the forest. Nobody objected.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-008",
+  "title": "The lost cow",
+  "text": "A cow stepped through the fence and walked right into your camp. Nobody managed to lead her back until she'd been milked.",
+  "morale": 0,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-009",
+  "title": "The tax collector",
+  "text": "The count's tax collector rode through the village with two henchmen and took what he could. The peasants' faces were stone.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-010",
+  "title": "Crop-wrecking hail",
+  "text": "Hail destroyed part of the crops and many roofs. The peasants wept and the crew felt unwelcome.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-011",
+  "title": "Harvest festival",
+  "text": "The village celebrated harvest home. Songs, dances and ale flowed freely. The crew stood aside but someone pressed a jug on them.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-012",
+  "title": "Wolves",
+  "text": "Wolves howled in the nearby forest all night. Horses tugged at their tethers and the guards watched the fires till dawn.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-013",
+  "title": "The missing sheep",
+  "text": "Villagers searched for a lost sheep with lanterns. The crew kept quiet and the sheep served as a reserve for two days.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-014",
+  "title": "The old widow",
+  "text": "A widow from the next cottage knocked asking for firewood. In return she gave a sack of dried apples and a tale of old times.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-015",
+  "title": "The strange stone",
+  "text": "A stone with an engraved mark nobody recognised lay by the well. The villagers gave it a wide berth.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-016",
+  "title": "The miller",
+  "text": "The miller brought a sack of flour and asked if you needed any. His eyes betrayed that he's eager to sell goods he shouldn't.",
+  "morale": 0,
+  "supplies": 3,
+  "coinsSS": -2
+ },
+ {
+  "id": "v-017",
+  "title": "The burning haystack",
+  "text": "Someone set a haystack ablaze in a neighbour's field. The village rushed to put it out and a few followers, uninvited, helped.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-018",
+  "title": "The wedding",
+  "text": "A wedding was held in the village. The whole neighbourhood celebrated till midnight and by dawn nobody remembered who was who.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-019",
+  "title": "The lost calf",
+  "text": "A calf broke from its pen and bolted into the forest. Your people caught it within an hour. The owner gave cheese as a reward.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-020",
+  "title": "The drunken carter",
+  "text": "A drunken carter overturned his wagon on the road and barrels rolled into a ditch. Nobody counted how many there were.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 1
+ },
+ {
+  "id": "v-021",
+  "title": "The sick horse",
+  "text": "A neighbouring farmer's horse fell sick and died. The farmer despaired and the meat had to be used quickly.",
+  "morale": -1,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-022",
+  "title": "The blacksmith",
+  "text": "The village smith sharpened your knives for free. He refused payment because \"we all have our sins here.\"",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-023",
+  "title": "The lost traveller",
+  "text": "A traveller with a map was looking for the road to Altdorf. The crew pointed him on his way and he left a few small coins.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "v-024",
+  "title": "A feud over a boundary",
+  "text": "Two neighbours quarrelled over a boundary and threw stones. Your people placed bets on who'd win.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "v-025",
+  "title": "The storks",
+  "text": "Storks flew away and the villagers claimed winter would come early. A few followers began looking for warmer clothes.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-026",
+  "title": "The livestock market",
+  "text": "Hens, geese and piglets were sold at the village market. One follower returned with a hen under his arm and an innocent look.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-027",
+  "title": "The path through the fields",
+  "text": "A path through the fields led from the road to your camp but nobody came by it. The villagers had their own affairs.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-028",
+  "title": "Chimney smoke",
+  "text": "The smell of baking bread drifted from a nearby cottage chimney. A few followers crept over for a loaf.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-029",
+  "title": "The forester's visit",
+  "text": "The count's forester checked whether you were burning fires in the forest. Everything looked fine so he left, wishing you a good night.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-030",
+  "title": "Spooked horses",
+  "text": "Something frightened the horses in the stable. The whole village ran out with lanterns but found nothing. Luckily the crew wasn't to blame.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-031",
+  "title": "The armed rider",
+  "text": "A lone rider in armour rode through the village without a word. The villagers shut their doors and the crew held its breath.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-032",
+  "title": "News of war",
+  "text": "A messenger reached the village with news of greenskins on the eastern frontier. The peasants began hiding grain and some of the crew would rather move on.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-033",
+  "title": "The burnt cottage",
+  "text": "A cottage at the edge of the village burned and its inhabitants vanished. The villagers say it's the work of unclean powers and you found coins in the ashes.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "v-034",
+  "title": "Children in the haystack",
+  "text": "Children playing hide-and-seek in a haystack found one of your men asleep inside. He promised them two plums for silence.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-035",
+  "title": "The reeve's feast",
+  "text": "The reeve gave a feast for guests from town and invited the whole camp. The crew played respectable merchants and the food was excellent.",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-036",
+  "title": "The geese",
+  "text": "A flock of geese attacked your man who tried to approach. Everyone laughed and he sulked for a long time.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-037",
+  "title": "The well",
+  "text": "The village well dried up and the peasants had to draw water from your stream. The crew received a few small gifts.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": 1
+ },
+ {
+  "id": "v-038",
+  "title": "The black cat superstition",
+  "text": "A black cat crossed the camp and half the crew began looking for wood to make a protective sign.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-039",
+  "title": "A quiet funeral",
+  "text": "The village buried an old man. Everyone followed the coffin in silence and the crew doffed caps and bowed in respect.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-040",
+  "title": "The village fiddler",
+  "text": "The village fiddler played in the open air in the evening and half the village came to listen. The music was awful and everyone had a great time.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-041",
+  "title": "The peddler",
+  "text": "A travelling pedlar with a wagon of goods set up a stall by the road. The crew spotted a few things that could come in handy.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": 3
+ },
+ {
+  "id": "v-042",
+  "title": "The ghost rumour",
+  "text": "Children spoke of a ghost in the abandoned mill. The elders shushed them but at night none went out of their huts.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-043",
+  "title": "The farmwife with eggs",
+  "text": "A farmwife sold eggs from a basket and haggled fiercely. The crew got half a basket at half price because \"men need to eat.\"",
+  "morale": 0,
+  "supplies": 3,
+  "coinsSS": -1
+ },
+ {
+  "id": "v-044",
+  "title": "A drunken farmhand",
+  "text": "A drunken farmhand waves a pitchfork and shouts threats outside your camp. Someone will be hurt soon.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -2,
+  "role": "bodyguard",
+  "okText": "The bodyguard took the pitchfork with one hand and poured him milk with the other. The farmhand left ashamed.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "v-045",
+  "title": "Village hooligans",
+  "text": "A gang of village hooligans looks for a quarrel with strangers. If nobody stops them the village will never forget you.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "bodyguard",
+  "okText": "The bodyguard stood before them and looked. The hooligans lowered their heads and the boldest offered friendship and lent hay.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 2
+  }
+ },
+ {
+  "id": "v-046",
+  "title": "The horse thief",
+  "text": "A horse thief crept into a neighbour's stable and now tries to involve you. If he's caught he'll point at you.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "The shadow intercepted the thief in the dark, took his haul and sent him the other way, and the horses returned to their place with a reward for the finder.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "v-047",
+  "title": "The village informer",
+  "text": "A village informer began sniffing around your camp and writes everything on a slip. In the morning he'll go to the manor.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "The shadow borrowed the informer's slip and returned it in the morning with new, very boring notes. The informer no longer wanted to get involved.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "v-048",
+  "title": "Foxes in the henhouse",
+  "text": "A fox got into the neighbour's henhouse and the noise woke the whole village. If nobody shoots it the villagers will start looking for culprits.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "The marksman hit the fox with one shot from a long way off. The villagers rejoiced and left two hens in thanks.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 1
+  }
+ },
+ {
+  "id": "v-049",
+  "title": "The deer in the grain",
+  "text": "A stag ate half a field of wheat and the villagers want it dead but lack skill. The count forbids hunting.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "The marksman killed the stag quietly and cleanly. The villagers feasted and swore silence, and the crew got the best cuts.",
+  "ok": {
+   "morale": 1,
+   "supplies": 4,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "v-050",
+  "title": "A neighbourly feud",
+  "text": "Two village families have been quarrelling for a week and drawing in more people. The village is a step from a brawl.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "The provocateur convinced both sides that a third party was to blame and everyone mocked a stranger together. The crew left with a generous gift for \"mediation\".",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "v-051",
+  "title": "The travelling juggler",
+  "text": "A juggler competes with your man for the attention of a village audience. Losing means losing standing.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "The provocateur made a laughing stock of the juggler and then invited him to perform together. The crowd paid double.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "v-052",
+  "title": "The sick boy",
+  "text": "The farmer's son has a high fever and there's no physician within a day's ride. The father begs for your help.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "The scavenger used herbs from his bag and a few old tricks. The boy broke into a sweat and recovered. The farmer gave food and silver.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "v-053",
+  "title": "The collapsed cellar",
+  "text": "The cellar of a village house collapsed and the peasants can't reach their stores. Winter is near.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "The scavenger dug out everything he could in three hours and left some of the stores \"as a keepsake\".",
+  "ok": {
+   "morale": 1,
+   "supplies": 3,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "v-054",
+  "title": "The merchant's broken wagon",
+  "text": "A merchant's wagon broke down on the road and the goods lie in a ditch. He fears someone will rob him.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "The carter fixed the axle in an hour and reloaded the goods. The merchant gave a generous tip and promised to recommend you to acquaintances.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "v-055",
+  "title": "The bridge inspection",
+  "text": "The count's guards inspect people on the bridge and search wagons. Your supplies must get to the other side.",
+  "morale": -1,
+  "supplies": -2,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "The carter knew a ford below the bridge and brought the wagon there. The inspection saw nothing and the supplies reached the other bank.",
+  "ok": {
+   "morale": 1,
+   "supplies": 3,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "v-056",
+  "title": "The count's fence",
+  "text": "The count ordered a fence put up across the village fields, cutting the village off from the forest. The peasants are furious and look for someone to destroy it.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "The arsonist burned the fence in a night, without casualties or trace. The peasants paid him secretly with gratitude in their eyes.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "v-057",
+  "title": "The old mill",
+  "text": "The abandoned mill by the river is starting to collapse and endangers the village. Someone must pull it down before it kills a child.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "The arsonist brought the mill down in a controlled blast and saved the village. In the rubble he found forgotten caches of flour and coins.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "v-058",
+  "title": "The bandits' trail",
+  "text": "The scout noticed tracks that shouldn't be here: fresh, from many men, towards the village. Someone is preparing a raid.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "The scout followed the trail, warned the villagers and led them to an ambush. The raid failed and the grateful village rewarded the crew generously.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "v-059",
+  "title": "The lost pilgrim",
+  "text": "A pilgrim lost his way and wanders the forest. If nobody finds him the wolves will.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "The scout found the pilgrim before dawn and led him to the village. In thanks he got a blessing and a handful of coins.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "v-060",
+  "title": "A village lawsuit",
+  "text": "Two peasants dragged each other to court over a field boundary. Both sides seek someone to forge a deed of ownership.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "fixer",
+  "okText": "The fence sold both sides \"deeds\" and brokered a settlement. Both felt justice was done and the crew had full pockets.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "v-061",
+  "title": "A valuable find",
+  "text": "A peasant found an old coin in the field and doesn't know what it's worth. A dealer offers three coppers.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "fixer",
+  "okText": "The fence recognised the rare coin, persuaded the peasant to an honest price and took a commission. Everyone left satisfied.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "v-062",
+  "title": "Plague in the byre",
+  "text": "The villagers have sick cows and seek someone who knows. If the cattle die the village will starve.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "The healer identified the cause, prepared ointment and a drink and within two days the cows recovered. The village paid him in cheese and silver.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "v-063",
+  "title": "The alleged witch",
+  "text": "Villagers point at old Hilde and want her burned as a witch. If no one reacts a pyre will smoke.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "The healer played the inquisitor, questioned Hilde and found her innocent \"on the evidence\". The villagers paid for the verdict.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "v-064",
+  "title": "The farmhand's challenge",
+  "text": "The strongest farmhand in the village challenged your man to wrestle. Losing means losing honour, winning means hostility.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "duelist",
+  "okText": "The duellist accepted and after a few flashy holds let the farmhand \"almost win\". The village adored the guest.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "v-065",
+  "title": "A duel over a girl",
+  "text": "Two farmhands challenged each other to a duel over a village girl. If blood is spilled the count's guard will arrive sooner than necessary.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "duelist",
+  "okText": "The duellist acted as second, taught them to use wooden swords and settled the dispute in a jesting manner. The village had a good time.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 2
+  }
+ },
+ {
+  "id": "v-066",
+  "title": "The stranger at the inn",
+  "text": "A lone stranger with a pulled-down hood sits drinking in silence in the village inn. He speaks to no one.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "v-067"
+ },
+ {
+  "id": "v-067",
+  "title": "The stranger again",
+  "text": "The hooded stranger came to the camp and laid a purse on the ground. He says: \"I need a favour and I'll remember.\"",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 6,
+  "only": true
+ },
+ {
+  "id": "v-068",
+  "title": "The lost casket",
+  "text": "Children found a casket with a broken lock in the field and brought it to the camp. Someone is looking for it.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2,
+  "next": "v-069"
+ },
+ {
+  "id": "v-069",
+  "title": "The casket's owner",
+  "text": "The reeve came to the camp and asked about the casket. He promises a reward but unease shows in his eyes.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 5,
+  "only": true
+ },
+ {
+  "id": "v-070",
+  "title": "The runaway farmhand",
+  "text": "A farmhand begs for shelter from the count's steward. He says he stole a piece of ham from the kitchen and just wanted a taste.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0,
+  "next": "v-071"
+ },
+ {
+  "id": "v-071",
+  "title": "The steward searches",
+  "text": "The count's steward rode up and asks about the runaway farmhand. He promises silver but adds that hiding him carries a penalty.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 4,
+  "only": true
+ },
+ {
+  "id": "v-072",
+  "title": "Crackle of the fire",
+  "text": "Around the fire several followers told tales of vampires and water-spirits. Until morning nobody wanted to go out to relieve himself alone.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-073",
+  "title": "Gathering mushrooms",
+  "text": "Village girls gathered mushrooms right by the camp. Your men pretended to be woodcutters, but one of them watched suspiciously long.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-074",
+  "title": "A pigeon with a message",
+  "text": "A pigeon carrying a letter to the manor lost its bearings and landed in camp. The note concerned upcoming taxes.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "v-075",
+  "title": "The flock of geese",
+  "text": "Geese marched through the camp with a racket and took half a bucket of grain. Someone had to chase them.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-076",
+  "title": "Strange tracks",
+  "text": "In the morning hoof prints of horse size but with three toes were found near the camp. The villagers crossed themselves and left.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-077",
+  "title": "The missing boy",
+  "text": "A boy from the village went missing and the whole neighbourhood searched. One of yours found him sleeping in a haystack and took him home.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "v-078",
+  "title": "Wading in water",
+  "text": "The stream swelled after rain and crossing it took time. Nobody complained because the water was cold and clean.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-079",
+  "title": "An offering to Taal",
+  "text": "Villagers left a bundle of grain and a jug of honey by the forest as an offering to Taal. The crew dared not touch it.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-080",
+  "title": "Crows in the field",
+  "text": "A flock of crows settled on the field and the peasants came out with a racket to scare them off. In the confusion it was easy to take a little from the pantry.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-081",
+  "title": "Procession of children",
+  "text": "Village children carried little lanterns and sang a winter song. The crew didn't know whether to laugh or cry.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-082",
+  "title": "The barn burned",
+  "text": "A neighbour's barn was struck by lightning and burned. The whole village fought the fire and the crew got thanks for helping.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "v-083",
+  "title": "The broken axle",
+  "text": "The wagon axle snapped and the smith had to be called. A day lost, but the smith gave a good price for help with a small job.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -2
+ },
+ {
+  "id": "v-084",
+  "title": "A heathen song",
+  "text": "From the forest depths came singing in an unknown tongue. The villagers stopped their ears and your people didn't sleep till dawn.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-085",
+  "title": "A bet over grain",
+  "text": "Two peasants bet on who could toss a sickle higher. Your man won and got a sack of oats.",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-086",
+  "title": "The count's men",
+  "text": "The count's men set up barriers on the road and check everyone. The village is stirred up but you have a good hiding place.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-087",
+  "title": "Village festival",
+  "text": "The village celebrates a festival of Rhya. Everyone dances, bakes bread in the shape of ears of corn and gives it to guests.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-088",
+  "title": "Thunder",
+  "text": "Thunder shook the ground and several cows died in the pasture. The villagers speak of the gods' wrath.",
+  "morale": -1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-089",
+  "title": "The broken leg",
+  "text": "A peasant broke his leg at the cart and his family was left without help. The crew shared its supplies.",
+  "morale": 1,
+  "supplies": -2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-090",
+  "title": "The apiary",
+  "text": "A neighbour's apiary was raided by a bear. The peasant ran about with a pot while your people watched from a safe distance.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-091",
+  "title": "The slaughter",
+  "text": "The villagers slaughtered a pig and invited neighbours for black pudding and sausages. The crew got its share too.",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-092",
+  "title": "Ravens over the field",
+  "text": "Ravens circled over the field where a battle was once fought. The elders whispered that something is waking there.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-093",
+  "title": "The late courier",
+  "text": "An imperial courier rode through the village and left a lost letter on a bench. It begged to be kept.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "v-094",
+  "title": "Two wagons",
+  "text": "Two wagons collided on the road and the carters began fighting. The crew watched and after the brawl gathered up the remains of the load.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 2
+ },
+ {
+  "id": "v-095",
+  "title": "The buried treasure",
+  "text": "A village grandfather told a tale of treasure buried under an old oak. Several followers dug through the night and found only roots.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "v-096",
+  "title": "The lost scythe",
+  "text": "A scythe borrowed from a peasant vanished in the grass. They searched till evening and found it only in the morning.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-097",
+  "title": "The soldier's return",
+  "text": "A soldier returning from the war stopped in the village. He told of battles and showed scars while your people listened breathlessly.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-098",
+  "title": "The horse paddock",
+  "text": "A farmer showed your people his horses and offered one for sale. The mare was beautiful but the price too high.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -2
+ },
+ {
+  "id": "v-099",
+  "title": "Smoke towards the sky",
+  "text": "Columns of smoke rise far on the horizon. Nobody knows whether it's a fire or a raid but the villagers locked their doors.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-100",
+  "title": "The threshing",
+  "text": "Villagers threshed grain all night by torchlight. The crew helped and got a sack of grain for it.",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-101",
+  "title": "The storyteller",
+  "text": "A wandering storyteller sat under a linden tree and told tales. The whole village gathered and you made good use of the crowd.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "v-102",
+  "title": "The pike in the pond",
+  "text": "The villagers caught a giant pike and shared it with the whole village. The crew got a piece too.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-103",
+  "title": "The hay is gone",
+  "text": "By morning a neighbour's haystack had vanished. The villagers suspected the crew but couldn't prove anything.",
+  "morale": -1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-104",
+  "title": "An angry mob",
+  "text": "Villagers gathered with pitchforks because someone told them your people steal children. If no one calms them there'll be bloodshed.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "bodyguard",
+  "okText": "The bodyguard stood before the crowd with folded arms and asked who wanted to check first. Nobody did and the villagers dispersed ashamed.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "v-105",
+  "title": "The overturned wagon",
+  "text": "A wagon of roof tiles overturned on the road pinning the carter. If nobody lifts the wagon the man will die.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "bodyguard",
+  "okText": "The bodyguard lifted the wagon on his back, pulled out the carter and got a purse and a promise of a favour from the rescued man.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "v-106",
+  "title": "A theft in the night",
+  "text": "Someone quietly steals from your supplies, one sack a day. Nobody has seen him yet.",
+  "morale": -1,
+  "supplies": -2,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "The shadow kept watch all night, caught the thief and it turned out to be a peasant out of hunger. The shadow made him an informant and got a handful of news.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "v-107",
+  "title": "A trail behind the camp",
+  "text": "Someone in the dark has followed your tracks for hours, stopping when you stop.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "The shadow came up from behind, seized the tracker by the throat and learned a bounty hunter had sent him. The letter lifted from him was worth the trouble.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "v-108",
+  "title": "The poacher",
+  "text": "The count's forester is hunting poachers and asks about your arrows. Without a good answer there'll be trouble.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "The marksman showed him a few hares caught \"in snares\", invited him to supper and sent him off with a sack of meat. The forester suspected nothing.",
+  "ok": {
+   "morale": 1,
+   "supplies": 3,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "v-109",
+  "title": "The wolf at the sheep",
+  "text": "A wolf prowled round the fold and the villagers fear for the flock. The shot must be sure and attract no one's attention.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "The marksman killed the wolf with one shot from a distance. The shepherd paid in the pelt and a few shillings and the village hung it on a wall as a trophy.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "v-110",
+  "title": "Village gossip",
+  "text": "A rumour spreads through the village that the crew steals and kills. The villagers begin bolting their doors.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "The provocateur spread his own rumour that it was a rival crew's doing. The village calmed and the \"informant\" was paid.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "v-111",
+  "title": "The drunken revel",
+  "text": "Drunken villagers gathered at the inn intending to go to the camp and \"clear things up\". They must be occupied with something else.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "The provocateur organised a drinking and singing contest and the villagers forgot about the camp by morning. The crew got a loan \"for the road ahead\".",
+  "ok": {
+   "morale": 1,
+   "supplies": 1,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "v-112",
+  "title": "The lost tools",
+  "text": "A farmer lost all his tools in a storm. Without them he can't sow and all his neighbours depend on it.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "The scavenger found all the tools within a day, repaired the broken and made some new from scraps. The farmer paid in food and silver.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "v-113",
+  "title": "Rusty iron",
+  "text": "An old armour and rusted swords were ploughed up in a field. The villagers don't know what to do with them.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "The scavenger cleaned and mended what could be saved, sold it to the smith and gave half to the villagers. Nobody asked about origin.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "v-114",
+  "title": "Barrels in the ditch",
+  "text": "Barrels of salt lie in a ditch beside the road. Someone hid or lost them and the count's men ask about them this morning.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "The carter took the barrels before the count's men arrived, hid them in a barn and sold the salt in a neighbouring village at a good price.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "v-115",
+  "title": "The guarded wagon",
+  "text": "A wagon with an unlabelled load stands on the road with a guard asleep beside it. If someone wakes him there'll be trouble, if not, a chance.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "The carter drove the wagon away without noise, leaving the guard in blissful sleep. The load turned out valuable.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "v-116",
+  "title": "The blocked road",
+  "text": "A huge boulder blocked the village road after a landslide. The peasants have tried to move it for three days.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "The arsonist laid a charge and split the boulder into pieces. The villagers saw a miracle in it and offered the crew fresh food.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "v-117",
+  "title": "The count's stable",
+  "text": "The count's stable holds horses the crew could use. The stableman guards them but is greedy.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "The arsonist started a small fire in the byre next door and led out two horses in the confusion. The sale brought good money.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "v-118",
+  "title": "The new field",
+  "text": "Someone ploughed a field in the night and sowed something strange. The villagers are afraid and the field looks ritual.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "The scout examined the field, recognised an ordinary blend of herbs and calmed the villagers. In thanks he got payment and a tip about hidden roads.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "v-119",
+  "title": "The abandoned cottage",
+  "text": "An abandoned cottage stands in the forest nearby. The crew could shelter there but nobody knows who's been using it.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "The scout carefully checked the cottage, removed the traps and found hidden food and a few coins from previous occupants.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "v-120",
+  "title": "The forged deed",
+  "text": "Someone is trying to use a forged deed to take a neighbour's land. The matter may come for you because the seal looks familiar.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "fixer",
+  "okText": "The fence examined the document, pointed out the flaws in detail and demanded a fee for the \"expert opinion\". The peasant regained his land and the crew got paid.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "v-121",
+  "title": "Selling wool",
+  "text": "A peasant has a large stock of wool he can't sell because of a local merchant's monopoly. He seeks a middleman.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "fixer",
+  "okText": "The fence found a buyer in the next town, negotiated the price and took a commission. The peasant was happy and the monopolist furious.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "v-122",
+  "title": "The lost soul",
+  "text": "A peasant claims his dead father haunts him at night. The family asks for help.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "The healer performed an \"exorcism\" with salt, smoke and three prayers. The father fell silent and the family paid generously.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "v-123",
+  "title": "The poisoned herd",
+  "text": "A neighbouring well was poisoned and cattle die. The villagers suspect evil magic.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "The healer found a natural cause, pointed out a harmful herb in the water and cleaned the well. The village paid him in meat and silver.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "v-124",
+  "title": "The pitchfork duel",
+  "text": "Two peasants duel with pitchforks over a daughter's honour. Someone will die soon.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "duelist",
+  "okText": "The duellist stepped in with grace, disarmed both in one move and proposed settling it with ale. The village hailed him a hero.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "v-125",
+  "title": "The quarterstaff contest",
+  "text": "Young villagers held a staff contest and ask your man to demonstrate. Losing would shame the crew.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "duelist",
+  "okText": "The duellist beat them all with a smile and then gave a few lessons. The villagers repaid him with bread and coins.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "v-126",
+  "title": "The wounded wanderer",
+  "text": "A wounded wanderer with a sword at his side lies on the road. He says robbers attacked him and begs for water.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0,
+  "next": "v-127"
+ },
+ {
+  "id": "v-127",
+  "title": "The wanderer repays",
+  "text": "The wanderer recovered and revealed he is a local knight's son. He promises a good word to his father and leaves a reward.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 6,
+  "only": true
+ },
+ {
+  "id": "v-128",
+  "title": "The found locket",
+  "text": "A child found a gold locket in the grass with a name engraved. The crew examined it carefully.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "v-129"
+ },
+ {
+  "id": "v-129",
+  "title": "The noblewoman seeks",
+  "text": "A young noblewoman rode in and asks about a locket from her late mother. She'll pay any price.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 9,
+  "only": true
+ },
+ {
+  "id": "v-130",
+  "title": "The priest's visit",
+  "text": "A priest of Sigmar stopped for the night and mentioned at supper that he's hunting heretics. He looked at you longer than was proper.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "v-131"
+ },
+ {
+  "id": "v-131",
+  "title": "The priest returns",
+  "text": "The priest returned with guards and says he found a mortal heretic in the next village. He asks for help searching the forest.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -2,
+  "only": true
+ },
+ {
+  "id": "v-132",
+  "title": "The scream in the night",
+  "text": "A wild scream rang out in the village at night and in the morning nobody would speak of it. It seems someone is hiding something.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "v-133"
+ },
+ {
+  "id": "v-133",
+  "title": "The truth emerges",
+  "text": "A peasant admitted that someone in his family fell ill with a strange sickness. He asks you to tell no one and pays for silence.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 5,
+  "only": true
+ },
+ {
+  "id": "v-134",
+  "title": "The falling star",
+  "text": "A shooting star flashed across the sky and fell somewhere in the fields. The villagers whisper of an omen.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "v-135"
+ },
+ {
+  "id": "v-135",
+  "title": "A piece of the sky",
+  "text": "At the spot where the star fell a piece of strange heavy stone was found. An alchemist from town will pay any price.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 9,
+  "only": true
+ },
+ {
+  "id": "v-136",
+  "title": "A chilly morning",
+  "text": "Dew covered the ground and breath rose in steam. Everyone got up stiff but the fire still glowed well.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-137",
+  "title": "Storm over the fields",
+  "text": "A storm swept over the fields with crash and downpour. The crew sat in the barn watching the sky torn by lightning.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-138",
+  "title": "The full moon",
+  "text": "The full moon shone so bright one could read by it. The guards saw everything, but you were as visible as on the palm of a hand.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-139",
+  "title": "Morning mist",
+  "text": "Mist covered the fields and the road. Villagers heading to work passed within two steps of you without noticing.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "v-140",
+  "title": "The owl",
+  "text": "An owl sat on a beam and stared at you all night. Old folk say it's a bad omen but in the morning it flew off.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-141",
+  "title": "An accidental guest",
+  "text": "A wandering merchant passed by and asked the way. He told news from town for a few coppers and moved on.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "v-142",
+  "title": "Singing farmhands",
+  "text": "Farmhands returned from the inn with a song on their lips. Several fell into a ditch and slept, the rest went on.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-143",
+  "title": "Bad luck with the wagon",
+  "text": "The wagon wheel fell into a hole and the axle snapped. Several hours had to be spent on repairs.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-144",
+  "title": "The cunning fox",
+  "text": "A fox crept into the camp and vanished with a piece of meat. Nobody managed to catch it but everyone admired its skill.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-145",
+  "title": "The parson's visit",
+  "text": "The parson came by with a basket asking for donations to fix the church roof. He got small coin and blessed the crew.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": -1
+ },
+ {
+  "id": "v-146",
+  "title": "A cold wind",
+  "text": "A cold wind howled in the chimney and the shutters creaked. Nobody slept peacefully.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-147",
+  "title": "Neighbourly help",
+  "text": "A neighbour helped fix the roof and wanted nothing in return except to be remembered. A good man.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-148",
+  "title": "Procession of sheep",
+  "text": "A flock of sheep crossed the road with a shepherd and dog behind it. For an hour nobody could get through.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-149",
+  "title": "The tethered horse",
+  "text": "Villagers left a horse tied to a fence and went to the inn. The horse stood quietly all night and nobody claimed it.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "v-150",
+  "title": "The drunken priest",
+  "text": "The village priest returned from a wedding staggering and singing psalms. The crew escorted him to the parsonage.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "v-151",
+  "title": "Digging a ditch",
+  "text": "Villagers dug a drainage ditch beside your camp. In the process they unearthed a handful of old coins and a few bones.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "v-152",
+  "title": "The young merchant",
+  "text": "A young merchant stopped at the camp and praised his wares. The crew bought a few trinkets and heard the news.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": -2
+ },
+ {
+  "id": "v-153",
+  "title": "The oak aflame",
+  "text": "Lightning struck an old oak which burned like a torch. Until morning the embers glowed red while people whispered of Taal's wrath.",
+  "morale": -1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-154",
+  "title": "Two horses",
+  "text": "Two horses ran across the field without riders. The villagers caught one, the other vanished into the forest.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "v-155",
+  "title": "The river floods",
+  "text": "The river overflowed and water flooded the meadows. The crew had to move camp higher but found a good spot there.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-156",
+  "title": "The book in the barn",
+  "text": "An old book written in an unknown language was found in the barn. The villagers wanted to burn it but the crew took it.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "v-157",
+  "title": "Sunday",
+  "text": "The whole village went to church and the streets were empty. The crew could freely cross the village and look around.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "v-158",
+  "title": "A cloud of gnats",
+  "text": "A cloud of gnats hung over the camp allowing nobody to sleep. By morning everyone was swollen and irritable.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-159",
+  "title": "The messenger's news",
+  "text": "A messenger in the count's colours paused to say bandits roam the area. The crew thanked him and kept straight faces.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-160",
+  "title": "The graveyard",
+  "text": "The crew camped near the village graveyard. The night was quiet but some claimed to hear steps on the graves.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-161",
+  "title": "The reapers' song",
+  "text": "Reapers sang all night by torchlight. The crew fell asleep to the rhythmic sound of scythes.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-162",
+  "title": "The marketplace",
+  "text": "A market was held in the nearby town. The crew sent two men who returned with full purses but visibly nervous.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 5
+ },
+ {
+  "id": "v-163",
+  "title": "The live billy goat",
+  "text": "A peasant with a billy goat on a string asked if anyone would buy it. The goat was angry and stubborn but had plenty of meat.",
+  "morale": 0,
+  "supplies": 3,
+  "coinsSS": -2
+ },
+ {
+  "id": "v-164",
+  "title": "The friar's visit",
+  "text": "A wandering friar in a grey habit asked for lodging. He told beautiful stories and in the morning left behind a few useful tips.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-165",
+  "title": "The drunken knight",
+  "text": "A drunken knight rode into the camp on horseback bellowing that you're outlaws. If no one silences him he'll draw the village.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "bodyguard",
+  "okText": "The bodyguard pulled the knight from his horse, handed him a cup of water and escorted him away. In the morning the knight apologised and left a purse as \"compensation\".",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "v-166",
+  "title": "Brawl at the inn",
+  "text": "A brawl broke out at the inn and one of yours is in the middle. If he isn't pulled out he'll end up in a dungeon.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "bodyguard",
+  "okText": "The bodyguard walked into the inn, grabbed his man with one hand and carried him out as if nothing had happened. He collected thanks.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 2
+  }
+ },
+ {
+  "id": "v-167",
+  "title": "Bandit ambush",
+  "text": "Bandits planned an ambush on the road to the village and your people are due to pass that way at dawn.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "The shadow detected the ambush, circled round behind, disarmed the bandits in the dark and took their loot.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "v-168",
+  "title": "The cryptic sign",
+  "text": "A sign painted in blood appeared on your fence. The villagers look away.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "The shadow recognised a local band's signature in the mark and sent them word that the crew seeks no trouble. The mark disappeared.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "v-169",
+  "title": "Frightened game",
+  "text": "A boar charged into the field and is destroying the crop, attacking anyone who approaches. The villagers fear it.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "The marksman shot the boar from a safe distance. The village held a feast and the crew got the best cuts and some sausages.",
+  "ok": {
+   "morale": 1,
+   "supplies": 4,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "v-170",
+  "title": "The strayed herd",
+  "text": "A herd of cows escaped the pen and runs towards the forest. Without quick action they'll fall prey to wolves.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "The marksman stopped the herd with a precise shot into the ground ahead of the lead cow and the villagers thanked him with milk and silver.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "v-171",
+  "title": "The embarrassed reeve",
+  "text": "The reeve invites you to a meeting to decide what to do about the camp. Everyone eyes you askance.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "The provocateur delivered a speech on patriotism and the common enemy and the reeve and villagers invited the crew to a shared table.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "v-172",
+  "title": "The village market",
+  "text": "At the village fair traders squabble over spots. The commotion can be exploited or turned into a brawl.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "The provocateur began a quarrel at one end of the market while at the other the crew gathered a few things before anyone noticed.",
+  "ok": {
+   "morale": 1,
+   "supplies": 1,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "v-173",
+  "title": "The broken mill",
+  "text": "The village mill stopped because a wheel cracked. Without flour the village won't survive winter.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "The scavenger fixed the wheel with salvaged planks and the miller gave a sack of flour and a few shillings in thanks.",
+  "ok": {
+   "morale": 1,
+   "supplies": 3,
+   "coinsSS": 2
+  }
+ },
+ {
+  "id": "v-174",
+  "title": "The abandoned wagon",
+  "text": "An abandoned wagon without horses stands on the road. Some crates lie inside and nobody claims it.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "The scavenger examined the wagon, took apart what he could and carried the crates to camp. Inside were supplies and a few coins.",
+  "ok": {
+   "morale": 1,
+   "supplies": 3,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "v-175",
+  "title": "Forbidden trade",
+  "text": "Villagers want to sell their salt outside the count's monopoly and look for a way to move it across the border.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "The carter organised a night run along hidden trails and got a good commission.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "v-176",
+  "title": "The ruined road",
+  "text": "Rain wrecked the road and wagons sink in the mud. The villagers need someone who knows the local paths.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "The carter led several wagons by an alternative road and the villagers paid for the guidance. The crew gained a reputation as people to be trusted.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "v-177",
+  "title": "The old haystack",
+  "text": "Near the camp stands an old haystack where someone hid something valuable. If set alight from the right side everything will vanish.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "The arsonist extracted the treasure from the hay and set it alight from afar to hide the traces. The treasure paid off.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "v-178",
+  "title": "The old well",
+  "text": "The villagers want to fill in an old well said to hold something unwholesome. It must be done so that nothing comes out.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "The arsonist filled the well, lit a smoky mixture and closed the lid. The villagers breathed easy and paid for the peace.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "v-179",
+  "title": "The new road",
+  "text": "The road through the forest became too dangerous for merchants. The villagers seek an alternative.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "The scout charted a new road through fields and marshes and the villagers paid for the reconnaissance.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "v-180",
+  "title": "The wolf den",
+  "text": "The scout found a wolf den not far from the village. If the wolves go hunting there'll be slaughter.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "The scout set a trap and drove the wolves from the village. The villagers thanked him with meat and coins.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "v-181",
+  "title": "The peasant's debt",
+  "text": "A peasant owes the innkeeper money and cannot pay. The innkeeper threatens to take his land.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "fixer",
+  "okText": "The fence negotiated payment in instalments and the innkeeper got the crew's \"guarantee\". The peasant regained peace and the crew gained trust.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "v-182",
+  "title": "The wanted notice",
+  "text": "A wanted notice bearing one of your likenesses appeared in the village. If someone sees it there'll be trouble.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "fixer",
+  "okText": "The fence swapped the poster for an identical one with another name and added \"innocent\". Nobody noticed.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "v-183",
+  "title": "The rash",
+  "text": "A child has a strange rash and the mother begs for help. The villagers talk of cursed blood.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "The healer recognised an ordinary rash, prescribed herbal baths and calmed the village. The mother paid him what she could.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "v-184",
+  "title": "The barren soil",
+  "text": "One peasant's fields have borne nothing for three years. He hopes for a miracle or at least good advice.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "The healer scattered \"luck powder\" on the field and advised changing the crop. Next year's harvest pleased everyone and the crew was paid.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "v-185",
+  "title": "The jealous husband",
+  "text": "A jealous husband wants to challenge one of yours because he looked at his wife. The matter is innocent but the husband is stubborn.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "duelist",
+  "okText": "The duellist disarmed the husband with a smile and invited him for a drink. They parted as friends.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "v-186",
+  "title": "The village tournament",
+  "text": "The village holds a tournament of staves and sabres and offers a prize to the winner. They'd like your man to show off.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "duelist",
+  "okText": "The duellist won the tournament gracefully, gave half the prize to the loser and won the hearts of the spectators.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "v-187",
+  "title": "The night rider",
+  "text": "Someone galloped through the village at night and tossed a satchel into the yard. He didn't stop.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "v-188"
+ },
+ {
+  "id": "v-188",
+  "title": "The satchel opened",
+  "text": "Inside the satchel documents sealed with a local noble's crest and a few shillings were found. Someone will look for it.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 4,
+  "only": true
+ },
+ {
+  "id": "v-189",
+  "title": "The strange wagon",
+  "text": "An unknown wagon stands by the forest with no driver. The horses are calm but the load is covered with a tarpaulin.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "v-190"
+ },
+ {
+  "id": "v-190",
+  "title": "The driver turns up",
+  "text": "The driver returned in trouble: robbers attacked him and took the load. He asks for help recovering it, for generous pay.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 6,
+  "only": true
+ },
+ {
+  "id": "v-191",
+  "title": "The manor's dovecote",
+  "text": "A pigeon from the manor lost its way and landed in camp. The note on its leg carries an encrypted message.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "v-192"
+ },
+ {
+  "id": "v-192",
+  "title": "The cipher solved",
+  "text": "The message was decoded: the manor plans to send soldiers to the village. You can warn the villagers or sell the news.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 5,
+  "only": true
+ },
+ {
+  "id": "v-193",
+  "title": "The motherless child",
+  "text": "A small girl sits by your fire and won't leave. She says nothing, only looks.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0,
+  "next": "v-194"
+ },
+ {
+  "id": "v-194",
+  "title": "The girl's family",
+  "text": "A peasant came for the girl with tears in his eyes and thanked the crew with gifts. His wife died that night.",
+  "morale": -1,
+  "supplies": 2,
+  "coinsSS": 3,
+  "only": true
+ },
+ {
+  "id": "v-195",
+  "title": "The moneylender's loan",
+  "text": "The village moneylender offers you a loan on the spot. The terms look favourable.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 4,
+  "next": "v-196"
+ },
+ {
+  "id": "v-196",
+  "title": "Repayment and interest",
+  "text": "The moneylender came for repayment with a surprisingly high interest. He has two burly men with him.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -6,
+  "only": true
+ },
+ {
+  "id": "v-197",
+  "title": "The old soldier",
+  "text": "An old soldier with a wooden leg passed through the village telling of the battles at Altdorf. The crew listened with respect.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-198",
+  "title": "Hailstorm",
+  "text": "Hail the size of hens' eggs hammered the barn roof. By morning the fields were ruined and the villagers gloomy.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-199",
+  "title": "The lost lad",
+  "text": "A lad lost himself in the fields and ended up at the camp. He got bread and in the morning the crew took him back to the village.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-200",
+  "title": "The wild bird",
+  "text": "A great bird landed on the barn roof and shrieked hoarsely. Everyone argued whether it was an eagle or a vulture and by morning it flew away.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-201",
+  "title": "Spring rain",
+  "text": "Warm rain fell all night washing the dust off the roads. In the morning the air smelled of earth and horses.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-202",
+  "title": "The false monk",
+  "text": "A monk with an outstretched hand begged alms but a sword poked out from under the habit. The crew asked no questions.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "v-203",
+  "title": "The strzyga's procession",
+  "text": "Villagers claimed to have seen a vampire walking the path. In the morning only the tracks of a large dog were found.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-204",
+  "title": "Winter stores",
+  "text": "Villagers gathered stores for winter and came asking for help with the harvest. The crew helped and got a share of the crop.",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-205",
+  "title": "Trouble with the ox",
+  "text": "A farmer's ox tore loose and wrecked half the yard. The crew caught it and got a reward in sausage.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-206",
+  "title": "The unexpected wedding",
+  "text": "Two followers from different sides of the camp suddenly got engaged and invited everyone to the wedding. A chance for fun.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": -2
+ },
+ {
+  "id": "v-207",
+  "title": "Rubbish by the road",
+  "text": "Someone left a heap of rubbish by the road with quite useful things among it. The scavengers had a field day.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 2
+ },
+ {
+  "id": "v-208",
+  "title": "The village fortune teller",
+  "text": "An old woman told fortunes with cards in the square and your man went to check his future. He came back pale as a wall.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -1
+ },
+ {
+  "id": "v-209",
+  "title": "A small fire",
+  "text": "The campfire got out of hand and some of the supplies burned. Everyone insisted it wasn't their fault.",
+  "morale": -1,
+  "supplies": -2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-210",
+  "title": "Rumours of an army",
+  "text": "A trader brought word to the village that an army is marching north. Everyone began packing their valuables.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "v-211",
+  "title": "The harvest",
+  "text": "The crew helped with the harvest in return for lodging and board. The villagers were surprised strangers knew how to hold a scythe.",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": 1
+ },
+ {
+  "id": "v-212",
+  "title": "The lad with a dog",
+  "text": "A lad with a dog passed through the camp and asked if you'd seen his sheep. The dog found it right afterwards under your wagon.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "v-213",
+  "title": "The murrain",
+  "text": "Villagers speak of a cattle murrain in the next village. Everyone started avoiding strangers and your presence became awkward.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-214",
+  "title": "The doctor's visit",
+  "text": "A wandering medic passed through the village selling potions. Half were worthless, half worked.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -2
+ },
+ {
+  "id": "v-215",
+  "title": "The stray",
+  "text": "A scrawny mutt with a torn ear wandered into the camp. He ate the leftovers and stayed.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-216",
+  "title": "The evening prayer",
+  "text": "Villagers gathered for evening prayer at a roadside shrine. The crew stood at the back not knowing what to do with their hands.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-217",
+  "title": "Smoke from the village",
+  "text": "Smoke from the inn chimney drifted over the camp. Everyone grew hungry and half went to beg for scraps.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": -1
+ },
+ {
+  "id": "v-218",
+  "title": "A sinister laugh",
+  "text": "In the night someone laughed loudly behind the fence. Nobody saw him but everyone got chills.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-219",
+  "title": "The smith at the fair",
+  "text": "The smith displayed new sickles at the fair. The crew bought two and learned to sharpen them.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -2
+ },
+ {
+  "id": "v-220",
+  "title": "First snow",
+  "text": "The first snow covered the fields and roads. The village fell silent and the camp grew quiet and solemn.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-221",
+  "title": "The passing merchant",
+  "text": "A merchant from Marienburg asked grain prices. The villagers named an inflated price and the crew got a commission for brokering.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "v-222",
+  "title": "The dead cow",
+  "text": "A cow died in the night and the villagers couldn't bury it. The crew helped in exchange for some of the meat.",
+  "morale": 0,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-223",
+  "title": "A small scuffle",
+  "text": "Two drunks quarrelled over a spot by the fire. The crew threw both out and then ate their supper.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-224",
+  "title": "The ginger boy",
+  "text": "A ginger lad from the village kept hanging round the camp. At last he admitted he'd like to join you. The crew laughed him off and gave him a loaf.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-225",
+  "title": "The potter",
+  "text": "A village potter sold pots at bargain prices. The crew bought several pots and a few bowls.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": -2
+ },
+ {
+  "id": "v-226",
+  "title": "An ill omen",
+  "text": "A raven landed on a banner by the road and croaked. The villagers spit over their left shoulders and the crew glance nervously at the sky.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-227",
+  "title": "The broken bridge",
+  "text": "The bridge over the river cracked under a heavy wagon. The villagers set about repairing it and the crew joined, winning their goodwill.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-228",
+  "title": "Cunning snares",
+  "text": "Villagers set snares for hares around the camp. Half your followers stepped into them by accident.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-229",
+  "title": "The village proverb",
+  "text": "An old man by the fire spoke a proverb known to no one but everyone felt it held truth.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-230",
+  "title": "The shepherd with a flute",
+  "text": "A shepherd played a flute by the fire and half the crew fell asleep to the sound. The best sleep in weeks.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-231",
+  "title": "The missing young ox",
+  "text": "A young ox vanished from the herd and the owner promises a reward. The crew found it tied in the forest and knew who was behind it.",
+  "morale": 0,
+  "supplies": 3,
+  "coinsSS": 3
+ },
+ {
+  "id": "v-232",
+  "title": "The animal fair",
+  "text": "Horses and oxen were sold at the fair. The crew spotted a few bargains and one follower even bought a goat.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": -2
+ },
+ {
+  "id": "v-233",
+  "title": "The stone shrine",
+  "text": "A stone shrine with names of the dead engraved stood by the road. The crew paused a moment and lit a candle.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": -1
+ },
+ {
+  "id": "v-234",
+  "title": "The gossiping neighbour",
+  "text": "A gossiping neighbour told everyone about strangers in the camp. Half the village came to see and the other half locked their doors.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-235",
+  "title": "Crash of thunder",
+  "text": "A great storm ruined half the village roofs. The crew helped with repairs and earned gratitude.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "v-236",
+  "title": "The lost ring",
+  "text": "A peasant lost his wedding ring in the grass and asked for help searching. The crew found it within an hour and got a few shillings.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "v-237",
+  "title": "The indulgence fair",
+  "text": "A church fair was held in the next village for a holy day. The market was full of people and the crew went out \"collecting\".",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 5
+ },
+ {
+  "id": "v-238",
+  "title": "The rusty sword",
+  "text": "A child found a rusty sword with an engraved crest in the field. The crew bought it for a handful of grain.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 3
+ },
+ {
+  "id": "v-239",
+  "title": "The bard storyteller",
+  "text": "A wandering singer told of ancient heroes and bandits. The crew overheard a few interesting details about the area.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-240",
+  "title": "The strange boar",
+  "text": "In the morning a dead boar with two heads was found in the field. The villagers drove everyone from the area and the crew gathered quickly.",
+  "morale": -2,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-241",
+  "title": "The pigpen",
+  "text": "Pigs escaped their pen and rampaged through the camp. Several villagers came to fetch them and stayed for supper.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-242",
+  "title": "The unlucky wanderer",
+  "text": "A wanderer with a sore foot asked for shelter. The crew dressed it and he told of strange lights he saw in the forest at night.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-243",
+  "title": "The lost child",
+  "text": "A child lost itself in the field and the crew found it. The parents wept for joy and gave everything they had in the pantry.",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-244",
+  "title": "A shadow in the field",
+  "text": "In the evening a shadow without an owner was seen in the field. The villagers fled in panic and the crew took the stores.",
+  "morale": -1,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-245",
+  "title": "The broken clock",
+  "text": "The clock on the church tower stopped and the villagers don't know the hour. Someone could fix it.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "v-246"
+ },
+ {
+  "id": "v-246",
+  "title": "The clock mended",
+  "text": "The clock runs again and the village held a thank-you feast for the crew. The reeve promised to repay with a favour.",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": 0,
+  "only": true
+ },
+ {
+  "id": "v-247",
+  "title": "The scarecrow",
+  "text": "The scarecrow in the field stands in a different place every morning. The villagers fear it.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "v-248"
+ },
+ {
+  "id": "v-248",
+  "title": "The scarecrow reveals",
+  "text": "It turned out the scarecrow hid the entrance to an underground cellar. The crew found supplies and a few coins in it.",
+  "morale": 0,
+  "supplies": 3,
+  "coinsSS": 5,
+  "only": true
+ },
+ {
+  "id": "v-249",
+  "title": "The small revolt",
+  "text": "Villagers murmur against the steward and look for someone to lead them to the manor. They look at the crew.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "v-250"
+ },
+ {
+  "id": "v-250",
+  "title": "The revolt breaks",
+  "text": "The villagers marched on the manor with pitchforks. The crew can join, withdraw or sell the news to the steward.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 5,
+  "only": true
+ },
+ {
+  "id": "v-251",
+  "title": "The twins' visit",
+  "text": "Two identical men arrived in the village asking for lodging. Each claims to be the true owner of an estate.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "v-252"
+ },
+ {
+  "id": "v-252",
+  "title": "The true heir",
+  "text": "It turned out one twin is an impostor. The true heir rewarded the crew generously.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 9,
+  "only": true
+ },
+ {
+  "id": "v-253",
+  "title": "The lost hunting dog",
+  "text": "A beautiful hunting dog in a silver collar wanders around the camp. Someone will pay for its return.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0,
+  "next": "v-254"
+ },
+ {
+  "id": "v-254",
+  "title": "The hunters look",
+  "text": "A party of hunters in costly clothing asks about the lost dog. Their leader has a stern face and a generous purse.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 6,
+  "only": true
+ },
+ {
+  "id": "v-255",
+  "title": "A quarrel over a hen",
+  "text": "Two housewives tore a hen between them and both got pecked. The whole village gathered and the crew collected the remaining hens.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-256",
+  "title": "The new reeve",
+  "text": "The village elected a new reeve and celebrated till morning. The crew got several jugs of ale for \"well-wishing\".",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-257",
+  "title": "A kindly day",
+  "text": "The sun shone all day, birds sang and the villagers let the crew pass unhindered. Such a day rarely comes.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-258",
+  "title": "Snapped ropes",
+  "text": "The ropes at the well snapped and the bucket fell down. The crew helped retrieve it for a few donations.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "v-259",
+  "title": "A windless morning",
+  "text": "The air was still and smoke rose straight to the sky. Everyone noticed the birds fell silent.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-260",
+  "title": "Mercenaries marching through",
+  "text": "A company of mercenaries marched through the village demanding food and lodging. The villagers gave all and trembled in fear.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-261",
+  "title": "The abandoned manor",
+  "text": "An abandoned manor stands in the nearby forest. The crew looked at it from afar and one follower claimed he saw a candle in the window.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-262",
+  "title": "The cheerful trader",
+  "text": "A cheerful salt trader stopped and told jokes. The crew bought some salt and laughed to tears.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": -1
+ },
+ {
+  "id": "v-263",
+  "title": "Strange dogs",
+  "text": "Strange dogs appeared at the edge of the camp and watched in silence. When someone threw a bone they left and never returned.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-264",
+  "title": "Youthful adventure",
+  "text": "A young peasant confessed he'd like to leave the village and join someone who lives free. The crew gave him good advice and a loaf of bread.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-265",
+  "title": "The missing merchant",
+  "text": "A merchant vanished on the road to the village and his wagon stands empty. The villagers fear to approach while the crew took inventory.",
+  "morale": -1,
+  "supplies": 2,
+  "coinsSS": 4
+ },
+ {
+  "id": "v-266",
+  "title": "Work in the field",
+  "text": "The crew helped with haymaking and the villagers repaid them. The camp had a hot meal and sweet milk at night.",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-267",
+  "title": "The forgotten casket",
+  "text": "A traveller left a casket in the inn and rode away. The innkeeper fears to open it and the crew could help.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "v-268",
+  "title": "The robbers' hut",
+  "text": "An abandoned robbers' hut with leftover supplies was found in the forest. The villagers fear to go there but the crew doesn't.",
+  "morale": 0,
+  "supplies": 3,
+  "coinsSS": 2
+ },
+ {
+  "id": "v-269",
+  "title": "A rainbow over the fields",
+  "text": "After the storm a wide rainbow spread over the fields. The villagers said it was a sign of good crops and the crew felt good.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-270",
+  "title": "Smoke from the forest",
+  "text": "Smoke rose from the forest as if someone were burning a fire. The villagers saw nobody and yet the smoke came every day.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-271",
+  "title": "The fair juggler",
+  "text": "A juggler at the fair swallowed fire. The crew applauded and pickpockets had a good day.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "v-272",
+  "title": "A marital quarrel",
+  "text": "Spouses' shouting came from one of the cottages. In the morning the husband had a black eye and the wife smiled broadly.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-273",
+  "title": "The mysterious parcel",
+  "text": "Someone left a parcel wrapped in linen on the barn threshold. Inside was grain and a note reading \"For a kind heart.\"",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-274",
+  "title": "The village school",
+  "text": "A teacher led children across the field showing them birds. The crew listened with interest and even learned a few names.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-275",
+  "title": "The lost letter",
+  "text": "A letter blown from someone's hand by the wind landed in the camp. It's addressed to the captain of the local guards.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "v-276",
+  "title": "Evening songs",
+  "text": "Villagers sang songs round the fires and the crew joined, surprising everyone with one follower's beautiful voice.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-277",
+  "title": "The apple thief",
+  "text": "A boy was caught stealing apples in an orchard. The crew interceded for him and got a few apples as a reward.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-278",
+  "title": "The amulet seller",
+  "text": "A wandering amulet seller praised his wares as protecting against all evil. The crew bought one just in case.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": -2
+ },
+ {
+  "id": "v-279",
+  "title": "Honey",
+  "text": "A beekeeper invited you to his apiary and offered honey. Everyone returned with sticky fingers and good humour.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-280",
+  "title": "The path through the marsh",
+  "text": "A village guide showed a path through the marsh that officials avoid. The crew could slip away that way.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "v-281",
+  "title": "A village brawl",
+  "text": "A brawl broke out at the inn because someone accused a neighbour of stealing a goat. The crew ate supper undisturbed.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-282",
+  "title": "The lost guard",
+  "text": "A guard from the count lost his way at night and asked directions. The crew pointed him the wrong way and kept a straight face.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-283",
+  "title": "The scythe of death",
+  "text": "Villagers performed a ritual against misfortune hanging a scythe above the door. The crew watched uneasily.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-284",
+  "title": "The tale of the spectre",
+  "text": "A grandfather told by the fire the story of a spectre that haunts the village every year. Today is that day.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-285",
+  "title": "The little cow",
+  "text": "A peasant brought a cow asking for help with calving. The crew helped and got a week's worth of milk.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-286",
+  "title": "A woman's scream",
+  "text": "In the morning a woman screamed. It turned out she found a spider in her bowl. Everyone laughed for a long time.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-287",
+  "title": "The door without a lock",
+  "text": "One cottage door had no lock and villagers claimed nobody ever steals. The crew had to restrain themselves.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-288",
+  "title": "Visit from distant kin",
+  "text": "A family from town arrived in the village in nice clothes with full purses. The crew watched them closely.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "v-289",
+  "title": "The lost goose",
+  "text": "A goose with a mad stare ran round the camp cackling. Someone caught it and for supper there was a roast.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-290",
+  "title": "Trouble with the well",
+  "text": "The village well collapsed and the villagers had a water problem. The crew helped rebuild it.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "v-291",
+  "title": "The night hag",
+  "text": "One follower woke screaming claiming something sat on his chest. The rest slept uneasily.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-292",
+  "title": "The lost hat",
+  "text": "The wind carried off a town guest's hat. The crew caught it and returned it, winning his gratitude.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "v-293",
+  "title": "The village bard",
+  "text": "A bard played the lute and told of the fall of old cities. The crew sat deep in thought and long afterwards spoke little.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-294",
+  "title": "The roadside inn",
+  "text": "The roadside inn served exceptionally good ale at an indecently low price. Nobody asked why.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": -1
+ },
+ {
+  "id": "v-295",
+  "title": "The farewell",
+  "text": "An elderly follower decided to leave and settle in the countryside. Before leaving he left all his spoils to the crew.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 6
+ },
+ {
+  "id": "v-296",
+  "title": "Homecoming",
+  "text": "One follower saw his home village from afar and fell to thinking. He was silent all day.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-297",
+  "title": "An evening by the fire",
+  "text": "The crew sat by the fire reminiscing about old days. Everyone felt that together they could do anything.",
+  "morale": 2,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-298",
+  "title": "The smell of roast meat",
+  "text": "The smell of roast mutton drifted from the next village. A few followers went to \"investigate\" and returned well-fed.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "v-299",
+  "title": "The lost ducat",
+  "text": "A golden ducat gleamed in the grass by the road. The crew picked it up although someone might be looking for it.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 8
+ },
+ {
+  "id": "v-300",
+  "title": "A quiet night",
+  "text": "The night passed without incident. Everyone slept soundly and in the morning set out rested.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ }
+]

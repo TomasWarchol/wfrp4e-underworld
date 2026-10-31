@@ -16,7 +16,7 @@ import { t } from "./i18n.mjs";
 const MODULE_ID = "wfrp4e-underworld";
 const PACK_ID = `${MODULE_ID}.underworld-tables`;
 /** Podnieś, gdy zmieniają się wbudowane plotki lub wydarzenia – kompendium zostanie odbudowane. */
-const SEED_VERSION = 2;
+const SEED_VERSION = 3;
 
 const TABLE_CONFIG = {
   rumors: {
@@ -79,7 +79,7 @@ export class UnderworldRollTables {
       formula: "",
       replacement: true,
       displayRoll: true,
-      flags: { [MODULE_ID]: { tableType: "events", terrain } },
+      flags: { [MODULE_ID]: { tableType: "events", terrain, seedVersion: SEED_VERSION } },
       results: events.map((e, i) => ({
         type: "text",
         name: e.title || t("Tables.Events.Result"),
@@ -91,7 +91,10 @@ export class UnderworldRollTables {
             id: e.id,
             moraleDelta: Number(e.moraleDelta) || 0,
             suppliesFound: Number(e.suppliesFound) || 0,
-            coinsFoundSS: Number(e.coinsFoundSS) || 0
+            coinsFoundSS: Number(e.coinsFoundSS) || 0,
+            ...(e.role ? { role: e.role, okText: e.okText || "", ok: e.ok || {} } : {}),
+            ...(e.next ? { next: e.next } : {}),
+            ...(e.only ? { only: true } : {})
           }
         }
       }))
@@ -100,16 +103,17 @@ export class UnderworldRollTables {
 
   /** Wbudowane treści modułu dla terenu (miasto: pliki JSON lub listy domyślne). */
   static async _builtInContent(terrain = "city") {
+    const shipped = await UnderworldTables.loadTerrainEvents(terrain);
     if (terrain !== "city") {
       return {
         rumors: (TERRAIN_RUMORS[terrain] || []).map((r, i) => UnderworldTables.normalizeRumor(r, i)),
-        events: (TERRAIN_EVENTS[terrain] || []).map((e, i) => UnderworldTables.normalizeEvent(e, i))
+        events: shipped.length ? shipped : (TERRAIN_EVENTS[terrain] || []).map((e, i) => UnderworldTables.normalizeEvent(e, i))
       };
     }
     const external = await UnderworldTables.loadWorldContent();
     const rumors = (external?.rumors?.length ? external.rumors : UnderworldTables.RUMORS.map((text, i) => ({ id: `rumor-${i + 1}`, text })))
       .map((r, i) => UnderworldTables.normalizeRumor(r, i));
-    const events = (external?.events?.length ? external.events : UnderworldTables.CAMP_EVENTS)
+    const events = (external?.events?.length ? external.events : (shipped.length ? shipped : UnderworldTables.CAMP_EVENTS))
       .map((e, i) => UnderworldTables.normalizeEvent(e, i));
     return { rumors, events };
   }
@@ -162,6 +166,8 @@ export class UnderworldRollTables {
       created.add(tableKey("events", "city"));
     }
 
+    await this._upgradeLegacyEventTables();
+
     const toCreate = [];
     for (const terrain of TERRAIN_IDS) {
       for (const type of ["rumors", "events"]) {
@@ -192,6 +198,24 @@ export class UnderworldRollTables {
     await game.settings.set(MODULE_ID, "worldTablesCreatedKeys", [...created]);
     await game.settings.set(MODULE_ID, "worldTablesCreated", true);
     ui.notifications.info(t("Tables.Created", { count: toCreate.length, folder: folder.name }));
+  }
+
+  /**
+   * Tabele wydarzeń świata z wcześniejszych wersji (8–12 wpisów, bez znacznika wersji) to niezmienione tabele
+   * domyślne – zastępujemy je nową, dużą tabelą. Tabele, które MG rozbudował, zostają nietknięte.
+   */
+  static async _upgradeLegacyEventTables() {
+    for (const terrain of TERRAIN_IDS) {
+      const table = this.findWorldTable("events", terrain);
+      if (!table || table.getFlag(MODULE_ID, "seedVersion")) continue;
+      const { events } = await this._builtInContent(terrain);
+      if (events.length < 100 || table.results.size > 12) continue;
+      const data = this.buildEventTableData(events, terrain);
+      await table.deleteEmbeddedDocuments("TableResult", table.results.map(r => r.id));
+      await table.update({ formula: data.formula, flags: { [MODULE_ID]: { seedVersion: SEED_VERSION } } });
+      await table.createEmbeddedDocuments("TableResult", data.results);
+      ui.notifications.info(t("Tables.EventsUpgraded", { terrain: TERRAINS[terrain]?.name ?? terrain, count: events.length }));
+    }
   }
 
   /** Tabela świata danego typu i terenu (tabela bez flagi terenu liczy się jako miejska). */
@@ -242,8 +266,21 @@ export class UnderworldRollTables {
       text: this._plainText(result.description),
       moraleDelta: Number(data.moraleDelta) || 0,
       suppliesFound: Number(data.suppliesFound) || 0,
-      coinsFoundSS: Number(data.coinsFoundSS) || 0
+      coinsFoundSS: Number(data.coinsFoundSS) || 0,
+      ...(data.role ? { role: data.role, okText: data.okText || "", ok: data.ok || {} } : {}),
+      ...(data.next ? { next: String(data.next) } : {}),
+      ...(data.only ? { only: true } : {})
     };
+  }
+
+  /** Wydarzenie o danym id z tabeli terenu (świata, potem kompendium, potem plik) – dla haków łańcuchów. */
+  static async findEvent(terrain, id) {
+    const table = await this.getTable("events", terrain);
+    const result = table?.results?.find(r => (r.getFlag?.(MODULE_ID, "id") ?? r.flags?.[MODULE_ID]?.id) === id);
+    if (result) return this._resultToEvent(result);
+    const shipped = await UnderworldTables.loadTerrainEvents(terrain);
+    const found = shipped.find(e => e.id === id);
+    return found ? { ...found } : null;
   }
 
   /**
@@ -264,8 +301,15 @@ export class UnderworldRollTables {
     if (canMark && !table.replacement && table.results.every(r => r.drawn)) {
       await table.resetResults();
     }
-    const { roll, results } = canMark ? await table.draw({ displayChat: false }) : await table.roll();
-    const result = results?.[0];
+    // Wpisy „tylko następnik” (zakończenia łańcuchów) nie wypadają losowo – losujemy ponownie
+    let roll = null, result = null;
+    for (let attempt = 0; attempt < 40; attempt++) {
+      const drawn = canMark ? await table.draw({ displayChat: false }) : await table.roll();
+      roll = drawn.roll;
+      result = drawn.results?.[0];
+      const onlyFollowUp = type === "events" && (result?.getFlag?.(MODULE_ID, "only") ?? result?.flags?.[MODULE_ID]?.only);
+      if (!onlyFollowUp) break;
+    }
     if (!result) return null;
     const data = type === "rumors" ? this._resultToRumor(result) : this._resultToEvent(result);
     data.tableRoll = roll ? { formula: roll.formula, total: roll.total } : null;

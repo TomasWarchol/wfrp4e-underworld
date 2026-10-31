@@ -1,0 +1,2900 @@
+[
+ {
+  "id": "m-001",
+  "title": "The silence of the mountains",
+  "text": "The night in the mountains was frosty and quiet, only the wind whistling between the rocks. Everyone slept huddled by the fire.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-002",
+  "title": "Blizzard",
+  "text": "A blizzard buried the pass in a single night. By morning the camp was under a white quilt and moving on was hard.",
+  "morale": -1,
+  "supplies": -2,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-003",
+  "title": "Avalanche in the distance",
+  "text": "Somewhere in the valley an avalanche crashed with a roar that shook the camp. Everyone froze waiting for more.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-004",
+  "title": "Mountain goats",
+  "text": "A herd of mountain goats crossed the rocks above the camp. The marksmen held their breath but the chamois were out of range.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-005",
+  "title": "The eagle",
+  "text": "An eagle flew over the camp with a large prey in its talons. Everyone looked at the sky and then silence fell.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-006",
+  "title": "Rockfall",
+  "text": "Stones broke from the slope and rolled down scattering supplies. The crew had to chase everything down the slope.",
+  "morale": -1,
+  "supplies": -2,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-007",
+  "title": "Dwarf caravan",
+  "text": "A caravan of Dwarfs passed through the pass with mules full of wares. Nobody dared approach those bearded guards.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "m-008",
+  "title": "Freezing wind",
+  "text": "The wind was so sharp tears froze on cheeks. Everyone wrapped faces in scarves and dreamed of warmth.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-009",
+  "title": "The stone guardian",
+  "text": "Beside the path stood a stone statue of a Dwarf with an axe. The crew passed it with respect not touching it.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-010",
+  "title": "Marmots",
+  "text": "Marmots whistled on the hill like sentries. The crew laughed until one of them bolted.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-011",
+  "title": "The frozen brook",
+  "text": "The brook froze and there was no water to drink. Snow had to be melted which cost half a day's fuel.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-012",
+  "title": "Sun in the mountains",
+  "text": "The sun rose above the peaks and painted the snow pink. Everyone watched in silence and someone smiled for the first time in weeks.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-013",
+  "title": "The lost shepherd",
+  "text": "A shepherd with sheep lost his way in the mountains and walked blindly towards your camp. The crew gave him water and showed the way.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-014",
+  "title": "Smoke in the valley",
+  "text": "A thin column of smoke rose from the valley. The crew watched not knowing if it was a settlement or a fire.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-015",
+  "title": "The rut",
+  "text": "Mountain stags bellowed at night so loudly the echo carried through whole valleys. Nobody could sleep.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-016",
+  "title": "The Dwarf mark",
+  "text": "A Dwarf mark was carved on a rock with a direction beneath it. The crew didn't know whether it was a warning or a guide.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-017",
+  "title": "The wrecked wagon",
+  "text": "A merchant wagon lay smashed below a cliff. The crew climbed down and gathered a few things that survived.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "m-018",
+  "title": "Howling wolves",
+  "text": "Wolves in the mountains howl differently than in the forest: longer and lower. The crew added to the fire and listened.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-019",
+  "title": "The smell of sulphur",
+  "text": "A smell of sulphur came from a cave in the rock. A few followers wanted to look but the others stopped them.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-020",
+  "title": "The Kislevite wanderer",
+  "text": "A lone wanderer from Kislev took shelter in the camp from the blizzard. He shared vodka and tales of winter.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": -1
+ },
+ {
+  "id": "m-021",
+  "title": "The rolling boulder",
+  "text": "A huge rock rolled through the camp missing the tents by a hair. Nobody was hurt but everyone trembled.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-022",
+  "title": "The old trail",
+  "text": "The crew came upon a trail hewn into the rock by old mountaineers. It ran straight and safe across the pass.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-023",
+  "title": "The frozen corpse",
+  "text": "A frozen wanderer's corpse in a heavy cloak lay on the slope. The crew buried him under stones and took what might be of use.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "m-024",
+  "title": "Holes in the snow",
+  "text": "Holes appeared in the snow around the camp as if something walked on two feet and heavy. By morning the tracks were gone.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-025",
+  "title": "Mist in the valley",
+  "text": "Mist filled the valley like milk and the peaks looked like islands. The crew stood on the slope and watched.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-026",
+  "title": "The cave",
+  "text": "A dry cave with a stock of firewood was found in the rock. The crew lit a fire and slept warm.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-027",
+  "title": "The highlander's hut",
+  "text": "A highlander invited the crew into his hut and offered smoked cheese. The conversation was short but warm.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-028",
+  "title": "Thunder in the mountains",
+  "text": "Thunder in the mountains boomed like collapsing worlds. The crew cowered under a sheet and it all lasted hours.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-029",
+  "title": "Golden rays",
+  "text": "The setting sun lit the summit like a golden crown. Everyone fell silent and some crossed themselves.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-030",
+  "title": "The prospector",
+  "text": "A prospector with an old shovel poked in the stream. The crew offered him the fire and learned where to look for veins.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "m-031",
+  "title": "The drunken Dwarf",
+  "text": "A drunken Dwarf walked into the camp demanding someone fight him. If he doesn't get a brawl he'll be offended for life.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -2,
+  "role": "bodyguard",
+  "okText": "The bodyguard accepted the challenge, took a few solid blows and they parted like old friends. The Dwarf left a purse and a small keg.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "m-032",
+  "title": "The pass blocked",
+  "text": "Several boulders blocked the passage and the way back is buried. Without strength they can't be moved.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0,
+  "role": "bodyguard",
+  "okText": "The bodyguard pushed the largest boulder into the abyss with his own hands. The road opened and beyond it a hidden cache was found.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "m-033",
+  "title": "Goblin scouting",
+  "text": "A small band of goblins prowls near the camp. If they notice us they'll bring the rest of the tribe.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "The shadow slipped into the dark, silently cut down three goblins and took their loot. The rest withdrew.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "m-034",
+  "title": "The burglar",
+  "text": "Someone crept into your camp and searches for valuables. Everyone sleeps and he's getting closer to the chest.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -4,
+  "role": "shadow",
+  "okText": "The shadow woke at the right moment, caught the burglar and took his own pouch. The burglar fled without boots.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 2
+  }
+ },
+ {
+  "id": "m-035",
+  "title": "The eagle on watch",
+  "text": "A huge eagle circles the camp watching for prey. If it spots something small it will strike.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "The marksman shot the eagle from afar and the crew had a feast. The feathers adorned the tents all week.",
+  "ok": {
+   "morale": 1,
+   "supplies": 4,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "m-036",
+  "title": "The biting cold",
+  "text": "The cold is so sharp the stores froze. Meat from the slope is the only hope.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "The marksman hunted two mountain goats and returned with all the meat. The supplies were better than ever.",
+  "ok": {
+   "morale": 1,
+   "supplies": 3,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "m-037",
+  "title": "Highlanders at the inn",
+  "text": "Highlanders at the roadside inn dislike outsiders. If the crew can't win them over there'll be trouble.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "The provocateur told a few bawdy jokes and bet a bottle on who drinks faster. The highlanders laughed and the crew was warmly received.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "m-038",
+  "title": "The remarkable guest",
+  "text": "A strange man in colourful robes stopped at the camp claiming to be a great wizard. The crew hesitates.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "The provocateur played the faithful pupil and the \"wizard\" put on a spectacular show. The crew got a handful of coins for being extras.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "m-039",
+  "title": "The collapsed mine",
+  "text": "An old mine collapsed nearby and people are trapped inside. Help is needed to dig them out.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "The scavenger dug everyone out and found a few valuable things in the rubble. The survivors gave a reward in ore.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "m-040",
+  "title": "Rusty tools",
+  "text": "Tools that could be useful lie in an old miner's hut. Without repair skill they're useless.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "The scavenger repaired the tools, sharpened them and sold some to Dwarfs. The profit was decent.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "m-041",
+  "title": "The mountain pass",
+  "text": "The pass is guarded by customs men but your goods must get through. A way must be found.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -2,
+  "role": "smuggler",
+  "okText": "The carter knew an old smugglers' trail through a gorge. The goods passed unnoticed and the sale on the other side brought a significant profit.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "m-042",
+  "title": "The mules",
+  "text": "A mule caravan lost its guide and wanders the slope. The owners pay for help.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "The carter took command of the mules with his voice and calmed them, then led them to the trail. The owners paid and promised to recommend.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "m-043",
+  "title": "The stone bridge",
+  "text": "A stone bridge over a chasm leads to a mine guarded by soldiers. If destroyed the army is delayed.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "The arsonist laid a charge under a pillar and blew the bridge at night. The delay gave the crew time and grateful miners paid.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "m-044",
+  "title": "The snowbound trail",
+  "text": "The trail is buried under snow and ice and the road is needed now. A quick way to clear it is required.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "The arsonist lit large fires along the trail and melted the ice in an hour. The road opened and on the way a forgotten cache was found.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "m-045",
+  "title": "The lost pass",
+  "text": "The crew lost the pass and circles along the ridge. Mist thickens and the supplies shrink.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "The scout read the wind direction, animal tracks and stones and led everyone to the trail. On the way he found a cave with a stock of firewood.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "m-046",
+  "title": "The track of a great foot",
+  "text": "The snow bears a track of a great foot twice the size of a man's. Nobody knows what it is.",
+  "morale": -2,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "The scout examined the tracks and determined they belonged to a bear with a deformed paw. He warned the crew and showed a safe way.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "m-047",
+  "title": "The ore dealer",
+  "text": "A dealer from a Dwarf market offers the crew a few nuggets of ore at a good price. The question is where they come from.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -3,
+  "role": "fixer",
+  "okText": "The fence checked the ore's origin, negotiated the price and resold at a profit to a Dwarf smith. Everyone left satisfied.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 8
+  }
+ },
+ {
+  "id": "m-048",
+  "title": "The stolen load",
+  "text": "The crew took the load of a wagon with unknown marks. If someone recognises the crest there'll be a row.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "fixer",
+  "okText": "The fence recognised the merchants' guild marks, erased them and sold the load in another town. Nobody realised.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "m-049",
+  "title": "Altitude sickness",
+  "text": "Several followers suffer headaches and dizziness. The air is too thin and the road still long.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "The healer gave them a decoction of mountain herbs and told them to breathe slowly. After a few hours everyone felt better and the healer collected a few coins.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 2
+  }
+ },
+ {
+  "id": "m-050",
+  "title": "Winter fever",
+  "text": "One follower has been feverish for two days. The medicine stores run out and the road is long.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "The healer boiled a decoction of bark and honey, applied wet cloths and managed to bring down the fever. The patient paid what he could.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "m-051",
+  "title": "The highlander's challenge",
+  "text": "A tall highlander in a leather jerkin challenges the crew to a staff duel. If nobody steps up the crew will be shamed.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "duelist",
+  "okText": "The duellist accepted and after a spectacular fight got a draw. The highlander shook his hand respectfully and left a purse.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "m-052",
+  "title": "Duel on the edge",
+  "text": "A knight-raider demands a duel on a narrow ledge over a chasm. Someone could fall.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "duelist",
+  "okText": "The duellist used the chasm as a weapon, forced the knight to yield and took his sword and purse.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "m-053",
+  "title": "The Dwarf messenger",
+  "text": "A breathless Dwarf with a sealed note begs shelter from the gale. He says little.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0,
+  "next": "m-054"
+ },
+ {
+  "id": "m-054",
+  "title": "The old clan's reply",
+  "text": "After a few days another Dwarf arrives with a clan's thanks. He leaves a pouch and a promise that the crew will be welcome in their hold.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 7,
+  "only": true
+ },
+ {
+  "id": "m-055",
+  "title": "The found helm",
+  "text": "Under a rock lies an old Dwarf helm with an engraved symbol. It seems very old.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "m-056"
+ },
+ {
+  "id": "m-056",
+  "title": "The elder Dwarf",
+  "text": "An old Dwarf with a grey beard approaches the camp and asks about the helm. He says it belonged to his ancestor and that he'll pay.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 9,
+  "only": true
+ },
+ {
+  "id": "m-057",
+  "title": "The trail in the snow",
+  "text": "Fresh tracks of several people heading towards the pass are visible in the snow. Nobody knows who they are.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "m-058"
+ },
+ {
+  "id": "m-058",
+  "title": "The merchants fled",
+  "text": "The tracks lead to merchants who fled from robbers. They ask for protection and offer part of their wares.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 4,
+  "only": true
+ },
+ {
+  "id": "m-059",
+  "title": "The golden vein",
+  "text": "A thread of gold glitters in the rock in the light. The cleft is narrow.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "m-060"
+ },
+ {
+  "id": "m-060",
+  "title": "The Dwarf claim",
+  "text": "After a few days Dwarf miners came to the camp claiming the vein belongs to them. Their leader has an axe and a great sense of dignity.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -4,
+  "only": true
+ },
+ {
+  "id": "m-061",
+  "title": "The strange fire",
+  "text": "In the distance on the slope a fire is visible. Beside it several figures sit motionless.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "m-062"
+ },
+ {
+  "id": "m-062",
+  "title": "The fire draws near",
+  "text": "The fire came closer and the motionless figures proved to be the frozen bodies of travellers who tried to warm themselves. All have been dead for weeks.",
+  "morale": -2,
+  "supplies": 0,
+  "coinsSS": 3,
+  "only": true
+ },
+ {
+  "id": "m-063",
+  "title": "Snowstorm",
+  "text": "A snowstorm howled all night and nobody left the shelter. In the morning the world was white and the silence oppressive.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-064",
+  "title": "Mountain ravens",
+  "text": "Great mountain ravens watched the camp from the rocks. Every now and then one called out as if counting.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-065",
+  "title": "The Dwarf outpost",
+  "text": "A Dwarf outpost stands at the pass. The guards ask the purpose of the journey but the crew has a good answer.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -2
+ },
+ {
+  "id": "m-066",
+  "title": "The cold bath",
+  "text": "One follower slipped and fell into a mountain lake. His scream rang across the whole valley.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-067",
+  "title": "The crevasse",
+  "text": "The crew came upon a crevasse not on the map. It had to be bypassed losing half a day.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-068",
+  "title": "Fire in the cave",
+  "text": "A great fire was lit in the cave that seemed to burn without end. The crew slept warm but uneasily.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-069",
+  "title": "Whistle over the pass",
+  "text": "Wind whistled over the pass so shrilly it seemed someone was calling. Several followers stopped their ears.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-070",
+  "title": "Dwarf song",
+  "text": "From afar came a grim Dwarf song played on horns. The crew sat without a word and the song lasted till dawn.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-071",
+  "title": "Frozen waterfalls",
+  "text": "A waterfall froze into a sculpted column of ice. The crew admired its beauty and someone chipped off a piece for a drink.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-072",
+  "title": "The stone hut",
+  "text": "A simple hut with a hearth and shelf was hewn in the rock. Someone lived here once and left everything in order.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-073",
+  "title": "Shooting star",
+  "text": "A shooting star crossed the sky lighting up the peaks. Everyone fell silent and some made wishes.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-074",
+  "title": "Sheep bells",
+  "text": "From the valley came the jingling of sheep bells. The crew watched shepherds drive the flock in for the night.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-075",
+  "title": "River in the gorge",
+  "text": "The river roared in the gorge so loud that conversation was impossible. The crew communicated by gestures.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-076",
+  "title": "Mysterious lights",
+  "text": "Lights danced on the mountain slope drifting up and down. Nobody went to check.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-077",
+  "title": "Frost and silence",
+  "text": "The night was so frosty trees cracked from within. Every crack sounded like a shot.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-078",
+  "title": "The wounded stag",
+  "text": "A wounded stag rolled from a rock and fell right beside the camp. The crew made a feast of it.",
+  "morale": 1,
+  "supplies": 4,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-079",
+  "title": "The travelling trader",
+  "text": "A trader with a mule full of wares stopped at the camp. The crew bought salt and dried meat at a good price.",
+  "morale": 0,
+  "supplies": 3,
+  "coinsSS": -2
+ },
+ {
+  "id": "m-080",
+  "title": "The runaway miner",
+  "text": "A miner fleeing a count's overseer begged shelter. The crew gave him bread and showed the way over the pass.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-081",
+  "title": "The rats' den",
+  "text": "A huge den of rats was found in the cave. The crew backed away not daring to examine it closer.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-082",
+  "title": "The stone house",
+  "text": "A ruined stone house stood on the slope. The roof had fallen but the walls held giving shelter from the wind.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-083",
+  "title": "The goat's trail",
+  "text": "The crew followed a mountain goat's trail to a remote ledge where they found a few coloured stones. Not valuable but beautiful.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "m-084",
+  "title": "Explosion in the distance",
+  "text": "Somewhere in the mountains an explosion thundered and smoke rose over the slope. Dwarf sappers had their business.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-085",
+  "title": "The old miner",
+  "text": "A grey miner with a pickaxe told of collapsed tunnels beneath the mountain. His words sounded like a warning.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-086",
+  "title": "Thick fog",
+  "text": "Fog fell suddenly and the crew had to tie themselves with ropes so as not to get lost. Movement was slow.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-087",
+  "title": "Waist-deep snow",
+  "text": "The snow reached the waist and every step took effort. They reached camp exhausted.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-088",
+  "title": "The ice crown",
+  "text": "The summit was covered with an ice crown and the sun lit it orange. Everyone looked in awe.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-089",
+  "title": "The white fox",
+  "text": "A white fox slipped across the snow like a ghost and vanished. Nobody was sure they saw it.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-090",
+  "title": "The broken cross",
+  "text": "A broken cross with names of the dead stood by the path. The crew fixed a fresh piece of wood to it.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": -1
+ },
+ {
+  "id": "m-091",
+  "title": "The cave bear",
+  "text": "A bear came out of its den and heads for the camp, angry after hibernation. If nobody stops it someone will die.",
+  "morale": -1,
+  "supplies": -2,
+  "coinsSS": 0,
+  "role": "bodyguard",
+  "okText": "The bodyguard stood before the bear with a shield and bellowed with all his strength. The beast hesitated and withdrew. Trinkets were found in the den.",
+  "ok": {
+   "morale": 1,
+   "supplies": 4,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "m-092",
+  "title": "The falling shard",
+  "text": "A huge shard of rock falls towards the camp. If nobody stops it it will crush the tents.",
+  "morale": -1,
+  "supplies": -2,
+  "coinsSS": 0,
+  "role": "bodyguard",
+  "okText": "The bodyguard braced the rock with his shoulder and held it for a few seconds, enough for everyone to escape. Nobody was hurt.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "m-093",
+  "title": "Goblin ambush",
+  "text": "Goblins planned an ambush on a narrow path. The crew is due to pass that way tomorrow.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "The shadow got ahead of the crew, detected the ambush and eliminated the sentries. The crew passed unhindered and took loot from the camp.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "m-094",
+  "title": "The mountain thief",
+  "text": "Someone steals from the crates every night. Half a sack of flour is already gone.",
+  "morale": -1,
+  "supplies": -2,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "The shadow kept watch in the gloom and caught the thief: a hungry mountain fox. Instead of killing it he fed it and gained a warning companion.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "m-095",
+  "title": "Eagles in the sky",
+  "text": "Eagles circle over the crew clearly preparing to attack. The sentries are anxious.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "The marksman shot down two eagles swiftly, the rest fled. The crew had roast meat and feathers for arrows.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "m-096",
+  "title": "The stranded ibex",
+  "text": "A mountain ibex with enormous horns is stuck on a ledge above the camp. It's out of reach without a precise shot.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "The marksman hit the ibex in the heart with an arrow from a great distance. The hide and horns were worth a few coins.",
+  "ok": {
+   "morale": 1,
+   "supplies": 4,
+   "coinsSS": 2
+  }
+ },
+ {
+  "id": "m-097",
+  "title": "The miners' quarrel",
+  "text": "Two miners quarrelled over a vein of ore. If nobody separates them there'll be bloodshed.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "The provocateur persuaded both that the quarrel is a matter of the noble craft and proposed a contest of best finds. Both agreed and paid for the arbitration.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "m-098",
+  "title": "The suspicious pilgrim",
+  "text": "A pilgrim with a staff and thick cloak pays too much attention to your things. Either a spy or a thief.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "The provocateur invited him to talk and after an hour the pilgrim confessed he's a customs agent. The crew offered him a gift for silence.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "m-099",
+  "title": "Strange nuggets",
+  "text": "Strange black nuggets lie in the stream, heavy and cold. Nobody knows what they are.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "The scavenger examined the nuggets and recognised a rare ore. The crew sold it to the Dwarfs for a good price.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "m-100",
+  "title": "Rusty armours",
+  "text": "Rusty armours of ancient warriors lie in a cave. They're old but a few pieces can be repaired.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "The scavenger mended a few pieces and sold them to a smith. The profit was considerable and the remaining pieces decorated the camp.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 8
+  }
+ },
+ {
+  "id": "m-101",
+  "title": "Smuggling over the ridge",
+  "text": "Goods must be carried over the ridge but the road is narrow and slippery. The mules risk falling.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "The carter led the mules along a trail known only to him, blindfolding them. All arrived safely and the pay was generous.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "m-102",
+  "title": "The overturned wagon",
+  "text": "A wagon with ore overturned on a steep slope and the goods lie scattered. The owners beg for help.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "The carter reloaded the wagon, fixed the wheel and led it to the trail. The owners paid in ore.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "m-103",
+  "title": "The Dwarf dam",
+  "text": "Dwarfs built a dam that cuts off water to nearby villages. The villagers ask for help.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "The arsonist mined the dam and blew it so water flowed to the villages. The villagers paid in food and coins.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "m-104",
+  "title": "The falling boulder",
+  "text": "A huge boulder hangs over the path to a mine threatening collapse. Someone could make use of it.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "The arsonist laid a charge so the boulder fell at the right moment onto a patrol. The crew gathered loot without losses of their own.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "m-105",
+  "title": "The companion's disappearance",
+  "text": "One of the followers vanished in the night leaving only tracks in the snow. He must be found before he freezes.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "The scout followed the trail and found the companion in a cave dizzy with his foot in a trap. The rescued shared his find.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "m-106",
+  "title": "The shortcut",
+  "text": "The crew needs a shortcut across the mountains because soldiers approach from the west. The road must be safe and fast.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "The scout led the crew along a hidden path nobody knew of. They lost the soldiers and found a good spot for camp on the way.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "m-107",
+  "title": "Stolen ore",
+  "text": "Someone offers the crew bars of ore stolen from a mine. It looks like an opportunity but risky.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -3,
+  "role": "fixer",
+  "okText": "The fence checked the origin, contacted a dealer from another town and resold at a large profit. Everyone got richer.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 9
+  }
+ },
+ {
+  "id": "m-108",
+  "title": "The forged document",
+  "text": "A wanderer offers a document with a Dwarf crest said to open roads. It looks authentic.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -2,
+  "role": "fixer",
+  "okText": "The fence examined the seal, recognised a forgery and sold it to someone who needed it. He profited and offended nobody.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "m-109",
+  "title": "The bear wound",
+  "text": "One follower has a deep wound from bear claws. He bleeds and pales.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "The healer stitched the wound, washed it with a decoction and wrapped it in herbs. The patient survived and expressed gratitude by offering his only valuables.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "m-110",
+  "title": "Winter melancholy",
+  "text": "Part of the crew sinks into a grim mood seeing only white and rock. They speak of hopelessness.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "The healer brewed a tea of odd herbs and told a colourful tale of warm summer. Spirits improved and laughter returned.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "m-111",
+  "title": "Duel with a Dwarf",
+  "text": "A Dwarf challenged your men to an axe duel. If you refuse the offended Dwarf pride will be spoken of for ages.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "duelist",
+  "okText": "The duellist agreed to a cudgel duel and beat the Dwarf in the first round then bowed and offered him ale. The Dwarf accepted.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "m-112",
+  "title": "The count on the mountain path",
+  "text": "A count with a retinue stopped on a narrow path and demands right of way. The crew doesn't want to yield.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "duelist",
+  "okText": "The duellist stepped forward and courteously proposed a duel of words. The count lost gracefully and left a purse.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "m-113",
+  "title": "The lost dog",
+  "text": "A large dog in a leather collar wandered into camp with an injured paw. He looks like a prized sheepdog.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0,
+  "next": "m-114"
+ },
+ {
+  "id": "m-114",
+  "title": "The shepherds arrive",
+  "text": "After a few days shepherds come looking for the dog. They thank the crew and reward it with a few cheeses and coins.",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": 3,
+  "only": true
+ },
+ {
+  "id": "m-115",
+  "title": "The odd cave sound",
+  "text": "An irregular knocking comes from a cave as if someone hammered in the rock. Nobody knows who.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "m-116"
+ },
+ {
+  "id": "m-116",
+  "title": "The smith in the rock",
+  "text": "It turns out to be a hidden Dwarf making valuable items. He proposes trade and asks for discretion.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 7,
+  "only": true
+ },
+ {
+  "id": "m-117",
+  "title": "The child in the snow",
+  "text": "A child wrapped in a blanket was found in the snow by the path. Chilled but alive.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0,
+  "next": "m-118"
+ },
+ {
+  "id": "m-118",
+  "title": "The child's parents",
+  "text": "The child's parents, highlanders, came for it and wept for joy. They gave all they had and promised to hide the crew from the army.",
+  "morale": 2,
+  "supplies": 2,
+  "coinsSS": 2,
+  "only": true
+ },
+ {
+  "id": "m-119",
+  "title": "The smashed statue",
+  "text": "A statue of a Dwarf was smashed with a hammer. Fragments lie about and fresh marks show on the plinth.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "m-120"
+ },
+ {
+  "id": "m-120",
+  "title": "The Dwarf vendetta",
+  "text": "A group of Dwarfs hunts those guilty of smashing the statue. If the crew is mistaken for the culprits it'll go badly.",
+  "morale": -2,
+  "supplies": 0,
+  "coinsSS": -2,
+  "only": true
+ },
+ {
+  "id": "m-121",
+  "title": "The foreign song",
+  "text": "From inside the mountain a low song rises, not human. The crew stands by the rock listening.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "m-122"
+ },
+ {
+  "id": "m-122",
+  "title": "The mine entrance",
+  "text": "The crew found a hidden entrance to an abandoned mine. Inside the smell of damp and old tools and a few chests.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": 7,
+  "only": true
+ },
+ {
+  "id": "m-123",
+  "title": "The pass in the clouds",
+  "text": "The crew stood above the clouds. Below lay a white carpet and above only sun and rock.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-124",
+  "title": "Cracking ice",
+  "text": "The ice on the lake cracked with a bang like cannon shots. The crew camped on the shore and didn't sleep till morning.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-125",
+  "title": "The viper",
+  "text": "A viper basked on a stone and hissed when someone approached. Everyone stepped back carefully.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-126",
+  "title": "Rock carvings",
+  "text": "Wind erosion carved shapes like human faces in the rocks. The crew looked with a shiver.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-127",
+  "title": "The small waterfall",
+  "text": "A waterfall murmured beside the camp and the water was icy and clear. Everyone filled their skins and washed their faces.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-128",
+  "title": "The forgotten camp",
+  "text": "The crew came upon a camp abandoned in haste: a kettle, a few blankets and still-warm ashes.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 2
+ },
+ {
+  "id": "m-129",
+  "title": "The bat cave",
+  "text": "Thousands of bats hung in the cave. The crew skirted it widely not wanting to startle them.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-130",
+  "title": "Winter sleep",
+  "text": "The crew fell asleep in a silence so deep that in the morning nobody remembered dreams. They rested perfectly.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-131",
+  "title": "Cries from the valleys",
+  "text": "From below came cries of people lost in the blizzard. The crew went to find them and led them to camp.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 2
+ },
+ {
+  "id": "m-132",
+  "title": "The summit",
+  "text": "The crew climbed to a summit from which the whole valley was visible. Everyone felt great and immortal.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-133",
+  "title": "Mountain locusts",
+  "text": "A cloud of insects flew over the valley. The crew watched them as wonders.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-134",
+  "title": "The Dwarf graveyard",
+  "text": "The crew came upon a Dwarf graveyard where every grave bore carved runes. Nobody dared touch anything.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-135",
+  "title": "The wanderer with a staff",
+  "text": "An old pilgrim with a staff crossed the pass and waved. They waved back.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-136",
+  "title": "Cloud of smoke",
+  "text": "A cloud of mine smoke rose over the valley. The crew knew a settlement was nearby.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "m-137",
+  "title": "Thundering echo",
+  "text": "One follower's shout came back as an echo several times. A game began and then someone ordered everyone quiet.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-138",
+  "title": "Fossils",
+  "text": "Fossils of strange creatures lay among the rocks. The scavenger gathered a few believing someone would buy them.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "m-139",
+  "title": "A fresh track",
+  "text": "A fresh bootprint was visible in the snow leading to the camp and away again. Someone watched us but took nothing.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-140",
+  "title": "Frost and sun",
+  "text": "The morning was frosty but sunny and hoarfrost glittered on every rock. The crew rose with new strength.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-141",
+  "title": "Eagle screams",
+  "text": "Eagles called to each other across the valley and the echo rolled along the slopes. Everyone looked up.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-142",
+  "title": "Stone steps",
+  "text": "Stone steps were carved into the rock leading to a narrow terrace. The crew slept there sheltered from the wind.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-143",
+  "title": "Vines in the cave",
+  "text": "In the depths of the cave vines grew as if sun once reached here. The crew looked at them in disbelief.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-144",
+  "title": "Fog and whispers",
+  "text": "Fog filled the pass and whispers sounded within. The crew halted and waited for it to clear.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-145",
+  "title": "Golden flowers",
+  "text": "Golden flowers grew among the rocks said to bring luck. The crew gathered a few.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "m-146",
+  "title": "The living stone",
+  "text": "A stone on the path moved and then went still again. Everyone stepped aside and walked on without looking back.",
+  "morale": -2,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-147",
+  "title": "Stone needles",
+  "text": "Rock spires stuck up like fingers. The crew camped between them sheltered from the wind.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-148",
+  "title": "White down",
+  "text": "Snow fell softly all night muffling every sound. By morning the world was immaculately white.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-149",
+  "title": "Good ale",
+  "text": "A wandering Dwarf treated the crew to ale worth a thousand crowns. Nobody complained there was nothing to eat with it.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-150",
+  "title": "The rock bastion",
+  "text": "The crew pitched camp on a hilltop with a view of every approach. They felt safe.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-151",
+  "title": "Stars",
+  "text": "The sky was so clear every star could be seen. Everyone lay on their backs looking up in silence.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-152",
+  "title": "The wandering bard",
+  "text": "A bard with a lute stopped for the night and played late. The crew sang along and the cold stopped mattering.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-153",
+  "title": "The enraged troll",
+  "text": "A troll came out of a cave and lumbers towards the camp swinging a club. If nobody stops him the camp will be crushed.",
+  "morale": -2,
+  "supplies": -2,
+  "coinsSS": 0,
+  "role": "bodyguard",
+  "okText": "The bodyguard stood before the troll and drew him into a trap where rocks fell. The troll died and treasure was found in the cave.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "m-154",
+  "title": "Crossing on ice",
+  "text": "An ice bridge leads over a chasm and the supplies are heavy. Somebody must carry them.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0,
+  "role": "bodyguard",
+  "okText": "The bodyguard carried all the crates on his own back one after another and lost not one.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "m-155",
+  "title": "The spy in camp",
+  "text": "A suspicious wanderer circles the camp gathering information. If he gets away he'll betray your position.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "The shadow tracked him in the night, knocked him out and searched his things. He found a map and payment from the enemy.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "m-156",
+  "title": "The slope and the shade",
+  "text": "A figure in a dark cloak appeared on the slope watching the camp. It hasn't moved in hours.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "The shadow climbed the rocks, came up from behind and found it was a statue in a cloak left by earlier travellers. The cloak held coins.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "m-157",
+  "title": "The eagle's temptation",
+  "text": "An eagle took a follower's cap and circles above the camp with it. Everyone laughs but the cap was valuable.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "The marksman hit the eagle so that it dropped the cap without being hurt. The cap returned to its owner.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 2
+  }
+ },
+ {
+  "id": "m-158",
+  "title": "The stone boar",
+  "text": "A great boar appeared on the slope destroying whatever it meets. It heads towards the camp.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "The marksman killed the boar with one shot to the forehead. There was so much meat it lasted a week.",
+  "ok": {
+   "morale": 1,
+   "supplies": 4,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "m-159",
+  "title": "The noble caravan",
+  "text": "A noble caravan stopped on the pass and seeks entertainment. Everyone is bored.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "The provocateur organised a mule race that amused the whole caravan. The nobles paid generously and promised a good word with the count.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "m-160",
+  "title": "Rumours in the settlement",
+  "text": "A rumour circulates in a mountain settlement that the crew robs travellers. The locals look askance.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "The provocateur spread contrary rumours: that another crew prowls the area. The locals believed it and the crew got supplies as a reward.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "m-161",
+  "title": "The wagon on the rocks",
+  "text": "A merchant's wagon crashed on the rocks and the goods scattered. Someone resourceful might profit.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "The scavenger gathered everything useful and packed it into sacks. He returned with supplies and coins.",
+  "ok": {
+   "morale": 1,
+   "supplies": 3,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "m-162",
+  "title": "The lost gear",
+  "text": "On the slope lies a climber's pack with equipment and ropes. The owner isn't to be seen.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "The scavenger went through the pack, took useful things and set the rest aside in case someone claimed it. The gains were decent.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "m-163",
+  "title": "Smuggling through snow",
+  "text": "Goods must reach the other side of the pass but snow buried the trail. An idea is needed.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "The carter made a sled of planks and dragged the goods over snow. The sale on the other side brought a large profit.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "m-164",
+  "title": "Mule in the abyss",
+  "text": "A mule with a valuable load slipped and hangs over the chasm on a rope. If it snaps the cargo is lost.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "The carter hauled the mule up by hand saving both animal and cargo. The owner paid generously.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "m-165",
+  "title": "The castle on the hill",
+  "text": "The count's castle stands on a hill and a treasure lies in its cellars. The wall can't be bypassed.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "The arsonist laid a charge under the wall at night and brought it down with a blast. In the confusion the crew took the treasure and fled.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 8
+  }
+ },
+ {
+  "id": "m-166",
+  "title": "The icy path",
+  "text": "The path to the mine is icy and dangerous. Someone must thaw it before merchants fall.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "The arsonist lit fires along the path and melted the ice. Merchants passed safely and paid for the effort.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "m-167",
+  "title": "The treasure map",
+  "text": "A map with a cross was found in an old hut. The marks on it look genuine.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "The scout followed the map and reached a cave where he found a chest of coins. The crew grew richer.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 8
+  }
+ },
+ {
+  "id": "m-168",
+  "title": "The lost caravan",
+  "text": "A merchant caravan got lost in a blizzard and wanders the slope. It seeks a guide.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "The scout found the caravan by its tracks and led it to the trail. The merchants gave part of their goods in thanks.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "m-169",
+  "title": "The false bar",
+  "text": "A dealer offers a gold bar at a reasonable price. On closer inspection it looks suspicious.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -4,
+  "role": "fixer",
+  "okText": "The fence recognised the forgery and demanded a fair price or return. The dealer paid compensation and fled.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "m-170",
+  "title": "Hide buying",
+  "text": "A hide dealer buys anything the crew has but offers a very low price. The crew must haggle.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -1,
+  "role": "fixer",
+  "okText": "The fence haggled for an hour pointing out flaws in the competition's goods and extracted a price twice the initial one.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "m-171",
+  "title": "The sharp cough",
+  "text": "Several followers have coughed for days and their breaths wheeze. If it worsens they won't get far.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "The healer brewed a herbal tea with honey and onion and by morning everyone breathed lighter. A few paid for the recipe.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 2
+  }
+ },
+ {
+  "id": "m-172",
+  "title": "Superstition of the mountain",
+  "text": "The crew ended up in a place said by legend to be cursed. Half refuse to continue.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "The healer performed a cleansing ritual with salt and herbs and then pointed out a safe path. The crew moved on.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "m-173",
+  "title": "The count's guard",
+  "text": "A count's guard stopped the crew at the pass demanding toll. He's stubborn and proud.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -3,
+  "role": "duelist",
+  "okText": "The duellist challenged the guard to a duel of words and fencing, beat him in a few moves and was let through free.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "m-174",
+  "title": "The path of honour",
+  "text": "Two knights block a narrow path demanding an oath of loyalty from the crew. Refusal is an insult.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "duelist",
+  "okText": "The duellist proposed a joint tournament, won against both and was declared a worthy friend. The knights gave a prize.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "m-175",
+  "title": "The strange plaque",
+  "text": "Someone placed a plaque on the rock with a few words in an unknown alphabet. It seems new.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "m-176"
+ },
+ {
+  "id": "m-176",
+  "title": "The translation",
+  "text": "A wandering scholar translated the plaque: it points to a hidden treasure. He asks to join and offers a share.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 5,
+  "only": true
+ },
+ {
+  "id": "m-177",
+  "title": "The chest on the slope",
+  "text": "A chest hung on a rope over a chasm was found on the slope. Nobody knows how it got there.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "m-178"
+ },
+ {
+  "id": "m-178",
+  "title": "What was in the chest",
+  "text": "The chest, once recovered, held supplies and a letter requesting the finder: \"Deliver my message to Karaz-a-Karak.\" Payment was promised.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 4,
+  "only": true
+ },
+ {
+  "id": "m-179",
+  "title": "The solitary ibex",
+  "text": "An ibex with ragged horns wanders around the camp without fear. It looks at you calmly.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "m-180"
+ },
+ {
+  "id": "m-180",
+  "title": "The ibex leads",
+  "text": "The ibex led the crew along a path among rocks to a hidden valley with lush pastures and a spring. Rest there was wonderful.",
+  "morale": 2,
+  "supplies": 3,
+  "coinsSS": 0,
+  "only": true
+ },
+ {
+  "id": "m-181",
+  "title": "The stream of bodies",
+  "text": "The bodies of several animals are frozen into a frozen stream. All look as if someone arranged them.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "m-182"
+ },
+ {
+  "id": "m-182",
+  "title": "The ring on the ice",
+  "text": "When the ice melted a ring of stones with a strange symbol was exposed. The crew decided not to stay the night.",
+  "morale": -2,
+  "supplies": 0,
+  "coinsSS": 0,
+  "only": true
+ },
+ {
+  "id": "m-183",
+  "title": "Camp in a cave",
+  "text": "The crew lit a fire in a cave and the smoke escaped through a crack in the roof. It was warm and dry.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-184",
+  "title": "The settlement's folk",
+  "text": "Highlanders from a nearby settlement came to the camp with gifts. Reluctantly but politely.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-185",
+  "title": "The broken mirror",
+  "text": "One follower smashed a small mirror and for the rest of the day walked pale as a wall. He decided misfortune awaited him.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-186",
+  "title": "Thundering ice",
+  "text": "A glacier boomed in the distance and the ground shook. Everyone froze waiting for more.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-187",
+  "title": "Dwarf ale",
+  "text": "A Dwarf caravan sold the crew a few barrels of dark ale at a bargain price. Everyone was pleased.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": -2
+ },
+ {
+  "id": "m-188",
+  "title": "Alpine roses",
+  "text": "Alpine roses bloomed on the slope though snow still lay. The crew took it for a good sign.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-189",
+  "title": "The prospectors",
+  "text": "Two treasure hunters searched for ore in the stream. The crew watched from hiding and decided not to disturb them.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "m-190",
+  "title": "The crumbling ledge",
+  "text": "The rock ledge on which the camp stood began to crumble. Everyone moved further on losing part of their stores.",
+  "morale": -1,
+  "supplies": -2,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-191",
+  "title": "Snow avalanche",
+  "text": "An avalanche rolled past the camp by a few metres. Everyone was pale and silent.",
+  "morale": -2,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-192",
+  "title": "Spooked mules",
+  "text": "Mules tore loose and ran into the mountains. The crew chased them for half a day.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-193",
+  "title": "Stone scrap",
+  "text": "The crew found an old Dwarf cart on rails. It was rusty but the wheels still turned.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "m-194",
+  "title": "Smoke from a high chimney",
+  "text": "Smoke rose from a high rock as if someone lived there. Nobody dared check.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-195",
+  "title": "The crystal grotto",
+  "text": "Crystals were found in a grotto that shone in torchlight like a thousand candles. The crew chipped off a few.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "m-196",
+  "title": "The wronged merchant",
+  "text": "A merchant whose wagon had been robbed wandered the pass asking for shelter. The crew gave him a blanket and a loaf.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-197",
+  "title": "Barking dogs",
+  "text": "Sheepdogs barked in the distance and the barking carried across the whole valley. The crew rose listening.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-198",
+  "title": "Fresh bread",
+  "text": "A highlander family offered the crew fresh bread from a smoking oven. Nobody asked who you were.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-199",
+  "title": "The hanged goat",
+  "text": "A dead goat hung from a tree with ritual marks beneath. The crew didn't pitch camp nearby.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-200",
+  "title": "The frozen rider",
+  "text": "On the slope a frozen rider sat on a horse his face covered in rime. The crew buried him and took his horse.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 5
+ },
+ {
+  "id": "m-201",
+  "title": "First rays",
+  "text": "The first rays of the sun reached the valley and warmed the camp. Everyone woke with smiles.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-202",
+  "title": "Red snow",
+  "text": "The snow around the camp turned red as if covered in dust. The crew ate nothing that touched it.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-203",
+  "title": "The mountain shrine",
+  "text": "A small stone shrine stood on the summit with fresh flowers beside it. The crew added theirs.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": -1
+ },
+ {
+  "id": "m-204",
+  "title": "The broken knife",
+  "text": "In a crack of rock stuck a broken knife of strange shape. The crew looked at it but nobody pulled it out.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-205",
+  "title": "The woman in black",
+  "text": "A woman in a black shawl crossed the pass not answering greetings. A smell of herbs remained in the air.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-206",
+  "title": "Blood on the stone",
+  "text": "Fresh blood lay on a stone by the path with a piece of torn clothing beside it. The crew moved on more carefully.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-207",
+  "title": "The hot spring",
+  "text": "A hot spring steamed in the rock. The crew bathed and rested like never before.",
+  "morale": 2,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-208",
+  "title": "Snow desert",
+  "text": "Endless white stretched in all directions. Everyone felt tiny and lost.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-209",
+  "title": "The timber cabin",
+  "text": "A small timber cabin with a fireplace and a stock of firewood waited for stray travellers. The crew ate a hot meal.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-210",
+  "title": "The mountain smith",
+  "text": "A mountain smith sharpened the crew's knives and mended equipment for a token fee. He was talkative and merry.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": -1
+ },
+ {
+  "id": "m-211",
+  "title": "Night walk",
+  "text": "The crew walked at night because by day the wind was too cold. The moon shone bright and the road was visible.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-212",
+  "title": "Twisted trees",
+  "text": "Trees on the slope grew twisted by the wind as if someone bent them. The crew walked among them in silence.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-213",
+  "title": "The stray",
+  "text": "A skinny chamois wandered into the camp and stayed. The crew named her Hilda.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-214",
+  "title": "Song of the wind",
+  "text": "The wind played a tune like singing in the rock fissures. The crew sat in silence and listened.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-215",
+  "title": "The miner's treasure",
+  "text": "A dying old miner showed the crew a hiding place with his savings. A box held coins and a simple watch.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 6
+ },
+ {
+  "id": "m-216",
+  "title": "Pickaxe knocks",
+  "text": "From deep in the mountain came the knocking of picks, steady and unsettling. Nobody knew who worked there.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-217",
+  "title": "The wanderer from Nuln",
+  "text": "A wandering engineer from Nuln measured the mountains with his instruments. The crew watched with curiosity and he told of new roads.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "m-218",
+  "title": "The broken bridge",
+  "text": "The rope bridge over a chasm was broken. The crew had to find a detour losing a whole day.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-219",
+  "title": "An unusual track",
+  "text": "Tracks of an unknown animal walking on hind legs were visible in the snow. The crew went in the opposite direction.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-220",
+  "title": "The abandoned settlement",
+  "text": "The village below the peak stood empty, doors ajar and coals still glowing in the stoves. The crew didn't stay the night.",
+  "morale": -2,
+  "supplies": 1,
+  "coinsSS": 2
+ },
+ {
+  "id": "m-221",
+  "title": "A look from above",
+  "text": "A great bird sat atop a rock and looked down. The crew decided not to go that way.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-222",
+  "title": "The wandering philosopher",
+  "text": "A grey bearded man in a cloak held forth on the meaning of life by the fire. Nobody understood him but everyone nodded.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-223",
+  "title": "The mountain tarn",
+  "text": "A crystal tarn lay in a hollow ringed by rocks. The crew washed and drank their fill.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-224",
+  "title": "Falling pebbles",
+  "text": "Small pebbles fell above the camp as if someone walked on the rocks. By morning there were no tracks.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-225",
+  "title": "The old statue",
+  "text": "A statue of a hero with an axe stood in the middle of a disused road. The crew paid it respect and moved on.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-226",
+  "title": "The searched cave",
+  "text": "The crew found a cave someone had searched before them. Nothing valuable was left but the roof was dry.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-227",
+  "title": "A sharp whistle",
+  "text": "A sharp whistle cut the air and then an impact on the rock right beside. Someone shot a sling or crossbow.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-228",
+  "title": "Escaped labourers",
+  "text": "A group of escaped mine labourers begged food. The crew shared what it had.",
+  "morale": 1,
+  "supplies": -2,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-229",
+  "title": "The avalanche's visit",
+  "text": "A small avalanche buried part of the camp. Everyone dug themselves out and laughed nervously.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-230",
+  "title": "The Dwarf road",
+  "text": "The crew found a Dwarf road of even stones with carefully carved runes. They walked it with respect.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-231",
+  "title": "Eagles fighting",
+  "text": "Two eagles fought in the air above the camp and feathers fell like snow. The crew watched in awe.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-232",
+  "title": "The stone capsule",
+  "text": "A stone capsule with a sealed letter lay in a crevice. The crew took it out and read: \"For whoever finds it.\"",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "m-233",
+  "title": "Hypothermia",
+  "text": "One follower chilled so deep he lost feeling in his fingers. The crew warmed him by the fire and gave a hot drink.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-234",
+  "title": "The foothill village",
+  "text": "The village at the foot of the mountain was lit with fires and singing came from the inn. The crew counted another night won.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-235",
+  "title": "Smoke and Dwarfs",
+  "text": "Dwarf smiths lit furnaces on the slope and smoke rose like fog. The noise of hammers lasted all night.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-236",
+  "title": "A suspicious mist",
+  "text": "A greenish mist rose from a cave smelling of rot. The crew backed off a hundred paces.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-237",
+  "title": "The black stone",
+  "text": "A black stone stuck out of the slope cold as ice even in full sun. Nobody touched it.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-238",
+  "title": "Frozen horses",
+  "text": "The crew's horses stood stiff and steamed in the frosty air. In the morning they had to be warmed for an hour.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-239",
+  "title": "The stranger in the cabin",
+  "text": "In a cabin on the slope lives a lone old man who doesn't open the door. Smoke rises from the chimney day and night.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "m-240"
+ },
+ {
+  "id": "m-240",
+  "title": "The hermit opens",
+  "text": "After a few days the hermit came out of the cabin and invited the crew in. It turned out he needed help fixing the roof and pays in coins.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 4,
+  "only": true
+ },
+ {
+  "id": "m-241",
+  "title": "The howling wind",
+  "text": "At night a howling was heard that seemed to come from inside the mountain. Everyone covered their ears.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "m-242"
+ },
+ {
+  "id": "m-242",
+  "title": "The source of the howl",
+  "text": "The crew found a fissure from which the wind blew. Inside lay skeletons and a few old coins.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 5,
+  "only": true
+ },
+ {
+  "id": "m-243",
+  "title": "The winged shadow",
+  "text": "A great shadow flew over the camp blotting the moon. Everyone froze.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "m-244"
+ },
+ {
+  "id": "m-244",
+  "title": "The giant's nest",
+  "text": "The crew found the nest of an enormous bird with sheep bones and... a gold ring. The bird wasn't guarding it but could return any moment.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 6,
+  "only": true
+ },
+ {
+  "id": "m-245",
+  "title": "The frozen treasure",
+  "text": "A glittering object is visible in a block of ice. The ice is thick and the object looks valuable.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "m-246"
+ },
+ {
+  "id": "m-246",
+  "title": "The ice melts",
+  "text": "After a few days the sun melted the ice and exposed a golden sculpture. Someone must take it before others do.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 8,
+  "only": true
+ },
+ {
+  "id": "m-247",
+  "title": "The smell of snow",
+  "text": "The air smelled of clean snow. Everyone breathed deeply and even the most tired smiled.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-248",
+  "title": "The chamois and kids",
+  "text": "A chamois with two kids grazed on the slope. The crew watched them leap over rocks with a dancer's lightness.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-249",
+  "title": "The stranger in a cloak",
+  "text": "A stranger in a fur cloak walked through the camp without a word and vanished in the blizzard. He left a gold coin by the fire.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 5
+ },
+ {
+  "id": "m-250",
+  "title": "A knock on the rock",
+  "text": "Someone or something knocked rhythmically on the rock above the camp, three times, then fell silent. Nobody slept till morning.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-251",
+  "title": "The falling beam",
+  "text": "A beam from an old mine fell from a ledge and shattered right by the camp. Everyone moved away.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-252",
+  "title": "Ruined tower",
+  "text": "The ruins of an old watchtower stood above the pass. The crew examined them and found nothing valuable but the place was dry.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-253",
+  "title": "Temperature drop",
+  "text": "The temperature fell so sharply the water in the skins froze within minutes. Everyone shivered by the fire.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-254",
+  "title": "The friendly highlander",
+  "text": "A highlander with a snowy beard invited the crew to his cabin and told of paths that aren't on maps. Everyone listened closely.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-255",
+  "title": "The Bretonnian traveller",
+  "text": "A traveller from Bretonnia stopped for the night and told of knights and ladies. He was amusing and very hungry.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-256",
+  "title": "Carrion in the snow",
+  "text": "The carcass of a mountain chamois lay in the snow untouched by predators. The crew skirted it not knowing what killed it.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-257",
+  "title": "The buried shrine",
+  "text": "The roof of a small shrine stuck out of a drift. The crew dug out the entrance and found dry wood and a candle stub inside.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-258",
+  "title": "Wind in the crevices",
+  "text": "The wind whistled in the rock crevices so loud conversation was impossible. Nobody slept peacefully.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-259",
+  "title": "The lost wanderer",
+  "text": "A wanderer with frostbitten fingers stumbled into the camp barely alive. The crew warmed and fed him.",
+  "morale": 1,
+  "supplies": -2,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-260",
+  "title": "The starved wolf",
+  "text": "A gaunt wolf watched the camp from a few paces. A piece of meat was thrown to it and it left without a word.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-261",
+  "title": "Frost on beards",
+  "text": "In the morning everyone had frost on beards and eyebrows. They laughed at themselves but nobody wanted to leave bed.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-262",
+  "title": "The resting place",
+  "text": "On the pass lay an old stone tomb with Dwarf runes carved on it. The crew circled it respectfully.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-263",
+  "title": "A heavy night",
+  "text": "Cold and wind gave no sleep and trees creaked like bones. By morning everyone had dark-ringed eyes.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-264",
+  "title": "The snow sculpture",
+  "text": "Someone carved a man-sized bear from the snow. The crew didn't know whether to laugh or fear.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-265",
+  "title": "Half a day in the tunnel",
+  "text": "The crew passed through a long tunnel cut in the rock. Inside it was quiet, dry and strangely warm.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-266",
+  "title": "Ill winds",
+  "text": "The wind changed direction and brought a smell of smoke and burning. The crew was uneasy but nothing happened.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-267",
+  "title": "The merchants' camp",
+  "text": "The merchants of a caravan let the crew settle by their fire. Gossip and a little food were exchanged.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-268",
+  "title": "The barking dog",
+  "text": "A stray dog barked at the crew from afar and then fled. Nobody knew where it came from.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-269",
+  "title": "Stone corridors",
+  "text": "The crew found old stone corridors hewn into the rock by unknown builders. The entrances were blocked but one led to a dry chamber.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "m-270",
+  "title": "The first star",
+  "text": "The first star twinkled above the peaks and the camp fell quiet. Someone began humming an old song.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-271",
+  "title": "Shepherds' children",
+  "text": "Shepherds' children played hide-and-seek on the slope. The crew watched from afar and noticed one looked a lot like a follower.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-272",
+  "title": "The wanderer without a shadow",
+  "text": "In the torchlight a wanderer who sat by the fire cast no shadow. The crew quietly withdrew.",
+  "morale": -2,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-273",
+  "title": "The falling avalanche",
+  "text": "An avalanche crashed from a distant peak with a roar and then silence settled. Everyone watched where the sound came from.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-274",
+  "title": "The mule train",
+  "text": "A long train of mules crossed the pass and the guide nodded in greeting. The crew returned the gesture.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-275",
+  "title": "The petrified forest",
+  "text": "The crew came upon an area covered in petrified trunks. The trees looked as if someone had stopped time.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-276",
+  "title": "The lost shawl",
+  "text": "A woman's shawl embroidered with beautiful patterns lay on a stone. The crew took it and waited but nobody claimed it.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "m-277",
+  "title": "Frost and joy",
+  "text": "The frost was so strong everyone jumped and clapped to warm up. It looked like a dance and the crew laughed till morning.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-278",
+  "title": "Rumbles from the depths",
+  "text": "Dull rumbles came from deep in the mountain as if something moved underground. The crew camped at the edge of the valley.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-279",
+  "title": "The shepherd's song",
+  "text": "From afar came a shepherd's song played on a horn. Everyone fell silent listening to the melody.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-280",
+  "title": "The buried wagon",
+  "text": "A merchant's wagon half buried lay beside the path. The crew dug it out and took a few things that survived.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": 3
+ },
+ {
+  "id": "m-281",
+  "title": "The lone cabin",
+  "text": "A lone cabin stood in a hollow with smoke rising from the chimney. The crew went round without disturbing the occupants.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-282",
+  "title": "Four crows",
+  "text": "Four crows sat on the rock edge and looked down. The crew backed off and chose another road.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-283",
+  "title": "Ice in the skins",
+  "text": "Ice in the skins melted slowly and nobody could drink. The crew had to melt it in a kettle.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-284",
+  "title": "Lanterns on the pass",
+  "text": "Someone placed lanterns on the pass that shone all night. The crew didn't know if it was a guide or a trap.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-285",
+  "title": "Two billy goats",
+  "text": "Two billy goats fought on a rock butting horns. The crew bet on which would win.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-286",
+  "title": "The pouch under the rock",
+  "text": "Someone hid a pouch with a few coins and a letter under a rock. The crew took the coins and left the letter.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "m-287",
+  "title": "Crumbling cliffs",
+  "text": "Cliffs above the trail crumbled in the night and by morning the trail was buried in stones. The crew laboriously cleared them.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-288",
+  "title": "Honeyed dawns",
+  "text": "An aurora lit the sky in green and pink. The crew watched not believing their eyes.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-289",
+  "title": "The wanderer with a lamp",
+  "text": "A lone wanderer with a lamp walked across the pass not responding to calls. The crew watched him vanish into the dark.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-290",
+  "title": "The sealed cave",
+  "text": "The cave mouth sealed behind one follower trapping him for hours. He was pulled out through a hole.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-291",
+  "title": "The little bell",
+  "text": "Somewhere in the mountains a sheep bell rang though there were no sheep. The crew decided not to seek the source.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-292",
+  "title": "Treasure in the stone",
+  "text": "One follower split a stone and found a glittering crystal inside. Not valuable but beautiful.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "m-293",
+  "title": "River of ice",
+  "text": "The crew crossed a frozen river that cracked underfoot. Everyone passed unscathed.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-294",
+  "title": "Sounds of the smith",
+  "text": "From afar came the sounds of smith's hammers, rhythmic and calm. The crew fell asleep to the rhythm.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-295",
+  "title": "The weary messenger",
+  "text": "A messenger in imperial colours stopped at the camp to rest. He said he carries important news but wouldn't say what.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-296",
+  "title": "Half a day in the mist",
+  "text": "The crew walked through mist holding hands. Fortunately nobody got lost.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-297",
+  "title": "The ghost of the shaft",
+  "text": "Moans came from a sealed mine shaft. The crew preferred not to check whether it was wind.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-298",
+  "title": "The snowdrift",
+  "text": "A great snowdrift blocked the trail and the crew had to dig it out. The work took half a day.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "m-299",
+  "title": "A handful of gold dust",
+  "text": "A handful of gold dust was found in one follower's pocket. Nobody knew where it came from.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "m-300",
+  "title": "The mysterious parcel",
+  "text": "Under a rock lay a parcel wrapped in leather with two coins and a note: \"For those in need.\" The crew thanked the unknown benefactor.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 2
+ }
+]

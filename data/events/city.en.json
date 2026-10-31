@@ -1,0 +1,2900 @@
+[
+ {
+  "id": "c-001",
+  "title": "A quiet night in the cellar",
+  "text": "Only one brewer's cart rumbled overhead. Everyone slept well despite the smell of damp.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-002",
+  "title": "Rats in the larder",
+  "text": "A swarm of rats got into the flour sacks. By the time they were chased off, a good share of the stores was gone.",
+  "morale": 0,
+  "supplies": -2,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-003",
+  "title": "A drunken brawl next door",
+  "text": "Two guild masters beat each other up over spirits in the next tenement. The watch came, but down the wrong alley.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-004",
+  "title": "A dropped purse",
+  "text": "A purse lay on the doorstep in the morning, lost by someone in a hurry. There's no name in it, only some silver.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 5
+ },
+ {
+  "id": "c-005",
+  "title": "Bells of Morr at midnight",
+  "text": "The chapel bells of Morr rang for no reason. Some of the crew didn't sleep until dawn.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-006",
+  "title": "A merchant without guards",
+  "text": "A drunk merchant lost his way in the alley and asked for the inn. No one touched him, but a few looked greedily.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-007",
+  "title": "Free bread",
+  "text": "To mark a holy day the baker handed out yesterday's loaf to anyone in the queue. The crew queued three times.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-008",
+  "title": "Smoke from the hearth",
+  "text": "The chimney drew badly and the whole den filled with smoke. By morning everyone was coughing and complaining of headaches.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-009",
+  "title": "Quarrel over a blanket",
+  "text": "Two followers argued over the last dry blanket. The chief ruled in Solomon's manner, taking the blanket himself.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-010",
+  "title": "The town crier",
+  "text": "A town crier shouted new taxes and wanted notices under the window. Some of the news was particularly interesting.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-011",
+  "title": "A strange flask",
+  "text": "Someone left a flask of cheap spirits on the sill with a note, \"To your health.\" Nobody owned up to it.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-012",
+  "title": "The cat on the roof",
+  "text": "A ginger cat crept onto the roof and chased pigeons all night. In the morning it laid one at the threshold like a gift.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-013",
+  "title": "The chimney sweep",
+  "text": "A chimney sweep came down the flue straight onto a follower's lap. They both shrieked until everyone woke.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-014",
+  "title": "Patrol under the window",
+  "text": "The watch passed under the window three times. The crew kept quiet, but more than one lost their nerve.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-015",
+  "title": "A late delivery",
+  "text": "The carter brought the ordered supplies only after dark and demanded a surcharge. It was paid, but without a smile.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": -2
+ },
+ {
+  "id": "c-016",
+  "title": "Singing from the inn",
+  "text": "From the inn across the street came old songs about Sigmar and the lasses of the Reikland. Some went to listen.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-017",
+  "title": "The night hawker",
+  "text": "At dawn a pickle seller stood at the door. He haggled fiercely but left with an empty basket.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": -1
+ },
+ {
+  "id": "c-018",
+  "title": "A priestess of Shallya",
+  "text": "A priestess of Shallya with a basket of herbs knocked for alms. She got some coppers and blessed everyone.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": -1
+ },
+ {
+  "id": "c-019",
+  "title": "Burning basket",
+  "text": "A basket of rubbish caught fire somewhere in the alley. People ran out with buckets while the crew quietly tidied up what it could.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "c-020",
+  "title": "A strange light in a window",
+  "text": "A greenish light flickered in the window opposite all night. Imagination or an alchemist, nobody wanted to guess.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-021",
+  "title": "Wedding in the tenement",
+  "text": "The whole tenement was celebrating a baker's lad's wedding. The crew got leftover cake and a few mugs of ale.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-022",
+  "title": "Night storm",
+  "text": "A storm flooded the alleys ankle-deep, but the den stayed dry and the rain drowned any traces.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-023",
+  "title": "A Witch-Hunter's handbill",
+  "text": "Someone slid a handbill under the door listing those suspected of heresy. Two of the names were familiar.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-024",
+  "title": "A suspicious neighbour",
+  "text": "The neighbour across the way has been staring at your door too much all week. He surely has some business, but what?",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-025",
+  "title": "Orphans singing",
+  "text": "Children from a Shallyan foundling home sang under the windows for bread. Nobody had the heart to shoo them away.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-026",
+  "title": "The grain merchant",
+  "text": "Grain has gone up in the city and the merchant who usually supplied you now wants more. You have to adapt.",
+  "morale": 0,
+  "supplies": -2,
+  "coinsSS": -3
+ },
+ {
+  "id": "c-027",
+  "title": "A pigeon with a letter",
+  "text": "A pigeon landed on the sill with a note on its leg. The letter wasn't for you, but it carried interesting information.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "c-028",
+  "title": "The old washerwoman's curse",
+  "text": "The washerwoman in the yard loudly cursed the whole crew because someone trampled her laundry. Nobody knows if it means anything.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-029",
+  "title": "Fire in the next street",
+  "text": "A fire broke out nearby. The city watch ran off that way, leaving the streets under your control.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "c-030",
+  "title": "A wrecked wagon",
+  "text": "A cart of barrels overturned outside your door. A few barrels rolled into the cellar, nobody knows how.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-031",
+  "title": "An amateur thief",
+  "text": "A lad from the next street tried to rob you. Caught, he burst into tears and told you all about his own affairs.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "c-032",
+  "title": "A drunk bruiser at the door",
+  "text": "A drunk bruiser from the city guard pounds on the door demanding a \"tenants' tax.\" Without a proper response it'll turn into trouble.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -3,
+  "role": "bodyguard",
+  "okText": "The bodyguard stepped out, gave him one look and the drab left, leaving his own coins behind.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 2
+  }
+ },
+ {
+  "id": "c-033",
+  "title": "The guild collector",
+  "text": "A guild debt collector came for the overdue cellar rent, with two burly henchmen.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -4,
+  "role": "bodyguard",
+  "okText": "The bodyguard stood in the doorway and politely explained that nobody was home today.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-034",
+  "title": "A shadow on your tail",
+  "text": "Someone has been following crew members for several evenings. He must be lost or caught before he reveals the hideout.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "The shadow slipped behind the tracker, put a knife to his ribs and took everything he had on him.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "c-035",
+  "title": "A guild thief",
+  "text": "The thieves' guild has made it known that you work on their patch. Their man appeared on the roof.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -3,
+  "role": "shadow",
+  "okText": "The shadow caught him in the dark and exchanged a few well-chosen words about territories.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-036",
+  "title": "Carrier pigeons",
+  "text": "Carrier pigeons with other people's messages have started landing on your roof. Someone needs them badly.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "The marksman brought down a few pigeons with a flick of his sling and found interesting messages in the leg pouches.",
+  "ok": {
+   "morale": 0,
+   "supplies": 1,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "c-037",
+  "title": "A rooftop archer",
+  "text": "Someone on the opposite roof is watching your windows. Whoever it is, he means no good.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "The marksman spotted him and put an arrow in the chimney by his head. The rooftop guest made a swift retreat.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-038",
+  "title": "Riot in the square",
+  "text": "A crowd is gathering in a nearby square because the butchers' guild has quarrelled with the bakers'. No one is hurrying to calm it.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "The provocateur added fuel to the fire and while everyone went for each other, the followers had time to take what they could from the stalls.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "c-039",
+  "title": "The drunken lottery",
+  "text": "The inn next door is running an illegal lottery. If the right man wins, there's good money to be made.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -2,
+  "role": "provocateur",
+  "okText": "The provocateur steered things so that someone from the crew won, and the innkeeper never worked out why.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "c-040",
+  "title": "The broken stove",
+  "text": "The den's stove went out and the chimney collapsed. Without a good hand the crew will sleep in the cold.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "The scavenger put it all back together within an hour from salvaged bricks and old tin, even finding two old bars.",
+  "ok": {
+   "morale": 1,
+   "supplies": 1,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-041",
+  "title": "The wounded in the alley",
+  "text": "Two wounded men lie in the next alley, one in a very bad way. Somebody must tend them before they bleed out on the doorstep.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "The scavenger dressed both wounds and was rewarded with a purse from one of them and a promise of a favour.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "c-042",
+  "title": "The night supplier",
+  "text": "A river smuggler asks for a place to stash a few barrels for a night. Refusing is risky, and so is agreeing.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "The carter knew the smuggler and how to come out ahead: the barrels rested in the cellar and a decent fee was paid for hiding them.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 8
+  }
+ },
+ {
+  "id": "c-043",
+  "title": "The stranded wagon",
+  "text": "Someone's wagon, with two wheels broken and a full load, got stuck outside your window. Someone will be looking for it in the morning.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "The carter fixed the wheels, hauled the wagon round the corner and took what he could before the owner came.",
+  "ok": {
+   "morale": 0,
+   "supplies": 3,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "c-044",
+  "title": "Crates on the corner",
+  "text": "Someone left crates with flammable contents outside the tenement. One spark and half the street will go up.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "The arsonist recognised the contents and carefully moved the crates to a safe place, collecting a stock of oil and pitch on the way.",
+  "ok": {
+   "morale": 0,
+   "supplies": 2,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "c-045",
+  "title": "The shut gate",
+  "text": "The merchants' guild has locked the gate to the granary. Someone in the crew wants in, but the lock is solid.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "The arsonist took off the hinges without a sound. The granary swung open and they carried off a week's supplies.",
+  "ok": {
+   "morale": 1,
+   "supplies": 4,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-046",
+  "title": "Chase across the roofs",
+  "text": "Someone runs along the roofs above your heads, the watch behind him. His escape leads straight towards your home.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "The scout predicted the route and got the fugitive into the cellar while sending the guards the wrong way. The fugitive repaid him generously.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "c-047",
+  "title": "New chambers",
+  "text": "A crack appeared in the cellar wall, revealing an old passage beyond. Nobody knows where it leads.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "The scout carefully explored the passage and found a forgotten cache with a few silver pieces and two emergency exits.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "c-048",
+  "title": "The false coin",
+  "text": "A forged coin turned up in a follower's pocket. If anyone paid rent with it, there'd be trouble.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -2,
+  "role": "fixer",
+  "okText": "The fence recognised the forger's craft, melted the coin into an ingot and got an honest price from the right dealer.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "c-049",
+  "title": "A dealer with suspicious goods",
+  "text": "A stranger is offering a consignment at a price no one should ask. Either he's a great merchant or it's stolen.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -3,
+  "role": "fixer",
+  "okText": "The fence inspected the goods, negotiated a sensible price and resold them at a decent profit.",
+  "ok": {
+   "morale": 0,
+   "supplies": 3,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "c-050",
+  "title": "A sick neighbour",
+  "text": "Coughing and groaning come from the next flat. If it's the plague, the whole street will look for someone to blame.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "The healer looked in on the sick man, recognised an ordinary fever, gave herbs and calmed the neighbours, getting a few coppers in thanks.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 2
+  }
+ },
+ {
+  "id": "c-051",
+  "title": "Rumour of a witch",
+  "text": "A rumour among the neighbours says a witch lives in your tenement. The hunters may knock soon.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "The healer appeared in the yard, handed out sprigs scented \"from Sigmar\" and told the neighbours his version so well they began paying for his protection.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "c-052",
+  "title": "A duel of honour",
+  "text": "A tipsy noble challenged one of yours for a rude gesture. The challenge is serious, and the opponent too stubborn.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -2,
+  "role": "duelist",
+  "okText": "The duellist stepped in, beat the noble without a scratch and gracefully returned his sword in exchange for a purse \"as a keepsake\".",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "c-053",
+  "title": "Practice in the yard",
+  "text": "Someone in the yard is challenging passers-by to fights for money. If a crewman gets involved it may bring a purse or a bruise.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "duelist",
+  "okText": "The duellist disarmed all comers in three moves and took the stakes while the crowd applauded.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "c-054",
+  "title": "A mysterious letter",
+  "text": "A sealed letter with no addressee lies by the door in the morning. It seems to wait for someone to claim it.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "c-055"
+ },
+ {
+  "id": "c-055",
+  "title": "The sender comes back",
+  "text": "The man who left the letter came back and politely asks for it. He is nervous and pays for discretion.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 7,
+  "only": true
+ },
+ {
+  "id": "c-056",
+  "title": "The chest in the cellar",
+  "text": "While cleaning the cellar a locked chest was found that no one remembers. There's no key, and the lock must be bypassed.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "c-057"
+ },
+ {
+  "id": "c-057",
+  "title": "The chest's owner",
+  "text": "An elderly man knocks and asks about a chest that belonged to his brother. He says his brother left for good.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 4,
+  "only": true
+ },
+ {
+  "id": "c-058",
+  "title": "The young runaway",
+  "text": "A lad in a worn coat tumbled into the cellar by accident, running from someone. He begs to hide for one night.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0,
+  "next": "c-059"
+ },
+ {
+  "id": "c-059",
+  "title": "The lad returns with thanks",
+  "text": "The youngster returned with a bundle of food and a promise to speak only to those he trusts. His family has influence.",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": 3,
+  "only": true
+ },
+ {
+  "id": "c-060",
+  "title": "The corpse cart",
+  "text": "A cart of bodies rolled down the street after the latest sickness. The driver looked away, but the stench lingered.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-061",
+  "title": "A Sigmarite procession",
+  "text": "A procession of flagellants passed through the street, singing of the end of the world. Half the crew followed out of curiosity, the rest shut the shutters.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-062",
+  "title": "Hexenstag",
+  "text": "On Hexenstag Eve people burn fires at street corners to ward off evil spirits. The crew built its own.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-063",
+  "title": "Market day",
+  "text": "A great market in the city, crowds and uproar. Full pockets and empty pockets change hands.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": 4
+ },
+ {
+  "id": "c-064",
+  "title": "The tax collector",
+  "text": "The tax collector goes door to door with two guards. He didn't knock at your cellar, but the next one was hit with harsh penalties.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-065",
+  "title": "Militia recruitment",
+  "text": "A recruiting sergeant is looking for young men for the city militia. Two of the crew pretended not to be there.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-066",
+  "title": "The tanners' guild",
+  "text": "The tanners in the next district dumped their waste barrels into the river. The stench seeped all the way into your cellar.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-067",
+  "title": "The night digger",
+  "text": "Someone has been digging underground nearby for two nights. Nobody knows if it's a ratcatcher, a sewer man or something worse.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-068",
+  "title": "The horse thief",
+  "text": "A horse thief fled through the alley and abandoned his prize in your gateway. In the morning the horse stood quietly against the wall, regarding the crew.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 6
+ },
+ {
+  "id": "c-069",
+  "title": "Students from the university",
+  "text": "A band of drunken students came down the alley singing bawdy songs. One lost his purse and another borrowed a follower's doublet.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "c-070",
+  "title": "The alchemist's smoking cauldron",
+  "text": "On the next-door attic the alchemist has botched something again. The chimney smoke is green and the neighbours' windows are cracking one by one.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-071",
+  "title": "The hangman at the inn",
+  "text": "The hangman spent an evening at the inn next door. Nobody wanted to sit near him, so everyone had more room.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-072",
+  "title": "The busy scribe",
+  "text": "A clerk from the chancery rented a bed near your den and copied letters until dawn. He left behind an inkwell.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "c-073",
+  "title": "The broken gutter",
+  "text": "A gutter on the roof cracked and water flooded one corner. The supplies had to be shifted somewhere dry.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-074",
+  "title": "The Tilean trader",
+  "text": "A Tilean merchant stopped nearby, loud and generous. He handed out olives and tales of treasure.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-075",
+  "title": "The Dwarf smith",
+  "text": "A Dwarf in the next lane woke the whole neighbourhood with his hammer. In the morning someone found freshly sharpened knives at the door.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-076",
+  "title": "The questioning",
+  "text": "The watch led away a suspected forger from the tenement. They questioned everyone around, but passed you over.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-077",
+  "title": "The four merry widows",
+  "text": "Four widows from the next street held a funeral for one's husband. It turned into a feast to which the crew was invited.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-078",
+  "title": "Flood on the Reik",
+  "text": "The river burst its banks and flooded the waterside lanes. The cellar was spared, but supplies had to be moved.",
+  "morale": -1,
+  "supplies": -2,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-079",
+  "title": "Smoke from the workshop",
+  "text": "A fire in a carpenter's workshop lit the sky. The watch was busy putting it out and the district slept soundly.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "c-080",
+  "title": "The dovecote",
+  "text": "Someone keeps pigeons in the next tower. Their agitated cooing is heard every night, and in the morning a few had landed in your corner.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-081",
+  "title": "A brawl at the well",
+  "text": "Two women fought over their turn at the well and doused each other. A crowd gathered and the pickpockets had a busy day.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "c-082",
+  "title": "The masterless dog",
+  "text": "A big stray dog wandered up to the gate and fell asleep on the threshold. He scares anyone who tries to enter, even your own.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-083",
+  "title": "A warning from an informant",
+  "text": "One of your old contacts sent a boy with a note: \"Mind Thursday.\" Nobody knows what it means.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-084",
+  "title": "The craft fair",
+  "text": "Artisans set up stalls along the whole street. The crew spotted a few items that could be bought or lifted.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": 4
+ },
+ {
+  "id": "c-085",
+  "title": "The lost girl",
+  "text": "A neighbour's child wandered into the cellar at night. She was taken back to her parents, who rewarded you with a few apples.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-086",
+  "title": "The high priest in town",
+  "text": "A high-ranking priest has arrived in the city and the streets are patrolled doubly. The hideout had two unexpected visits.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-087",
+  "title": "The drunken barge",
+  "text": "A barge of ale hit the quay and the barrels rolled down the ramp. Everyone gathered what they could while pretending to help.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-088",
+  "title": "The ratcatcher",
+  "text": "A ratcatcher with strangely bright eyes offered his services. You grudgingly agreed to two nights of work, and by morning the cellar was quiet.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": -2
+ },
+ {
+  "id": "c-089",
+  "title": "The ghost in the tenement",
+  "text": "Someone saw a figure in a white shirt at the window. Probably a thief, but at midnight everyone preferred to watch their necks.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-090",
+  "title": "Smashed door",
+  "text": "Someone is trying to break the door of your den in the middle of the night. Either he's very drunk or very desperate.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -2,
+  "role": "bodyguard",
+  "okText": "The bodyguard opened the door and asked with a smile how he could help. The intruder paled and withdrew with apologies.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-091",
+  "title": "Shoving in the queue",
+  "text": "A fight broke out in the bread queue and one of yours got involved. Without intervention he'll end up in the cells.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -2,
+  "role": "bodyguard",
+  "okText": "The bodyguard parted the crowd like a ram, hauled his man out and \"requisitioned\" several loaves on the way.",
+  "ok": {
+   "morale": 0,
+   "supplies": 3,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-092",
+  "title": "The quiet visitor",
+  "text": "Someone entered the hideout and vanished soundlessly with a sack. Supplies mysteriously shrank but nobody saw the thief.",
+  "morale": -1,
+  "supplies": -2,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "The shadow tracked the burglar to his lair, retrieved the sack and added himself to somebody else's deposit.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "c-093",
+  "title": "A strange face at the tavern",
+  "text": "A stranger in the next inn asks too many questions about your crew. You must find out who he is.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "The shadow watched him till morning, saw him meet a shady type and quietly lifted a letter of instruction from him.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 2
+  }
+ },
+ {
+  "id": "c-094",
+  "title": "Crows",
+  "text": "Crows settled on the roof and their racket is calling the guards. Someone must silence them as a patrol approaches with a lantern.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "The marksman silently brought down several birds from the roof and made a hearty soup of them for supper.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-095",
+  "title": "The enemy on the tower",
+  "text": "Someone has taken the church tower opposite and has all your windows in view. He looks like a scout for a rival crew.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "The marksman lay in wait in a loft and sent an arrow into the bell from a distance. The stranger fled in a panic, leaving his pouch.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "c-096",
+  "title": "Rumour of plague",
+  "text": "Someone at the market spread a rumour that sickness has broken out in your street. Merchants avoid the area, neighbours are afraid.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": -2,
+  "role": "provocateur",
+  "okText": "The provocateur loudly dispelled the rumour at the inn and pointed out the real culprits, who paid for peace and quiet.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "c-097",
+  "title": "The heckling",
+  "text": "A group of tipsy youths is harassing passers-by and approaching your gate. One of them has a belligerent look.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "The provocateur disarmed them with a joke, convinced them that free ale flowed in the next tavern and even got a few coins from them.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 2
+  }
+ },
+ {
+  "id": "c-098",
+  "title": "Spoiled supplies",
+  "text": "Some of the supplies are starting to smell suspicious. If no one acts, everyone will have stomach cramps.",
+  "morale": -1,
+  "supplies": -3,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "The scavenger sorted the supplies, threw out the rotten and turned the rest into a spiced stew that tasted better than fresh.",
+  "ok": {
+   "morale": 0,
+   "supplies": 2,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-099",
+  "title": "A body in the gutter",
+  "text": "The body of a stranger lies in the gutter outside the house. If nobody deals with it, it'll draw the watch.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "The scavenger dealt with the body and found a few coins and an interesting ring in the pockets. The corpse vanished down the sewer.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "c-100",
+  "title": "Street blockade",
+  "text": "The watch blocked the street outside and is searching wagons. Your stores are in one of them.",
+  "morale": -1,
+  "supplies": -2,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "The carter knew the side alleys like his own pocket, brought the wagon round the back and even earned by renting space to other merchants.",
+  "ok": {
+   "morale": 0,
+   "supplies": 3,
+   "coinsSS": 2
+  }
+ },
+ {
+  "id": "c-101",
+  "title": "The late smuggler",
+  "text": "Your smuggler contact didn't show for the meeting, and your goods are waiting on the quay. The guards are beginning to take an interest.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -3,
+  "role": "smuggler",
+  "okText": "The carter arranged a substitute boat and a fake shipment, and the goods arrived with a bonus.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "c-102",
+  "title": "The powder keg",
+  "text": "Someone left a keg of gunpowder in the next gateway under the neighbours' supervision. One stray spark and two streets vanish.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "The arsonist moved the keg to a safe place and emptied nearly half of it, tucking the powder into his own stash.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "c-103",
+  "title": "The leaking roof",
+  "text": "A neighbour threatens to report your night visits to the watch if you don't repair his roof. He says you damaged it.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -2,
+  "role": "saboteur",
+  "okText": "The arsonist knew every weak point in the structure, convinced the neighbour that a patch would do and even earned his gratitude.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "c-104",
+  "title": "New routes",
+  "text": "In the morning someone bricked up one of your exits and closed another. A new way must be found before you're trapped.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "The scout laid out three new routes through roofs and cellars in an hour and marked them with chalk visible only to his own.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-105",
+  "title": "The delivery",
+  "text": "A man handed a courier a purse and pointed at your door. The courier vanished and soon someone began watching the entrance.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "The scout intercepted the courier before he reached his goal and took the parcel, which held a few letters and some coins.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "c-106",
+  "title": "The guild inspector",
+  "text": "A merchants' guild inspector is coming down to the cellar because he heard of an unregistered warehouse. Without papers there will be a fine.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -5,
+  "role": "fixer",
+  "okText": "The fence produced a pile of documents that looked more official than the seals themselves. The inspector apologised and left.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-107",
+  "title": "Buying the loot",
+  "text": "An antiques dealer offers to buy some of your \"finds\" at a good price. The question is whether it isn't a trap.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "fixer",
+  "okText": "The fence investigated the buyer, checked his references and negotiated payment up front. The sale went through with interest.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 8
+  }
+ },
+ {
+  "id": "c-108",
+  "title": "Poisoning",
+  "text": "Several followers complain of stomach pain after last night's supper. If nobody helps they'll go to a physician, who will ask questions.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -2,
+  "role": "charlatan",
+  "okText": "The healer gave a decoction of herbs, drew a bit of bile from each and declared it \"the antidote\". Everyone felt better.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-109",
+  "title": "A beggar with a cough",
+  "text": "A coughing beggar sat on your steps. Others pass by, and if he dies there'll be trouble.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "The healer poured a little of his own potion into him, collected a handful of coins from neighbours for the \"miracle\" and sent the beggar to a shelter.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "c-110",
+  "title": "The street fencer's challenge",
+  "text": "A street fencer has challenged your men to a duel for precedence in the district. Losing would wreck the crew's standing.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -2,
+  "role": "duelist",
+  "okText": "The crew's swashbuckler accepted the challenge and beat his rival without losing his roguish smile, and the onlookers tossed him coins.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "c-111",
+  "title": "An accidental insult",
+  "text": "A guardsman is telling loud jokes about your crew. If no one reacts, the laughter will spread through the district.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "duelist",
+  "okText": "The swashbuckler replied with a quip the guard couldn't answer and won the respect of everyone present.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-112",
+  "title": "The wounded soldier",
+  "text": "A wounded soldier in a bloodied uniform lies by the door. He mumbles about treachery and begs for shelter.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0,
+  "next": "c-113"
+ },
+ {
+  "id": "c-113",
+  "title": "The pursuit of the soldier",
+  "text": "Two men in unmarked cloaks ask after a wounded soldier. They promise good pay for information.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 6,
+  "only": true
+ },
+ {
+  "id": "c-114",
+  "title": "The strange barrel",
+  "text": "A sealed barrel stands on the doorstep with the stamped crest of a foreign house. Nobody ordered it.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "c-115"
+ },
+ {
+  "id": "c-115",
+  "title": "When they came back for the barrel",
+  "text": "Four men with a crest on their sleeves turn up for the barrel. Nobody remembers who rolled it into the cellar.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 3,
+  "only": true
+ },
+ {
+  "id": "c-116",
+  "title": "The merchant family's trouble",
+  "text": "A young merchant's wife came to you for advice: someone is blackmailing her husband. She promised silence and a small reward.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2,
+  "next": "c-117"
+ },
+ {
+  "id": "c-117",
+  "title": "The blackmailer found",
+  "text": "The man who blackmailed the merchant fell into the watch's hands. Before arrest he managed to blurt that someone from the crew helped him.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -3,
+  "only": true
+ },
+ {
+  "id": "c-118",
+  "title": "The street fiddler",
+  "text": "A fiddler played under your window till dawn. Half the crew was furious, half danced.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "c-119",
+  "title": "The neighbours' feud",
+  "text": "Two families across the yard quarrelled all night. Nobody heard your footsteps.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-120",
+  "title": "A lost key",
+  "text": "Someone dropped the granary key and the crew found it. In the morning the owner promised a reward to whoever returns it.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "c-121",
+  "title": "Night ratting",
+  "text": "Men with lanterns hunted rats in the alleys. The crew joined in and searched a few cellars on the way.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": 2
+ },
+ {
+  "id": "c-122",
+  "title": "An ambiguous evening",
+  "text": "A woman in a fine cloak knocked, asked directions and vanished. She left a trail of expensive perfume.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-123",
+  "title": "The fortune teller",
+  "text": "A market fortune teller told one follower of a long life and a great loss. Nobody knows if that's good news.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-124",
+  "title": "A window on the world",
+  "text": "Someone smashed a window next door and ran off with chests. The watch was busy investigating and you had a quiet night.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-125",
+  "title": "The missionary of Sigmar",
+  "text": "A young priest of Sigmar stopped nearby and preached on the corner. Nobody listened but coins landed in his bowl.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-126",
+  "title": "A noble's bastard",
+  "text": "A youth with suspiciously noble features asks the way to your district. He looks like a child born on the wrong side of the blanket.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-127",
+  "title": "Theft from a stall",
+  "text": "Lads from your circle swiped a basket of fruit from a stall and hid it in the cellar. The trader is looking for them.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-128",
+  "title": "Fire at the inn",
+  "text": "A barrel of oil burst at the inn around the corner. The innkeeper raised the alarm and regulars had to be rescued.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-129",
+  "title": "Armed men on the street",
+  "text": "Armed men in the colours of some family walked the street in silence. They were looking for something, but not your door.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-130",
+  "title": "Street urchins",
+  "text": "Street urchins brought a handful of news and asked for bread in return. The news was worth the price.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 3
+ },
+ {
+  "id": "c-131",
+  "title": "Snow",
+  "text": "The first snow covered the streets. Fewer footsteps in the city, and the chimney smokes less than it should.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-132",
+  "title": "The lost raven",
+  "text": "A raven without feet flew to the window and stared at the crew for an hour. Then it left as if it had understood everything.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-133",
+  "title": "Masquerade",
+  "text": "A masquerade is held in the district and the streets are full of masks. One can get lost, or one can earn.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "c-134",
+  "title": "The sleeping guard",
+  "text": "A guard fell asleep at your gate with a tankard in hand. In the morning he woke ashamed and left a quarter-shilling.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "c-135",
+  "title": "The banner",
+  "text": "A military banner marched through the city with drums and trumpets. Children ran after it and adults hid their valuables.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "c-136",
+  "title": "Screams from the tenement",
+  "text": "Screams came from the second floor opposite. When they finally stopped, nobody dared to check.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-137",
+  "title": "The toppled lantern",
+  "text": "A street lantern fell and went out. In the dark someone slipped down an alley that was previously lit.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "c-138",
+  "title": "An old friend",
+  "text": "A former companion from another crew knocked. You reminisced and he left with a heavy head and a lighter purse.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": -2
+ },
+ {
+  "id": "c-139",
+  "title": "The great cheese quarrel",
+  "text": "Two cheese sellers quarrelled over a spot and both landed in the river. Everyone had a laugh and the cheeses lay scattered in the street.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-140",
+  "title": "The burnt chapel",
+  "text": "A small chapel burned in the night. People whispered of arson and looked for culprits among strangers.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-141",
+  "title": "The burgomaster on the street",
+  "text": "The burgomaster passed through the district with his retinue and the crew hid everything that might arouse suspicion.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-142",
+  "title": "An item for sale",
+  "text": "One of the followers found a strange figurine in the rubbish. A dealer bought it for three shillings and smiled knowingly.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "c-143",
+  "title": "Chimney smoke",
+  "text": "All the chimneys in the district smoked at once because the night was frosty. One of them smoked thicker than the others.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-144",
+  "title": "The stone head",
+  "text": "While digging out the cellar a stone head with an unknown symbol was found. Everyone fears it, but nobody threw it away.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-145",
+  "title": "The Shallyan mission",
+  "text": "Sisters of Shallya hand out bread and medicine in the district. Your people got their share too.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-146",
+  "title": "The stray bear",
+  "text": "A travelling menagerie lost its bear. The animal slept under your window until the keeper found it.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "c-147",
+  "title": "A debt of honour",
+  "text": "An old companion came with a drunken band for an \"overdue debt\" the crew doesn't remember. He threatens to smash the door.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -4,
+  "role": "bodyguard",
+  "okText": "The bodyguard stepped out and suggested settling it \"man to man\". The companion quickly remembered it was a mistake.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-148",
+  "title": "Escort for a merchant",
+  "text": "A merchant in a cloak at the door asks for an escort to the city gate. He fears robbery and pays generously for fear.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "bodyguard",
+  "okText": "The bodyguard walked the merchant with such a look that no thug dared approach. The pay came with interest.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 8
+  }
+ },
+ {
+  "id": "c-149",
+  "title": "Thieves' signs",
+  "text": "Someone is chalking marks on your door. For some it's an invitation, for others a sentence.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "The shadow recognised the guild's marks and added a note of his own that made thieves avoid the area, and they paid for the note.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "c-150",
+  "title": "Night flight",
+  "text": "A man in a black cloak leaps across the roofs with someone behind him. He crashes into your cellar.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "The shadow took over, hid the fugitive and led the pursuit astray. The fugitive turned out to owe a noble and paid up.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "c-151",
+  "title": "The lost falcon",
+  "text": "A falcon with a hood and bell perched on the roof. Someone is looking for it and will reward the finder generously.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "The marksman lured the bird with a scrap of meat and returned it to its owner, a wealthy merchant.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "c-152",
+  "title": "The butcher",
+  "text": "A drunken butcher accuses your people of stealing hams. He demands compensation.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -3,
+  "role": "marksman",
+  "okText": "The marksman bet the butcher on a shot at a hanging ham and hit exactly the marked spot. The butcher laughed, withdrew the accusation and threw in another ham.",
+  "ok": {
+   "morale": 1,
+   "supplies": 1,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-153",
+  "title": "Two merchants",
+  "text": "Two merchants quarrel loudly over goods one didn't deliver. If someone doesn't begin mediation a fight will break out.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "The provocateur \"settled\" the dispute so that both merchants paid him for help, each thinking he had won.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "c-154",
+  "title": "Theatre evening",
+  "text": "A travelling troupe performs on the street and the crowd is amused and generous. If someone sneaked onto the stage...",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "The provocateur slipped into the play, did a turn as a drunken knight and took more from the hat than the whole troupe that night.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "c-155",
+  "title": "Clogged gutters",
+  "text": "The gutters clogged after a storm and water is seeping into the cellar. They must be cleared or the storeroom floods.",
+  "morale": -1,
+  "supplies": -2,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "The scavenger cleared the gutters in a few moments and found a handful of small coins and a bit of silver chain in the muck.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "c-156",
+  "title": "The forgotten stockroom",
+  "text": "The owner of the next tenement died and left a storeroom full of junk. The son wants to throw everything out tomorrow morning.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "The scavenger managed to sift through everything that very night and found several things fit for sale or for eating.",
+  "ok": {
+   "morale": 1,
+   "supplies": 3,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "c-157",
+  "title": "The onion cart",
+  "text": "An onion merchant asks you to keep his cart for a night because his stable burned. Someone might look under the onions.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "The carter understood what was under the onions, took his fee for silence and saw that the cart left without trouble.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "c-158",
+  "title": "The stowaway",
+  "text": "A stranger slept in your wagon and now won't get out. He says he's in debt and needs to leave the city.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "The carter took him through the gate in a barrel and was paid in gold the fugitive couldn't take with him.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "c-159",
+  "title": "The undermined wall",
+  "text": "The wall of the tenement opposite collapsed after the rain, exposing the cellars. Barrels of something valuable can be seen inside.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "The arsonist examined the structure and made the rest of the wall collapse in the right direction, revealing all the barrels without a bang.",
+  "ok": {
+   "morale": 0,
+   "supplies": 2,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "c-160",
+  "title": "The informer neighbour",
+  "text": "The neighbour below gathers evidence against the crew. He has a stack of letters and papers in his flat.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "The arsonist set his flat alight so that the papers burned and the fire was put out before anyone saw it.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-161",
+  "title": "The lost map",
+  "text": "Someone left a map of the sewers at your door. It might be real or a trap.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "The scout checked the map in the field and it turned out to lead to an old hidden entrance to a merchant's strongroom.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "c-162",
+  "title": "The rumour of treasure",
+  "text": "The inn whispers of treasure hidden under an old chapel. Many search, nobody has found it.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "The scout followed the only good lead, found the cache and brought a few golden items to the hideout.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "c-163",
+  "title": "The absconding debtor",
+  "text": "A debtor borrowed from you at interest and now won't repay. He says he has no money but sizeable debts elsewhere.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -4,
+  "role": "fixer",
+  "okText": "The fence bought the debtor's other debts for pennies, merged them with yours and collected it all from his wealthy family.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "c-164",
+  "title": "The new document",
+  "text": "The watch demands a safe-conduct from everyone in the district. Yours are invalid and the penalty is harsh.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -4,
+  "role": "fixer",
+  "okText": "The fence produced new papers with perfect seals that survived inspection, and the inspector praised their calligraphy.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-165",
+  "title": "A potion for aches",
+  "text": "An elderly woman asks for an elixir for rheumatism with a queue behind her. If you have none, you lose the clientele.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "The healer pulled a bottle of \"mandrake\" potion (chamomile and vodka) from his bag and sold it to the whole queue.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "c-166",
+  "title": "The whisperer",
+  "text": "An old whisperer visits the crew claiming she sees death on your faces. Some believe it.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "The healer whispered something in her ear, handed her a coin and told the crew it was an omen of long life. Calm returned.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-167",
+  "title": "The ball invitation",
+  "text": "A young noblewoman asks one of yours to accompany her to a ball because her fiancé fell ill. Opportunity or trap.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "duelist",
+  "okText": "The duellist shone in the dance, won the guests' respect and came back with pockets full of small gifts and a few useful addresses.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "c-168",
+  "title": "A stab in the back",
+  "text": "A rival crew staged an ambush in a blind alley. By the time you realise, it'll be too late.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -3,
+  "role": "duelist",
+  "okText": "The duellist spotted the trap at the last moment, stepped out first with sabre in hand and demanded a duel. The opponents scattered.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-169",
+  "title": "The courier's visit",
+  "text": "A courier from another crew leaves a message: \"Let's meet, there's business.\" He didn't sign.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "c-170"
+ },
+ {
+  "id": "c-170",
+  "title": "The meeting in the dark alley",
+  "text": "A stranger comes to the agreed place with a map and a proposal. He wants a joint job on the guild warehouses and pays well for entry.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 6,
+  "only": true
+ },
+ {
+  "id": "c-171",
+  "title": "The strange coin",
+  "text": "A follower shows a coin a stranger gave him. It bears an odd mark nobody recognises.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2,
+  "next": "c-172"
+ },
+ {
+  "id": "c-172",
+  "title": "The mark returns",
+  "text": "The mark from the coin appeared on the doors of several houses nearby. Someone is marking victims.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "only": true
+ },
+ {
+  "id": "c-173",
+  "title": "The curious guest",
+  "text": "A wandering scholar knocks and asks for a night's lodging in exchange for stories. He looks exhausted.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0,
+  "next": "c-174"
+ },
+ {
+  "id": "c-174",
+  "title": "The scholar returns",
+  "text": "The scholar left in the morning but came back with a merchant who wants to buy a favour. He promises payment in silver.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 8,
+  "only": true
+ },
+ {
+  "id": "c-175",
+  "title": "The threats",
+  "text": "A dead rat was left at the door with a note pinned: \"I know what you do.\" The handwriting is illegible.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "c-176"
+ },
+ {
+  "id": "c-176",
+  "title": "The author reveals himself",
+  "text": "The author of the note turned out to be a drunken merchant who thought you were another crew. He apologises and offers compensation.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 4,
+  "only": true
+ },
+ {
+  "id": "c-177",
+  "title": "The burning sign",
+  "text": "Someone burned a hand-shaped symbol into your door. Nobody can read it.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "c-178"
+ },
+ {
+  "id": "c-178",
+  "title": "The symbol explained",
+  "text": "An old beggar says it's the sign of an old brotherhood that protected the neighbourhood. If you honour it you'll find allies.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 5,
+  "only": true
+ },
+ {
+  "id": "c-179",
+  "title": "Fog off the river",
+  "text": "Thick fog crept in from the Reik. You couldn't see your hand before your face and every sound seemed strangely near.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "c-180",
+  "title": "The alarm bell",
+  "text": "A bell rang the alarm in the night but nobody knew why. Half the district stood in the street in their nightshirts.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-181",
+  "title": "The lost woman",
+  "text": "A woman without shoes sat at your gate and couldn't remember where she came from. The watch took her in the morning.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-182",
+  "title": "Smoke and scent",
+  "text": "The smell of burnt herbs hung in the air. Somewhere nearby someone was performing a rite you didn't want to know about.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-183",
+  "title": "New prices",
+  "text": "Merchants raised prices by a quarter after rumours of war. Your supplies melt faster than usual.",
+  "morale": 0,
+  "supplies": -2,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-184",
+  "title": "Hard frost",
+  "text": "Frost turned the puddles to stone. Chimneys smoke and people round the fire swap tales of old times.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-185",
+  "title": "The uncle's visit",
+  "text": "One follower's uncle dropped by with a basket of apples and accusations. After an hour everyone had had enough, but the apples stayed.",
+  "morale": -1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-186",
+  "title": "The new neighbour",
+  "text": "A quiet man with a worn face moved into the empty flat. All day he never came out once.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-187",
+  "title": "The runaway horse",
+  "text": "A horse broke its harness, ran through the district and stopped under your windows. Nobody claimed it.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 5
+ },
+ {
+  "id": "c-188",
+  "title": "The sewer man's joke",
+  "text": "A sewer worker emerged from the hatch with a few jokes and a very strong smell. The followers laughed all night.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-189",
+  "title": "A noble in the market",
+  "text": "A noble threw coins into the crowd for fun. Everybody dived and so did you.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "c-190",
+  "title": "The stolen ring",
+  "text": "Someone abandoned a crested ring on your stairs. Somebody is surely looking for it.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "c-191",
+  "title": "Sigmar's day",
+  "text": "All bells rang in honour of Sigmar. The streets were clean and the watch more alert than usual.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-192",
+  "title": "The night bookseller",
+  "text": "A trader with a cart of forbidden books asked if anyone wanted \"something interesting\". He'd rather lose money than keep them.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -2
+ },
+ {
+  "id": "c-193",
+  "title": "The puppet show",
+  "text": "A puppeteer staged a show for children while adults stood behind and listened. It carried more hints at your trade than anyone liked.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-194",
+  "title": "The bounty hunter",
+  "text": "A bounty hunter asked about someone in your district. The description matched a man from the next tenement, but somebody felt uneasy.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-195",
+  "title": "The fishing boat",
+  "text": "A fishing boat moored at the quay and fishermen gave out yesterday's catch to lighten their load. The crew didn't refuse.",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-196",
+  "title": "A message from an informant",
+  "text": "An old informant left a note with one sentence: \"Big shipment tomorrow morning on the east quay.\" It can be used.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "c-197",
+  "title": "Wind",
+  "text": "A strong wind roared over the city and tore off roof tiles. Nobody could sleep but the streets were empty.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "c-198",
+  "title": "The evening market",
+  "text": "The last traders folded their stalls and sold the leftovers for pennies. The crew did the shopping of a lifetime.",
+  "morale": 0,
+  "supplies": 3,
+  "coinsSS": -1
+ },
+ {
+  "id": "c-199",
+  "title": "The priests' quarrel",
+  "text": "A priest of Sigmar and a priest of Ulric quarrelled publicly over a spot for a procession. The crowd was better entertained than at a fair.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-200",
+  "title": "The sound in the wall",
+  "text": "Something has been knocking rhythmically in the cellar wall since yesterday. A rat, a pipe or a walled-in neighbour, nobody knows.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-201",
+  "title": "The old wayfarer",
+  "text": "A grey-bearded traveller asked for water. He got it and in return told a tale of an old vault beneath the city.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-202",
+  "title": "Rotten apples",
+  "text": "Someone left a crate of rotten apples at the door, as a warning or just by chance. The smell lingered all night.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-203",
+  "title": "Twelve blind men",
+  "text": "Twelve blind beggars walked down the street in a line, each with a hand on the shoulder of the one before. It looked eerie.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-204",
+  "title": "The twins",
+  "text": "Two followers turned out to be twin brothers separated in childhood. A touching reunion and a few interesting stories besides.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-205",
+  "title": "The lady next door",
+  "text": "A pretty lady from next door struck up a conversation with a follower. When she left, his belt pouch was gone.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -3
+ },
+ {
+  "id": "c-206",
+  "title": "The watch parade",
+  "text": "The city watch marched through the district with drums. In the ranks one seemed to recognise you.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-207",
+  "title": "Thunderstorm",
+  "text": "Lightning hit the church tower and the bells sounded by themselves. People whispered of an omen.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-208",
+  "title": "The knife dealer",
+  "text": "A knife seller at the gate offered weapons at a bargain price. He had few questions and so did you.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -3
+ },
+ {
+  "id": "c-209",
+  "title": "The talking parrots",
+  "text": "Someone in the neighbourhood keeps parrots that repeat everything they hear. The district has learned to speak more quietly.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-210",
+  "title": "A bastard in church",
+  "text": "During mass a child loudly shouted its father's name. The whole church went silent and one of the men turned white as chalk.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-211",
+  "title": "The cake riddle",
+  "text": "A baker baked a cake with a coin inside. The crew ate it and the coin went to the one who needed it least.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 1
+ },
+ {
+  "id": "c-212",
+  "title": "The travelling circus",
+  "text": "A travelling circus pitched tents on a vacant square. Half the district watched acrobats while the other half searched for lost purses.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 5
+ },
+ {
+  "id": "c-213",
+  "title": "The priest of Morr",
+  "text": "A priest of Morr walked down the street at night carrying a black staff, a boy with a lantern behind him. The crew held its breath until they vanished.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-214",
+  "title": "The rat king",
+  "text": "The rats in the cellar move in a strangely organised way. Some followers whisper of a rat king.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-215",
+  "title": "Trouble with the neighbour",
+  "text": "The neighbour above emptied slops from the window onto a follower's shoulder. A quarrel began and ended with apologies and bread.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-216",
+  "title": "The collector",
+  "text": "A collector raised funds to fix a chapel roof and an hour later it turned out there was no chapel. The money vanished with him.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -2
+ },
+ {
+  "id": "c-217",
+  "title": "The carriage race",
+  "text": "Two carriages raced through the district and one crashed into your gate. The passengers were more shaken than hurt.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "c-218",
+  "title": "The hanging laundry",
+  "text": "Laundry strung across the street blotted out an entire alley. Under the sheets slipped people unseen from below.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "c-219",
+  "title": "The crying baby",
+  "text": "A baby cried the whole night in the next flat. In the morning the mother handed out bread by way of apology.",
+  "morale": -1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-220",
+  "title": "The Kislevite merchant",
+  "text": "A Kislevite merchant stopped nearby and handed out furs for warmth. The cold was unbearable so everyone accepted.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": -1
+ },
+ {
+  "id": "c-221",
+  "title": "The loan",
+  "text": "A merchant offered a loan on very attractive terms. Too attractive to be true.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-222",
+  "title": "Smoke from the tavern",
+  "text": "The tavern around the corner sent up the smell of roasting meat. Half the crew turned up there before sunrise.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": -2
+ },
+ {
+  "id": "c-223",
+  "title": "The boy with a purse",
+  "text": "A country boy came to the city with a purse of money seeking work. He looks lost and easy to cheat.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 3,
+  "next": "c-224"
+ },
+ {
+  "id": "c-224",
+  "title": "The country father",
+  "text": "A weather-beaten man comes looking for his son. He says the son took all the savings from home.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -3,
+  "only": true
+ },
+ {
+  "id": "c-225",
+  "title": "The odd parcel",
+  "text": "A parcel wrapped in black cloth lies on your doorstep. Nobody has the nerve to open it.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "c-226"
+ },
+ {
+  "id": "c-226",
+  "title": "The parcel's contents",
+  "text": "The parcel was finally opened. Inside lay a small silver statuette and a note with one line: \"For the proper recipient.\"",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 6,
+  "only": true
+ },
+ {
+  "id": "c-227",
+  "title": "The fox in the cellar",
+  "text": "Scuffling comes from the cellar. Peering in, a follower saw a fox holding a piece of sausage.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0,
+  "next": "c-228"
+ },
+ {
+  "id": "c-228",
+  "title": "The fox returns",
+  "text": "The fox came back, this time with its whole family. Nobody has the heart to drive them off but the supplies vanish faster than usual.",
+  "morale": 0,
+  "supplies": -2,
+  "coinsSS": 0,
+  "only": true
+ },
+ {
+  "id": "c-229",
+  "title": "The stranger with a violin",
+  "text": "A street fiddler with a case wrapped in rags asks for shelter. He says someone threatens him because of the fiddle.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "c-230"
+ },
+ {
+  "id": "c-230",
+  "title": "The fiddle's value",
+  "text": "It turned out the fiddle is worth far more than it looks. A collector offers a huge sum but the fiddler has vanished.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 8,
+  "only": true
+ },
+ {
+  "id": "c-231",
+  "title": "The dark alley",
+  "text": "Someone spilled tar on the cobbles and several passers-by stuck to the road. A chance for a few brilliant thefts.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "c-232",
+  "title": "News from the capital",
+  "text": "A messenger brought word from the imperial court: a great favour for anyone who knows the words spoken in it.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-233",
+  "title": "The wounded dog",
+  "text": "A lame dog dragged itself into the cellar and looked sadly at everyone. Someone dressed its wound and fed it, and the dog didn't leave.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-234",
+  "title": "The hunted thief",
+  "text": "A thief fleeing the watch tossed his loot through your window. Before anyone understood, he was gone.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 5
+ },
+ {
+  "id": "c-235",
+  "title": "A scream in the night",
+  "text": "In the middle of the night a scream rang out and then silence. By morning all the windows in the neighbourhood were tightly shut.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-236",
+  "title": "The paying neighbourhood",
+  "text": "The neighbours pooled money to fix the shared roof and politely asked if you would too. You have to pay or there'll be trouble.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -3
+ },
+ {
+  "id": "c-237",
+  "title": "The door without a handle",
+  "text": "Someone removed the handle from your door in the night. In the morning you had to climb in through the window.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-238",
+  "title": "A ghost story",
+  "text": "An elderly neighbour told a tale of the ghost of the cellar's previous tenant. Everyone listened and then nobody wanted to be alone.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-239",
+  "title": "A talk through the wall",
+  "text": "Through the wall you can hear two men discussing a plan. From what could be understood it's a raid on a gold transport.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "c-240",
+  "title": "A good sleep",
+  "text": "Everyone slept well, nobody had nightmares and nobody woke with a headache. It rarely happens.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-241",
+  "title": "The broken windlass",
+  "text": "The well windlass broke and half the neighbourhood had to draw water from your yard. You collected a few thanks.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "c-242",
+  "title": "The curfew",
+  "text": "The guards declared a curfew after dusk. The crew sat in the den, angry at the whole world.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-243",
+  "title": "The stray sheep",
+  "text": "A sheep ran into the tenement and froze on the stairs. The lads stole it before the owner could claim it.",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-244",
+  "title": "Drinking at the inn",
+  "text": "A drinking bout is on at the inn next door and the noise goes through every wall. Those who wanted to sleep can forget it.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-245",
+  "title": "The farrier",
+  "text": "A smith from the next street invited people to see his work. The crew bought a few horseshoes and let him tell the story of his life.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -1
+ },
+ {
+  "id": "c-246",
+  "title": "The missing cat",
+  "text": "Children are looking for a missing cat. One looked into your cellar and saw things he shouldn't have.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-247",
+  "title": "The bathhouse",
+  "text": "The city bathhouse announced a free-entry day. The crew turned up in full and came back clean as a whistle.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": -1
+ },
+ {
+  "id": "c-248",
+  "title": "Changing the guard",
+  "text": "The watch changed the post on your street. The new men don't know the area yet and their eyes shine with zeal.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-249",
+  "title": "The medicine chest",
+  "text": "A chest of medicines fell from a wagon and some phials smashed on the cobbles. The rest found their way into your hands.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": 4
+ },
+ {
+  "id": "c-250",
+  "title": "Sounds from the roof",
+  "text": "Someone walked on the roof all night. Nobody moved to check and in the morning there were only a few pigeon feathers on the roof.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-251",
+  "title": "The funeral procession",
+  "text": "A rich merchant's funeral went down the street in full pomp. One of the mourners had a suspiciously light purse on his return.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "c-252",
+  "title": "A sharp stench",
+  "text": "A terrible stench drifts from the sewer. The sewer workers claim it's normal but everyone feels something has died.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-253",
+  "title": "The doctor's visit",
+  "text": "The city physician went through the houses recording the sick. You were put on the list of the healthy, a rare mark of favour.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-254",
+  "title": "The chased-off beggar",
+  "text": "A guard drove a beggar from your gate. The beggar came back an hour later and told you what he saw in the next house.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "c-255",
+  "title": "A mouse in the kitchen",
+  "text": "A mouse ate half a loaf and the cat that was supposed to catch it ate the other half. Less and less food remains.",
+  "morale": 0,
+  "supplies": -2,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-256",
+  "title": "The Tilean singers",
+  "text": "Travelling Tilean singers gave a concert at the street corner. The crowd was generous and the pickpockets more so.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 5
+ },
+ {
+  "id": "c-257",
+  "title": "Cabbages",
+  "text": "A cart of cabbages overturned outside. People rushed to gather them and forgot their dignity.",
+  "morale": 0,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-258",
+  "title": "The wall graffiti",
+  "text": "Someone painted an insulting drawing of the burgomaster on a wall during the night. The watch began a search and you were in good spirits.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-259",
+  "title": "The two brothers",
+  "text": "Two brothers from the neighbourhood argued over an inheritance and one threw a chair at the other. Everybody watched from the windows.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-260",
+  "title": "The confession",
+  "text": "A priest of Shallya heard a follower's confession and he returned visibly lighter and very thoughtful.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": -1
+ },
+ {
+  "id": "c-261",
+  "title": "A red sky",
+  "text": "The sunset was strangely red and lingered long. Old folk said it was a bad hour for any business.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-262",
+  "title": "The clever girl",
+  "text": "The laundress's girl recognised one follower and threatened to go to the watch unless she got crowns.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -3
+ },
+ {
+  "id": "c-263",
+  "title": "A friend's funeral",
+  "text": "An old friend of the crew died. He was buried with honours and some money was collected for his family.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -2
+ },
+ {
+  "id": "c-264",
+  "title": "Free ale",
+  "text": "A brewery held a tasting of its new ale and gave out several barrels. The followers returned merry with tankards under their arms.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-265",
+  "title": "The ratcatchers' parade",
+  "text": "The ratcatchers' guild paraded a cart full of dead rats through the streets in a ceremonial procession. Everyone looked disgusted.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-266",
+  "title": "The boy with a letter",
+  "text": "A boy with a letter looked for an addressee nobody knows. He left the letter with you and ran off.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "c-267",
+  "title": "The snowstorm",
+  "text": "A blizzard buried the streets and erased all tracks. The watch was busy clearing snow and nobody looked for anybody.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-268",
+  "title": "The wager",
+  "text": "Two followers bet on who'd catch a rat first. The winner got a quarter-shilling, the loser laughter.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-269",
+  "title": "The woman with a jug",
+  "text": "An elderly woman with a jug of milk comes every day. Today she gave two jugs for free because \"you're so thin.\"",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-270",
+  "title": "The unsolicited advice",
+  "text": "An old soldier with a wooden leg gave the young followers advice on fighting. Half was good, half invented.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-271",
+  "title": "The priest's visit",
+  "text": "A priest knocked asking for support for an almshouse. He received a few shillings and promised to pray for the whole crew's souls.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": -3
+ },
+ {
+  "id": "c-272",
+  "title": "A friend of a friend",
+  "text": "A stranger says \"a friend of a friend\" sent him and asks for a small favour. He won't give a name.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "c-273"
+ },
+ {
+  "id": "c-273",
+  "title": "The price of a favour",
+  "text": "The man came back with a gift in thanks. It turns out he has influence in the merchants' guild and promises to remember the crew.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 5,
+  "only": true
+ },
+ {
+  "id": "c-274",
+  "title": "The dump under the window",
+  "text": "Someone dumped a pile of junk under your window and something glints in it. The owner will probably return in the morning.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2,
+  "next": "c-275"
+ },
+ {
+  "id": "c-275",
+  "title": "The owner of the junk",
+  "text": "A man with a handcart came and demanded the return of a \"stolen\" thing. It's unclear what he means but he was furious.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -2,
+  "only": true
+ },
+ {
+  "id": "c-276",
+  "title": "The craftsman in need",
+  "text": "A carpenter from the next lane asks to borrow a few crowns for materials. He promises to repay with interest.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -3,
+  "next": "c-277"
+ },
+ {
+  "id": "c-277",
+  "title": "The debt repaid",
+  "text": "The carpenter came back with the whole sum plus interest and a box of his own making as a gift. His neighbours began to ask for your help too.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 8,
+  "only": true
+ },
+ {
+  "id": "c-278",
+  "title": "Morrslieb in the sky",
+  "text": "The greenish moon Morrslieb hung low over the rooftops. Dogs howled and a few followers wouldn't step over the threshold.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-279",
+  "title": "Witch Hunters in the district",
+  "text": "Witch Hunters went through the district with torches, dragging people from their homes. The crew sat quiet as mice until they left.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-280",
+  "title": "The sign of the Purple Hand",
+  "text": "A painted purple handprint appeared on the wall of the next house. By morning it was gone, but people wouldn't walk past it.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-281",
+  "title": "The press-gang",
+  "text": "Armed men from a ship snatched several drunks from the street for barge service. Your people hid in the cellar and waited it out.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-282",
+  "title": "A shrine of Ranald",
+  "text": "Someone built a small shrine to Ranald in the alley with a few coins at its foot. Everyone took it for a good sign.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "c-283",
+  "title": "The influential guest",
+  "text": "A clerk from the burgomaster's office moved into the next tenement. The area suddenly became cleaner and more watchful.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-284",
+  "title": "The Verenan court",
+  "text": "Judges passed down the street with a retinue, servants with books going before them, and everyone they passed doffed a cap.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-285",
+  "title": "The wizard on the roof",
+  "text": "Someone in a black robe sat on the neighbouring roof gazing at the stars. Nobody dared ask what he was looking for.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-286",
+  "title": "The vanished neighbour",
+  "text": "An elderly neighbour never came back from a night errand. His door stood open and the cat sat on the sill staring into emptiness.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-287",
+  "title": "A new burgomaster",
+  "text": "It was proclaimed that a new burgomaster takes office. For a day chaos reigned, which the crew cleverly exploited.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 5
+ },
+ {
+  "id": "c-288",
+  "title": "Dirty water",
+  "text": "The district well turned murky and foul. Everyone drank ale and the crew sold a few barrels at a good price.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": 4
+ },
+ {
+  "id": "c-289",
+  "title": "The lost signet",
+  "text": "Your man lost a signet bearing the crew's emblem in a drunken brawl. If it falls into the wrong hands it could cause trouble.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-290",
+  "title": "The merchant in debt",
+  "text": "A well-known merchant in debt jumped from a window and smashed on the cobbles outside your house. Someone counted what he left behind.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "c-291",
+  "title": "The travelling troupe",
+  "text": "A travelling troupe of actors staged a play on the street about noble outlaws. The crew watched intently and some even shed a tear.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-292",
+  "title": "The missing child",
+  "text": "A neighbourhood child vanished at night. The whole street searched with lanterns and found it sleeping in your cellar.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "c-293",
+  "title": "The night mass",
+  "text": "A night mass was held in the next chapel with many attending. Everyone left in silence and some wept.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-294",
+  "title": "The baker in debt",
+  "text": "The baker fell behind on payments and sought support. You took him under your wing and get fresh bread for a week.",
+  "morale": 0,
+  "supplies": 3,
+  "coinsSS": -2
+ },
+ {
+  "id": "c-295",
+  "title": "The barrel of wine",
+  "text": "A barrel of wine rolled down a steep alley and stopped right at your door. Nobody knows where it came from.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-296",
+  "title": "The watchtower",
+  "text": "The entire shift of guards vanished from the watchtower. The watch seeks culprits and the district whispers of treachery.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-297",
+  "title": "The open window",
+  "text": "The window of one house stood open all night with a candle burning inside. By morning it turned out the house had been empty for years.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-298",
+  "title": "The family recipe",
+  "text": "One follower's grandmother visited and brought a cake from a recipe passed down through generations. Everyone ate it to the last crumb.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-299",
+  "title": "The new wanted poster",
+  "text": "A wanted notice bearing one follower's likeness appeared on the notice board. The artist had no talent, which is probably why nobody recognised him.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-300",
+  "title": "Nine shillings",
+  "text": "Nine shillings lay in the gutter. Nobody moved, each waiting for someone else to bend first. You were quicker.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 9
+ }
+]

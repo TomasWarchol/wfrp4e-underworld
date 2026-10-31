@@ -1,0 +1,2900 @@
+[
+ {
+  "id": "f-001",
+  "title": "The silence of the forest",
+  "text": "The night in the forest was quiet, only owls hooting in the distance. Everyone slept under the stars wrapped in the scent of pine.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-002",
+  "title": "Wolf howls",
+  "text": "Wolves howled nearby all night. The fire burned until morning and nobody dared close their eyes for long.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-003",
+  "title": "Mushrooms",
+  "text": "After rain mushrooms sprang up in the forest. The scavengers gathered full baskets and the camp had an abundant soup.",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-004",
+  "title": "Bear tracks",
+  "text": "Tracks of a large bear, fresh and deep, were found near the camp. Everyone kept weapons at hand.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-005",
+  "title": "Footsteps in the dark",
+  "text": "Something walked around the camp in the dark snapping twigs. By morning there were no tracks.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-006",
+  "title": "Deer",
+  "text": "A herd of deer passed the camp in the morning light. The marksmen held their breath but nobody shot.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-007",
+  "title": "Woodcutters",
+  "text": "Woodcutters from a nearby village felled trees close to the camp. The crew watched from hiding until they left.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-008",
+  "title": "The falling branch",
+  "text": "A branch fell and crushed one of the tents. Fortunately nobody was in it.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-009",
+  "title": "Rain",
+  "text": "It poured all night and the branch roof leaked. By morning everyone was soaked to the skin.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-010",
+  "title": "The stream",
+  "text": "A stream near the camp offered fresh water and a handful of fish. Everyone washed and ate.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-011",
+  "title": "Beastmen",
+  "text": "Horned silhouettes flickered among the trees but nobody felt like checking. The sentries stayed awake till dawn.",
+  "morale": -2,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-012",
+  "title": "The lost hunter",
+  "text": "A hunter from a nearby village got lost in the forest and stumbled onto the camp. The crew led him to the trail for a few coins.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "f-013",
+  "title": "Berries",
+  "text": "Wild berries ripened in a clearing. Everyone gathered handfuls and had purple hands till evening.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-014",
+  "title": "Smoke on the horizon",
+  "text": "Far above the forest a column of smoke rose. Someone was burning a village or an army's campfire, nobody knew.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-015",
+  "title": "The boar",
+  "text": "A boar leapt from the thicket and ran through the camp. Everyone scattered and then laughed at their own fear.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-016",
+  "title": "Damp leaf litter",
+  "text": "The litter was so wet the fire barely burned. Everyone froze and the food tasted of smoke.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-017",
+  "title": "The wayside cross",
+  "text": "An old wooden cross with carved names stood by the forest path. The crew paused in silence and moved on.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-018",
+  "title": "Thick fog",
+  "text": "Fog filled the forest to the brim and nobody could see further than arm's length. Orientation became difficult.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-019",
+  "title": "The lost purse",
+  "text": "A purse with a few coins lay under a tree. Someone lost it, someone's looking for it and the coins are already yours.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "f-020",
+  "title": "The madman in the forest",
+  "text": "A feral man in rags came out of the thicket and screamed something unintelligible. Then he ran and you didn't sleep till morning.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-021",
+  "title": "The wayside seller",
+  "text": "A wandering seller of herbs and roots came upon you in the forest. The crew bought a few remedies and traded rumours.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -2
+ },
+ {
+  "id": "f-022",
+  "title": "Strigoi",
+  "text": "By the fire tales were told of strigoi that feed on travellers' blood. Everyone began guarding their necks.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-023",
+  "title": "Wind in the canopy",
+  "text": "The wind roared in the treetops and it was hard to hear anything else. The sentries were on edge.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-024",
+  "title": "The lost dog",
+  "text": "A hunting dog wandered into camp with a snapped leash. Fed and petted, it stayed with the crew.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-025",
+  "title": "The wrecked trail",
+  "text": "A fallen tree blocked the trail you were to take. It had to be bypassed or cut.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-026",
+  "title": "Creaking in the night",
+  "text": "In the night the trees creaked as under a weight. Some said it was the wind, others that corpses hang from them.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-027",
+  "title": "Ants",
+  "text": "Ants attacked the supplies and carried them about the whole camp. Everyone shook out blankets and cursed.",
+  "morale": 0,
+  "supplies": -2,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-028",
+  "title": "The distant bell",
+  "text": "From afar came the sound of a bell from an unknown chapel. The crew couldn't tell whether it was a good sign or bad.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-029",
+  "title": "The wandering bear",
+  "text": "A bear walked through the camp looking for food. If someone provokes it there will be wounded.",
+  "morale": -1,
+  "supplies": -2,
+  "coinsSS": 0,
+  "role": "bodyguard",
+  "okText": "The bodyguard stood in the bear's path looking it in the eye and the animal left with dignity, leaving the remains of a boar.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "f-030",
+  "title": "The toppled tree",
+  "text": "A tree fell on the camp and pinned the supply wagon. Without leverage it can't be lifted.",
+  "morale": -1,
+  "supplies": -2,
+  "coinsSS": 0,
+  "role": "bodyguard",
+  "okText": "The bodyguard lifted the trunk with his own hands and pulled out the wagon. The supplies survived and people watched in admiration.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "f-031",
+  "title": "The forest robber",
+  "text": "A robber crept into the camp trying to steal a chest of loot. Nobody has noticed him yet.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -4,
+  "role": "shadow",
+  "okText": "The shadow kept watch in the gloom, seized the robber by the throat and made him sing where he'd hidden his own stash. The loot grew.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "f-032",
+  "title": "The tracking scout",
+  "text": "A scout for the count's army sniffs around near the camp. If he returns with a report the crew will be in trouble.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "The shadow caught him noiselessly, knocked him out and left him tied far from the camp, taking his map.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 2
+  }
+ },
+ {
+  "id": "f-033",
+  "title": "The spy raven",
+  "text": "A huge raven circles over the camp and shrieks as if calling others. Someone might hear it.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "The marksman brought the bird down with one shot and in the morning a ring with a valuable mark was taken from its leg. By dinner it was roasted.",
+  "ok": {
+   "morale": 1,
+   "supplies": 1,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "f-034",
+  "title": "The hunt",
+  "text": "Deer passed the camp but moved on. The marksman could stop them but must be very quick.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "The marksman shot a stag with one arrow and two more with precise follow-ups. The crew had meat for a whole week.",
+  "ok": {
+   "morale": 1,
+   "supplies": 4,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "f-035",
+  "title": "The forest brothers",
+  "text": "A band of forest brothers appears at the camp asking who's in charge. They behave menacingly.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -3,
+  "role": "provocateur",
+  "okText": "The provocateur told them such a funny story about a reeve that everyone laughed and invited them to the fire. Their leader gave a gift.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "f-036",
+  "title": "The travelling juggler",
+  "text": "A travelling juggler stopped at the camp and wants to perform for food. If someone else came it might be dangerous.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "The provocateur joined the act and afterwards both told of routes they knew. The juggler left a useful map and a handful of coins.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "f-037",
+  "title": "The wounded in the forest",
+  "text": "A wounded man lies by the path, clearly suffering. If nobody helps he'll die.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "The scavenger dressed the wounds, gave herbal tea and by morning the man asked to join the crew. He had a few coins in his pocket.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "f-038",
+  "title": "Poisonous mushrooms",
+  "text": "Among the gathered mushrooms are a few poisonous ones. If nobody recognises them dinner will end in disaster.",
+  "morale": -1,
+  "supplies": -2,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "The scavenger recognised the poisonous mushrooms in a minute, threw them out and made a wonderful soup from the rest. Everyone ate their fill.",
+  "ok": {
+   "morale": 1,
+   "supplies": 3,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "f-039",
+  "title": "The stranded wagon",
+  "text": "A wagon with barrels is stuck in a muddy forest road. The driver begs for help and the barrels look full.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "The carter led the horses expertly, pulled the wagon out of the mud and got a barrel of wine and a few coins from the owner in thanks.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "f-040",
+  "title": "The forest trail",
+  "text": "The trail through the forest is blocked by soldiers and your supplies must reach the hideout. Another route is needed.",
+  "morale": -1,
+  "supplies": -2,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "The carter knew an old woodcutters' trail and led the supplies through without trouble. On the way he sold a few trinkets to people he met.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "f-041",
+  "title": "Felled trees",
+  "text": "The count's soldiers are clearing the forest to ease their passage. The crew will lose its hideout if nobody stops them.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "The arsonist set the tool stores and scaffolds ablaze in several places. The soldiers were delayed for weeks and the crew found rich loot.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "f-042",
+  "title": "The hunters' trap",
+  "text": "Bounty hunters set snares on forest paths. One of yours might step into one.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "The arsonist located the snares and disarmed them so that the hunters fell into them on their return. Their loot went to the crew.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "f-043",
+  "title": "The lost road",
+  "text": "The crew lost the trail and has circled among trees for an hour. The road must be found before night falls.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "The scout read animal tracks, moss on trees and the position of the stars and in half an hour led everyone to the trail. On the way he found a cache.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "f-044",
+  "title": "Strange tracks",
+  "text": "In the morning unknown boot prints appeared around the camp. Someone is touring us and we haven't seen him.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "The scout followed the trail to the stranger's hideout, took his map and left a false trail. The crew gained an advantage.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "f-045",
+  "title": "The fur trader",
+  "text": "A wandering fur trader asks for help selling his goods because his customers fled. The pelts look of good quality.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "fixer",
+  "okText": "The fence found a buyer, negotiated the price and shared the profit with the trader. Everyone came out well.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "f-046",
+  "title": "Treasure maps",
+  "text": "A wanderer offers a treasure map for a few coins. Either truth or a swindle.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -2,
+  "role": "fixer",
+  "okText": "The fence examined the map, recognised several genuine landmarks and set out with men. The treasure was modest but real.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 8
+  }
+ },
+ {
+  "id": "f-047",
+  "title": "The forest witch",
+  "text": "An old woman from a hut in the forest says your man is cursed. She'll cast a spell if she isn't paid.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -2,
+  "role": "charlatan",
+  "okText": "The healer talked with the old woman, offered an exchange of herbs and a shared trick, and she lifted the curse and gave a stock of medicines.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 2
+  }
+ },
+ {
+  "id": "f-048",
+  "title": "The poisoned stream",
+  "text": "The stream by the camp suddenly changed colour and stinks. It can't be drunk and there's no other water.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "The healer found the cause, pointed to a spring nearby and cleansed the water with herbs. Everyone drank and caught a few fish too.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "f-049",
+  "title": "Meeting a knight",
+  "text": "A knight errant challenged your men to a duel for the right to pass through the forest. Refusing is an insult.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "duelist",
+  "okText": "The duellist accepted and after a spectacular duel let the knight consider himself the winner. The knight handed over a purse in thanks.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "f-050",
+  "title": "The bandit challenge",
+  "text": "A band of robbers blocks the path demanding a toll. If nobody persuades them there'll be bloodshed.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -3,
+  "role": "duelist",
+  "okText": "The duellist challenged the leader to a duel, beat him in three moves and demanded the robbers hand over what they'd collected. They left, leaving their pouches.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "f-051",
+  "title": "The wooden doll",
+  "text": "A wooden doll with a strange carved symbol lies under a tree. Everyone whispers around it.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "f-052"
+ },
+ {
+  "id": "f-052",
+  "title": "The doll's owner",
+  "text": "A little girl appears in camp and asks about the doll, saying it belongs to her sister who vanished in the forest.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 3,
+  "only": true
+ },
+ {
+  "id": "f-053",
+  "title": "The map on bark",
+  "text": "Someone carved a map with a cross on an old tree trunk. The marks are fresh.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "f-054"
+ },
+ {
+  "id": "f-054",
+  "title": "The treasure beneath the cross",
+  "text": "The crew dug up a box at the spot marked with the cross. Inside were coins and a letter with a warning.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 8,
+  "only": true
+ },
+ {
+  "id": "f-055",
+  "title": "The hermit",
+  "text": "A hermit in rags came out of the forest asking for water. He says he has something to pass on but not to whom.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0,
+  "next": "f-056"
+ },
+ {
+  "id": "f-056",
+  "title": "The hermit's message",
+  "text": "The hermit returned and told of a hidden crossing through the marshes. For the information he demands food and promises a favour.",
+  "morale": 0,
+  "supplies": -2,
+  "coinsSS": 0,
+  "only": true
+ },
+ {
+  "id": "f-057",
+  "title": "The howl in the night",
+  "text": "In the night an unusual howl rose that wasn't wolves'. All animals fell silent.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "f-058"
+ },
+ {
+  "id": "f-058",
+  "title": "What howled",
+  "text": "In the morning tracks of a great beast were found beside an abandoned bag of coins. Whether animal or mutant, nobody knows.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 6,
+  "only": true
+ },
+ {
+  "id": "f-059",
+  "title": "The curious stone",
+  "text": "A mossy stone covered in writing in an unknown tongue was found in the forest. The older trees around it seem to avoid it.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "f-060"
+ },
+ {
+  "id": "f-060",
+  "title": "The stone glows",
+  "text": "At night the stone began to glow with a greenish light. The crew must decide whether to destroy it or investigate.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 3,
+  "only": true
+ },
+ {
+  "id": "f-061",
+  "title": "A shrine of Taal",
+  "text": "Deep in the forest stands a shrine to Taal with antlers and a jug of honey. The crew left an offering and felt calmer.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": -1
+ },
+ {
+  "id": "f-062",
+  "title": "The charcoal burner's kiln",
+  "text": "A charcoal burner at his kiln offered the crew hot food and told of the roads. He was lonely and glad of company.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-063",
+  "title": "The beastmen's herdstone",
+  "text": "A stone covered in blood and trophies stands among the trees. Beastmen marked their territory and the crew stands too close.",
+  "morale": -2,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-064",
+  "title": "Goblin drums",
+  "text": "Goblin drums are heard in the distance. If they're coming this way nobody wants to be close but nobody knows where to flee.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-065",
+  "title": "The strayed stag",
+  "text": "A wounded stag stumbled into camp and fell at your feet. The meat will last several days.",
+  "morale": 0,
+  "supplies": 4,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-066",
+  "title": "Moss",
+  "text": "The crew camped in thick moss. It was warm, soft and quiet, as if the forest wanted to embrace them.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-067",
+  "title": "The army camp",
+  "text": "The emperor's army camped in the nearby valley. The crew watched their fires and quietly withdrew.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-068",
+  "title": "Ravens",
+  "text": "Ravens settled in the trees around the camp and watched in silence. When someone threw a stone they took off together.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-069",
+  "title": "The wasp nest",
+  "text": "Wasps built a nest right above the camp. Two followers were stung and cursed all day.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-070",
+  "title": "A stream of fish",
+  "text": "A stream full of trout ran past the camp. The crew feasted and set aside stores for the road.",
+  "morale": 1,
+  "supplies": 4,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-071",
+  "title": "The old cache",
+  "text": "A hidden cache of crates was found in a rotting trunk. The contents were rotten but three coins lay at the bottom.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "f-072",
+  "title": "The creeper",
+  "text": "Vines wound round a tent and it couldn't be opened. Everyone sweated cutting them with knives.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-073",
+  "title": "Birdsong",
+  "text": "Birds sang from dawn so beautifully that even the heaviest sleep gave way. The morning was pleasant.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-074",
+  "title": "Clamour from the road",
+  "text": "From the direction of the road came noise, neighing and shouts. A convoy passed and the crew watched from the bushes.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-075",
+  "title": "The forked path",
+  "text": "The crew reached a fork in the roads, each seeming equally dangerous. The discussion took half the night.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-076",
+  "title": "A fire in the distance",
+  "text": "Far in the forest a fire burned. Someone was announcing their presence or something was aflame. The crew stayed hidden.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-077",
+  "title": "Bats",
+  "text": "In the morning bats returned to a cave in the rock above the camp. A cloud of wings blotted the sky.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-078",
+  "title": "The rotten stump",
+  "text": "A split rotten trunk turned out full of grubs and birds flocked to feast. One of the marksmen bagged a few.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-079",
+  "title": "Locusts",
+  "text": "A cloud of insects flew over the forest. Everyone covered their faces and waited for it to pass.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-080",
+  "title": "Roe deer",
+  "text": "A pair of roe deer grazed in a clearing. The crew watched in silence and then let them go.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-081",
+  "title": "The woodcutters' road",
+  "text": "A narrow woodcutters' road led through the forest and was well kept. The crew used it to get to their goal quickly.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-082",
+  "title": "Fog and lights",
+  "text": "In the fog strange lights flickered, dancing above the ground. The crew didn't follow them but didn't sleep till morning.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-083",
+  "title": "The vanishing trail",
+  "text": "The crew followed an animal track but the marks vanished in the middle of a clearing. Nobody could explain why.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-084",
+  "title": "The old woodcutter",
+  "text": "An old woodcutter with an axe passed through the camp and wished a good night. He didn't ask who you were. He understood.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-085",
+  "title": "Falling leaves",
+  "text": "Autumn leaves fell so thick everything was covered in gold. The crew lit a fire and listened to the silence.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-086",
+  "title": "Odd mushrooms",
+  "text": "Mushrooms shaped like human hands sprouted in a clearing. The scavenger refused to gather them and told everyone not to touch.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-087",
+  "title": "Fog over the water",
+  "text": "White fog hung above the lake and a boat without a rower loomed in it. Everyone moved away from the shore.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-088",
+  "title": "The path to the hideout",
+  "text": "The crew found a shorter route to the hideout skirting the hills. They saved much time and strength.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-089",
+  "title": "The furious boar",
+  "text": "A furious boar charged into the camp and attacks anything that moves. If no one stops it there'll be slaughter.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0,
+  "role": "bodyguard",
+  "okText": "The bodyguard grabbed the boar by the tusks, pinned it to the ground and ended its life. The crew had meat for two weeks.",
+  "ok": {
+   "morale": 1,
+   "supplies": 4,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "f-090",
+  "title": "Armed pursuit",
+  "text": "A band of armed men searches the forest and closes on your camp. The crew must decide whether to flee or fight.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0,
+  "role": "bodyguard",
+  "okText": "The bodyguard blocked the narrow pass and the opponents, seeing his gaze, reconsidered and withdrew. They left a pouch.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "f-091",
+  "title": "A traitor in the crew",
+  "text": "Someone in the crew secretly sells information about your hideout. The shadow noticed night movements.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "The shadow followed the traitor for three nights, caught him red-handed and took the enemy's payment from him. The traitor was thrown out.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "f-092",
+  "title": "Night messages",
+  "text": "In the middle of the night someone left a note by the chief's tent. It reads: \"I know where you are.\"",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "The shadow traced the author, who turned out to be an old companion wanting to return. He took down a message for him and quietly took him back.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "f-093",
+  "title": "Smoke in the distance",
+  "text": "A great column of smoke rises from the valley and horses neigh uneasily. Someone must check what's happening.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "The marksman climbed a high tree, saw a burning hunters' camp and from a distance took down three sentries. They found loot in the ruins.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "f-094",
+  "title": "The bandit falconer",
+  "text": "A bandit with a falcon perches in the treetops watching travellers. If he spots the crew he'll call others.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "The marksman took out the falconer with one shot and the falcon flew away. A few coins and a useful map were found on the robber.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "f-095",
+  "title": "The hunters' camp",
+  "text": "Bounty hunters camped nearby and follow every move. If they notice something they'll report to the count.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "The provocateur visited their camp as a pedlar, drank a few tankards with them and told of bandits in another part of the forest. The hunters moved on.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "f-096",
+  "title": "Drunken woodcutters",
+  "text": "A group of drunk woodcutters stopped nearby and sing loudly. They'll draw the watch if nobody quiets them.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "The provocateur joined the drunks, led them elsewhere and on the way exchanged a few barrels for supplies. The crew gained a few favours.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 2
+  }
+ },
+ {
+  "id": "f-097",
+  "title": "Mouldy stores",
+  "text": "Damp ruined some of the stores and everything is covered in mould. If nobody salvages it the crew will go hungry.",
+  "morale": -1,
+  "supplies": -3,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "The scavenger dried the surviving stores over the fire, sorted and seasoned them with herbs. Part of the supplies could be saved.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "f-098",
+  "title": "Wounded soldiers",
+  "text": "Several wounded soldiers from a fled company lie in the forest. They beg help and promise a reward.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "The scavenger dressed all of them and left supplies for the road. The soldiers gave the crew part of their pay and advised how to avoid patrols.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "f-099",
+  "title": "The night convoy",
+  "text": "A convoy of wagons passes along a forest road guarded by a few men. If someone stops it there will be good loot.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "The carter blocked the road with a felled tree and arranged an ambush. The crew took the most valuable wagons without bloodshed.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "f-100",
+  "title": "The secret path",
+  "text": "The crew must move goods across the county border but the main roads are guarded. They seek a secret path.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -2,
+  "role": "smuggler",
+  "okText": "The carter knew an old smugglers' trail and led the wagons through without trouble. The sale on the other side brought a tidy profit.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "f-101",
+  "title": "The armoury on the hill",
+  "text": "A small tower on the hill holds a stock of weapons. Its garrison sleeps and the stores would come in handy.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "The arsonist started a fire in the stable and in the confusion the crew emptied the store. The weapons were sold for good money.",
+  "ok": {
+   "morale": 1,
+   "supplies": 1,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "f-102",
+  "title": "The enemy's camp",
+  "text": "A rival crew camped nearby and threatens your interests. It must be driven out.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "The arsonist burned their supplies and tents in the night. The rivals fled in panic, leaving loot behind.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "f-103",
+  "title": "The marsh",
+  "text": "The trail leads through a marsh and the routes are unknown. The risk of drowning is real.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "The scout recognised firm ground by the vegetation and built a path from branches. Everyone passed unscathed and beyond the marsh they found an abandoned hut.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "f-104",
+  "title": "Strange prints",
+  "text": "Tracks of a creature that fits no known species are visible on the path. The crew is uneasy.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "The scout examined the tracks and they turned out to be those of ordinary animals altered by rain. He also found a forgotten bandit hideout.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "f-105",
+  "title": "The escapee",
+  "text": "A man without boots flees the army and offers everything he has for shelter. He carries a purse and documents.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "fixer",
+  "okText": "The fence checked the documents, hid the fugitive and sold his secrets to several interested parties. The crew got a good price.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "f-106",
+  "title": "Stolen satchels",
+  "text": "A traveller offers several satchels holding valuable documents for sale. Origin unknown.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -3,
+  "role": "fixer",
+  "okText": "The fence recognised the documents, knew whom to sell them to and got a good price. Everybody profited.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 8
+  }
+ },
+ {
+  "id": "f-107",
+  "title": "Festering wounds",
+  "text": "Several followers have wounds that began to fester. If nobody acts they'll start fevering.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "The healer washed the wounds, applied herbal poultices and foretold quick recovery. Everyone felt better and one paid.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 2
+  }
+ },
+ {
+  "id": "f-108",
+  "title": "The haunted place",
+  "text": "The camp was pitched in a place that according to legend is haunted. Part of the crew refuses to sleep.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "The healer performed a night ritual with candles and herbs and the ghosts apparently calmed. Everyone slept soundly.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "f-109",
+  "title": "The leader's challenge",
+  "text": "The leader of another crew challenged your chief to a duel for control of the forest. Whoever loses must yield.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "duelist",
+  "okText": "The duellist stood in for the chief and beat the opponent in a flashy duel. The rival yielded and left a tribute.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "f-110",
+  "title": "A bet with a robber",
+  "text": "A robber proposes a wager: a duel for a purse. If nobody accepts the challenge the crew is shamed.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -2,
+  "role": "duelist",
+  "okText": "The duellist won the duel in seconds and the robber handed over his purse in thanks and proposed an alliance.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "f-111",
+  "title": "The night singer",
+  "text": "From afar comes the singing of a man by a fire. The words are unknown but the melody melancholy.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "f-112"
+ },
+ {
+  "id": "f-112",
+  "title": "The singer invites",
+  "text": "The singer turned out to be a wandering bard who invites the crew to his fire. He tells of hidden trails and pays well for company.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 4,
+  "only": true
+ },
+ {
+  "id": "f-113",
+  "title": "The chest in the lake",
+  "text": "The outline of a chest is visible at the bottom of a shallow lake. The water is black and the bank slippery.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "f-114"
+ },
+ {
+  "id": "f-114",
+  "title": "What was in the chest",
+  "text": "The chest was dragged out. Inside were old armours and rotten documents and at the bottom a gold coin with an unknown likeness.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 8,
+  "only": true
+ },
+ {
+  "id": "f-115",
+  "title": "The Kislevite fugitive",
+  "text": "A Kislevite soldier who deserted his unit was found in the forest. He's wounded and terrified.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0,
+  "next": "f-116"
+ },
+ {
+  "id": "f-116",
+  "title": "The Kislevite pursuit",
+  "text": "A unit of Kislevite soldiers combs the forest searching for the deserter. The commander offers a reward for information.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 5,
+  "only": true
+ },
+ {
+  "id": "f-117",
+  "title": "The bear in a cage",
+  "text": "A travelling circus-man lost a trained bear on a chain. The animal wanders the forest and people fear it.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0,
+  "next": "f-118"
+ },
+ {
+  "id": "f-118",
+  "title": "The circus-man returns",
+  "text": "The circus-man came back in tears begging help finding the bear. He promises a generous reward and tickets to the show.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 6,
+  "only": true
+ },
+ {
+  "id": "f-119",
+  "title": "The ravens on the road",
+  "text": "Four ravens sit in a row on a branch and watch the crew. When someone approaches they fly off and return.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "f-120"
+ },
+ {
+  "id": "f-120",
+  "title": "The ravens lead",
+  "text": "The ravens led the crew to a wrecked wagon with a dead driver. Inside were a chest and a letter.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 7,
+  "only": true
+ },
+ {
+  "id": "f-121",
+  "title": "The hanging tree",
+  "text": "Corpses of deserters hung from an old oak swaying in the wind. The camp was pitched far from there and nobody wanted to talk about it.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-122",
+  "title": "The burnt village",
+  "text": "The crew came upon the ashes of a small village. Nobody survived and objects lay about the ground that might still be of use to someone.",
+  "morale": -1,
+  "supplies": 1,
+  "coinsSS": 3
+ },
+ {
+  "id": "f-123",
+  "title": "Taal's fire",
+  "text": "A forester invited the crew to a shared fire and taught how to identify animals by their tracks. Everyone learned something.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-124",
+  "title": "The feral dog",
+  "text": "A feral dog with foam on its muzzle leapt from the bushes. One follower was bitten and everyone feared for his fate.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-125",
+  "title": "The strayed mare",
+  "text": "A strayed mare with a beautiful coat ran into the camp. She wore a bridle with silver studs and her owner must be rich.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 6
+ },
+ {
+  "id": "f-126",
+  "title": "The ear of Taal",
+  "text": "A stone figurine with a horn was found among the roots. The crew left it in place and felt something was watching them.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-127",
+  "title": "The tree with a nest",
+  "text": "A flock of ravens nested in a giant tree. A few followers climbed up and found trinkets in the nest, including a few coins.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "f-128",
+  "title": "Fog and whispers",
+  "text": "Whispers came from the fog as if several voices spoke at once. The crew stood motionless until dawn.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-129",
+  "title": "Stolen eggs",
+  "text": "Ground-nesting birds had been robbed of their eggs. The crew felt guilty though nobody admitted it.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-130",
+  "title": "The felled oak",
+  "text": "Lightning felled a giant oak that had been a landmark for hundreds of years. Trails in the area had to be laid out anew.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-131",
+  "title": "The wolf pack",
+  "text": "A pack of wolves encircled the camp and waited as if they knew you'd move. The fire kept them at bay till morning.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-132",
+  "title": "An unwelcome guest",
+  "text": "A strayed pilgrim sits by the fire loudly praying to Sigmar. The crew tries not to pay attention.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-133",
+  "title": "The lost sword",
+  "text": "A beautiful sword with an engraved crest lay in the bushes. Nobody claimed it so it stayed with the crew.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "f-134",
+  "title": "The witch",
+  "text": "A shrivelled witch in a remote hut served the crew soup and foretold everyone's doom. The soup tasted good.",
+  "morale": -1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-135",
+  "title": "The merchants' road",
+  "text": "An old merchants' route crossed the forest and wagons still rolled along it. The crew took position in the bushes.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "f-136",
+  "title": "The cave",
+  "text": "The crew found a small cave with a dry interior. They got comfortable though a strange wind blew from it.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-137",
+  "title": "Flood in the valley",
+  "text": "The river burst its banks and flooded the valley, washing out old tombs. The crew gathered a few finds and left the area.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "f-138",
+  "title": "Children of the forest",
+  "text": "A group of children from a nearby village went mushroom picking in the forest and got lost. The crew took them home.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "f-139",
+  "title": "The lantern in the tree",
+  "text": "A lantern hung from a branch and its flame didn't die despite the wind. The crew gave it a wide berth.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-140",
+  "title": "The purse on a branch",
+  "text": "A purse with a few coins hung from a branch as if left for a chance traveller. The crew thanked the unknown benefactor.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "f-141",
+  "title": "The storm",
+  "text": "A storm swept through the forest with a roar breaking trees and flinging boughs. The crew sat under a shared tarpaulin and waited.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-142",
+  "title": "Will-o'-the-wisps",
+  "text": "Wisps danced above the marsh. One follower wanted to follow them but the others stopped him.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-143",
+  "title": "The rotten tree",
+  "text": "A rotten tree turned out a hollow full of honey. The crew shared with the bees.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-144",
+  "title": "The wounded stag",
+  "text": "A wounded stag with an arrow in its flank ran deep into the forest. The crew tracked it and ended its suffering.",
+  "morale": 0,
+  "supplies": 4,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-145",
+  "title": "The friar's visit",
+  "text": "A priest of Taal in a wolf pelt dropped in to the camp and asked for water. He told how to tell poisonous plants from edible ones.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-146",
+  "title": "Squirrels",
+  "text": "Squirrels leapt along the branches and dropped nuts on the camp. Nobody complained about such jokes.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-147",
+  "title": "The petrified tree",
+  "text": "An old tree was so hard it had become almost stone. The crew walked round it in awe.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-148",
+  "title": "The doe and fawns",
+  "text": "A doe with two fawns grazed right beside the camp. Nobody scared her, though stomachs rumbled.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-149",
+  "title": "The ruined chapel",
+  "text": "A ruined chapel of Sigmar with a cracked hammer on top stands in the forest. Someone left fresh flowers inside.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-150",
+  "title": "The cold",
+  "text": "The night was so frosty the fire gave no warmth. By morning everyone was frozen and sleepless.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-151",
+  "title": "Drunken lumberjacks",
+  "text": "A group of drunken woodcutters burst into camp looking for a fight. If nobody calms them there will be a brawl.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "bodyguard",
+  "okText": "The bodyguard stood before them with folded arms. The first woodcutter hesitated, the second walked away and the third paid \"for admission\".",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "f-152",
+  "title": "The bear in a trap",
+  "text": "A bear is stuck in a snare and rages in pain. If it breaks free there will be slaughter.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "bodyguard",
+  "okText": "The bodyguard freed the bear holding it by the scruff and led it back to the forest. The animal left its pelt, which could be sold.",
+  "ok": {
+   "morale": 1,
+   "supplies": 4,
+   "coinsSS": 2
+  }
+ },
+ {
+  "id": "f-153",
+  "title": "The false merchant",
+  "text": "A merchant in a cloak says he sells good wares, but the shadow noticed he's a thief seeking victims.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -3,
+  "role": "shadow",
+  "okText": "The shadow exposed the false merchant, took his loot and gave it back to the victims for a token fee. The wronged rewarded the crew.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "f-154",
+  "title": "The robbers' captives",
+  "text": "Robbers lead two captives through the forest. If someone frees them, gratitude will be generous.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "The shadow crept behind the robbers, cut the captives' bonds and led them out through the bushes. The rescued turned out to be wealthy merchants.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "f-155",
+  "title": "Poachers' snares",
+  "text": "Someone set dozens of snares in the forest. Animals die and the count's men begin to take an interest.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "The marksman gathered the snares, laid them in a row and left them as a \"gift\" for the forester. In thanks he released a few hares for the crew.",
+  "ok": {
+   "morale": 1,
+   "supplies": 3,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "f-156",
+  "title": "The lost archer",
+  "text": "A young archer whose unit went missing wanders the forest with an empty quiver. He asks for help.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "The marksman taught him a few tricks and gave him arrows. In thanks the youth shared a rumour of treasure nearby.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "f-157",
+  "title": "The robbers' council",
+  "text": "Several robber bands met in a clearing for a council. If they quarrel the crew can profit.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "The provocateur sowed distrust among them and passed a few \"secret\" tips. The bands fell out and the crew gathered loot in peace.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "f-158",
+  "title": "The travelling theatre",
+  "text": "A travelling troupe of actors stopped nearby and needs help with props. In return they promise a show.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "The provocateur took a role in the play and won applause. The troupe gave a purse and news in thanks.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "f-159",
+  "title": "The rusty lock",
+  "text": "A rusty lock hangs on the door of a small hut. Perhaps something valuable is inside.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "The scavenger broke the lock noiselessly and found supplies and a few coins inside. He hung the lock back.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "f-160",
+  "title": "The lost luggage",
+  "text": "Abandoned luggage from a journey lies on a forest road. Someone fled in panic.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "The scavenger gathered what was useful, sorted it and left the rest. Inside were supplies, a few coins and a good blanket.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "f-161",
+  "title": "The wagon in the mire",
+  "text": "A wagon with goods sank into the mud. The driver begs for help and the goods look valuable.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "The carter led out the horses, pulled out the wagon and helped unload the goods. The owner paid generously and promised to recommend.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "f-162",
+  "title": "The missing guide",
+  "text": "A merchants' guide went missing in the forest and a convoy lost its way. The merchants pay for help finding the road.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "The carter knew the forests like his own pocket and in a few hours led the convoy out. Payment came in silver and goods.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "f-163",
+  "title": "The robbers' lean-to",
+  "text": "A robbers' lean-to stands in a clearing with a dozen robbers asleep inside. If they wake they will attack.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "The arsonist set the lean-to alight from outside cutting off the exits. The robbers fled in panic leaving everything behind.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "f-164",
+  "title": "The bridge over the river",
+  "text": "A bridge over the river leads to the count's manor. If destroyed, the soldiers will be delayed and the crew gains time.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "The arsonist burned the bridge at night leaving no trace. The army's delay let the crew escape calmly and the grateful villagers paid.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "f-165",
+  "title": "The hidden trail",
+  "text": "The scout spotted an invisible path but it's unknown where it leads. It could be a road to treasure or a trap.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "The scout followed it and reached an abandoned smugglers' camp with supplies and coins. The crew moved there for a night.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "f-166",
+  "title": "A flaw in the map",
+  "text": "The crew reached a place not on the map. Ruins stand around and the forest looks unnatural.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "The scout investigated the ruins and found an old vault with a few coins. He warned the crew of traps and led them out safely.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "f-167",
+  "title": "Valuable pelts",
+  "text": "A trader sells pelts for pennies but the goods smell of theft. Either a bargain or trouble.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -2,
+  "role": "fixer",
+  "okText": "The fence examined the goods, recognised the guild marks and resold the pelts to their owner at a profit. Everyone was pleased.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 8
+  }
+ },
+ {
+  "id": "f-168",
+  "title": "The missing documents",
+  "text": "A wanderer brought a parchment with official seals and wants to sell it. It turns out to be an arrest warrant.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "fixer",
+  "okText": "The fence forged a second document with a changed name and sold it to the right man. Both sides paid.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "f-169",
+  "title": "The sick girl",
+  "text": "A girl in a nearby village has fevered for three days. The parents ask for help.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "The healer gave a willow bark decoction and herbs to bring down the fever. The girl recovered and the parents gave food and coins.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "f-170",
+  "title": "Fear of a curse",
+  "text": "The crew found an amulet with a strange symbol and some followers panic. They speak of a curse.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "The healer performed a \"cleansing\" of the amulet with smoke and salt and then sold it to a curious merchant. The profit was decent and the panic passed.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "f-171",
+  "title": "A duel in the glade",
+  "text": "Two knights challenge each other to a duel in a glade beside your camp. Someone may die.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "duelist",
+  "okText": "The duellist stepped in as mediator, proposed a duel without death and conducted it for fun. The knights paid for the service.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "f-172",
+  "title": "The nobleman's challenge",
+  "text": "A nobleman with a retinue challenged the crew to a fight for the right to the path. Refusal means disgrace.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "duelist",
+  "okText": "The duellist accepted, beat the nobleman's best man and let him leave with honour. The nobleman left a ducat in thanks.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "f-173",
+  "title": "The strange belt",
+  "text": "A belt with a buckle in the shape of a wolf's head lies on the ground. It seems new and expensive.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 3,
+  "next": "f-174"
+ },
+ {
+  "id": "f-174",
+  "title": "The belt's owner",
+  "text": "An armed man arrives at the camp having lost his belt. He says it's a family heirloom and offers a reward for its return.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 5,
+  "only": true
+ },
+ {
+  "id": "f-175",
+  "title": "The blood trail",
+  "text": "A fresh blood trail leads deep into the forest along the path. Someone wounded walked this way a few hours ago.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "f-176"
+ },
+ {
+  "id": "f-176",
+  "title": "The wounded knight",
+  "text": "Following the trail the crew found a wounded knight with a crest. He carries a purse and a letter to his lord. He begs help.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 4,
+  "only": true
+ },
+ {
+  "id": "f-177",
+  "title": "The little hut",
+  "text": "A little hut with a smoking chimney stands in the forest. The host came out and invites you in.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0,
+  "next": "f-178"
+ },
+ {
+  "id": "f-178",
+  "title": "The host asks",
+  "text": "A few days later the hut's host comes with a request: wolves roam the forest and he needs defending. He promises payment.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -1,
+  "only": true
+ },
+ {
+  "id": "f-179",
+  "title": "The salt trader",
+  "text": "A salt trader with a heavy wagon stopped near the camp and asks shelter for the night.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0,
+  "next": "f-180"
+ },
+ {
+  "id": "f-180",
+  "title": "The wagon with treasure",
+  "text": "The salt trader turned out to be a smuggler hiding a chest of valuables under the salt. In thanks for hiding him he gives the crew a share of the profit.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 8,
+  "only": true
+ },
+ {
+  "id": "f-181",
+  "title": "The crossroads",
+  "text": "An old signpost with inscriptions in three languages stands at the crossroads. The crew argued long over which road to take.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-182",
+  "title": "Pine cones",
+  "text": "The wind dropped pine cones on the camp with a clatter. Everyone leapt from their beds with weapons in hand.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-183",
+  "title": "Dew on cobwebs",
+  "text": "In the morning dew covered every cobweb with diamonds. The crew was silent, enchanted by the sight.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-184",
+  "title": "The old shrine statue",
+  "text": "A mossy statue of Shallya with a raised hand stood among the trees. The crew left a loaf of bread at its feet.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-185",
+  "title": "The lost traveller",
+  "text": "A traveller from Nuln got lost in the forest and begged help. The crew showed him the way and kept his purse \"for safekeeping\".",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "f-186",
+  "title": "Nuts",
+  "text": "Hazelnuts ripened and lay on the ground like gold. The crew gathered a sack and slept with full stomachs.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-187",
+  "title": "The owl's hooting",
+  "text": "A great owl perched above the camp and hooted a single note on repeat. Nobody could sleep.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-188",
+  "title": "The missing scout",
+  "text": "The crew found someone's pack with a map and compass. The owner was nowhere to be seen and the map showed unknown trails.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "f-189",
+  "title": "The poacher",
+  "text": "A poacher from a nearby village sold the crew a hare and two rabbits for a song. In the evening there was a feast.",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": -1
+ },
+ {
+  "id": "f-190",
+  "title": "The golden hour",
+  "text": "The setting sun broke through the canopy and flooded the camp with golden light. Everyone felt the world can be beautiful.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-191",
+  "title": "A heavy night",
+  "text": "The crew slept badly and in the morning everyone was tired and irritable. Even birdsong grated.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-192",
+  "title": "Strange torches",
+  "text": "Torches flickered in the distance. Someone walked the forest at night and nobody knew who.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-193",
+  "title": "The fox den",
+  "text": "Foxes settled in a den near the camp. The cubs played in the grass while the crew watched with smiles.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-194",
+  "title": "Trout",
+  "text": "The crew built a dam of stones in the stream and caught a dozen fish. They fried them all night.",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-195",
+  "title": "Red mushrooms",
+  "text": "Red mushrooms with white spots sprouted on a glade. Everyone feared them and one scavenger put them in his bag.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-196",
+  "title": "The stone road",
+  "text": "The crew stumbled upon a stone road built by the ancients. It ran straight as an arrow and vanished in the gloom.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-197",
+  "title": "The brook",
+  "text": "A quiet brook below the camp murmured all night. Everyone slept like children.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-198",
+  "title": "The apparition",
+  "text": "In the moonlight a white figure was seen standing motionless between the trees. The crew shut their eyes and prayed.",
+  "morale": -2,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-199",
+  "title": "An avalanche of leaves",
+  "text": "The wind piled a layer of leaves on the camp and everyone woke up in a mound as in a nest. It was warm.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-200",
+  "title": "The chamois",
+  "text": "A chamois leapt onto a rock above the camp and looked down. Nobody knew whether it was a bad sign or good.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-201",
+  "title": "Spilled ale",
+  "text": "A barrel of ale rolled from a wagon and burst. Nobody wept since most was saved in tankards.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-202",
+  "title": "Wild honey",
+  "text": "Wild bees built a nest in an abandoned hut. The crew harvested the honey at the cost of a few stings.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-203",
+  "title": "Raven dust",
+  "text": "By the fire someone told a legend of ravens that devour souls of the dead. Until morning nobody looked at the sky.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-204",
+  "title": "The deserters' camp",
+  "text": "The crew found an abandoned deserters' camp with some supplies and holey tents. A good place to spend the night.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 1
+ },
+ {
+  "id": "f-205",
+  "title": "Young beavers",
+  "text": "Beavers built a dam in the stream and the crew watched them work. Nobody wanted to disturb them.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-206",
+  "title": "Sun through the canopy",
+  "text": "Sun rays broke through the treetops and the forest smelled of resin. Everyone walked lighter.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-207",
+  "title": "The lost child",
+  "text": "A girl from a nearby village got lost in the forest and the crew found her. The parents gave honey and bread in thanks.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 1
+ },
+ {
+  "id": "f-208",
+  "title": "A stream full of gold",
+  "text": "The sand in the stream glittered with golden flecks. A few followers panned it for half a day.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "f-209",
+  "title": "The stone circle",
+  "text": "A ring of mossy stones stands among the trees. The crew didn't camp there though a warm wind blew from it.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-210",
+  "title": "The wild snake",
+  "text": "A snake basked on a stone by the camp. One of the followers almost sat on it.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-211",
+  "title": "Hairy caterpillars",
+  "text": "Caterpillars covered the tree trunk under which you slept. In the morning everyone had itching rashes.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-212",
+  "title": "The lost family",
+  "text": "A peasant family seeking a new home stopped nearby. The crew shared food with them.",
+  "morale": 1,
+  "supplies": -2,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-213",
+  "title": "The abandoned lean-to",
+  "text": "A charcoal burner's lean-to with a roof that still holds stands in the forest. The crew was glad of dry shelter.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-214",
+  "title": "Horsetail",
+  "text": "Field horsetail grew round a spring. The scavenger knew it's a good herb for wounds and gathered a handful.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-215",
+  "title": "The ant march",
+  "text": "A long column of ants crossed the camp to its anthill. Everyone lifted their feet as if a king were passing.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-216",
+  "title": "The treasure tale",
+  "text": "By the fire an old bandit told a tale of treasure hidden in a hollow. For a few hours every tree was suspect.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "f-217",
+  "title": "The wounded otter",
+  "text": "An otter with a broken paw fell into the camp. The crew dressed it and released it and it came back with a fish.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-218",
+  "title": "The tree on fire",
+  "text": "An old tree took fire from lightning and burned like a torch. The crew gathered dry boughs for their own fire.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-219",
+  "title": "Smoke from the fire",
+  "text": "Smoke from the fire betrayed the camp because the wind blew towards the valley. The crew quickly put out the flames and moved higher.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-220",
+  "title": "The turtles",
+  "text": "Marsh turtles basked on logs by a pond. Village children collected them in sacks and the crew helped for a share of the haul.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-221",
+  "title": "Misty mornings",
+  "text": "Mist didn't leave the forest till noon and every sound seemed to come from a different direction. The crew moved slowly.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-222",
+  "title": "The creaking door",
+  "text": "In a remote hut a door creaked in the wind all night. Nobody dared close it.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-223",
+  "title": "The stump with a stone",
+  "text": "A stone lodged in the trunk of an old tree as if thrown by a giant. The crew nodded and moved on.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-224",
+  "title": "The crack of a shot",
+  "text": "Somewhere in the distance a crossbow or handgun fired. The crew listened but heard nothing more.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-225",
+  "title": "The merchants' camp",
+  "text": "Merchants camped nearby and invited you to their fire. The crew joined and the conversation was pleasant and instructive.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-226",
+  "title": "The wayside bench",
+  "text": "A wooden bench with a carved inscription stood by the path. The crew sat on it and rested.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-227",
+  "title": "The old fire ring",
+  "text": "A ring of burned earth where nothing grew was found in a clearing. Everyone skirted it.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-228",
+  "title": "Frost on leaves",
+  "text": "In the morning frost covered every leaf like silver. It turned cold but everyone felt strangely good.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-229",
+  "title": "The cone roof",
+  "text": "The crew built a roof of branches that withstood even a downpour. Everyone was proud of themselves.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-230",
+  "title": "Rustling in the bushes",
+  "text": "Something rustled in the bushes all night. The sentries expected the worst and in the morning found a hedgehog.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-231",
+  "title": "The woodcutters' track",
+  "text": "A narrow woodcutters' track led through the forest towards a bright place. The crew followed it hesitantly.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-232",
+  "title": "The sunken boat",
+  "text": "A sunken boat with a few objects inside lay in shallow water. The crew pulled them out and spread them to dry.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "f-233",
+  "title": "Fireflies",
+  "text": "Thousands of fireflies floated over a clearing on a warm night. The crew sat in silence and watched.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-234",
+  "title": "The missing priest",
+  "text": "A priest of Taal went missing in the forest and his pupils have been searching for a week. The crew pointed the direction where they saw tracks.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "f-235",
+  "title": "Moon dust",
+  "text": "In the moonlight the clearing looked covered in silver. The crew pitched camp and spent one of the most peaceful nights.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-236",
+  "title": "The lost ranger",
+  "text": "A stranger in a green cloak stumbled into the camp exhausted and hungry. He says he's a scout with a mercenary company.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0,
+  "next": "f-237"
+ },
+ {
+  "id": "f-237",
+  "title": "The mercenary company",
+  "text": "The mercenary company found their lost scout and thanks the crew with a generous gift. The captain asks for discretion.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 7,
+  "only": true
+ },
+ {
+  "id": "f-238",
+  "title": "The imprinted foot",
+  "text": "On the clearing a strange footprint with six toes is visible. Villagers say it's a mutant.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "f-239"
+ },
+ {
+  "id": "f-239",
+  "title": "The mutant shows himself",
+  "text": "In the morning the mutant came out of the forest but proved a harmless old man. He flees from villagers and begs help. He says he has something to offer.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 5,
+  "only": true
+ },
+ {
+  "id": "f-240",
+  "title": "The barrel of pitch",
+  "text": "A barrel of pitch stands in the forest as if left here. It smells fresh and is heavy.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 1,
+  "next": "f-241"
+ },
+ {
+  "id": "f-241",
+  "title": "What the pitch was for",
+  "text": "It turned out the pitch belonged to a band of forgers working here. They came back for it armed and want to know who touched it.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -3,
+  "only": true
+ },
+ {
+  "id": "f-242",
+  "title": "The lone wolf",
+  "text": "A lone lame wolf wandered to the camp and watches from afar. It neither flees nor attacks.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "f-243"
+ },
+ {
+  "id": "f-243",
+  "title": "The wolf returns with a pack",
+  "text": "The wolf returned with a whole pack and it turned out he leads them to an abandoned shed with supplies. The crew gained a new, strange friend.",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": 2,
+  "only": true
+ },
+ {
+  "id": "f-244",
+  "title": "The hunter's pouch",
+  "text": "Under a bush lay a hunter's pouch with an empty flask and a few coins. The crew drank from the stream and kept the coins.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "f-245",
+  "title": "The green glade",
+  "text": "The crew came upon a glade covered in soft grass and flowers. Camping there was like resting in a garden.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-246",
+  "title": "The animal trail",
+  "text": "Wild animals blazed a trail through the forest to a watering hole. The crew followed it and avoided the road.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-247",
+  "title": "A bright morning",
+  "text": "The sun rose cloudless and the birds began to sing. Everyone woke in good spirits.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-248",
+  "title": "A wet night",
+  "text": "The rain didn't stop and the camp turned to mud. Nobody wanted to come out from under the tarpaulin.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-249",
+  "title": "The squirrel's hoard",
+  "text": "The crew found a squirrel's hoard in a hollow: nuts, acorns and a few shiny coins. The squirrel watched reproachfully from a branch.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": 2
+ },
+ {
+  "id": "f-250",
+  "title": "The travellers' fire",
+  "text": "Wanderers lit a fire in the distance and the crew watched from the bushes as they feasted. After they left a few leftovers remained.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-251",
+  "title": "The hawk's shadow",
+  "text": "A hawk circled above the camp hunting prey. Everyone kept close to the fire and the poultry vanished into the bushes.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-252",
+  "title": "The rusty trap",
+  "text": "One follower stepped into an old rusty bear trap. He was pulled out unharmed but shocked.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-253",
+  "title": "A clump of rowan",
+  "text": "Red rowan berries coloured the clearing. The crew hung sprigs over the entrance for luck.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-254",
+  "title": "Deafening thunder",
+  "text": "A thunderstorm rolled over the forest. The whole camp shook but nothing happened.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-255",
+  "title": "The sunken trunk",
+  "text": "A big trunk lying in the stream turned out full of fish. The crew caught a dozen without effort.",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-256",
+  "title": "The dagger in the tree",
+  "text": "A dagger with engraved initials was stuck in the trunk of an old tree. The crew pulled it out and after consideration kept it.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "f-257",
+  "title": "The shepherd's hut",
+  "text": "A shepherd invited the crew to his hut and offered cheese and milk. The talk was short but warm.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-258",
+  "title": "A parachute of leaves",
+  "text": "Leaves fell all night like rain. In the morning the camp was drowned in gold and red.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-259",
+  "title": "The stolen saddle",
+  "text": "Someone left a saddle by a tree and walked off. The crew kept it \"until claimed\".",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "f-260",
+  "title": "Green moss",
+  "text": "The crew camped in a patch of green moss. They slept in soft bedding and in the morning smelled of the forest.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-261",
+  "title": "A stifling evening",
+  "text": "The air was heavy and still. Everyone sweated and dreamed of rain.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-262",
+  "title": "The stone bridge",
+  "text": "An old stone bridge linked the river banks. The crew crossed to the other side and saved time.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-263",
+  "title": "A sharp smell",
+  "text": "The wind brought a smell of burning from afar. Everyone was worried but nothing happened.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-264",
+  "title": "Apple trees",
+  "text": "Deep in the forest stood wild apple trees laden with fruit. The crew gathered them for two hours.",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-265",
+  "title": "A debate about stars",
+  "text": "By the fire two followers argued whether stars are the gods' fires or wisps. The rest fell asleep.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-266",
+  "title": "The old hunter",
+  "text": "A grey hunter in a fox fur passed the camp and waved. He asked no questions.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-267",
+  "title": "The rotten log",
+  "text": "A log someone sat on collapsed with a crash. Everyone laughed and the victim sulked for a long time.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-268",
+  "title": "A fox's visit",
+  "text": "A fox crept into the camp and made off with a piece of bacon. Everyone saw it but nobody moved.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-269",
+  "title": "A strong wind",
+  "text": "A strong wind blew all night and broke branches. Everyone slept under the tarpaulin holding on to each other.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-270",
+  "title": "The river",
+  "text": "The crew reached a river that wasn't on the map. Crossing required ingenuity but succeeded.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-271",
+  "title": "Children's tracks",
+  "text": "Small barefoot prints were visible in the soft ground. The crew couldn't tell if they were children or something else.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-272",
+  "title": "A stranger's meal",
+  "text": "Someone left a basket of bread, cheese and onion under a tree. Nobody claimed it so the crew ate.",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-273",
+  "title": "The obelisk",
+  "text": "A leaning obelisk covered in runes stood among the trees. The crew didn't try to read them.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-274",
+  "title": "Talking crows",
+  "text": "Two crows on a branch conversed as if they knew something you don't. The crew decided not to listen.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-275",
+  "title": "The fiddler in the forest",
+  "text": "A fiddler played in the middle of the forest for nobody. The crew stood in silence and listened to the end.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-276",
+  "title": "Smoke and the smell of meat",
+  "text": "From a distant glade came the smell of roasting meat. Everyone drooled and the crew went to see who was roasting.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": -1
+ },
+ {
+  "id": "f-277",
+  "title": "The broken scythe",
+  "text": "A broken scythe lay in the grass with traces of blood beside it. The crew skirted the spot.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-278",
+  "title": "Roe deer by the water",
+  "text": "Roe deer grazed by the stream in the sunset light. The crew watched in silence.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-279",
+  "title": "Fragrant herbs",
+  "text": "The scavenger found a field of wild herbs. He gathered a bunch of lavender, thyme and mint and the camp smelled like an apothecary.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-280",
+  "title": "The dying fire",
+  "text": "The crew found a fire that still smouldered. Someone must have been here an hour ago but nobody was there.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-281",
+  "title": "The wooden cross",
+  "text": "A lone wooden cross with an engraved name stands in the forest. The crew paused and whispered a prayer.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-282",
+  "title": "Cracking branch",
+  "text": "A great branch cracked above the camp and fell right beside the tent. Nobody was hurt but everyone got up.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-283",
+  "title": "Three ravens",
+  "text": "Three ravens sat on a branch and watched the crew. Nobody knew if they foretold doom or favoured.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-284",
+  "title": "Wolfberries",
+  "text": "The crew found a bush of wolfberries and remembered someone once poisoned himself with them. Everyone kept their hands to themselves.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-285",
+  "title": "The riderless horse",
+  "text": "A horse with an empty saddle came out of the forest and stood still by the camp. The crew kept it.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 5
+ },
+ {
+  "id": "f-286",
+  "title": "Mud on the road",
+  "text": "The road turned into a muddy stream. Every step took effort and wagons sank to the axles.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-287",
+  "title": "The eagle's nest",
+  "text": "On top of a rock eagles built a nest. The crew watched them feed their young and withdrew respectfully.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-288",
+  "title": "Shooting stars",
+  "text": "Under a starry sky dozens of stars fell. Everyone made a wish and some wept.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-289",
+  "title": "The friendly squirrel",
+  "text": "A tame squirrel came to the camp and ate from a hand. Everyone rejoiced like children.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-290",
+  "title": "The climbing plant",
+  "text": "A strange plant twined round tree trunks, blooming purple. The scavenger knew it was poison and told everyone not to touch it.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-291",
+  "title": "The priestess's visit",
+  "text": "A priestess of Rhya with a basket of fruit stopped at the camp, blessed everyone and left. The crew felt better.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-292",
+  "title": "The forest closes in",
+  "text": "The trees seemed thicker than the day before as if the forest closed behind the crew. Nobody commented but everyone sped up.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-293",
+  "title": "The bear's hoard",
+  "text": "A bear's den proved empty and trinkets from past victims lay inside. The crew took some and left quietly.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 5
+ },
+ {
+  "id": "f-294",
+  "title": "The odd tree",
+  "text": "The crew came upon a tree that grew as if someone bent it. Everyone spoke of magic and one person of art.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-295",
+  "title": "Clear water",
+  "text": "A spring in the rock gushed water so pure the crew filled all the skins and washed their faces. The morning was fresh.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-296",
+  "title": "Lush ferns",
+  "text": "Ferns reached waist height and in their shade it was cool and damp. The crew rested in silence.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-297",
+  "title": "The wolves' ravine",
+  "text": "Wolves made a den in the ravine. The crew gave it a wide berth but heard their breathing all night.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-298",
+  "title": "Carrion",
+  "text": "The crew came upon a stag carcass. Ravens feasted and the air was foul and heavy. The followers hurried on.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-299",
+  "title": "The burnt-out trunk",
+  "text": "A huge trunk burned hollow served as a shelter. The crew settled in it like a real home.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "f-300",
+  "title": "Tree shadows",
+  "text": "The moon cast long shadows over the glade that moved when nobody was looking. The sentries changed every hour.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ }
+]

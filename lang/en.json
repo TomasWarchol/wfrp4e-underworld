@@ -749,6 +749,22 @@
       "saboteur": {
         "Name": "Arsonist / Saboteur",
         "Desc": "Pyrotechnician and wrecker. Starts fires, burns bridges behind a retreat and blows up supply wagons."
+      },
+      "scout": {
+        "Name": "Scout / Tracker",
+        "Desc": "A woodland and highway tracker. Reads sign, spots pursuit and leads the crew along paths the watch never walks."
+      },
+      "fixer": {
+        "Name": "Fence / Forger",
+        "Desc": "The man for papers, seals and well-placed crowns. Forges safe-conducts, buys favours and moves whatever needs moving."
+      },
+      "charlatan": {
+        "Name": "Charlatan / Hedge Healer",
+        "Desc": "A wandering quack, herbalist and seller of miracle ointments. Heals, patters and frightens the crowd with old superstitions."
+      },
+      "duelist": {
+        "Name": "Swashbuckler / Duellist",
+        "Desc": "A former duellist or hired blade. Has little honour but a fine sword; fights with flair and for show."
       }
     },
     "Strengths": {
@@ -831,6 +847,46 @@
       "knife_master": {
         "Name": "Knife Master",
         "Desc": "+10 to quiet shadowing, theft and alley fighting"
+      },
+      "lockpick": {
+        "Name": "Lockpick Hands",
+        "Desc": "+10 to burglary and pickpocketing"
+      },
+      "smooth_liar": {
+        "Name": "Smooth Liar",
+        "Desc": "+10 to bribery, forgery and fencing"
+      },
+      "surefooted": {
+        "Name": "Surefooted",
+        "Desc": "+10 to scouting, mine raids and covering tracks"
+      },
+      "night_owl": {
+        "Name": "Night Owl",
+        "Desc": "+10 to shadowing, burglary and scouting"
+      },
+      "pack_rat": {
+        "Name": "Pack Rat",
+        "Desc": "+10 to scavenging and farm thefts"
+      },
+      "ox_strong": {
+        "Name": "Strong as an Ox",
+        "Desc": "+10 to highway robbery, mine raids and intimidation"
+      },
+      "animal_friend": {
+        "Name": "Friend of Beasts",
+        "Desc": "+10 to smuggling, farm thefts and scavenging"
+      },
+      "steady_nerves": {
+        "Name": "Steel Nerves",
+        "Desc": "+10 to diversion, bribery and covering tracks"
+      },
+      "haggler": {
+        "Name": "Haggler",
+        "Desc": "+10 to fencing and the racket"
+      },
+      "lucky": {
+        "Name": "Lucky Devil",
+        "Desc": "+10 to pickpocketing, smuggling and covering tracks"
       }
     },
     "Flaws": {
@@ -920,6 +976,46 @@
       "bloodthirsty": {
         "Name": "Bloodthirsty",
         "Desc": "Every successful diversion or intimidation gives +1 Heat through needless cruelty"
+      },
+      "hothead": {
+        "Name": "Hothead",
+        "Desc": "−10 to covering tracks and bribery"
+      },
+      "squeamish": {
+        "Name": "Squeamish",
+        "Desc": "−10 to intimidation and tending the wounded"
+      },
+      "snorer": {
+        "Name": "Snorer",
+        "Desc": "−10 to shadowing and scouting"
+      },
+      "bad_leg": {
+        "Name": "Bad Leg",
+        "Desc": "−10 to pickpocketing, smuggling and mine raids"
+      },
+      "greedy": {
+        "Name": "Greedy",
+        "Desc": "10% chance each night to pocket some small coin from the stash"
+      },
+      "homesick": {
+        "Name": "Homesick",
+        "Desc": "This member's failure costs 1 Morale"
+      },
+      "witchhunter_mark": {
+        "Name": "Marked by Witch-Hunters",
+        "Desc": "A failure raises Notoriety"
+      },
+      "proud": {
+        "Name": "Proud",
+        "Desc": "−10 to fencing, bribery and taverns"
+      },
+      "jinxed": {
+        "Name": "Jinxed",
+        "Desc": "−10 to pickpocketing, burglary and scouting"
+      },
+      "nightmares": {
+        "Name": "Nightmares",
+        "Desc": "15% chance each night of being unfit for duty"
       }
     },
     "Perks": {
@@ -987,7 +1083,12 @@
     "CampEvent": {
       "DefaultTitle": "Night event",
       "QuietTitle": "A quiet night",
-      "QuietText": "The sentries kept watch undisturbed."
+      "QuietText": "The sentries kept watch undisturbed.",
+      "NoSpecialist": "Nobody here knows how to handle it as a <strong>{role}</strong>.",
+      "RoleSaved": "<strong>{name}</strong> ({role}) handles it (d100 {roll} ≤ {target}).",
+      "RoleFailed": "<strong>{name}</strong> ({role}) tries but fails (d100 {roll} > {target}).",
+      "FollowUp": "A sequel to an earlier event.",
+      "HookSet": "This matter will make itself known again."
     },
     "Notify": {
       "RumorPoolReset": "Every rumour in the pool has been shown! The rumour pool has been refreshed.",
@@ -1019,7 +1120,11 @@
         "GainsCondition": "{name}: gains the <strong>{condition}</strong> condition.",
         "LosesCondition": "{name}: loses the <strong>{condition}</strong> condition.",
         "NoCondition": "{name}: does not have the {condition} condition.",
-        "Advantage": "{name}: Advantage {value}."
+        "Advantage": "{name}: Advantage {value}.",
+        "MustFace": "goes for the duellist and ignores the rest of the crew until the end of the round",
+        "Lured": "falls for the lure – the GM decides where they run",
+        "StandsDown": "leaves the fight (the GM decides: walks away or switches sides)",
+        "EvilEye": "has −10 to attacks until the end of the round"
       },
       "meatshield": {
         "Name": "Meat Shield!",
@@ -1142,6 +1247,116 @@
         "Leadership": "Leadership Test",
         "Issue": "Give the Order!",
         "Issued": "Order given: {order}!"
+      },
+      "bodyblock": {
+        "Name": "Body Block",
+        "Desc": "The bodyguard steps in front of the chief and takes the blows on shield and back.",
+        "Effect": "Until the end of the round the first melee attack against the chief hits the bodyguard instead. The chief gains 1 Advantage (a moment to catch their breath)."
+      },
+      "grapple": {
+        "Name": "Neck Grab",
+        "Desc": "The bruiser grabs the enemy round the waist or by the collar and won't let go.",
+        "Effect": "The opponent must pass a Strength test or gains the Entangled condition."
+      },
+      "circle": {
+        "Name": "Ring of Guards",
+        "Desc": "The crew closes a ring round the chief, backs together, faces to the enemy.",
+        "Effect": "The chief loses the Surprised condition (if any) and gains 1 Advantage. Nobody comes at them from behind."
+      },
+      "parry": {
+        "Name": "Parry",
+        "Desc": "The duellist steps between the chief and the enemy and turns the blow aside with the blade.",
+        "Effect": "The first melee attack against the chief this round has −20 to hit. The chief gains 1 Advantage."
+      },
+      "riposte": {
+        "Name": "Riposte",
+        "Desc": "The swashbuckler baits an attack to answer it in the same breath with a quick thrust.",
+        "Effect": "The chosen opponent loses 1 Advantage. If they attack the chief this round and miss, the chief may immediately strike back."
+      },
+      "challenge": {
+        "Name": "Challenge to a Duel",
+        "Desc": "The swashbuckler insults the enemy with a smile and calls them to an honourable fight.",
+        "Effect": "The opponent must pass a Willpower test; on a failure they go for the duellist and ignore the rest of the crew until the end of the round."
+      },
+      "pindown": {
+        "Name": "Pinning Fire",
+        "Desc": "A string of shots just over the head forces the target to hug the ground.",
+        "Effect": "The chosen target must pass a Willpower test or gains the Surprised condition (takes cover and won't move)."
+      },
+      "fireoil": {
+        "Name": "Barrel of Lamp Oil",
+        "Desc": "The arsonist rolls a small barrel of lamp oil at the enemy and flings a lit rag after it.",
+        "Effect": "The target must pass an Agility test or gains the Ablaze condition."
+      },
+      "caltrops": {
+        "Name": "Caltrops",
+        "Desc": "A handful of iron spikes flung under the feet of the charging.",
+        "Effect": "The target must pass an Agility test or gains the Prone condition."
+      },
+      "collapse": {
+        "Name": "Cut Beam",
+        "Desc": "A prop pulled away on a rope; a weight of crates or a slab of roof falls on their heads.",
+        "Effect": "The target must pass a Difficult Agility test or gains the Stunned condition."
+      },
+      "wagonwall": {
+        "Name": "Wagon Across",
+        "Desc": "The carter stops the wagon so that it shields the chief from fire.",
+        "Effect": "The wagon gives cover: ranged attacks against the chief this round have −10. The chief gains 1 Advantage."
+      },
+      "spooked": {
+        "Name": "Spooked Horses",
+        "Desc": "A crack of the whip and the enemy's horses rear up.",
+        "Effect": "The chosen mounted opponent, or one beside a wagon, loses 1 Advantage. If they ride a horse the GM may ask for a Ride test; failing it means the Prone condition."
+      },
+      "getaway": {
+        "Name": "Hauled Aboard",
+        "Desc": "The carter grabs the chief by the arm and yanks them out of the melee onto the wagon seat.",
+        "Effect": "The chief loses the Prone condition and may move 4 metres away without provoking opportunity attacks."
+      },
+      "spot": {
+        "Name": "Weak Spot",
+        "Desc": "The scout points out a gap in the armour, a hole in the line or a lame leg.",
+        "Effect": "The chief's first attack this round gets +10 to hit. The chief gains 1 Advantage."
+      },
+      "lure": {
+        "Name": "Decoy",
+        "Desc": "The scout shows up at a window or on a ridge and vanishes, drawing the enemy's attention.",
+        "Effect": "The opponent must pass an Intelligence test; on a failure they lose 1 Advantage and fall for the lure."
+      },
+      "snare": {
+        "Name": "Snares",
+        "Desc": "A taut cord with a noose across the path of pursuit.",
+        "Effect": "The target must pass an Agility test or gains the Entangled condition."
+      },
+      "forgedorder": {
+        "Name": "Forged Order",
+        "Desc": "The fence waves a sealed paper and bellows an order in the name of the local reeve.",
+        "Effect": "The target must pass an Intelligence test or gains the Surprised condition (frozen, unsure whom to believe)."
+      },
+      "payoff": {
+        "Name": "Generous Gift",
+        "Desc": "The fence presses a purse into a soldier's hand and whispers how many more there could be.",
+        "Effect": "A human opponent must pass a Willpower test; on a failure they leave the fight (the GM decides whether they walk away or switch sides). The purse (1d10 s) is lost."
+      },
+      "salve": {
+        "Name": "Hedge Healer's Salve",
+        "Desc": "The healer slathers the wound with a foul but surprisingly effective ointment.",
+        "Effect": "The chief (or a chosen ally) loses the Bleeding condition."
+      },
+      "fumes": {
+        "Name": "Noxious Fumes",
+        "Desc": "The charlatan smashes a flask of fluid smelling of rotten eggs and a dead cat.",
+        "Effect": "The target must pass a Toughness test or gains the Fatigued condition."
+      },
+      "evileye": {
+        "Name": "Evil Eye",
+        "Desc": "The healer mutters an old curse and points a finger.",
+        "Effect": "A superstitious target must pass a Willpower test or loses 1 Advantage and has −10 to attacks until the end of the round."
+      },
+      "regroup": {
+        "Name": "Regroup",
+        "Desc": "The Right Hand claps, whistles and the crew falls back into line.",
+        "Effect": "The chief loses the Surprised condition and gains 1 Advantage; retinue allies may move 2 metres for free."
       }
     },
     "Tables": {
@@ -1156,7 +1371,8 @@
         "Desc": "Events of the night camp or the Crew Week. Result flags (Morale, supplies, coins) change the crew's state.",
         "Result": "Event"
       },
-      "Created": "Crew: created {count} rumour and event tables in the Tables tab (folder “{folder}”)."
+      "Created": "Crew: created {count} rumour and event tables in the Tables tab (folder “{folder}”).",
+      "EventsUpgraded": "The events table (terrain: {terrain}) was replaced with a new version ({count} entries)."
     },
     "Title": "Crew",
     "None": "None",
@@ -1769,7 +1985,12 @@
       "GearGiven": "{gear} passed from {from} → {to}.",
       "XPAdded": "+{amount} {unit} for {name} (remember to click “Save Changes”)",
       "Title": "Advancement and Gear: {name}",
-      "Save": "Save Changes"
+      "Save": "Save Changes",
+      "SecondRole": "Second role",
+      "SecondRoleHint": "(bought with OXP, requires rank 1)",
+      "SecondRoleIntro": "A follower who has seen a lot can do more than one thing. A second role unlocks its orders and specialty (the specialty bonus counts once).",
+      "SecondRoleNeedsRank": "Requires rank 1",
+      "SecondRoleGained": "{name} gains a second role: {role}!"
     },
     "Close": "Close",
     "TreasuryDialog": {

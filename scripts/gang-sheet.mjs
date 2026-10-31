@@ -142,6 +142,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
         npc.narrativePerks = [];
       }
       npc.role = UnderworldTables.normalizeRole(npc.role);
+      npc.role2 = npc.role2 && UnderworldTables.ROLES_CONFIG[npc.role2] && npc.role2 !== npc.role ? npc.role2 : "";
       npc.roleConfig = UnderworldTables.ROLES_CONFIG[npc.role] || UnderworldTables.ROLES_CONFIG["bodyguard"];
 
       if (npc.actorId) {
@@ -180,24 +181,42 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
         executor = retinueMembers.find(n => Number(n.rank) >= 3) || null;
       } else {
         executor = retinueMembers.find(n => {
-          const norm = UnderworldTables.normalizeRole(n.role);
           const isLt = Number(n.rank) >= 3;
-          return reqRoles.includes(norm) || (reqRoles.includes("lieutenant") && isLt);
+          return UnderworldTables.hasRole(n, reqRoles) || (reqRoles.includes("lieutenant") && isLt);
         }) || null;
         isUnlocked = !!executor;
       }
 
       const reqRoleNames = reqRoles.map(r => r === "lieutenant" ? t("Ranks.lieutenant.Name") : (UnderworldTables.ROLES_CONFIG[r]?.name || r)).join(` ${t("Or")} `);
 
+      const [group, icon] = UnderworldOperations.ORDER_META[orderId] || ["offensive", "fas fa-bolt"];
+      const cost = orderId === "meatshield" ? { costClass: "sacrifice", costIcon: "fas fa-heart-broken", costLabel: t("TacticsTab.WoundRisk") }
+        : orderId === "rally" ? { costClass: "free", costIcon: "fas fa-dice", costLabel: t("TacticsTab.LeadershipAction") }
+        : Number(order.advantageCost) >= 2 ? { costClass: "advantage-high", costIcon: "fas fa-bolt", costLabel: t("TacticsTab.Cost2") }
+        : { costClass: "advantage", costIcon: "fas fa-bolt", costLabel: t("TacticsTab.Cost1") };
+
       tacticalOrdersView[orderId] = {
         ...order,
         id: orderId,
-        isUnlocked,
+        group,
+        icon,
+        ...cost,
+        danger: orderId === "meatshield",
+        universal: orderId === "rally",
+        isUnlocked: orderId === "rally" ? true : isUnlocked,
         executor,
         reqRoleNames
       };
     }
     data.tacticalOrders = tacticalOrdersView;
+    data.tacticGroups = [
+      ["offensive", "fas fa-skull-crossbones", "Offensive"],
+      ["control", "fas fa-theater-masks", "Control"],
+      ["protection", "fas fa-shield-alt", "Protection"]
+    ].map(([id, icon, key]) => ({
+      id, icon, title: t(`TacticsTab.${key}`),
+      orders: Object.values(tacticalOrdersView).filter(o => o.group === id)
+    }));
     data.rolesConfig = UnderworldTables.ROLES_CONFIG;
 
     data.availableOutlaws = gang.roster.filter(n => n.status === "ready" && (!n.assignment || n.assignment === "none"));
@@ -826,9 +845,8 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
 
     if (reqRoles.length > 0) {
       executor = activeRetinue.find(n => {
-        const norm = UnderworldTables.normalizeRole(n.role);
         const isLt = Number(n.rank) >= 3;
-        return reqRoles.includes(norm) || (reqRoles.includes("lieutenant") && isLt);
+        return UnderworldTables.hasRole(n, reqRoles) || (reqRoles.includes("lieutenant") && isLt);
       });
       if (!executor) {
         const reqNames = reqRoles.map(r => r === "lieutenant" ? t("Ranks.lieutenant.Name") : (UnderworldTables.ROLES_CONFIG[r]?.name || r)).join(` ${t("Or")} `);
@@ -1837,6 +1855,29 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       </div>
     ` : '';
 
+    // Druga rola za DO
+    const secondRoleDef = UnderworldTables.SECOND_ROLE;
+    let secondRoleBody;
+    if (npc.role2 && UnderworldTables.ROLES_CONFIG[npc.role2]) {
+      const cfg2 = UnderworldTables.ROLES_CONFIG[npc.role2];
+      secondRoleBody = `<span class="badge-mission ready" style="font-size: 0.78rem;"><i class="${cfg2.icon}"></i> ${cfg2.name}</span>`;
+    } else if ((Number(npc.rank) || 0) < secondRoleDef.minRank) {
+      secondRoleBody = `<span style="color: #999; font-size: 0.78rem;">🔒 ${t("Upgrade.SecondRoleNeedsRank")}</span>`;
+    } else {
+      const ownRoles = UnderworldTables.rolesOf(npc);
+      const options = Object.entries(UnderworldTables.ROLES_CONFIG)
+        .filter(([key]) => !ownRoles.includes(key))
+        .map(([key, cfg]) => `<option value="${key}">${cfg.name}</option>`).join("");
+      const canAffordRole = npc.operationalXP >= secondRoleDef.costOperationalXP;
+      secondRoleBody = `
+        <div style="display: flex; gap: 6px; align-items: center;">
+          <select id="select-second-role" style="flex: 1;">${options}</select>
+          <button type="button" class="btn-buy-second-role btn-actor-action" data-cost-xp="${secondRoleDef.costOperationalXP}" ${canAffordRole ? '' : 'disabled style="opacity: 0.5;"'} title="${canAffordRole ? t("Upgrade.BuyFor", { cost: secondRoleDef.costOperationalXP, unit: oxp }) : t("Upgrade.Requires", { cost: secondRoleDef.costOperationalXP, unit: oxp, have: npc.operationalXP })}">
+            <i class="fas fa-id-badge"></i> ${t("Upgrade.Buy")} (${secondRoleDef.costOperationalXP} ${oxp})
+          </button>
+        </div>`;
+    }
+
     const upgradeHtml = `
       <div class="underworld-dialog upgrade-dialog" style="font-size: 0.9rem; max-height: 540px; overflow-y: auto; padding-right: 4px;">
         <div style="display: flex; gap: 10px; align-items: center; border-bottom: 2px solid #5a3d28; padding-bottom: 8px; margin-bottom: 10px;">
@@ -1855,6 +1896,15 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
             <i class="fas fa-medal"></i> ${t("Upgrade.RankSection")} <span style="font-size: 0.78rem; font-weight: normal; color: #776633;">${t("Upgrade.RankSectionHint", { unit: oxp })}</span>
           </h4>
           ${ranksHtml}
+        </div>
+
+        <div style="margin-bottom: 12px;">
+          <h4 style="margin: 0 0 6px 0; color: #4a2810; font-size: 0.95rem; border-bottom: 1px dashed #9e856f; padding-bottom: 3px;">
+            <i class="fas fa-id-badge"></i> ${t("Upgrade.SecondRole")}
+            <span style="font-size: 0.76rem; font-weight: normal; color: #776633;">${t("Upgrade.SecondRoleHint")}</span>
+          </h4>
+          <div style="font-size: 0.78rem; color: #554433; margin-bottom: 6px; font-style: italic;">${t("Upgrade.SecondRoleIntro")}</div>
+          ${secondRoleBody}
         </div>
 
         <div style="margin-bottom: 12px;">
@@ -1934,6 +1984,26 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
         } else {
           ui.notifications.warn(t("Upgrade.NotEnoughXPRank", { unit: oxp }));
         }
+      });
+
+      // 1b. Druga rola za DO
+      on(".btn-buy-second-role", async (ev) => {
+        ev.preventDefault();
+        const costXp = UnderworldTables.SECOND_ROLE.costOperationalXP;
+        const chosen = dlgElement.querySelector("#select-second-role")?.value;
+        if (!chosen || !UnderworldTables.ROLES_CONFIG[chosen] || UnderworldTables.rolesOf(npc).includes(chosen)) return;
+        if ((Number(npc.rank) || 0) < UnderworldTables.SECOND_ROLE.minRank) return;
+        if (npc.operationalXP < costXp) {
+          ui.notifications.warn(t("Upgrade.NotEnoughXP", { cost: costXp, unit: oxp, have: npc.operationalXP }));
+          return;
+        }
+        npc.operationalXP -= costXp;
+        npc.role2 = chosen;
+        await GangData.saveGang(this.actor, gang);
+        ui.notifications.info(t("Upgrade.SecondRoleGained", { name: npc.name, role: UnderworldTables.ROLES_CONFIG[chosen].name }));
+        dlg.close();
+        this._onUpgradeNpcDialog(npcId);
+        this.render();
       });
 
       // 2. Wykupienie Fabularnego Atutu za DO
@@ -2463,6 +2533,9 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
               if (item.role) item.role = UnderworldTables.normalizeRole(item.role);
               else item.role = existing.role || "bodyguard";
             }
+            // Druga rola: gracz jej nie zmienia formularzem (kupuje ją za DO), MG ustawia ją z listy
+            const wantedRole2 = game.user.isGM && item.role2 !== undefined ? item.role2 : existing.role2;
+            item.role2 = wantedRole2 && UnderworldTables.ROLES_CONFIG[wantedRole2] && wantedRole2 !== item.role ? wantedRole2 : "";
           } else if (item.role) {
             item.role = UnderworldTables.normalizeRole(item.role);
           }

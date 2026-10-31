@@ -194,7 +194,7 @@ export class UnderworldTables {
     }
     const title = item.title || t("CampEvent.DefaultTitle");
     const text = item.text || item.desc || "";
-    return {
+    const event = {
       id: item.id || `ev-${index + 1}-${this._slugify(title)}`,
       title: title.trim(),
       text: text.trim(),
@@ -202,6 +202,42 @@ export class UnderworldTables {
       suppliesFound: item.supplies !== undefined ? Number(item.supplies) : (item.suppliesFound !== undefined ? Number(item.suppliesFound) : 0),
       coinsFoundSS: item.coinsSS !== undefined ? Number(item.coinsSS) : (item.coinsFoundSS !== undefined ? Number(item.coinsFoundSS) : 0)
     };
+    // Rozszerzenia: zdarzenie dla roli (okText/ok = rozwiązanie), hak na następną noc (next) i wpis tylko-następnik (only)
+    if (item.role && this.ROLES_CONFIG[item.role]) {
+      event.role = item.role;
+      event.okText = String(item.okText || "").trim();
+      const ok = item.ok || {};
+      event.ok = { moraleDelta: Number(ok.morale ?? ok.moraleDelta) || 0, suppliesFound: Number(ok.supplies ?? ok.suppliesFound) || 0, coinsFoundSS: Number(ok.coinsSS ?? ok.coinsFoundSS) || 0 };
+    }
+    if (item.next) event.next = String(item.next);
+    if (item.only) event.only = true;
+    return event;
+  }
+
+  static _terrainEventsCache = {};
+
+  /**
+   * Wbudowana tabela wydarzeń terenu z pliku data/events/<teren>.<język>.json
+   * (zapas: angielski). Zwraca [] , gdy pliku brak – wtedy działają listy z lang/*.json.
+   */
+  static async loadTerrainEvents(terrain) {
+    const lang = game.i18n?.lang || "en";
+    const key = `${terrain}:${lang}`;
+    if (this._terrainEventsCache[key]) return this._terrainEventsCache[key];
+    let list = [];
+    for (const code of [lang, "en"]) {
+      try {
+        const res = await fetch(`modules/wfrp4e-underworld/data/events/${terrain}.${code}.json`);
+        if (!res.ok) continue;
+        const json = await res.json();
+        if (Array.isArray(json) && json.length) {
+          list = json.map((e, i) => this.normalizeEvent(e, i));
+          break;
+        }
+      } catch (_) {}
+    }
+    this._terrainEventsCache[key] = list;
+    return list;
   }
 
   static getRandomSource() {
@@ -327,14 +363,35 @@ export class UnderworldTables {
     return { ...all[Math.floor(Math.random() * all.length)] };
   }
 
+  /**
+   * Losuje wydarzenie nocy. Najpierw sprawdza hak z poprzedniego wydarzenia (łańcuch A → B),
+   * potem losuje z tabeli terenu; wpisy „tylko następnik” nie wypadają losowo.
+   */
   static async drawCampEvent(gang) {
     const terrain = terrainOf(gang);
+    let event = null;
+    const hook = gang?.eventHook;
+    if (hook?.id && (!hook.terrain || hook.terrain === terrain)) {
+      event = await UnderworldRollTables.findEvent(terrain, hook.id);
+      if (event) event.followUp = true;
+      gang.eventHook = null;
+    }
+    if (!event) event = await this._drawRandomCampEvent(gang, terrain);
+    if (event?.next && gang) gang.eventHook = { id: event.next, terrain, from: event.id };
+    return event;
+  }
+
+  static async _drawRandomCampEvent(gang, terrain) {
     const fromTable = await UnderworldRollTables.draw("events", terrain);
     if (fromTable) return fromTable;
 
-    const events = terrain === "city"
-      ? this.getCampEvents(gang)
-      : (TERRAIN_EVENTS[terrain] || []).map((e, i) => this.normalizeEvent(e, i));
+    const loaded = await this.loadTerrainEvents(terrain);
+    const events = (loaded.length
+      ? loaded
+      : terrain === "city"
+        ? this.getCampEvents(gang)
+        : (TERRAIN_EVENTS[terrain] || []).map((e, i) => this.normalizeEvent(e, i))
+    ).filter(e => !e.only);
     if (!events.length) return { title: t("CampEvent.QuietTitle"), text: t("CampEvent.QuietText"), moraleDelta: 0 };
 
     let displayedIds = this.getDisplayedEventIds();
@@ -498,6 +555,34 @@ export class UnderworldTables {
       badgeClass: "role-saboteur",
       tactics: ["smoke", "sand", "volley"],
       bonusAssignments: ["sabotage", "distract", "cover_tracks"]
+    },
+    scout: {
+      id: "scout",
+      icon: "fas fa-binoculars",
+      badgeClass: "role-scout",
+      tactics: ["spot", "lure", "snare"],
+      bonusAssignments: ["scout", "cover_tracks", "procure"]
+    },
+    fixer: {
+      id: "fixer",
+      icon: "fas fa-file-signature",
+      badgeClass: "role-fixer",
+      tactics: ["payoff", "forgedorder", "resupply"],
+      bonusAssignments: ["fence", "forge", "bribe"]
+    },
+    charlatan: {
+      id: "charlatan",
+      icon: "fas fa-mortar-pestle",
+      badgeClass: "role-charlatan",
+      tactics: ["salve", "fumes", "evileye"],
+      bonusAssignments: ["rumor_spread", "tend_wounded", "tavern"]
+    },
+    duelist: {
+      id: "duelist",
+      icon: "fas fa-khanda",
+      badgeClass: "role-duelist",
+      tactics: ["parry", "riposte", "challenge"],
+      bonusAssignments: ["intimidate", "distract"]
     }
   }, "Roles", { name: "Name", shortDesc: "Desc" });
 
@@ -509,7 +594,7 @@ export class UnderworldTables {
       tough: {
         id: "tough",
         icon: "fas fa-fist-raised",
-        bonusAssignments: ["intimidate", "distract"],
+        bonusAssignments: ["intimidate", "distract", "highway_robbery", "racket"],
         slBonus: 1
       },
       stealthy: {
@@ -527,19 +612,19 @@ export class UnderworldTables {
       talkative: {
         id: "talkative",
         icon: "fas fa-comments",
-        bonusAssignments: ["tavern", "rumor_spread", "fence"],
+        bonusAssignments: ["tavern", "rumor_spread", "fence", "theman"],
         slBonus: 1
       },
       eagle_eye: {
         id: "eagle_eye",
         icon: "fas fa-eye",
-        bonusAssignments: ["scout", "sabotage", "cover_tracks"],
+        bonusAssignments: ["scout", "sabotage", "cover_tracks", "poaching"],
         slBonus: 1
       },
       trusted_face: {
         id: "trusted_face",
         icon: "fas fa-handshake",
-        bonusAssignments: ["bribe", "fence"],
+        bonusAssignments: ["bribe", "fence", "theman"],
         slBonus: 1
       },
       local_knowledge: {
@@ -558,7 +643,7 @@ export class UnderworldTables {
       brutal: {
         id: "brutal",
         icon: "fas fa-skull-crossbones",
-        bonusAssignments: ["intimidate"],
+        bonusAssignments: ["intimidate", "highway_robbery", "racket"],
         slBonus: 2,
         penaltyAssignments: ["tavern", "rumor_spread"],
         slPenalty: 1
@@ -566,7 +651,7 @@ export class UnderworldTables {
       war_veteran: {
         id: "war_veteran",
         icon: "fas fa-shield-alt",
-        bonusAssignments: ["distract", "cover_tracks", "sabotage"],
+        bonusAssignments: ["distract", "cover_tracks", "sabotage", "highway_robbery"],
         slBonus: 1
       },
       horse_thief: {
@@ -578,7 +663,7 @@ export class UnderworldTables {
       iron_will: {
         id: "iron_will",
         icon: "fas fa-heartbeat",
-        bonusAssignments: ["cover_tracks", "distract"],
+        bonusAssignments: ["cover_tracks", "distract", "tend_wounded"],
         slBonus: 1,
         special: "pain_resistant"
       },
@@ -609,7 +694,7 @@ export class UnderworldTables {
       poacher: {
         id: "poacher",
         icon: "fas fa-leaf",
-        bonusAssignments: ["procure", "scout"],
+        bonusAssignments: ["procure", "scout", "poaching"],
         slBonus: 1,
         special: "extra_food"
       },
@@ -628,6 +713,66 @@ export class UnderworldTables {
         id: "knife_master",
         icon: "fas fa-khanda",
         bonusAssignments: ["shadow", "pickpocket", "distract"],
+        slBonus: 1
+      },
+      lockpick: {
+        id: "lockpick",
+        icon: "fas fa-key",
+        bonusAssignments: ["burglary", "pickpocket"],
+        slBonus: 1
+      },
+      smooth_liar: {
+        id: "smooth_liar",
+        icon: "fas fa-comment-dots",
+        bonusAssignments: ["bribe", "forge", "fence", "theman"],
+        slBonus: 1
+      },
+      surefooted: {
+        id: "surefooted",
+        icon: "fas fa-shoe-prints",
+        bonusAssignments: ["scout", "mine_raid", "cover_tracks"],
+        slBonus: 1
+      },
+      night_owl: {
+        id: "night_owl",
+        icon: "fas fa-moon",
+        bonusAssignments: ["shadow", "burglary", "scout"],
+        slBonus: 1
+      },
+      pack_rat: {
+        id: "pack_rat",
+        icon: "fas fa-box-open",
+        bonusAssignments: ["procure", "farm_theft"],
+        slBonus: 1
+      },
+      ox_strong: {
+        id: "ox_strong",
+        icon: "fas fa-dumbbell",
+        bonusAssignments: ["highway_robbery", "mine_raid", "intimidate"],
+        slBonus: 1
+      },
+      animal_friend: {
+        id: "animal_friend",
+        icon: "fas fa-paw",
+        bonusAssignments: ["smuggle", "farm_theft", "procure", "poaching"],
+        slBonus: 1
+      },
+      steady_nerves: {
+        id: "steady_nerves",
+        icon: "fas fa-snowflake",
+        bonusAssignments: ["distract", "bribe", "cover_tracks", "tend_wounded"],
+        slBonus: 1
+      },
+      haggler: {
+        id: "haggler",
+        icon: "fas fa-scale-balanced",
+        bonusAssignments: ["fence", "racket"],
+        slBonus: 1
+      },
+      lucky: {
+        id: "lucky",
+        icon: "fas fa-clover",
+        bonusAssignments: ["pickpocket", "smuggle", "cover_tracks"],
         slBonus: 1
       }
     }, "Strengths", { name: "Name", desc: "Desc" }),
@@ -743,6 +888,62 @@ export class UnderworldTables {
         id: "bloodthirsty",
         icon: "fas fa-tint",
         notorietyOnSuccess: 1
+      },
+      hothead: {
+        id: "hothead",
+        icon: "fas fa-fire-flame-curved",
+        penaltyAssignments: ["cover_tracks", "bribe"],
+        slPenalty: 1
+      },
+      squeamish: {
+        id: "squeamish",
+        icon: "fas fa-face-grimace",
+        penaltyAssignments: ["intimidate", "tend_wounded"],
+        slPenalty: 1
+      },
+      snorer: {
+        id: "snorer",
+        icon: "fas fa-bed-pulse",
+        penaltyAssignments: ["shadow", "scout"],
+        slPenalty: 1
+      },
+      bad_leg: {
+        id: "bad_leg",
+        icon: "fas fa-crutch",
+        penaltyAssignments: ["pickpocket", "smuggle", "mine_raid"],
+        slPenalty: 1
+      },
+      greedy: {
+        id: "greedy",
+        icon: "fas fa-sack-dollar",
+        campEffect: { chance: 10, type: "steal_treasury", amount: 6 }
+      },
+      homesick: {
+        id: "homesick",
+        icon: "fas fa-house-chimney",
+        moraleOnFail: 1
+      },
+      witchhunter_mark: {
+        id: "witchhunter_mark",
+        icon: "fas fa-person-burst",
+        notorietyOnFail: 1
+      },
+      proud: {
+        id: "proud",
+        icon: "fas fa-crown",
+        penaltyAssignments: ["fence", "bribe", "tavern"],
+        slPenalty: 1
+      },
+      jinxed: {
+        id: "jinxed",
+        icon: "fas fa-cat",
+        penaltyAssignments: ["pickpocket", "burglary", "scout"],
+        slPenalty: 1
+      },
+      nightmares: {
+        id: "nightmares",
+        icon: "fas fa-cloud-moon",
+        campEffect: { chance: 15, type: "unavailable" }
       }
     }, "Flaws", { name: "Name", desc: "Desc" })
   };
@@ -845,6 +1046,22 @@ export class UnderworldTables {
     return mod;
   }
 
+  /** Koszt (DO) i minimalna ranga drugiej roli poplecznika. */
+  static SECOND_ROLE = { costOperationalXP: 80, minRank: 1 };
+
+  /** Role poplecznika: główna i opcjonalna druga (kupiona za DO albo nadana przez MG). */
+  static rolesOf(npc) {
+    const first = this.normalizeRole(npc?.role);
+    const second = npc?.role2 && this.ROLES_CONFIG[npc.role2] ? npc.role2 : null;
+    return second && second !== first ? [first, second] : [first];
+  }
+
+  /** Czy poplecznik ma którąkolwiek z podanych ról (główną lub drugą). */
+  static hasRole(npc, roles) {
+    const own = this.rolesOf(npc);
+    return (Array.isArray(roles) ? roles : [roles]).some(r => own.includes(r));
+  }
+
   /**
    * Normalizuje dowolny ciąg roli do poprawnego identyfikatora ROLES_CONFIG
    */
@@ -853,14 +1070,17 @@ export class UnderworldTables {
     const r = String(role).toLowerCase().trim();
     if (this.ROLES_CONFIG[r]) return r;
 
+    if (/zawadiak|szermierz|pojedynkowicz|rębajło|rebajlo|duelist|duellist|swashbuckler|\bfencer\b|swordsman|blademaster/i.test(r)) return "duelist";
     if (/ochron|goryl|osiłek|rzeźnik|żołnierz|tarczownik|drab|mięśniak|kafar|bodyguard|bruiser|thug|soldier|muscle|brute/i.test(r)) return "bodyguard";
     if (/cień|nożownik|nożownicz|złodziej|włamywacz|skrytobój|zabójca|shadow|knife|thief|burglar|assassin|cutthroat/i.test(r)) return "shadow";
     if (/strzelec|kłusownik|kusznik|łucznik|snajper|marksman|poacher|archer|crossbow|sniper|shooter/i.test(r)) return "marksman";
     if (/prowokator|szuler|kuglarz|karciarz|żebrak|aktor|krzykacz|provocateur|sharper|juggler|gambler|beggar|actor/i.test(r)) return "provocateur";
-    if (/szabrownik|felczer|zielar|medyk|paser|zbieracz|doktor|scavenger|surgeon|herb|medic|fence|forager|doctor/i.test(r)) return "scavenger";
+    if (/szarlatan|znachor|guślarz|wiedźm|charlatan|quack|hedge|mountebank/i.test(r)) return "charlatan";
+    if (/paser|fałszerz|pośrednik|handlarz|kupiec|lichwiarz|\bfence\b|forger|broker|trader|merchant|moneylender/i.test(r)) return "fixer";
+    if (/szabrownik|felczer|zielar|medyk|zbieracz|doktor|scavenger|surgeon|herb|medic|forager|doctor/i.test(r)) return "scavenger";
     if (/woźnic|woznica|przemyt|furman|woźba|przewoźnik|stangret|smuggler|carter|driver|coachman|teamster/i.test(r)) return "smuggler";
     if (/podpal|sabota|pirotech|saper|ogniomistrz|arson|saboteur|pyro|sapper|demolition/i.test(r)) return "saboteur";
-    if (/zwiad|tropiciel|scout|tracker/i.test(r)) return "shadow";
+    if (/zwiad|tropiciel|leśnik|przewodnik|łowca|scout|tracker|ranger|guide|woodsman|huntsman/i.test(r)) return "scout";
 
     return "bodyguard";
   }

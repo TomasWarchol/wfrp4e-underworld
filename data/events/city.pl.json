@@ -1,0 +1,2900 @@
+[
+ {
+  "id": "c-001",
+  "title": "Cicha noc w piwnicy",
+  "text": "Nad głowami przetoczył się tylko jeden wóz piwowara. Wszyscy wyspali się dobrze, mimo zapachu stęchlizny.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-002",
+  "title": "Szczury w spiżarni",
+  "text": "Stado szczurów dobrało się do worków z mąką. Zanim je przegoniono, zniknął spory kawał zapasów.",
+  "morale": 0,
+  "supplies": -2,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-003",
+  "title": "Pijacka awantura za ścianą",
+  "text": "W sąsiedniej kamienicy dwóch cechmistrzów obiło się przy wódce. Straż przyszła, ale w złą stronę uliczki.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-004",
+  "title": "Zgubiona sakiewka",
+  "text": "Rano pod progiem leżała sakiewka, którą ktoś zgubił w biegu. Nie ma w niej imienia, tylko trochę srebra.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 5
+ },
+ {
+  "id": "c-005",
+  "title": "Dzwony Morra o północy",
+  "text": "Dzwony kaplicy Morra zabrzmiały bez żadnego powodu. Część ludzi nie zmrużyła oka do świtu.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-006",
+  "title": "Kupiec bez straży",
+  "text": "Pijany kupiec zabłądził w zaułku i wypytywał, którędy do gospody. Nikt go nie tknął, ale kilku popatrzyło łakomie.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-007",
+  "title": "Chleb za darmo",
+  "text": "Piekarz dla uczczenia święta rozdawał wczorajszy bochenek każdemu, kto stał w kolejce. Szajka stała w kolejce trzy razy.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-008",
+  "title": "Dym z kominka",
+  "text": "Komin ciągnął źle i cała nora zasnęła w dymie. Rano wszyscy kaszleli i narzekali na bóle głowy.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-009",
+  "title": "Kłótnia o koc",
+  "text": "Dwoje popleczników pokłóciło się o ostatni suchy koc. Herszt rozstrzygnął spór po salomonowemu, czyli oddał koc sobie.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-010",
+  "title": "Obwoływacz z wiadomościami",
+  "text": "Obwoływacz krzyczał pod oknem o nowych podatkach i listach gończych. Część nowin była szczególnie interesująca.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-011",
+  "title": "Obca flasza",
+  "text": "Ktoś zostawił na parapecie flaszkę taniej wódki z kartką „Za zdrowie”. Nikt nie przyznał się do jej wstawienia.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-012",
+  "title": "Kot na dachu",
+  "text": "Rudy kot wkradł się na dach i całą noc gonił gołębie. Rano przyniósł jednego do progu jak dar.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-013",
+  "title": "Kominiarz",
+  "text": "Kominiarz zszedł z dachu prosto na kolana jednemu z popleczników. Obaj krzyczeli, aż się wszyscy obudzili.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-014",
+  "title": "Patrol pod oknem",
+  "text": "Patrol straży przeszedł pod oknem trzy razy. Szajka siedziała cicho, ale nerwy puściły niejednemu.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-015",
+  "title": "Spóźniona dostawa",
+  "text": "Furman przywiózł zamówione zapasy dopiero po zmroku i życzył sobie dopłaty. Zapłacono, ale bez uśmiechu.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": -2
+ },
+ {
+  "id": "c-016",
+  "title": "Śpiew z gospody",
+  "text": "Z gospody po drugiej stronie ulicy dochodziły stare pieśni o Sigmarze i pięknych Reiklandkach. Chętni poszli słuchać.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-017",
+  "title": "Nocny sprzedawca",
+  "text": "O świcie pod drzwiami stanął handlarz kiszonek. Targował się zawzięcie, ale odszedł z pustym koszem.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": -1
+ },
+ {
+  "id": "c-018",
+  "title": "Kapłanka Shallyi",
+  "text": "Kapłanka Shallyi z koszykiem ziół zapukała po jałmużnę. Dostała drobne i obdarzyła wszystkich błogosławieństwem.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": -1
+ },
+ {
+  "id": "c-019",
+  "title": "Płonący kosz",
+  "text": "Gdzieś w uliczce zapalił się kosz ze śmieciami. Ludzie wybiegli z wiadrami, szajka w tym samym czasie sprzątnęła co się dało.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "c-020",
+  "title": "Dziwne światło w oknie",
+  "text": "W oknie naprzeciw przez całą noc migotało zielonkawe światło. Zwidy czy alchemik, nikt nie chciał zgadywać.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-021",
+  "title": "Wesele w kamienicy",
+  "text": "Cała kamienica bawiła się na weselu piekarczyka. Szajka dostała resztki ciasta i kilka kubków piwa.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-022",
+  "title": "Nocna burza",
+  "text": "Burza zalała uliczki aż po kostki, ale w norze było sucho, a deszcz zagłuszył wszelkie ślady.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-023",
+  "title": "Ulotka od Łowców Czarownic",
+  "text": "Ktoś wsunął pod drzwi ulotkę z listą podejrzanych o herezję. Dwa nazwiska były znajome.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-024",
+  "title": "Podejrzany sąsiad",
+  "text": "Sąsiad z naprzeciwka od tygodnia za bardzo przygląda się waszym drzwiom. Z pewnością ma jakiś interes, ale jaki?",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-025",
+  "title": "Śpiew sierot",
+  "text": "Dzieci z ochronki Shallyi śpiewały pod oknami w zamian za chleb. Nikt nie miał serca ich odpędzić.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-026",
+  "title": "Kupiec zbożowy",
+  "text": "Zboże w mieście zdrożało, a kupiec, który zwykle was zaopatrywał, żąda teraz więcej. Trzeba się dostosować.",
+  "morale": 0,
+  "supplies": -2,
+  "coinsSS": -3
+ },
+ {
+  "id": "c-027",
+  "title": "Gołąb z listem",
+  "text": "Gołąb przysiadł na parapecie z karteczką na nóżce. List nie był do was, ale w liście stała ciekawa informacja.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "c-028",
+  "title": "Klątwa starej praczki",
+  "text": "Praczka z podwórza przeklęła głośno całą szajkę, bo ktoś zadeptał jej pranie. Nikt nie wie, czy to coś znaczy.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-029",
+  "title": "Nocny pożar w sąsiedniej uliczce",
+  "text": "Gdzieś blisko wybuchł pożar. Straż miejska pobiegła w tamtą stronę, zostawiając uliczki pod waszą kontrolą.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "c-030",
+  "title": "Rozbity wóz",
+  "text": "Pod waszymi drzwiami przewrócił się wóz z beczkami. Kilka beczek poturlało się do piwnicy, nie wiadomo jak.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-031",
+  "title": "Złodziej-amator",
+  "text": "Chłopak z sąsiedniej ulicy próbował was okraść. Złapany, rozpłakał się i opowiedział o wszystkich swoich sprawach.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "c-032",
+  "title": "Pijany drab pod drzwiami",
+  "text": "Pijany drab z miejskiej gwardii wali w drzwi i domaga się „podatku od lokatorów”. Bez odpowiedniej reakcji będzie z tego kłopot.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -3,
+  "role": "bodyguard",
+  "okText": "Ochroniarz wyszedł, spojrzał na niego raz, a drab odszedł, zostawiając swoje pieniądze.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 2
+  }
+ },
+ {
+  "id": "c-033",
+  "title": "Windykator z pałką",
+  "text": "Windykator cechowy przyszedł po zaległy czynsz za piwnicę, w towarzystwie dwóch rosłych knechtów.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -4,
+  "role": "bodyguard",
+  "okText": "Ochroniarz stanął w drzwiach i grzecznie wyjaśnił, że dziś nie ma nikogo w domu.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-034",
+  "title": "Śledzący cień",
+  "text": "Ktoś od kilku wieczorów chodzi za członkami szajki. Trzeba go zgubić albo schwytać, zanim zdradzi kryjówkę.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "Cień zaszedł tropiciela od tyłu, przyłożył mu nóż do żeber i wyciągnął z niego wszystko, co miał przy sobie.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "c-035",
+  "title": "Złodziej z gildii",
+  "text": "Gildia złodziei dała do zrozumienia, że działacie na ich terenie. Przy dachu pojawił się ich człowiek.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -3,
+  "role": "shadow",
+  "okText": "Cień dogonił go w ciemnościach i wymienił z nim kilka dobrze dobranych słów o terytoriach.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-036",
+  "title": "Gołębie z listami",
+  "text": "Gołębie listonosze z cudzymi wiadomościami zaczęły lądować na waszym dachu. Ktoś ich potrzebuje i to boleśnie.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "Strzelec ściągnął kilka gołębi prostym ruchem procy, a w kieszonkach nóżek znalazł interesujące wiadomości.",
+  "ok": {
+   "morale": 0,
+   "supplies": 1,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "c-037",
+  "title": "Dachowy łucznik",
+  "text": "Ktoś na dachu naprzeciwko wypatruje waszych okien. Ktokolwiek to jest, nie ma przyjaznych zamiarów.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "Strzelec wypatrzył go i posłał strzałę w komin tuż obok jego głowy. Dachowy gość wykonał szybki odwrót.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-038",
+  "title": "Zamieszki na rynku",
+  "text": "Na pobliskim placu zbiera się tłum, bo cech rzeźników pokłócił się z cechem piekarzy. Z odpowiedzią się nie spieszą.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "Prowokator dolał oliwy do ognia i kiedy wszyscy rzucili się na siebie, poplecznicy mieli czas zabrać z kramów, co się dało.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "c-039",
+  "title": "Pijacka loteria",
+  "text": "W gospodzie obok organizują nielegalną loterię. Jeśli wygra właściwy człowiek, można całkiem nieźle zarobić.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -2,
+  "role": "provocateur",
+  "okText": "Prowokator nakierował wszystko tak, że wygrał ktoś z szajki, a gospodarz nawet nie zorientował się dlaczego.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "c-040",
+  "title": "Zepsuty piec",
+  "text": "Piec w norze zgasł i zawalił się komin. Bez dobrej ręki trzeba będzie spać w zimnie.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "Szabrownik w godzinę poskładał wszystko z pozbieranych cegieł i starej blachy, a nawet znalazł dwie stare sztaby.",
+  "ok": {
+   "morale": 1,
+   "supplies": 1,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-041",
+  "title": "Rannych w zaułku",
+  "text": "W zaułku obok leży dwóch rannych, jeden w bardzo złym stanie. Ktoś musi się nimi zająć, zanim wykrwawią się na progu.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "Szabrownik opatrzył obu, a w podzięce dostał sakiewkę od jednego z nich i obietnicę przysługi.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "c-042",
+  "title": "Sprawa nocnego dostawcy",
+  "text": "Przemytnik z Rzeki prosi o miejsce do ukrycia kilku beczek na jedną noc. Odmowa to ryzyko, zgoda również.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "Woźnica znał przemytnika i wiedział, jak wyjść na swoje: beczki spoczęły w piwnicy, a za ich ukrycie spadła porządna opłata.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 8
+  }
+ },
+ {
+  "id": "c-043",
+  "title": "Zagubiony wóz",
+  "text": "Pod waszym oknem utknął cudzy wóz z dwoma kołami do naprawy i pełnym ładunkiem. Ktoś będzie go szukał rano.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "Woźnica naprawił koła, odholował wóz za róg i zabrał to, co się dało, nim właściciel przyszedł.",
+  "ok": {
+   "morale": 0,
+   "supplies": 3,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "c-044",
+  "title": "Skrzynie na rogu",
+  "text": "Przed kamienicą ktoś zostawił skrzynie z łatwopalną zawartością. Jedna iskra i połowa ulicy zajmie się ogniem.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "Podpalacz rozpoznał skład i ostrożnie przeniósł skrzynie w bezpieczne miejsce, a przy okazji uzbierał z nich zapas oleju i smoły.",
+  "ok": {
+   "morale": 0,
+   "supplies": 2,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "c-045",
+  "title": "Zamknięta brama",
+  "text": "Gildia kupiecka zamknęła bramę prowadzącą do spichlerza. Ktoś z szajki chce tam wejść, ale zamek jest solidny.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "Podpalacz wyłamał zawiasy bez jednego dźwięku. Spichlerz otworzył się na oścież i wynieśli z niego zapasy na cały tydzień.",
+  "ok": {
+   "morale": 1,
+   "supplies": 4,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-046",
+  "title": "Pościg po dachach",
+  "text": "Ktoś przebiega po dachach nad waszymi głowami, a za nim biegnie straż. Ucieczka prowadzi prosto w stronę waszego domu.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "Zwiadowca przewidział trasę i zdążył wcisnąć uciekiniera do piwnicy, a strażnikom wskazać fałszywy kierunek. Uciekinier odwdzięczył się hojnie.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "c-047",
+  "title": "Nowe podkomnaty",
+  "text": "W ścianie piwnicy pojawiła się szczelina, za którą ciągnie się dawny korytarz. Dokąd prowadzi, nikt nie wie.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "Zwiadowca ostrożnie zbadał korytarz i znalazł w nim zapomniany schowek z kilkoma sztukami srebra i dwoma wyjściami awaryjnymi.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "c-048",
+  "title": "Fałszywa moneta",
+  "text": "W kieszeni jednego z popleczników odkryto fałszywą monetę. Gdyby ktoś wypłacił nią czynsz, mielibyśmy kłopoty.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -2,
+  "role": "fixer",
+  "okText": "Paser rozpoznał kunszt fałszerza, rozpuścił monetę i przetopił w sztabkę, a od właściwego handlarza wyciągnął za nią uczciwą cenę.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "c-049",
+  "title": "Handlarz z podejrzanym towarem",
+  "text": "Nieznajomy oferuje partię towaru po cenie, której nikt nie powinien żądać. Albo jest świetnym kupcem, albo kradzionym.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -3,
+  "role": "fixer",
+  "okText": "Paser obejrzał towar, wynegocjował rozsądną cenę i odkupił go z przyzwoitym zyskiem.",
+  "ok": {
+   "morale": 0,
+   "supplies": 3,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "c-050",
+  "title": "Chory w sąsiedztwie",
+  "text": "Z sąsiedniego mieszkania słychać kaszel i jęki. Jeśli to zaraza, cała ulica zacznie szukać winnych.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "Znachor zajrzał do chorego, rozpoznał zwykłą gorączkę, podał ziółka i uspokoił sąsiadów, a w podzięce dostał kilka groszy.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 2
+  }
+ },
+ {
+  "id": "c-051",
+  "title": "Pogłoski o czarownicy",
+  "text": "Wśród sąsiadów chodzi plotka, że w waszej kamienicy mieszka wiedźma. Łowcy mogą wkrótce zapukać.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "Znachor wystąpił na podwórku, rozdał gałązki pachnące „od Sigmara” i tak opowiedział sąsiadom swoją wersję, że sami zaczęli płacić za jego ochronę.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "c-052",
+  "title": "Pojedynek o honor",
+  "text": "Podchmielony szlachcic wyzwał na pojedynek jednego z waszych za nieuprzejmy gest. Wyzwanie jest poważne, a przeciwnik zbyt uparty.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -2,
+  "role": "duelist",
+  "okText": "Szermierz wystąpił w obronie, pokonał szlachcica bez zadrapań i z wdziękiem oddał mu miecz w zamian za sakiewkę „na pamiątkę”.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "c-053",
+  "title": "Ćwiczenie na podwórku",
+  "text": "Na podwórzu ktoś wyzywa przechodniów do bijatyki za pieniądze. Jeśli ktoś z szajki się wda, może być z tego sakiewka albo siniak.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "duelist",
+  "okText": "Szermierz w trzy ruchy rozbroił wszystkich chętnych i zgarnął stawki, a tłum bił mu brawo.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "c-054",
+  "title": "Tajemniczy list",
+  "text": "Rano pod drzwiami leży zapieczętowany list bez adresata. Wygląda na to, że czeka na kogoś, kto się z nim zgłosi.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "c-055"
+ },
+ {
+  "id": "c-055",
+  "title": "Nadawca listu zgłasza się",
+  "text": "Człowiek, który zostawił list, wrócił i grzecznie prosi o jego odebranie. Jest zdenerwowany i płaci za dyskrecję.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 7,
+  "only": true
+ },
+ {
+  "id": "c-056",
+  "title": "Skrzynia w piwnicy",
+  "text": "Przy sprzątaniu piwnicy odnaleziono zamkniętą skrzynię, której nikt nie pamięta. Klucza nie ma, a zamek trzeba obejść.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "c-057"
+ },
+ {
+  "id": "c-057",
+  "title": "Właściciel skrzyni",
+  "text": "Do drzwi puka starszy mężczyzna i pyta o skrzynię, która należała do jego brata. Mówi, że wyjechał na zawsze.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 4,
+  "only": true
+ },
+ {
+  "id": "c-058",
+  "title": "Młody uciekinier",
+  "text": "Chłopak w znoszonym płaszczu przypadkiem wpadł do piwnicy, uciekając przed kimś. Prosi o ukrycie na jedną noc.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0,
+  "next": "c-059"
+ },
+ {
+  "id": "c-059",
+  "title": "Chłopak z podziękowaniem",
+  "text": "Młodzieniec wrócił z paczką jedzenia i obietnicą, że wygada się tylko tym, którym ufa. Jego rodzina ma wpływy.",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": 3,
+  "only": true
+ },
+ {
+  "id": "c-060",
+  "title": "Wóz z trupami",
+  "text": "Przez ulicę przeturlał się wóz z trupami po ostatniej fali choroby. Woźnica odwrócił głowę, ale smród zostawił po sobie ślad.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-061",
+  "title": "Pochód Sigmarytów",
+  "text": "Procesja flagellantów przeszła ulicą, śpiewając o końcu świata. Połowa szajki poszła za nimi z ciekawości, reszta zamknęła okiennice.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-062",
+  "title": "Hexenstag",
+  "text": "W Wigilię Hexenstagu ludzie palą ogniska na rogach ulic, żeby odstraszyć złe duchy. Szajka też postawiła swoje.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-063",
+  "title": "Dzień targowy",
+  "text": "W mieście wielki targ, tłok i zgiełk. Kieszenie pełne i kieszenie puste zmieniają właścicieli.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": 4
+ },
+ {
+  "id": "c-064",
+  "title": "Pobór podatków",
+  "text": "Poborca podatkowy chodzi od drzwi do drzwi z dwoma strażnikami. Do waszej piwnicy nie zapukał, ale sąsiednia dostała srogie wyroki.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-065",
+  "title": "Rekrutacja do milicji",
+  "text": "Werbunkowy sierżant szuka młodych do milicji miejskiej. Dwóch z szajki udawało, że ich nie ma.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-066",
+  "title": "Cech garbarzy",
+  "text": "Garbarze z dzielnicy obok wyrzucili beczki z odpadkami do rzeki. Smród przeniknął aż do waszej piwnicy.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-067",
+  "title": "Nocny kopacz",
+  "text": "Ktoś kopie pod ziemią w sąsiedztwie, od dwóch nocy. Nikt nie wie, czy to szczurołap, kanalarz, czy coś gorszego.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-068",
+  "title": "Złodziej konia",
+  "text": "Złodziej koni uciekał uliczką i porzucił łup w waszej bramie. Rano koń stał grzecznie przy ścianie, oglądając szajkę.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 6
+ },
+ {
+  "id": "c-069",
+  "title": "Studenci z uniwersytetu",
+  "text": "Grupa studentów przeszła pijana po zaułku, śpiewając sprośne piosenki. Jeden zgubił sakiewkę, a drugi pożyczył dublet od poplecznika.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "c-070",
+  "title": "Alchemik z dymiącym kociołkiem",
+  "text": "Na poddaszu obok alchemik znów coś spieprzył. Dym z komina jest zielony, a okna sąsiadów pękają jedno po drugim.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-071",
+  "title": "Kat w gospodzie",
+  "text": "W gospodzie obok kat urządził sobie wieczór. Nikt nie chciał siedzieć blisko niego, więc wszyscy mieli więcej miejsca.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-072",
+  "title": "Biegły skryba",
+  "text": "Skryba z kancelarii wynajął nocleg przy waszej norze i przepisywał listy aż do świtu. Zostawił po sobie kałamarz.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "c-073",
+  "title": "Zepsuta rynna",
+  "text": "Rynna na dachu pękła i woda zalała jeden z kątów. Trzeba było przerzucać zapasy w suche miejsce.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-074",
+  "title": "Kupiec z Tilei",
+  "text": "Tileański kupiec zatrzymał się w pobliżu, hałaśliwy i hojny. Rozdawał oliwki i opowieści o skarbach.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-075",
+  "title": "Krasnoludzki kowal",
+  "text": "Krasnolud z sąsiedniej uliczki młotem obudził całe sąsiedztwo. Rano ktoś znalazł pod drzwiami świeżo naostrzone noże.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-076",
+  "title": "Przesłuchanie",
+  "text": "Straż wyprowadziła z kamienicy podejrzanego o fałszerstwo. Przesłuchiwali wszystkich w okolicy, ale was ominęli.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-077",
+  "title": "Cztery wesołe wdowy",
+  "text": "Cztery wdowy z sąsiedniej ulicy urządziły pogrzeb męża jednej z nich. Pogrzeb zamienił się w ucztę, na którą zaproszono szajkę.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-078",
+  "title": "Powódź na Reiku",
+  "text": "Rzeka wylała i woda zalała nadbrzeżne uliczki. Piwnica ocalała, ale zapasy wymagały przeniesienia.",
+  "morale": -1,
+  "supplies": -2,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-079",
+  "title": "Dym znad warsztatu",
+  "text": "Pożar warsztatu stolarskiego rozświetlił niebo. Straż zaprzątnięta gaszeniem, dzielnica spała spokojnie.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "c-080",
+  "title": "Gołębnik",
+  "text": "Ktoś hoduje gołębie w sąsiedniej wieży. Co noc słychać ich wzburzone gruchanie, a rano kilka wylądowało w waszym kącie.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-081",
+  "title": "Bójka o wodę",
+  "text": "Przy studni dwie kobiety pokłóciły się o kolejkę i polały się wodą. Tłum się zebrał, a kieszonkowcy mieli dzień pełen pracy.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "c-082",
+  "title": "Pies bez pana",
+  "text": "Duży pies bez pana przybłąkał się do bramy i zasnął na progu. Straszy każdego, kto próbuje wejść, nawet swoich.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-083",
+  "title": "Ostrzeżenie od informatora",
+  "text": "Jeden ze starych znajomych przysłał chłopca z kartką: „Uważajcie na czwartek”. Co to znaczy, nikt nie wie.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-084",
+  "title": "Jarmark rzemieślniczy",
+  "text": "Rzemieślnicy rozłożyli kramy na całej ulicy. Szajka wypatrzyła parę rzeczy, które można było nabyć albo przyłapać.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": 4
+ },
+ {
+  "id": "c-085",
+  "title": "Zagubiona dziewczynka",
+  "text": "Dziecko z sąsiedztwa zabłąkało się w nocy do piwnicy. Odprowadzono je do rodziców, którzy wynagrodzili was kilkoma jabłkami.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-086",
+  "title": "Biskup w mieście",
+  "text": "Do miasta przybył kapłan wysokiej rangi i ulice patrolowano podwójnie. Kryjówka dostała nieoczekiwane dwie wizyty.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-087",
+  "title": "Pijana barka",
+  "text": "Barka z piwem uderzyła w nabrzeże i beczki potoczyły się po rampie. Wszyscy zbierali, co się dało, przy okazji udając ratowników.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-088",
+  "title": "Szczurołap",
+  "text": "Szczurołap o dziwnie jasnych oczach zaoferował swoje usługi. Niezbyt chętnie zgodziliście się na dwie noce pracy, a rano w piwnicy było cicho.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": -2
+ },
+ {
+  "id": "c-089",
+  "title": "Duch w kamienicy",
+  "text": "Ktoś widział w oknie postać w białej koszuli. Pewnie złodziej, ale o północy każdy wolał uważać na kark.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-090",
+  "title": "Wyłamane drzwi",
+  "text": "Ktoś w środku nocy próbuje wyłamać drzwi do waszej nory. Albo jest bardzo pijany, albo bardzo zdesperowany.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -2,
+  "role": "bodyguard",
+  "okText": "Ochroniarz otworzył drzwi i z uśmiechem zapytał, w czym mu pomóc. Intruz zbladł i wycofał się z przeprosinami.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-091",
+  "title": "Przepychanka w kolejce",
+  "text": "W kolejce po chleb doszło do bijatyki, w którą wplątał się jeden z waszych. Bez interwencji trafi do aresztu.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -2,
+  "role": "bodyguard",
+  "okText": "Ochroniarz rozepchnął tłum jak taran, wyciągnął swojego i po drodze „zarekwirował” kilka bochnów.",
+  "ok": {
+   "morale": 0,
+   "supplies": 3,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-092",
+  "title": "Cichy gość",
+  "text": "Ktoś wszedł do kryjówki i bezszelestnie zniknął z workiem. Zapasy dziwnie zmalały, ale nikt nie widział złodzieja.",
+  "morale": -1,
+  "supplies": -2,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "Cień wytropił włamywacza do jego legowiska, odebrał worek i jeszcze dopisał się do cudzego depozytu.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "c-093",
+  "title": "Obca twarz w tawernie",
+  "text": "Nieznajomy w sąsiedniej gospodzie za dużo pyta o waszą szajkę. Trzeba się dowiedzieć, kim jest.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "Cień obserwował go do rana, zobaczył, jak spotyka się z podejrzanym typem, i po cichu zwędził mu list z poleceniem.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 2
+  }
+ },
+ {
+  "id": "c-094",
+  "title": "Wrony",
+  "text": "Wrony obsiadły dach i hałasem przywołują strażników. Ktoś musi je uciszyć, bo patrol już zbliża się z latarnią.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "Strzelec bezszelestnie ściągnął kilka ptaków z dachu, a na wieczerzę zrobił z nich pożywną zupę.",
+  "ok": {
+   "morale": 1,
+   "supplies": 2,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-095",
+  "title": "Nieprzyjaciel na wieży",
+  "text": "Ktoś zajął wieżę kościelną naprzeciw i ma wszystkie wasze okna na widoku. Wygląda jak zwiadowca obcej szajki.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "Strzelec zaczaił się w komnatce i z dużej odległości posłał strzałę w dzwon. Obcy uciekł w panice, zostawiając sakwę.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "c-096",
+  "title": "Plotka o zarazie",
+  "text": "Na targu ktoś rozpuścił plotkę, że w waszej ulicy wybuchła choroba. Kupcy omijają okolicę, sąsiedzi się boją.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": -2,
+  "role": "provocateur",
+  "okText": "Prowokator przy gospodzie głośno rozwiał plotkę, a przy okazji wskazał właściwych winnych, którzy dla świętego spokoju zapłacili.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "c-097",
+  "title": "Zaczepka",
+  "text": "Grupa podpitych młodzieńców zaczepia przechodniów i zbliża się do waszej bramy. Jeden z nich ma zadziorne spojrzenie.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "Prowokator rozbroił ich żartem, przekonał, że w sąsiedniej gospodzie leją za darmo, i jeszcze dostał od nich kilka srebrników.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 2
+  }
+ },
+ {
+  "id": "c-098",
+  "title": "Zepsute zapasy",
+  "text": "Część zapasów zaczyna pachnieć podejrzanie. Jeśli nikt nie zareaguje, wszyscy będą mieli bóle brzucha.",
+  "morale": -1,
+  "supplies": -3,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "Szabrownik przesortował zapasy, wyrzucił zgniłe i przerobił resztę na zupę z przyprawami, która smakowała lepiej niż świeża.",
+  "ok": {
+   "morale": 0,
+   "supplies": 2,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-099",
+  "title": "Zwłoki w rynsztoku",
+  "text": "W rynsztoku przed domem leży ciało nieznajomego. Jeśli nikt się nim nie zajmie, ściągnie straż.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "Szabrownik zajął się ciałem, a przy okazji znalazł w kieszeni kilka monet i interesujący pierścień. Zwłoki zniknęły w kanale.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "c-100",
+  "title": "Blokada ulicy",
+  "text": "Straż zablokowała ulicę przed waszym domem i przeszukuje wozy. Wasze zapasy są w jednym z nich.",
+  "morale": -1,
+  "supplies": -2,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "Woźnica znał boczne uliczki jak własną kieszeń, sprowadził wóz tyłami i jeszcze zarobił, wynajmując miejsce innym kupcom.",
+  "ok": {
+   "morale": 0,
+   "supplies": 3,
+   "coinsSS": 2
+  }
+ },
+ {
+  "id": "c-101",
+  "title": "Spóźniony przemytnik",
+  "text": "Znajomy przemytnik nie przyszedł na umówione spotkanie, a wasz towar czeka na nabrzeżu. Strażnicy zaczynają się nim interesować.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -3,
+  "role": "smuggler",
+  "okText": "Woźnica zorganizował zastępczą łódź i podstawił zmyślony transport, a towar dotarł na miejsce z dopłatą.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "c-102",
+  "title": "Beczka prochu",
+  "text": "W bramie obok ktoś zostawił beczkę prochu strzelniczego pod wspólnym nadzorem sąsiadów. Jedna zbłąkana iskra i znikną dwie ulice.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "Podpalacz przeniósł beczkę do bezpiecznego miejsca i opróżnił z niej prawie połowę, ukrywszy proch w swojej skrytce.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "c-103",
+  "title": "Nieszczelny dach",
+  "text": "Sąsiad grozi, że doniesie straży o waszych nocnych wizytach, jeśli nie naprawicie mu dachu. Rzekomo wy go zniszczyliście.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -2,
+  "role": "saboteur",
+  "okText": "Podpalacz znał wszystkie słabe punkty konstrukcji, więc przekonał sąsiada, że naprawa wystarczy, i jeszcze zdołał wzbudzić jego wdzięczność.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "c-104",
+  "title": "Nowe szlaki",
+  "text": "Rano ktoś zamurował jedno z waszych wyjść i zamknął drugie. Trzeba znaleźć nową drogę, zanim ktoś nas zamknie w pułapce.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "Zwiadowca w godzinę wytyczył trzy nowe trasy przez dachy i piwnice i zaznaczył je kredą widoczną tylko dla swoich.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-105",
+  "title": "Przesyłka",
+  "text": "Jakiś człowiek wręczył kurierowi sakiewkę i wskazał na wasze drzwi. Kurier zniknął, a po chwili ktoś zaczął obserwować wejście.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "Zwiadowca przechwycił kuriera, zanim ten dotarł do celu, i zabrał przesyłkę, w której było kilka listów i nieco monet.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "c-106",
+  "title": "Cechowy kontroler",
+  "text": "Kontroler cechu kupców schodzi do piwnicy, bo słyszał o niezarejestrowanym składzie. Bez dokumentów będzie kara.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -5,
+  "role": "fixer",
+  "okText": "Paser wyciągnął stos dokumentów, które wyglądały bardziej oficjalnie niż same pieczęcie. Kontroler przeprosił i wyszedł.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-107",
+  "title": "Zakup łupów",
+  "text": "Handlarz antykami oferuje kupno kilku waszych „znalezisk” po dobrej cenie. Pytanie, czy to nie podstęp.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "fixer",
+  "okText": "Paser zbadał kupca, sprawdził jego referencje i wynegocjował, żeby płacił z góry. Sprzedaż się udała z nawiązką.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 8
+  }
+ },
+ {
+  "id": "c-108",
+  "title": "Zatrucie",
+  "text": "Kilkoro popleczników skarży się na ból brzucha po wczorajszej wieczerzy. Jeśli nikt nie pomoże, pójdą do lekarza, który zada pytania.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -2,
+  "role": "charlatan",
+  "okText": "Znachor podał wywar z ziół, wyciągnął z każdego trochę żółci i ogłosił „odtrutką”. Wszyscy poczuli się lepiej.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-109",
+  "title": "Biedny z kaszlem",
+  "text": "Żebrak z kaszlem przysiadł na waszych schodach. Inni przechodzą bokiem, a jeśli umrze, będzie kłopot.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "Znachor wlał w niego odrobinę własnej mikstury, zebrał garść monet od sąsiadów za „cud” i oddał żebraka do przytułku.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "c-110",
+  "title": "Wyzwanie ulicznego szermierza",
+  "text": "Uliczny szermierz wyzwał waszych ludzi na pojedynek o pierwszeństwo w okolicy. Przegrana zniszczy autorytet szajki.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -2,
+  "role": "duelist",
+  "okText": "Szermierz z szajki przyjął wyzwanie i pokonał rywala, nie tracąc łobuzerskiego uśmiechu, a publiczność wrzucała mu monety.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "c-111",
+  "title": "Przypadkowa zniewaga",
+  "text": "Ktoś ze strażników opowiada głośno kawały o waszej szajce. Jeśli nikt nie zareaguje, śmiech rozniesie się po okolicy.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "duelist",
+  "okText": "Szermierz odpowiedział dowcipem, na który strażnik nie znalazł riposty, i zyskał uznanie wszystkich obecnych.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-112",
+  "title": "Ranny żołnierz",
+  "text": "Pod drzwiami leży ranny żołnierz w poplamionym mundurze. Mamrocze coś o zdradzie i prosi o schronienie.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0,
+  "next": "c-113"
+ },
+ {
+  "id": "c-113",
+  "title": "Pościg za żołnierzem",
+  "text": "Dwóch ludzi w płaszczach bez herbów pyta o rannego żołnierza. Obiecują dobrą zapłatę za informację.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 6,
+  "only": true
+ },
+ {
+  "id": "c-114",
+  "title": "Dziwna beczka",
+  "text": "Rano na progu stoi zapieczętowana beczka z wyciśniętym herbem obcego domu. Nikt jej nie zamawiał.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "c-115"
+ },
+ {
+  "id": "c-115",
+  "title": "Gdy po beczkę wrócili",
+  "text": "Czterech ludzi z herbem na rękawach pojawia się po beczkę. Nikt już nie pamięta, kto ją wtoczył do piwnicy.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 3,
+  "only": true
+ },
+ {
+  "id": "c-116",
+  "title": "Kłopoty rodziny kupieckiej",
+  "text": "Młoda kupcowa przyszła do was po radę: ktoś szantażuje jej męża. Obiecała milczenie i drobną nagrodę.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2,
+  "next": "c-117"
+ },
+ {
+  "id": "c-117",
+  "title": "Szantażysta znaleziony",
+  "text": "Człowiek, który szantażował kupca, wpadł w ręce straży. Przed aresztem zdążył jeszcze wygadać, że ktoś z szajki mu pomagał.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -3,
+  "only": true
+ },
+ {
+  "id": "c-118",
+  "title": "Uliczny grajek",
+  "text": "Skrzypek grał pod waszym oknem do świtu. Połowa szajki była wściekła, połowa tańczyła.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "c-119",
+  "title": "Kłótnia sąsiadów",
+  "text": "Dwie rodziny po drugiej stronie podwórza kłóciły się przez całą noc. Nikt nie słyszał waszych kroków.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-120",
+  "title": "Zgubiony klucz",
+  "text": "Ktoś zgubił klucz do spichlerza, a szajka go znalazła. Rano właściciel obiecał nagrodę temu, kto go odda.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "c-121",
+  "title": "Nocne polowanie na szczury",
+  "text": "Ludzie z latarniami polowali na szczury w zaułkach. Szajka dołączyła i przy okazji przeszukała kilka piwnic.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": 2
+ },
+ {
+  "id": "c-122",
+  "title": "Dwuznaczny wieczór",
+  "text": "Do waszych drzwi zapukała kobieta w pięknym płaszczu, spytała o drogę i zniknęła. Zostawiła zapach drogich perfum.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-123",
+  "title": "Wróżka z targu",
+  "text": "Wróżka z targu przepowiedziała jednemu z popleczników długie życie i wielką stratę. Nikt nie wie, czy to dobra wróżba.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-124",
+  "title": "Okno na świat",
+  "text": "Ktoś rozbił okno w sąsiednim domu i uciekł z kuframi. Straż zajęta śledztwem, wy mieliście spokojną noc.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-125",
+  "title": "Misjonarz Sigmara",
+  "text": "Młody kapłan Sigmara zatrzymał się w okolicy i głosił kazanie na rogu. Nikt nie słuchał, ale monety lądowały w jego misce.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-126",
+  "title": "Bękart szlachcica",
+  "text": "Młodzieniec o podejrzanie szlacheckich rysach wypytuje o drogę do waszej dzielnicy. Wygląda jak dziecko z nieprawego łoża.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-127",
+  "title": "Kradzież z kramu",
+  "text": "Chłopcy z waszego otoczenia podwędzili kosz owoców z kramu i pochowali go w piwnicy. Handlarz ich szuka.",
+  "morale": 0,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-128",
+  "title": "Pożar w gospodzie",
+  "text": "W gospodzie za rogiem pękła beczka z olejem. Karczmarz wszczął alarm, a stałych klientów trzeba było ratować.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-129",
+  "title": "Zbrojni na ulicy",
+  "text": "Zbrojni w barwach którejś rodziny przeszli ulicą w milczeniu. Czegoś szukali, ale nie waszych drzwi.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-130",
+  "title": "Dzieci ulicy",
+  "text": "Dzieci z ulicy przyniosły garść wieści i prosiły o chleb w zamian. Wieści warte były swojej ceny.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 3
+ },
+ {
+  "id": "c-131",
+  "title": "Śnieg",
+  "text": "Pierwszy śnieg przykrył ulice. Mniej kroków w mieście, a komin dymi mniej, niż trzeba.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-132",
+  "title": "Zaginiony kruk",
+  "text": "Kruk bez nóg przyleciał do okna i przez godzinę patrzył na szajkę. Potem odleciał, jakby wszystko zrozumiał.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-133",
+  "title": "Bal przebierańców",
+  "text": "W dzielnicy odbywa się bal przebierańców i ulice pełne są masek. Można się zgubić, a można też zarobić.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "c-134",
+  "title": "Śpiący strażnik",
+  "text": "Strażnik zasnął przy waszej bramie z kuflem w ręku. Rano obudził się, zawstydzony, i zostawił ćwierć srebrnika.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "c-135",
+  "title": "Chorągiew",
+  "text": "Wojskowa chorągiew przeszła przez miasto, z werblami i trąbami. Dzieci biegły za nią, a dorośli kryli kosztowności.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "c-136",
+  "title": "Krzyki z kamienicy",
+  "text": "Z drugiego piętra naprzeciwko dobiegały krzyki. Kiedy wreszcie ucichły, nikt nie odważył się sprawdzić.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-137",
+  "title": "Przewrócona latarnia",
+  "text": "Latarnia uliczna spadła i zgasła. W ciemności ktoś przeszedł zaułkiem, który wcześniej był oświetlony.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "c-138",
+  "title": "Stary przyjaciel",
+  "text": "Dawny kompan z innej szajki zapukał do drzwi. Wspomnieliście dawne czasy, a on odszedł z ciężką głową i lżejszą sakiewką.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": -2
+ },
+ {
+  "id": "c-139",
+  "title": "Wielka kłótnia o sery",
+  "text": "Dwóch sprzedawców serów pokłóciło się o miejsce i oboje wylądowali w rzece. Wszyscy mieli ubaw, a sery rozdarte po ulicy.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-140",
+  "title": "Spalony kościół",
+  "text": "Mała kaplica spłonęła w nocy. Ludzie szeptali o podpaleniu i szukali winnych wśród obcych.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-141",
+  "title": "Burmistrz na ulicy",
+  "text": "Burmistrz z orszakiem przeszedł przez dzielnicę, a szajka schowała wszystko, co mogło wzbudzić podejrzenia.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-142",
+  "title": "Przedmiot na sprzedaż",
+  "text": "Jeden z popleczników znalazł w śmieciach dziwną figurkę. Handlarz kupił ją za trzy srebrniki i uśmiechnął się znacząco.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "c-143",
+  "title": "Dym z kominów",
+  "text": "Wszystkie kominy w dzielnicy dymiły jednocześnie, bo noc była mroźna. Jeden z nich dymił gęściej niż inne.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-144",
+  "title": "Kamienna głowa",
+  "text": "Przy odkopywaniu piwnicy znaleziono kamienną głowę z nieznanym symbolem. Wszyscy się jej boją, ale nikt jej nie wyrzucił.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-145",
+  "title": "Misja Shallyi",
+  "text": "Siostry Shallyi rozdają chleb i lekarstwa w dzielnicy. Wasi ludzie też dostali swoją porcję.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-146",
+  "title": "Zabłąkany niedźwiedź",
+  "text": "Wędrowna menażeria zgubiła niedźwiedzia. Zwierzę spało pod waszym oknem, aż je odnalazł opiekun.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "c-147",
+  "title": "Dług honorowy",
+  "text": "Dawny kompan przyszedł z pijaną bandą po „zaległy dług”, którego szajka nie pamięta. Grozi, że rozbije drzwi.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -4,
+  "role": "bodyguard",
+  "okText": "Ochroniarz wyszedł i zaproponował załatwić sprawę „po męsku”. Kompan szybko przypomniał sobie, że to była pomyłka.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-148",
+  "title": "Eskorta dla kupca",
+  "text": "Kupiec w płaszczu przy drzwiach prosi o eskortę do bramy miasta. Boi się napadu, hojnie płaci za strach.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "bodyguard",
+  "okText": "Ochroniarz odprowadził kupca z takim wyrazem twarzy, że żaden zbir nie śmiał się zbliżyć. Zapłata przyszła z nawiązką.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 8
+  }
+ },
+ {
+  "id": "c-149",
+  "title": "Złodziejskie sygnały",
+  "text": "Ktoś rysuje kredą znaki na waszych drzwiach. Dla niektórych to zaproszenie, dla innych wyrok.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "Cień rozpoznał znaki gildii i dopisał do nich własną dopiskę, dzięki której złodzieje omijali okolicę, a za dopisek zapłacili.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "c-150",
+  "title": "Nocna ucieczka",
+  "text": "Człowiek w czarnym płaszczu przeskakuje po dachach, a ktoś go goni. Wpada do waszej piwnicy.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "shadow",
+  "okText": "Cień przejął sytuację, ukrył uciekiniera i wyprowadził pogoń na manowce. Uciekinier okazał się dłużnikiem szlachcica i zapłacił.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "c-151",
+  "title": "Zagubiony sokół",
+  "text": "Na dachu usiadł sokół z kapturkiem i dzwonkiem. Ktoś go szuka i hojnie wynagrodzi znalazcę.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "marksman",
+  "okText": "Strzelec zwabił ptaka kawałkiem mięsa i zawrócił go właścicielowi, który okazał się zamożnym kupcem.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "c-152",
+  "title": "Rzeźnik",
+  "text": "Pijany rzeźnik oskarża waszych ludzi o kradzież szynek. Domaga się odszkodowania.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -3,
+  "role": "marksman",
+  "okText": "Strzelec założył się z rzeźnikiem o celny strzał w wiszącą szynkę i trafił dokładnie w wyznaczony punkt. Rzeźnik zaśmiał się, wycofał zarzut i dołożył jeszcze jedną szynkę.",
+  "ok": {
+   "morale": 1,
+   "supplies": 1,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-153",
+  "title": "Dwóch kupców",
+  "text": "Dwóch kupców kłóci się głośno o towar, którego jeden nie dostarczył. Jeśli ktoś nie zacznie rozjemstwa, wybuchnie bójka.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "Prowokator „rozsądził” spór tak, że obaj kupcy zapłacili mu za pomoc, a każdy sądził, że wygrał.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "c-154",
+  "title": "Wieczór teatralny",
+  "text": "Wędrowna trupa gra przedstawienie na ulicy, a tłum jest rozbawiony i hojny. Gdyby ktoś wkradł się na scenę...",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "provocateur",
+  "okText": "Prowokator wkradł się w przedstawienie, popisał się rolą pijanego rycerza i zebrał z kapelusza więcej, niż cała trupa tego wieczoru.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "c-155",
+  "title": "Zapchane rynsztoki",
+  "text": "Rynsztoki zatkały się po burzy i woda wdziera się do piwnicy. Trzeba je przeczyścić albo zalać skład.",
+  "morale": -1,
+  "supplies": -2,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "Szabrownik w kilka chwil odetkał rynsztoki i znalazł w mule kilka drobnych monet i kawałek srebrnego łańcuszka.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 3
+  }
+ },
+ {
+  "id": "c-156",
+  "title": "Zapomniany skład",
+  "text": "W sąsiedniej kamienicy właściciel umarł i zostawił skład pełen rupieci. Syn chce wszystko wyrzucić jutro rano.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scavenger",
+  "okText": "Szabrownik zdążył przesiać wszystko jeszcze tej nocy i znalazł kilka rzeczy, które nadawały się na sprzedaż albo do jedzenia.",
+  "ok": {
+   "morale": 1,
+   "supplies": 3,
+   "coinsSS": 4
+  }
+ },
+ {
+  "id": "c-157",
+  "title": "Wóz z cebulą",
+  "text": "Kupiec cebuli prosi o przechowanie wozu na jedną noc, bo jego stajnia spłonęła. Ktoś może zajrzeć pod cebulę.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "Woźnica zrozumiał, co jest pod cebulą, wziął należność za milczenie i dopilnował, by wóz odjechał bez przeszkód.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "c-158",
+  "title": "Pasażer na gapę",
+  "text": "W waszym wozie nocował ktoś obcy i teraz nie chce wysiąść. Mówi, że jest dłużnikiem i potrzebuje wyjechać z miasta.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "smuggler",
+  "okText": "Woźnica przeprowadził go przez bramę w beczce, a za usługę dostał złoto, którego uciekinier nie mógł zabrać ze sobą.",
+  "ok": {
+   "morale": 0,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "c-159",
+  "title": "Podkopany mur",
+  "text": "Mur kamienicy naprzeciwko osunął się po deszczu, odsłaniając piwnice. W środku widać beczki z czymś cennym.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "Podpalacz zbadał strukturę i sprawił, że reszta muru runęła w odpowiednim kierunku, odsłaniając wszystkie beczki bez huku.",
+  "ok": {
+   "morale": 0,
+   "supplies": 2,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "c-160",
+  "title": "Sąsiad-donosiciel",
+  "text": "Sąsiad pod nami zbiera dowody przeciwko waszej szajce. Ma stos listów i papierów u siebie w mieszkaniu.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "saboteur",
+  "okText": "Podpalacz podpalił jego mieszkanie w ten sposób, że papiery spłonęły, a pożar ugaszono, zanim ktoś zdążył go zobaczyć.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-161",
+  "title": "Zagubiona mapa",
+  "text": "Ktoś zostawił mapę kanałów pod waszymi drzwiami. Mapa może być prawdziwa albo pułapką.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "Zwiadowca sprawdził mapę w terenie i okazało się, że prowadzi do dawnego skrytego wejścia do skarbca kupca.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "c-162",
+  "title": "Plotka o skarbie",
+  "text": "W gospodzie szepcze się o ukrytym skarbie pod starą kaplicą. Wielu szuka, nikt nie znalazł.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "scout",
+  "okText": "Zwiadowca poszedł jedynym dobrym tropem, odnalazł skrytkę i przyniósł do kryjówki kilka złotych przedmiotów.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "c-163",
+  "title": "Uciekający dłużnik",
+  "text": "Dłużnik pożyczył od was na procent i teraz nie chce spłacić. Mówi, że nie ma pieniędzy, ale ma pokaźne długi u innych.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -4,
+  "role": "fixer",
+  "okText": "Paser odkupił długi dłużnika od jego innych wierzycieli za grosze, połączył je z waszym i wyegzekwował całość od jego bogatej rodziny.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 7
+  }
+ },
+ {
+  "id": "c-164",
+  "title": "Nowy dokument",
+  "text": "Straż żąda okazania listu żelaznego od każdego w dzielnicy. Wasze listy są nieważne, a kara za ich brak surowa.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -4,
+  "role": "fixer",
+  "okText": "Paser wyrobił nowe dokumenty z perfekcyjnymi pieczęciami, które wytrzymały kontrolę, a kontroler pochwalił ich kaligrafię.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-165",
+  "title": "Miksturka na bóle",
+  "text": "Starsza kobieta pyta o eliksir na reumatyzm, a za nią kolejka. Jeśli nie macie nic, stracicie klientelę.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "Znachor wydobył z torby buteleczkę mikstury „z mandragory” (czyli rumianek i wódka) i sprzedał ją całej kolejce.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 5
+  }
+ },
+ {
+  "id": "c-166",
+  "title": "Szeptucha",
+  "text": "Do szajki przychodzi stara szeptucha, która twierdzi, że widzi śmierć na waszych twarzach. Niektórzy w to wierzą.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "charlatan",
+  "okText": "Znachor szepnął jej coś na ucho, wręczył monetę i opowiedział całej szajce, że to wróżba na długie życie. Spokój wrócił.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-167",
+  "title": "Zaproszenie na bal",
+  "text": "Młoda szlachcianka prosi jednego z waszych o towarzyszenie jej na balu, bo jej narzeczony zachorował. Okazja albo pułapka.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "role": "duelist",
+  "okText": "Szermierz zabłysnął w tańcu, zdobył szacunek gości i wrócił z kieszeniami pełnymi drobnych podarunków i kilkoma użytecznymi adresami.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 6
+  }
+ },
+ {
+  "id": "c-168",
+  "title": "Cios w plecy",
+  "text": "Konkurencyjna szajka ukartowała na was zasadzkę w ślepej uliczce. Zanim się zorientujecie, będzie za późno.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -3,
+  "role": "duelist",
+  "okText": "Szermierz dostrzegł pułapkę w ostatniej chwili, wyszedł pierwszy z szablą w dłoni i zażądał pojedynku. Przeciwnicy rozproszyli się.",
+  "ok": {
+   "morale": 1,
+   "supplies": 0,
+   "coinsSS": 0
+  }
+ },
+ {
+  "id": "c-169",
+  "title": "Wizyta kuriera",
+  "text": "Kurier z cudzej szajki zostawia wiadomość: „Spotkajmy się, jest interes”. Nie podpisał się.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "c-170"
+ },
+ {
+  "id": "c-170",
+  "title": "Spotkanie w ciemnej uliczce",
+  "text": "W umówione miejsce przychodzi obcy z mapą i propozycją. Chce wspólnego skoku na składy cechu i dobrze płaci za wejście.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 6,
+  "only": true
+ },
+ {
+  "id": "c-171",
+  "title": "Obca moneta",
+  "text": "Jeden z popleczników pokazuje monetę, którą dostał od nieznajomego. Ma na niej dziwny znak, którego nikt nie rozpoznaje.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2,
+  "next": "c-172"
+ },
+ {
+  "id": "c-172",
+  "title": "Znak się odnalazł",
+  "text": "Znak z monety pojawił się na drzwiach kilku domów w okolicy. Ktoś zaznacza ofiary.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "only": true
+ },
+ {
+  "id": "c-173",
+  "title": "Dziwny gość",
+  "text": "Do drzwi puka wędrowny uczony i prosi o nocleg w zamian za opowieści. Wygląda na wyczerpanego.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0,
+  "next": "c-174"
+ },
+ {
+  "id": "c-174",
+  "title": "Uczony wraca",
+  "text": "Uczony odjechał rano, ale wrócił z kupcem, który chce kupić od was przysługę. Obiecuje zapłacić w srebrze.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 8,
+  "only": true
+ },
+ {
+  "id": "c-175",
+  "title": "Pogróżki",
+  "text": "Pod drzwi podrzucono martwego szczura z przypiętą kartką: „Wiem, co robicie”. Pismo jest nieczytelne.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "c-176"
+ },
+ {
+  "id": "c-176",
+  "title": "Autor się ujawnia",
+  "text": "Autor listu okazał się pijanym kupcem, który myślał, że to inna szajka. Przeprasza i oferuje odszkodowanie.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 4,
+  "only": true
+ },
+ {
+  "id": "c-177",
+  "title": "Płonący znak",
+  "text": "Ktoś wypalił na waszych drzwiach symbol w kształcie dłoni. Nikt nie potrafi go odczytać.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "c-178"
+ },
+ {
+  "id": "c-178",
+  "title": "Wyjaśnienie symbolu",
+  "text": "Stary żebrak opowiada, że to znak dawnej bractwa, które chroniło sąsiedztwo. Jeśli go uszanujecie, znajdziecie sprzymierzeńców.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 5,
+  "only": true
+ },
+ {
+  "id": "c-179",
+  "title": "Mgła nad rzeką",
+  "text": "Gęsta mgła z Reiku wpełzła w uliczki. Nie widać było dłoni przed twarzą, a wszelkie odgłosy brzmiały dziwnie blisko.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "c-180",
+  "title": "Dzwon alarmowy",
+  "text": "W nocy zabił dzwon na alarm, ale nikt nie wiedział, z jakiego powodu. Pół dzielnicy stało na ulicy w koszulach.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-181",
+  "title": "Zgubiona kobieta",
+  "text": "Przy waszej bramie siedziała kobieta bez butów i nie mogła przypomnieć sobie, skąd przyszła. Straż wzięła ją rano.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-182",
+  "title": "Dym i woń",
+  "text": "W powietrzu unosił się zapach spalonych ziół. Gdzieś niedaleko ktoś odprawiał jakiś obrządek, którego nie chcieliście znać.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-183",
+  "title": "Nowy cennik",
+  "text": "Kupcy podnieśli ceny o jedną czwartą po plotkach o wojnie. Wasze zapasy topnieją szybciej niż zwykle.",
+  "morale": 0,
+  "supplies": -2,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-184",
+  "title": "Ostry mróz",
+  "text": "Mróz ściął kałuże na kamień. Kominy dymią, a ludzie przy ogniu opowiadają sobie o starych czasach.",
+  "morale": 0,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-185",
+  "title": "Odwiedziny wujka",
+  "text": "Wujek jednego z popleczników wpadł z koszem jabłek i oskarżeniami. Po godzinie wszyscy mieli dość, ale jabłka zostały.",
+  "morale": -1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-186",
+  "title": "Nowy sąsiad",
+  "text": "Do pustego mieszkania wprowadził się cichy człowiek o znoszonej twarzy. Przez cały dzień nie wyszedł ani razu.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-187",
+  "title": "Ucieczka konia",
+  "text": "Koń wyrwał się z uprzęży, przebiegł przez dzielnicę i zatrzymał się dopiero pod waszymi oknami. Nikt się o niego nie upomniał.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 5
+ },
+ {
+  "id": "c-188",
+  "title": "Dowcip kanalarza",
+  "text": "Kanalarz wyszedł z włazu z kilkoma dowcipami i bardzo mocnym zapachem. Poplecznicy śmiali się całą noc.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-189",
+  "title": "Szlachcic na rynku",
+  "text": "Szlachcic na rynku rzucał monety w tłum dla zabawy. Wszyscy się rzucili, a wy z nimi.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "c-190",
+  "title": "Skradziony pierścień",
+  "text": "Na waszej klatce ktoś porzucił pierścień z herbem jakiegoś rodu. Wiadomo, że ktoś go szuka.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "c-191",
+  "title": "Dzień Sigmara",
+  "text": "Wszystkie dzwony biły na cześć Sigmara. Ulice były czyste, a straż bardziej czujna niż zwykle.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-192",
+  "title": "Nocny handlarz książkami",
+  "text": "Handlarz z wózkiem pełnym zakazanych ksiąg pytał, czy ktoś nie chce kupić „coś ciekawego”. Wolał przepłacić niż zostać z nimi.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -2
+ },
+ {
+  "id": "c-193",
+  "title": "Przedstawienie lalek",
+  "text": "Lalkarz grał przedstawienie dla dzieci, a dorośli stali z tyłu i słuchali. Zawierało więcej aluzji do waszego zawodu, niż komukolwiek było na rękę.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-194",
+  "title": "Łowca nagród",
+  "text": "Łowca nagród pytał o kogoś z waszej dzielnicy. Opis pasował do jednego z kamienicy dalej, ale ktoś poczuł się nieswojo.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-195",
+  "title": "Kuter na rzece",
+  "text": "Kuter rybacki zacumował przy nabrzeżu i rybacy rozdawali wczorajszy połów, bo chcieli lżej płynąć. Szajka nie odmówiła.",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-196",
+  "title": "Wiadomość od informatora",
+  "text": "Stary informator zostawił kartkę z jednym zdaniem: „Wielki ładunek jutro rano na wschodnim nabrzeżu”. Można to wykorzystać.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "c-197",
+  "title": "Wiatr",
+  "text": "Silny wiatr huczał nad miastem i zrywał dachówki. Nikt nie mógł spać, ale ulice były puste.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "c-198",
+  "title": "Rynek wieczorny",
+  "text": "Ostatni kupcy zwijali kramy i rozprzedawali resztki za grosze. Szajka zrobiła zakupy życia.",
+  "morale": 0,
+  "supplies": 3,
+  "coinsSS": -1
+ },
+ {
+  "id": "c-199",
+  "title": "Kłótnia kapłanów",
+  "text": "Kapłan Sigmara i kapłan Ulryka pokłócili się publicznie o miejsce na procesję. Tłum bawił się lepiej niż na jarmarku.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-200",
+  "title": "Dźwięk w ścianie",
+  "text": "W ścianie piwnicy coś stuka rytmicznie od wczoraj. Szczur, rura czy zamurowany sąsiad, nikt nie wie.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-201",
+  "title": "Stary wędrowiec",
+  "text": "Wędrowiec o siwej brodzie spytał o wodę. Dostał ją, a w zamian opowiedział historię o starym skarbcu pod miastem.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-202",
+  "title": "Zgniłe jabłka",
+  "text": "Ktoś zostawił skrzynię zgniłych jabłek pod drzwiami, jako ostrzeżenie czy po prostu przypadkiem. Smród utrzymywał się całą noc.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-203",
+  "title": "Dwunastu ślepców",
+  "text": "Dwunastu ślepych żebraków przeszło przez ulicę w szeregu, każdy z ręką na ramieniu poprzedniego. Wyglądało upiornie.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-204",
+  "title": "Bliźniaki",
+  "text": "Dwóch popleczników okazało się bracia bliźniacy rozdzieleni w dzieciństwie. Wzruszające spotkanie, a przy okazji kilka ciekawych historii.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-205",
+  "title": "Pani z sąsiedztwa",
+  "text": "Ładna pani z sąsiedztwa nawiązała rozmowę z jednym z popleczników. Gdy odeszła, zniknął mu pas z sakiewką.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -3
+ },
+ {
+  "id": "c-206",
+  "title": "Pochód straży",
+  "text": "Straż miejska w parade przeszła przez dzielnicę z bębnami. W szeregach jeden z nich zdawał się was rozpoznawać.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-207",
+  "title": "Burza z piorunami",
+  "text": "Piorun uderzył w wieżę kościelną i dzwony zabrzmiały same. Ludzie szeptali o znaku.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-208",
+  "title": "Kupiec nożowników",
+  "text": "Handlarz noży przy bramie oferował broń po okazyjnej cenie. Nie miał zbyt wielu pytań, a wy też nie.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -3
+ },
+ {
+  "id": "c-209",
+  "title": "Gadające papugi",
+  "text": "Ktoś w sąsiedztwie hoduje papugi, które powtarzają wszystko, co słyszą. Okolica nauczyła się mówić ciszej.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-210",
+  "title": "Bękart w kościele",
+  "text": "Podczas mszy dziecko wykrzyknęło głośno imię ojca. Cały kościół zamilkł, a jeden z mężczyzn zbladł jak kreda.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-211",
+  "title": "Zagadka kołacza",
+  "text": "Piekarz upiekł kołacz z monetą w środku. Szajka go zjadła i monetę znalazł ten, kto najmniej potrzebował.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 1
+ },
+ {
+  "id": "c-212",
+  "title": "Wesołe miasteczko",
+  "text": "Wędrowny cyrk rozłożył namioty na wolnym placu. Połowa dzielnicy oglądała akrobatów, połowa szukała zgubionych sakiewek.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 5
+ },
+ {
+  "id": "c-213",
+  "title": "Kapłan Morra",
+  "text": "Kapłan Morra przeszedł nocą przez ulicę, niosąc czarną laskę. Za nim szedł chłopiec z latarnią. Szajka nie oddychała, dopóki nie zniknęli.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-214",
+  "title": "Szczurzy król",
+  "text": "Szczury w piwnicy poruszają się w dziwnie zorganizowany sposób. Niektórzy poplecznicy szepczą o szczurzym królu.",
+  "morale": -1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-215",
+  "title": "Kłopot z sąsiadką",
+  "text": "Sąsiadka z góry wylała pomyje z okna, prosto na ramię jednego z popleczników. Zaczęła się kłótnia, która skończyła się przeprosinami i chlebem.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-216",
+  "title": "Kwestarz",
+  "text": "Kwestarz zbierał na naprawę dachu kaplicy, a po godzinie okazało się, że żadnej kaplicy nie ma. Pieniądze znikły razem z nim.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -2
+ },
+ {
+  "id": "c-217",
+  "title": "Wyścig powozów",
+  "text": "Dwa powozy ścigały się przez dzielnicę i jeden rozbił się o waszą bramę. Pasażerowie byli bardziej wstrząśnięci niż ranni.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "c-218",
+  "title": "Zawieszone pranie",
+  "text": "Pranie rozwieszone nad ulicą zasłoniło cały zaułek. Pod prześcieradłami przesuwali się ludzie, których nie widać było z dołu.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "c-219",
+  "title": "Płacz niemowlęcia",
+  "text": "Cała noc płakało dziecko w sąsiednim mieszkaniu. Rano matka rozdawała wszystkim chleb w ramach przeprosin.",
+  "morale": -1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-220",
+  "title": "Wizyta kupca z Kisleva",
+  "text": "Kislevicki kupiec zatrzymał się w okolicy i rozdawał futra na rozgrzewkę. Zimno nie dało się znieść, więc wszyscy przyjęli.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": -1
+ },
+ {
+  "id": "c-221",
+  "title": "Pożyczka",
+  "text": "Kupiec zaoferował pożyczkę na bardzo atrakcyjnych warunkach. Zbyt atrakcyjnych, by były prawdziwe.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-222",
+  "title": "Dym z tawerny",
+  "text": "Z tawerny za rogiem unosił się zapach pieczonego mięsa. Połowa szajki zjawiła się tam przed wschodem słońca.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": -2
+ },
+ {
+  "id": "c-223",
+  "title": "Chłopiec z sakiewką",
+  "text": "Chłopiec ze wsi przyszedł do miasta z sakiewką pieniędzy, szukając pracy. Wygląda na zagubionego i łatwo go oszukać.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 3,
+  "next": "c-224"
+ },
+ {
+  "id": "c-224",
+  "title": "Wiejski ojciec",
+  "text": "Mężczyzna o spalonej słońcem twarzy przychodzi szukać syna. Mówi, że syn zabrał z domu wszystkie oszczędności.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -3,
+  "only": true
+ },
+ {
+  "id": "c-225",
+  "title": "Dziwna paczka",
+  "text": "Zapakowana w czarny materiał paczka leży na waszym progu. Nikt nie ma odwagi jej otworzyć.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "c-226"
+ },
+ {
+  "id": "c-226",
+  "title": "Zawartość paczki",
+  "text": "Paczka w końcu została otwarta. Wewnątrz znajdował się mały srebrny posążek i list z jedną linijką: „Dla właściwego odbiorcy”.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 6,
+  "only": true
+ },
+ {
+  "id": "c-227",
+  "title": "Lis w piwnicy",
+  "text": "Z piwnicy dochodzi szuranie. Zajrzawszy, poplecznik zobaczył lisa trzymającego w pysku kawałek wędliny.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0,
+  "next": "c-228"
+ },
+ {
+  "id": "c-228",
+  "title": "Lis wrócił",
+  "text": "Lis wrócił, tym razem z całą rodziną. Nikt nie ma serca ich przepędzić, ale zapasy znikają szybciej niż zwykle.",
+  "morale": 0,
+  "supplies": -2,
+  "coinsSS": 0,
+  "only": true
+ },
+ {
+  "id": "c-229",
+  "title": "Nieznajomy ze skrzypcami",
+  "text": "Uliczny grajek z zawiniętym w szmaty futerałem prosi o schronienie. Mówi, że ktoś mu grozi z powodu skrzypiec.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "c-230"
+ },
+ {
+  "id": "c-230",
+  "title": "Skrzypce mają wartość",
+  "text": "Okazało się, że skrzypce mają wartość znacznie większą niż ich wygląd. Kolekcjoner proponuje potężną sumę, ale grajek zniknął.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 8,
+  "only": true
+ },
+ {
+  "id": "c-231",
+  "title": "Ciemna uliczka",
+  "text": "Ktoś rozlał na bruk smołę i kilku przechodniów przykleiło się do ulicy. Okazja do kilku błyskotliwych kradzieży.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "c-232",
+  "title": "Wiadomość z Altdorfu",
+  "text": "Posłaniec przywiózł wieści z cesarskiego dworu: wielka przysługa dla każdego, kto zna słowa, które w niej padły.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-233",
+  "title": "Ranny pies",
+  "text": "Kulawy pies zawlókł się do piwnicy i patrzył na wszystkich smutno. Ktoś go opatrzył i nakarmił, a pies nie odszedł.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-234",
+  "title": "Ścigany złodziej",
+  "text": "Złodziej uciekał przed strażą i wrzucił łup przez wasze okno. Zanim ktokolwiek coś zrozumiał, już go nie było.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 5
+ },
+ {
+  "id": "c-235",
+  "title": "Wrzask w nocy",
+  "text": "W środku nocy rozległ się wrzask, a potem cisza. Rano wszystkie okna w okolicy były szczelnie zamknięte.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-236",
+  "title": "Płacące sąsiedztwo",
+  "text": "Sąsiedzi złożyli się na naprawę wspólnego dachu i grzecznie zapytali, czy wy też. Płacić musicie, bo inaczej będą kłopoty.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -3
+ },
+ {
+  "id": "c-237",
+  "title": "Drzwi bez klamki",
+  "text": "Ktoś w nocy wymontował klamkę z waszych drzwi. Rano trzeba było wejść oknem.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-238",
+  "title": "Opowieść o duchu",
+  "text": "Starsza sąsiadka opowiedziała historię o duchu poprzedniego mieszkańca piwnicy. Wszyscy słuchali, a potem nikt nie chciał zostać sam.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-239",
+  "title": "Rozmowa przez ścianę",
+  "text": "Przez ścianę słychać dwóch mężczyzn omawiających plan. Z tego, co zdołano zrozumieć, chodzi o napad na transport złota.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "c-240",
+  "title": "Dobry sen",
+  "text": "Wszyscy spali dobrze, nikt nie śnił koszmarów i nikt nie obudził się z bólem głowy. To się rzadko zdarza.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-241",
+  "title": "Złamany kołowrót",
+  "text": "Kołowrót w studni złamał się i połowa okolicy musiała czerpać wodę z waszego podwórka. Zebraliście kilka podziękowań.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "c-242",
+  "title": "Zakaz wychodzenia",
+  "text": "Strażnicy ogłosili godzinę policyjną po zmierzchu. Szajka siedziała w norze, zła na cały świat.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-243",
+  "title": "Zabłąkana owca",
+  "text": "Owca wbiegła do kamienicy i zamarła na schodach. Chłopcy ukradli ją, zanim właściciel zdążył się upomnieć.",
+  "morale": 1,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-244",
+  "title": "Pijaństwo w gospodzie",
+  "text": "W gospodzie obok trwa pijatyka, a hałas przenika każdą ścianę. Ci, którzy chcieli spać, mogą zapomnieć.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-245",
+  "title": "Kowal podkowy",
+  "text": "Kowal z sąsiedniej ulicy zaprosił ludzi na swój wyrób. Szajka kupiła kilka podków i pozwoliła kowalowi opowiedzieć o swoim życiu.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -1
+ },
+ {
+  "id": "c-246",
+  "title": "Zaginiony kot",
+  "text": "Dzieci szukają zaginionego kota. Jeden z nich zajrzał do waszej piwnicy i zobaczył rzeczy, których nie powinien widzieć.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-247",
+  "title": "Łaźnia",
+  "text": "Łaźnia miejska ogłosiła dzień darmowego wstępu. Szajka zjawiła się w komplecie i wróciła czysta jak łza.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": -1
+ },
+ {
+  "id": "c-248",
+  "title": "Zmiana warty",
+  "text": "Straż zmieniła posterunek na waszej ulicy. Nowi nie znają jeszcze okolicy, a ich oczy błyszczą gorliwością.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-249",
+  "title": "Skrzynia z lekami",
+  "text": "Skrzynia z lekami spadła z wozu i część fiolek rozbiła się o bruk. Reszta znalazła się w waszych rękach.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": 4
+ },
+ {
+  "id": "c-250",
+  "title": "Odgłosy z dachu",
+  "text": "Ktoś na dachu chodzi całą noc. Nikt się nie ruszył, żeby sprawdzić, a rano na dachu było tylko kilka gołębich piór.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-251",
+  "title": "Pochód żałobny",
+  "text": "Pogrzeb bogatego kupca przeszedł ulicą z całą pompą. Jeden z żałobników miał podejrzanie lekką sakiewkę po powrocie.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 4
+ },
+ {
+  "id": "c-252",
+  "title": "Ostry zapach",
+  "text": "Z kanału ciągnie okropny odór. Kanalarze twierdzą, że to normalne, ale wszyscy czują, że coś zdechło.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-253",
+  "title": "Wizyta lekarza",
+  "text": "Miejski lekarz przeszedł po domach, zapisując chorych. Wy zostaliście wpisani na listę zdrowych, co jest rzadką oznaką łaski.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-254",
+  "title": "Przepędzony żebrak",
+  "text": "Strażnik przepędził żebraka spod waszej bramy. Żebrak wrócił po godzinie i opowiedział, co widział w sąsiednim domu.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "c-255",
+  "title": "Mysz w kuchni",
+  "text": "Mysz zjadła pół bochenka, a kot, który miał ją złapać, zjadł drugie pół. Jedzenia coraz mniej.",
+  "morale": 0,
+  "supplies": -2,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-256",
+  "title": "Śpiewacy z Tilei",
+  "text": "Wędrowni śpiewacy z Tilei dawali koncert na rogu ulicy. Tłum był hojny, a kieszonkowcy jeszcze hojniejsi.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 5
+ },
+ {
+  "id": "c-257",
+  "title": "Kapusta",
+  "text": "Wóz z kapustą przewrócił się przed domem. Ludzie rzucili się zbierać i zapomnieli o godności.",
+  "morale": 0,
+  "supplies": 3,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-258",
+  "title": "Mur graffiti",
+  "text": "Ktoś w nocy namalował na murze obraźliwy rysunek przedstawiający burmistrza. Straż wszczęła poszukiwania, a wy mieliście dobry humor.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-259",
+  "title": "Dwaj bracia",
+  "text": "Dwaj bracia z sąsiedztwa pokłócili się o spadek, a jeden z nich rzucił w drugiego krzesłem. Wszyscy patrzyli z okien.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-260",
+  "title": "Spowiedź",
+  "text": "Kapłan Shallyi wysłuchał spowiedzi jednego z popleczników, który wrócił wyraźnie lżejszy i bardzo zamyślony.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": -1
+ },
+ {
+  "id": "c-261",
+  "title": "Niebo na czerwono",
+  "text": "Zachód słońca był dziwnie czerwony i długo nie gasł. Starzy ludzie mówili, że to zła pora na wszelkie interesy.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-262",
+  "title": "Sprytna dziewczyna",
+  "text": "Dziewczyna od praczki rozpoznała jednego z popleczników i zagroziła, że pójdzie do straży, jeśli nie dostanie koron.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -3
+ },
+ {
+  "id": "c-263",
+  "title": "Pogrzeb przyjaciela",
+  "text": "Zmarł stary przyjaciel szajki. Pochowano go z honorami, a przy okazji zebrano trochę pieniędzy dla jego rodziny.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -2
+ },
+ {
+  "id": "c-264",
+  "title": "Piwo za darmo",
+  "text": "Browar zorganizował próbę nowego piwa i rozdał kilka beczek. Poplecznicy wrócili weseli, z kuflami pod pachą.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-265",
+  "title": "Pochód szczurołapów",
+  "text": "Gildia szczurołapów w uroczystym pochodzie obwiozła ulicami wóz pełen martwych szczurów. Wszyscy mieli zdegustowane miny.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-266",
+  "title": "Chłopiec z listem",
+  "text": "Chłopiec z listem poszukiwał adresata, którego nikt nie zna. List zostawił u was i uciekł.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "c-267",
+  "title": "Burza śnieżna",
+  "text": "Zawierucha zasypała ulice i zatarła wszystkie ślady. Straż zajęta była odśnieżaniem, nikt nikogo nie szukał.",
+  "morale": 1,
+  "supplies": -1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-268",
+  "title": "Zakład",
+  "text": "Dwóch popleczników założyło się o to, kto pierwszy złapie szczura. Wygrany dostał ćwierć srebrnika, przegrany śmiech.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-269",
+  "title": "Pani z dzbanem",
+  "text": "Starsza pani z dzbanem mleka przychodzi codziennie. Dziś dała dwa dzbany za darmo, bo „jesteście tacy chudzi”.",
+  "morale": 1,
+  "supplies": 2,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-270",
+  "title": "Nieproszona rada",
+  "text": "Stary żołnierz z drewnianą nogą udzielał młodym poplecznikom rad o walce. Połowa była dobra, połowa wymysłem.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-271",
+  "title": "Wizyta księdza",
+  "text": "Ksiądz zapukał z prośbą o wsparcie dla przytułku. Dostał kilka srebrników i obiecał pomodlić się za dusze całej szajki.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": -3
+ },
+ {
+  "id": "c-272",
+  "title": "Przyjaciel przyjaciela",
+  "text": "Obcy człowiek mówi, że przysłał go „przyjaciel przyjaciela”, i prosi o drobną przysługę. Nie chce wymienić nazwiska.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0,
+  "next": "c-273"
+ },
+ {
+  "id": "c-273",
+  "title": "Cena przysługi",
+  "text": "Człowiek wrócił z prezentem w podzięce. Okazuje się, że ma wpływy w gildii kupców i obiecuje pamiętać o szajce.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 5,
+  "only": true
+ },
+ {
+  "id": "c-274",
+  "title": "Wysypisko pod domem",
+  "text": "Pod waszym oknem ktoś wyrzucił stos rupieci, wśród których coś błyszczy. Rano właściciel pewnie wróci.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 2,
+  "next": "c-275"
+ },
+ {
+  "id": "c-275",
+  "title": "Właściciel rupieci",
+  "text": "Przyszedł mężczyzna z wózkiem i zażądał zwrotu „skradzionej” rzeczy. Nie wiadomo, o co mu chodzi, ale był wściekły.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": -2,
+  "only": true
+ },
+ {
+  "id": "c-276",
+  "title": "Rzemieślnik w potrzebie",
+  "text": "Stolarz z sąsiedniej uliczki prosi o pożyczenie kilku koron na materiały. Obiecuje zwrócić z procentem.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": -3,
+  "next": "c-277"
+ },
+ {
+  "id": "c-277",
+  "title": "Spłata długu",
+  "text": "Stolarz wrócił z całą sumą i dodatkowym procentem, a w prezencie przyniósł skrzynkę własnej roboty. Jego sąsiedzi też zaczęli pytać o waszą pomoc.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 8,
+  "only": true
+ },
+ {
+  "id": "c-278",
+  "title": "Morrslieb na niebie",
+  "text": "Zielonkawy księżyc Morrslieb wisiał nisko nad dachami. Psy wyły, a kilkoro popleczników nie chciało wychodzić za próg.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-279",
+  "title": "Łowcy Czarownic w dzielnicy",
+  "text": "Łowcy Czarownic przeszli przez dzielnicę z pochodniami, wyciągając ludzi z domów. Szajka siedziała cicho jak mysz, aż odeszli.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-280",
+  "title": "Znak Fioletowej Dłoni",
+  "text": "Na ścianie sąsiedniego domu pojawił się namalowany fioletowy ślad dłoni. Za rano już go nie było, ale ludzie nie chcieli tamtędy przechodzić.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-281",
+  "title": "Press-gang",
+  "text": "Zbrojni ze statku porwali kilku pijanych z ulicy do służby na barce. Wasi ludzie ukryli się w piwnicy i przeczekali.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-282",
+  "title": "Kapliczka Ranalda",
+  "text": "W zaułku ktoś postawił małą kapliczkę Ranalda z kilkoma monetami u stóp. Wszyscy uznali to za dobry znak.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 1
+ },
+ {
+  "id": "c-283",
+  "title": "Wpływowy gość",
+  "text": "Do sąsiedniej kamienicy wprowadził się urzędnik z kancelarii burmistrza. Okolica nagle zrobiła się czystsza i bardziej czujna.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-284",
+  "title": "Sąd Verenny",
+  "text": "Ulicą przeszli sędziowie z orszakiem. Przed nimi szli słudzy z książkami, a każdy mijany ściągał czapkę.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-285",
+  "title": "Czarodziej na dachu",
+  "text": "Ktoś w czarnej szacie przesiadywał na dachu sąsiedniego domu i wpatrywał się w gwiazdy. Nikt nie odważył się zapytać, czego szuka.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-286",
+  "title": "Zniknięcie sąsiada",
+  "text": "Starszy sąsiad nie wrócił z nocnej wyprawy. Jego drzwi były otwarte, a kot siedział na parapecie i patrzył w pustkę.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-287",
+  "title": "Zmiana burmistrza",
+  "text": "W mieście ogłoszono, że nowy burmistrz przejmuje władzę. Przez dzień panował chaos, który szajka sprytnie wykorzystała.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 5
+ },
+ {
+  "id": "c-288",
+  "title": "Brudna woda",
+  "text": "Studnia w dzielnicy zrobiła się mętna i śmierdząca. Wszyscy pili piwo, a szajka sprzedała kilka beczek po dobrej cenie.",
+  "morale": 0,
+  "supplies": 1,
+  "coinsSS": 4
+ },
+ {
+  "id": "c-289",
+  "title": "Zgubiony sygnet",
+  "text": "Wasz człowiek zgubił sygnet z godłem szajki w pijackiej bójce. Jeśli wpadnie w niepowołane ręce, może narobić kłopotów.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-290",
+  "title": "Kupiec w długach",
+  "text": "Znany kupiec w długach wyskoczył z okna i rozbił się o bruk przed waszym domem. Policzono, ile zostawił po sobie.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 3
+ },
+ {
+  "id": "c-291",
+  "title": "Trupa wędrowna",
+  "text": "Wędrowna trupa aktorów urządziła na ulicy przedstawienie o szlachetnych banitach. Szajka obejrzała w skupieniu, a część nawet uroniła łzę.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-292",
+  "title": "Zaginione dziecko",
+  "text": "Dziecko z sąsiedztwa zaginęło w nocy. Całą ulicą szukano go z latarniami, a znaleziono śpiące w waszej piwnicy.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 2
+ },
+ {
+  "id": "c-293",
+  "title": "Nocna msza",
+  "text": "W kaplicy obok odprawiono nocną mszę z licznym udziałem. Wszyscy wychodzili w ciszy, a niektórzy płakali.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-294",
+  "title": "Piekarz z długami",
+  "text": "Piekarz zalegał z płatnościami i szukał wsparcia. Wzięliście go pod opiekę i dostajecie świeży chleb przez tydzień.",
+  "morale": 0,
+  "supplies": 3,
+  "coinsSS": -2
+ },
+ {
+  "id": "c-295",
+  "title": "Beczka wina",
+  "text": "Beczka wina turlała się po stromej uliczce i zatrzymała się dokładnie przed waszymi drzwiami. Nikt nie wie, skąd się wzięła.",
+  "morale": 1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-296",
+  "title": "Wieża strażnicza",
+  "text": "Z wieży strażniczej zniknęła cała zmiana wartowników. Straż szuka winnych, a okolica szepcze o zdradzie.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-297",
+  "title": "Okno otwarte",
+  "text": "Okno jednego z domów zostało otwarte przez całą noc, a w środku paliła się świeca. Rano okazało się, że dom jest pusty od lat.",
+  "morale": -1,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-298",
+  "title": "Rodzinny przepis",
+  "text": "Babcia jednego z popleczników odwiedziła go i przyniosła ciasto z przepisu, który przechodzi w rodzinie od pokoleń. Wszyscy zjedli do ostatniego okruszka.",
+  "morale": 1,
+  "supplies": 1,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-299",
+  "title": "Nowy świstek",
+  "text": "Na tablicy ogłoszeń pojawił się list gończy z podobizną jednego z popleczników. Rysownik nie miał talentu, a pewnie dzięki temu nikt go nie rozpoznał.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 0
+ },
+ {
+  "id": "c-300",
+  "title": "Dziewięć srebrników",
+  "text": "Dziewięć srebrników leżało w rynsztoku. Nikt się nie ruszył, każdy czekał, aż ktoś inny schyli się pierwszy. Wy byliście szybsi.",
+  "morale": 0,
+  "supplies": 0,
+  "coinsSS": 9
+ }
+]

@@ -1,6 +1,11 @@
 # Changelog
 
-## 1.8.1
+## 1.9.0
+- **Second role**: a follower can buy a second role for 80 OXP (rank 1+). It unlocks that role's orders and specialty (the specialty bonus counts once). The GM can also set it by hand.
+- **4 new roles** (11 in total): Scout / Tracker, Fence / Forger, Charlatan / Hedge Healer, Swashbuckler / Duellist.
+- **39 combat orders** (was 17): every role now has at least 3, including the Carter and the Arsonist who had none; many orders are shared by several roles. The Tactics tab is built from the order list.
+- **30 strengths and 30 flaws** (10 new of each); every job now has at least 2 matching strengths.
+- **1200 night events**: 300 each for city, village, forest and mountains (Polish and English), with **role events** (a capable member rolls to turn a problem into an advantage) and **chains** (an event leaves a hook for a sequel on a later night). Existing unedited world event tables are replaced automatically; tables you expanded are left alone.
 - Removed the **Contact the Outlaws** job: recruiting new followers is always the GM's decision (the GM's *Recruit via Chat* proposals stay).
 - Rumour card: the source now sits under the heading instead of squeezing it.
 

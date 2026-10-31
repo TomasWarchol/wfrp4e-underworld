@@ -110,21 +110,23 @@ Coins go to the stash **after the Patron's cut** (25% by default, world setting)
 
 ## 🌙 Night camp
 
-Lodging (makeshift, basic, comfortable), sentries, food, recovery, a night event from the terrain's table, a watch **raid** at high Heat, the city racket, flaws and strengths of the members, and **desertion** at low Morale – all resolved in one chat card.
+Lodging (makeshift, basic, comfortable), sentries, food, recovery, a night event from the terrain's table (**300 events** each for city, village, forest and mountains), a watch **raid** at high Heat, the city racket, flaws and strengths of the members, and **desertion** at low Morale – all resolved in one chat card.
+
+Some night events are **role events** (6 per role in every table): if a capable member with that role (main or second) is in the crew, they roll d100 (50 + 10 per rank, max. 80). Success turns the event's effects into good ones and adds the resolution; a failure or no specialist leaves the base effects. **Chains** (18 per terrain): event A leaves a hook and the next night with an event brings its sequel B; B entries never come up at random.
 
 ## ⚔️ Retinue and tactical orders
 
-Up to 3 members can join the chief's retinue. Orders (Trip, Flank, Smoke Screen, Battle Cry…) need a member with the right role. Give them with a **Leadership test**, by **spending Advantage**, or as a **plain order** decided by the GM. One order per round – it uses the chief's Action. Target a token (**T**) first: the GM's client applies conditions such as Prone, Bleeding or Blinded through the WFRP4e system.
+Up to 3 members can join the chief's retinue. There are **39 orders** in three groups (offensive, control, protection) and **11 roles**: Bruiser, Shadow, Marksman, Provocateur, Scavenger, Carter, Arsonist, plus Scout, Fence / Forger, Charlatan and Swashbuckler. An order needs a member with the right role (**main or second**) or the Right Hand, and many orders are shared by several roles (e.g. Smoke Screen: Provocateur, Arsonist, Carter). Give them with a **Leadership test**, by **spending Advantage**, or as a **plain order** decided by the GM. One order per round – it uses the chief's Action. Target a token (**T**) first: the GM's client applies conditions such as Prone, Bleeding or Blinded through the WFRP4e system.
 
 ## 📈 Followers
 
-Ranks bought with OXP (+10 / +20 / +30 to tests; rank 3 is the unique **Right Hand**), a **Former Trade** and story perks, gear from the stash (max. 2 items), strengths and flaws set by the GM. Recruitment proposals go to the chat, where the GM or the chief's player picks a candidate.
+Ranks bought with OXP (+10 / +20 / +30 to tests; rank 3 is the unique **Right Hand**), a **second role** for 80 OXP (from rank 1: its orders and specialty; the specialty bonus counts once), a **Former Trade** and story perks, gear from the stash (max. 2 items), and 30 strengths and 30 flaws set by the GM. Taking on new followers is always the GM's decision: no job or event adds people to the crew. The GM sends recruit proposals to the chat, where the GM or the chief's player picks a candidate.
 
 ## 🛠️ GM tools
 
 * Manual editing of Morale, Heat, stash, statuses and bonuses.
 * **Rumour and event RollTables**: a crew folder in the Tables tab with a rumour table and a camp event table for each terrain. Reference copies are in the **Underworld Crew – Rumours and Events** compendium, which is rebuilt in the world's language.
-* **Custom rumours**: `data/rumors.<lang>.json` and `data/events.<lang>.json` replace the built-in city rumours and events for that language (a Polish set ships as `rumors.pl.json` / `events.pl.json`).
+* **Custom rumours and events**: `data/rumors.<lang>.json` and `data/events.<lang>.json` replace the built-in city rumours and events for that language (a Polish rumour set ships as `rumors.pl.json`). The built-in event tables live in `data/events/<terrain>.<lang>.json` (fields `title`, `text`, `morale`, `supplies`, `coinsSS`, optionally `role`, `okText`, `ok`, `next`, `only`).
 
 ## 📜 Macros
 

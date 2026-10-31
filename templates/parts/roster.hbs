@@ -59,7 +59,7 @@
             <!-- Ranga, rola i bieżący stan – zawsze w nagłówku karty -->
             <div class="npc-header-badges">
               {{{underworldRankChip this.rank}}}
-              <span class="npc-role-chip">{{{underworldRoleBadge this.role}}}</span>
+              <span class="npc-role-chip">{{{underworldRoleBadge this.role}}}{{#if this.role2}} {{{underworldRoleBadge this.role2}}}{{/if}}</span>
               {{{underworldAssignmentBadge this.assignment this.status}}}
             </div>
           </div>
@@ -152,6 +152,21 @@
                 {{else}}
                   {{{underworldRoleBadge this.role}}}
                   <input type="hidden" name="roster.{{@index}}.role" value="{{this.role}}"/>
+                {{/if}}
+              </div>
+            </div>
+
+            <!-- Druga rola (kupiona za DO lub nadana przez MG) -->
+            <div class="trait-line">
+              <span class="trait-line-label"><i class="fas fa-id-badge text-gold"></i> {{localize "UNDERWORLD.Upgrade.SecondRole"}}:</span>
+              <div class="trait-line-content">
+                {{#if ../isGM}}
+                  <select class="npc-role-select" name="roster.{{@index}}.role2" title="{{localize 'UNDERWORLD.Upgrade.SecondRoleHint'}}">
+                    <option value="">—</option>
+                    {{{underworldRoleSelectOptions this.role2}}}
+                  </select>
+                {{else}}
+                  {{#if this.role2}}{{{underworldRoleBadge this.role2}}}{{else}}<em>—</em>{{/if}}
                 {{/if}}
               </div>
             </div>

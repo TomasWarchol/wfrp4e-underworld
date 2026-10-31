@@ -221,11 +221,9 @@ export class UnderworldOperations {
     const strengths = Array.isArray(npc.strengths) ? [...npc.strengths] : [npc.strength, npc.extraStrength].filter(Boolean);
     add(t("Mod.Strengths"), 10 * UnderworldTables.getTraitSLModifier(strengths, "strength", assignment));
 
-    const normalizedRole = UnderworldTables.normalizeRole(npc.role);
-    const roleCfg = UnderworldTables.ROLES_CONFIG[normalizedRole];
-    if (roleCfg && Array.isArray(roleCfg.bonusAssignments) && roleCfg.bonusAssignments.includes(assignment)) {
-      add(t("Mod.RoleSpecialty"), 10);
-    }
+    // Specjalność roli głównej lub drugiej (premia liczy się raz)
+    const specialty = UnderworldTables.rolesOf(npc).some(r => UnderworldTables.ROLES_CONFIG[r]?.bonusAssignments?.includes(assignment));
+    if (specialty) add(t("Mod.RoleSpecialty"), 10);
 
     // 2. Premie z kupionych atutów operacyjnych
     const perks = Array.isArray(npc.narrativePerks) ? npc.narrativePerks : [];
@@ -940,6 +938,35 @@ export class UnderworldOperations {
     return card;
   }
 
+  /**
+   * Zdarzenie dla roli: jeśli w szajce jest zdolny członek z daną rolą (główną lub drugą), rzuca k100
+   * (50 + 10 za rangę, maks. 80). Sukces zamienia skutki zdarzenia na korzystne, porażka zostawia je bez zmian.
+   */
+  static async _resolveEventRole(gang, event, rolls) {
+    if (!event?.role) return event;
+    const roleName = UnderworldTables.ROLES_CONFIG[event.role]?.name || event.role;
+    const specialists = gang.roster.filter(n => !["dead", "wounded", "arrested"].includes(n.status) && UnderworldTables.hasRole(n, [event.role]));
+    if (!specialists.length) {
+      return { ...event, roleNote: t("CampEvent.NoSpecialist", { role: escapeHTML(roleName) }) };
+    }
+    const hero = specialists.sort((a, b) => (Number(b.rank) || 0) - (Number(a.rank) || 0))[0];
+    const target = Math.min(80, 50 + 10 * (Number(hero.rank) || 0));
+    const roll = await this._roll("1d100", rolls);
+    const name = escapeHTML(hero.name);
+    if (roll > target) {
+      return { ...event, roleNote: t("CampEvent.RoleFailed", { name, role: escapeHTML(roleName), roll, target }) };
+    }
+    const ok = event.ok || {};
+    return {
+      ...event,
+      text: event.okText ? `${event.text} ${event.okText}` : event.text,
+      moraleDelta: Number(ok.moraleDelta) || 0,
+      suppliesFound: Number(ok.suppliesFound) || 0,
+      coinsFoundSS: Number(ok.coinsFoundSS) || 0,
+      roleNote: t("CampEvent.RoleSaved", { name, role: escapeHTML(roleName), roll, target })
+    };
+  }
+
   /** Haracz (miasto) – codzienny dochód z rewiru */
   static async executeRacketMission(actor, npcId, input) {
     const r = await this._prepareMission(actor, npcId, "racket", MISSION_INFO.racket.target);
@@ -1507,6 +1534,7 @@ export class UnderworldOperations {
 
     if (await this._roll("1d100", rolls) <= eventChance) {
       event = await UnderworldTables.drawCampEvent(gang);
+      event = await this._resolveEventRole(gang, event, rolls);
       const sup = Number(event.suppliesFound ?? event.supplies) || 0;
       if (sup) {
         gang.supplies = Math.max(0, Math.min(30, (gang.supplies || 0) + sup));
@@ -1838,7 +1866,7 @@ export class UnderworldOperations {
     "trip": {
       advantageCost: 1,
       modifier: 0,
-      requiredRoles: ["bodyguard"]
+      requiredRoles: ["bodyguard", "duelist"]
     },
     "bullrush": {
       advantageCost: 1,
@@ -1850,63 +1878,63 @@ export class UnderworldOperations {
     "flank": {
       advantageCost: 1,
       modifier: 0,
-      requiredRoles: ["shadow"]
+      requiredRoles: ["shadow", "duelist", "scout", "smuggler"]
     },
     "volley": {
       advantageCost: 2,
       modifier: -10,
-      requiredRoles: ["shadow", "marksman"]
+      requiredRoles: ["shadow", "marksman", "scout"]
     },
     "kidneystrike": {
       advantageCost: 1,
       modifier: 0,
-      requiredRoles: ["shadow"]
+      requiredRoles: ["shadow", "duelist"]
     },
 
     // 🏹 STRZELEC / KŁUSOWNIK
     "cover": {
       advantageCost: 1,
       modifier: 0,
-      requiredRoles: ["marksman"]
+      requiredRoles: ["marksman", "scout"]
     },
     "disarm": {
       advantageCost: 2,
       modifier: -10,
-      requiredRoles: ["marksman"]
+      requiredRoles: ["marksman", "duelist"]
     },
 
     // 🎭 PROWOKATOR / SZULER
     "distract": {
       advantageCost: 1,
       modifier: 0,
-      requiredRoles: ["provocateur"]
+      requiredRoles: ["provocateur", "charlatan", "duelist"]
     },
     "smoke": {
       advantageCost: 1,
       modifier: 0,
-      requiredRoles: ["provocateur"]
+      requiredRoles: ["provocateur", "saboteur", "smuggler"]
     },
     "sand": {
       advantageCost: 1,
       modifier: 0,
-      requiredRoles: ["provocateur"]
+      requiredRoles: ["provocateur", "smuggler", "scout"]
     },
 
     // 🧰 SZABROWNIK / FELCZER
     "resupply": {
       advantageCost: 1,
       modifier: 0,
-      requiredRoles: ["scavenger"]
+      requiredRoles: ["scavenger", "smuggler", "fixer"]
     },
     "retreat": {
       advantageCost: 1,
       modifier: 0,
-      requiredRoles: ["scavenger"]
+      requiredRoles: ["scavenger", "smuggler", "scout"]
     },
     "draught": {
       advantageCost: 1,
       modifier: 0,
-      requiredRoles: ["scavenger"]
+      requiredRoles: ["scavenger", "charlatan"]
     },
 
     // 📢 PRAWA RĘKA / ZASTĘPCA
@@ -1924,8 +1952,161 @@ export class UnderworldOperations {
       advantageCost: 1,
       modifier: 0,
       requiredRoles: ["lieutenant"]
+    },
+    "bodyblock": {
+      advantageCost: 1,
+      modifier: 0,
+      requiredRoles: ["bodyguard"]
+    },
+    "grapple": {
+      advantageCost: 1,
+      modifier: 0,
+      requiredRoles: ["bodyguard"]
+    },
+    "circle": {
+      advantageCost: 1,
+      modifier: 0,
+      requiredRoles: ["bodyguard"]
+    },
+    "parry": {
+      advantageCost: 1,
+      modifier: 0,
+      requiredRoles: ["duelist"]
+    },
+    "riposte": {
+      advantageCost: 1,
+      modifier: 0,
+      requiredRoles: ["duelist"]
+    },
+    "challenge": {
+      advantageCost: 1,
+      modifier: 0,
+      requiredRoles: ["duelist"]
+    },
+    "pindown": {
+      advantageCost: 1,
+      modifier: 0,
+      requiredRoles: ["marksman", "scout"]
+    },
+    "fireoil": {
+      advantageCost: 1,
+      modifier: 0,
+      requiredRoles: ["saboteur"]
+    },
+    "caltrops": {
+      advantageCost: 1,
+      modifier: 0,
+      requiredRoles: ["saboteur", "smuggler"]
+    },
+    "collapse": {
+      advantageCost: 1,
+      modifier: 0,
+      requiredRoles: ["saboteur"]
+    },
+    "wagonwall": {
+      advantageCost: 1,
+      modifier: 0,
+      requiredRoles: ["smuggler"]
+    },
+    "spooked": {
+      advantageCost: 1,
+      modifier: 0,
+      requiredRoles: ["smuggler"]
+    },
+    "getaway": {
+      advantageCost: 1,
+      modifier: 0,
+      requiredRoles: ["smuggler"]
+    },
+    "spot": {
+      advantageCost: 1,
+      modifier: 0,
+      requiredRoles: ["scout"]
+    },
+    "lure": {
+      advantageCost: 1,
+      modifier: 0,
+      requiredRoles: ["scout"]
+    },
+    "snare": {
+      advantageCost: 1,
+      modifier: 0,
+      requiredRoles: ["scout"]
+    },
+    "forgedorder": {
+      advantageCost: 1,
+      modifier: 0,
+      requiredRoles: ["fixer"]
+    },
+    "payoff": {
+      advantageCost: 1,
+      modifier: 0,
+      requiredRoles: ["fixer"]
+    },
+    "salve": {
+      advantageCost: 1,
+      modifier: 0,
+      requiredRoles: ["charlatan", "scavenger"]
+    },
+    "fumes": {
+      advantageCost: 1,
+      modifier: 0,
+      requiredRoles: ["charlatan", "provocateur"]
+    },
+    "evileye": {
+      advantageCost: 1,
+      modifier: 0,
+      requiredRoles: ["charlatan"]
+    },
+    "regroup": {
+      advantageCost: 1,
+      modifier: 0,
+      requiredRoles: ["lieutenant"]
     }
   }, "Orders", { name: "Name", desc: "Desc", effect: "Effect" });
+
+  /** Grupa karty (ofensywne / kontrola / ochrona) i ikona rozkazu w zakładce Taktyka. */
+  static ORDER_META = {
+    trip: ["offensive", "fas fa-person-falling"],
+    bullrush: ["offensive", "fas fa-shield-alt"],
+    flank: ["offensive", "fas fa-shoe-prints"],
+    volley: ["offensive", "fas fa-crosshairs"],
+    kidneystrike: ["offensive", "fas fa-tint"],
+    cover: ["offensive", "fas fa-bullseye"],
+    disarm: ["offensive", "fas fa-hand-holding-box"],
+    distract: ["control", "fas fa-mask"],
+    smoke: ["control", "fas fa-smog"],
+    sand: ["control", "fas fa-eye-slash"],
+    rally: ["control", "fas fa-fist-raised"],
+    coordinate: ["control", "fas fa-users-cog"],
+    retaliation: ["control", "fas fa-bolt"],
+    meatshield: ["protection", "fas fa-user-shield"],
+    resupply: ["protection", "fas fa-toolbox"],
+    retreat: ["protection", "fas fa-door-closed"],
+    draught: ["protection", "fas fa-flask"],
+    bodyblock: ["protection", "fas fa-user-shield"],
+    grapple: ["offensive", "fas fa-hands"],
+    circle: ["protection", "fas fa-ring"],
+    parry: ["protection", "fas fa-shield-halved"],
+    riposte: ["offensive", "fas fa-khanda"],
+    challenge: ["offensive", "fas fa-gavel"],
+    pindown: ["offensive", "fas fa-crosshairs"],
+    fireoil: ["offensive", "fas fa-fire"],
+    caltrops: ["offensive", "fas fa-asterisk"],
+    collapse: ["offensive", "fas fa-house-crack"],
+    wagonwall: ["protection", "fas fa-cart-flatbed"],
+    spooked: ["control", "fas fa-horse"],
+    getaway: ["protection", "fas fa-person-running"],
+    spot: ["protection", "fas fa-binoculars"],
+    lure: ["control", "fas fa-bullseye"],
+    snare: ["offensive", "fas fa-circle-notch"],
+    forgedorder: ["control", "fas fa-stamp"],
+    payoff: ["control", "fas fa-coins"],
+    salve: ["protection", "fas fa-kit-medical"],
+    fumes: ["control", "fas fa-biohazard"],
+    evileye: ["control", "fas fa-eye"],
+    regroup: ["control", "fas fa-users"]
+  };
 
   static async postTacticalOrder(actor, orderId, options = {}) {
     if (!this._canManageGang(actor)) return ui.notifications.warn(t("Notify.NoAccess"));
@@ -1961,9 +2142,8 @@ export class UnderworldOperations {
         n.assignment === "retinue" && !["dead", "wounded", "arrested"].includes(n.status)
       );
       executorNpc = activeRetinue.find(n => {
-        const norm = UnderworldTables.normalizeRole(n.role);
         const isLt = Number(n.rank) >= 3;
-        return order.requiredRoles.includes(norm) || (order.requiredRoles.includes("lieutenant") && isLt);
+        return UnderworldTables.hasRole(n, order.requiredRoles) || (order.requiredRoles.includes("lieutenant") && isLt);
       }) || null;
     }
     if (Array.isArray(order.requiredRoles) && order.requiredRoles.length > 0 && !executorNpc) {
@@ -1971,9 +2151,8 @@ export class UnderworldOperations {
       return false;
     }
     if (executorNpc && Array.isArray(order.requiredRoles) && order.requiredRoles.length > 0) {
-      const executorRole = UnderworldTables.normalizeRole(executorNpc.role);
-      const isLieutenant = executorRole === "lieutenant" || Number(executorNpc.rank) >= 3;
-      if (!order.requiredRoles.includes(executorRole) && !(order.requiredRoles.includes("lieutenant") && isLieutenant)) {
+      const isLieutenant = Number(executorNpc.rank) >= 3;
+      if (!UnderworldTables.hasRole(executorNpc, order.requiredRoles) && !(order.requiredRoles.includes("lieutenant") && isLieutenant)) {
         ui.notifications.warn(t("Orders.Notify.WrongRole"));
         return false;
       }
