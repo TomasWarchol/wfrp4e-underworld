@@ -129,8 +129,8 @@
  },
  {
   "id": "f-017",
-  "title": "The wayside cross",
-  "text": "An old wooden cross with carved names stood by the forest path. The crew paused in silence and moved on.",
+  "title": "The wayside shrine",
+  "text": "An old wooden shrine with carved names stood by the forest path. The crew paused in silence and moved on.",
   "morale": 0,
   "supplies": 0,
   "coinsSS": 0
@@ -451,7 +451,7 @@
  {
   "id": "f-044",
   "title": "Strange tracks",
-  "text": "In the morning unknown boot prints appeared around the camp. Someone is touring us and we haven't seen him.",
+  "text": "In the morning unknown boot prints appeared around the camp. Someone is scouting you out and nobody has seen him.",
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0,
@@ -1253,7 +1253,7 @@
  },
  {
   "id": "f-117",
-  "title": "The bear in a cage",
+  "title": "The loose bear",
   "text": "A travelling circus-man lost a trained bear on a chain. The animal wanders the forest and people fear it.",
   "morale": 0,
   "supplies": -1,
@@ -1263,7 +1263,7 @@
  {
   "id": "f-118",
   "title": "The circus-man returns",
-  "text": "The circus-man came back in tears begging help finding the bear. He promises a generous reward and tickets to the show.",
+  "text": "The circus-man came back in tears begging help finding the bear. He promises a generous reward and free admission to the show.",
   "morale": 1,
   "supplies": 0,
   "coinsSS": 6,
@@ -1466,7 +1466,7 @@
  {
   "id": "f-143",
   "title": "The rotten tree",
-  "text": "A rotten tree turned out a hollow full of honey. The crew shared with the bees.",
+  "text": "A rotten tree hid a hollow full of honey. The crew shared with the bees.",
   "morale": 1,
   "supplies": 2,
   "coinsSS": 0
@@ -1725,7 +1725,7 @@
  {
   "id": "f-164",
   "title": "The bridge over the river",
-  "text": "A bridge over the river leads to the count's manor. If destroyed, the soldiers will be delayed and the crew gains time.",
+  "text": "A bridge over the river leads to the count's manor. If it is destroyed, the soldiers will be delayed and the crew gains time.",
   "morale": 0,
   "supplies": 0,
   "coinsSS": 0,
@@ -1850,7 +1850,7 @@
   "supplies": 0,
   "coinsSS": 0,
   "role": "duelist",
-  "okText": "The duellist accepted, beat the nobleman's best man and let him leave with honour. The nobleman left a ducat in thanks.",
+  "okText": "The duellist accepted, beat the nobleman's best man and let him leave with honour. The nobleman left a gold crown in thanks.",
   "ok": {
    "morale": 1,
    "supplies": 0,
@@ -2315,7 +2315,7 @@
  },
  {
   "id": "f-229",
-  "title": "The cone roof",
+  "title": "The branch roof",
   "text": "The crew built a roof of branches that withstood even a downpour. Everyone was proud of themselves.",
   "morale": 1,
   "supplies": 0,
@@ -2389,7 +2389,7 @@
  },
  {
   "id": "f-238",
-  "title": "The imprinted foot",
+  "title": "The footprint",
   "text": "On the clearing a strange footprint with six toes is visible. Villagers say it's a mutant.",
   "morale": -1,
   "supplies": 0,
@@ -2555,7 +2555,7 @@
  },
  {
   "id": "f-258",
-  "title": "A parachute of leaves",
+  "title": "Falling leaves",
   "text": "Leaves fell all night like rain. In the morning the camp was drowned in gold and red.",
   "morale": 1,
   "supplies": 0,
@@ -2739,8 +2739,8 @@
  },
  {
   "id": "f-281",
-  "title": "The wooden cross",
-  "text": "A lone wooden cross with an engraved name stands in the forest. The crew paused and whispered a prayer.",
+  "title": "The wooden shrine",
+  "text": "A lone wooden shrine with an engraved name stands in the forest. The crew paused and whispered a prayer.",
   "morale": 1,
   "supplies": 0,
   "coinsSS": 0

@@ -58,7 +58,7 @@
  {
   "id": "v-008",
   "title": "Zagubiona krowa",
-  "text": "Krowa przeszła przez płot i weszła prosto w wasze obozowisko. Nikt nie zdołał jej odprowadzić, zanim nie została wydojona.",
+  "text": "Krowa przeszła przez płot i weszła prosto w wasze obozowisko. Nikt nie zdołał jej odprowadzić, zanim ją wydojono.",
   "morale": 0,
   "supplies": 3,
   "coinsSS": 0
@@ -66,7 +66,7 @@
  {
   "id": "v-009",
   "title": "Poborca",
-  "text": "Poborca podatkowy z hrabiego przejechał przez wieś z dwoma pachołkami i zabrał to, co mógł. Wieśniacy mieli twarze jak z kamienia.",
+  "text": "Poborca podatkowy hrabiego przejechał przez wieś z dwoma pachołkami i zabrał to, co mógł. Wieśniacy mieli twarze jak z kamienia.",
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0
@@ -162,7 +162,7 @@
  {
   "id": "v-021",
   "title": "Chory koń",
-  "text": "Koń chłopa z sąsiedztwa zachorował i padł. Gospodarz rozpaczał, a mięso trzeba było użyć szybko.",
+  "text": "Koń chłopa z sąsiedztwa zachorował i padł. Gospodarz rozpaczał, a mięso trzeba było szybko zużyć.",
   "morale": -1,
   "supplies": 3,
   "coinsSS": 0
@@ -226,7 +226,7 @@
  {
   "id": "v-029",
   "title": "Odwiedziny leśniczego",
-  "text": "Leśniczy z hrabiego sprawdził, czy nie palicie w lesie. Wszystko wyglądało dobrze, więc odszedł, życząc dobrej nocy.",
+  "text": "Leśniczy hrabiego sprawdził, czy nie palicie w lesie. Wszystko wyglądało dobrze, więc odszedł, życząc dobrej nocy.",
   "morale": 0,
   "supplies": 0,
   "coinsSS": 0
@@ -405,7 +405,7 @@
  },
  {
   "id": "v-048",
-  "title": "Lisy w kurniku",
+  "title": "Lis w kurniku",
   "text": "Lis wpadł do kurnika sąsiada i hałas obudził całą wieś. Jeśli nikt go nie ustrzeli, wieśniacy zaczną szukać winnych.",
   "morale": -1,
   "supplies": 0,
@@ -435,13 +435,13 @@
  },
  {
   "id": "v-050",
-  "title": "Kłótnia o sąsiedztwo",
+  "title": "Kłótnia sąsiadów",
   "text": "Dwie wiejskie rodziny kłócą się od tygodnia i ściągają coraz więcej ludzi. Wieś jest o krok od bójki.",
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0,
   "role": "provocateur",
-  "okText": "Prowokator przekonał obie strony, że winien jest ktoś trzeci, i wszyscy razem zakpili z obcego. Szajka uciekła z hojnym darem za „mediację”.",
+  "okText": "Prowokator przekonał obie strony, że winien jest ktoś trzeci, i wszyscy razem zakpili z obcego. Szajka odeszła z hojnym darem za „mediację”.",
   "ok": {
    "morale": 1,
    "supplies": 0,
@@ -471,7 +471,7 @@
   "supplies": 0,
   "coinsSS": 0,
   "role": "scavenger",
-  "okText": "Szabrownik użył ziół z torby i kilku starych sztuczek. Chłopak dostał potu i wrócił do zdrowia. Gospodarz dał jedzenie i srebro.",
+  "okText": "Szabrownik użył ziół z torby i kilku starych sztuczek. Chłopak oblał się potem i wrócił do zdrowia. Gospodarz dał jedzenie i srebro.",
   "ok": {
    "morale": 1,
    "supplies": 2,
@@ -571,7 +571,7 @@
  {
   "id": "v-059",
   "title": "Zabłąkany pielgrzym",
-  "text": "Pielgrzym zgubił drogę i krąży po lesie. Jeśli nikt go nie znajdzie, wilki zrobią to za nas.",
+  "text": "Pielgrzym zgubił drogę i krąży po lesie. Jeśli nikt go nie znajdzie, wilki znajdą go pierwsze.",
   "morale": 0,
   "supplies": 0,
   "coinsSS": 0,
@@ -586,7 +586,7 @@
  {
   "id": "v-060",
   "title": "Wiejski spór sądowy",
-  "text": "Dwaj chłopi wlekli się do sądu o granicę pola. Obie strony szukają kogoś, kto sfałszuje akt własności.",
+  "text": "Dwaj chłopi ciągają się po sądach o granicę pola. Obie strony szukają kogoś, kto sfałszuje akt własności.",
   "morale": 0,
   "supplies": 0,
   "coinsSS": 0,
@@ -666,7 +666,7 @@
   "supplies": 0,
   "coinsSS": 0,
   "role": "duelist",
-  "okText": "Szermierz wystąpił jako sekundant, nauczył ich stosować drewniane miecze i rozstrzygnął spór w żartobliwy sposób. Wieś bawiła się dobrze.",
+  "okText": "Szermierz wystąpił jako sekundant, kazał im użyć drewnianych mieczy i rozstrzygnął spór w żartobliwy sposób. Wieś bawiła się dobrze.",
   "ok": {
    "morale": 1,
    "supplies": 0,
@@ -737,7 +737,7 @@
  },
  {
   "id": "v-073",
-  "title": "Zbieranie runa",
+  "title": "Grzybiarki",
   "text": "Dziewczęta ze wsi zbierały grzyby tuż przy obozie. Wasi ludzie udawali drwali, ale jedna z nich patrzyła podejrzanie długo.",
   "morale": -1,
   "supplies": 0,
@@ -762,7 +762,7 @@
  {
   "id": "v-076",
   "title": "Dziwne ślady",
-  "text": "Rano przy obozie znaleziono odciski kopyt rozmiarów końskich, ale z trzema palcami. Wieśniacy przeżegnali się i odeszli.",
+  "text": "Rano przy obozie znaleziono odciski kopyt wielkości końskiego kopyta, ale z trzema palcami. Wieśniacy przeżegnali się i odeszli.",
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0
@@ -777,8 +777,8 @@
  },
  {
   "id": "v-078",
-  "title": "Brodzenie po wodzie",
-  "text": "Strumień wezbrał po deszczu i przecięcie go wymagało czasu. Nikt nie narzekał, bo woda była zimna i czysta.",
+  "title": "Wezbrany strumień",
+  "text": "Strumień wezbrał po deszczu i przeprawa przez niego wymagała czasu. Nikt nie narzekał, bo woda była zimna i czysta.",
   "morale": 0,
   "supplies": 0,
   "coinsSS": 0
@@ -1151,7 +1151,7 @@
  {
   "id": "v-115",
   "title": "Wóz pod strażą",
-  "text": "Wóz z wymytą zawartością stoi na drodze, a przy nim śpi strażnik. Jeśli ktoś go obudzi, będzie kłopot, jeśli nie, szansa.",
+  "text": "Wóz z nieoznakowanym ładunkiem stoi na drodze, a przy nim śpi strażnik. Jeśli ktoś go obudzi, będzie kłopot, jeśli nie, szansa.",
   "morale": 0,
   "supplies": 0,
   "coinsSS": 0,
@@ -1226,7 +1226,7 @@
  {
   "id": "v-120",
   "title": "Fałszywy akt",
-  "text": "Ktoś próbuje wykorzystać fałszywy akt własności, żeby odebrać ziemię sąsiadowi. Sprawa ma ścigać was, bo pieczęć wygląda znajomo.",
+  "text": "Ktoś próbuje wykorzystać fałszywy akt własności, żeby odebrać ziemię sąsiadowi. Sprawa może wrócić do was, bo pieczęć wygląda znajomo.",
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0,
@@ -1324,7 +1324,7 @@
  },
  {
   "id": "v-127",
-  "title": "Wędrowiec odwdzięcza",
+  "title": "Wędrowiec się odwdzięcza",
   "text": "Wędrowiec odzyskał siły i wyjawił, że jest synem miejscowego rycerza. Obiecuje dobre słowo u ojca i zostawia nagrodę.",
   "morale": 1,
   "supplies": 0,
@@ -1361,7 +1361,7 @@
  {
   "id": "v-131",
   "title": "Kapłan wraca",
-  "text": "Kapłan wrócił ze strażnikami i mówi, że znalazł śmiertelnego heretyka w sąsiedniej wsi. Prosi o pomoc w przeszukaniu lasu.",
+  "text": "Kapłan wrócił ze strażnikami i mówi, że znalazł groźnego heretyka w sąsiedniej wsi. Prosi o pomoc w przeszukaniu lasu.",
   "morale": -1,
   "supplies": 0,
   "coinsSS": -2,
@@ -1574,7 +1574,7 @@
  {
   "id": "v-157",
   "title": "Niedziela",
-  "text": "Cała wieś poszła do kościoła, a ulice były puste. Szajka mogła swobodnie przejść przez wieś i obejrzeć okolicę.",
+  "text": "Cała wieś poszła do kościoła, a uliczki były puste. Szajka mogła swobodnie przejść przez wieś i obejrzeć okolicę.",
   "morale": 0,
   "supplies": 0,
   "coinsSS": 2
@@ -1697,7 +1697,7 @@
  },
  {
   "id": "v-169",
-  "title": "Spłoszona zwierzyna",
+  "title": "Dzik w zbożu",
   "text": "Dzik wpadł na pole i niszczy zbiory, atakując każdego, kto się zbliża. Wieśniacy boją się go.",
   "morale": -1,
   "supplies": -1,
@@ -1718,7 +1718,7 @@
   "supplies": 0,
   "coinsSS": 0,
   "role": "marksman",
-  "okText": "Strzelec zatrzymał stado celnym strzałem w ziemię przed czołem, a wieśniacy dziękowali mu mlekiem i srebrem.",
+  "okText": "Strzelec zatrzymał stado celnym strzałem w ziemię przed pierwszymi krowami, a wieśniacy dziękowali mu mlekiem i srebrem.",
   "ok": {
    "morale": 1,
    "supplies": 2,
@@ -1733,7 +1733,7 @@
   "supplies": 0,
   "coinsSS": 0,
   "role": "provocateur",
-  "okText": "Prowokator wygłosił przemowę o patriotyzmie i wspólnym wrogu, a wójt i wieśniacy zaprosili szajkę do wspólnego stołu.",
+  "okText": "Prowokator wygłosił przemowę o wierności hrabiemu i wspólnym wrogu, a wójt i wieśniacy zaprosili szajkę do wspólnego stołu.",
   "ok": {
    "morale": 1,
    "supplies": 0,
@@ -1823,7 +1823,7 @@
   "supplies": 0,
   "coinsSS": 0,
   "role": "saboteur",
-  "okText": "Podpalacz wydobył skarb z siana i podpalił je z daleka, żeby ukryć ślady. Skarb się opłacał.",
+  "okText": "Podpalacz wydobył skarb z siana i podpalił je z daleka, żeby ukryć ślady. Skarb był wart zachodu.",
   "ok": {
    "morale": 1,
    "supplies": 0,
@@ -1892,8 +1892,8 @@
  },
  {
   "id": "v-182",
-  "title": "Poszukiwany list",
-  "text": "W wiosce pojawił się poszukiwany list gończy z podobizną jednego z waszych. Jeśli ktoś go zobaczy, będzie kłopot.",
+  "title": "List gończy",
+  "text": "W wiosce pojawił się list gończy z podobizną jednego z waszych. Jeśli ktoś go zobaczy, będzie kłopot.",
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0,
@@ -1907,7 +1907,7 @@
  },
  {
   "id": "v-183",
-  "title": "Grzechotka",
+  "title": "Dziwna wysypka",
   "text": "Dziecko ma dziwną wysypkę i matka błaga o pomoc. Wieśniacy mówią o przeklętej krwi.",
   "morale": -1,
   "supplies": 0,
@@ -1976,7 +1976,7 @@
  },
  {
   "id": "v-188",
-  "title": "Sakwa otwarta",
+  "title": "Otwarta sakwa",
   "text": "Wewnątrz sakwy znaleziono dokumenty zapieczętowane herbem lokalnego szlachcica i kilka srebrników. Ktoś będzie jej szukał.",
   "morale": -1,
   "supplies": 0,
@@ -2003,7 +2003,7 @@
  },
  {
   "id": "v-191",
-  "title": "Gołębnik dworu",
+  "title": "Gołąb z dworu",
   "text": "Gołąb z dworu pomylił kierunki i wylądował w obozie. Kartka przy nóżce zawiera szyfrowaną wiadomość.",
   "morale": 0,
   "supplies": 0,
@@ -2162,7 +2162,7 @@
  {
   "id": "v-210",
   "title": "Pogłoski o armii",
-  "text": "Do wsi dotarł handlarz z wieścią, że armia zmierza na północ. Wszyscy zaczęli pakować co cenniejsze.",
+  "text": "Do wsi dotarł handlarz z wieścią, że armia zmierza na północ. Wszyscy zaczęli pakować, co cenniejsze.",
   "morale": -1,
   "supplies": 0,
   "coinsSS": 2
@@ -2193,7 +2193,7 @@
  },
  {
   "id": "v-214",
-  "title": "Wizyta lekarza",
+  "title": "Wędrowny medyk",
   "text": "Wędrowny medyk przejeżdżał przez wieś i sprzedawał mikstury. Połowa była bezwartościowa, połowa działała.",
   "morale": 0,
   "supplies": 0,
@@ -2210,7 +2210,7 @@
  {
   "id": "v-216",
   "title": "Wieczorna modlitwa",
-  "text": "Wieśniacy zebrali się na wieczorną modlitwę pod krzyżem przydrożnym. Szajka stała z tyłu, nie wiedząc, co zrobić z rękami.",
+  "text": "Wieśniacy zebrali się na wieczorną modlitwę pod przydrożną kapliczką. Szajka stała z tyłu, nie wiedząc, co zrobić z rękami.",
   "morale": 0,
   "supplies": 0,
   "coinsSS": 0
@@ -2290,7 +2290,7 @@
  {
   "id": "v-226",
   "title": "Źle wróży",
-  "text": "Kruk usiadł na sztandarze wiszącym przy drodze i krakał. Wieśniacy plują przez lewe ramię, a szajka nerwowo patrzy w niebo.",
+  "text": "Kruk usiadł na przydrożnym słupie i krakał. Wieśniacy plują przez lewe ramię, a szajka nerwowo patrzy w niebo.",
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0
@@ -2305,7 +2305,7 @@
  },
  {
   "id": "v-228",
-  "title": "Misterny sidła",
+  "title": "Misterne sidła",
   "text": "Wieśniacy rozstawili sidła na zające wokół obozu. Połowa popleczników wpadła w nie przez przypadek.",
   "morale": 0,
   "supplies": 2,
@@ -2612,7 +2612,7 @@
  {
   "id": "v-265",
   "title": "Zaginiony kupiec",
-  "text": "Kupiec zaginął na drodze do wsi, a jego wóz stoi pusty. Wieśniacy boją się zbliżyć, szajka zrobiła inwentarz.",
+  "text": "Kupiec zaginął na drodze do wsi, a jego wóz stoi pusty. Wieśniacy boją się zbliżyć, a szajka zrobiła inwentarz.",
   "morale": -1,
   "supplies": 2,
   "coinsSS": 4
@@ -2692,7 +2692,7 @@
  {
   "id": "v-275",
   "title": "Zgubiony list",
-  "text": "Do obozu wpadł list, który wiatr zdmuchnął komuś z ręki. Adresowany do kapitana lokalnych strażników.",
+  "text": "Do obozu wpadł list, który wiatr zdmuchnął komuś z ręki. Był adresowany do kapitana miejscowych strażników.",
   "morale": 0,
   "supplies": 0,
   "coinsSS": 3
@@ -2724,7 +2724,7 @@
  {
   "id": "v-279",
   "title": "Miód",
-  "text": "Pszczelarz zaprosił do swej pasieki i poczęstował miodem. Wszyscy wrócili lepkimi palcami i dobrym humorem.",
+  "text": "Pszczelarz zaprosił do swej pasieki i poczęstował miodem. Wszyscy wrócili z lepkimi palcami i dobrym humorem.",
   "morale": 1,
   "supplies": 1,
   "coinsSS": 0
@@ -2748,7 +2748,7 @@
  {
   "id": "v-282",
   "title": "Zabłąkany strażnik",
-  "text": "Strażnik z hrabiego zabłądził w nocy i zapytał o drogę. Szajka wskazała mu fałszywy kierunek i zachowała dobrą minę.",
+  "text": "Strażnik hrabiego zabłądził w nocy i zapytał o drogę. Szajka wskazała mu fałszywy kierunek i zachowała dobrą minę.",
   "morale": 1,
   "supplies": 0,
   "coinsSS": 0
@@ -2756,7 +2756,7 @@
  {
   "id": "v-283",
   "title": "Kosa śmierci",
-  "text": "Wieśniacy odprawiali rytuał przeciw nieszczęściu, który zawieszano kosę nad drzwiami. Szajka patrzyła z niepokojem.",
+  "text": "Wieśniacy odprawiali rytuał przeciw nieszczęściu, polegający na zawieszaniu kosy nad drzwiami. Szajka patrzyła z niepokojem.",
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0
@@ -2804,7 +2804,7 @@
  {
   "id": "v-289",
   "title": "Zagubiona gęś",
-  "text": "Gęś z obłąkańczym spojrzeniem biegała po obozie i gdakała. Ktoś ją schwytał, a wieczorem na kolację była pieczeń.",
+  "text": "Gęś z obłąkańczym spojrzeniem biegała po obozie i gęgała. Ktoś ją schwytał, a wieczorem na kolację była pieczeń.",
   "morale": 0,
   "supplies": 2,
   "coinsSS": 0
@@ -2883,8 +2883,8 @@
  },
  {
   "id": "v-299",
-  "title": "Zgubiony dukat",
-  "text": "Złoty dukat błyszczał w trawie przy drodze. Szajka podniosła go, choć wiedziała, że ktoś może jej szukać.",
+  "title": "Zgubiona korona",
+  "text": "Złota korona błyszczała w trawie przy drodze. Szajka podniosła ją, choć wiedziała, że ktoś może jej szukać.",
   "morale": 0,
   "supplies": 0,
   "coinsSS": 8

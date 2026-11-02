@@ -50,7 +50,7 @@
  {
   "id": "m-007",
   "title": "Krasnoludzka karawana",
-  "text": "Karawana krasnoludów przeszła przez przełęcz z mułami pełnymi towarów. Nikt nie odważył się zaczepić tych brodatych straży.",
+  "text": "Karawana krasnoludów przeszła przez przełęcz z mułami pełnymi towarów. Nikt nie odważył się zaczepić tej brodatej straży.",
   "morale": 0,
   "supplies": 0,
   "coinsSS": 2
@@ -185,7 +185,7 @@
  },
  {
   "id": "m-024",
-  "title": "Dziury w śniegu",
+  "title": "Głębokie ślady w śniegu",
   "text": "Wokół obozu pojawiły się dziury w śniegu, jakby coś chodziło na dwóch nogach i ciężko. Rano ślady znikły.",
   "morale": -1,
   "supplies": 0,
@@ -218,7 +218,7 @@
  {
   "id": "m-028",
   "title": "Grzmot w górach",
-  "text": "Grzmot w górach rozbrzmiewał jak walące się światy. Szajka kulila się pod płachtą, a wszystko trwało godzinami.",
+  "text": "Grzmot w górach rozbrzmiewał jak walące się światy. Szajka kuliła się pod płachtą, a wszystko trwało godzinami.",
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0
@@ -272,7 +272,7 @@
  {
   "id": "m-033",
   "title": "Zwiad goblinów",
-  "text": "Mały oddział goblinów kręci się blisko obozu. Jeśli nas zauważą, sprowadzą resztę plemienia.",
+  "text": "Mały oddział goblinów kręci się blisko obozu. Jeśli was zauważą, sprowadzą resztę plemienia.",
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0,
@@ -316,7 +316,7 @@
  },
  {
   "id": "m-036",
-  "title": "Gryząca zimnica",
+  "title": "Gryzący mróz",
   "text": "Zimno jest tak ostre, że zapasy zamarzły. Mięso ze stoku jest jedyną nadzieją.",
   "morale": -1,
   "supplies": -1,
@@ -332,7 +332,7 @@
  {
   "id": "m-037",
   "title": "Górale w karczmie",
-  "text": "Górale w przydrożnej karczmie nie lubią obcych. Jeśli szajka nie zdoła ich zaskarbić, będą kłopoty.",
+  "text": "Górale w przydrożnej karczmie nie lubią obcych. Jeśli szajka nie zdoła ich zjednać, będą kłopoty.",
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0,
@@ -422,7 +422,7 @@
  {
   "id": "m-043",
   "title": "Skalny most",
-  "text": "Kamienny most nad przepaścią prowadzi do kopalni, której strzeże wojsko. Jeśli go zniszczyć, wojsko się opóźni.",
+  "text": "Kamienny most nad przepaścią prowadzi do kopalni, której strzeże wojsko. Jeśli most zostanie zniszczony, wojsko się opóźni.",
   "morale": 0,
   "supplies": 0,
   "coinsSS": 0,
@@ -749,7 +749,7 @@
  },
  {
   "id": "m-074",
-  "title": "Dzwony owiec",
+  "title": "Dzwonki owiec",
   "text": "Z doliny dochodziło brzęczenie dzwonków owiec. Szajka patrzyła, jak pasterze zaganiają stado na noc.",
   "morale": 1,
   "supplies": 0,
@@ -877,8 +877,8 @@
  },
  {
   "id": "m-090",
-  "title": "Złamany krzyż",
-  "text": "Przy ścieżce stał złamany krzyż z imionami zmarłych. Szajka dokleiła do niego świeży kawałek drewna.",
+  "title": "Złamana kapliczka",
+  "text": "Przy ścieżce stała złamana kapliczka z imionami zmarłych. Szajka dołożyła do niej świeży kawałek drewna.",
   "morale": 1,
   "supplies": 0,
   "coinsSS": -1
@@ -891,7 +891,7 @@
   "supplies": -2,
   "coinsSS": 0,
   "role": "bodyguard",
-  "okText": "Ochroniarz stanął na przeciw niedźwiedzia z tarczą i wrzasnął z całych sił. Zwierzę zawahało się i wycofało. W gawrze znaleziono błyskotki.",
+  "okText": "Ochroniarz stanął naprzeciw niedźwiedzia z tarczą i wrzasnął z całych sił. Zwierzę zawahało się i wycofało. W gawrze znaleziono błyskotki.",
   "ok": {
    "morale": 1,
    "supplies": 4,
@@ -906,7 +906,7 @@
   "supplies": -2,
   "coinsSS": 0,
   "role": "bodyguard",
-  "okText": "Ochroniarz podparł skałę barkiem i zatrzymał ją na kilka sekund, tyle, żeby wszyscy zdążyli uciec. Nikt nie ucierpiał.",
+  "okText": "Ochroniarz podparł skałę barkiem i zatrzymał ją na kilka sekund, na tyle długo, żeby wszyscy zdążyli uciec. Nikt nie ucierpiał.",
   "ok": {
    "morale": 1,
    "supplies": 0,
@@ -1035,7 +1035,7 @@
  },
  {
   "id": "m-101",
-  "title": "Szmugiel przez grań",
+  "title": "Przemyt przez grań",
   "text": "Towar trzeba przenieść przez grań, ale droga jest wąska i śliska. Mułom grozi upadek.",
   "morale": -1,
   "supplies": 0,
@@ -1101,7 +1101,7 @@
   "supplies": 0,
   "coinsSS": 0,
   "role": "scout",
-  "okText": "Zwiadowca poszedł śladem i znalazł kompana w jaskini, z zawrotem głowy i nogą w pułapce. Uratowany podzielił się znaleziskiem.",
+  "okText": "Zwiadowca poszedł śladem i znalazł kompana w jaskini, z zawrotami głowy i nogą w pułapce. Uratowany podzielił się znaleziskiem.",
   "ok": {
    "morale": 1,
    "supplies": 0,
@@ -1116,7 +1116,7 @@
   "supplies": 0,
   "coinsSS": 0,
   "role": "scout",
-  "okText": "Zwiadowca poprowadził szajkę ukrytą ścieżką, o której nikt nie wiedział. Wojsko stracili z oczu, a szajka znalazła po drodze dobre miejsce na obóz.",
+  "okText": "Zwiadowca poprowadził szajkę ukrytą ścieżką, o której nikt nie wiedział. Wojsko straciło ich z oczu, a szajka znalazła po drodze dobre miejsce na obóz.",
   "ok": {
    "morale": 1,
    "supplies": 0,
@@ -1314,7 +1314,7 @@
  {
   "id": "m-124",
   "title": "Pękające lody",
-  "text": "Lód na jeziorze pękał z trzaskiem jak strzały armat. Szajka obozowała na brzegu i nie spała do rana.",
+  "text": "Lód na jeziorze pękał z trzaskiem jak wystrzały armat. Szajka obozowała na brzegu i nie spała do rana.",
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0
@@ -1330,7 +1330,7 @@
  {
   "id": "m-126",
   "title": "Skalne rzeźby",
-  "text": "Wietrzne erozje wyrzeźbiły w skałach kształty podobne do ludzkich twarzy. Szajka patrzyła z dreszczem.",
+  "text": "Wiatr i erozja wyrzeźbiły w skałach kształty podobne do ludzkich twarzy. Szajka patrzyła z dreszczem.",
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0
@@ -1434,7 +1434,7 @@
  {
   "id": "m-139",
   "title": "Świeży ślad",
-  "text": "Na śniegu widać było świeży ślad buta, prowadzący do obozu i z powrotem. Ktoś nas obserwował, ale nic nie zabrał.",
+  "text": "Na śniegu widać było świeży ślad buta, prowadzący do obozu i z powrotem. Ktoś was obserwował, ale nic nie zabrał.",
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0
@@ -1546,12 +1546,12 @@
  {
   "id": "m-153",
   "title": "Rozwścieczony troll",
-  "text": "Troll wyszedł z jaskini i idzie w stronę obozu, wymachując maczugą. Jeśli ktoś go nie zatrzyma, obóz będzie zgnieciony.",
+  "text": "Troll wyszedł z jaskini i idzie w stronę obozu, wymachując maczugą. Jeśli ktoś go nie zatrzyma, obóz zostanie zgnieciony.",
   "morale": -2,
   "supplies": -2,
   "coinsSS": 0,
   "role": "bodyguard",
-  "okText": "Ochroniarz stanął przed trollem i wciągnął go w pułapkę, w którą wpadły kamienie. Troll zginął, a w jaskini znaleziono skarby.",
+  "okText": "Ochroniarz stanął przed trollem i wciągnął go w pułapkę z osuwających się kamieni. Troll zginął, a w jaskini znaleziono skarby.",
   "ok": {
    "morale": 1,
    "supplies": 2,
@@ -1605,7 +1605,7 @@
  },
  {
   "id": "m-157",
-  "title": "Orli kuszenie",
+  "title": "Orzeł z czapką",
   "text": "Orzeł zabrał jednemu z popleczników czapkę i krąży z nią nad obozem. Wszyscy się śmieją, ale czapka była cenna.",
   "morale": -1,
   "supplies": 0,
@@ -1620,7 +1620,7 @@
  },
  {
   "id": "m-158",
-  "title": "Kamienny dzik",
+  "title": "Dzik na zboczu",
   "text": "Na zboczu pojawił się wielki dzik, który niszczy to, co spotka. Dąży w stronę obozu.",
   "morale": -1,
   "supplies": -1,
@@ -1641,7 +1641,7 @@
   "supplies": 0,
   "coinsSS": 0,
   "role": "provocateur",
-  "okText": "Prowokator zorganizował konkurs wyścigu na mułach, który rozbawił całą karawanę. Szlachta zapłaciła hojnie i obiecała dobre słowo u hrabiego.",
+  "okText": "Prowokator zorganizował wyścig na mułach, który rozbawił całą karawanę. Szlachta zapłaciła hojnie i obiecała dobre słowo u hrabiego.",
   "ok": {
    "morale": 1,
    "supplies": 0,
@@ -1987,8 +1987,8 @@
  },
  {
   "id": "m-188",
-  "title": "Alpejskie róże",
-  "text": "Na zboczu zakwitły róże alpejskie, choć jeszcze leżał śnieg. Szajka wzięła to za dobry znak.",
+  "title": "Górskie róże",
+  "text": "Na zboczu zakwitły górskie róże, choć jeszcze leżał śnieg. Szajka wzięła to za dobry znak.",
   "morale": 1,
   "supplies": 0,
   "coinsSS": 0
@@ -2012,7 +2012,7 @@
  {
   "id": "m-191",
   "title": "Lawina śnieżna",
-  "text": "Lawina przetoczyła się obok obozu o kilka metrów. Wszyscy byli bladzi i milczący.",
+  "text": "Lawina przetoczyła się obok obozu o kilkadziesiąt kroków. Wszyscy byli bladzi i milczący.",
   "morale": -2,
   "supplies": 0,
   "coinsSS": 0
@@ -2027,7 +2027,7 @@
  },
  {
   "id": "m-193",
-  "title": "Kamienny złom",
+  "title": "Krasnoludzki wózek",
   "text": "Szajka znalazła stary krasnoludzki wózek na szynach. Był zardzewiały, ale koła nadal się kręciły.",
   "morale": 0,
   "supplies": 0,
@@ -2035,7 +2035,7 @@
  },
  {
   "id": "m-194",
-  "title": "Dym z wysokiego komina",
+  "title": "Dym na skale",
   "text": "Z wysokiej skały wznosił się dym, jakby tam ktoś mieszkał. Nikt się nie odważył sprawdzić.",
   "morale": -1,
   "supplies": 0,
@@ -2139,7 +2139,7 @@
  },
  {
   "id": "m-207",
-  "title": "Ciepłe źródło",
+  "title": "Gorące źródło",
   "text": "Gorące źródło buchało parą w skale. Szajka zażyła kąpieli i odpoczęła jak nigdy.",
   "morale": 2,
   "supplies": 0,
@@ -2204,7 +2204,7 @@
  {
   "id": "m-215",
   "title": "Skarb górnika",
-  "text": "Stary górnik umierając wskazał szajce kryjówkę ze swoimi oszczędnościami. W skrzynce znaleziono monety i prosty zegarek.",
+  "text": "Stary górnik umierając wskazał szajce kryjówkę ze swoimi oszczędnościami. W skrzynce znaleziono monety i prosty medalion.",
   "morale": 0,
   "supplies": 0,
   "coinsSS": 6
@@ -2307,7 +2307,7 @@
  },
  {
   "id": "m-228",
-  "title": "Zbiegli niewolnicy",
+  "title": "Zbiegli robotnicy",
   "text": "Grupka zbiegłych pracowników kopalni prosiła o jedzenie. Szajka podzieliła się tym, co miała.",
   "morale": 1,
   "supplies": -2,
@@ -2795,7 +2795,7 @@
  },
  {
   "id": "m-288",
-  "title": "Miodowe zorze",
+  "title": "Zorza polarna",
   "text": "Zorza polarna rozświetliła niebo zielenią i różem. Szajka patrzyła, nie wierząc własnym oczom.",
   "morale": 1,
   "supplies": 0,
@@ -2812,7 +2812,7 @@
  {
   "id": "m-290",
   "title": "Zatrzaśnięta jaskinia",
-  "text": "Wejście do jaskini zatrzasnęło się za jednym z popleczników, uwięziwszy go na kilka godzin. Wyciągnięto go przez dziurę.",
+  "text": "Wejście do jaskini zatrzasnęło się za jednym z popleczników i uwięziło go na kilka godzin. Wyciągnięto go przez dziurę.",
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0
