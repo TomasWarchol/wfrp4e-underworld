@@ -74,7 +74,7 @@
  {
   "id": "c-010",
   "title": "The town crier",
-  "text": "A town crier shouted new taxes and wanted notices under the window. Some of the news was particularly interesting.",
+  "text": "A town crier shouted about new taxes and wanted lists under the window. Some of the news was particularly interesting.",
   "morale": 0,
   "supplies": 0,
   "coinsSS": 0
@@ -255,7 +255,7 @@
   "supplies": 0,
   "coinsSS": -3,
   "role": "bodyguard",
-  "okText": "The bodyguard stepped out, gave him one look and the drab left, leaving his own coins behind.",
+  "okText": "The bodyguard stepped out, gave him one look and the bruiser left, leaving his own coins behind.",
   "ok": {
    "morale": 1,
    "supplies": 0,
@@ -280,7 +280,7 @@
  {
   "id": "c-034",
   "title": "A shadow on your tail",
-  "text": "Someone has been following crew members for several evenings. He must be lost or caught before he reveals the hideout.",
+  "text": "Someone has been following crew members for several evenings. He must be shaken off or caught before he reveals the hideout.",
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0,
@@ -505,7 +505,7 @@
  {
   "id": "c-049",
   "title": "A dealer with suspicious goods",
-  "text": "A stranger is offering a consignment at a price no one should ask. Either he's a great merchant or it's stolen.",
+  "text": "A stranger is offering a consignment at a price no one should ask. Either he's a great merchant or the goods are stolen.",
   "morale": 0,
   "supplies": 0,
   "coinsSS": -3,
@@ -909,7 +909,7 @@
   "supplies": -2,
   "coinsSS": 0,
   "role": "shadow",
-  "okText": "The shadow tracked the burglar to his lair, retrieved the sack and added himself to somebody else's deposit.",
+  "okText": "The shadow tracked the burglar to his lair, retrieved the sack and helped himself to something more from the thief's stash.",
   "ok": {
    "morale": 0,
    "supplies": 0,
@@ -1149,7 +1149,7 @@
   "supplies": 0,
   "coinsSS": -2,
   "role": "charlatan",
-  "okText": "The healer gave a decoction of herbs, drew a bit of bile from each and declared it \"the antidote\". Everyone felt better.",
+  "okText": "The healer gave a decoction of herbs, let a little blood from each and declared it \"the antidote\". Everyone felt better.",
   "ok": {
    "morale": 1,
    "supplies": 0,
@@ -1874,7 +1874,7 @@
  {
   "id": "c-175",
   "title": "The threats",
-  "text": "A dead rat was left at the door with a note pinned: \"I know what you do.\" The handwriting is illegible.",
+  "text": "A dead rat was left at the door with a note pinned: \"I know what you do.\" The handwriting is crude.",
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0,
@@ -2342,7 +2342,7 @@
  {
   "id": "c-232",
   "title": "News from the capital",
-  "text": "A messenger brought word from the imperial court: a great favour for anyone who knows the words spoken in it.",
+  "text": "A messenger brought word from the imperial court: whoever knows what it says could call in a great favour.",
   "morale": 0,
   "supplies": 0,
   "coinsSS": 0
@@ -2844,7 +2844,7 @@
  {
   "id": "c-294",
   "title": "The baker in debt",
-  "text": "The baker fell behind on payments and sought support. You took him under your wing and get fresh bread for a week.",
+  "text": "The baker fell behind on payments and sought support. You took him under your wing and got fresh bread for a week.",
   "morale": 0,
   "supplies": 3,
   "coinsSS": -2

@@ -777,7 +777,7 @@
  },
  {
   "id": "v-078",
-  "title": "Wading in water",
+  "title": "The swollen stream",
   "text": "The stream swelled after rain and crossing it took time. Nobody complained because the water was cold and clean.",
   "morale": 0,
   "supplies": 0,
@@ -1361,7 +1361,7 @@
  {
   "id": "v-131",
   "title": "The priest returns",
-  "text": "The priest returned with guards and says he found a mortal heretic in the next village. He asks for help searching the forest.",
+  "text": "The priest returned with guards and says he found a dangerous heretic in the next village. He asks for help searching the forest.",
   "morale": -1,
   "supplies": 0,
   "coinsSS": -2,
@@ -1697,7 +1697,7 @@
  },
  {
   "id": "v-169",
-  "title": "Frightened game",
+  "title": "The rampaging boar",
   "text": "A boar charged into the field and is destroying the crop, attacking anyone who approaches. The villagers fear it.",
   "morale": -1,
   "supplies": -1,
@@ -1733,7 +1733,7 @@
   "supplies": 0,
   "coinsSS": 0,
   "role": "provocateur",
-  "okText": "The provocateur delivered a speech on patriotism and the common enemy and the reeve and villagers invited the crew to a shared table.",
+  "okText": "The provocateur delivered a speech on loyalty to the count and the common enemy and the reeve and villagers invited the crew to a shared table.",
   "ok": {
    "morale": 1,
    "supplies": 0,
@@ -1823,7 +1823,7 @@
   "supplies": 0,
   "coinsSS": 0,
   "role": "saboteur",
-  "okText": "The arsonist extracted the treasure from the hay and set it alight from afar to hide the traces. The treasure paid off.",
+  "okText": "The arsonist extracted the treasure from the hay and set it alight from afar to hide the traces. The treasure was worth the trouble.",
   "ok": {
    "morale": 1,
    "supplies": 0,
@@ -1893,7 +1893,7 @@
  {
   "id": "v-182",
   "title": "The wanted notice",
-  "text": "A wanted notice bearing one of your likenesses appeared in the village. If someone sees it there'll be trouble.",
+  "text": "A wanted notice bearing the likeness of one of yours appeared in the village. If someone sees it there'll be trouble.",
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0,
@@ -2004,7 +2004,7 @@
  {
   "id": "v-191",
   "title": "The manor's dovecote",
-  "text": "A pigeon from the manor lost its way and landed in camp. The note on its leg carries an encrypted message.",
+  "text": "A pigeon from the manor lost its way and landed in camp. The note on its leg carries an coded message.",
   "morale": 0,
   "supplies": 0,
   "coinsSS": 0,
@@ -2290,7 +2290,7 @@
  {
   "id": "v-226",
   "title": "An ill omen",
-  "text": "A raven landed on a banner by the road and croaked. The villagers spit over their left shoulders and the crew glance nervously at the sky.",
+  "text": "A raven landed on a post by the road and croaked. The villagers spit over their left shoulders and the crew glances nervously at the sky.",
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0
@@ -2756,7 +2756,7 @@
  {
   "id": "v-283",
   "title": "The scythe of death",
-  "text": "Villagers performed a ritual against misfortune hanging a scythe above the door. The crew watched uneasily.",
+  "text": "Villagers performed a ritual against misfortune by hanging a scythe above the door. The crew watched uneasily.",
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0
@@ -2804,7 +2804,7 @@
  {
   "id": "v-289",
   "title": "The lost goose",
-  "text": "A goose with a mad stare ran round the camp cackling. Someone caught it and for supper there was a roast.",
+  "text": "A goose with a mad stare ran round the camp honking. Someone caught it and for supper there was a roast.",
   "morale": 0,
   "supplies": 2,
   "coinsSS": 0
@@ -2883,8 +2883,8 @@
  },
  {
   "id": "v-299",
-  "title": "The lost ducat",
-  "text": "A golden ducat gleamed in the grass by the road. The crew picked it up although someone might be looking for it.",
+  "title": "The lost gold crown",
+  "text": "A gold crown gleamed in the grass by the road. The crew picked it up although someone might be looking for it.",
   "morale": 0,
   "supplies": 0,
   "coinsSS": 8
