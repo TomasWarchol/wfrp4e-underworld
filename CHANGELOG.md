@@ -1,5 +1,8 @@
 # Changelog
 
+## Unreleased
+- **Night events: language review** of all 1200 events (Polish and English). Fixed non-existent or wrong words (e.g. "zimnica", "podkomnaty", "zaskarbić"), grammar and inflection slips, first-person ("nas") narration that broke the second-person voice, mismatched titles, a few logic contradictions, and setting-inconsistent terms (crosses, ducats, metres, tickets, parachutes). Only `title`, `text` and `okText` changed; ids, effects, roles and chains are untouched. Worlds that already generated their tables keep the old wording until the tables are regenerated.
+
 ## 1.9.0
 - **Second role**: a follower can buy a second role for 80 OXP (rank 1+). It unlocks that role's orders and specialty (the specialty bonus counts once). The GM can also set it by hand.
 - **4 new roles** (11 in total): Scout / Tracker, Fence / Forger, Charlatan / Hedge Healer, Swashbuckler / Duellist.

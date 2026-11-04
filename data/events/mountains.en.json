@@ -186,7 +186,7 @@
  {
   "id": "m-024",
   "title": "Holes in the snow",
-  "text": "Holes appeared in the snow around the camp as if something walked on two feet and heavy. By morning the tracks were gone.",
+  "text": "Holes appeared in the snow around the camp as if something heavy had walked on two legs. By morning the tracks were gone.",
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0
@@ -272,7 +272,7 @@
  {
   "id": "m-033",
   "title": "Goblin scouting",
-  "text": "A small band of goblins prowls near the camp. If they notice us they'll bring the rest of the tribe.",
+  "text": "A small band of goblins prowls near the camp. If they notice you they'll bring the rest of the tribe.",
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0,
@@ -422,7 +422,7 @@
  {
   "id": "m-043",
   "title": "The stone bridge",
-  "text": "A stone bridge over a chasm leads to a mine guarded by soldiers. If destroyed the army is delayed.",
+  "text": "A stone bridge over a chasm leads to a mine guarded by soldiers. If it is destroyed the army will be delayed.",
   "morale": 0,
   "supplies": 0,
   "coinsSS": 0,
@@ -877,8 +877,8 @@
  },
  {
   "id": "m-090",
-  "title": "The broken cross",
-  "text": "A broken cross with names of the dead stood by the path. The crew fixed a fresh piece of wood to it.",
+  "title": "The broken shrine",
+  "text": "A broken shrine with names of the dead stood by the path. The crew fixed a fresh piece of wood to it.",
   "morale": 1,
   "supplies": 0,
   "coinsSS": -1
@@ -1434,7 +1434,7 @@
  {
   "id": "m-139",
   "title": "A fresh track",
-  "text": "A fresh bootprint was visible in the snow leading to the camp and away again. Someone watched us but took nothing.",
+  "text": "A fresh bootprint was visible in the snow leading to the camp and away again. Someone watched you but took nothing.",
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0
@@ -1605,7 +1605,7 @@
  },
  {
   "id": "m-157",
-  "title": "The eagle's temptation",
+  "title": "The eagle and the cap",
   "text": "An eagle took a follower's cap and circles above the camp with it. Everyone laughs but the cap was valuable.",
   "morale": -1,
   "supplies": 0,
@@ -1620,7 +1620,7 @@
  },
  {
   "id": "m-158",
-  "title": "The stone boar",
+  "title": "The boar on the slope",
   "text": "A great boar appeared on the slope destroying whatever it meets. It heads towards the camp.",
   "morale": -1,
   "supplies": -1,
@@ -1987,8 +1987,8 @@
  },
  {
   "id": "m-188",
-  "title": "Alpine roses",
-  "text": "Alpine roses bloomed on the slope though snow still lay. The crew took it for a good sign.",
+  "title": "Mountain roses",
+  "text": "Mountain roses bloomed on the slope though snow still lay. The crew took it for a good sign.",
   "morale": 1,
   "supplies": 0,
   "coinsSS": 0
@@ -2012,7 +2012,7 @@
  {
   "id": "m-191",
   "title": "Snow avalanche",
-  "text": "An avalanche rolled past the camp by a few metres. Everyone was pale and silent.",
+  "text": "An avalanche rolled past the camp by a few dozen paces. Everyone was pale and silent.",
   "morale": -2,
   "supplies": 0,
   "coinsSS": 0
@@ -2027,7 +2027,7 @@
  },
  {
   "id": "m-193",
-  "title": "Stone scrap",
+  "title": "The Dwarf cart",
   "text": "The crew found an old Dwarf cart on rails. It was rusty but the wheels still turned.",
   "morale": 0,
   "supplies": 0,
@@ -2204,7 +2204,7 @@
  {
   "id": "m-215",
   "title": "The miner's treasure",
-  "text": "A dying old miner showed the crew a hiding place with his savings. A box held coins and a simple watch.",
+  "text": "A dying old miner showed the crew a hiding place with his savings. A box held coins and a simple medallion.",
   "morale": 0,
   "supplies": 0,
   "coinsSS": 6
@@ -2795,7 +2795,7 @@
  },
  {
   "id": "m-288",
-  "title": "Honeyed dawns",
+  "title": "Northern lights",
   "text": "An aurora lit the sky in green and pink. The crew watched not believing their eyes.",
   "morale": 1,
   "supplies": 0,
