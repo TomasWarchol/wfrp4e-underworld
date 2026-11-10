@@ -81,5 +81,15 @@
   "bugs": "https://github.com/TomasWarchol/wfrp4e-underworld/issues",
   "readme": "https://github.com/TomasWarchol/wfrp4e-underworld/blob/main/README.md",
   "changelog": "https://github.com/TomasWarchol/wfrp4e-underworld/blob/main/CHANGELOG.md",
-  "license": "https://github.com/TomasWarchol/wfrp4e-underworld/blob/main/LICENSE"
+  "license": "https://github.com/TomasWarchol/wfrp4e-underworld/blob/main/LICENSE",
+  "packFolders": [
+    {
+      "name": "mods",
+      "sorting": "a",
+      "color": "#6b2d1f",
+      "packs": [
+        "underworld-tables"
+      ]
+    }
+  ]
 }
