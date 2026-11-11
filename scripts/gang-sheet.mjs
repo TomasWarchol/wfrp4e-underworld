@@ -2782,6 +2782,9 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       }
     }
 
+    // Typ kompanii zmienia tylko MG (pole bywa pominięte w formularzu gracza, ale nie ufamy temu)
+    if (!game.user.isGM) delete expanded.type;
+
     // Zmiana typu kompanii z członkami przelicza ich role, więc wymaga potwierdzenia
     const typeChanged = expanded.type !== undefined && expanded.type !== gang.type;
     if (typeChanged && gang.roster.length) {

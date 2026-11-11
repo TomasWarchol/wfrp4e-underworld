@@ -10,7 +10,7 @@
         <div class="uw-l-identity-fields">
           <label class="uw-l-field">
             <span>{{underworldT "InfoTab.Type"}}</span>
-            <select name="type">
+            <select name="type" {{#unless @root.isGM}}disabled title="{{underworldT 'InfoTab.TypeGMOnly'}}"{{/unless}}>
               {{#bajerySelect gang.type}}
               <option value="underworld">{{underworldT "InfoTab.Types.underworld"}}</option>
               <option value="mercenaries">{{underworldT "InfoTab.Types.mercenaries"}}</option>

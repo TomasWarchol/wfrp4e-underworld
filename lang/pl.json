@@ -2513,6 +2513,7 @@
       "CodePlaceholder": "Przysięgi krwi, zasady podziału łupów, zakaz donoszenia...",
       "Notes": "Kronika / Notatki Herszta:",
       "NotesPlaceholder": "Historia powstania świty, dawne przysięgi, cele drużyny...",
+      "TypeGMOnly": "Typ szajki zmienia tylko MG.",
       "TypeChangeTitle": "Zmienić typ kompanii?",
       "TypeChangeText": "Role członków ({count}) zostaną przeliczone na odpowiedniki z nowego typu. Dostępne zlecenia i nazewnictwo też się zmienią. Kontynuować?"
     },

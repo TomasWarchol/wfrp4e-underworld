@@ -11,7 +11,7 @@
         
         <div class="info-field">
           <label><i class="fas fa-users-cog"></i> {{underworldT "InfoTab.Type"}}</label>
-          <select name="type">
+          <select name="type" {{#unless @root.isGM}}disabled title="{{underworldT 'InfoTab.TypeGMOnly'}}"{{/unless}}>
             {{#bajerySelect gang.type}}
             <option value="underworld">{{underworldT "InfoTab.Types.underworld"}}</option>
             <option value="mercenaries">{{underworldT "InfoTab.Types.mercenaries"}}</option>

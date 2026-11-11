@@ -2513,6 +2513,7 @@
       "CodePlaceholder": "Blood oaths, rules for splitting the loot, no snitching...",
       "Notes": "Chronicle / Chief's Notes:",
       "NotesPlaceholder": "How the retinue was founded, old oaths, the party's goals...",
+      "TypeGMOnly": "Only the GM can change the company type.",
       "TypeChangeTitle": "Change the company type?",
       "TypeChangeText": "The roles of {count} members will be converted to their equivalents in the new type. Available jobs and wording will change too. Continue?"
     },
