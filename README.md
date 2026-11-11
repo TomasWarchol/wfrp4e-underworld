@@ -48,6 +48,18 @@ Foundry also installs the required **WFRP4e – Companion Library** (`wfrp4e-com
 
 Member statuses: **Ready**, **Busy** (after a job, until the end of the day), **Resting**, **Wounded**, **Arrested**, **Dead**.
 
+### 📖 Company Ledger look
+
+By default the sheet looks like a war ledger: a banner with the company type's crest, the motto on a ribbon and the terrain skyline, meters for Morale, supplies, the stash and the pressure track, and ribbon bookmarks on the left. Drag a ready member's portrait onto a job card to send them, or onto a free retinue place. Everything also works from the keyboard (arrow keys switch tabs, Enter opens the job dialog). The client setting **Company sheet style** brings back the classic sheet.
+
+| | |
+|---|---|
+| ![Camp](docs/screenshots/ledger-camp.png) | ![Day plan](docs/screenshots/ledger-plan.png) |
+| ![Retinue](docs/screenshots/ledger-retinue.png) | ![Orders](docs/screenshots/ledger-orders.png) |
+| ![Chest](docs/screenshots/ledger-chest.png) | ![Chronicle](docs/screenshots/ledger-chronicle.png) |
+
+![Chat cards: job, order, night camp](docs/screenshots/ledger-chat.png)
+
 ---
 
 ## 📅 Crew rhythm (world setting)
@@ -57,6 +69,21 @@ Member statuses: **Ready**, **Busy** (after a job, until the end of the day), **
 * **GM queue in daily mode** (separate setting, off by default): jobs sent by players wait for the GM, who resolves them with **Resolve Assignments** or by running the night camp.
 
 ---
+
+## 🏴 Company types
+
+The **Type** field on the Information tab decides what the company is. Each type has its own roles, jobs, wording and night events; the rest (roster, ranks, morale, supplies, treasury, camp, orders) is shared. Changing the type of a company with members asks for confirmation and converts their roles.
+
+- **Underworld Crew**: everything described below.
+- **Armed Company**: a Captain and an Employer who pays instead of taking a cut. Infamy replaces Heat. Roles: Sergeant, Halberdier, Crossbowman, Standard Bearer, Barber-Surgeon, Quartermaster. Jobs: Patrol, Garrison Duty, Requisition, Escort, Contract, Drill, selling trophies, tending the wounded. Spoils are trophies, which never go hot. This type does not use the world's RollTables.
+- **Outlaw Band**: the crew's roles and wording, with a Protector who takes a share. Jobs suited to roads and forests (no rackets, burglary or pickpocketing) plus Turn on the Hunters (Heat −1 and weapons), Ransom and Bridge Toll. Uses the world's RollTables and adds its own night events.
+- **Smugglers' Flotilla**: a Skipper and a Buyer who pays for the cargo. Customs Scrutiny replaces Heat. Roles: Carter / Smuggler, Helmsman, Boatman, Lookout, Forger, Purser. Contraband Pickup brings contraband to the stash; River Run 🎯 takes the most valuable load to the buyer for 2.5 times its value (the target is the route), and a failed run sinks it. The Stash lowers Scrutiny.
+- **Informant Network**: a Spymaster and a Principal who pays for reports. Exposure replaces Heat. Roles: Shadow / Tail, Go-Between / Forger, Chameleon / Hedge Healer, Eavesdropper, Courier, Enforcer. Buy a Secret, Intercept a Courier and Swap a Letter 🎯 bring documents. Sell them to the secret-buyer, or hand the best one to the principal in Report to the Principal for 1.25 times its value with no risk.
+- **Secret Brotherhood**: a High Priest and a Dark Master who takes a tithe. Suspicion replaces Heat. Roles: Acolyte, Zealot, Spy, Assassin, Orator, Alchemist. Jobs: Ritual, Infiltration, Abduction 🎯 and The Stone Circle in the wilds. New believers join through recruitment, as part of the story.
+
+Each role of these types gives its own 3–5 combat orders, named for the type (the halberdier's Halberd Hook, the boatman's Overboard!, the zealot's Martyrdom); the mechanics are those of the crew's orders.
+
+**Night events.** The Underworld Crew draws from the terrain tables. The other types draw part of their nights (the Outlaw Band one in four, the rest half) from their own table and the rest from terrain events without crime motifs. Own events can be limited to terrains. The first time a type needs its table, the module creates it as an editable world RollTable; the GM's Tables button opens it. If the GM deletes it, the module's built-in events are used. Each company remembers which events it has already seen.
 
 ## 🎲 Jobs
 

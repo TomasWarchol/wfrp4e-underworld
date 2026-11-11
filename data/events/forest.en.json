@@ -53,7 +53,10 @@
   "text": "Woodcutters from a nearby village felled trees close to the camp. The crew watched from hiding until they left.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-008",
@@ -93,7 +96,10 @@
   "text": "A hunter from a nearby village got lost in the forest and stumbled onto the camp. The crew led him to the trail for a few coins.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-013",
@@ -109,7 +115,10 @@
   "text": "Far above the forest a column of smoke rose. Someone was burning a village or an army's campfire, nobody knew.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-015",
@@ -133,7 +142,10 @@
   "text": "An old wooden shrine with carved names stood by the forest path. The crew paused in silence and moved on.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-018",
@@ -165,7 +177,10 @@
   "text": "A wandering seller of herbs and roots came upon you in the forest. The crew bought a few remedies and traded rumours.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": -2
+  "coinsSS": -2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-022",
@@ -189,7 +204,10 @@
   "text": "A hunting dog wandered into camp with a snapped leash. Fed and petted, it stayed with the crew.",
   "morale": 1,
   "supplies": -1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-025",
@@ -221,7 +239,10 @@
   "text": "From afar came the sound of a bell from an unknown chapel. The crew couldn't tell whether it was a good sign or bad.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-029",
@@ -266,7 +287,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-032",
@@ -281,7 +305,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 2
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-033",
@@ -311,7 +338,10 @@
    "morale": 1,
    "supplies": 4,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-035",
@@ -341,7 +371,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-037",
@@ -356,7 +389,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 4
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-038",
@@ -401,7 +437,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 4
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-041",
@@ -416,7 +455,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 5
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-042",
@@ -431,7 +473,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 4
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-043",
@@ -446,7 +491,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-044",
@@ -461,7 +509,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 4
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-045",
@@ -476,7 +527,10 @@
    "morale": 0,
    "supplies": 0,
    "coinsSS": 7
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-046",
@@ -491,7 +545,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 8
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-047",
@@ -551,7 +608,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-051",
@@ -578,7 +638,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 0,
-  "next": "f-054"
+  "next": "f-054",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-054",
@@ -587,7 +650,10 @@
   "morale": -1,
   "supplies": 0,
   "coinsSS": 8,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-055",
@@ -632,7 +698,10 @@
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0,
-  "next": "f-060"
+  "next": "f-060",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-060",
@@ -641,7 +710,10 @@
   "morale": -1,
   "supplies": 0,
   "coinsSS": 3,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-061",
@@ -649,7 +721,10 @@
   "text": "Deep in the forest stands a shrine to Taal with antlers and a jug of honey. The crew left an offering and felt calmer.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": -1
+  "coinsSS": -1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-062",
@@ -657,7 +732,10 @@
   "text": "A charcoal burner at his kiln offered the crew hot food and told of the roads. He was lonely and glad of company.",
   "morale": 1,
   "supplies": 1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-063",
@@ -665,7 +743,10 @@
   "text": "A stone covered in blood and trophies stands among the trees. Beastmen marked their territory and the crew stands too close.",
   "morale": -2,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-064",
@@ -689,7 +770,10 @@
   "text": "The crew camped in thick moss. It was warm, soft and quiet, as if the forest wanted to embrace them.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-067",
@@ -697,7 +781,10 @@
   "text": "The emperor's army camped in the nearby valley. The crew watched their fires and quietly withdrew.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-068",
@@ -713,7 +800,10 @@
   "text": "Wasps built a nest right above the camp. Two followers were stung and cursed all day.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-070",
@@ -721,7 +811,10 @@
   "text": "A stream full of trout ran past the camp. The crew feasted and set aside stores for the road.",
   "morale": 1,
   "supplies": 4,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-071",
@@ -753,7 +846,10 @@
   "text": "From the direction of the road came noise, neighing and shouts. A convoy passed and the crew watched from the bushes.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-075",
@@ -761,7 +857,10 @@
   "text": "The crew reached a fork in the roads, each seeming equally dangerous. The discussion took half the night.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-076",
@@ -769,7 +868,10 @@
   "text": "Far in the forest a fire burned. Someone was announcing their presence or something was aflame. The crew stayed hidden.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-077",
@@ -785,7 +887,10 @@
   "text": "A split rotten trunk turned out full of grubs and birds flocked to feast. One of the marksmen bagged a few.",
   "morale": 0,
   "supplies": 1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-079",
@@ -801,7 +906,10 @@
   "text": "A pair of roe deer grazed in a clearing. The crew watched in silence and then let them go.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-081",
@@ -809,7 +917,10 @@
   "text": "A narrow woodcutters' road led through the forest and was well kept. The crew used it to get to their goal quickly.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-082",
@@ -817,7 +928,10 @@
   "text": "In the fog strange lights flickered, dancing above the ground. The crew didn't follow them but didn't sleep till morning.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-083",
@@ -825,7 +939,10 @@
   "text": "The crew followed an animal track but the marks vanished in the middle of a clearing. Nobody could explain why.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-084",
@@ -841,7 +958,10 @@
   "text": "Autumn leaves fell so thick everything was covered in gold. The crew lit a fire and listened to the silence.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-086",
@@ -865,7 +985,10 @@
   "text": "The crew found a shorter route to the hideout skirting the hills. They saved much time and strength.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-089",
@@ -880,7 +1003,10 @@
    "morale": 1,
    "supplies": 4,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-090",
@@ -895,7 +1021,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-091",
@@ -910,7 +1039,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-092",
@@ -925,7 +1057,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-093",
@@ -940,7 +1075,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-094",
@@ -955,7 +1093,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 4
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-095",
@@ -970,7 +1111,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 4
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-096",
@@ -985,7 +1129,10 @@
    "morale": 1,
    "supplies": 2,
    "coinsSS": 2
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-097",
@@ -1000,7 +1147,10 @@
    "morale": 1,
    "supplies": 2,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-098",
@@ -1015,7 +1165,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 6
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-099",
@@ -1030,7 +1183,10 @@
    "morale": 1,
    "supplies": 2,
    "coinsSS": 7
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-100",
@@ -1045,7 +1201,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 6
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-101",
@@ -1060,7 +1219,10 @@
    "morale": 1,
    "supplies": 1,
    "coinsSS": 6
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-102",
@@ -1075,7 +1237,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 4
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-103",
@@ -1105,7 +1270,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 5
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-105",
@@ -1120,7 +1288,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 7
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-106",
@@ -1135,7 +1306,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 8
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-107",
@@ -1150,7 +1324,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 2
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-108",
@@ -1165,7 +1342,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-109",
@@ -1180,7 +1360,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 6
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-110",
@@ -1195,7 +1378,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 7
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-111",
@@ -1204,7 +1390,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 0,
-  "next": "f-112"
+  "next": "f-112",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-112",
@@ -1213,7 +1402,10 @@
   "morale": 1,
   "supplies": 1,
   "coinsSS": 4,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-113",
@@ -1276,7 +1468,10 @@
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0,
-  "next": "f-120"
+  "next": "f-120",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-120",
@@ -1285,7 +1480,10 @@
   "morale": -1,
   "supplies": 0,
   "coinsSS": 7,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-121",
@@ -1301,7 +1499,10 @@
   "text": "The crew came upon the ashes of a small village. Nobody survived and objects lay about the ground that might still be of use to someone.",
   "morale": -1,
   "supplies": 1,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-123",
@@ -1309,7 +1510,10 @@
   "text": "A forester invited the crew to a shared fire and taught how to identify animals by their tracks. Everyone learned something.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-124",
@@ -1317,7 +1521,10 @@
   "text": "A feral dog with foam on its muzzle leapt from the bushes. One follower was bitten and everyone feared for his fate.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-125",
@@ -1333,7 +1540,10 @@
   "text": "A stone figurine with a horn was found among the roots. The crew left it in place and felt something was watching them.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-127",
@@ -1341,7 +1551,10 @@
   "text": "A flock of ravens nested in a giant tree. A few followers climbed up and found trinkets in the nest, including a few coins.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 4
+  "coinsSS": 4,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-128",
@@ -1349,7 +1562,10 @@
   "text": "Whispers came from the fog as if several voices spoke at once. The crew stood motionless until dawn.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-129",
@@ -1357,7 +1573,10 @@
   "text": "Ground-nesting birds had been robbed of their eggs. The crew felt guilty though nobody admitted it.",
   "morale": 0,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-130",
@@ -1381,7 +1600,10 @@
   "text": "A strayed pilgrim sits by the fire loudly praying to Sigmar. The crew tries not to pay attention.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-133",
@@ -1389,7 +1611,10 @@
   "text": "A beautiful sword with an engraved crest lay in the bushes. Nobody claimed it so it stayed with the crew.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-134",
@@ -1397,7 +1622,10 @@
   "text": "A shrivelled witch in a remote hut served the crew soup and foretold everyone's doom. The soup tasted good.",
   "morale": -1,
   "supplies": 1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-135",
@@ -1405,7 +1633,10 @@
   "text": "An old merchants' route crossed the forest and wagons still rolled along it. The crew took position in the bushes.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-136",
@@ -1413,7 +1644,10 @@
   "text": "The crew found a small cave with a dry interior. They got comfortable though a strange wind blew from it.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-137",
@@ -1421,7 +1655,10 @@
   "text": "The river burst its banks and flooded the valley, washing out old tombs. The crew gathered a few finds and left the area.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 4
+  "coinsSS": 4,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-138",
@@ -1429,7 +1666,10 @@
   "text": "A group of children from a nearby village went mushroom picking in the forest and got lost. The crew took them home.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-139",
@@ -1437,7 +1677,10 @@
   "text": "A lantern hung from a branch and its flame didn't die despite the wind. The crew gave it a wide berth.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-140",
@@ -1445,7 +1688,10 @@
   "text": "A purse with a few coins hung from a branch as if left for a chance traveller. The crew thanked the unknown benefactor.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 4
+  "coinsSS": 4,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-141",
@@ -1453,7 +1699,10 @@
   "text": "A storm swept through the forest with a roar breaking trees and flinging boughs. The crew sat under a shared tarpaulin and waited.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-142",
@@ -1461,7 +1710,10 @@
   "text": "Wisps danced above the marsh. One follower wanted to follow them but the others stopped him.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-143",
@@ -1469,7 +1721,10 @@
   "text": "A rotten tree hid a hollow full of honey. The crew shared with the bees.",
   "morale": 1,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-144",
@@ -1477,7 +1732,10 @@
   "text": "A wounded stag with an arrow in its flank ran deep into the forest. The crew tracked it and ended its suffering.",
   "morale": 0,
   "supplies": 4,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-145",
@@ -1501,7 +1759,10 @@
   "text": "An old tree was so hard it had become almost stone. The crew walked round it in awe.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-148",
@@ -1570,7 +1831,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 5
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-154",
@@ -1600,7 +1864,10 @@
    "morale": 1,
    "supplies": 3,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-156",
@@ -1630,7 +1897,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 7
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-158",
@@ -1735,7 +2005,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 4
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-165",
@@ -1750,7 +2023,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 6
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-166",
@@ -1765,7 +2041,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 5
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-167",
@@ -1780,7 +2059,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 8
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-168",
@@ -1795,7 +2077,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 6
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-169",
@@ -1825,7 +2110,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-171",
@@ -1855,7 +2143,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 6
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-173",
@@ -1882,7 +2173,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 0,
-  "next": "f-176"
+  "next": "f-176",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-176",
@@ -1891,7 +2185,10 @@
   "morale": 0,
   "supplies": -1,
   "coinsSS": 4,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-177",
@@ -1918,7 +2215,10 @@
   "morale": 0,
   "supplies": -1,
   "coinsSS": 0,
-  "next": "f-180"
+  "next": "f-180",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-180",
@@ -1927,7 +2227,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 8,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-181",
@@ -1935,7 +2238,10 @@
   "text": "An old signpost with inscriptions in three languages stands at the crossroads. The crew argued long over which road to take.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-182",
@@ -1951,7 +2257,10 @@
   "text": "In the morning dew covered every cobweb with diamonds. The crew was silent, enchanted by the sight.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-184",
@@ -1959,7 +2268,10 @@
   "text": "A mossy statue of Shallya with a raised hand stood among the trees. The crew left a loaf of bread at its feet.",
   "morale": 1,
   "supplies": -1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-185",
@@ -1967,7 +2279,10 @@
   "text": "A traveller from Nuln got lost in the forest and begged help. The crew showed him the way and kept his purse \"for safekeeping\".",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 4
+  "coinsSS": 4,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-186",
@@ -1975,7 +2290,10 @@
   "text": "Hazelnuts ripened and lay on the ground like gold. The crew gathered a sack and slept with full stomachs.",
   "morale": 1,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-187",
@@ -1991,7 +2309,10 @@
   "text": "The crew found someone's pack with a map and compass. The owner was nowhere to be seen and the map showed unknown trails.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-189",
@@ -1999,7 +2320,10 @@
   "text": "A poacher from a nearby village sold the crew a hare and two rabbits for a song. In the evening there was a feast.",
   "morale": 1,
   "supplies": 3,
-  "coinsSS": -1
+  "coinsSS": -1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-190",
@@ -2015,7 +2339,10 @@
   "text": "The crew slept badly and in the morning everyone was tired and irritable. Even birdsong grated.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-192",
@@ -2031,7 +2358,10 @@
   "text": "Foxes settled in a den near the camp. The cubs played in the grass while the crew watched with smiles.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-194",
@@ -2039,7 +2369,10 @@
   "text": "The crew built a dam of stones in the stream and caught a dozen fish. They fried them all night.",
   "morale": 1,
   "supplies": 3,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-195",
@@ -2055,7 +2388,10 @@
   "text": "The crew stumbled upon a stone road built by the ancients. It ran straight as an arrow and vanished in the gloom.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-197",
@@ -2071,7 +2407,10 @@
   "text": "In the moonlight a white figure was seen standing motionless between the trees. The crew shut their eyes and prayed.",
   "morale": -2,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-199",
@@ -2103,7 +2442,10 @@
   "text": "Wild bees built a nest in an abandoned hut. The crew harvested the honey at the cost of a few stings.",
   "morale": 1,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-203",
@@ -2119,7 +2461,10 @@
   "text": "The crew found an abandoned deserters' camp with some supplies and holey tents. A good place to spend the night.",
   "morale": 0,
   "supplies": 2,
-  "coinsSS": 1
+  "coinsSS": 1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-205",
@@ -2127,7 +2472,10 @@
   "text": "Beavers built a dam in the stream and the crew watched them work. Nobody wanted to disturb them.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-206",
@@ -2143,7 +2491,10 @@
   "text": "A girl from a nearby village got lost in the forest and the crew found her. The parents gave honey and bread in thanks.",
   "morale": 1,
   "supplies": 2,
-  "coinsSS": 1
+  "coinsSS": 1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-208",
@@ -2151,7 +2502,10 @@
   "text": "The sand in the stream glittered with golden flecks. A few followers panned it for half a day.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-209",
@@ -2159,7 +2513,10 @@
   "text": "A ring of mossy stones stands among the trees. The crew didn't camp there though a warm wind blew from it.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-210",
@@ -2167,7 +2524,10 @@
   "text": "A snake basked on a stone by the camp. One of the followers almost sat on it.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-211",
@@ -2183,7 +2543,10 @@
   "text": "A peasant family seeking a new home stopped nearby. The crew shared food with them.",
   "morale": 1,
   "supplies": -2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-213",
@@ -2191,7 +2554,10 @@
   "text": "A charcoal burner's lean-to with a roof that still holds stands in the forest. The crew was glad of dry shelter.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-214",
@@ -2215,7 +2581,10 @@
   "text": "By the fire an old bandit told a tale of treasure hidden in a hollow. For a few hours every tree was suspect.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 1
+  "coinsSS": 1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-217",
@@ -2223,7 +2592,10 @@
   "text": "An otter with a broken paw fell into the camp. The crew dressed it and released it and it came back with a fish.",
   "morale": 1,
   "supplies": 1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-218",
@@ -2231,7 +2603,10 @@
   "text": "An old tree took fire from lightning and burned like a torch. The crew gathered dry boughs for their own fire.",
   "morale": 0,
   "supplies": 1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-219",
@@ -2239,7 +2614,10 @@
   "text": "Smoke from the fire betrayed the camp because the wind blew towards the valley. The crew quickly put out the flames and moved higher.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-220",
@@ -2247,7 +2625,10 @@
   "text": "Marsh turtles basked on logs by a pond. Village children collected them in sacks and the crew helped for a share of the haul.",
   "morale": 0,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-221",
@@ -2255,7 +2636,10 @@
   "text": "Mist didn't leave the forest till noon and every sound seemed to come from a different direction. The crew moved slowly.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-222",
@@ -2271,7 +2655,10 @@
   "text": "A stone lodged in the trunk of an old tree as if thrown by a giant. The crew nodded and moved on.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-224",
@@ -2279,7 +2666,10 @@
   "text": "Somewhere in the distance a crossbow or handgun fired. The crew listened but heard nothing more.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-225",
@@ -2287,7 +2677,10 @@
   "text": "Merchants camped nearby and invited you to their fire. The crew joined and the conversation was pleasant and instructive.",
   "morale": 1,
   "supplies": 1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-226",
@@ -2295,7 +2688,10 @@
   "text": "A wooden bench with a carved inscription stood by the path. The crew sat on it and rested.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-227",
@@ -2319,7 +2715,10 @@
   "text": "The crew built a roof of branches that withstood even a downpour. Everyone was proud of themselves.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-230",
@@ -2335,7 +2734,10 @@
   "text": "A narrow woodcutters' track led through the forest towards a bright place. The crew followed it hesitantly.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-232",
@@ -2343,7 +2745,10 @@
   "text": "A sunken boat with a few objects inside lay in shallow water. The crew pulled them out and spread them to dry.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-233",
@@ -2351,7 +2756,10 @@
   "text": "Thousands of fireflies floated over a clearing on a warm night. The crew sat in silence and watched.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-234",
@@ -2359,7 +2767,10 @@
   "text": "A priest of Taal went missing in the forest and his pupils have been searching for a week. The crew pointed the direction where they saw tracks.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 1
+  "coinsSS": 1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-235",
@@ -2367,7 +2778,10 @@
   "text": "In the moonlight the clearing looked covered in silver. The crew pitched camp and spent one of the most peaceful nights.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-236",
@@ -2376,7 +2790,10 @@
   "morale": 0,
   "supplies": -1,
   "coinsSS": 0,
-  "next": "f-237"
+  "next": "f-237",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-237",
@@ -2385,7 +2802,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 7,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-238",
@@ -2412,7 +2832,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 1,
-  "next": "f-241"
+  "next": "f-241",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-241",
@@ -2421,7 +2844,10 @@
   "morale": -1,
   "supplies": 0,
   "coinsSS": -3,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-242",
@@ -2430,7 +2856,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 0,
-  "next": "f-243"
+  "next": "f-243",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-243",
@@ -2439,7 +2868,10 @@
   "morale": 1,
   "supplies": 3,
   "coinsSS": 2,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-244",
@@ -2447,7 +2879,10 @@
   "text": "Under a bush lay a hunter's pouch with an empty flask and a few coins. The crew drank from the stream and kept the coins.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-245",
@@ -2455,7 +2890,10 @@
   "text": "The crew came upon a glade covered in soft grass and flowers. Camping there was like resting in a garden.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-246",
@@ -2463,7 +2901,10 @@
   "text": "Wild animals blazed a trail through the forest to a watering hole. The crew followed it and avoided the road.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-247",
@@ -2487,7 +2928,10 @@
   "text": "The crew found a squirrel's hoard in a hollow: nuts, acorns and a few shiny coins. The squirrel watched reproachfully from a branch.",
   "morale": 0,
   "supplies": 1,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-250",
@@ -2495,7 +2939,10 @@
   "text": "Wanderers lit a fire in the distance and the crew watched from the bushes as they feasted. After they left a few leftovers remained.",
   "morale": 0,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-251",
@@ -2511,7 +2958,10 @@
   "text": "One follower stepped into an old rusty bear trap. He was pulled out unharmed but shocked.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-253",
@@ -2519,7 +2969,10 @@
   "text": "Red rowan berries coloured the clearing. The crew hung sprigs over the entrance for luck.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-254",
@@ -2535,7 +2988,10 @@
   "text": "A big trunk lying in the stream turned out full of fish. The crew caught a dozen without effort.",
   "morale": 1,
   "supplies": 3,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-256",
@@ -2543,7 +2999,10 @@
   "text": "A dagger with engraved initials was stuck in the trunk of an old tree. The crew pulled it out and after consideration kept it.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-257",
@@ -2551,7 +3010,10 @@
   "text": "A shepherd invited the crew to his hut and offered cheese and milk. The talk was short but warm.",
   "morale": 1,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-258",
@@ -2567,7 +3029,10 @@
   "text": "Someone left a saddle by a tree and walked off. The crew kept it \"until claimed\".",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-260",
@@ -2575,7 +3040,10 @@
   "text": "The crew camped in a patch of green moss. They slept in soft bedding and in the morning smelled of the forest.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-261",
@@ -2591,7 +3059,10 @@
   "text": "An old stone bridge linked the river banks. The crew crossed to the other side and saved time.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-263",
@@ -2607,7 +3078,10 @@
   "text": "Deep in the forest stood wild apple trees laden with fruit. The crew gathered them for two hours.",
   "morale": 1,
   "supplies": 3,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-265",
@@ -2615,7 +3089,10 @@
   "text": "By the fire two followers argued whether stars are the gods' fires or wisps. The rest fell asleep.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-266",
@@ -2655,7 +3132,10 @@
   "text": "The crew reached a river that wasn't on the map. Crossing required ingenuity but succeeded.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-271",
@@ -2663,7 +3143,10 @@
   "text": "Small barefoot prints were visible in the soft ground. The crew couldn't tell if they were children or something else.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-272",
@@ -2671,7 +3154,10 @@
   "text": "Someone left a basket of bread, cheese and onion under a tree. Nobody claimed it so the crew ate.",
   "morale": 1,
   "supplies": 3,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-273",
@@ -2679,7 +3165,10 @@
   "text": "A leaning obelisk covered in runes stood among the trees. The crew didn't try to read them.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-274",
@@ -2687,7 +3176,10 @@
   "text": "Two crows on a branch conversed as if they knew something you don't. The crew decided not to listen.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-275",
@@ -2695,7 +3187,10 @@
   "text": "A fiddler played in the middle of the forest for nobody. The crew stood in silence and listened to the end.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-276",
@@ -2703,7 +3198,10 @@
   "text": "From a distant glade came the smell of roasting meat. Everyone drooled and the crew went to see who was roasting.",
   "morale": 0,
   "supplies": 2,
-  "coinsSS": -1
+  "coinsSS": -1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-277",
@@ -2711,7 +3209,10 @@
   "text": "A broken scythe lay in the grass with traces of blood beside it. The crew skirted the spot.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-278",
@@ -2719,7 +3220,10 @@
   "text": "Roe deer grazed by the stream in the sunset light. The crew watched in silence.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-279",
@@ -2735,7 +3239,10 @@
   "text": "The crew found a fire that still smouldered. Someone must have been here an hour ago but nobody was there.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-281",
@@ -2743,7 +3250,10 @@
   "text": "A lone wooden shrine with an engraved name stands in the forest. The crew paused and whispered a prayer.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-282",
@@ -2759,7 +3269,10 @@
   "text": "Three ravens sat on a branch and watched the crew. Nobody knew if they foretold doom or favoured.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-284",
@@ -2767,7 +3280,10 @@
   "text": "The crew found a bush of wolfberries and remembered someone once poisoned himself with them. Everyone kept their hands to themselves.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-285",
@@ -2775,7 +3291,10 @@
   "text": "A horse with an empty saddle came out of the forest and stood still by the camp. The crew kept it.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 5
+  "coinsSS": 5,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-286",
@@ -2791,7 +3310,10 @@
   "text": "On top of a rock eagles built a nest. The crew watched them feed their young and withdrew respectfully.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-288",
@@ -2823,7 +3345,10 @@
   "text": "A priestess of Rhya with a basket of fruit stopped at the camp, blessed everyone and left. The crew felt better.",
   "morale": 1,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-292",
@@ -2831,7 +3356,10 @@
   "text": "The trees seemed thicker than the day before as if the forest closed behind the crew. Nobody commented but everyone sped up.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-293",
@@ -2839,7 +3367,10 @@
   "text": "A bear's den proved empty and trinkets from past victims lay inside. The crew took some and left quietly.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 5
+  "coinsSS": 5,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-294",
@@ -2847,7 +3378,10 @@
   "text": "The crew came upon a tree that grew as if someone bent it. Everyone spoke of magic and one person of art.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-295",
@@ -2855,7 +3389,10 @@
   "text": "A spring in the rock gushed water so pure the crew filled all the skins and washed their faces. The morning was fresh.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-296",
@@ -2863,7 +3400,10 @@
   "text": "Ferns reached waist height and in their shade it was cool and damp. The crew rested in silence.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-297",
@@ -2871,7 +3411,10 @@
   "text": "Wolves made a den in the ravine. The crew gave it a wide berth but heard their breathing all night.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-298",
@@ -2879,7 +3422,10 @@
   "text": "The crew came upon a stag carcass. Ravens feasted and the air was foul and heavy. The followers hurried on.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-299",
@@ -2887,7 +3433,10 @@
   "text": "A huge trunk burned hollow served as a shelter. The crew settled in it like a real home.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "f-300",

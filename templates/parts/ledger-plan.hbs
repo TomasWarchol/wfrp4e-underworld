@@ -1,0 +1,101 @@
+{{!-- Księga Kompanii: Plan dnia – gotowi członkowie, sloty Świty i tablica zleceń z przeciąganiem --}}
+<div class="tasks-panel uw-l-plan">
+  <div class="uw-l-plan-top">
+    <section class="uw-l-pool">
+      <h3>{{uwIcon "ui-status_ready"}} {{underworldT "Plan.Pool"}} <small>{{availableOutlaws.length}}</small></h3>
+      <div class="uw-l-pool-list">
+        {{#each ledgerView.pool}}
+          <div class="uw-l-token status-{{this.status}} {{#unless this.available}}is-busy{{/unless}}"
+               draggable="{{#if this.available}}true{{else}}false{{/if}}" data-npc-id="{{this.id}}"
+               title="{{this.name}} · {{this.roleConfig.name}} · {{#if this.assignGlyph}}{{this.assignLabel}}{{else}}{{this.statusLabel}}{{/if}}">
+            <span class="uw-l-token-face"><img src="{{this.img}}" alt=""/></span>
+            <span class="uw-l-token-role">{{uwIcon this.roleGlyph}}</span>
+            {{#if this.assignGlyph}}<span class="uw-l-token-job">{{uwIcon this.assignGlyph}}</span>{{else}}{{#unless this.available}}<span class="uw-l-token-job">{{uwIcon this.statusGlyph}}</span>{{/unless}}{{/if}}
+            <span class="uw-l-token-name">{{this.name}}</span>
+          </div>
+        {{else}}
+          <p class="uw-l-hint">{{underworldT "RosterTab.EmptyTitle"}}</p>
+        {{/each}}
+      </div>
+      <p class="uw-l-hint">{{underworldT "Plan.DragHint"}}</p>
+    </section>
+
+    <section class="uw-l-retinue">
+      <h3>{{uwIcon "ui-retinue"}} {{underworldT "Chat.Footer"}} <small>{{retinueCount}}/{{maxRetinue}}</small></h3>
+      <div class="uw-l-slots">
+        {{#each ledgerView.retinueSlots}}
+          {{#if this.npc}}
+            <div class="uw-l-slot is-filled" title="{{this.npc.name}} · {{this.npc.roleConfig.name}}">
+              <img src="{{this.npc.img}}" alt=""/>
+              <span class="uw-l-slot-name">{{this.npc.name}}</span>
+              <span class="uw-l-slot-role">{{uwIcon this.npc.roleGlyph}} {{this.npc.roleConfig.name}}</span>
+              <button type="button" class="uw-plain uw-l-slot-out" data-action="toggle-retinue" data-npc-id="{{this.npc.id}}" title="{{underworldT 'RosterTab.LeaveRetinue'}}"><i class="fas fa-times"></i></button>
+            </div>
+          {{else}}
+            <div class="uw-l-slot is-empty" title="{{underworldT 'Plan.SlotHint'}}">
+              {{uwIcon "ui-retinue"}}
+              <span>{{underworldT "Plan.SlotEmpty"}}</span>
+            </div>
+          {{/if}}
+        {{/each}}
+      </div>
+      <p class="uw-l-hint">{{underworldT "TasksTab.UnlocksTactics"}}</p>
+    </section>
+  </div>
+
+  <div class="uw-prep-strip uw-l-prep">
+    <span class="uw-terrain-chip">{{uwIcon ledgerView.terrainIcon}} {{underworldT "Camp.Terrain"}}: <strong>{{terrain.name}}</strong></span>
+    {{#each activeTokens}}
+      <span class="uw-token-chip" data-tooltip="{{this.desc}}"><i class="{{this.icon}}"></i> {{this.name}} <small>({{this.left}})</small></span>
+    {{else}}
+      <span class="uw-token-chip is-empty"><i class="fas fa-chess-pawn"></i> {{underworldT "LootTab.NoTokens"}}</span>
+    {{/each}}
+    {{#if gang.racket}}<span class="uw-token-chip is-racket"><i class="fas fa-store"></i> {{underworldT "Badges.racket"}}: {{gang.racket.district}}</span>{{/if}}
+    {{#if lootCount}}<span class="uw-token-chip is-loot">{{uwIcon "ui-tab_chest"}} {{underworldT "Tabs.Loot"}}: {{lootCount}}{{#if hotLootCount}} ({{underworldT "TasksTab.HotCount" count=hotLootCount}}){{/if}}</span>{{/if}}
+  </div>
+
+  {{#each missionCategories}}
+  <section class="mission-category uw-l-board {{#if this.collapsed}}collapsed{{/if}}" data-category="{{this.cssKey}}">
+    <div class="category-header" data-action="toggle-category">
+      <span>{{uwIcon this.glyph}} {{this.name}} <small>{{this.hint}}</small></span>
+      <i class="fas fa-chevron-down category-chevron"></i>
+    </div>
+    <div class="category-body">
+      <div class="uw-l-cards">
+        {{#each this.missions}}
+        <article class="uw-l-job" data-job="{{this.id}}">
+          <div class="uw-l-job-glyph">{{uwIcon this.glyph}}</div>
+          <div class="uw-l-job-body">
+            <h4>{{this.name}}{{#if this.tiered}} <span class="uw-l-job-tier" data-tooltip="{{underworldT 'TasksTab.TierHint'}}">{{uwIcon "ui-token_lead"}}</span>{{/if}}</h4>
+            <p class="uw-l-job-desc">{{this.desc}}</p>
+            {{{underworldMissionMeta this.id}}}
+          </div>
+          <button type="button" class="btn-send-mission" data-action="send-mission" data-type="{{this.id}}" title="{{this.name}}">
+            {{#if this.noNpc}}{{underworldT "Mission.Send"}}{{else}}{{underworldT "TasksTab.Assign"}}{{/if}}
+          </button>
+        </article>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+  {{/each}}
+
+  <section class="guards-section uw-l-watch">
+    <h3>{{uwIcon "ui-watch"}} {{underworldT "TasksTab.Watch"}}</h3>
+    <p class="uw-l-hint">{{underworldT "TasksTab.WatchHint"}}</p>
+    <div class="uw-l-watch-list">
+      {{#each gang.roster}}
+        <label class="uw-l-watch-item status-{{this.status}}">
+          <input type="checkbox" class="guard-checkbox" data-npc-id="{{this.id}}"
+                 {{#if (bajeryEq this.assignment "guard")}}checked{{/if}}
+                 {{#if (bajeryEq this.status "dead")}}disabled{{/if}}
+                 {{#if (bajeryEq this.status "wounded")}}disabled{{/if}}
+                 {{#if (bajeryEq this.status "busy")}}disabled{{/if}} />
+          <img src="{{this.img}}" alt=""/>
+          <span>{{this.name}}</span>
+          {{uwIcon "ui-watch" "uw-l-watch-mark"}}
+        </label>
+      {{/each}}
+    </div>
+  </section>
+</div>

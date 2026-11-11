@@ -1,0 +1,93 @@
+[
+  {
+    "id": "frame_corner",
+    "file": "frame_corner.svg",
+    "viewBox": "0 0 96 96",
+    "subject": "Iron corner bracket with three rivets, notched straps ending in pierced spade terminals, and a leaf with two curling tendrils on the diagonal",
+    "usage": "Top-left corner of panels and the window frame; outer edges flush with x=0/y=0, rotate 90/180/270 degrees via CSS for the other corners"
+  },
+  {
+    "id": "divider",
+    "file": "divider.svg",
+    "viewBox": "0 0 480 24",
+    "subject": "Engraved horizontal flourish: swelling rule with a nested central lozenge, flanking beads and scrolled curls at both ends; symmetric",
+    "usage": "Section separator inside parchment cards and chat cards; display at its natural 20:1 ratio, centred (do not stretch)"
+  },
+  {
+    "id": "ribbon",
+    "file": "ribbon.svg",
+    "viewBox": "0 0 400 72",
+    "subject": "Motto banner: flat empty centre band with an engraved border groove, folded-back swallow-tail ends with shaded folds",
+    "usage": "Company motto under the name in the header; one line of text is laid over the centre band (x 60-340, y 13-39) by CSS"
+  },
+  {
+    "id": "seal",
+    "file": "seal.svg",
+    "viewBox": "0 0 96 96",
+    "subject": "Wax seal: irregular squeezed blob with two drips, raised inner ring between carved grooves, flat empty centre",
+    "usage": "Member status seals and chat result seal; the centre disc (r 21, centred at 48,45) stays empty for an emblem overlaid by CSS"
+  },
+  {
+    "id": "seal_success",
+    "file": "seal_success.svg",
+    "viewBox": "0 0 96 96",
+    "subject": "The wax seal with a carved tick in the centre",
+    "usage": "Success result in chat job cards and resolved states"
+  },
+  {
+    "id": "seal_failure",
+    "file": "seal_failure.svg",
+    "viewBox": "0 0 96 96",
+    "subject": "The wax seal with a carved cross in the centre",
+    "usage": "Failure result in chat job cards and failed states"
+  },
+  {
+    "id": "bookmark",
+    "file": "bookmark.svg",
+    "viewBox": "0 0 48 128",
+    "subject": "Hanging ribbon bookmark with a gentle wave, engraved border groove, small lozenge above a forked swallow-tail end; shaded top where it leaves the page",
+    "usage": "Side navigation tabs; icon and counter sit on the upper part (y 16-80)"
+  },
+  {
+    "id": "shield",
+    "file": "shield.svg",
+    "viewBox": "0 0 100 120",
+    "subject": "Heater shield: solid riveted rim with a groove and inner bead, field as a lighter layer",
+    "usage": "Company crest in the header and the crest picker; the crest emblem is drawn over the field"
+  },
+  {
+    "id": "card_corner",
+    "file": "card_corner.svg",
+    "viewBox": "0 0 48 48",
+    "subject": "Small engraved corner flourish: punched rosette, two rules ending in curls, a leaf and two dots on the diagonal",
+    "usage": "Top-left corner of parchment cards; rotate for the other corners"
+  },
+  {
+    "id": "deckle_edge",
+    "file": "deckle_edge.svg",
+    "viewBox": "0 0 400 12",
+    "subject": "Torn, deckled paper edge as a filled strip (paper on top) with a faint fibrous fringe",
+    "usage": "Bottom/top edge of parchment cards and chat cards; repeat-x seamlessly, flip vertically for a top edge"
+  },
+  {
+    "id": "hatch",
+    "file": "hatch.svg",
+    "viewBox": "0 0 64 64",
+    "subject": "Woodcut diagonal hatching: irregular cut lines of varying weight, seamless in both directions",
+    "usage": "Repeating background texture for shadows, disabled states and the leather binding; use as background-repeat at low opacity"
+  },
+  {
+    "id": "pip_flag",
+    "file": "pip_flag.svg",
+    "viewBox": "0 0 24 32",
+    "subject": "Tiny pennant on a pole with a ball finial and one carved fold",
+    "usage": "Morale meter pips (ten in a row); dim the empty ones with CSS opacity"
+  },
+  {
+    "id": "pip_seal",
+    "file": "pip_seal.svg",
+    "viewBox": "0 0 32 32",
+    "subject": "Tiny wax seal with one drip and a carved ring; empty centre",
+    "usage": "Pressure meter pips (five in a row); centre disc (r 8.8 at 16,15) holds the company-type icon"
+  }
+]

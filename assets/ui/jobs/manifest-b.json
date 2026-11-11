@@ -1,0 +1,107 @@
+[
+  {
+    "id": "tend_wounded",
+    "file": "tend_wounded.svg",
+    "subject": "needle and thread over a rolled bandage"
+  },
+  {
+    "id": "patrol",
+    "file": "patrol.svg",
+    "subject": "pair of marching boots with a pike behind"
+  },
+  {
+    "id": "garrison",
+    "file": "garrison.svg",
+    "subject": "gate tower with a portcullis"
+  },
+  {
+    "id": "requisition",
+    "file": "requisition.svg",
+    "subject": "wheat sheaf with a receipt slip pinned to it"
+  },
+  {
+    "id": "escort",
+    "file": "escort.svg",
+    "subject": "kite shield in front of a covered wagon"
+  },
+  {
+    "id": "contract",
+    "file": "contract.svg",
+    "subject": "unrolled contract with a hanging seal, a sword behind it"
+  },
+  {
+    "id": "drill",
+    "file": "drill.svg",
+    "subject": "military side drum with two sticks"
+  },
+  {
+    "id": "ambush",
+    "file": "ambush.svg",
+    "subject": "bush with an arrow flying out of it"
+  },
+  {
+    "id": "ransom",
+    "file": "ransom.svg",
+    "subject": "tied sack with a short chain and a coin"
+  },
+  {
+    "id": "toll",
+    "file": "toll.svg",
+    "subject": "small arched bridge with a barrier pole"
+  },
+  {
+    "id": "river_run",
+    "file": "river_run.svg",
+    "subject": "flat river barge with a single lantern"
+  },
+  {
+    "id": "cache",
+    "file": "cache.svg",
+    "subject": "chest half sunk in water among reeds"
+  },
+  {
+    "id": "contraband",
+    "file": "contraband.svg",
+    "subject": "corked bottle in front of a small crate"
+  },
+  {
+    "id": "buy_secret",
+    "file": "buy_secret.svg",
+    "subject": "large coin with a keyhole cut through it, a small coin beside"
+  },
+  {
+    "id": "intercept",
+    "file": "intercept.svg",
+    "subject": "horseshoe with a sealed letter"
+  },
+  {
+    "id": "letter_swap",
+    "file": "letter_swap.svg",
+    "subject": "two letters with curved swap arrows"
+  },
+  {
+    "id": "report",
+    "file": "report.svg",
+    "subject": "open ledger with a quill"
+  },
+  {
+    "id": "ritual",
+    "file": "ritual.svg",
+    "subject": "three candles in a circle on the ground"
+  },
+  {
+    "id": "infiltrate",
+    "file": "infiltrate.svg",
+    "subject": "full-face theatre mask with a ribbon"
+  },
+  {
+    "id": "abduction",
+    "file": "abduction.svg",
+    "subject": "sack hood with a cord"
+  },
+  {
+    "id": "stone_circle",
+    "file": "stone_circle.svg",
+    "subject": "ring of four standing stones under a crescent moon"
+  }
+]

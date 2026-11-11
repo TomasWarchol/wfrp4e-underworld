@@ -1,32 +1,33 @@
-<div class="wfrp4e-underworld chat-card camp-rest-card">
-  <div class="card-header" style="border-bottom: 1px solid #7c5e44; padding-bottom: 6px; margin-bottom: 8px;">
-    <h3 style="margin: 0; color: #4a2810; font-size: 1.1rem;"><i class="fas fa-campground"></i> {{title}}</h3>
-    {{#if terrainName}}<div class="uw-card-sub">{{localize "UNDERWORLD.Camp.Terrain"}}: {{terrainName}}</div>{{/if}}
+<div class="wfrp4e-underworld chat-card camp-rest-card" data-company-type="{{companyType}}">
+  <div class="card-header camp-card-header">
+    {{#if skyline}}<span class="uw-ledger-only camp-card-skyline" data-uw-glyph="{{skyline}}"></span>{{/if}}
+    <h3 class="camp-card-title"><i class="fas fa-campground"></i> {{title}}</h3>
+    {{#if terrainName}}<div class="uw-card-sub">{{underworldT "Camp.Terrain"}}: {{terrainName}}</div>{{/if}}
   </div>
 
-  <div class="rest-details" style="font-size: 0.85rem; margin-bottom: 8px;">
-    <p style="margin: 2px 0;"><strong>{{localize "UNDERWORLD.Camp.Lodging"}}:</strong> {{shelterName}}</p>
-    <p style="margin: 2px 0;"><strong>{{localize "UNDERWORLD.Camp.Sentries"}}:</strong> {{watchmenNames}}</p>
-    <p style="margin: 2px 0;"><strong>{{localize "UNDERWORLD.Camp.Meal"}}:</strong> {{foodSummary}}</p>
-    <p style="margin: 2px 0;"><strong>{{localize "UNDERWORLD.Camp.Recovery"}}:</strong> {{healedList}}</p>
-    <p style="margin: 2px 0;"><strong>{{localize "UNDERWORLD.Camp.State"}}:</strong> {{localize "UNDERWORLD.Camp.StateLine" morale=morale heat=notoriety supplies=supplies}}</p>
-    {{#if racket}}<p style="margin: 2px 0;"><strong><i class="fas fa-store"></i> {{localize "UNDERWORLD.Badges.racket"}}:</strong> {{{racket.text}}}</p>{{/if}}
+  <div class="rest-details">
+    <p><strong>{{underworldT "Camp.Lodging"}}:</strong> {{shelterName}}</p>
+    <p><strong>{{underworldT "Camp.Sentries"}}:</strong> {{watchmenNames}}</p>
+    <p><strong>{{underworldT "Camp.Meal"}}:</strong> {{foodSummary}}</p>
+    <p><strong>{{underworldT "Camp.Recovery"}}:</strong> {{healedList}}</p>
+    <p><strong>{{underworldT "Camp.State"}}:</strong> {{underworldT "Camp.StateLine" morale=morale heat=notoriety supplies=supplies}}</p>
+    {{#if racket}}<p><strong><i class="fas fa-store"></i> {{underworldT "Badges.racket"}}:</strong> {{{racket.text}}}</p>{{/if}}
   </div>
 
   {{#if missions.length}}
-  <div style="background: rgba(90, 61, 40, 0.07); border-left: 3px solid #5a3d28; padding: 6px 8px; margin-top: 6px; border-radius: 2px; font-size: 0.85rem;">
-    <strong><i class="fas fa-tasks"></i> {{localize "UNDERWORLD.Camp.WeekJobs"}}:</strong>
-    <ul style="margin: 4px 0 0 0; padding-left: 16px;">
+  <div class="camp-block camp-block-jobs">
+    <strong><i class="fas fa-tasks"></i> {{underworldT "Camp.WeekJobs"}}:</strong>
+    <ul>
       {{#each missions}}
-      <li style="margin: 4px 0;">
+      <li>
         <strong>{{this.title}}</strong> – {{this.npcName}}:
-        {{#if this.isSuccess}}<span style="color: #1b5e20; font-weight: bold;">{{localize "UNDERWORLD.Chat.SuccessLower"}}</span>{{else}}<span style="color: #b71c1c; font-weight: bold;">{{localize "UNDERWORLD.Chat.FailureLower"}}</span>{{/if}}
-        {{#if this.roll}}<span style="color: #665544;">({{this.roll}} vs {{this.target}}, SL {{this.sl}})</span>{{/if}}
-        <div style="margin: 1px 0;">{{{this.notes}}}</div>
-        {{#if this.rollSummary}}<div style="font-size: 0.8rem; color: #514432;"><i class="fas fa-dice"></i> {{this.rollSummary}}</div>{{/if}}
-        {{#if this.rumor}}<div style="font-style: italic; color: #2b1f16;">„{{this.rumor}}”</div>{{/if}}
-        {{#each this.gains}}<div style="color: #1b5e20;"><i class="fas fa-chess-knight"></i> {{{this}}}</div>{{/each}}
-        {{#each this.consequences}}<div style="color: #b71c1c;"><i class="fas fa-exclamation-triangle"></i> {{{this}}}</div>{{/each}}
+        {{#if this.isSuccess}}<span class="camp-ok">{{underworldT "Chat.SuccessLower"}}</span>{{else}}<span class="camp-bad">{{underworldT "Chat.FailureLower"}}</span>{{/if}}
+        {{#if this.roll}}<span class="camp-muted">({{this.roll}} vs {{this.target}}, SL {{this.sl}})</span>{{/if}}
+        <div>{{{this.notes}}}</div>
+        {{#if this.rollSummary}}<div class="camp-muted camp-small"><i class="fas fa-dice"></i> {{this.rollSummary}}</div>{{/if}}
+        {{#if this.rumor}}<div class="camp-quote">„{{this.rumor}}”</div>{{/if}}
+        {{#each this.gains}}<div class="camp-ok"><i class="fas fa-chess-knight"></i> {{{this}}}</div>{{/each}}
+        {{#each this.consequences}}<div class="camp-bad"><i class="fas fa-exclamation-triangle"></i> {{{this}}}</div>{{/each}}
       </li>
       {{/each}}
     </ul>
@@ -34,45 +35,35 @@
   {{/if}}
 
   {{#if raid}}
-  <div style="background: rgba(21, 101, 192, 0.08); border-left: 3px solid #1565c0; padding: 6px 8px; margin-top: 6px; border-radius: 2px; font-size: 0.85rem;">
-    <strong><i class="fas fa-bullhorn" style="color: #1565c0;"></i> {{raid.title}}</strong>
-    <ul style="margin: 4px 0 0 0; padding-left: 16px;">
-      {{#each raid.lines}}
-      <li style="margin: 2px 0;">{{{this}}}</li>
-      {{/each}}
-    </ul>
+  <div class="camp-block camp-block-raid">
+    <strong><i class="fas fa-bullhorn"></i> {{raid.title}}</strong>
+    <ul>{{#each raid.lines}}<li>{{{this}}}</li>{{/each}}</ul>
   </div>
   {{/if}}
 
   {{#if desertion}}
-  <div style="background: rgba(66, 66, 66, 0.1); border-left: 3px solid #424242; padding: 6px 8px; margin-top: 6px; border-radius: 2px; font-size: 0.85rem;">
-    <strong><i class="fas fa-person-running"></i> {{localize "UNDERWORLD.Camp.Desertion"}}</strong>
-    <p style="margin: 2px 0;">{{{desertion.text}}}</p>
+  <div class="camp-block camp-block-desertion">
+    <strong><i class="fas fa-person-running"></i> {{underworldT "Camp.Desertion"}}</strong>
+    <p>{{{desertion.text}}}</p>
   </div>
   {{/if}}
 
   {{#if event}}
-  <div style="background: rgba(120, 80, 40, 0.1); border-left: 3px solid #7c5e44; padding: 6px 8px; margin-top: 6px; border-radius: 2px; font-size: 0.85rem;">
-    <strong>{{localize "UNDERWORLD.Camp.NightEvent"}}: {{event.title}}</strong>
-    <p style="margin: 2px 0; font-style: italic;">{{event.text}}</p>
-    {{#if event.roleNote}}<p style="margin: 2px 0; font-size: 0.8rem;"><i class="fas fa-id-badge"></i> {{{event.roleNote}}}</p>{{/if}}
-    {{#if event.followUp}}<p style="margin: 2px 0; font-size: 0.78rem; color: #775533;"><i class="fas fa-link"></i> {{localize "UNDERWORLD.CampEvent.FollowUp"}}</p>{{/if}}
-    {{#if event.next}}<p style="margin: 2px 0; font-size: 0.78rem; color: #775533;"><i class="fas fa-link"></i> {{localize "UNDERWORLD.CampEvent.HookSet"}}</p>{{/if}}
+  <div class="camp-block camp-block-event">
+    <strong>{{underworldT "Camp.NightEvent"}}: {{event.title}}</strong>
+    <p class="camp-event-text">{{event.text}}</p>
+    {{#if event.roleNote}}<p class="camp-small"><i class="fas fa-id-badge"></i> {{{event.roleNote}}}</p>{{/if}}
+    {{#if event.followUp}}<p class="camp-small camp-muted"><i class="fas fa-link"></i> {{underworldT "CampEvent.FollowUp"}}</p>{{/if}}
+    {{#if event.next}}<p class="camp-small camp-muted"><i class="fas fa-link"></i> {{underworldT "CampEvent.HookSet"}}</p>{{/if}}
   </div>
   {{/if}}
 
   {{#if flawEffects.length}}
-  <div style="background: rgba(183, 28, 28, 0.08); border-left: 3px solid #c62828; padding: 6px 8px; margin-top: 6px; border-radius: 2px; font-size: 0.85rem;">
-    <strong><i class="fas fa-exclamation-triangle" style="color: #c62828;"></i> {{localize "UNDERWORLD.Camp.FlawsShowed"}}</strong>
-    <ul style="margin: 4px 0 0 0; padding-left: 16px;">
-      {{#each flawEffects}}
-      <li style="margin: 2px 0;">{{{this}}}</li>
-      {{/each}}
-    </ul>
+  <div class="camp-block camp-block-flaws">
+    <strong><i class="fas fa-exclamation-triangle"></i> {{underworldT "Camp.FlawsShowed"}}</strong>
+    <ul>{{#each flawEffects}}<li>{{{this}}}</li>{{/each}}</ul>
   </div>
   {{/if}}
 
-  <div class="card-footer" style="border-top: 1px dashed #8e735b; padding-top: 4px; font-size: 0.8rem; color: #5e584f; text-align: right; margin-top: 6px;">
-    {{localize "UNDERWORLD.Camp.EndOfDay"}} • WFRP 4e
-  </div>
+  <div class="card-footer camp-card-footer">{{underworldT "Camp.EndOfDay"}} • WFRP 4e</div>
 </div>

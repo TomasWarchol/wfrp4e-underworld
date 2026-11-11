@@ -1,0 +1,97 @@
+[
+  {
+    "id": "parry",
+    "file": "parry.svg",
+    "subject": "two crossed blades meeting at a spark"
+  },
+  {
+    "id": "riposte",
+    "file": "riposte.svg",
+    "subject": "blade deflecting then thrusting (bent arrow on a sword)"
+  },
+  {
+    "id": "challenge",
+    "file": "challenge.svg",
+    "subject": "thrown gauntlet on the ground"
+  },
+  {
+    "id": "pindown",
+    "file": "pindown.svg",
+    "subject": "arrows stuck in the ground around a helmet"
+  },
+  {
+    "id": "fireoil",
+    "file": "fireoil.svg",
+    "subject": "small barrel with flames"
+  },
+  {
+    "id": "caltrops",
+    "file": "caltrops.svg",
+    "subject": "three four-pointed caltrops"
+  },
+  {
+    "id": "collapse",
+    "file": "collapse.svg",
+    "subject": "falling beam and stones"
+  },
+  {
+    "id": "wagonwall",
+    "file": "wagonwall.svg",
+    "subject": "plank palisade with arrows stuck in it"
+  },
+  {
+    "id": "spooked",
+    "file": "spooked.svg",
+    "subject": "rearing horse"
+  },
+  {
+    "id": "getaway",
+    "file": "getaway.svg",
+    "subject": "running boot with speed lines"
+  },
+  {
+    "id": "spot",
+    "file": "spot.svg",
+    "subject": "eye with a target ring"
+  },
+  {
+    "id": "lure",
+    "file": "lure.svg",
+    "subject": "lantern on a hook swinging, with footprints leading off"
+  },
+  {
+    "id": "snare",
+    "file": "snare.svg",
+    "subject": "rope noose pegged to a stake"
+  },
+  {
+    "id": "forgedorder",
+    "file": "forgedorder.svg",
+    "subject": "sealed order with a crossed-out seal"
+  },
+  {
+    "id": "payoff",
+    "file": "payoff.svg",
+    "subject": "purse being tossed with coins falling"
+  },
+  {
+    "id": "salve",
+    "file": "salve.svg",
+    "subject": "small open pot of balm with a spatula"
+  },
+  {
+    "id": "fumes",
+    "file": "fumes.svg",
+    "subject": "cracked flask releasing wavy vapour"
+  },
+  {
+    "id": "evileye",
+    "file": "evileye.svg",
+    "subject": "eye with radiating jagged lines"
+  },
+  {
+    "id": "regroup",
+    "file": "regroup.svg",
+    "subject": "three arrows converging to a point"
+  }
+]

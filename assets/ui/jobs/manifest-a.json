@@ -1,0 +1,107 @@
+[
+  {
+    "id": "scout",
+    "file": "scout.svg",
+    "subject": "spyglass extended diagonally"
+  },
+  {
+    "id": "shadow",
+    "file": "shadow.svg",
+    "subject": "hooded walking figure with footprints behind"
+  },
+  {
+    "id": "tavern",
+    "file": "tavern.svg",
+    "subject": "foaming tankard"
+  },
+  {
+    "id": "procure",
+    "file": "procure.svg",
+    "subject": "basket with a loaf and a bottle"
+  },
+  {
+    "id": "pickpocket",
+    "file": "pickpocket.svg",
+    "subject": "purse hanging from a belt, a knife cutting its cords"
+  },
+  {
+    "id": "burglary",
+    "file": "burglary.svg",
+    "subject": "large key beside a padlock"
+  },
+  {
+    "id": "farm_theft",
+    "file": "farm_theft.svg",
+    "subject": "hen in profile"
+  },
+  {
+    "id": "poaching",
+    "file": "poaching.svg",
+    "subject": "hare caught in a wire snare"
+  },
+  {
+    "id": "highway_robbery",
+    "file": "highway_robbery.svg",
+    "subject": "coach wheel with an axe across it"
+  },
+  {
+    "id": "mine_raid",
+    "file": "mine_raid.svg",
+    "subject": "pickaxe over a lump of ore"
+  },
+  {
+    "id": "fence",
+    "file": "fence.svg",
+    "subject": "balance scales with a coin on one pan"
+  },
+  {
+    "id": "intimidate",
+    "file": "intimidate.svg",
+    "subject": "raised clenched fist"
+  },
+  {
+    "id": "racket",
+    "file": "racket.svg",
+    "subject": "hanging shop sign on a bracket with a coin"
+  },
+  {
+    "id": "rumor_spread",
+    "file": "rumor_spread.svg",
+    "subject": "mouth in profile with three whisper lines"
+  },
+  {
+    "id": "bribe",
+    "file": "bribe.svg",
+    "subject": "open hand passing a coin to another hand"
+  },
+  {
+    "id": "theman",
+    "file": "theman.svg",
+    "subject": "folded letter sealed with a mask-shaped seal"
+  },
+  {
+    "id": "distract",
+    "file": "distract.svg",
+    "subject": "firecracker bursting with sparks"
+  },
+  {
+    "id": "sabotage",
+    "file": "sabotage.svg",
+    "subject": "broken cart wheel with cracked spokes"
+  },
+  {
+    "id": "smuggle",
+    "file": "smuggle.svg",
+    "subject": "crate with its false bottom slid open"
+  },
+  {
+    "id": "forge",
+    "file": "forge.svg",
+    "subject": "quill above a document with a seal"
+  },
+  {
+    "id": "cover_tracks",
+    "file": "cover_tracks.svg",
+    "subject": "besom broom sweeping over footprints"
+  }
+]

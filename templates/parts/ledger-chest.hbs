@@ -1,0 +1,79 @@
+{{!-- Księga Kompanii: Skrzynia – kupiec terenu i łupy jako siatka kart (akcje jak w loot.hbs) --}}
+<div class="loot-panel uw-l-chestpanel">
+  <section class="uw-l-panel uw-l-fence">
+    <div class="uw-l-fence-head">
+      <span class="uw-l-fence-art">{{uwIcon "job-fence"}}</span>
+      <div class="uw-l-fence-id">
+        <h3>{{fence.name}}</h3>
+        <div class="uw-l-fence-chips">
+          <span class="uw-l-chip-l">{{underworldT "LootTab.Rate" rate=fence.rate}}</span>
+          {{#if fence.likesNames}}<span class="uw-l-chip-l is-good"><i class="fas fa-thumbs-up"></i> {{underworldT "LootTab.Likes"}}: {{fence.likesNames}} (+10)</span>{{/if}}
+          {{#if fence.refusesNames}}<span class="uw-l-chip-l is-bad"><i class="fas fa-ban"></i> {{underworldT "LootTab.Refuses"}}: {{fence.refusesNames}}</span>{{/if}}
+        </div>
+      </div>
+      {{#if lootCount}}
+      <div class="uw-l-fence-totals">
+        <span>{{underworldT "LootTab.Value"}}: <strong>{{lootValueSS}} {{underworldT "Units.SS"}}</strong></span>
+        <span>{{underworldT "LootTab.FenceNow"}}: <strong>{{lootEstimateSS}} {{underworldT "Units.SS"}}</strong></span>
+        <button type="button" class="btn-send-mission" data-action="loot-sell">{{uwIcon "job-fence"}} {{underworldT "LootTab.SendToFence"}}</button>
+      </div>
+      {{/if}}
+    </div>
+    <div class="uw-l-terrain-row">
+      <span class="uw-l-hint">{{underworldT "LootTab.TerrainHint"}}{{#unless isGM}} {{underworldT "LootTab.TerrainGM"}}{{/unless}}</span>
+      {{#if isGM}}
+      <div class="uw-l-terrains" role="group" aria-label="{{underworldT 'LootTab.TerrainLabel'}}">
+        {{#each terrainOptions}}
+        <button type="button" class="uw-l-terrain {{#if this.active}}is-active{{/if}}" data-action="set-terrain" data-terrain="{{this.id}}" aria-pressed="{{#if this.active}}true{{else}}false{{/if}}" title="{{this.name}}">
+          {{uwIcon this.glyph}} <span>{{this.name}}</span>
+        </button>
+        {{/each}}
+      </div>
+      {{/if}}
+    </div>
+  </section>
+
+  <h3 class="uw-l-section-title">{{uwIcon "ui-tab_chest"}} {{underworldT "LootTab.InHideout"}} <small>{{lootCount}}</small></h3>
+  {{#if lootCount}}
+  <div class="uw-l-items">
+    {{#each lootView}}
+    <article class="uw-l-item {{#if this.hot}}is-hot{{/if}} {{#if this.refused}}is-refused{{/if}} {{#if this.liked}}is-liked{{/if}}">
+      <div class="uw-l-item-art">{{uwIcon this.glyph}}</div>
+      <div class="uw-l-item-body">
+        <h4>{{this.name}}</h4>
+        <p>{{this.categoryName}}{{#if this.origin}} · {{this.origin}}{{#if this.terrainName}} ({{this.terrainName}}){{/if}}{{/if}}</p>
+      </div>
+      <div class="uw-l-item-value">
+        <strong>{{this.valueSS}} {{underworldT "Units.SS"}}</strong>
+        <small>{{#if this.refused}}{{underworldT "LootTab.CannotSellHere"}}{{else}}~{{this.estimateSS}} {{underworldT "Units.SS"}} ({{this.rate}}%){{/if}}</small>
+      </div>
+      {{#if this.hot}}<span class="uw-l-hot" data-tooltip="{{underworldT 'LootTab.HotHint'}}">{{uwIcon "ui-hot"}} {{this.hot}}</span>{{/if}}
+      <div class="uw-l-item-actions">
+        <button type="button" class="uw-plain" data-action="loot-transfer" data-loot-id="{{this.id}}" data-tooltip="{{underworldT 'LootTab.GiveChief'}}"><i class="fas fa-hand-holding"></i></button>
+        <button type="button" class="uw-plain is-danger" data-action="loot-discard" data-loot-id="{{this.id}}" data-tooltip="{{underworldT 'LootTab.Discard'}}"><i class="fas fa-trash"></i></button>
+      </div>
+    </article>
+    {{/each}}
+  </div>
+  {{else}}
+  <p class="uw-l-empty">{{uwIcon "ui-tab_chest" "uw-l-empty-icon"}} <span>{{underworldT "LootTab.Empty"}}</span></p>
+  {{/if}}
+
+  <section class="uw-l-panel uw-l-prep-help">
+    <h3>{{uwIcon "ui-token_recon"}} {{underworldT "LootTab.PrepIncome"}}</h3>
+    <div class="uw-prep-strip">
+      {{#each activeTokens}}
+        <span class="uw-token-chip" data-tooltip="{{this.desc}}"><i class="{{this.icon}}"></i> {{this.name}} <small>({{this.left}})</small></span>
+      {{else}}
+        <span class="uw-token-chip is-empty"><i class="fas fa-chess-pawn"></i> {{underworldT "LootTab.NoTokens"}}</span>
+      {{/each}}
+      {{#if gang.racket}}<span class="uw-token-chip is-racket"><i class="fas fa-store"></i> {{underworldT "Badges.racket"}}: {{gang.racket.district}}{{#unless (bajeryEq terrain.id "city")}} <small>({{underworldT "LootTab.RacketDormant"}})</small>{{/unless}}</span>{{/if}}
+    </div>
+    <ul class="uw-prep-help">
+      <li>{{{underworldT "LootTab.HelpRecon"}}}</li>
+      <li>{{{underworldT "LootTab.HelpCommotion"}}}</li>
+      <li>{{{underworldT "LootTab.HelpLead"}}}</li>
+      <li>{{#if isWeekly}}{{{underworldT "LootTab.HelpHotWeek"}}}{{else}}{{{underworldT "LootTab.HelpHotNight"}}}{{/if}}</li>
+    </ul>
+  </section>
+</div>

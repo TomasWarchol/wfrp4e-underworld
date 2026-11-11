@@ -1,0 +1,153 @@
+{{!-- Księga Kompanii: Kronika – tożsamość, presja, frakcje, patron, kodeks i oś czasu (pola jak w info.hbs) --}}
+<div class="info-tab-container uw-l-chronicle">
+  <div class="uw-l-chron-grid">
+    <div class="uw-l-chron-col">
+      <section class="uw-l-panel uw-l-identity-card">
+        <div class="uw-l-crest-big">
+          {{uwIcon "orn-shield" "uw-l-shield"}}
+          {{uwIcon ledgerView.crest "uw-l-charge"}}
+        </div>
+        <div class="uw-l-identity-fields">
+          <label class="uw-l-field">
+            <span>{{underworldT "InfoTab.Type"}}</span>
+            <select name="type">
+              {{#bajerySelect gang.type}}
+              <option value="underworld">{{underworldT "InfoTab.Types.underworld"}}</option>
+              <option value="mercenaries">{{underworldT "InfoTab.Types.mercenaries"}}</option>
+              <option value="outlaws">{{underworldT "InfoTab.Types.outlaws"}}</option>
+              <option value="smugglers">{{underworldT "InfoTab.Types.smugglers"}}</option>
+              <option value="investigators">{{underworldT "InfoTab.Types.investigators"}}</option>
+              <option value="cult">{{underworldT "InfoTab.Types.cult"}}</option>
+              {{/bajerySelect}}
+            </select>
+          </label>
+          <label class="uw-l-field">
+            <span>{{underworldT "InfoTab.Hideout"}}</span>
+            <input type="text" name="hideout" value="{{gang.hideout}}" placeholder="{{underworldT 'InfoTab.HideoutPlaceholder'}}"/>
+          </label>
+          <label class="uw-l-field">
+            <span>{{underworldT "InfoTab.Territory"}}</span>
+            <input type="text" name="territory" value="{{gang.territory}}" placeholder="{{underworldT 'InfoTab.TerritoryPlaceholder'}}"/>
+          </label>
+        </div>
+      </section>
+
+      <section class="uw-l-panel uw-l-pressure-card">
+        <h3>{{uwIcon ledgerView.pressureIcon}} {{underworldT "InfoTab.LawTitle"}}
+          {{#unless isGM}}<span class="uw-l-lock" title="{{underworldT 'InfoTab.SetByGMHint'}}"><i class="fas fa-lock"></i> {{underworldT "InfoTab.SetByGM"}}</span>{{/unless}}
+        </h3>
+        <ol class="uw-l-track">
+          {{#each ledgerView.pressureLevels}}
+          <li class="{{#if this.active}}is-active{{/if}} {{#if this.passed}}is-passed{{/if}}" title="{{this.short}}">
+            <span class="uw-l-track-seal">{{uwIcon "orn-pip_seal"}}<b>{{this.n}}</b></span>
+            <span class="uw-l-track-name">{{this.name}}</span>
+          </li>
+          {{/each}}
+        </ol>
+        <p class="uw-l-flavor">{{ledgerView.pressure.desc}}</p>
+        {{#if isGM}}
+          <label class="uw-l-field">
+            <span>{{underworldT "InfoTab.HeatLevel"}}</span>
+            <select name="notoriety">
+              {{#bajerySelect gang.notoriety}}
+              <option value="0">0 – {{underworldT "Notoriety.0.Name"}}</option>
+              <option value="1">1 – {{underworldT "Notoriety.1.Name"}}</option>
+              <option value="2">2 – {{underworldT "Notoriety.2.Name"}}</option>
+              <option value="3">3 – {{underworldT "Notoriety.3.Name"}}</option>
+              <option value="4">4 – {{underworldT "Notoriety.4.Name"}}</option>
+              <option value="5">5 – {{underworldT "Notoriety.5.Name"}}</option>
+              {{/bajerySelect}}
+            </select>
+          </label>
+        {{/if}}
+        <label class="uw-l-field">
+          <span>{{underworldT "InfoTab.Bounty"}}</span>
+          {{#if isGM}}
+            <input type="text" name="bounty" value="{{gang.bounty}}" placeholder="{{underworldT 'InfoTab.BountyPlaceholder'}}"/>
+          {{else}}
+            <input type="text" value="{{gang.bounty}}" disabled title="{{underworldT 'InfoTab.BountyHint'}}"/>
+          {{/if}}
+        </label>
+      </section>
+
+      <section class="uw-l-panel">
+        <h3>{{uwIcon "ui-category_influence"}} {{underworldT "InfoTab.Factions"}}</h3>
+        <label class="uw-l-field">
+          <span>{{underworldT "InfoTab.Allies"}}</span>
+          <textarea name="allies" rows="2" placeholder="{{underworldT 'InfoTab.AlliesPlaceholder'}}">{{gang.allies}}</textarea>
+        </label>
+        <label class="uw-l-field">
+          <span>{{underworldT "InfoTab.Rivals"}}</span>
+          <textarea name="rivals" rows="2" placeholder="{{underworldT 'InfoTab.RivalsPlaceholder'}}">{{gang.rivals}}</textarea>
+        </label>
+      </section>
+    </div>
+
+    <div class="uw-l-chron-col">
+      <section class="uw-l-panel uw-l-letter">
+        <div class="uw-l-letter-seal relation-{{ledgerView.relation}}" title="{{underworldT 'InfoTab.PatronRelation'}}">
+          {{uwIcon "orn-seal" "uw-l-seal-wax"}}
+          {{uwIcon "ui-patron" "uw-l-seal-mark"}}
+        </div>
+        <h3>{{uwIcon "ui-patron"}} {{underworldT "InfoTab.Patron"}}
+          {{#unless isGM}}<span class="uw-l-lock" title="{{underworldT 'InfoTab.PatronSetByGM'}}"><i class="fas fa-lock"></i> {{underworldT "InfoTab.SetByGM"}}</span>{{/unless}}
+        </h3>
+        <label class="uw-l-field">
+          <span>{{underworldT "InfoTab.PatronName"}}</span>
+          {{#if isGM}}<input type="text" name="patron.name" value="{{gang.patron.name}}" placeholder="{{underworldT 'InfoTab.PatronNamePlaceholder'}}"/>{{else}}<input type="text" value="{{gang.patron.name}}" disabled/>{{/if}}
+        </label>
+        <label class="uw-l-field">
+          <span>{{underworldT "InfoTab.PatronTitle"}}</span>
+          {{#if isGM}}<input type="text" name="patron.title" value="{{gang.patron.title}}" placeholder="{{underworldT 'InfoTab.PatronTitlePlaceholder'}}"/>{{else}}<input type="text" value="{{gang.patron.title}}" disabled/>{{/if}}
+        </label>
+        <label class="uw-l-field">
+          <span>{{underworldT "InfoTab.PatronRelation"}}</span>
+          {{#if isGM}}
+            <select name="patron.relation">
+              {{#bajerySelect gang.patron.relation}}
+              <option value="favorite">{{underworldT "InfoTab.RelationShort.favorite"}}</option>
+              <option value="trusted">{{underworldT "InfoTab.RelationShort.trusted"}}</option>
+              <option value="neutral">{{underworldT "InfoTab.RelationShort.neutral"}}</option>
+              <option value="strained">{{underworldT "InfoTab.RelationShort.strained"}}</option>
+              <option value="hostile">{{underworldT "InfoTab.RelationShort.hostile"}}</option>
+              {{/bajerySelect}}
+            </select>
+          {{else}}
+            <span class="uw-l-readonly">{{{underworldRelationBadge gang.patron.relation}}}</span>
+          {{/if}}
+        </label>
+        <label class="uw-l-field">
+          <span>{{underworldT "InfoTab.PatronCut"}}</span>
+          {{#if isGM}}<input type="text" name="patron.cut" value="{{gang.patron.cut}}" placeholder="{{underworldT 'InfoTab.PatronCutPlaceholder'}}"/>{{else}}<input type="text" value="{{gang.patron.cut}}" disabled/>{{/if}}
+        </label>
+        <label class="uw-l-field">
+          <span>{{underworldT "InfoTab.PatronNotes"}}</span>
+          {{#if isGM}}<textarea name="patron.notes" rows="3" placeholder="{{underworldT 'InfoTab.PatronNotesPlaceholder'}}">{{gang.patron.notes}}</textarea>{{else}}<textarea disabled rows="3">{{gang.patron.notes}}</textarea>{{/if}}
+        </label>
+      </section>
+
+      <section class="uw-l-panel uw-l-scroll">
+        <h3>{{uwIcon "ui-tab_chronicle"}} {{underworldT "InfoTab.CodeTitle"}}</h3>
+        <label class="uw-l-field">
+          <span>{{underworldT "InfoTab.Code"}}</span>
+          <textarea name="code" rows="3" placeholder="{{underworldT 'InfoTab.CodePlaceholder'}}">{{gang.code}}</textarea>
+        </label>
+        <label class="uw-l-field">
+          <span>{{underworldT "InfoTab.Notes"}}</span>
+          <textarea name="notes" rows="3" placeholder="{{underworldT 'InfoTab.NotesPlaceholder'}}">{{gang.notes}}</textarea>
+        </label>
+      </section>
+    </div>
+  </div>
+
+  <section class="uw-l-panel uw-l-timeline">
+    <h3>{{uwIcon "ui-day"}} {{underworldT "DashTab.Chronicle"}}</h3>
+    <ol class="uw-l-events">
+      {{#each gang.history}}
+        <li><span class="uw-l-event-date">{{this.date}}</span><span class="uw-l-event-text">{{this.logSummary}}</span></li>
+      {{else}}
+        <li class="is-empty">{{underworldT "DashTab.ChronicleEmpty"}}</li>
+      {{/each}}
+    </ol>
+  </section>
+</div>

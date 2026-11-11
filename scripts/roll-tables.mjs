@@ -6,12 +6,15 @@
  * - MG tworzy z nich edytowalne tabele świata (folder „Szajka”). Tabela świata bez flagi terenu
  *   (z wcześniejszych wersji modułu) liczy się jako miejska.
  * - Losowanie korzysta z tabeli świata danego terenu (bez powtórzeń), a gdy jej brak – z kompendium.
+ * - Typ kompanii inny niż Szajka ma własną tabelę wydarzeń świata (flaga `profile`), tworzoną przy
+ *   pierwszym postoju takiej kompanii albo po otwarciu tabel przez MG. Usuniętej tabeli nie odtwarzamy.
  */
 
 import { UnderworldTables } from "./tables-data.mjs";
 import { TERRAINS, TERRAIN_IDS, TERRAIN_RUMORS, TERRAIN_EVENTS } from "./world-data.mjs";
 import { queryGM } from "../../wfrp4e-companion-lib/scripts/companion-lib.mjs";
-import { t } from "./i18n.mjs";
+import { t, tFor } from "./i18n.mjs";
+import { DEFAULT_PROFILE, PROFILES, profileOf } from "./company-profiles.mjs";
 
 const MODULE_ID = "wfrp4e-underworld";
 const PACK_ID = `${MODULE_ID}.underworld-tables`;
@@ -72,14 +75,17 @@ export class UnderworldRollTables {
     };
   }
 
-  static buildEventTableData(events, terrain = "city") {
+  static buildEventTableData(events, terrain = "city", profile = null) {
+    const own = profile
+      ? { name: `${tFor(profile, "Title")}: ${tFor(DEFAULT_PROFILE, "Tables.ProfileEvents.Name")}`, description: tFor(DEFAULT_PROFILE, "Tables.ProfileEvents.Desc") }
+      : { name: this._tableName("events", terrain) };
     return {
       ...TABLE_CONFIG.events,
-      name: this._tableName("events", terrain),
+      ...own,
       formula: "",
       replacement: true,
       displayRoll: true,
-      flags: { [MODULE_ID]: { tableType: "events", terrain, seedVersion: SEED_VERSION } },
+      flags: { [MODULE_ID]: profile ? { tableType: "events", profile, seedVersion: SEED_VERSION } : { tableType: "events", terrain, seedVersion: SEED_VERSION } },
       results: events.map((e, i) => ({
         type: "text",
         name: e.title || t("Tables.Events.Result"),
@@ -93,6 +99,7 @@ export class UnderworldRollTables {
             suppliesFound: Number(e.suppliesFound) || 0,
             coinsFoundSS: Number(e.coinsFoundSS) || 0,
             ...(e.role ? { role: e.role, okText: e.okText || "", ok: e.ok || {} } : {}),
+            ...(e.terrains ? { terrains: e.terrains } : {}),
             ...(e.next ? { next: e.next } : {}),
             ...(e.only ? { only: true } : {})
           }
@@ -191,9 +198,7 @@ export class UnderworldRollTables {
     }
     if (!toCreate.length) return;
 
-    const folderNames = [t("Tables.Folder"), "Szajka", "Underworld Crew"];
-    const folder = game.folders.find(f => f.type === "RollTable" && folderNames.includes(f.name))
-      ?? await Folder.create({ name: t("Tables.Folder"), type: "RollTable", color: "#5a3d28" });
+    const folder = await this._folder();
     await RollTable.createDocuments(toCreate.map(data => ({ ...data, folder: folder.id })));
     await game.settings.set(MODULE_ID, "worldTablesCreatedKeys", [...created]);
     await game.settings.set(MODULE_ID, "worldTablesCreated", true);
@@ -218,10 +223,39 @@ export class UnderworldRollTables {
     }
   }
 
-  /** Tabela świata danego typu i terenu (tabela bez flagi terenu liczy się jako miejska). */
-  static findWorldTable(type, terrain = "city") {
-    return game.tables?.find(t => t.getFlag(MODULE_ID, "tableType") === type
-      && (t.getFlag(MODULE_ID, "terrain") || "city") === terrain) ?? null;
+  /** Folder tabel modułu (tworzony przy pierwszej tabeli). */
+  static async _folder() {
+    const folderNames = [t("Tables.Folder"), "Szajka", "Underworld Crew"];
+    return game.folders.find(f => f.type === "RollTable" && folderNames.includes(f.name))
+      ?? await Folder.create({ name: t("Tables.Folder"), type: "RollTable", color: "#5a3d28" });
+  }
+
+  /**
+   * Tabela świata danego rodzaju i terenu (tabela bez flagi terenu liczy się jako miejska)
+   * albo, z podanym typem kompanii, jego własna tabela wydarzeń.
+   */
+  static findWorldTable(type, terrain = "city", profile = null) {
+    return game.tables?.find(t => t.getFlag(MODULE_ID, "tableType") === type && (profile
+      ? t.getFlag(MODULE_ID, "profile") === profile
+      : !t.getFlag(MODULE_ID, "profile") && (t.getFlag(MODULE_ID, "terrain") || "city") === terrain)) ?? null;
+  }
+
+  /** Tworzy (tylko MG, tylko raz) edytowalną tabelę wydarzeń typu kompanii z pliku modułu. */
+  static async ensureProfileTable(profile) {
+    if (!PROFILES[profile] || profile === DEFAULT_PROFILE) return null;
+    const existing = this.findWorldTable("events", null, profile);
+    if (existing || game.user !== game.users.activeGM) return existing;
+    const key = `events:profile:${profile}`;
+    const created = new Set(game.settings.get(MODULE_ID, "worldTablesCreatedKeys") || []);
+    if (created.has(key)) return null; // MG usunął tabelę – zdarzenia typu idą z pliku modułu
+    const events = await UnderworldTables.loadProfileEvents(profile);
+    if (!events.length) return null;
+    const folder = await this._folder();
+    const [table] = await RollTable.createDocuments([{ ...this.buildEventTableData(events, null, profile), folder: folder.id }]);
+    created.add(key);
+    await game.settings.set(MODULE_ID, "worldTablesCreatedKeys", [...created]);
+    ui.notifications.info(t("Tables.ProfileCreated", { name: table.name, folder: folder.name }));
+    return table;
   }
 
   /** Tabela do losowania: najpierw tabela świata, potem kompendium. */
@@ -235,12 +269,13 @@ export class UnderworldRollTables {
     return entry ? pack.getDocument(entry._id) : null;
   }
 
-  /** Otwiera arkusze tabel bieżącego terenu (przycisk MG w panelu szajki). */
-  static async openTables(terrain = "city") {
-    for (const type of ["rumors", "events"]) {
-      const table = await this.getTable(type, terrain);
-      table?.sheet?.render({ force: true });
-    }
+  /** Otwiera arkusze tabel kompanii: plotki terenu, wydarzenia terenu (typy z tabelami świata) i tabelę typu. */
+  static async openTables(terrain = "city", profileId = DEFAULT_PROFILE) {
+    const profile = profileOf(profileId);
+    const tables = [await this.getTable("rumors", terrain)];
+    if (profile.worldTables) tables.push(await this.getTable("events", terrain));
+    if (profile.id !== DEFAULT_PROFILE) tables.push(await this.ensureProfileTable(profile.id));
+    for (const table of tables) table?.sheet?.render({ force: true });
   }
 
   // ════════════════════════════════════════════
@@ -268,6 +303,7 @@ export class UnderworldRollTables {
       suppliesFound: Number(data.suppliesFound) || 0,
       coinsFoundSS: Number(data.coinsFoundSS) || 0,
       ...(data.role ? { role: data.role, okText: data.okText || "", ok: data.ok || {} } : {}),
+      ...(Array.isArray(data.terrains) && data.terrains.length ? { terrains: data.terrains } : {}),
       ...(data.next ? { next: String(data.next) } : {}),
       ...(data.only ? { only: true } : {})
     };
@@ -284,41 +320,60 @@ export class UnderworldRollTables {
   }
 
   /**
-   * Losuje z tabeli danego typu i terenu. Tabela świata bez powtórzeń wymaga prawa edycji (MG),
-   * więc gracz prosi o losowanie aktywnego MG. Zwraca null, gdy tabel nie ma.
+   * Losuje z tabeli danego rodzaju i terenu albo z tabeli typu kompanii. Tabela świata bez powtórzeń
+   * wymaga prawa edycji (MG), więc gracz prosi o losowanie aktywnego MG. Zwraca null, gdy tabeli nie ma.
    * @param {"rumors"|"events"} type
    * @param {string} terrain
+   * @param {{profile?: string, exclude?: string[]}} options  tabela typu i id wydarzeń, które kompania już widziała
    */
-  static async draw(type, terrain = "city") {
-    const table = await this.getTable(type, terrain);
+  static async draw(type, terrain = "city", { profile = null, exclude = [] } = {}) {
+    const table = profile ? this.findWorldTable("events", null, profile) : await this.getTable(type, terrain);
     if (!table) return null;
     const canMark = !table.pack && table.canUserModify(game.user, "update");
 
     if (!canMark && !table.pack && game.users.activeGM && !game.user.isGM) {
-      return queryGM(`${MODULE_ID}.drawTable`, { type, terrain });
+      return queryGM(`${MODULE_ID}.drawTable`, { type, terrain, profile, exclude });
     }
 
     if (canMark && !table.replacement && table.results.every(r => r.drawn)) {
       await table.resetResults();
     }
-    // Wpisy „tylko następnik” (zakończenia łańcuchów) nie wypadają losowo – losujemy ponownie
-    let roll = null, result = null;
-    for (let attempt = 0; attempt < 40; attempt++) {
+    // Losujemy ponownie wpisy „tylko następnik” (zakończenia łańcuchów), zdarzenia typu spoza terenu
+    // i (dopóki się da) zdarzenia, które kompania już widziała
+    const flag = (result, key) => result?.getFlag?.(MODULE_ID, key) ?? result?.flags?.[MODULE_ID]?.[key];
+    const seen = new Set(exclude);
+    let roll = null, result = null, fallback = null;
+    for (let attempt = 0; attempt < 60; attempt++) {
       const drawn = canMark ? await table.draw({ displayChat: false }) : await table.roll();
+      const candidate = drawn.results?.[0];
+      if (!candidate) break;
+      if (type === "events" && flag(candidate, "only")) continue;
+      const terrains = flag(candidate, "terrains");
+      if (Array.isArray(terrains) && terrains.length && !terrains.includes(terrain)) continue;
+      fallback ??= { roll: drawn.roll, result: candidate };
+      if (seen.has(flag(candidate, "id") || candidate.id)) continue;
       roll = drawn.roll;
-      result = drawn.results?.[0];
-      const onlyFollowUp = type === "events" && (result?.getFlag?.(MODULE_ID, "only") ?? result?.flags?.[MODULE_ID]?.only);
-      if (!onlyFollowUp) break;
+      result = candidate;
+      break;
     }
+    if (!result && fallback) ({ roll, result } = fallback);
     if (!result) return null;
     const data = type === "rumors" ? this._resultToRumor(result) : this._resultToEvent(result);
     data.tableRoll = roll ? { formula: roll.formula, total: roll.total } : null;
     return data;
   }
 
+  /** Zdarzenie z tabeli świata typu kompanii (MG tworzy ją przy pierwszym użyciu); null, gdy tabeli nie ma. */
+  static async drawProfileEvent(profile, terrain, exclude = []) {
+    const table = this.findWorldTable("events", null, profile) ?? await this.ensureProfileTable(profile);
+    if (!table) return null;
+    return this.draw("events", terrain, { profile, exclude });
+  }
+
   /** Handler zapytania (u MG): losowanie dla gracza bez prawa edycji tabeli. */
-  static async onDrawQuery({ type, terrain = "city" } = {}) {
+  static async onDrawQuery({ type, terrain = "city", profile = null, exclude = [] } = {}) {
     if (!["rumors", "events"].includes(type) || !TERRAIN_IDS.includes(terrain)) return null;
-    return this.draw(type, terrain);
+    if (profile && !PROFILES[profile]) return null;
+    return this.draw(type, terrain, { profile, exclude: Array.isArray(exclude) ? exclude.slice(-400) : [] });
   }
 }

@@ -4,18 +4,18 @@
   <div class="tactics-header-banner">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
       <h3 style="margin-bottom: 0;">
-        <i class="fas fa-chess-knight"></i> {{localize "UNDERWORLD.TacticsTab.Title"}}
+        <i class="fas fa-chess-knight"></i> {{underworldT "TacticsTab.Title"}}
       </h3>
       <div class="tactics-view-controls">
-        <button type="button" class="btn-filter-retinue-tactics" data-action="toggle-retinue-tactics" aria-pressed="false" title="{{localize 'UNDERWORLD.Tactics.ShowActiveHint'}}">
-          <i class="fas fa-user-check"></i> {{localize "UNDERWORLD.Tactics.ActiveOnly"}}
+        <button type="button" class="btn-filter-retinue-tactics" data-action="toggle-retinue-tactics" aria-pressed="false" title="{{underworldT 'Tactics.ShowActiveHint'}}">
+          <i class="fas fa-user-check"></i> {{underworldT "Tactics.ActiveOnly"}}
         </button>
-        <button type="button" class="btn-toggle-tactics" data-action="toggle-all-tactics" aria-expanded="true" title="{{localize 'UNDERWORLD.Tactics.CollapseAllHint'}}">
-          <i class="fas fa-compress-alt"></i> {{localize "UNDERWORLD.Tactics.CollapseAll"}}
+        <button type="button" class="btn-toggle-tactics" data-action="toggle-all-tactics" aria-expanded="true" title="{{underworldT 'Tactics.CollapseAllHint'}}">
+          <i class="fas fa-compress-alt"></i> {{underworldT "Tactics.CollapseAll"}}
         </button>
       </div>
       <span style="font-size: 0.8rem; background: rgba(0,0,0,0.4); padding: 2px 8px; border-radius: 10px; border: 1px solid #9e856f;">
-        {{localize "UNDERWORLD.Chat.Footer"}}: <strong>{{retinueCount}}/{{maxRetinue}}</strong>
+        {{underworldT "Chat.Footer"}}: <strong>{{retinueCount}}/{{maxRetinue}}</strong>
       </span>
     </div>
 
@@ -23,7 +23,7 @@
     <div class="active-retinue-bar">
       {{#if activeRetinue.length}}
         <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-          <span style="font-size: 0.8rem; color: #d8c2b0;">{{localize "UNDERWORLD.TacticsTab.AtYourSide"}}</span>
+          <span style="font-size: 0.8rem; color: #d8c2b0;">{{underworldT "TacticsTab.AtYourSide"}}</span>
           {{#each activeRetinue}}
             <div class="retinue-chip" style="display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.12); padding: 2px 6px; border-radius: 4px; border: 1px solid #8e735b; font-size: 0.82rem;">
               <img src="{{this.img}}" style="width: 20px; height: 20px; border-radius: 2px; object-fit: cover;" />
@@ -34,18 +34,18 @@
         </div>
       {{else}}
         <div style="background: rgba(183, 28, 28, 0.25); border: 1px solid #e57373; border-radius: 4px; padding: 6px 8px; font-size: 0.82rem; color: #ffcdd2;">
-          <i class="fas fa-exclamation-triangle"></i> {{{localize "UNDERWORLD.TacticsTab.NoRetinue"}}}
+          <i class="fas fa-exclamation-triangle"></i> {{{underworldT "TacticsTab.NoRetinue"}}}
         </div>
       {{/if}}
     </div>
 
     <p class="notes" style="margin-top: 0; margin-bottom: 0;">
-      {{{localize "UNDERWORLD.TacticsTab.HowTo"}}}
+      {{{underworldT "TacticsTab.HowTo"}}}
     </p>
   </div>
 
   <div class="tactics-filter-empty" role="status" hidden>
-    <i class="fas fa-user-slash"></i> {{localize "UNDERWORLD.TacticsTab.FilterEmpty"}}
+    <i class="fas fa-user-slash"></i> {{underworldT "TacticsTab.FilterEmpty"}}
   </div>
 
   {{#each tacticGroups}}
@@ -60,41 +60,41 @@
         </div>
         <p class="tactic-desc">{{this.desc}}</p>
         <div class="tactic-effect-summary">
-          <strong>{{localize "UNDERWORLD.TacticsTab.Effect"}}:</strong> {{this.effect}}
+          <strong>{{underworldT "TacticsTab.Effect"}}:</strong> {{this.effect}}
         </div>
         {{#if this.universal}}
           <div class="tactic-executor-bar">
             <i class="fas fa-star" style="color: #f5d696;"></i>
             {{#if this.executor}}
-              {{localize "UNDERWORLD.TacticsTab.Assists"}}: <strong>{{this.executor.name}}</strong> ({{localize "UNDERWORLD.Ranks.lieutenant.Name"}})
+              {{underworldT "TacticsTab.Assists"}}: <strong>{{this.executor.name}}</strong> ({{underworldT "Ranks.lieutenant.Name"}})
             {{else}}
-              {{localize "UNDERWORLD.TacticsTab.PersonalAlways"}}
+              {{underworldT "TacticsTab.PersonalAlways"}}
             {{/if}}
           </div>
           <button type="button" class="btn-order-tactic" data-action="order-tactic" data-order="{{this.id}}">
-            <i class="fas fa-bullhorn"></i> {{localize "UNDERWORLD.TacticsTab.Issue"}}
+            <i class="fas fa-bullhorn"></i> {{underworldT "TacticsTab.Issue"}}
           </button>
         {{else if this.isUnlocked}}
           <div class="tactic-executor-bar">
             {{#if this.danger}}
-              <i class="fas fa-shield-alt color-green"></i> {{localize "UNDERWORLD.TacticsTab.GuardReady"}}: <strong>{{this.executor.name}}</strong>
+              <i class="fas fa-shield-alt color-green"></i> {{underworldT "TacticsTab.GuardReady"}}: <strong>{{this.executor.name}}</strong>
             {{else}}
-              <i class="fas fa-check-circle color-green"></i> {{localize "UNDERWORLD.TacticsTab.Executes"}}: <strong>{{this.executor.name}}</strong> ({{{underworldRoleBadge this.executor.role}}})
+              <i class="fas fa-check-circle color-green"></i> {{underworldT "TacticsTab.Executes"}}: <strong>{{this.executor.name}}</strong> ({{{underworldRoleBadge this.executor.role}}})
             {{/if}}
           </div>
           <button type="button" class="btn-order-tactic {{#if this.danger}}btn-danger{{/if}}" data-action="order-tactic" data-order="{{this.id}}">
             {{#if this.danger}}
-              <i class="fas fa-shield-virus"></i> {{localize "UNDERWORLD.Orders.Dialog.MeatShieldButton"}}
+              <i class="fas fa-shield-virus"></i> {{underworldT "Orders.Dialog.MeatShieldButton"}}
             {{else}}
-              <i class="fas fa-bullhorn"></i> {{localize "UNDERWORLD.TacticsTab.Issue"}}
+              <i class="fas fa-bullhorn"></i> {{underworldT "TacticsTab.Issue"}}
             {{/if}}
           </button>
         {{else}}
           <div class="tactic-locked-bar">
-            <i class="fas fa-lock"></i> {{localize "UNDERWORLD.TacticsTab.Requires"}}: <strong>{{this.reqRoleNames}}</strong>
+            <i class="fas fa-lock"></i> {{underworldT "TacticsTab.Requires"}}: <strong>{{this.reqRoleNames}}</strong>
           </div>
           <button type="button" class="btn-order-tactic btn-disabled" disabled>
-            <i class="fas fa-lock"></i> {{localize "UNDERWORLD.TacticsTab.Locked"}}
+            <i class="fas fa-lock"></i> {{underworldT "TacticsTab.Locked"}}
           </button>
         {{/if}}
       </div>

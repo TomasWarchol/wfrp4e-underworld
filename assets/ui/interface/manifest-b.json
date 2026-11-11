@@ -1,0 +1,157 @@
+[
+  {
+    "id": "category_intel",
+    "file": "category_intel.svg",
+    "subject": "eye over an open scroll"
+  },
+  {
+    "id": "category_resources",
+    "file": "category_resources.svg",
+    "subject": "sack with a coin"
+  },
+  {
+    "id": "category_influence",
+    "file": "category_influence.svg",
+    "subject": "marionette control cross with strings to a puppet"
+  },
+  {
+    "id": "category_operations",
+    "file": "category_operations.svg",
+    "subject": "two crossed swords"
+  },
+  {
+    "id": "category_camp",
+    "file": "category_camp.svg",
+    "subject": "campfire with three logs"
+  },
+  {
+    "id": "token_recon",
+    "file": "token_recon.svg",
+    "subject": "folded map with a cross mark"
+  },
+  {
+    "id": "token_commotion",
+    "file": "token_commotion.svg",
+    "subject": "ringing bell"
+  },
+  {
+    "id": "token_lead",
+    "file": "token_lead.svg",
+    "subject": "pointing hand (manicule) as in old prints"
+  },
+  {
+    "id": "loot_valuables",
+    "file": "loot_valuables.svg",
+    "subject": "ring with a gem"
+  },
+  {
+    "id": "loot_goods",
+    "file": "loot_goods.svg",
+    "subject": "bale tied with rope"
+  },
+  {
+    "id": "loot_weapons",
+    "file": "loot_weapons.svg",
+    "subject": "bundle of three swords tied together"
+  },
+  {
+    "id": "loot_documents",
+    "file": "loot_documents.svg",
+    "subject": "written sheet with a folded corner and a ribboned wax seal"
+  },
+  {
+    "id": "loot_contraband",
+    "file": "loot_contraband.svg",
+    "subject": "small vial with a skull carved on its body"
+  },
+  {
+    "id": "loot_metal",
+    "file": "loot_metal.svg",
+    "subject": "two stacked ingots"
+  },
+  {
+    "id": "shelter_makeshift",
+    "file": "shelter_makeshift.svg",
+    "subject": "rolled bedroll under a lean-to branch"
+  },
+  {
+    "id": "shelter_basic",
+    "file": "shelter_basic.svg",
+    "subject": "A-frame tent"
+  },
+  {
+    "id": "shelter_comfortable",
+    "file": "shelter_comfortable.svg",
+    "subject": "small cottage with smoke from the chimney"
+  },
+  {
+    "id": "tab_chronicle",
+    "file": "tab_chronicle.svg",
+    "subject": "open book with a ribbon"
+  },
+  {
+    "id": "tab_camp",
+    "file": "tab_camp.svg",
+    "subject": "tent beside a campfire"
+  },
+  {
+    "id": "tab_roster",
+    "file": "tab_roster.svg",
+    "subject": "three hooded heads in a row"
+  },
+  {
+    "id": "tab_plan",
+    "file": "tab_plan.svg",
+    "subject": "pinned note with a cross mark"
+  },
+  {
+    "id": "tab_chest",
+    "file": "tab_chest.svg",
+    "subject": "iron-banded chest"
+  },
+  {
+    "id": "tab_orders",
+    "file": "tab_orders.svg",
+    "subject": "three overlapping cards"
+  },
+  {
+    "id": "retinue",
+    "file": "retinue.svg",
+    "subject": "heater shield with three dots"
+  },
+  {
+    "id": "xp",
+    "file": "xp.svg",
+    "subject": "laurel wreath, open at the top"
+  },
+  {
+    "id": "hot",
+    "file": "hot.svg",
+    "subject": "flame"
+  },
+  {
+    "id": "patron",
+    "file": "patron.svg",
+    "subject": "signet ring seen from the front"
+  },
+  {
+    "id": "watch",
+    "file": "watch.svg",
+    "subject": "lantern"
+  },
+  {
+    "id": "day",
+    "file": "day.svg",
+    "subject": "sun with short rays"
+  },
+  {
+    "id": "night",
+    "file": "night.svg",
+    "subject": "crescent moon with two stars"
+  },
+  {
+    "id": "week",
+    "file": "week.svg",
+    "subject": "seven tally marks, five crossed by a slash"
+  }
+]

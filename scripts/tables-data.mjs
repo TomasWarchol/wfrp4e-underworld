@@ -5,8 +5,9 @@
  */
 
 import { UnderworldRollTables } from "./roll-tables.mjs";
-import { TERRAINS, TERRAIN_RUMORS, TERRAIN_EVENTS } from "./world-data.mjs";
+import { MISSIONS, TERRAINS, TERRAIN_RUMORS, TERRAIN_EVENTS } from "./world-data.mjs";
 import { t, contentList, textConfig, withText } from "./i18n.mjs";
+import { DEFAULT_PROFILE, PROFILE_ROLES, convertRole, profileOf } from "./company-profiles.mjs";
 
 /** Teren szajki (miasto, gdy nieustawiony). */
 const terrainOf = gang => (TERRAINS[gang?.terrain] ? gang.terrain : "city");
@@ -209,6 +210,9 @@ export class UnderworldTables {
       const ok = item.ok || {};
       event.ok = { moraleDelta: Number(ok.morale ?? ok.moraleDelta) || 0, suppliesFound: Number(ok.supplies ?? ok.suppliesFound) || 0, coinsFoundSS: Number(ok.coinsSS ?? ok.coinsFoundSS) || 0 };
     }
+    if (Array.isArray(item.types)) event.types = item.types;
+    // Zdarzenie typu ograniczone do terenów (np. piwnica w mieście, barka na rzece)
+    if (Array.isArray(item.terrains) && item.terrains.length) event.terrains = item.terrains;
     if (item.next) event.next = String(item.next);
     if (item.only) event.only = true;
     return event;
@@ -238,6 +242,54 @@ export class UnderworldTables {
     }
     this._terrainEventsCache[key] = list;
     return list;
+  }
+
+  static _profileEventsCache = {};
+
+  /** Własne zdarzenia typu kompanii z data/events/profiles/<typ>.<język>.json (zapas: angielski). */
+  static async loadProfileEvents(type) {
+    const lang = game.i18n?.lang || "en";
+    const key = `${type}:${lang}`;
+    if (this._profileEventsCache[key]) return this._profileEventsCache[key];
+    let list = [];
+    for (const code of [lang, "en"]) {
+      try {
+        const res = await fetch(`modules/wfrp4e-underworld/data/events/profiles/${type}.${code}.json`);
+        if (!res.ok) continue;
+        const json = await res.json();
+        if (Array.isArray(json) && json.length) {
+          list = json.map((e, i) => this.normalizeEvent(e, i));
+          break;
+        }
+      } catch (_) {}
+    }
+    this._profileEventsCache[key] = list;
+    return list;
+  }
+
+  /** Zdarzenia dopuszczone w danym terenie (bez listy terenów: wszędzie). */
+  static forTerrain(events, terrain) {
+    return events.filter(e => !e.terrains?.length || e.terrains.includes(terrain));
+  }
+
+  /**
+   * Warstwa terenu. Szajka i typy z tabelami świata dostają wszystkie zdarzenia terenu, pozostałe typy
+   * tylko wspólne: bez motywów przestępczych i bez zdarzeń ról, które z nazwy mówią o rolach Szajki.
+   */
+  static async terrainPool(gang, terrain) {
+    const loaded = await this.loadTerrainEvents(terrain);
+    if (profileOf(gang).worldTables) {
+      if (loaded.length) return loaded;
+      return terrain === "city" ? this.getCampEvents(gang) : (TERRAIN_EVENTS[terrain] || []).map((e, i) => this.normalizeEvent(e, i));
+    }
+    return loaded.filter(e => !e.types && !e.role);
+  }
+
+  /** Wszystkie zdarzenia, które kompania może spotkać w terenie: warstwa terenu i tabela typu. */
+  static async eventPool(gang, terrain) {
+    const profile = profileOf(gang);
+    const own = profile.id === DEFAULT_PROFILE ? [] : this.forTerrain(await this.loadProfileEvents(profile.id), terrain);
+    return [...await this.terrainPool(gang, terrain), ...own];
   }
 
   static getRandomSource() {
@@ -372,8 +424,15 @@ export class UnderworldTables {
     let event = null;
     const hook = gang?.eventHook;
     if (hook?.id && (!hook.terrain || hook.terrain === terrain)) {
-      event = await UnderworldRollTables.findEvent(terrain, hook.id);
-      if (event) event.followUp = true;
+      if (profileOf(gang).worldTables) event = await UnderworldRollTables.findEvent(terrain, hook.id);
+      else {
+        const found = (await this.eventPool(gang, terrain)).find(e => e.id === hook.id);
+        event = found ? { ...found } : null;
+      }
+      if (event) {
+        event.followUp = true;
+        this._remember(gang, event.id);
+      }
       gang.eventHook = null;
     }
     if (!event) event = await this._drawRandomCampEvent(gang, terrain);
@@ -381,50 +440,57 @@ export class UnderworldTables {
     return event;
   }
 
+  /**
+   * Dwie warstwy: tabela typu (część nocy według ownShare profilu) i zdarzenia terenu.
+   * Szajka i Banici biorą zdarzenia terenu z tabel świata, pozostałe typy ze wspólnej puli bez powtórzeń.
+   */
   static async _drawRandomCampEvent(gang, terrain) {
-    const fromTable = await UnderworldRollTables.draw("events", terrain);
-    if (fromTable) return fromTable;
+    const profile = profileOf(gang);
+    if (profile.ownShare && Math.random() < profile.ownShare) {
+      const own = await this._drawProfileEvent(gang, terrain);
+      if (own) return own;
+    }
+    if (profile.worldTables) {
+      const fromTable = await UnderworldRollTables.draw("events", terrain);
+      if (fromTable) return fromTable;
+    }
+    return this._drawUnseen(gang, (await this.terrainPool(gang, terrain)).filter(e => !e.only));
+  }
 
-    const loaded = await this.loadTerrainEvents(terrain);
-    const events = (loaded.length
-      ? loaded
-      : terrain === "city"
-        ? this.getCampEvents(gang)
-        : (TERRAIN_EVENTS[terrain] || []).map((e, i) => this.normalizeEvent(e, i))
-    ).filter(e => !e.only);
+  /** Zdarzenie z tabeli typu: z edytowalnej tabeli świata, a bez niej z pliku modułu. */
+  static async _drawProfileEvent(gang, terrain) {
+    const profile = profileOf(gang);
+    const fromTable = await UnderworldRollTables.drawProfileEvent(profile.id, terrain, this._seen(gang));
+    if (fromTable) {
+      this._remember(gang, fromTable.id);
+      return fromTable;
+    }
+    const own = this.forTerrain(await this.loadProfileEvents(profile.id), terrain).filter(e => !e.only);
+    return own.length ? this._drawUnseen(gang, own) : null;
+  }
+
+  /** Id zdarzeń, które kompania już widziała (pamięć jest osobna dla każdej kompanii). */
+  static _seen(gang) {
+    return Array.isArray(gang?.seenEvents) ? gang.seenEvents : [];
+  }
+
+  static _remember(gang, id) {
+    if (!gang || !id) return;
+    gang.seenEvents = [...this._seen(gang).filter(x => x !== id), id].slice(-400);
+  }
+
+  /** Losuje bez powtórzeń, a gdy kompania widziała już całą pulę, zaczyna ją od nowa. */
+  static _drawUnseen(gang, events) {
     if (!events.length) return { title: t("CampEvent.QuietTitle"), text: t("CampEvent.QuietText"), moraleDelta: 0 };
-
-    let displayedIds = this.getDisplayedEventIds();
-    let available = events.filter(event => !displayedIds.includes(event.id));
-    if (available.length === 0) {
-      displayedIds = [];
-      await this.setDisplayedEventIds(displayedIds);
+    const seen = new Set(this._seen(gang));
+    let available = events.filter(event => !seen.has(event.id));
+    if (!available.length) {
+      if (gang) gang.seenEvents = this._seen(gang).filter(id => !events.some(e => e.id === id));
       available = events;
     }
-
     const selected = { ...available[Math.floor(Math.random() * available.length)] };
-    displayedIds.push(selected.id);
-    await this.setDisplayedEventIds(displayedIds);
+    this._remember(gang, selected.id);
     return selected;
-  }
-
-  static getDisplayedEventIds() {
-    try {
-      const list = game.settings?.get("wfrp4e-underworld", "displayedEvents");
-      return Array.isArray(list) ? list : [];
-    } catch (_) {
-      return [];
-    }
-  }
-
-  static async setDisplayedEventIds(ids) {
-    try {
-      await game.settings?.set("wfrp4e-underworld", "displayedEvents", ids);
-    } catch (_) {}
-  }
-
-  static async resetDisplayedEvents() {
-    await this.setDisplayedEventIds([]);
   }
 
   // ────────────────────────────────────────────
@@ -583,7 +649,8 @@ export class UnderworldTables {
       badgeClass: "role-duelist",
       tactics: ["parry", "riposte", "challenge"],
       bonusAssignments: ["intimidate", "distract"]
-    }
+    },
+    ...PROFILE_ROLES
   }, "Roles", { name: "Name", shortDesc: "Desc" });
 
   // ────────────────────────────────────────────
@@ -1058,8 +1125,52 @@ export class UnderworldTables {
 
   /** Czy poplecznik ma którąkolwiek z podanych ról (główną lub drugą). */
   static hasRole(npc, roles) {
-    const own = this.rolesOf(npc);
+    const own = this.rolesOf(npc).flatMap(role => [role, ...(this.ROLES_CONFIG[role]?.actsAs ?? [])]);
     return (Array.isArray(roles) ? roles : [roles]).some(r => own.includes(r));
+  }
+
+  /** Zalety lub wady, które mają znaczenie dla zleceń kompanii danego typu (klucze). */
+  static traitsFor(pool, company) {
+    const { missions } = profileOf(company);
+    if (!missions) return Object.keys(pool);
+    const useful = new Set(missions.flatMap(id => [id, MISSIONS[id]?.like]).filter(Boolean));
+    return Object.keys(pool).filter(key => {
+      const affected = pool[key].bonusAssignments ?? pool[key].penaltyAssignments ?? [];
+      return !affected.length || affected.some(id => useful.has(id));
+    });
+  }
+
+  /** Role dostępne w kompanii danego typu jako pary [id, konfiguracja]. */
+  static rolesFor(company) {
+    return profileOf(company).roles.map(id => [id, this.ROLES_CONFIG[id]]);
+  }
+
+  /** Normalizuje rolę i przelicza ją na rolę dostępną w kompanii danego typu. */
+  static roleForCompany(role, company) {
+    return convertRole(this.normalizeRole(role), company);
+  }
+
+  /** Czy rola może wydać rozkaz: role typów mają własną listę rozkazów, role Szajki – wymagania rozkazu. */
+  static roleGivesOrder(role, orderId, order) {
+    const own = PROFILE_ROLES[role]?.orders;
+    return own ? own.includes(orderId) : (order?.requiredRoles ?? []).includes(role);
+  }
+
+  /** Czy członek Świty może wydać rozkaz (Prawa Ręka wydaje rozkazy dowódcze). */
+  static canGiveOrder(npc, orderId, order) {
+    const required = order?.requiredRoles ?? [];
+    if (!required.length) return true;
+    if (required.includes("lieutenant") && Number(npc?.rank) >= 3) return true;
+    return this.rolesOf(npc).some(role => this.roleGivesOrder(role, orderId, order));
+  }
+
+  /** Nazwy ról kompanii, które mogą wydać rozkaz (bez powtórzeń). */
+  static orderRoleNames(orderId, order, company) {
+    const names = profileOf(company).roles
+      .filter(role => this.roleGivesOrder(role, orderId, order))
+      .map(role => this.ROLES_CONFIG[role]?.name || role);
+    if ((order?.requiredRoles ?? []).includes("lieutenant")) names.push(t("Ranks.lieutenant.Name"));
+    return [...new Set(names)];
   }
 
   /**
@@ -1154,10 +1265,10 @@ export class UnderworldTables {
   /**
    * Generuje kandydatów do rekrutacji dla graczy (z 7 rolami, 20 zaletami i 20 wadami)
    */
-  static generateRecruitCandidates(count = 3) {
-    const rolesKeys = Object.keys(this.ROLES_CONFIG);
-    const strengthKeys = Object.keys(this.TRAITS_CONFIG.strengths);
-    const flawKeys = Object.keys(this.TRAITS_CONFIG.flaws);
+  static generateRecruitCandidates(count = 3, company = DEFAULT_PROFILE) {
+    const rolesKeys = profileOf(company).roles;
+    const strengthKeys = this.traitsFor(this.TRAITS_CONFIG.strengths, company);
+    const flawKeys = this.traitsFor(this.TRAITS_CONFIG.flaws, company);
 
     const shuffledNames = [...this.RECRUIT_NAMES].sort(() => 0.5 - Math.random());
     const candidates = [];

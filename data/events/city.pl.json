@@ -21,7 +21,10 @@
   "text": "W sąsiedniej kamienicy dwóch cechmistrzów obiło się przy wódce. Straż przyszła, ale w złą stronę uliczki.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-004",
@@ -37,7 +40,10 @@
   "text": "Dzwony kaplicy Morra zabrzmiały bez żadnego powodu. Część ludzi nie zmrużyła oka do świtu.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-006",
@@ -53,7 +59,10 @@
   "text": "Piekarz dla uczczenia święta rozdawał wczorajszy bochenek każdemu, kto stał w kolejce. Szajka stała w kolejce trzy razy.",
   "morale": 1,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-008",
@@ -61,7 +70,10 @@
   "text": "Komin ciągnął źle i cała nora zasnuła się dymem. Rano wszyscy kaszleli i narzekali na bóle głowy.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-009",
@@ -69,7 +81,10 @@
   "text": "Dwoje popleczników pokłóciło się o ostatni suchy koc. Herszt rozstrzygnął spór po salomonowemu, czyli oddał koc sobie.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-010",
@@ -77,7 +92,10 @@
   "text": "Obwoływacz krzyczał pod oknem o nowych podatkach i listach gończych. Część nowin była szczególnie interesująca.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-011",
@@ -101,7 +119,10 @@
   "text": "Kominiarz zszedł z dachu prosto na kolana jednemu z popleczników. Obaj krzyczeli, aż się wszyscy obudzili.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-014",
@@ -109,7 +130,10 @@
   "text": "Patrol straży przeszedł pod oknem trzy razy. Szajka siedziała cicho, ale nerwy puściły niejednemu.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-015",
@@ -149,7 +173,10 @@
   "text": "Gdzieś w uliczce zapalił się kosz ze śmieciami. Ludzie wybiegli z wiadrami, szajka w tym samym czasie sprzątnęła, co się dało.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-020",
@@ -165,7 +192,10 @@
   "text": "Cała kamienica bawiła się na weselu piekarczyka. Szajka dostała resztki ciasta i kilka kubków piwa.",
   "morale": 1,
   "supplies": 1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-022",
@@ -173,7 +203,10 @@
   "text": "Burza zalała uliczki aż po kostki, ale w norze było sucho, a deszcz zagłuszył wszelkie ślady.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-023",
@@ -221,7 +254,10 @@
   "text": "Praczka z podwórza przeklęła głośno całą szajkę, bo ktoś zadeptał jej pranie. Nikt nie wie, czy to coś znaczy.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-029",
@@ -229,7 +265,10 @@
   "text": "Gdzieś blisko wybuchł pożar. Straż miejska pobiegła w tamtą stronę, zostawiając uliczki pod waszą kontrolą.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 4
+  "coinsSS": 4,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-030",
@@ -245,7 +284,10 @@
   "text": "Chłopak z sąsiedniej ulicy próbował was okraść. Złapany, rozpłakał się i opowiedział o wszystkich swoich sprawach.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-032",
@@ -290,7 +332,10 @@
    "morale": 0,
    "supplies": 0,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-035",
@@ -305,7 +350,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-036",
@@ -365,7 +413,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 6
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-040",
@@ -380,7 +431,10 @@
    "morale": 1,
    "supplies": 1,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-041",
@@ -410,7 +464,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 8
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-043",
@@ -455,7 +512,10 @@
    "morale": 1,
    "supplies": 4,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-046",
@@ -470,7 +530,10 @@
    "morale": 0,
    "supplies": 0,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-047",
@@ -500,7 +563,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 4
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-049",
@@ -515,7 +581,10 @@
    "morale": 0,
    "supplies": 3,
    "coinsSS": 5
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-050",
@@ -575,7 +644,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 6
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-054",
@@ -645,7 +717,10 @@
   "text": "Procesja flagellantów przeszła ulicą, śpiewając o końcu świata. Połowa szajki poszła za nimi z ciekawości, reszta zamknęła okiennice.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-062",
@@ -653,7 +728,10 @@
   "text": "W Wigilię Hexenstagu ludzie palą ogniska na rogach ulic, żeby odstraszyć złe duchy. Szajka też postawiła swoje.",
   "morale": 1,
   "supplies": -1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-063",
@@ -677,7 +755,10 @@
   "text": "Sierżant werbunkowy szuka młodych do milicji miejskiej. Dwóch z szajki udawało, że ich nie ma.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-066",
@@ -701,7 +782,10 @@
   "text": "Złodziej koni uciekał uliczką i porzucił łup w waszej bramie. Rano koń stał grzecznie przy ścianie, oglądając szajkę.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 6
+  "coinsSS": 6,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-069",
@@ -709,7 +793,10 @@
   "text": "Grupa studentów przeszła pijana po zaułku, śpiewając sprośne piosenki. Jeden zgubił sakiewkę, a drugi pożyczył dublet od poplecznika.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-070",
@@ -733,7 +820,10 @@
   "text": "Skryba z kancelarii wynajął nocleg przy waszej norze i przepisywał listy aż do świtu. Zostawił po sobie kałamarz.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 1
+  "coinsSS": 1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-073",
@@ -765,7 +855,10 @@
   "text": "Straż wyprowadziła z kamienicy podejrzanego o fałszerstwo. Przesłuchiwali wszystkich w okolicy, ale was ominęli.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-077",
@@ -773,7 +866,10 @@
   "text": "Cztery wdowy z sąsiedniej ulicy urządziły pogrzeb męża jednej z nich. Pogrzeb zamienił się w ucztę, na którą zaproszono szajkę.",
   "morale": 1,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-078",
@@ -789,7 +885,10 @@
   "text": "Pożar warsztatu stolarskiego rozświetlił niebo. Straż zaprzątnięta gaszeniem, dzielnica spała spokojnie.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-080",
@@ -805,7 +904,10 @@
   "text": "Przy studni dwie kobiety pokłóciły się o kolejkę i polały się wodą. Tłum się zebrał, a kieszonkowcy mieli dzień pełen pracy.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 4
+  "coinsSS": 4,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-082",
@@ -829,7 +931,10 @@
   "text": "Rzemieślnicy rozłożyli kramy na całej ulicy. Szajka wypatrzyła parę rzeczy, które można było kupić albo przywłaszczyć.",
   "morale": 0,
   "supplies": 1,
-  "coinsSS": 4
+  "coinsSS": 4,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-085",
@@ -845,7 +950,10 @@
   "text": "Do miasta przybył kapłan wysokiej rangi i ulice patrolowano podwójnie. Kryjówka dostała nieoczekiwane dwie wizyty.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-087",
@@ -853,7 +961,10 @@
   "text": "Barka z piwem uderzyła w nabrzeże i beczki potoczyły się po rampie. Wszyscy zbierali, co się dało, przy okazji udając ratowników.",
   "morale": 1,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-088",
@@ -869,7 +980,10 @@
   "text": "Ktoś widział w oknie postać w białej koszuli. Pewnie złodziej, ale o północy każdy wolał uważać na kark.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-090",
@@ -914,7 +1028,10 @@
    "morale": 0,
    "supplies": 0,
    "coinsSS": 4
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-093",
@@ -929,7 +1046,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 2
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-094",
@@ -944,7 +1064,10 @@
    "morale": 1,
    "supplies": 2,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-095",
@@ -959,7 +1082,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-096",
@@ -1019,7 +1145,10 @@
    "morale": 0,
    "supplies": 0,
    "coinsSS": 5
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-100",
@@ -1034,7 +1163,10 @@
    "morale": 0,
    "supplies": 3,
    "coinsSS": 2
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-101",
@@ -1049,7 +1181,10 @@
    "morale": 0,
    "supplies": 0,
    "coinsSS": 7
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-102",
@@ -1079,7 +1214,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 4
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-104",
@@ -1124,7 +1262,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-107",
@@ -1139,7 +1280,10 @@
    "morale": 0,
    "supplies": 0,
    "coinsSS": 8
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-108",
@@ -1154,7 +1298,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-109",
@@ -1184,7 +1331,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 4
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-111",
@@ -1199,7 +1349,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-112",
@@ -1244,7 +1397,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 2,
-  "next": "c-117"
+  "next": "c-117",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-117",
@@ -1253,7 +1409,10 @@
   "morale": -1,
   "supplies": 0,
   "coinsSS": -3,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-118",
@@ -1261,7 +1420,10 @@
   "text": "Skrzypek grał pod waszym oknem do świtu. Połowa szajki była wściekła, połowa tańczyła.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 1
+  "coinsSS": 1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-119",
@@ -1277,7 +1439,10 @@
   "text": "Ktoś zgubił klucz do spichlerza, a szajka go znalazła. Rano właściciel obiecał nagrodę temu, kto go odda.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-121",
@@ -1285,7 +1450,10 @@
   "text": "Ludzie z latarniami polowali na szczury w zaułkach. Szajka dołączyła i przy okazji przeszukała kilka piwnic.",
   "morale": 0,
   "supplies": 1,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-122",
@@ -1301,7 +1469,10 @@
   "text": "Wróżka z targu przepowiedziała jednemu z popleczników długie życie i wielką stratę. Nikt nie wie, czy to dobra wróżba.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-124",
@@ -1309,7 +1480,10 @@
   "text": "Ktoś rozbił okno w sąsiednim domu i uciekł z kuframi. Straż zajęta śledztwem, wy mieliście spokojną noc.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-125",
@@ -1333,7 +1507,10 @@
   "text": "Chłopcy z waszego otoczenia podwędzili kosz owoców z kramu i pochowali go w piwnicy. Handlarz ich szuka.",
   "morale": 0,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-128",
@@ -1373,7 +1550,10 @@
   "text": "Kruk bez nóg przyleciał do okna i przez godzinę patrzył na szajkę. Potem odleciał, jakby wszystko zrozumiał.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-133",
@@ -1421,7 +1601,10 @@
   "text": "Dawny kompan z innej szajki zapukał do drzwi. Wspomnieliście dawne czasy, a on odszedł z ciężką głową i lżejszą sakiewką.",
   "morale": 1,
   "supplies": -1,
-  "coinsSS": -2
+  "coinsSS": -2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-139",
@@ -1445,7 +1628,10 @@
   "text": "Burmistrz z orszakiem przeszedł przez dzielnicę, a szajka schowała wszystko, co mogło wzbudzić podejrzenia.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-142",
@@ -1453,7 +1639,10 @@
   "text": "Jeden z popleczników znalazł w śmieciach dziwną figurkę. Handlarz kupił ją za trzy srebrniki i uśmiechnął się znacząco.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-143",
@@ -1500,7 +1689,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-148",
@@ -1515,7 +1707,10 @@
    "morale": 0,
    "supplies": 0,
    "coinsSS": 8
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-149",
@@ -1530,7 +1725,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-150",
@@ -1575,7 +1773,10 @@
    "morale": 1,
    "supplies": 1,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-153",
@@ -1695,7 +1896,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-161",
@@ -1725,7 +1929,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 7
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-163",
@@ -1740,7 +1947,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 7
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-164",
@@ -1755,7 +1965,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-165",
@@ -1785,7 +1998,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-167",
@@ -1815,7 +2031,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-169",
@@ -1824,7 +2043,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 0,
-  "next": "c-170"
+  "next": "c-170",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-170",
@@ -1833,7 +2055,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 6,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-171",
@@ -1842,7 +2067,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 2,
-  "next": "c-172"
+  "next": "c-172",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-172",
@@ -1851,7 +2079,10 @@
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-173",
@@ -1878,7 +2109,10 @@
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0,
-  "next": "c-176"
+  "next": "c-176",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-176",
@@ -1887,7 +2121,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 4,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-177",
@@ -1929,7 +2166,10 @@
   "text": "Przy waszej bramie siedziała kobieta bez butów i nie mogła przypomnieć sobie, skąd przyszła. Straż wzięła ją rano.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-182",
@@ -1961,7 +2201,10 @@
   "text": "Wujek jednego z popleczników wpadł z koszem jabłek i oskarżeniami. Po godzinie wszyscy mieli dość, ale jabłka zostały.",
   "morale": -1,
   "supplies": 1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-186",
@@ -2001,7 +2244,10 @@
   "text": "Na waszej klatce ktoś porzucił pierścień z herbem jakiegoś rodu. Wiadomo, że ktoś go szuka.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 4
+  "coinsSS": 4,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-191",
@@ -2009,7 +2255,10 @@
   "text": "Wszystkie dzwony biły na cześć Sigmara. Ulice były czyste, a straż bardziej czujna niż zwykle.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-192",
@@ -2033,7 +2282,10 @@
   "text": "Łowca nagród pytał o kogoś z waszej dzielnicy. Opis pasował do jednego z kamienicy dalej, ale ktoś poczuł się nieswojo.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-195",
@@ -2041,7 +2293,10 @@
   "text": "Kuter rybacki zacumował przy nabrzeżu i rybacy rozdawali wczorajszy połów, bo chcieli lżej płynąć. Szajka nie odmówiła.",
   "morale": 1,
   "supplies": 3,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-196",
@@ -2049,7 +2304,10 @@
   "text": "Stary informator zostawił kartkę z jednym zdaniem: „Wielki ładunek jutro rano na wschodnim nabrzeżu”. Można to wykorzystać.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 4
+  "coinsSS": 4,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-197",
@@ -2065,7 +2323,10 @@
   "text": "Ostatni kupcy zwijali kramy i rozprzedawali resztki za grosze. Szajka zrobiła zakupy życia.",
   "morale": 0,
   "supplies": 3,
-  "coinsSS": -1
+  "coinsSS": -1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-199",
@@ -2113,7 +2374,10 @@
   "text": "Dwóch popleczników okazało się braćmi bliźniakami rozdzieleni w dzieciństwie. Wzruszające spotkanie, a przy okazji kilka ciekawych historii.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-205",
@@ -2121,7 +2385,10 @@
   "text": "Ładna pani z sąsiedztwa nawiązała rozmowę z jednym z popleczników. Gdy odeszła, zniknął mu pas z sakiewką.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": -3
+  "coinsSS": -3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-206",
@@ -2129,7 +2396,10 @@
   "text": "Straż miejska przeszła przez dzielnicę w paradnym szyku, z bębnami. W szeregu jeden ze strażników zdawał się was rozpoznawać.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-207",
@@ -2169,7 +2439,10 @@
   "text": "Piekarz upiekł kołacz z monetą w środku. Szajka go zjadła i monetę znalazł ten, kto najmniej potrzebował.",
   "morale": 1,
   "supplies": 1,
-  "coinsSS": 1
+  "coinsSS": 1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-212",
@@ -2177,7 +2450,10 @@
   "text": "Wędrowny cyrk rozłożył namioty na wolnym placu. Połowa dzielnicy oglądała akrobatów, połowa szukała zgubionych sakiewek.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 5
+  "coinsSS": 5,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-213",
@@ -2185,7 +2461,10 @@
   "text": "Kapłan Morra przeszedł nocą przez ulicę, niosąc czarną laskę. Za nim szedł chłopiec z latarnią. Szajka nie oddychała, dopóki nie zniknęli.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-214",
@@ -2201,7 +2480,10 @@
   "text": "Sąsiadka z góry wylała pomyje z okna, prosto na ramię jednego z popleczników. Zaczęła się kłótnia, która skończyła się przeprosinami i chlebem.",
   "morale": 0,
   "supplies": 1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-216",
@@ -2257,7 +2539,10 @@
   "text": "Z tawerny za rogiem unosił się zapach pieczonego mięsa. Połowa szajki zjawiła się tam przed wschodem słońca.",
   "morale": 1,
   "supplies": -1,
-  "coinsSS": -2
+  "coinsSS": -2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-223",
@@ -2266,7 +2551,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 3,
-  "next": "c-224"
+  "next": "c-224",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-224",
@@ -2275,7 +2563,10 @@
   "morale": -1,
   "supplies": 0,
   "coinsSS": -3,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-225",
@@ -2302,7 +2593,10 @@
   "morale": 1,
   "supplies": -1,
   "coinsSS": 0,
-  "next": "c-228"
+  "next": "c-228",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-228",
@@ -2311,7 +2605,10 @@
   "morale": 0,
   "supplies": -2,
   "coinsSS": 0,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-229",
@@ -2337,7 +2634,10 @@
   "text": "Ktoś rozlał na bruk smołę i kilku przechodniów przykleiło się do ulicy. Okazja do kilku błyskotliwych kradzieży.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 4
+  "coinsSS": 4,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-232",
@@ -2361,7 +2661,10 @@
   "text": "Złodziej uciekał przed strażą i wrzucił łup przez wasze okno. Zanim ktokolwiek coś zrozumiał, już go nie było.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 5
+  "coinsSS": 5,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-235",
@@ -2401,7 +2704,10 @@
   "text": "Przez ścianę słychać dwóch mężczyzn omawiających plan. Z tego, co zdołano zrozumieć, chodzi o napad na transport złota.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-240",
@@ -2425,7 +2731,10 @@
   "text": "Strażnicy ogłosili godzinę policyjną po zmierzchu. Szajka siedziała w norze, zła na cały świat.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-243",
@@ -2433,7 +2742,10 @@
   "text": "Owca wbiegła do kamienicy i zamarła na schodach. Chłopcy ukradli ją, zanim właściciel zdążył się upomnieć.",
   "morale": 1,
   "supplies": 3,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-244",
@@ -2449,7 +2761,10 @@
   "text": "Kowal z sąsiedniej ulicy zaprosił ludzi na swój wyrób. Szajka kupiła kilka podków i pozwoliła kowalowi opowiedzieć o swoim życiu.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": -1
+  "coinsSS": -1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-246",
@@ -2457,7 +2772,10 @@
   "text": "Dzieci szukają zaginionego kota. Jeden z nich zajrzał do waszej piwnicy i zobaczył rzeczy, których nie powinien widzieć.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-247",
@@ -2465,7 +2783,10 @@
   "text": "Łaźnia miejska ogłosiła dzień darmowego wstępu. Szajka zjawiła się w komplecie i wróciła czysta jak łza.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": -1
+  "coinsSS": -1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-248",
@@ -2473,7 +2794,10 @@
   "text": "Straż zmieniła posterunek na waszej ulicy. Nowi nie znają jeszcze okolicy, a ich oczy błyszczą gorliwością.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-249",
@@ -2497,7 +2821,10 @@
   "text": "Pogrzeb bogatego kupca przeszedł ulicą z całą pompą. Jeden z żałobników miał podejrzanie lekką sakiewkę po powrocie.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 4
+  "coinsSS": 4,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-252",
@@ -2537,7 +2864,10 @@
   "text": "Wędrowni śpiewacy z Tilei dawali koncert na rogu ulicy. Tłum był hojny, a kieszonkowcy jeszcze hojniejsi.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 5
+  "coinsSS": 5,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-257",
@@ -2553,7 +2883,10 @@
   "text": "Ktoś w nocy namalował na murze obraźliwy rysunek przedstawiający burmistrza. Straż wszczęła poszukiwania, a wy mieliście dobry humor.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-259",
@@ -2569,7 +2902,10 @@
   "text": "Kapłan Shallyi wysłuchał spowiedzi jednego z popleczników, który wrócił wyraźnie lżejszy i bardzo zamyślony.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": -1
+  "coinsSS": -1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-261",
@@ -2585,7 +2921,10 @@
   "text": "Dziewczyna od praczki rozpoznała jednego z popleczników i zagroziła, że pójdzie do straży, jeśli nie dostanie koron.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": -3
+  "coinsSS": -3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-263",
@@ -2593,7 +2932,10 @@
   "text": "Zmarł stary przyjaciel szajki. Pochowano go z honorami, a przy okazji zebrano trochę pieniędzy dla jego rodziny.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": -2
+  "coinsSS": -2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-264",
@@ -2625,7 +2967,10 @@
   "text": "Zawierucha zasypała ulice i zatarła wszystkie ślady. Straż była zajęta odśnieżaniem, więc nikt nikogo nie szukał.",
   "morale": 1,
   "supplies": -1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-268",
@@ -2633,7 +2978,10 @@
   "text": "Dwóch popleczników założyło się o to, kto pierwszy złapie szczura. Wygrany dostał ćwierć srebrnika, przegrany śmiech.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-269",
@@ -2649,7 +2997,10 @@
   "text": "Stary żołnierz z drewnianą nogą udzielał młodym poplecznikom rad o walce. Połowa była dobra, połowa wymysłem.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-271",
@@ -2657,7 +3008,10 @@
   "text": "Kapłan zapukał z prośbą o wsparcie dla przytułku. Dostał kilka srebrników i obiecał pomodlić się za dusze całej szajki.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": -3
+  "coinsSS": -3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-272",
@@ -2666,7 +3020,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 0,
-  "next": "c-273"
+  "next": "c-273",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-273",
@@ -2675,7 +3032,10 @@
   "morale": 1,
   "supplies": 0,
   "coinsSS": 5,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-274",
@@ -2684,7 +3044,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 2,
-  "next": "c-275"
+  "next": "c-275",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-275",
@@ -2693,7 +3056,10 @@
   "morale": -1,
   "supplies": 0,
   "coinsSS": -2,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-276",
@@ -2719,7 +3085,10 @@
   "text": "Zielonkawy księżyc Morrslieb wisiał nisko nad dachami. Psy wyły, a kilkoro popleczników nie chciało wychodzić za próg.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-279",
@@ -2727,7 +3096,10 @@
   "text": "Łowcy Czarownic przeszli przez dzielnicę z pochodniami, wyciągając ludzi z domów. Szajka siedziała cicho jak mysz, aż odeszli.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-280",
@@ -2743,7 +3115,10 @@
   "text": "Zbrojni ze statku porwali kilku pijanych z ulicy do służby na barce. Wasi ludzie ukryli się w piwnicy i przeczekali.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-282",
@@ -2791,7 +3166,10 @@
   "text": "W mieście ogłoszono, że nowy burmistrz przejmuje władzę. Przez dzień panował chaos, który szajka sprytnie wykorzystała.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 5
+  "coinsSS": 5,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-288",
@@ -2799,7 +3177,10 @@
   "text": "Studnia w dzielnicy zrobiła się mętna i śmierdząca. Wszyscy pili piwo, a szajka sprzedała kilka beczek po dobrej cenie.",
   "morale": 0,
   "supplies": 1,
-  "coinsSS": 4
+  "coinsSS": 4,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-289",
@@ -2807,7 +3188,10 @@
   "text": "Wasz człowiek zgubił sygnet z godłem szajki w pijackiej bójce. Jeśli wpadnie w niepowołane ręce, może narobić kłopotów.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-290",
@@ -2823,7 +3207,10 @@
   "text": "Wędrowna trupa aktorów urządziła na ulicy przedstawienie o szlachetnych banitach. Szajka obejrzała w skupieniu, a część nawet uroniła łzę.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-292",
@@ -2863,7 +3250,10 @@
   "text": "Z wieży strażniczej zniknęła cała zmiana wartowników. Straż szuka winnych, a okolica szepcze o zdradzie.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-297",
@@ -2879,7 +3269,10 @@
   "text": "Babcia jednego z popleczników odwiedziła go i przyniosła ciasto z przepisu, który przechodzi w rodzinie od pokoleń. Wszyscy zjedli do ostatniego okruszka.",
   "morale": 1,
   "supplies": 1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-299",
@@ -2887,7 +3280,10 @@
   "text": "Na tablicy ogłoszeń pojawił się list gończy z podobizną jednego z popleczników. Rysownik nie miał talentu, a pewnie dzięki temu nikt go nie rozpoznał.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-300",

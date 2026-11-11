@@ -1,0 +1,114 @@
+{{!-- Księga Kompanii: Obóz – schronienie na noc, postój, morale, spiżarnia i skrzynia (pola i akcje jak w dashboard.hbs) --}}
+<div class="dashboard-container uw-l-camp">
+  <div class="uw-l-camp-grid">
+    <section class="uw-l-panel uw-l-night">
+      <h3>{{uwIcon "ui-night"}} {{underworldT "DashTab.CampStandard"}}</h3>
+      <div class="uw-l-shelters" role="radiogroup">
+        {{#each ledgerView.shelters}}
+        <label class="uw-l-shelter {{#if this.checked}}is-chosen{{/if}} {{#if this.bad}}is-bad{{/if}} {{#if this.good}}is-good{{/if}}">
+          <input type="radio" name="camp.type" value="{{this.id}}" {{#if this.checked}}checked{{/if}}/>
+          {{uwIcon this.glyph "uw-l-shelter-art"}}
+          <span class="uw-l-shelter-label">{{this.label}}</span>
+          {{#if this.effect}}<span class="uw-l-shelter-effect">{{this.effect}}</span>{{/if}}
+        </label>
+        {{/each}}
+      </div>
+      <p class="uw-l-hint">{{{underworldT "DashTab.CampCaption" terrain=terrain.name}}}</p>
+
+      <div class="camp-action-buttons uw-l-camp-actions">
+        {{#if dailyQueue}}
+          {{#if isGM}}
+          <button type="button" class="uw-l-hero" data-action="resolve-queue" title="{{underworldT 'DashTab.ResolveQueueHint'}}">
+            {{uwIcon "ui-status_busy"}} <span>{{underworldT "DashTab.ResolveQueue" count=plannedCount}}</span>
+          </button>
+          {{else if plannedCount}}
+          <p class="uw-l-hint">{{uwIcon "ui-status_busy"}} {{underworldT "DashTab.Pending"}}: <strong>{{plannedCount}}</strong></p>
+          {{/if}}
+        {{/if}}
+        {{#if isWeekly}}
+        <button type="button" class="uw-l-hero" data-action="camp-rest" title="{{underworldT 'DashTab.ResolveWeekHint'}}">
+          {{uwIcon "ui-week"}} <span>{{#if isGM}}{{underworldT "DashTab.ResolveWeek"}}{{else}}{{underworldT "DashTab.WeekByGM"}}{{/if}}</span>
+        </button>
+        {{else}}
+        <button type="button" class="uw-l-hero" data-action="camp-rest" title="{{underworldT 'DashTab.NightHint'}}">
+          {{uwIcon "ui-night"}} <span>{{underworldT "DashTab.Night"}}</span>
+        </button>
+        {{/if}}
+        {{#if isGM}}
+          <button type="button" class="uw-l-tables" data-action="open-world-editor" title="{{underworldT 'DashTab.TablesHint'}}">
+            <i class="fas fa-table-list"></i> {{underworldT "DashTab.Tables"}}
+          </button>
+        {{/if}}
+      </div>
+    </section>
+
+    <section class="uw-l-panel uw-l-morale tier-{{ledgerView.moraleTier.cls}}">
+      <h3>{{uwIcon "ui-morale"}} {{underworldT "DashTab.Morale"}} <span class="uw-l-tier">{{ledgerView.moraleTier.label}}</span></h3>
+      <div class="uw-l-morale-row">
+        {{#if isGM}}
+          <input type="number" name="morale" value="{{gang.morale}}" min="0" max="10" class="uw-l-num" title="{{underworldT 'DashTab.SetMorale'}}"/>
+        {{else}}
+          <span class="uw-l-num is-read" title="{{underworldT 'DashTab.MoraleLevel'}}">{{gang.morale}}</span>
+        {{/if}}
+        <span class="uw-l-pennants" title="{{underworldT 'DashTab.MoraleLevelValue' value=gang.morale}}">
+          {{#each ledgerView.morale.pips}}<span class="uw-l-pennant {{#if this.on}}on{{/if}}">{{uwIcon "orn-pip_flag"}}</span>{{/each}}
+        </span>
+      </div>
+      <p class="uw-l-flavor">{{ledgerView.moraleTier.text}}</p>
+    </section>
+
+    <section class="uw-l-panel uw-l-larder">
+      <h3>{{uwIcon "ui-supplies"}} {{underworldT "DashTab.Larder"}}
+        <span class="uw-l-price" title="{{underworldT 'DashTab.PriceHint'}}">{{underworldT "DashTab.OneRation"}} = <strong>{{supplyPriceFormatted}}</strong></span>
+      </h3>
+      <div class="uw-l-morale-row">
+        {{#if isGM}}
+          <input type="number" name="supplies" value="{{gang.supplies}}" min="0" max="30" class="uw-l-num" title="{{underworldT 'DashTab.SetSupplies'}}"/>
+        {{else}}
+          <span class="uw-l-num is-read" title="{{underworldT 'DashTab.Rations'}}">{{gang.supplies}}</span>
+        {{/if}}
+        <span class="uw-l-bar is-large"><span style="width: {{ledgerView.supplies.pct}}%"></span></span>
+        <span class="uw-l-of">/ 30 {{underworldT "DashTab.RationsUnit"}}</span>
+      </div>
+      <p class="uw-l-flavor">
+        {{#if (bajeryGte gang.supplies 10)}}{{{underworldT "DashTab.SuppliesFull" days=gang.supplies}}}
+        {{else if (bajeryGte gang.supplies 3)}}{{underworldT "DashTab.SuppliesLow"}}
+        {{else}}{{{underworldT "DashTab.SuppliesNone"}}}{{/if}}
+      </p>
+      <div class="uw-l-row-buttons">
+        <button type="button" data-action="buy-supplies" title="{{underworldT 'DashTab.BuyHint'}}">{{uwIcon "ui-supplies"}} {{underworldT "SuppliesDialog.Buy"}}</button>
+        {{#if isGM}}
+          <button type="button" data-action="set-supply-price" title="{{underworldT 'DashTab.PriceSetHint'}}">{{uwIcon "ui-treasury"}} {{underworldT "DashTab.SetPrice"}}</button>
+        {{/if}}
+      </div>
+    </section>
+
+    <section class="uw-l-panel uw-l-chest">
+      <h3>{{uwIcon "ui-tab_chest"}} {{underworldT "Upgrade.Stash"}}
+        {{#unless isGM}}<span class="uw-l-lock" title="{{underworldT 'DashTab.LockedHint'}}"><i class="fas fa-lock"></i> {{underworldT "DashTab.Locked"}}</span>{{/unless}}
+      </h3>
+      <div class="uw-l-coins-row">
+        <label class="uw-l-coinbox gc">
+          {{uwIcon "ui-coin_gc" "uw-l-coin-art"}}
+          <span class="uw-l-coin-name">{{underworldT "DashTab.Crowns"}} <small>{{underworldT "Units.GC"}}</small></span>
+          {{#if isGM}}<input type="number" name="treasury.gc" value="{{gang.treasury.gc}}" min="0"/>{{else}}<strong>{{gang.treasury.gc}}</strong>{{/if}}
+        </label>
+        <label class="uw-l-coinbox ss">
+          {{uwIcon "ui-coin_ss" "uw-l-coin-art"}}
+          <span class="uw-l-coin-name">{{underworldT "DashTab.Shillings"}} <small>{{underworldT "Units.SS"}}</small></span>
+          {{#if isGM}}<input type="number" name="treasury.ss" value="{{gang.treasury.ss}}" min="0"/>{{else}}<strong>{{gang.treasury.ss}}</strong>{{/if}}
+        </label>
+        <label class="uw-l-coinbox d">
+          {{uwIcon "ui-coin_d" "uw-l-coin-art"}}
+          <span class="uw-l-coin-name">{{underworldT "DashTab.Pennies"}} <small>{{underworldT "Units.BP"}}</small></span>
+          {{#if isGM}}<input type="number" name="treasury.d" value="{{gang.treasury.d}}" min="0"/>{{else}}<strong>{{gang.treasury.d}}</strong>{{/if}}
+        </label>
+      </div>
+      <p class="uw-l-purse">{{uwIcon "ui-treasury"}} {{underworldT "TreasuryDialog.YourPurse"}}: <strong>{{actorMoneyFormatted}}</strong></p>
+      <div class="uw-l-row-buttons">
+        <button type="button" data-action="deposit-treasury" title="{{underworldT 'DashTab.DepositHint'}}"><i class="fas fa-arrow-down"></i> {{underworldT "DashTab.Deposit"}}</button>
+        <button type="button" data-action="withdraw-treasury" title="{{underworldT 'DashTab.WithdrawHint'}}"><i class="fas fa-arrow-up"></i> {{underworldT "DashTab.Withdraw"}}</button>
+      </div>
+    </section>
+  </div>
+</div>

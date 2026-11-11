@@ -1,0 +1,58 @@
+{{!-- Księga Kompanii: Rozkazy jako talia – Świta, odblokowane karty rozkazów i zwinięta lista pozostałych --}}
+<div class="tactics-panel uw-l-orders">
+  <section class="uw-l-panel uw-l-orders-head">
+    <h3>{{uwIcon "ui-tab_orders"}} {{underworldT "TacticsTab.Title"}} <small>{{underworldT "Chat.Footer"}}: {{retinueCount}}/{{maxRetinue}}</small></h3>
+    <div class="uw-l-slots is-compact">
+      {{#each ledgerView.retinueSlots}}
+        {{#if this.npc}}
+          <div class="uw-l-slot is-filled" title="{{this.npc.name}} · {{this.npc.roleConfig.name}}">
+            <img src="{{this.npc.img}}" alt=""/>
+            <span class="uw-l-slot-name">{{this.npc.name}}</span>
+            <span class="uw-l-slot-role">{{uwIcon this.npc.roleGlyph}} {{this.npc.roleConfig.name}}</span>
+          </div>
+        {{else}}
+          <div class="uw-l-slot is-empty">{{uwIcon "ui-retinue"}} <span>{{underworldT "Plan.SlotEmpty"}}</span></div>
+        {{/if}}
+      {{/each}}
+    </div>
+    <p class="uw-l-hint">{{{underworldT "TacticsTab.HowTo"}}}</p>
+  </section>
+
+  <div class="uw-l-deck">
+    {{#each ledgerView.orders.unlocked}}
+    <article class="uw-l-order {{#if this.danger}}is-danger{{/if}} {{#if this.universal}}is-universal{{/if}}" data-order-id="{{this.id}}">
+      <header>
+        <span class="uw-l-order-glyph">{{uwIcon this.glyph}}</span>
+        <h4>{{this.name}}</h4>
+        <span class="uw-l-order-cost" title="{{this.costLabel}}">
+          {{#if this.danger}}{{uwIcon "ui-status_wounded"}}{{else if this.universal}}{{uwIcon "ui-morale"}}{{else}}{{#each this.costPips}}<span class="uw-l-adv"></span>{{/each}}{{/if}}
+        </span>
+      </header>
+      <p class="uw-l-order-desc">{{this.desc}}</p>
+      <p class="uw-l-order-effect">{{this.effect}}</p>
+      <footer>
+        <span class="uw-l-order-who">
+          {{#if this.executor}}<img src="{{this.executor.img}}" alt=""/> {{this.executor.name}}{{else}}{{uwIcon "ui-rank_lieutenant"}} {{underworldT "TacticsTab.PersonalAlways"}}{{/if}}
+        </span>
+        <button type="button" class="btn-order-tactic {{#if this.danger}}btn-danger{{/if}}" data-action="order-tactic" data-order="{{this.id}}">
+          {{#if this.danger}}{{underworldT "Orders.Dialog.MeatShieldButton"}}{{else}}{{underworldT "TacticsTab.Issue"}}{{/if}}
+        </button>
+      </footer>
+    </article>
+    {{/each}}
+  </div>
+
+  {{#if ledgerView.orders.locked.length}}
+  <details class="uw-l-panel uw-l-locked">
+    <summary>{{uwIcon "ui-tab_orders"}} {{underworldT "TacticsTab.Locked"}} <small>{{ledgerView.orders.locked.length}}</small></summary>
+    <ul>
+      {{#each ledgerView.orders.locked}}
+      <li title="{{this.effect}}">
+        {{uwIcon this.glyph}} <strong>{{this.name}}</strong>
+        <span>{{underworldT "TacticsTab.Requires"}}: {{this.reqRoleNames}}</span>
+      </li>
+      {{/each}}
+    </ul>
+  </details>
+  {{/if}}
+</div>

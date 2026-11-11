@@ -10,7 +10,8 @@ import { UnderworldTables } from "./scripts/tables-data.mjs";
 import { UnderworldRollTables } from "./scripts/roll-tables.mjs";
 import { OrderEffects } from "./scripts/order-effects.mjs";
 import { registry, registerSheetButton, addTokenTool, registerQuery, queryGM } from "../wfrp4e-companion-lib/scripts/companion-lib.mjs";
-import { t } from "./scripts/i18n.mjs";
+import { t, tFor } from "./scripts/i18n.mjs";
+import { MISSIONS } from "./scripts/world-data.mjs";
 
 const MODULE_ID = "wfrp4e-underworld";
 const recruitmentLocks = new Set();
@@ -77,6 +78,26 @@ Hooks.once("init", async function () {
     }
   });
 
+  // Wygląd panelu: nowa „Księga Kompanii” albo dotychczasowy (na czas przebudowy oba działają)
+  game.settings.register(MODULE_ID, "sheetStyle", {
+    name: "UNDERWORLD.Settings.SheetStyle.Name",
+    hint: "UNDERWORLD.Settings.SheetStyle.Hint",
+    scope: "client",
+    config: true,
+    type: String,
+    choices: {
+      ledger: "UNDERWORLD.Settings.SheetStyle.Ledger",
+      classic: "UNDERWORLD.Settings.SheetStyle.Classic"
+    },
+    default: "ledger",
+    onChange: (value) => {
+      document.body.classList.toggle("uw-ledger-chat", value !== "classic");
+      for (const app of foundry.applications.instances.values()) {
+        if (app instanceof GangSheet) app.render();
+      }
+    }
+  });
+
   game.settings.register(MODULE_ID, "customRumors", {
     name: "Custom rumours",
     hint: "Rumours defined by the GM.",
@@ -132,6 +153,14 @@ Hooks.once("init", async function () {
   // 2. Preload szablonów Handlebars
   await foundry.applications.handlebars.loadTemplates([
     `modules/${MODULE_ID}/templates/gang-sheet.hbs`,
+    `modules/${MODULE_ID}/templates/parts/ledger-header.hbs`,
+    `modules/${MODULE_ID}/templates/parts/ledger-nav.hbs`,
+    `modules/${MODULE_ID}/templates/parts/ledger-roster.hbs`,
+    `modules/${MODULE_ID}/templates/parts/ledger-plan.hbs`,
+    `modules/${MODULE_ID}/templates/parts/ledger-camp.hbs`,
+    `modules/${MODULE_ID}/templates/parts/ledger-chest.hbs`,
+    `modules/${MODULE_ID}/templates/parts/ledger-chronicle.hbs`,
+    `modules/${MODULE_ID}/templates/parts/ledger-orders.hbs`,
     `modules/${MODULE_ID}/templates/parts/info.hbs`,
     `modules/${MODULE_ID}/templates/parts/dashboard.hbs`,
     `modules/${MODULE_ID}/templates/parts/roster.hbs`,
@@ -171,9 +200,11 @@ Hooks.once("init", async function () {
       guard: { icon: "fas fa-shield-alt", label: "Badges.guard", cls: "guard" },
       retinue: { icon: "fas fa-user-shield", label: "Badges.retinue", cls: "retinue" }
     };
+    // Zlecenia typów kompanii opisane danymi niosą własną ikonę i kolor plakietki
+    const dataMission = MISSIONS[assignment]?.data ? MISSIONS[assignment] : null;
+    const item = map[assignment] ?? (dataMission && { icon: dataMission.icon, label: `Badges.${assignment}`, cls: dataMission.badge });
 
-    if (assignment && map[assignment] && status !== "arrested") {
-      const item = map[assignment];
+    if (item && status !== "arrested") {
       return new Handlebars.SafeString(`<span class="badge-mission ${item.cls}"><i class="${item.icon}"></i> ${t(item.label)}</span>`);
     }
 
@@ -206,11 +237,24 @@ Hooks.once("init", async function () {
     `);
   });
 
-  Handlebars.registerHelper("underworldRoleSelectOptions", function (currentRole) {
-    const norm = currentRole ? UnderworldTables.normalizeRole(currentRole) : null;
-    const roles = UnderworldTables.ROLES_CONFIG;
+  // Ikona ze sprite'a modułu: {{uwIcon "ui-morale" "klasa"}}; kolor dziedziczy z CSS (currentColor)
+  const spriteUrl = foundry.utils.getRoute(`modules/${MODULE_ID}/assets/ui/sprite.svg`);
+  Handlebars.registerHelper("uwIcon", function (id, cls) {
+    const extra = typeof cls === "string" ? ` ${Handlebars.escapeExpression(cls)}` : "";
+    return new Handlebars.SafeString(`<svg class="uw-icon${extra}" aria-hidden="true" focusable="false"><use href="${spriteUrl}#${Handlebars.escapeExpression(id)}"></use></svg>`);
+  });
+
+  // Tekst modułu dla typu kompanii z danych szablonu (karty czatu: typ ostatnio odczytanej kompanii)
+  Handlebars.registerHelper("underworldT", function (key, options) {
+    const hash = options.hash ?? {};
+    return tFor(options.data?.root?.companyType, key, Object.keys(hash).length ? hash : undefined);
+  });
+
+  Handlebars.registerHelper("underworldRoleSelectOptions", function (currentRole, options) {
+    const company = options?.data?.root?.companyType;
+    const norm = currentRole ? UnderworldTables.roleForCompany(currentRole, company) : null;
     let html = "";
-    for (const [key, cfg] of Object.entries(roles)) {
+    for (const [key, cfg] of UnderworldTables.rolesFor(company)) {
       const selected = norm === key ? "selected" : "";
       html += `<option value="${key}" ${selected}>${cfg.name}</option>`;
     }
@@ -385,6 +429,8 @@ Hooks.once("init", async function () {
 
 Hooks.once("ready", function () {
   console.log(`${MODULE_ID} | Ready.`);
+  // Karty czatu w wyglądzie Księgi (to samo ustawienie klienta co panel kompanii)
+  document.body.classList.toggle("uw-ledger-chat", game.settings.get(MODULE_ID, "sheetStyle") !== "classic");
 
   // Wczytanie wbudowanej bazy plotek i wydarzeń, potem tabele RollTable (kompendium i świat – tylko MG)
   UnderworldTables.loadWorldContent()
@@ -629,6 +675,26 @@ async function onRecruitQuery({ messageId, candidateId } = {}, { user } = {}) {
   if (!user || !message || !canRecruit(user, message)) return null;
   return executeRecruitChoice({ messageId, candidateId, userName: user.name });
 }
+
+// Sanitizer wiadomości czatu wycina <svg>, więc karty niosą tylko data-uw-glyph, a ikonę dokładamy przy renderze
+Hooks.on("renderChatMessageHTML", (message, html) => {
+  const glyphs = html.querySelectorAll?.(".wfrp4e-underworld [data-uw-glyph]") ?? [];
+  if (!glyphs.length) return;
+  const spriteUrl = foundry.utils.getRoute(`modules/${MODULE_ID}/assets/ui/sprite.svg`);
+  const SVG_NS = "http://www.w3.org/2000/svg";
+  for (const el of glyphs) {
+    const id = el.dataset.uwGlyph;
+    if (!id || el.querySelector("svg")) continue;
+    const svg = document.createElementNS(SVG_NS, "svg");
+    svg.setAttribute("class", "uw-icon");
+    svg.setAttribute("aria-hidden", "true");
+    svg.setAttribute("focusable", "false");
+    const use = document.createElementNS(SVG_NS, "use");
+    use.setAttribute("href", `${spriteUrl}#${id}`);
+    svg.append(use);
+    el.append(svg);
+  }
+});
 
 Hooks.on("renderChatMessageHTML", (message, html) => {
   const recruitCard = html.querySelector(".recruit-proposals-card");

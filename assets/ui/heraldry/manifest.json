@@ -1,0 +1,62 @@
+[
+  {
+    "id": "crest_underworld",
+    "file": "crest_underworld.svg",
+    "viewBox": "0 0 64 64",
+    "subject": "dagger and key crossed in saltire"
+  },
+  {
+    "id": "crest_outlaws",
+    "file": "crest_outlaws.svg",
+    "viewBox": "0 0 64 64",
+    "subject": "longbow behind an oak leaf"
+  },
+  {
+    "id": "crest_mercenaries",
+    "file": "crest_mercenaries.svg",
+    "viewBox": "0 0 64 64",
+    "subject": "two halberds in saltire under a small swallow-tailed banner"
+  },
+  {
+    "id": "crest_smugglers",
+    "file": "crest_smugglers.svg",
+    "viewBox": "0 0 64 64",
+    "subject": "anchor with a rope wound around the shank"
+  },
+  {
+    "id": "crest_investigators",
+    "file": "crest_investigators.svg",
+    "viewBox": "0 0 64 64",
+    "subject": "open eye above a quill"
+  },
+  {
+    "id": "crest_cult",
+    "file": "crest_cult.svg",
+    "viewBox": "0 0 64 64",
+    "subject": "hooded candle: a candle whose flame is wrapped by a hood shape"
+  },
+  {
+    "id": "skyline_city",
+    "file": "skyline_city.svg",
+    "viewBox": "0 0 1000 140",
+    "subject": "half-timbered gables, a church spire, a city wall with a gate"
+  },
+  {
+    "id": "skyline_village",
+    "file": "skyline_village.svg",
+    "viewBox": "0 0 1000 140",
+    "subject": "thatched cottages, a windmill, fences, a lone tree"
+  },
+  {
+    "id": "skyline_forest",
+    "file": "skyline_forest.svg",
+    "viewBox": "0 0 1000 140",
+    "subject": "dense pines and oaks, a woodcutter's hut"
+  },
+  {
+    "id": "skyline_mountains",
+    "file": "skyline_mountains.svg",
+    "viewBox": "0 0 1000 140",
+    "subject": "jagged peaks, a pass road, a small watchtower"
+  }
+]

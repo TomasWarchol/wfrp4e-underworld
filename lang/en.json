@@ -153,7 +153,7 @@
       },
       "procure": {
         "Name": "Scavenge and Forage",
-        "Reward": "1d3 rations + 1d8+1 s",
+        "Reward": "1d3 rations + 1d8+1 SS",
         "Names": {
           "village": "Scavenge the Fields",
           "forest": "Forage in the Woods",
@@ -163,7 +163,7 @@
       },
       "pickpocket": {
         "Name": "Pickpocketing",
-        "Reward": "coin (1d10+5 s × target), sometimes a valuable",
+        "Reward": "coin (1d10+5 SS × target), sometimes a valuable",
         "Names": {
           "village": "Thieving at the Fair"
         },
@@ -218,12 +218,12 @@
       },
       "intimidate": {
         "Name": "Intimidation / Extortion",
-        "Reward": "1d8+4 s",
+        "Reward": "1d8+4 SS",
         "Desc": "A one-off shakedown of a stallholder or innkeeper."
       },
       "racket": {
         "Name": "Protection Racket",
-        "Reward": "1d6 s every night (while it lasts)",
+        "Reward": "1d6 SS every night (while it lasts)",
         "Desc": "Put a street under “protection”. Daily income, but rivals may come to claim it.",
         "InputLabel": "Which turf? (street, market, district)",
         "InputPlaceholder": "e.g. the Fish Market"
@@ -267,7 +267,7 @@
       },
       "smuggle": {
         "Name": "Smuggling",
-        "Reward": "2d10+5 s (×1.5 in the mountains)",
+        "Reward": "2d10+5 SS (×1.5 in the mountains)",
         "Names": {
           "mountains": "Smuggle over the Pass"
         },
@@ -291,6 +291,180 @@
         "Name": "Tend the Wounded",
         "Reward": "Wounded → Resting (no test)",
         "Desc": "Fresh dressings and herbs for a wounded comrade."
+      },
+      "patrol": {
+        "Name": "Patrol",
+        "Reward": "Recon token; on SL 3+ a Lead and a trophy",
+        "Desc": "A squad sweeps the area, looking for the enemy and good roads.",
+        "Success": "{name} leads the patrol and returns with the lie of the land.",
+        "Fail": "{name} wanders the wilds and comes back with nothing.",
+        "Names": {
+          "city": "Street Patrol",
+          "village": "Village Rounds",
+          "forest": "Forest Patrol",
+          "mountains": "Pass Patrol"
+        }
+      },
+      "garrison": {
+        "Name": "Garrison Duty",
+        "Reward": "1d8+4 SS (SL 3+: another 1d6 SS)",
+        "Desc": "Quiet service at a gate, bridge or storehouse. Small but steady money.",
+        "Success": "{name} stands the watch and collects the pay.",
+        "Fail": "{name} falls asleep at the post. Nobody pays for a watch like that.",
+        "Names": {
+          "city": "Gate Watch",
+          "village": "Mill Guard",
+          "forest": "Road Post",
+          "mountains": "Pass Outpost"
+        }
+      },
+      "requisition": {
+        "Name": "Requisition",
+        "Reward": "1d3+1 rations (SL 3+: +1)",
+        "Desc": "Supplies from the locals, with a receipt or without. Failure hurts the company's name.",
+        "Success": "{name} returns with a cart of provisions.",
+        "Fail": "{name} meets resistance from the peasants and returns empty-handed.",
+        "Names": {
+          "city": "Quarters and Provisions",
+          "village": "Village Requisition",
+          "forest": "Foraging",
+          "mountains": "Hamlet Requisition"
+        }
+      },
+      "escort": {
+        "Name": "Escort",
+        "Reward": "2d10+5 SS (SL 3+: Infamy −1)",
+        "Desc": "Protecting a merchant, a cart or a messenger on a dangerous stretch.",
+        "InputLabel": "Who are you protecting?",
+        "InputPlaceholder": "e.g. a merchant from Nuln, a salt cart...",
+        "Success": "{name} safely delivers: <em>{target}</em>.",
+        "Fail": "{name} failed to protect: <em>{target}</em>. The men have lost heart.",
+        "Names": {
+          "city": "Escort through Town",
+          "village": "Escort to the Fair",
+          "forest": "Escort through the Forest",
+          "mountains": "Escort over the Pass"
+        }
+      },
+      "contract": {
+        "Name": "Contract",
+        "Reward": "3d10+10 SS times the contract tier (SL 3+: trophy)",
+        "Desc": "A paid military task: breaking a warband, defending a village, retaking a depot.",
+        "InputLabel": "What is the contract?",
+        "InputPlaceholder": "e.g. break the band on the highway...",
+        "Success": "{name} fulfils the contract: <em>{target}</em>.",
+        "Fail": "{name} fails the contract: <em>{target}</em>. The employer will not pay and will talk."
+      },
+      "drill": {
+        "Name": "Drill",
+        "Reward": "Cohesion token, +5 OXP (SL 3+: +1 Morale)",
+        "Desc": "A full day of formation practice. The men curse, then fight better.",
+        "Success": "{name} works the men hard. The line looks as it should.",
+        "Fail": "{name} shouts all day and the line still falls apart."
+      },
+      "ambush": {
+        "Name": "Turn on the Hunters",
+        "Reward": "Heat −1 and captured weapons (SL 3+: +1 Morale)",
+        "Desc": "The band waits in the undergrowth for those who hunt it. A good ambush scares off pursuit.",
+        "Success": "{name} springs the ambush. The hunters flee and leave their weapons behind.",
+        "Fail": "{name} walks into their own trap. The band falls back in disorder."
+      },
+      "ransom": {
+        "Name": "Ransom",
+        "Reward": "3d10+5 SS, Heat +1 (SL 3+: another 2d10 SS)",
+        "Desc": "Seize a wealthy traveller and write to the family. The gold comes, but people talk.",
+        "InputLabel": "Who are you holding for ransom?",
+        "InputPlaceholder": "e.g. the miller's son, a merchant from Bögenhafen...",
+        "Success": "{name} collects the ransom for: <em>{target}</em>.",
+        "Fail": "{name} gets no ransom for: <em>{target}</em>. The matter is getting loud."
+      },
+      "toll": {
+        "Name": "Bridge Toll",
+        "Reward": "1d10+3 SS (SL 3+: +1 ration)",
+        "Desc": "The band blocks a bridge or ford and takes a “toll” from everyone who wants to cross.",
+        "Success": "{name} collects tolls until evening.",
+        "Fail": "{name} meets travellers who will not pay. Someone ran for the watch."
+      },
+      "river_run": {
+        "Name": "River Run",
+        "Reward": "the load's value times 2.5 and times the route (SL 3+: Scrutiny −1); needs cargo",
+        "Desc": "A night run with contraband past the locks and customs posts. Takes the most valuable cargo from the stash; on a failure the load goes to the bottom.",
+        "Success": "{name} brings the barge through and hands the load to the buyer.",
+        "Fail": "{name} turns back before the post. The cargo had to be sunk."
+      },
+      "cache": {
+        "Name": "The Stash",
+        "Reward": "Scrutiny −1 (SL 3+: +1 ration)",
+        "Desc": "Hiding cargo and traces in sunken crates, under floorboards or in the reeds.",
+        "Success": "{name} hides everything that should not be seen.",
+        "Fail": "{name} finds no safe place. The goods stay in plain sight."
+      },
+      "contraband": {
+        "Name": "Contraband Pickup",
+        "Reward": "contraband to carry (SL 3+: a second load)",
+        "Desc": "A meeting with a supplier at a lonely landing. Goods on credit, paid after the sale.",
+        "Success": "{name} returns with goods from the supplier.",
+        "Fail": "{name} waits until dawn, but the supplier never comes. Someone may have followed them."
+      },
+      "buy_secret": {
+        "Name": "Buy a Secret",
+        "Reward": "a document to sell or report; on SL 3+ a Lead",
+        "Desc": "A few coins for a maid, a scribe or a drunken sergeant in return for something they should not say.",
+        "Success": "{name} returns with a secret written on a scrap of paper.",
+        "Fail": "{name} runs into someone who starts asking questions."
+      },
+      "letter_swap": {
+        "Name": "Swap a Letter",
+        "Reward": "2d10+5 SS times the target, +5 OXP (SL 3+: a document)",
+        "Desc": "Intercept a letter, copy it and slip it back, or swap it for a forgery.",
+        "InputLabel": "Whose letter?",
+        "InputPlaceholder": "e.g. the burgomaster's correspondence, orders for the garrison...",
+        "Success": "{name} swaps the letter: <em>{target}</em>. Nobody noticed a thing.",
+        "Fail": "{name} could not put the letter back in time: <em>{target}</em>. The recipient knows someone read it."
+      },
+      "report": {
+        "Name": "Report to the Principal",
+        "Reward": "the document's value times 1.25, no risk (SL 3+: another 1d10 SS); needs a document",
+        "Desc": "The most valuable document in the safehouse goes to the principal, who pays better than a secret-buyer and tells no one.",
+        "Success": "{name} hands the document to the principal and collects the payment.",
+        "Fail": "{name} brings the document, but the principal finds it worthless. It goes back to the safehouse."
+      },
+      "ritual": {
+        "Name": "Ritual",
+        "Reward": "Exaltation token, +1 Morale (SL 3+: +5 OXP)",
+        "Desc": "Night rites in a cellar or on a hilltop. The faithful return full of fervour.",
+        "Success": "{name} leads the ritual. The faithful leave changed.",
+        "Fail": "{name} stumbles over the invocation. The faithful whisper of an ill omen."
+      },
+      "infiltrate": {
+        "Name": "Infiltration",
+        "Reward": "Recon token; on SL 3+ a Lead",
+        "Desc": "A cultist enters a guild, temple or rich house as a servant or guest.",
+        "Success": "{name} wins trust and returns with the layout of the house and its people's habits.",
+        "Fail": "{name} never gets past the threshold. Nobody there needs a new face."
+      },
+      "abduction": {
+        "Name": "Abduction",
+        "Reward": "2d10+5 SS from the Master times the target, +1 Morale (SL 3+: +5 OXP and spoils)",
+        "Desc": "Someone vanishes from the street at night. The Master pays and asks nothing, and the brotherhood does not say why.",
+        "InputLabel": "Who are you taking?",
+        "InputPlaceholder": "e.g. a beggar from the temple steps, a councillor's son...",
+        "Success": "{name} brings to the sanctum: <em>{target}</em>.",
+        "Fail": "{name} failed to take: <em>{target}</em>. The screams woke the whole street."
+      },
+      "intercept": {
+        "Name": "Intercept a Courier",
+        "Reward": "a document (SL 3+: Exposure −1)",
+        "Desc": "An ambush on a courier on the road. The satchel of letters changes hands before anyone notices.",
+        "Success": "{name} returns with the courier's satchel full of letters.",
+        "Fail": "{name} spooked the courier, who galloped straight to the nearest guardhouse."
+      },
+      "stone_circle": {
+        "Name": "The Stone Circle",
+        "Reward": "+1 Morale, +5 OXP (SL 3+: spoils)",
+        "Desc": "A night journey to an old ring of standing stones in the wilds. Sometimes those who came before left something behind.",
+        "Success": "{name} returns from the circle before dawn. The faithful hang on every word of the tale.",
+        "Fail": "{name} wanders the wilds and comes back soaked and empty-handed."
       }
     },
     "MissionCategories": {
@@ -765,6 +939,86 @@
       "duelist": {
         "Name": "Swashbuckler / Duellist",
         "Desc": "A former duellist or hired blade. Has little honour but a fine sword; fights with flair and for show."
+      },
+      "sergeant": {
+        "Name": "Sergeant",
+        "Desc": "Holds the line and keeps discipline. First in the shield wall, last at the stewpot."
+      },
+      "halberdier": {
+        "Name": "Halberdier",
+        "Desc": "Stops charges and pulls riders from their saddles. The hard core of any unit."
+      },
+      "crossbowman": {
+        "Name": "Crossbowman",
+        "Desc": "An accurate shot at range and a sharp eye on patrol."
+      },
+      "standard_bearer": {
+        "Name": "Standard Bearer",
+        "Desc": "Carries the company's colours. Where the banner flies, men do not run."
+      },
+      "surgeon": {
+        "Name": "Barber-Surgeon",
+        "Desc": "Stitches wounds, sets bones and knows when to amputate."
+      },
+      "quartermaster": {
+        "Name": "Quartermaster",
+        "Desc": "Knows the price of every sack of flour and can squeeze more from the baggage train than it holds."
+      },
+      "helmsman": {
+        "Name": "Helmsman",
+        "Desc": "Knows every shoal and eddy. Steers the barge at night without a lantern."
+      },
+      "boatman": {
+        "Name": "Boatman",
+        "Desc": "Strong arms and a short temper. Rows, hauls barrels and fights when needed."
+      },
+      "lookout": {
+        "Name": "Lookout",
+        "Desc": "Sits at the bow and sees the customs men before they see the barge."
+      },
+      "forger": {
+        "Name": "Forger",
+        "Desc": "Bills of lading, seals, guild stamps. Every cargo gets clean papers."
+      },
+      "purser": {
+        "Name": "Purser",
+        "Desc": "Counts the barrels, haggles the price and remembers who is owed what."
+      },
+      "eavesdropper": {
+        "Name": "Eavesdropper",
+        "Desc": "Sits in a tavern corner with a mug and hears every word at three tables."
+      },
+      "courier": {
+        "Name": "Courier",
+        "Desc": "Knows the shortcuts, bridges and gates. The letter arrives before anyone notices it left."
+      },
+      "enforcer": {
+        "Name": "Enforcer",
+        "Desc": "When words are not enough, the enforcer comes. Quiet work, no witnesses."
+      },
+      "acolyte": {
+        "Name": "Acolyte",
+        "Desc": "Carries the candles, guards the sanctum and learns secrets they do not yet understand."
+      },
+      "zealot": {
+        "Name": "Zealot",
+        "Desc": "Believes without reserve and throws themself at anyone who stands in the brotherhood's way."
+      },
+      "spy": {
+        "Name": "Spy",
+        "Desc": "Has friends in the town hall and the temple. Nobody suspects who they really serve."
+      },
+      "assassin": {
+        "Name": "Assassin",
+        "Desc": "Dagger, poison, garrotte. Comes once and leaves no trace."
+      },
+      "orator": {
+        "Name": "Orator",
+        "Desc": "Can convince the desperate that the brotherhood will give what the gods refused them."
+      },
+      "alchemist": {
+        "Name": "Alchemist",
+        "Desc": "Incense, poisons and draughts for the rites. Knows the doses that heal and the ones that kill."
       }
     },
     "Strengths": {
@@ -902,7 +1156,7 @@
       "kleptomaniac": {
         "Name": "Kleptomaniac",
         "Desc": "−1 Morale after a job; 15% chance of stealing from the treasury",
-        "Camp": "pilfers the crew's treasury (1 s)"
+        "Camp": "pilfers the crew's treasury (1 SS)"
       },
       "loudmouth": {
         "Name": "Loudmouth",
@@ -914,7 +1168,7 @@
       },
       "gambler": {
         "Name": "Gambler",
-        "Desc": "After camp, 25% chance of losing 1d6 s from the treasury",
+        "Desc": "After camp, 25% chance of losing 1d6 SS from the treasury",
         "Camp": "gambles away the crew's money at cards"
       },
       "lazy": {
@@ -1033,7 +1287,7 @@
       },
       "craft_merchant": {
         "Name": "Former Trade: Factor / Merchant",
-        "Desc": "Knows trade routes, tolls and how to reckon profit. Increases the profit from fencing, theft and scavenging by +2 s for every successful job."
+        "Desc": "Knows trade routes, tolls and how to reckon profit. Increases the profit from fencing, theft and scavenging by +2 SS for every successful job."
       },
       "craft_woodsman": {
         "Name": "Former Trade: Forester / Poacher",
@@ -1071,9 +1325,9 @@
     "MissionFallback": "Job",
     "RecruitFallback": "Outlaw #{n}",
     "Units": {
-      "SS": "s",
+      "SS": "SS",
       "GC": "GC",
-      "BP": "d",
+      "BP": "BP",
       "OXP": "OXP"
     },
     "Rumor": {
@@ -1105,7 +1359,7 @@
       "WeekAlreadyResolved": "This crew's week has already been resolved for this world day. Advance the game time.",
       "GMResolvesQueue": "The GM resolves the assignments.",
       "NoPendingAssignments": "No assignments are waiting to be resolved.",
-      "NotEnoughFunds": "Not enough money in the stash! You need {cost} s.",
+      "NotEnoughFunds": "Not enough money in the stash! You need {cost} SS.",
       "CampAlreadyResolved": "This crew's night camp has already been resolved for this world day.",
       "CampWaitsForQueue": "Some assignments are waiting for the GM – the camp comes after they are resolved."
     },
@@ -1336,7 +1590,7 @@
       "payoff": {
         "Name": "Generous Gift",
         "Desc": "The fence presses a purse into a soldier's hand and whispers how many more there could be.",
-        "Effect": "A human opponent must pass a Willpower test; on a failure they leave the fight (the GM decides whether they walk away or switch sides). The purse (1d10 s) is lost."
+        "Effect": "A human opponent must pass a Willpower test; on a failure they leave the fight (the GM decides whether they walk away or switch sides). The purse (1d10 SS) is lost."
       },
       "salve": {
         "Name": "Hedge Healer's Salve",
@@ -1372,7 +1626,12 @@
         "Result": "Event"
       },
       "Created": "Crew: created {count} rumour and event tables in the Tables tab (folder “{folder}”).",
-      "EventsUpgraded": "The events table (terrain: {terrain}) was replaced with a new version ({count} entries)."
+      "EventsUpgraded": "The events table (terrain: {terrain}) was replaced with a new version ({count} entries).",
+      "ProfileEvents": {
+        "Name": "Camp Events",
+        "Desc": "Night events of this company type. Some nights draw from this table instead of the terrain events. The result flags (Morale, supplies, coins, role, terrains) change the company's state."
+      },
+      "ProfileCreated": "Created the editable table “{name}” (folder “{folder}”)."
     },
     "Title": "Crew",
     "None": "None",
@@ -1399,7 +1658,27 @@
       "cover_tracks": "Covering Tracks",
       "tend_wounded": "Dressings",
       "guard": "Watch",
-      "retinue": "Chief's Retinue"
+      "retinue": "Chief's Retinue",
+      "patrol": "Patrol",
+      "garrison": "Garrison",
+      "requisition": "Requisition",
+      "escort": "Escort",
+      "contract": "Contract",
+      "drill": "Drill",
+      "ambush": "Hunters",
+      "ransom": "Ransom",
+      "toll": "Toll",
+      "river_run": "River Run",
+      "cache": "Stash",
+      "contraband": "Pickup",
+      "buy_secret": "Secret",
+      "letter_swap": "Letter",
+      "report": "Report",
+      "ritual": "Ritual",
+      "infiltrate": "Infiltration",
+      "abduction": "Abduction",
+      "intercept": "Courier",
+      "stone_circle": "Circle"
     },
     "Status": {
       "Busy": "Busy",
@@ -1488,6 +1767,12 @@
       "Queue": {
         "Name": "GM queue in daily mode",
         "Hint": "When enabled, jobs sent by players don't resolve at once – they wait until the GM clicks “Resolve Assignments” (or runs the night camp). Jobs sent by the GM resolve immediately. Does not apply to the Crew Week."
+      },
+      "SheetStyle": {
+        "Name": "Company sheet style",
+        "Hint": "The Company Ledger is the new look of an Old World war ledger. Classic is the previous sheet.",
+        "Ledger": "Company Ledger",
+        "Classic": "Classic"
       }
     },
     "Recruit": {
@@ -1530,7 +1815,15 @@
     },
     "Ops": {
       "ToTreasury": "{amount} went into the stash.",
-      "PatronCut": "Patron's cut ({percent}%): {cut} · to the stash: {net}."
+      "PatronCut": "Patron's cut ({percent}%): {cut} · to the stash: {net}.",
+      "DataEffect": {
+        "Morale": "Morale {value}.",
+        "Heat": "Heat {value}.",
+        "Xp": "Operational Experience {value}."
+      },
+      "NoCargo": "{mission}: no suitable loot to take along.",
+      "Cargo": "Load: {item}.",
+      "CargoLost": "Lost load: {item}."
     },
     "Loot": {
       "Hot": "hot goods",
@@ -1538,7 +1831,7 @@
       "ItemDescHot": "Crew loot: {origin} – hot goods, someone is looking for it.",
       "Transferred": "{item} goes into {actor}'s inventory.",
       "DiscardTitle": "Get rid of the loot?",
-      "DiscardText": "Throw away, give away or hide <strong>{name}</strong> (~{value} s) for good? The loot will disappear from the crew's hideout."
+      "DiscardText": "Throw away, give away or hide <strong>{name}</strong> (~{value} SS) for good? The loot will disappear from the crew's hideout."
     },
     "Report": {
       "QueueTitle": "Crew assignments report",
@@ -1557,7 +1850,7 @@
         "Fail": "{name} tried to shadow <strong>{target}</strong>, but was spotted and had to back off."
       },
       "Tavern": {
-        "Success": "{name} bought a few rounds at the inn ({cost} s from the stash) and drew out some interesting information.",
+        "Success": "{name} bought a few rounds at the inn ({cost} SS from the stash) and drew out some interesting information.",
         "Fail": "{name} sat in the tavern all day but heard nothing of value."
       },
       "Procure": {
@@ -1566,7 +1859,7 @@
         "Fail": "Nothing of value could be found without raising the alarm."
       },
       "Pickpocket": {
-        "Success": "{name} robbed a few marks – cash: {coins} s.",
+        "Success": "{name} robbed a few marks – cash: {coins} SS.",
         "Extra": "On top of that: {loot}.",
         "Fail": "{name} was nearly caught red-handed! Morale −1."
       },
@@ -1598,7 +1891,7 @@
       },
       "Racket": {
         "DefaultDistrict": "the Docks District",
-        "Success": "The <strong>{district}</strong> turf pays for “protection”. Every night in the city the stash gets {daily} s (per week: {weekly}), until rivals come to claim it.",
+        "Success": "The <strong>{district}</strong> turf pays for “protection”. Every night in the city the stash gets {daily} SS (per week: {weekly}), until rivals come to claim it.",
         "Fail": "The <strong>{district}</strong> turf already has its “protectors”. {name} leaves with nothing."
       },
       "Fence": {
@@ -1609,7 +1902,7 @@
         "Returned": "The loot goes back to the hideout."
       },
       "Intimidate": {
-        "Success": "{name} successfully intimidates the victim – takings: {coins} s.",
+        "Success": "{name} successfully intimidates the victim – takings: {coins} SS.",
         "Fail": "{name} tried to scare the target but met resistance. The crew grumbles (Morale −1)."
       },
       "RumorSpread": {
@@ -1622,8 +1915,8 @@
         "HeatDown": "The report on the crew ends up in the stove – Heat −1.",
         "Favor": "Favour bought: <em>{favor}</em>.",
         "FavorDefault": "a favour",
-        "Paid": "{name} hands over a bribe ({cost} s).",
-        "Fail": "{name} hands over a bribe ({cost} s), but the official takes the money and does nothing."
+        "Paid": "{name} hands over a bribe ({cost} SS).",
+        "Fail": "{name} hands over a bribe ({cost} SS), but the official takes the money and does nothing."
       },
       "TheMan": {
         "Courier": "Street Courier",
@@ -1641,7 +1934,7 @@
       },
       "Smuggle": {
         "Default": "the cargo",
-        "Success": "{name} smuggled <em>{cargo}</em>. The buyer paid {coins} s.",
+        "Success": "{name} smuggled <em>{cargo}</em>. The buyer paid {coins} SS.",
         "Fail": "{name} tried to smuggle <em>{cargo}</em>, but the goods were confiscated or had to be abandoned!"
       },
       "Forge": {
@@ -1666,7 +1959,7 @@
         "Frost": "biting frost",
         "Comfortable": "Comfortable ({place})",
         "BasicNoFunds": "Basic (no money for private rooms)",
-        "NoFundsNotify": "The stash is {cost} s short for comfortable lodgings. Basic lodgings used instead."
+        "NoFundsNotify": "The stash is {cost} SS short for comfortable lodgings. Basic lodgings used instead."
       },
       "Food": {
         "Fasting": "Fasting – nobody eats (−1 Morale)",
@@ -1691,7 +1984,7 @@
       },
       "Flaw": {
         "Resting": "status: resting",
-        "Lost": "~{value} s lost",
+        "Lost": "~{value} SS lost",
         "Ration": "−1 ration",
         "EmptyLarder": ", but the larder was empty! <em>(−1 Morale)</em>"
       },
@@ -1703,7 +1996,7 @@
       "FlavorWeek": "Report: Crew Week",
       "FlavorNight": "End of Day: the Retinue's Night Rest",
       "GMResolvesWeekHint": "The GM resolves the crew's week. Plan assignments in the Assignments tab.",
-      "CostPerWeek": "{cost} s / week",
+      "CostPerWeek": "{cost} SS / week",
       "NoHealthy": "No healthy followers in the camp!",
       "Terrain": "Terrain",
       "Lodging": "Place / Lodgings",
@@ -1729,7 +2022,7 @@
     },
     "Racket": {
       "Dormant": "The crew is out of the city – the racket waits for its return.",
-      "Income": "Protection money from the {district} turf: {income} s.",
+      "Income": "Protection money from the {district} turf: {income} SS.",
       "Lost": "A rival gang took over the turf after a night brawl – the racket is lost, Heat +1."
     },
     "Desertion": {
@@ -1851,13 +2144,13 @@
     },
     "Bribe": {
       "WhatFor": "What are we paying for?",
-      "Hush": "Hush it up: Heat −1 (20 s)",
-      "Favor": "A favour (amount in the description, default 5 s)",
+      "Hush": "Hush it up: Heat −1 (20 SS)",
+      "Favor": "A favour (amount in the description, default 5 SS)",
       "WhoToFree": "Who to get out?",
       "WhatFavor": "What favour, and for how much?",
-      "FavorPlaceholder": "e.g. The gate guard looks the other way, 5 s",
+      "FavorPlaceholder": "e.g. The gate guard looks the other way, 5 SS",
       "LostOnFail": "The bribe is lost even if the test fails.",
-      "Release": "Release from arrest (15 s)"
+      "Release": "Release from arrest (15 SS)"
     },
     "Terrain": {
       "RacketWaits": "The city racket waits for the crew to return.",
@@ -1996,12 +2289,12 @@
     "TreasuryDialog": {
       "YourPurse": "Your own purse",
       "DepositHow": "How much do you want to put into the common stash?",
-      "DepositHint": "A deposit over 1 GC (20 s) is rewarded with <strong>+1 Morale</strong> for the whole crew!",
+      "DepositHint": "A deposit over 1 GC (20 SS) is rewarded with <strong>+1 Morale</strong> for the whole crew!",
       "Deposit": "Deposit Coins",
       "AmountZero": "Enter an amount greater than 0!",
       "Balance": "The crew's stash",
       "WithdrawHow": "How much do you want to take into your purse?",
-      "MutinyRisk": "<strong>Risk of Mutiny:</strong> Outlaws keep an eye on the common loot! Taking more than 10 s requires the chief to pass a Leadership test. On a failure the crew loses <strong>1–2 Morale</strong>!",
+      "MutinyRisk": "<strong>Risk of Mutiny:</strong> Outlaws keep an eye on the common loot! Taking more than 10 SS requires the chief to pass a Leadership test. On a failure the crew loses <strong>1–2 Morale</strong>!",
       "Withdraw": "Take Coins"
     },
     "SuppliesDialog": {
@@ -2015,9 +2308,9 @@
       "Buy": "Buy Supplies"
     },
     "PriceDialog": {
-      "Intro": "Set the price of 1 ration of food at the local market, in brass pennies (d):",
-      "Unit": "pennies (d)",
-      "Hint": "Tip: 12 d = 1 silver shilling (standard). During plague/winter: 24 d (2 s). In fertile lowlands: 6 d.",
+      "Intro": "Set the price of 1 ration of food at the local market, in brass pennies (BP):",
+      "Unit": "pennies (BP)",
+      "Hint": "Tip: 12 BP = 1 silver shilling (standard). During plague/winter: 24 BP (2 SS). In fertile lowlands: 6 BP.",
       "Title": "Set Supply Price (GM Panel)",
       "Save": "Save Price"
     },
@@ -2219,7 +2512,9 @@
       "Code": "Crew Code / Internal Rules:",
       "CodePlaceholder": "Blood oaths, rules for splitting the loot, no snitching...",
       "Notes": "Chronicle / Chief's Notes:",
-      "NotesPlaceholder": "How the retinue was founded, old oaths, the party's goals..."
+      "NotesPlaceholder": "How the retinue was founded, old oaths, the party's goals...",
+      "TypeChangeTitle": "Change the company type?",
+      "TypeChangeText": "The roles of {count} members will be converted to their equivalents in the new type. Available jobs and wording will change too. Continue?"
     },
     "DashTab": {
       "CampStandard": "Lodging / Camp Standard",
@@ -2269,12 +2564,12 @@
       "Crowns": "CROWNS",
       "CrownsAbbr": "GC (Gold)",
       "Shillings": "SHILLINGS",
-      "ShillingsAbbr": "s (Silver)",
+      "ShillingsAbbr": "SS (Silver)",
       "Pennies": "PENNIES",
-      "PenniesAbbr": "d (Brass)",
+      "PenniesAbbr": "BP (Brass)",
       "DepositHint": "Move coins from your purse into the crew's common stash (+1 Morale for generous gifts)",
       "Deposit": "Deposit from your purse",
-      "WithdrawHint": "Take coins from the crew's stash (taking more than 10 s requires a Leadership test — risk of losing Morale!)",
+      "WithdrawHint": "Take coins from the crew's stash (taking more than 10 SS requires a Leadership test — risk of losing Morale!)",
       "Withdraw": "Take into your purse",
       "ResolveQueueHint": "Game Master: resolve the assignments planned by the players (one report in the chat)",
       "ResolveQueue": "Resolve Assignments ({count})",
@@ -2313,6 +2608,3199 @@
     },
     "Packs": {
       "Tables": "Underworld Crew – Rumours and Events"
+    },
+    "Plan": {
+      "Pool": "Ready for tasks",
+      "DragHint": "Drag a portrait onto a job card or onto a free place in the retinue. Grey portraits are already busy.",
+      "SlotEmpty": "Free place",
+      "SlotHint": "Drop a portrait here to join the retinue"
+    },
+    "Profiles": {
+      "mercenaries": {
+        "Ranks": {
+          "rookie": {
+            "Desc": "A fresh mercenary without much experience on the road."
+          },
+          "lieutenant": {
+            "Desc": "+30 to tests, authority (+1 company Morale), command orders (unique rank – one per company; needs over 60–80 days of service)."
+          }
+        },
+        "Flaws": {
+          "kleptomaniac": {
+            "Camp": "pilfers the company's treasury (1 SS)"
+          },
+          "gambler": {
+            "Camp": "gambles away the company's money at cards"
+          },
+          "traitor": {
+            "Desc": "10% chance of leaking information on a spying job (+1 Infamy)",
+            "Camp": "information about the company leaks out — +1 Infamy"
+          },
+          "in_debt": {
+            "Desc": "10% chance after camp that creditors sniff around the camp (+1 Infamy)",
+            "Camp": "creditors are hard on his heels — +1 Infamy"
+          },
+          "clumsy": {
+            "Desc": "−10 to scavenging and forgery; breaks tools and ruins spoils"
+          },
+          "witchhunter_mark": {
+            "Desc": "A failure raises Infamy"
+          },
+          "bloodthirsty": {
+            "Desc": "Every successful escort, requisition or contract gives +1 Infamy through needless brutality"
+          },
+          "wanted": {
+            "Desc": "+1 Infamy after a failure; risk of being recognised"
+          },
+          "coward": {
+            "Desc": "−10 to escorts"
+          },
+          "alcoholic": {
+            "Desc": "−10 to patrols and garrison duty; 20% chance of being unfit after camp"
+          },
+          "old_slow": {
+            "Desc": "−10 to patrols and garrison duty"
+          },
+          "repulsive": {
+            "Desc": "−10 to selling trophies (puts people off)"
+          },
+          "one_eyed": {
+            "Desc": "−10 to patrols and garrison duty"
+          },
+          "squeamish": {
+            "Desc": "−10 to requisitions, contracts and tending the wounded"
+          },
+          "snorer": {
+            "Desc": "−10 to patrols and garrison duty"
+          },
+          "proud": {
+            "Desc": "−10 to selling trophies"
+          },
+          "jinxed": {
+            "Desc": "−10 to patrols and garrison duty"
+          }
+        },
+        "Perks": {
+          "craft_chirurgeon": {
+            "Desc": "Before taking to the road he stitched wounds and set bones. During night camp he automatically heals 1 wounded soldier without using supplies."
+          },
+          "craft_blacksmith": {
+            "Desc": "Work at bellows and anvil gives strength and a knowledge of weapons. Permanent +10 to jobs with weapons and a 50% discount on gear for the company."
+          },
+          "craft_innkeeper": {
+            "Desc": "Knows the secrets of brewing and loosening tongues. Raises company Morale by +1 every night camp, and tavern eavesdropping brings an extra rumour."
+          },
+          "blood_brotherhood": {
+            "Name": "Blood Oath with the Captain",
+            "Desc": "Swore a bloody rite of loyalty. Will never betray, never panics in camp and once per session may take a Critical Wound aimed at the captain."
+          },
+          "battle_scarred": {
+            "Desc": "Survived many wounds and skirmishes. Even when wounded he doesn't lower company Morale and can stand night watch in camp without penalty."
+          },
+          "cold_blooded": {
+            "Desc": "A ruthless, composed professional. When a job fails, ignores the first complication or loss of company Morale."
+          },
+          "craft_merchant": {
+            "Desc": "Knows trade routes, tolls and how to reckon profit. Adds +2 SS to the profit from each successful sale of trophies."
+          },
+          "guard_contacts": {
+            "Desc": "Has a debtor or relative in the garrison. Halves the risk of an attack on the camp and gives warning of it.",
+            "Name": "Old Comrade in the Garrison"
+          },
+          "shadow_tongue": {
+            "Name": "Veterans' Cant",
+            "Desc": "Knows the watchwords, signs and slang of the camps. +10 to patrols, garrison duty and selling trophies."
+          }
+        },
+        "Notify": {
+          "SelectCharacter": "Select a character token or create a player character to open the company sheet!",
+          "OpenFailed": "Could not open the company sheet: {error}",
+          "SelectChiefForCamp": "Select the captain's token to call the night camp.",
+          "SelectChief": "Select the captain's token on the map.",
+          "NoAccess": "You don't have access to this character's company.",
+          "GMResolvesWeek": "The GM resolves the company's week.",
+          "WeekAlreadyResolved": "This company's week has already been resolved for this world day. Advance the game time.",
+          "CampAlreadyResolved": "This company's night camp has already been resolved for this world day."
+        },
+        "Orders": {
+          "Effects": {
+            "MustFace": "goes for the duellist and ignores the rest of the company until the end of the round"
+          },
+          "meatshield": {
+            "Effect": "The blow hits the soldier instead of the captain. The soldier is wounded (unless saved by armour or a veteran's rank).",
+            "Desc": "The sergeant shoves a soldier in front of the captain, straight into the killing blow."
+          },
+          "bullrush": {
+            "Effect": "The enemy is pushed back 2 metres and loses 1 Advantage, and the captain closes to melee at once without a test.",
+            "Name": "Polearm Shove",
+            "Desc": "The halberdiers level their polearms and push the enemy back with their full weight."
+          },
+          "flank": {
+            "Effect": "The target loses its guard – it cannot Dodge or Parry the captain's next attack!"
+          },
+          "distract": {
+            "Effect": "The captain gains +2 Advantage, and the provoked enemy loses 1 Advantage!",
+            "Name": "To the Banner!",
+            "Desc": "The standard bearer raises the banner and the company answers with a roar that drowns out the enemy."
+          },
+          "draught": {
+            "Effect": "The captain or a chosen ally removes 1 Fatigued condition or ignores it until the end of the next round.",
+            "Name": "Surgeon's Brandy",
+            "Desc": "A swig of strong spirit from the surgeon's flask puts you back on your feet."
+          },
+          "rally": {
+            "Desc": "The captain roars an order, spurring on his companions and striking fear into the enemy.",
+            "Effect": "Removes the Broken condition from the chosen ally. The captain gains Advantage equal to the SL of the test (minimum 1)."
+          },
+          "coordinate": {
+            "Effect": "The captain and up to three allies within 6 metres may make a free move of half their Movement; leaving melee requires no test."
+          },
+          "retaliation": {
+            "Name": "Company's Revenge",
+            "Desc": "A furious counterattack! A soldier throws himself at the foe to avenge the wounded leader.",
+            "Effect": "If the captain or an ally takes damage, the right hand counterattacks at once OR the captain gains +2 Advantage in return."
+          },
+          "Notify": {
+            "AlreadyThisRound": "The captain has already given an order this round (an order uses their Action)."
+          },
+          "MeatShield": {
+            "Saved": "{name} throws themself in front of the blow, but {reason} absorbs the impact! The soldier avoids a wound and stays ready!"
+          },
+          "Dialog": {
+            "ChiefHimself": "the captain in person",
+            "Follower": "The soldier",
+            "LeadershipHint": "The captain makes a Leadership test. Success – the order works; failure – no effect. The order uses the captain's Action (one per round)."
+          },
+          "bodyblock": {
+            "Effect": "Until the end of the round the first melee attack against the captain hits the bodyguard instead. The captain gains 1 Advantage (a moment to catch their breath).",
+            "Desc": "The sergeant steps in front of the captain and takes the blow on the shield."
+          },
+          "circle": {
+            "Effect": "The captain loses the Surprised condition (if any) and gains 1 Advantage. Nobody comes at them from behind.",
+            "Name": "Hedgehog!",
+            "Desc": "The company closes ranks around the captain and the banner, blades outward."
+          },
+          "parry": {
+            "Effect": "The first melee attack against the captain this round has −20 to hit. The captain gains 1 Advantage.",
+            "Name": "Wall of Polearms",
+            "Desc": "The halberdier sets the polearm before the captain; nobody gets close without trouble."
+          },
+          "riposte": {
+            "Effect": "The chosen opponent loses 1 Advantage. If they attack the captain this round and miss, the captain may immediately strike back."
+          },
+          "wagonwall": {
+            "Effect": "The wagon gives cover: ranged attacks against the captain this round have −10. The captain gains 1 Advantage.",
+            "Desc": "The quartermaster sets a baggage cart to shield the captain."
+          },
+          "getaway": {
+            "Effect": "The captain loses the Prone condition and may move 4 metres away without provoking opportunity attacks.",
+            "Name": "Drag Clear",
+            "Desc": "The barber-surgeon grabs the captain by the arm and drags them out of the melee."
+          },
+          "spot": {
+            "Effect": "The captain's first attack this round gets +10 to hit. The captain gains 1 Advantage.",
+            "Desc": "The crossbowman points out a gap in the armour seen down the sights."
+          },
+          "forgedorder": {
+            "Desc": "The trader waves a sealed paper and bellows an order in the name of the local reeve."
+          },
+          "salve": {
+            "Effect": "The captain (or a chosen ally) loses the Bleeding condition.",
+            "Name": "Surgeon's Stitches",
+            "Desc": "A few quick stitches and a tourniquet."
+          },
+          "regroup": {
+            "Desc": "The Right Hand claps, whistles and the company falls back into line.",
+            "Effect": "The captain loses the Surprised condition and gains 1 Advantage; retinue allies may move 2 metres for free."
+          },
+          "challenge": {
+            "Desc": "The sergeant calls out the enemy's leader to fight before the line.",
+            "Effect": "The opponent must pass a Willpower test; on a failure they go for the sergeant and ignore the rest of the company until the end of the round."
+          },
+          "trip": {
+            "Name": "Halberd Hook",
+            "Desc": "The halberdier catches the enemy's leg or shield with the hook and pulls."
+          },
+          "disarm": {
+            "Name": "Knock the Weapon Away",
+            "Desc": "The halberd blade strikes the hilt and knocks the weapon from the hand."
+          },
+          "volley": {
+            "Name": "Crossbow Volley",
+            "Desc": "On command the crossbowmen loose at the same moment."
+          },
+          "evileye": {
+            "Name": "The Company's Colours",
+            "Desc": "At the sight of the well-known colours the enemy remembers who they are facing.",
+            "Effect": "The target must pass a Willpower test or lose 1 Advantage and suffer −10 to attacks until the end of the round."
+          },
+          "lure": {
+            "Name": "Banner on the Hill",
+            "Desc": "The standard bearer shows the colours at the edge of the field and draws the enemy's eye the wrong way."
+          },
+          "resupply": {
+            "Name": "Bandage and Bolts",
+            "Desc": "The barber-surgeon runs up with a bandage, a bolt or a spare weapon."
+          },
+          "fireoil": {
+            "Name": "Pot of Oil",
+            "Desc": "The quartermaster hurls a pot of burning oil from the cart."
+          },
+          "payoff": {
+            "Name": "Pay for a Deserter",
+            "Desc": "The quartermaster shows a purse and promises a place in the company."
+          },
+          "retreat": {
+            "Name": "Fall Back to the Wagons",
+            "Desc": "The company falls back behind the wagons, which block the pursuit."
+          }
+        },
+        "Meta": {
+          "TargetHint": "Target for the simplified test (before company modifiers)"
+        },
+        "Relation": {
+          "strained": {
+            "Desc": "The employer is watching you closely. Delays risk his anger."
+          },
+          "favorite": {
+            "Name": "Employer's Favourites"
+          }
+        },
+        "Recruit": {
+          "NoActor": "Could not find the company actor linked to this recruitment!",
+          "Joined": "{name} has joined the company!",
+          "Flavor": "Recruitment: New Faces in the Company",
+          "ChatText": "<strong>{user}</strong> took into pay: <strong>{name}</strong> ({role})."
+        },
+        "Ops": {
+          "PatronCut": "Employer's cut ({percent}%): {cut} · to the stash: {net}.",
+          "NoCargo": "{mission}: no suitable spoils to take along.",
+          "DataEffect": {
+            "Heat": "Infamy {value}."
+          }
+        },
+        "Loot": {
+          "DiscardText": "Throw away, give away or hide <strong>{name}</strong> (~{value} SS) for good? The spoils will disappear from the company's camp.",
+          "ItemDesc": "Company trophy: {origin}.",
+          "ItemDescHot": "Company trophy: {origin}.",
+          "DiscardTitle": "Discard the trophy?",
+          "Hot": "hot goods"
+        },
+        "Card": {
+          "Burglary": {
+            "Success": "{name} gets in and leaves before dawn with the spoils.",
+            "SuccessAt": "{name} gets into <em>{place}</em> and leaves before dawn with the spoils."
+          },
+          "Fence": {
+            "NothingToSell": "{fence}: no spoils that can be sold here.",
+            "Returned": "The trophies go back to camp.",
+            "Confiscated": "Hot goods lost: {items}."
+          },
+          "Intimidate": {
+            "Fail": "{name} tried to scare the target but met resistance. The company grumbles (Morale −1).",
+            "Success": "{name} successfully intimidates the victim – takings: {coins} SS."
+          },
+          "Bribe": {
+            "NotArrested": "This company member is not under arrest.",
+            "HeatDown": "The report on the company ends up in the stove – Infamy −1."
+          },
+          "CoverTracks": {
+            "HeatDown": "The company's trail fades – Infamy −1."
+          },
+          "Loot": {
+            "Haul": "Trophy: {loot}.",
+            "HotHint": ""
+          }
+        },
+        "Camp": {
+          "Food": {
+            "Empty": "No supplies! The company went to bed hungry (−1 Morale)"
+          },
+          "Log": "Night camp [{shelter}]. Watch: {watch}. {food}. Morale: {morale}/10. Infamy: {heat}/5.",
+          "TitleWeek": "Company Week",
+          "FlavorWeek": "Report: Company Week",
+          "GMResolvesWeekHint": "The GM resolves the company's week. Plan assignments in the Assignments tab.",
+          "NoHealthy": "No healthy soldiers in the camp!",
+          "StateLine": "Morale: {morale}/10, Infamy: {heat}/5, Supplies: {supplies}"
+        },
+        "Desertion": {
+          "Text": "<strong>{name}</strong> no longer believes in the captain and vanishes before dawn{taken}."
+        },
+        "Treasury": {
+          "Generous": "The company sees the captain's generosity — spirits in the camp rise! (+1 Morale)",
+          "Deposited": "Deposited {amount} into the company's stash.",
+          "DepositTitle": "Deposit to the Company's Stash",
+          "NewBalance": "The company's stash now holds: <strong>{amount}</strong>.",
+          "FlavorDeposit": "Company Finances",
+          "StashShort": "The company's stash doesn't hold that much! Available: {have}",
+          "SmallWithdrawal": "Small expenses taken. The soldiers don't mind.",
+          "AuthorityHeld": "The captain used their authority to silence the whispers. Leadership test passed (Roll: {roll} vs {target}). Morale intact.",
+          "WithdrawTitle": "Withdrawal from the Company's Stash",
+          "AuthorityLost": "The men mutter that the captain is pilfering the pay! Leadership test failed (Roll: {roll} vs {target}).",
+          "FlavorWithdraw": "Paying Out"
+        },
+        "Supplies": {
+          "StashShort": "The company's stash is short! Needed: {need}, available: {have}",
+          "SourceStash": "the company's stash"
+        },
+        "Roster": {
+          "NewFollower": "New Soldier",
+          "GMOnlyDelete": "Only the GM can remove company members.",
+          "DeleteTitle": "Remove company member",
+          "DeleteText": "Really remove <strong>{name}</strong> from the company?"
+        },
+        "Retinue": {
+          "Left": "{name} left the captain's retinue.",
+          "Joined": "{name} joined the captain's retinue!",
+          "Full": "The captain's retinue can have at most 3 soldiers!"
+        },
+        "Mission": {
+          "NoFollower": "No soldier selected!"
+        },
+        "Tier": {
+          "LeadApplies": "{name}: no penalty, double spoils"
+        },
+        "Fence": {
+          "NothingChosen": "No spoils selected for sale.",
+          "NoLoot": "The company has no spoils to sell.",
+          "Hint": "Each SL on the Haggle test adds 5 points to the rate."
+        },
+        "Terrain": {
+          "RacketWaits": "The city racket waits for the company to return.",
+          "Changed": "The company moves to: {terrain}. Trophy buyer: {fence}."
+        },
+        "CampDialog": {
+          "UseSupplies": "Use supplies from the company's larder:",
+          "Fasting": "The company doesn't eat",
+          "TitleWeek": "Company Week – resolution",
+          "WeekDone": "The company's week is resolved – report in the chat.",
+          "NoWatchWarning": "No sentries raises the risk of night troubles and attacks."
+        },
+        "RecruitDialog": {
+          "Title": "Recruit New Mercenaries for the Players",
+          "Intro": "Show the players the new recruits in chat. They may pick one recruit to join the company."
+        },
+        "Upgrade": {
+          "OneCraftHint": "An mercenary can have only one former trade",
+          "TransferHint": "Pass to another soldier",
+          "Stash": "Company stash",
+          "CraftSectionHint": "(at most 1 trade per mercenary)",
+          "TraitSection": "Mercenary's Strengths and Flaws",
+          "OneLieutenant": "The company can have only one Right Hand ({name})!",
+          "HasCraft": "This mercenary already has a former trade ({name})! A character can have only one trade from the past.",
+          "NoFreeSlot": "No other soldiers have a free gear slot!",
+          "SecondRoleIntro": "A soldier who has seen a lot can do more than one thing. A second role unlocks its orders and specialty (the specialty bonus counts once).",
+          "CraftIntro": "The past and the trade from before signing on. Each mercenary may choose only one former craft."
+        },
+        "TreasuryDialog": {
+          "DepositHint": "A deposit over 1 GC (20 SS) is rewarded with <strong>+1 Morale</strong> for the whole company!",
+          "Balance": "The company's stash",
+          "MutinyRisk": "<strong>Mutiny Risk:</strong> The soldiers watch the common purse! Taking more than 10 SS requires a Leadership Test; failure costs 1 Morale."
+        },
+        "SuppliesDialog": {
+          "FromStash": "The company's stash (available: {amount})"
+        },
+        "Chat": {
+          "GangTest": "Simplified company test",
+          "Footer": "The Captain's Retinue"
+        },
+        "RecruitCard": {
+          "Title": "New Faces in the Company: Recruitment",
+          "Intro": "The GM has presented the candidates. Choose the mercenary who will join your company!",
+          "Joined": "The character has joined the company!",
+          "Footer": "Company Muster"
+        },
+        "TacticCard": {
+          "NotHeard": "The company didn't hear the order in the din of battle – <strong>no effect</strong>.",
+          "UsesAction": "The order uses the captain's Action this round."
+        },
+        "Sheet": {
+          "LeaderTitle": "Captain / Leader: {name}",
+          "ChiefTitle": "Company Captain",
+          "Chief": "CAPTAIN",
+          "Eyebrow": "Company sheet",
+          "NamePlaceholder": "Company / Retinue name",
+          "NameTitle": "Click to rename the company",
+          "MottoTitle": "Company motto",
+          "MoraleTitle": "Company Morale: {value}/10"
+        },
+        "TasksTab": {
+          "Intro": "Send your people out or take them into your personal retinue. Each soldier can be given <strong>one task per day</strong>.",
+          "RetinueHint": "Soldiers in the retinue stay at the captain's side during the game day and unlock their unique combat orders in the <strong>Tactics</strong> tab (max. 3 people). Meanwhile they cannot go on separate jobs.",
+          "WatchHint": "People on watch stay awake while the party sleeps. Each soldier can have only one task per day."
+        },
+        "RosterTab": {
+          "Title": "Soldiers and Company",
+          "ToggleAllHint": "Collapse or expand the details of all soldiers",
+          "AddHint": "Game Master: add a new blank soldier",
+          "Add": "Add Soldier",
+          "DropHint": "Drag a character or NPC actor from the Foundry sidebar onto a card to link it to a soldier",
+          "ToggleOne": "Collapse / expand the mercenary's details",
+          "NamePlaceholder": "Soldier's name...",
+          "LeaveRetinue": "Send back from the captain's retinue to the camp",
+          "JoinRetinueHint": "Join the captain's personal retinue (unlocks Tactics)",
+          "Delete": "Remove the mercenary from the retinue",
+          "RoleTitle": "Game Master: choose the soldier's role",
+          "EmptyTitle": "No soldiers in the retinue!"
+        },
+        "InfoTab": {
+          "GMOnlyPatron": "Only the Game Master can change the employer's details",
+          "PatronSetByGM": "The employer's details are set by the Game Master",
+          "RelationShort": {
+            "strained": "Strained (suspicion, the employer watches closely)",
+            "favorite": "Trusted (full confidence, the best contracts)"
+          },
+          "Hideout": "Main Camp / Quarters:",
+          "Territory": "Area of Operations / Campaign Route:",
+          "LawTitle": "Reputation and Infamy",
+          "GMOnlyHeat": "Only the Game Master can change Infamy",
+          "HeatLevel": "Infamy Level:",
+          "HeatShort": {
+            "0": "Good name",
+            "1": "Muttered opinions",
+            "2": "Locals are wary",
+            "3": "On the black list",
+            "4": "Rivals look for an opening",
+            "5": "Outlawed"
+          },
+          "Bounty": "Debts / Bounty on the Captain's Head:",
+          "BountyPlaceholder": "e.g. 15 Gold Crowns to whoever delivers the captain",
+          "AlliesPlaceholder": "Garrison officers, quartermasters, sutlers, barbers...",
+          "Rivals": "Enemies and Rival Companies:",
+          "RivalsPlaceholder": "Other companies, offended nobles, disappointed employers...",
+          "Patron": "Employer and Contract",
+          "PatronName": "Employer's Name:",
+          "PatronNamePlaceholder": "e.g. Graf Boris, the Altdorf City Council, Salzer the merchant...",
+          "PatronTitle": "Employer's Position / Title:",
+          "PatronTitlePlaceholder": "e.g. Elector, Garrison Captain, Guildmaster...",
+          "PatronRelation": "Trust and Relationship with the Employer:",
+          "PatronCut": "Pay and Contract Terms:",
+          "PatronCutPlaceholder": "e.g. 5 GC a month, half in advance, rights to spoils...",
+          "PatronNotes": "Contact and Obligations to the Employer:",
+          "Code": "Company Rules / Articles of War:",
+          "CodePlaceholder": "The oath under the banner, sharing the spoils, punishment for desertion...",
+          "Notes": "Chronicle / Captain's Notes:",
+          "NotesPlaceholder": "The company's history, past battles, campaign goals..."
+        },
+        "DashTab": {
+          "CampCaption": "Affects recovery and the company's mood while resting. Terrain: <strong>{terrain}</strong> (change it in the Spoils tab).",
+          "FlavorHigh": "The company would follow the captain into fire! Ready for any sacrifice.",
+          "FlavorMid": "Steady discipline. The company follows orders without complaint.",
+          "FlavorLow": "The company mutters in corners; they're short of coin and drink.",
+          "DepositHint": "Move coins from your purse into the company's common stash (+1 Morale for generous gifts)",
+          "WithdrawHint": "Take coins from the company's stash (taking more than 10 SS requires a Leadership test — risk of losing Morale!)",
+          "ResolveWeek": "Resolve the Company Week",
+          "TablesHint": "Game Master: open the random rumour and camp event tables (RollTable, company folder)",
+          "ChronicleEmpty": "No events recorded yet. The company is just setting out on the road...",
+          "Morale": "Company Morale"
+        },
+        "TacticsTab": {
+          "NoRetinue": "<strong>No soldiers in the retinue!</strong> The captain fights alone. Specialist orders are locked. Assign people in the <em>Assignments</em> tab.",
+          "HowTo": "You give orders through the captain's <strong>Leadership Test</strong> (failure means no effect; one order per round, uses the captain's Action) or by spending <strong>Advantage</strong> (automatic success).",
+          "FilterEmpty": "No active member of the retinue unlocks any tactics. Add a soldier to the retinue or show all tactics.",
+          "PersonalAlways": "The captain's personal order (always available)",
+          "WoundRisk": "Risk of a Soldier's Wound"
+        },
+        "Title": "Company",
+        "Strengths": {
+          "tight_lipped": {
+            "Desc": "Never betrays the company's plans under questioning"
+          },
+          "tough": {
+            "Desc": "+10 to requisitions, contracts and escorts"
+          },
+          "stealthy": {
+            "Desc": "+10 to patrols and garrison duty"
+          },
+          "talkative": {
+            "Desc": "+10 to selling trophies"
+          },
+          "eagle_eye": {
+            "Desc": "+10 to patrols and garrison duty"
+          },
+          "trusted_face": {
+            "Desc": "+10 to selling trophies"
+          },
+          "local_knowledge": {
+            "Desc": "+10 to patrols and garrison duty"
+          },
+          "field_medic": {
+            "Desc": "+10 to tending the wounded; 50% chance of instant healing"
+          },
+          "brutal": {
+            "Desc": "+20 to requisitions and contracts"
+          },
+          "war_veteran": {
+            "Desc": "+10 to escorts"
+          },
+          "iron_will": {
+            "Desc": "+10 to escorts and tending the wounded; resistant to pain"
+          },
+          "keen_senses": {
+            "Desc": "+10 to patrols and garrison duty; senses spies"
+          },
+          "quick_escape": {
+            "Desc": "+10 to escorts"
+          },
+          "juggler": {
+            "Desc": "+10 to escorts"
+          },
+          "poacher": {
+            "Desc": "+10 to patrols and garrison duty; brings an extra ration"
+          },
+          "knife_master": {
+            "Desc": "+10 to escorts"
+          },
+          "smooth_liar": {
+            "Desc": "+10 to selling trophies"
+          },
+          "surefooted": {
+            "Desc": "+10 to patrols and garrison duty"
+          },
+          "night_owl": {
+            "Desc": "+10 to patrols and garrison duty"
+          },
+          "ox_strong": {
+            "Desc": "+10 to requisitions and contracts"
+          },
+          "steady_nerves": {
+            "Desc": "+10 to escorts and tending the wounded"
+          },
+          "haggler": {
+            "Desc": "+10 to selling trophies"
+          }
+        },
+        "WindowTitle": "WFRP4e – Armed Company",
+        "DefaultGangName": "Company",
+        "Terrains": {
+          "city": {
+            "Fence": "Dockside arms dealer",
+            "Makeshift": "Camp outside the walls",
+            "Raid": "The city militia comes to settle the score!"
+          },
+          "village": {
+            "Fence": "Fair peddler",
+            "Raid": "The peasants took up pitchforks and the reeve hired landsknechts!"
+          },
+          "forest": {
+            "Fence": "Camp followers",
+            "Comfortable": "Fortified camp",
+            "Raid": "A rival company has set an ambush!"
+          },
+          "mountains": {
+            "Fence": "Dwarf armourers",
+            "Raid": "A dwarf garrison bars the way!"
+          }
+        },
+        "Tiers": {
+          "easy": {
+            "Name": "Modest contract",
+            "Desc": "+20 to the test, half the pay"
+          },
+          "normal": {
+            "Name": "Standard contract"
+          },
+          "rich": {
+            "Name": "Lucrative contract",
+            "Desc": "−20 to the test, double pay, any failure risks casualties"
+          }
+        },
+        "Tokens": {
+          "recon": {
+            "Desc": "+20 to the next contract"
+          },
+          "commotion": {
+            "Name": "Cohesion",
+            "Desc": "+20 to the next tested job (today); after drill the men move as one"
+          },
+          "lead": {
+            "Desc": "Lucrative contract without the −20 penalty"
+          }
+        },
+        "MissionCategories": {
+          "resources": {
+            "Name": "Pay and Supplies",
+            "Hint": "Money, supplies, selling trophies"
+          },
+          "intel": {
+            "Hint": "Scouting the ground"
+          },
+          "operations": {
+            "Hint": "Escorts and contracts"
+          }
+        },
+        "Missions": {
+          "fence": {
+            "Name": "Sell the Trophies",
+            "Reward": "cash for trophies (the trader's rate)",
+            "Names": {
+              "city": "Dockside Arms Dealer",
+              "village": "Trading at the Fair",
+              "forest": "Camp Followers",
+              "mountains": "Dwarf Armourers"
+            },
+            "Desc": "Sale of captured arms and gear. The price depends on the trader and a Haggle test."
+          },
+          "tend_wounded": {
+            "Desc": "Fresh dressings and herbs for a wounded comrade in arms."
+          }
+        },
+        "Badges": {
+          "fence": "Selling trophies",
+          "retinue": "Captain's Retinue"
+        },
+        "Notoriety": {
+          "0": {
+            "Name": "Good Name",
+            "Desc": "Employers recommend you to one another and locals open their gates."
+          },
+          "1": {
+            "Name": "Muttered Opinions",
+            "Desc": "Someone in the taverns grumbles about your men. Nobody makes much of it."
+          },
+          "2": {
+            "Name": "Drawing Attention",
+            "Desc": "Locals hide their grain when you arrive. Councillors read your contracts twice."
+          },
+          "3": {
+            "Name": "The Black List",
+            "Desc": "Guilds and towns warn each other about your company. Quarters and contracts get harder to find."
+          },
+          "4": {
+            "Name": "Dogs of War",
+            "Desc": "You are spoken of as plunderers. Rivals and militias look for an opening."
+          },
+          "5": {
+            "Name": "Outlawed Company",
+            "Desc": "An Elector has put a price on the company. Gates are shut and soldiers are on your trail."
+          }
+        },
+        "Risk": {
+          "stealth": "If caught: Infamy, arrest",
+          "Result": {
+            "FaceRemembered": "The locals remember the company's colours – Infamy +1.",
+            "Arrested": "{name} is locked up by the militia – <strong>Arrested</strong> for {time}. Infamy +1.",
+            "Chase": "A quarrel with the locals ends with a complaint to the council – Infamy +1.",
+            "WoundedLoud": "{name} is <strong>Wounded</strong>, and the whole area talks about the bloody skirmish – Infamy +1."
+          }
+        },
+        "Raid": {
+          "Escaped": "The sentries raised the alarm in time – the company withdrew in good order, leaving {lost} rations behind.",
+          "Settled": "After the clash the score is considered settled – Infamy −1.",
+          "Summary": "Attack on the camp.",
+          "HotLost": "Hot goods lost: {items}."
+        },
+        "Mod": {
+          "Heat": "Infamy {value}",
+          "ShadowTongue": "Veterans' Cant",
+          "Rank": "Company rank"
+        },
+        "Tabs": {
+          "Loot": "Trophies"
+        },
+        "LootTab": {
+          "TerrainHint": "Terrain changes night events, the cost of quarters and who buys trophies.",
+          "TerrainLabel": "Company terrain",
+          "InHideout": "Trophies in camp",
+          "FenceNow": "The trader offers about",
+          "SendToFence": "Send to the trader",
+          "FenceKeen": "trader keen",
+          "GiveChief": "Give to the captain as an item",
+          "Discard": "Discard the trophy",
+          "Empty": "The camp holds nothing. Trophies come from successful patrols and contracts.",
+          "HotHint": "",
+          "HelpRecon": "<strong>Recon</strong> (Patrol): +20 to the next contract.",
+          "HelpHotWeek": "Trophies keep their value.",
+          "HelpHotNight": "Trophies keep their value."
+        },
+        "Bribe": {
+          "Hush": "Hush the matter: Infamy −1 (20 SS)"
+        },
+        "Report": {
+          "MissionFlavor": "Captain's Orders",
+          "QueueTitle": "Company orders report",
+          "QueueFlavor": "Orders resolved by the GM"
+        },
+        "LootNames": {
+          "weapons": [
+            "Bundle of captured swords",
+            "Crossbow from a broken unit",
+            "Halberd bearing an enemy crest",
+            "Shield with its paint scraped off",
+            "Sheaf of spearheads",
+            "Officer's rapier"
+          ],
+          "metal": [
+            "Dented breastplate",
+            "Sack of mail rings",
+            "Plumed helmet",
+            "Stack of greaves",
+            "Captured mail shirt"
+          ],
+          "valuables": [
+            "Fallen officer's signet",
+            "Silver gorget",
+            "Captured company pennant",
+            "Gilded belt buckle",
+            "Pouch of enemy pay",
+            "Medallion on a chain",
+            "Goblet from an officer's tent",
+            "Golden spur"
+          ],
+          "goods": [
+            "Chest of belts and straps",
+            "Keg of powder",
+            "Baggage cart of canvas",
+            "Bale of tent cloth",
+            "Saddles",
+            "Field kettle",
+            "Store of horseshoes",
+            "Bundle of bandages"
+          ]
+        }
+      },
+      "outlaws": {
+        "Missions": {
+          "poaching": {
+            "Desc": "Snares and a bow in the lord's forest. Fresh meat for the band.",
+            "Descs": {
+              "mountains": "Hunting on rocky ledges. Fresh meat for the band."
+            }
+          }
+        },
+        "Ranks": {
+          "lieutenant": {
+            "Desc": "+30 to tests, authority (+1 band Morale), command orders (unique rank – one per band; needs over 60–80 days of service)."
+          }
+        },
+        "Roles": {
+          "scout": {
+            "Desc": "A woodland and highway tracker. Reads sign, spots pursuit and leads the band along paths the watch never walks."
+          }
+        },
+        "Flaws": {
+          "kleptomaniac": {
+            "Camp": "pilfers the band's treasury (1 SS)"
+          },
+          "gambler": {
+            "Camp": "gambles away the band's money at cards"
+          },
+          "traitor": {
+            "Camp": "information about the band leaks out — +1 Heat"
+          },
+          "coward": {
+            "Desc": "−10: Diversion and Brawl, Sabotage"
+          },
+          "alcoholic": {
+            "Desc": "−10: Scout the Area, Cover Tracks; 20% chance of being unfit after camp"
+          },
+          "lazy": {
+            "Desc": "−10: Scavenge and Forage"
+          },
+          "old_slow": {
+            "Desc": "−10: Scout the Area"
+          },
+          "superstitious": {
+            "Desc": "−10: Sabotage"
+          },
+          "repulsive": {
+            "Desc": "−10: Listen at the Tavern, Fence the Loot (puts people off)"
+          },
+          "one_eyed": {
+            "Desc": "−10: Scout the Area, Cover Tracks"
+          },
+          "clumsy": {
+            "Desc": "−10: Scavenge and Forage"
+          },
+          "hothead": {
+            "Desc": "−10: Bribery, Cover Tracks"
+          },
+          "squeamish": {
+            "Desc": "−10: Intimidation / Extortion, Tend the Wounded, Ransom"
+          },
+          "snorer": {
+            "Desc": "−10: Scout the Area"
+          },
+          "bad_leg": {
+            "Desc": "−10: Raid a Mine"
+          },
+          "proud": {
+            "Desc": "−10: Listen at the Tavern, Fence the Loot, Bribery"
+          },
+          "jinxed": {
+            "Desc": "−10: Scout the Area"
+          }
+        },
+        "Perks": {
+          "craft_blacksmith": {
+            "Desc": "Work at bellows and anvil gives strength and a knowledge of weapons. Permanent +10 to jobs with weapons and a 50% discount on gear for the band."
+          },
+          "craft_innkeeper": {
+            "Desc": "Knows the secrets of brewing and loosening tongues. Raises band Morale by +1 every night camp, and tavern eavesdropping brings an extra rumour."
+          },
+          "battle_scarred": {
+            "Desc": "Survived many wounds and skirmishes. Even when wounded he doesn't lower band Morale and can stand night watch in camp without penalty."
+          },
+          "cold_blooded": {
+            "Desc": "A ruthless, composed professional. When a job fails, ignores the first complication or loss of band Morale."
+          }
+        },
+        "Notify": {
+          "SelectCharacter": "Select a character token or create a player character to open the band sheet!",
+          "OpenFailed": "Could not open the band sheet: {error}",
+          "NoAccess": "You don't have access to this character's band.",
+          "GMResolvesWeek": "The GM resolves the band's week.",
+          "WeekAlreadyResolved": "This band's week has already been resolved for this world day. Advance the game time.",
+          "CampAlreadyResolved": "This band's night camp has already been resolved for this world day."
+        },
+        "Orders": {
+          "Effects": {
+            "MustFace": "goes for the duellist and ignores the rest of the band until the end of the round"
+          },
+          "retaliation": {
+            "Name": "Band's Revenge"
+          },
+          "circle": {
+            "Desc": "The band closes a ring round the chief, backs together, faces to the enemy."
+          },
+          "challenge": {
+            "Effect": "The opponent must pass a Willpower test; on a failure they go for the duellist and ignore the rest of the band until the end of the round."
+          },
+          "regroup": {
+            "Desc": "The Right Hand claps, whistles and the band falls back into line."
+          }
+        },
+        "Meta": {
+          "TargetHint": "Target for the simplified test (before band modifiers)"
+        },
+        "Relation": {
+          "strained": {
+            "Desc": "The protector is watching you closely. Delays risk his anger."
+          },
+          "favorite": {
+            "Name": "Protector's Favourites"
+          }
+        },
+        "Recruit": {
+          "NoActor": "Could not find the band actor linked to this recruitment!",
+          "Joined": "{name} has joined the band!",
+          "ChatText": "<strong>{user}</strong> recruited the outlaw <strong>{name}</strong> ({role}) into the band.",
+          "Flavor": "Recruitment: New Faces in the Band"
+        },
+        "Mod": {
+          "Rank": "Band rank"
+        },
+        "Ops": {
+          "PatronCut": "Protector's cut ({percent}%): {cut} · to the stash: {net}."
+        },
+        "Loot": {
+          "ItemDesc": "Band loot: {origin}.",
+          "ItemDescHot": "Band loot: {origin} – hot goods, someone is looking for it.",
+          "DiscardText": "Throw away, give away or hide <strong>{name}</strong> (~{value} SS) for good? The loot will disappear from the band's hideout."
+        },
+        "Report": {
+          "QueueTitle": "Band assignments report"
+        },
+        "Card": {
+          "Intimidate": {
+            "Fail": "{name} tried to scare the target but met resistance. The band grumbles (Morale −1)."
+          },
+          "Bribe": {
+            "NotArrested": "This band member is not under arrest.",
+            "HeatDown": "The report on the band ends up in the stove – Heat −1."
+          },
+          "CoverTracks": {
+            "HeatDown": "The band's trail fades – Heat −1."
+          }
+        },
+        "Camp": {
+          "Food": {
+            "Empty": "No supplies! The band went to bed hungry (−1 Morale)"
+          },
+          "TitleWeek": "Band Week",
+          "FlavorWeek": "Report: Band Week",
+          "GMResolvesWeekHint": "The GM resolves the band's week. Plan assignments in the Assignments tab."
+        },
+        "Raid": {
+          "Escaped": "The sentries raised the alarm in time – the band escaped through the alleys, leaving {lost} rations behind."
+        },
+        "Treasury": {
+          "Generous": "The band sees the chief's generosity — spirits in the camp rise! (+1 Morale)",
+          "Deposited": "Deposited {amount} into the band's stash.",
+          "DepositTitle": "Deposit to the Band's Stash",
+          "NewBalance": "The band's stash now holds: <strong>{amount}</strong>.",
+          "FlavorDeposit": "Band Finances",
+          "StashShort": "The band's stash doesn't hold that much! Available: {have}",
+          "AuthorityLost": "The band mutters in corners that the chief is pilfering the common loot! Leadership test failed (Roll: {roll} vs {target}). The band loses {loss} Morale!",
+          "WithdrawTitle": "Withdrawal from the Band's Stash"
+        },
+        "Supplies": {
+          "StashShort": "The band's stash is short! Needed: {need}, available: {have}",
+          "SourceStash": "the band's stash"
+        },
+        "Roster": {
+          "GMOnlyDelete": "Only the GM can remove band members.",
+          "DeleteTitle": "Remove band member",
+          "DeleteText": "Really remove <strong>{name}</strong> from the band?"
+        },
+        "Fence": {
+          "NoLoot": "The band has no loot to sell."
+        },
+        "Terrain": {
+          "RacketWaits": "The city racket waits for the band to return.",
+          "Changed": "The band moves to a new terrain: {terrain}. Fence: {fence}."
+        },
+        "CampDialog": {
+          "UseSupplies": "Use supplies from the band's larder:",
+          "Fasting": "The band doesn't eat",
+          "TitleWeek": "Band Week – resolution",
+          "WeekDone": "The band's week is resolved – report in the chat."
+        },
+        "RecruitDialog": {
+          "Intro": "Present outlaw proposals to the players in the chat. The players can choose one recruit to join the band."
+        },
+        "Upgrade": {
+          "Stash": "Band stash",
+          "OneLieutenant": "The band can have only one Right Hand ({name})!"
+        },
+        "TreasuryDialog": {
+          "DepositHint": "A deposit over 1 GC (20 SS) is rewarded with <strong>+1 Morale</strong> for the whole band!",
+          "Balance": "The band's stash",
+          "MutinyRisk": "<strong>Risk of Mutiny:</strong> Outlaws keep an eye on the common loot! Taking more than 10 SS requires the chief to pass a Leadership test. On a failure the band loses <strong>1–2 Morale</strong>!"
+        },
+        "SuppliesDialog": {
+          "FromStash": "The band's stash (available: {amount})"
+        },
+        "Chat": {
+          "GangTest": "Simplified band test"
+        },
+        "RecruitCard": {
+          "Title": "New Faces in the Band: Recruitment",
+          "Joined": "The character has joined the band!",
+          "Footer": "Band Recruitment"
+        },
+        "TacticCard": {
+          "NotHeard": "The band didn't hear the order in the din of battle – <strong>no effect</strong>."
+        },
+        "Sheet": {
+          "ChiefTitle": "Band Chief",
+          "Eyebrow": "Band sheet",
+          "NamePlaceholder": "Band / Retinue name",
+          "NameTitle": "Click to rename the band",
+          "MottoTitle": "Band motto",
+          "MoraleTitle": "Band Morale: {value}/10"
+        },
+        "LootTab": {
+          "TerrainLabel": "Band terrain"
+        },
+        "InfoTab": {
+          "GMOnlyPatron": "Only the Game Master can change the protector's details",
+          "PatronSetByGM": "The protector's details are set by the Game Master",
+          "RelationShort": {
+            "strained": "Strained (suspicion, the protector watches closely)"
+          },
+          "Code": "Band Code / Internal Rules:",
+          "Hideout": "Main Hideout / The Band's Lair:",
+          "Territory": "The Band's Road / Forest:",
+          "Rivals": "Enemies and Rival Bands:",
+          "RivalsPlaceholder": "Other bands, foresters, bounty hunters, offended nobles...",
+          "Patron": "The Band's Protector",
+          "PatronName": "Protector's Name:",
+          "PatronNamePlaceholder": "e.g. an impoverished knight, the count's forester, the crossroads innkeeper...",
+          "PatronTitle": "Protector's Position / Title:",
+          "PatronTitlePlaceholder": "e.g. Robber Knight, Reeve, Priest of Taal...",
+          "PatronRelation": "Trust and Relationship with the Protector:",
+          "PatronCut": "The Protector's Share:",
+          "PatronCutPlaceholder": "e.g. every fourth purse, venison for the holidays...",
+          "PatronNotes": "Contact and Obligations to the Protector:"
+        },
+        "DashTab": {
+          "CampCaption": "Affects recovery and the band's mood while resting. Terrain: <strong>{terrain}</strong> (change it in the Loot tab).",
+          "Morale": "Band Morale",
+          "FlavorHigh": "The band would follow the chief into fire! Ready for any sacrifice.",
+          "FlavorMid": "Steady discipline. The band follows orders without complaint.",
+          "FlavorLow": "The band mutters in corners; they're short of coin and drink.",
+          "DepositHint": "Move coins from your purse into the band's common stash (+1 Morale for generous gifts)",
+          "WithdrawHint": "Take coins from the band's stash (taking more than 10 SS requires a Leadership test — risk of losing Morale!)",
+          "ResolveWeek": "Resolve the Band Week",
+          "TablesHint": "Game Master: open the random rumour and camp event tables (RollTable, band folder)",
+          "ChronicleEmpty": "No events recorded yet. The band is just setting out on the road..."
+        },
+        "Title": "Band",
+        "WindowTitle": "WFRP4e – Outlaw Band",
+        "DefaultGangName": "Band",
+        "Strengths": {
+          "tough": {
+            "Desc": "+10: Highway Robbery, Intimidation / Extortion, Diversion and Brawl, Turn on the Hunters, Ransom, Bridge Toll"
+          },
+          "stealthy": {
+            "Desc": "+10: Scout the Area"
+          },
+          "nimble": {
+            "Desc": "+10: Scavenge and Forage"
+          },
+          "talkative": {
+            "Desc": "+10: Listen at the Tavern, Fence the Loot"
+          },
+          "eagle_eye": {
+            "Desc": "+10: Scout the Area, Poaching, Sabotage, Cover Tracks"
+          },
+          "trusted_face": {
+            "Desc": "+10: Fence the Loot, Bribery"
+          },
+          "local_knowledge": {
+            "Desc": "+10: Scout the Area, Scavenge and Forage"
+          },
+          "field_medic": {
+            "Desc": "+10: Tend the Wounded; 50% chance of instant healing"
+          },
+          "brutal": {
+            "Desc": "+20: Highway Robbery, Intimidation / Extortion, Turn on the Hunters, Ransom, Bridge Toll"
+          },
+          "war_veteran": {
+            "Desc": "+10: Highway Robbery, Diversion and Brawl, Sabotage, Cover Tracks, Turn on the Hunters, Bridge Toll"
+          },
+          "horse_thief": {
+            "Desc": "+10: Scavenge and Forage"
+          },
+          "iron_will": {
+            "Desc": "+10: Diversion and Brawl, Cover Tracks, Tend the Wounded; resistant to pain"
+          },
+          "keen_senses": {
+            "Desc": "+10: Scout the Area, Listen at the Tavern; senses spies"
+          },
+          "quick_escape": {
+            "Desc": "+10: Diversion and Brawl"
+          },
+          "arsonist": {
+            "Desc": "+20: Sabotage"
+          },
+          "juggler": {
+            "Desc": "+10: Diversion and Brawl"
+          },
+          "poacher": {
+            "Desc": "+10: Scout the Area, Scavenge and Forage, Poaching; brings an extra ration"
+          },
+          "drinking_buddy": {
+            "Desc": "+10: Listen at the Tavern"
+          },
+          "knife_master": {
+            "Desc": "+10: Diversion and Brawl"
+          },
+          "smooth_liar": {
+            "Desc": "+10: Fence the Loot, Bribery"
+          },
+          "surefooted": {
+            "Desc": "+10: Scout the Area, Raid a Mine, Cover Tracks"
+          },
+          "night_owl": {
+            "Desc": "+10: Scout the Area"
+          },
+          "pack_rat": {
+            "Desc": "+10: Scavenge and Forage, Farmyard Theft"
+          },
+          "ox_strong": {
+            "Desc": "+10: Highway Robbery, Raid a Mine, Intimidation / Extortion, Turn on the Hunters, Ransom, Bridge Toll"
+          },
+          "animal_friend": {
+            "Desc": "+10: Scavenge and Forage, Farmyard Theft, Poaching"
+          },
+          "steady_nerves": {
+            "Desc": "+10: Bribery, Diversion and Brawl, Cover Tracks, Tend the Wounded"
+          },
+          "haggler": {
+            "Desc": "+10: Fence the Loot"
+          },
+          "lucky": {
+            "Desc": "+10: Cover Tracks"
+          },
+          "tight_lipped": {
+            "Desc": "Never betrays the hideout under questioning by the watch"
+          }
+        }
+      },
+      "smugglers": {
+        "Terrains": {
+          "forest": {
+            "Comfortable": "Smugglers' dugout",
+            "Raid": "Road wardens on your trail!"
+          },
+          "city": {
+            "Raid": "A customs search in the docks!"
+          },
+          "village": {
+            "Raid": "The peasants informed – the reeve brings the customs men!"
+          },
+          "mountains": {
+            "Raid": "The dwarf pass guard searches your packs!"
+          }
+        },
+        "Missions": {
+          "fence": {
+            "Name": "Fence the Cargo",
+            "Reward": "cash for cargo (fence's rate)",
+            "Desc": "Sell the cargo. The price depends on the fence, a Haggle test and whether the goods are still hot."
+          },
+          "bribe": {
+            "Reward": "release from gaol, Scrutiny −1 or a favour"
+          },
+          "cover_tracks": {
+            "Reward": "Scrutiny −1, a calmer night",
+            "Desc": "Erase the trail and move camp. The only way to lower Scrutiny yourselves."
+          }
+        },
+        "MissionCategories": {
+          "resources": {
+            "Name": "Resources & Cargo"
+          }
+        },
+        "Ranks": {
+          "rookie": {
+            "Desc": "A fresh smuggler without much experience on the road."
+          },
+          "lieutenant": {
+            "Desc": "+30 to tests, authority (+1 crew Morale), command orders (unique rank – one per crew; needs over 60–80 days of service)."
+          }
+        },
+        "Flaws": {
+          "wanted": {
+            "Desc": "+1 Scrutiny when caught; risk of being recognised"
+          },
+          "traitor": {
+            "Desc": "10% chance of leaking information on a spying job (+1 Scrutiny)",
+            "Camp": "information about the crew leaks out — +1 Scrutiny"
+          },
+          "in_debt": {
+            "Desc": "10% chance after camp that creditors sniff around the hideout (+1 Scrutiny)",
+            "Camp": "creditors are hard on his heels — +1 Scrutiny"
+          },
+          "clumsy": {
+            "Desc": "−10: Scavenge and Forage, Forge Documents, Contraband Pickup"
+          },
+          "bloodthirsty": {
+            "Desc": "Every successful diversion or intimidation gives +1 Scrutiny through needless cruelty"
+          },
+          "witchhunter_mark": {
+            "Desc": "A failure raises Scrutiny"
+          },
+          "coward": {
+            "Desc": "−10: Diversion and Brawl"
+          },
+          "alcoholic": {
+            "Desc": "−10: Scout the Area, Cover Tracks, The Stash; 20% chance of being unfit after camp"
+          },
+          "loudmouth": {
+            "Desc": "−10: Smuggling, River Run"
+          },
+          "lazy": {
+            "Desc": "−10: Scavenge and Forage, Contraband Pickup"
+          },
+          "old_slow": {
+            "Desc": "−10: Scout the Area"
+          },
+          "repulsive": {
+            "Desc": "−10: Listen at the Tavern, Fence the Cargo (puts people off)"
+          },
+          "one_eyed": {
+            "Desc": "−10: Scout the Area, Cover Tracks, The Stash"
+          },
+          "afraid_horses": {
+            "Desc": "−10: Smuggling, River Run"
+          },
+          "hothead": {
+            "Desc": "−10: Bribery, Cover Tracks, The Stash"
+          },
+          "squeamish": {
+            "Desc": "−10: Tend the Wounded"
+          },
+          "snorer": {
+            "Desc": "−10: Scout the Area"
+          },
+          "bad_leg": {
+            "Desc": "−10: Smuggling, River Run"
+          },
+          "proud": {
+            "Desc": "−10: Listen at the Tavern, Fence the Cargo, Bribery"
+          },
+          "jinxed": {
+            "Desc": "−10: Scout the Area"
+          },
+          "kleptomaniac": {
+            "Camp": "pilfers the crew's treasury (1 SS)"
+          },
+          "gambler": {
+            "Camp": "gambles away the crew's money at cards"
+          }
+        },
+        "Perks": {
+          "craft_chirurgeon": {
+            "Desc": "Before taking to the road he stitched wounds and set bones. During night camp he automatically heals 1 wounded smuggler without using supplies."
+          },
+          "blood_brotherhood": {
+            "Name": "Blood Oath with the Skipper",
+            "Desc": "Swore a bloody rite of loyalty. Will never betray, never panics in camp and once per session may take a Critical Wound aimed at the skipper."
+          },
+          "guard_contacts": {
+            "Name": "Contact at the Customs House",
+            "Desc": "Has a debtor or relative among the customs men. Halves the risk of a search and gives warning of it."
+          },
+          "shadow_tongue": {
+            "Name": "River Cant",
+            "Desc": "Knows the boatmen's signs and the cant of the wharves. +10 to scouting, shadowing and fencing."
+          },
+          "craft_blacksmith": {
+            "Desc": "Work at bellows and anvil gives strength and a knowledge of weapons. Permanent +10 to jobs with weapons and a 50% discount on gear for the crew."
+          },
+          "craft_innkeeper": {
+            "Desc": "Knows the secrets of brewing and loosening tongues. Raises crew Morale by +1 every night camp, and tavern eavesdropping brings an extra rumour."
+          },
+          "battle_scarred": {
+            "Desc": "Survived many wounds and skirmishes. Even when wounded he doesn't lower crew Morale and can stand night watch in camp without penalty."
+          },
+          "cold_blooded": {
+            "Desc": "A ruthless, composed professional. When a job fails, ignores the first complication or loss of crew Morale."
+          }
+        },
+        "Notify": {
+          "SelectChiefForCamp": "Select the skipper's token to call the night camp.",
+          "SelectChief": "Select the skipper's token on the map.",
+          "SelectCharacter": "Select a character token or create a player character to open the crew sheet!",
+          "OpenFailed": "Could not open the crew sheet: {error}",
+          "NoAccess": "You don't have access to this character's crew.",
+          "GMResolvesWeek": "The GM resolves the crew's week.",
+          "WeekAlreadyResolved": "This crew's week has already been resolved for this world day. Advance the game time.",
+          "CampAlreadyResolved": "This crew's night camp has already been resolved for this world day."
+        },
+        "Orders": {
+          "meatshield": {
+            "Effect": "The blow hits the smuggler instead of the skipper. The smuggler is wounded (unless saved by armour or a veteran's rank).",
+            "Desc": "The boatman shoves a smuggler in front of the skipper, straight into the blow."
+          },
+          "bullrush": {
+            "Effect": "The enemy is pushed back 2 metres and loses 1 Advantage, and the skipper closes to melee at once without a test.",
+            "Name": "Overboard!",
+            "Desc": "The boatman shoves the enemy with an oar or a shoulder, preferably straight into the water."
+          },
+          "flank": {
+            "Effect": "The target loses its guard – it cannot Dodge or Parry the skipper's next attack!",
+            "Desc": "The lookout comes at the enemy from the water side."
+          },
+          "distract": {
+            "Effect": "The skipper gains +2 Advantage, and the provoked enemy loses 1 Advantage!",
+            "Name": "A Row over the Papers",
+            "Desc": "The forger starts a loud row about the papers and nobody knows who is in charge."
+          },
+          "draught": {
+            "Effect": "The skipper or a chosen ally removes 1 Fatigued condition or ignores it until the end of the next round.",
+            "Name": "A Swig from the Cask",
+            "Desc": "The purser opens a cask of smuggled brandy."
+          },
+          "rally": {
+            "Desc": "The skipper roars an order, spurring on his companions and striking fear into the enemy.",
+            "Effect": "Removes the Broken condition from the chosen ally. The skipper gains Advantage equal to the SL of the test (minimum 1)."
+          },
+          "coordinate": {
+            "Effect": "The skipper and up to three allies within 6 metres may make a free move of half their Movement; leaving melee requires no test."
+          },
+          "retaliation": {
+            "Desc": "A furious counterattack! A smuggler throws himself at the foe to avenge the wounded leader.",
+            "Effect": "If the skipper or an ally takes damage, the right hand counterattacks at once OR the skipper gains +2 Advantage in return.",
+            "Name": "Crew's Revenge"
+          },
+          "Notify": {
+            "AlreadyThisRound": "The skipper has already given an order this round (an order uses their Action)."
+          },
+          "MeatShield": {
+            "Saved": "{name} throws themself in front of the blow, but {reason} absorbs the impact! The smuggler avoids a wound and stays ready!"
+          },
+          "Dialog": {
+            "ChiefHimself": "the skipper in person",
+            "Follower": "The smuggler",
+            "LeadershipHint": "The skipper makes a Leadership test. Success – the order works; failure – no effect. The order uses the skipper's Action (one per round)."
+          },
+          "bodyblock": {
+            "Desc": "The bodyguard steps in front of the skipper and takes the blows on shield and back.",
+            "Effect": "Until the end of the round the first melee attack against the skipper hits the bodyguard instead. The skipper gains 1 Advantage (a moment to catch their breath)."
+          },
+          "circle": {
+            "Desc": "The crew closes a ring round the skipper, backs together, faces to the enemy.",
+            "Effect": "The skipper loses the Surprised condition (if any) and gains 1 Advantage. Nobody comes at them from behind."
+          },
+          "parry": {
+            "Desc": "The duellist steps between the skipper and the enemy and turns the blow aside with the blade.",
+            "Effect": "The first melee attack against the skipper this round has −20 to hit. The skipper gains 1 Advantage."
+          },
+          "riposte": {
+            "Effect": "The chosen opponent loses 1 Advantage. If they attack the skipper this round and miss, the skipper may immediately strike back."
+          },
+          "getaway": {
+            "Effect": "The skipper loses the Prone condition and may move 4 metres away without provoking opportunity attacks.",
+            "Name": "All Aboard!",
+            "Desc": "The helmsman grabs the skipper by the arm and hauls them aboard."
+          },
+          "spot": {
+            "Effect": "The skipper's first attack this round gets +10 to hit. The skipper gains 1 Advantage.",
+            "Desc": "The helmsman sees the enemy is standing on a slippery plank."
+          },
+          "salve": {
+            "Effect": "The skipper (or a chosen ally) loses the Bleeding condition."
+          },
+          "regroup": {
+            "Effect": "The skipper loses the Surprised condition and gains 1 Advantage; retinue allies may move 2 metres for free.",
+            "Desc": "The Right Hand claps, whistles and the crew falls back into line."
+          },
+          "trip": {
+            "Name": "Boathook to the Legs",
+            "Desc": "The boatman hooks the enemy's leg with a boathook."
+          },
+          "grapple": {
+            "Desc": "The boatman grabs the enemy round the waist like a sack of flour."
+          },
+          "retreat": {
+            "Name": "Push Off!",
+            "Desc": "The helmsman pushes the barge off the quay before the pursuers can jump aboard."
+          },
+          "wagonwall": {
+            "Name": "Duck Behind the Gunwale",
+            "Desc": "The helmsman turns the barge broadside to the archers.",
+            "Effect": "The gunwale gives cover: ranged attacks on the skipper this round suffer −10. The skipper gains 1 Advantage."
+          },
+          "smoke": {
+            "Name": "Douse the Lanterns",
+            "Desc": "The lookout knocks the lanterns into the water and the landing goes dark.",
+            "Effect": "Darkness covers the field until the end of the next round: enemies suffer −10 to Perception and Ranged tests. The crew may leave melee without a test."
+          },
+          "lure": {
+            "Desc": "The lookout whistles from the far bank and draws the pursuit the wrong way."
+          },
+          "forgedorder": {
+            "Name": "Forged Pass",
+            "Desc": "The forger waves a pass with a customs seal and shouts that this is an inspection."
+          },
+          "payoff": {
+            "Name": "The Bribe",
+            "Desc": "Someone from the crew presses a purse into the enemy's hand and whispers there is more."
+          },
+          "resupply": {
+            "Desc": "The purser passes up a bolt, a weapon or a bandage from the hold."
+          },
+          "Effects": {
+            "MustFace": "goes for the duellist and ignores the rest of the crew until the end of the round"
+          },
+          "challenge": {
+            "Effect": "The opponent must pass a Willpower test; on a failure they go for the duellist and ignore the rest of the crew until the end of the round."
+          }
+        },
+        "Relation": {
+          "strained": {
+            "Desc": "The buyer is watching you closely. Delays risk his anger."
+          },
+          "favorite": {
+            "Name": "Buyer's Favourites"
+          }
+        },
+        "Recruit": {
+          "ChatText": "<strong>{user}</strong> recruited the smuggler <strong>{name}</strong> ({role}) into the crew.",
+          "NoActor": "Could not find the crew actor linked to this recruitment!",
+          "Joined": "{name} has joined the crew!",
+          "Flavor": "Recruitment: New Faces in the Crew"
+        },
+        "Ops": {
+          "PatronCut": "Buyer's cut ({percent}%): {cut} · to the stash: {net}.",
+          "NoCargo": "{mission}: no suitable cargo to take along.",
+          "DataEffect": {
+            "Heat": "Scrutiny {value}."
+          }
+        },
+        "Loot": {
+          "ItemDesc": "Crew cargo: {origin}.",
+          "ItemDescHot": "Crew cargo: {origin} – hot goods, someone is looking for it.",
+          "DiscardTitle": "Get rid of the cargo?",
+          "DiscardText": "Throw away, give away or hide <strong>{name}</strong> (~{value} SS) for good? The cargo will disappear from the crew's hideout."
+        },
+        "Card": {
+          "Loot": {
+            "Haul": "Cargo: {loot}."
+          },
+          "Burglary": {
+            "Success": "{name} gets in and leaves before dawn with the cargo.",
+            "SuccessAt": "{name} gets into <em>{place}</em> and leaves before dawn with the cargo."
+          },
+          "Fence": {
+            "NothingToSell": "{fence}: no cargo that can be sold here.",
+            "Returned": "The cargo goes back to the hideout."
+          },
+          "Bribe": {
+            "HeatDown": "The report on the crew ends up in the stove – Scrutiny −1.",
+            "NotArrested": "This crew member is not under arrest."
+          },
+          "CoverTracks": {
+            "HeatDown": "The crew's trail fades – Scrutiny −1."
+          },
+          "Intimidate": {
+            "Success": "{name} successfully intimidates the victim – takings: {coins} SS."
+          }
+        },
+        "Camp": {
+          "Log": "Night camp [{shelter}]. Watch: {watch}. {food}. Morale: {morale}/10. Scrutiny: {heat}/5.",
+          "NoHealthy": "No healthy smugglers in the camp!",
+          "StateLine": "Morale: {morale}/10, Scrutiny: {heat}/5, Supplies: {supplies}",
+          "TitleWeek": "Crew Week",
+          "FlavorWeek": "Report: Crew Week",
+          "GMResolvesWeekHint": "The GM resolves the crew's week. Plan assignments in the Assignments tab."
+        },
+        "Desertion": {
+          "Text": "<strong>{name}</strong> no longer believes in the skipper and vanishes before dawn{taken}."
+        },
+        "Treasury": {
+          "Generous": "The crew sees the skipper's generosity — spirits in the camp rise! (+1 Morale)",
+          "SmallWithdrawal": "Small expenses taken. The smugglers don't mind.",
+          "AuthorityHeld": "The skipper used their authority to silence the whispers. Leadership test passed (Roll: {roll} vs {target}). Morale intact.",
+          "AuthorityLost": "The crew mutters in corners that the skipper is pilfering the common cargo! Leadership test failed (Roll: {roll} vs {target}). The crew loses {loss} Morale!",
+          "FlavorWithdraw": "Sharing the Profit",
+          "Deposited": "Deposited {amount} into the crew's stash.",
+          "DepositTitle": "Deposit to the Crew's Stash",
+          "NewBalance": "The crew's stash now holds: <strong>{amount}</strong>.",
+          "FlavorDeposit": "Crew Finances",
+          "StashShort": "The crew's stash doesn't hold that much! Available: {have}",
+          "WithdrawTitle": "Withdrawal from the Crew's Stash"
+        },
+        "Roster": {
+          "NewFollower": "New Smuggler",
+          "GMOnlyDelete": "Only the GM can remove crew members.",
+          "DeleteTitle": "Remove crew member",
+          "DeleteText": "Really remove <strong>{name}</strong> from the crew?"
+        },
+        "Retinue": {
+          "Left": "{name} left the skipper's retinue.",
+          "Joined": "{name} joined the skipper's retinue!",
+          "Full": "The skipper's retinue can have at most 3 smugglers!"
+        },
+        "Mission": {
+          "NoFollower": "No smuggler selected!"
+        },
+        "Tier": {
+          "LeadApplies": "{name}: no penalty, double cargo"
+        },
+        "Fence": {
+          "NothingChosen": "No cargo selected for sale.",
+          "NoLoot": "The crew has no cargo to sell."
+        },
+        "Bribe": {
+          "Hush": "Hush it up: Scrutiny −1 (20 SS)"
+        },
+        "RecruitDialog": {
+          "Intro": "Present smuggler proposals to the players in the chat. The players can choose one recruit to join the crew.",
+          "Title": "Recruit New Smugglers for the Players"
+        },
+        "Upgrade": {
+          "OneCraftHint": "An smuggler can have only one former trade",
+          "TransferHint": "Pass to another smuggler",
+          "CraftSectionHint": "(at most 1 trade per smuggler)",
+          "TraitSection": "Smuggler's Strengths and Flaws",
+          "HasCraft": "This smuggler already has a former trade ({name})! A character can have only one trade from the past.",
+          "NoFreeSlot": "No other smugglers have a free gear slot!",
+          "SecondRoleIntro": "A smuggler who has seen a lot can do more than one thing. A second role unlocks its orders and specialty (the specialty bonus counts once).",
+          "CraftIntro": "The past and the trade from before the first run with contraband. Each smuggler may choose only one former craft.",
+          "Stash": "Crew stash",
+          "OneLieutenant": "The crew can have only one Right Hand ({name})!"
+        },
+        "TreasuryDialog": {
+          "MutinyRisk": "<strong>Risk of Mutiny:</strong> Smugglers keep an eye on the common cargo! Taking more than 10 SS requires the skipper to pass a Leadership test. On a failure the crew loses <strong>1–2 Morale</strong>!",
+          "DepositHint": "A deposit over 1 GC (20 SS) is rewarded with <strong>+1 Morale</strong> for the whole crew!",
+          "Balance": "The crew's stash"
+        },
+        "Chat": {
+          "Footer": "The Skipper's Retinue",
+          "GangTest": "Simplified crew test"
+        },
+        "RecruitCard": {
+          "Intro": "The GM has presented the candidates. Choose the smuggler who will join your company!",
+          "Title": "New Faces in the Crew: Recruitment",
+          "Joined": "The character has joined the crew!",
+          "Footer": "Crew Recruitment"
+        },
+        "TacticCard": {
+          "UsesAction": "The order uses the skipper's Action this round."
+        },
+        "Sheet": {
+          "LeaderTitle": "Skipper / Leader: {name}",
+          "ChiefTitle": "Crew Skipper",
+          "Chief": "SKIPPER",
+          "Eyebrow": "Crew sheet",
+          "NamePlaceholder": "Crew / Retinue name",
+          "NameTitle": "Click to rename the crew",
+          "MottoTitle": "Crew motto",
+          "MoraleTitle": "Crew Morale: {value}/10"
+        },
+        "Tabs": {
+          "Loot": "Cargo"
+        },
+        "LootTab": {
+          "GiveChief": "Give to the skipper as an item",
+          "Discard": "Get rid of the cargo",
+          "Empty": "The stash is empty. Cargo comes from contraband pickups, and a river run takes it to the buyer.",
+          "HelpRecon": "<strong>Recon</strong> (Scouting): +20 to the next river run.",
+          "InHideout": "Cargo in the stash",
+          "TerrainLabel": "Crew terrain"
+        },
+        "TasksTab": {
+          "Intro": "Send your people out or take them into your personal retinue. Each smuggler can be given <strong>one task per day</strong>.",
+          "RetinueHint": "Smugglers in the retinue stay at the skipper's side during the game day and unlock their unique combat orders in the <strong>Tactics</strong> tab (max. 3 people). Meanwhile they cannot go on separate jobs.",
+          "WatchHint": "People on watch stay awake while the party sleeps. Each smuggler can have only one task per day."
+        },
+        "RosterTab": {
+          "Title": "Smugglers and Company",
+          "ToggleAllHint": "Collapse or expand the details of all smugglers",
+          "AddHint": "Game Master: add a new blank smuggler",
+          "Add": "Add Smuggler",
+          "DropHint": "Drag a character or NPC actor from the Foundry sidebar onto a card to link it to a smuggler",
+          "ToggleOne": "Collapse / expand the smuggler's details",
+          "NamePlaceholder": "Smuggler's name...",
+          "LeaveRetinue": "Send back from the skipper's retinue to the camp",
+          "JoinRetinueHint": "Join the skipper's personal retinue (unlocks Tactics)",
+          "Delete": "Remove the smuggler from the retinue",
+          "RoleTitle": "Game Master: choose the smuggler's role",
+          "EmptyTitle": "No smugglers in the retinue!"
+        },
+        "InfoTab": {
+          "GMOnlyPatron": "Only the Game Master can change the buyer's details",
+          "PatronSetByGM": "The buyer's details are set by the Game Master",
+          "RelationShort": {
+            "strained": "Strained (suspicion, the buyer watches closely)",
+            "favorite": "Trusted (full confidence, the best cargoes)"
+          },
+          "LawTitle": "Customs Scrutiny",
+          "GMOnlyHeat": "Only the Game Master can change Scrutiny",
+          "HeatLevel": "Customs Scrutiny Level:",
+          "HeatShort": {
+            "0": "Clean hulls",
+            "1": "Questions in port",
+            "2": "Searches, bribes x2",
+            "3": "Skipper's description out",
+            "4": "Patrol boats",
+            "5": "River closed"
+          },
+          "Bounty": "Debts / Bounty on the Skipper's Head:",
+          "BountyPlaceholder": "e.g. 10 Gold Crowns for the skipper and the barge",
+          "AlliesPlaceholder": "Bribed customs men, wharf innkeepers, boatmen, fences...",
+          "Rivals": "Enemies and Rival Crews:",
+          "RivalsPlaceholder": "Other crews, the river watch, honest merchants, the boatmen's guild...",
+          "Patron": "The Buyer",
+          "PatronName": "Buyer's Name:",
+          "PatronNamePlaceholder": "e.g. Salzer the merchant, Gerta the innkeeper, 'the Man'...",
+          "PatronTitle": "Buyer's Position / Trade:",
+          "PatronTitlePlaceholder": "e.g. Wine Wholesaler, Harbourmaster, Guildmaster...",
+          "PatronRelation": "Trust and Relationship with the Buyer:",
+          "PatronCut": "Rates and Terms of Delivery:",
+          "PatronCutPlaceholder": "e.g. 3 GC a barrel, paid on delivery...",
+          "PatronNotes": "Contact and Obligations to the Buyer:",
+          "Hideout": "Moorings / Cargo Stash:",
+          "Territory": "River Route / Stretch of Runs:",
+          "Code": "Law of the Deck / Crew Rules:",
+          "CodePlaceholder": "Sharing the profit, silence before the customs men, punishment for betrayal...",
+          "Notes": "The Skipper's Log:",
+          "NotesPlaceholder": "The crew's history, past runs, future goals..."
+        },
+        "DashTab": {
+          "CampCaption": "Affects recovery and the crew's mood while resting. Terrain: <strong>{terrain}</strong> (change it in the Cargo tab).",
+          "FlavorHigh": "The crew would follow the skipper into fire! Ready for any sacrifice.",
+          "Morale": "Crew Morale",
+          "FlavorMid": "Steady discipline. The crew follows orders without complaint.",
+          "DepositHint": "Move coins from your purse into the crew's common stash (+1 Morale for generous gifts)",
+          "WithdrawHint": "Take coins from the crew's stash (taking more than 10 SS requires a Leadership test — risk of losing Morale!)",
+          "ResolveWeek": "Resolve the Crew Week",
+          "TablesHint": "Game Master: open the random rumour and camp event tables (RollTable, crew folder)",
+          "ChronicleEmpty": "No events recorded yet. The crew is just setting out on the road..."
+        },
+        "TacticsTab": {
+          "NoRetinue": "<strong>No smugglers in the retinue!</strong> The skipper fights alone. Specialist orders are locked. Assign people in the <em>Assignments</em> tab.",
+          "HowTo": "You give orders through the skipper's <strong>Leadership Test</strong> (failure means no effect; one order per round, uses the skipper's Action) or by spending <strong>Advantage</strong> (automatic success).",
+          "FilterEmpty": "No active member of the retinue unlocks any tactics. Add a smuggler to the retinue or show all tactics.",
+          "PersonalAlways": "The skipper's personal order (always available)",
+          "WoundRisk": "Risk of a Smuggler's Wound"
+        },
+        "Title": "Crew",
+        "WindowTitle": "WFRP4e – Smugglers' Flotilla",
+        "DefaultGangName": "Crew",
+        "Mod": {
+          "Heat": "Scrutiny {value}",
+          "ShadowTongue": "River Cant",
+          "Rank": "Crew rank"
+        },
+        "Tiers": {
+          "easy": {
+            "Name": "Back channels",
+            "Desc": "+20 to the test, half the pay"
+          },
+          "normal": {
+            "Name": "The usual route"
+          },
+          "rich": {
+            "Name": "Past the customs house",
+            "Desc": "−20 to the test, double pay, any failure risks getting caught"
+          }
+        },
+        "Tokens": {
+          "recon": {
+            "Desc": "+20 to the next river run"
+          },
+          "lead": {
+            "Desc": "A run past the customs house without the −20 penalty"
+          }
+        },
+        "Notoriety": {
+          "0": {
+            "Name": "Clean Hulls",
+            "Desc": "Nobody looks below your decks. The customs men wave you through."
+          },
+          "1": {
+            "Name": "Questions in Port",
+            "Desc": "The harbourmaster asks one question too many. Nothing serious."
+          },
+          "2": {
+            "Name": "More Searches",
+            "Desc": "Customs men board at every lock. Bribes cost double."
+          },
+          "3": {
+            "Name": "The Skipper's Description",
+            "Desc": "A description of the skipper and the barge hangs in customs houses up and down the river."
+          },
+          "4": {
+            "Name": "Patrol Boats",
+            "Desc": "The river watch follows your runs and waits for a mistake."
+          },
+          "5": {
+            "Name": "The River Closed",
+            "Desc": "Chains across the locks, every boat searched, a bounty on the skipper."
+          }
+        },
+        "Risk": {
+          "stealth": "If caught: Scrutiny, arrest",
+          "Result": {
+            "FaceRemembered": "A customs man remembers a face – Scrutiny +1.",
+            "Arrested": "{name} falls into the hands of the customs men – <strong>Arrested</strong> for {time}. Scrutiny +1.",
+            "Chase": "A chase along the quay and shouting in the harbour – Scrutiny +1.",
+            "WoundedLoud": "{name} is <strong>Wounded</strong>, and the whole harbour talks about the brawl – Scrutiny +1."
+          }
+        },
+        "Raid": {
+          "Escaped": "The sentries raised the alarm in time – the crew pushed off from the bank, leaving {lost} rations behind.",
+          "Settled": "After the search the customs men consider the matter closed – Scrutiny −1.",
+          "Summary": "Customs search.",
+          "Arrested": "The customs men burst into the unguarded camp – <strong>{name}</strong> is arrested for {time}.",
+          "Seized": "The customs men “confiscated” {amount} from the stash."
+        },
+        "Report": {
+          "MissionFlavor": "Skipper's Orders",
+          "QueueTitle": "Crew runs report"
+        },
+        "Badges": {
+          "retinue": "Skipper's Retinue"
+        },
+        "Strengths": {
+          "tough": {
+            "Desc": "+10: Diversion and Brawl"
+          },
+          "stealthy": {
+            "Desc": "+10: Scout the Area, Smuggling, River Run"
+          },
+          "nimble": {
+            "Desc": "+10: Scavenge and Forage, Forge Documents, Contraband Pickup"
+          },
+          "talkative": {
+            "Desc": "+10: Listen at the Tavern, Fence the Cargo"
+          },
+          "eagle_eye": {
+            "Desc": "+10: Scout the Area, Cover Tracks, The Stash"
+          },
+          "trusted_face": {
+            "Desc": "+10: Fence the Cargo, Bribery"
+          },
+          "local_knowledge": {
+            "Desc": "+10: Scout the Area, Scavenge and Forage, Contraband Pickup"
+          },
+          "field_medic": {
+            "Desc": "+10: Tend the Wounded; 50% chance of instant healing"
+          },
+          "war_veteran": {
+            "Desc": "+10: Diversion and Brawl, Cover Tracks, The Stash"
+          },
+          "horse_thief": {
+            "Desc": "+10: Scavenge and Forage, Smuggling, River Run, Contraband Pickup"
+          },
+          "iron_will": {
+            "Desc": "+10: Diversion and Brawl, Cover Tracks, Tend the Wounded, The Stash; resistant to pain"
+          },
+          "keen_senses": {
+            "Desc": "+10: Scout the Area, Listen at the Tavern; senses spies"
+          },
+          "quick_escape": {
+            "Desc": "+10: Diversion and Brawl, Smuggling, River Run"
+          },
+          "juggler": {
+            "Desc": "+10: Diversion and Brawl"
+          },
+          "poacher": {
+            "Desc": "+10: Scout the Area, Scavenge and Forage, Contraband Pickup; brings an extra ration"
+          },
+          "drinking_buddy": {
+            "Desc": "+10: Listen at the Tavern"
+          },
+          "knife_master": {
+            "Desc": "+10: Diversion and Brawl"
+          },
+          "smooth_liar": {
+            "Desc": "+10: Fence the Cargo, Bribery, Forge Documents"
+          },
+          "surefooted": {
+            "Desc": "+10: Scout the Area, Cover Tracks, The Stash"
+          },
+          "night_owl": {
+            "Desc": "+10: Scout the Area"
+          },
+          "pack_rat": {
+            "Desc": "+10: Scavenge and Forage, Contraband Pickup"
+          },
+          "animal_friend": {
+            "Desc": "+10: Scavenge and Forage, Smuggling, River Run, Contraband Pickup"
+          },
+          "steady_nerves": {
+            "Desc": "+10: Bribery, Diversion and Brawl, Cover Tracks, Tend the Wounded, The Stash"
+          },
+          "haggler": {
+            "Desc": "+10: Fence the Cargo"
+          },
+          "lucky": {
+            "Desc": "+10: Smuggling, Cover Tracks, River Run, The Stash"
+          },
+          "tight_lipped": {
+            "Desc": "Never betrays the hideout under questioning by the watch"
+          }
+        },
+        "Meta": {
+          "TargetHint": "Target for the simplified test (before crew modifiers)"
+        },
+        "Supplies": {
+          "StashShort": "The crew's stash is short! Needed: {need}, available: {have}",
+          "SourceStash": "the crew's stash"
+        },
+        "Terrain": {
+          "RacketWaits": "The city racket waits for the crew to return.",
+          "Changed": "The crew moves to a new terrain: {terrain}. Fence: {fence}."
+        },
+        "CampDialog": {
+          "UseSupplies": "Use supplies from the crew's larder:",
+          "TitleWeek": "Crew Week – resolution",
+          "WeekDone": "The crew's week is resolved – report in the chat."
+        },
+        "SuppliesDialog": {
+          "FromStash": "The crew's stash (available: {amount})"
+        }
+      },
+      "investigators": {
+        "Terrains": {
+          "forest": {
+            "Comfortable": "Agents' dugout",
+            "Fence": "The count's gamekeeper"
+          },
+          "city": {
+            "Fence": "A secret-buyer in the university quarter",
+            "Raid": "A rival's counter-spies strike the safehouse!"
+          },
+          "village": {
+            "Fence": "The village scribe",
+            "Raid": "The reeve sends the watch after strangers!"
+          },
+          "mountains": {
+            "Fence": "A dwarf notary"
+          }
+        },
+        "Missions": {
+          "scout": {
+            "Desc": "Reconnaissance before a job: patrols, safehouses, weak spots. Success grants a Recon token."
+          },
+          "bribe": {
+            "Reward": "release from gaol, Exposure −1 or a favour"
+          },
+          "cover_tracks": {
+            "Reward": "Exposure −1, a calmer night",
+            "Desc": "Erase the trail and move camp. The only way to lower Exposure yourselves."
+          },
+          "fence": {
+            "Name": "Selling Information",
+            "Reward": "cash for documents (the buyer's rate)",
+            "Desc": "Selling letters and documents. The price depends on the buyer and a Haggle test.",
+            "Names": {
+              "city": "The Secret-Buyer",
+              "village": "The Village Scribe",
+              "forest": "The Count's Gamekeeper",
+              "mountains": "The Dwarf Notary"
+            }
+          }
+        },
+        "MissionCategories": {
+          "resources": {
+            "Name": "Resources & Intel"
+          }
+        },
+        "Ranks": {
+          "rookie": {
+            "Desc": "A fresh agent without much experience on the road."
+          },
+          "lieutenant": {
+            "Desc": "+30 to tests, authority (+1 network Morale), command orders (unique rank – one per network; needs over 60–80 days of service)."
+          }
+        },
+        "Strengths": {
+          "tight_lipped": {
+            "Desc": "Never betrays the safehouse under questioning by the watch"
+          },
+          "tough": {
+            "Desc": "+10: Diversion and Brawl"
+          },
+          "stealthy": {
+            "Desc": "+10: Scout the Area, Shadow a Target, Intercept a Courier"
+          },
+          "nimble": {
+            "Desc": "+10: Forge Documents, Swap a Letter"
+          },
+          "talkative": {
+            "Desc": "+10: Listen at the Tavern, Spread Rumours, Selling Information, Buy a Secret, Report to the Principal"
+          },
+          "eagle_eye": {
+            "Desc": "+10: Scout the Area, Cover Tracks"
+          },
+          "trusted_face": {
+            "Desc": "+10: Bribery, Selling Information"
+          },
+          "local_knowledge": {
+            "Desc": "+10: Scout the Area"
+          },
+          "field_medic": {
+            "Desc": "+10: Tend the Wounded; 50% chance of instant healing"
+          },
+          "war_veteran": {
+            "Desc": "+10: Diversion and Brawl, Cover Tracks"
+          },
+          "iron_will": {
+            "Desc": "+10: Diversion and Brawl, Cover Tracks, Tend the Wounded; resistant to pain"
+          },
+          "keen_senses": {
+            "Desc": "+10: Scout the Area, Listen at the Tavern, Buy a Secret, Report to the Principal; senses spies"
+          },
+          "quick_escape": {
+            "Desc": "+10: Diversion and Brawl"
+          },
+          "juggler": {
+            "Desc": "+10: Spread Rumours, Diversion and Brawl"
+          },
+          "poacher": {
+            "Desc": "+10: Scout the Area; brings an extra ration"
+          },
+          "drinking_buddy": {
+            "Desc": "+10: Listen at the Tavern, Spread Rumours, Buy a Secret, Report to the Principal"
+          },
+          "knife_master": {
+            "Desc": "+10: Shadow a Target, Diversion and Brawl, Intercept a Courier"
+          },
+          "smooth_liar": {
+            "Desc": "+10: Bribery, Forge Documents, Selling Information, Swap a Letter"
+          },
+          "surefooted": {
+            "Desc": "+10: Scout the Area, Cover Tracks"
+          },
+          "night_owl": {
+            "Desc": "+10: Scout the Area, Shadow a Target, Intercept a Courier"
+          },
+          "steady_nerves": {
+            "Desc": "+10: Bribery, Diversion and Brawl, Cover Tracks, Tend the Wounded"
+          },
+          "haggler": {
+            "Desc": "+10: Selling Information"
+          },
+          "lucky": {
+            "Desc": "+10: Cover Tracks"
+          }
+        },
+        "Flaws": {
+          "kleptomaniac": {
+            "Camp": "pilfers the network's treasury (1 SS)"
+          },
+          "wanted": {
+            "Desc": "+1 Exposure when caught; risk of being recognised"
+          },
+          "gambler": {
+            "Camp": "gambles away the network's money at cards"
+          },
+          "traitor": {
+            "Desc": "10% chance of leaking information on a spying job (+1 Exposure)",
+            "Camp": "information about the network leaks out — +1 Exposure"
+          },
+          "in_debt": {
+            "Desc": "10% chance after camp that creditors sniff around the safehouse (+1 Exposure)",
+            "Camp": "creditors are hard on his heels — +1 Exposure"
+          },
+          "clumsy": {
+            "Desc": "−10: Forge Documents, Swap a Letter"
+          },
+          "bloodthirsty": {
+            "Desc": "Every successful diversion or intimidation gives +1 Exposure through needless cruelty"
+          },
+          "witchhunter_mark": {
+            "Desc": "A failure raises Exposure"
+          },
+          "coward": {
+            "Desc": "−10: Diversion and Brawl"
+          },
+          "alcoholic": {
+            "Desc": "−10: Scout the Area, Cover Tracks; 20% chance of being unfit after camp"
+          },
+          "loudmouth": {
+            "Desc": "−10: Shadow a Target, Intercept a Courier"
+          },
+          "old_slow": {
+            "Desc": "−10: Scout the Area, Shadow a Target, Intercept a Courier"
+          },
+          "superstitious": {
+            "Desc": "−10: Shadow a Target, Intercept a Courier"
+          },
+          "repulsive": {
+            "Desc": "−10: Listen at the Tavern, Spread Rumours, Selling Information, Buy a Secret, Report to the Principal (puts people off)"
+          },
+          "one_eyed": {
+            "Desc": "−10: Scout the Area, Cover Tracks"
+          },
+          "hothead": {
+            "Desc": "−10: Bribery, Cover Tracks"
+          },
+          "squeamish": {
+            "Desc": "−10: Tend the Wounded"
+          },
+          "snorer": {
+            "Desc": "−10: Scout the Area, Shadow a Target, Intercept a Courier"
+          },
+          "proud": {
+            "Desc": "−10: Listen at the Tavern, Bribery, Selling Information, Buy a Secret, Report to the Principal"
+          },
+          "jinxed": {
+            "Desc": "−10: Scout the Area"
+          }
+        },
+        "Perks": {
+          "craft_chirurgeon": {
+            "Desc": "Before taking to the road he stitched wounds and set bones. During night camp he automatically heals 1 wounded informant without using supplies."
+          },
+          "craft_blacksmith": {
+            "Desc": "Work at bellows and anvil gives strength and a knowledge of weapons. Permanent +10 to jobs with weapons and a 50% discount on gear for the network."
+          },
+          "craft_innkeeper": {
+            "Desc": "Knows the secrets of brewing and loosening tongues. Raises network Morale by +1 every night camp, and tavern eavesdropping brings an extra rumour."
+          },
+          "blood_brotherhood": {
+            "Name": "Blood Oath with the Spymaster",
+            "Desc": "Swore a bloody rite of loyalty. Will never betray, never panics in camp and once per session may take a Critical Wound aimed at the spymaster."
+          },
+          "battle_scarred": {
+            "Desc": "Survived many wounds and skirmishes. Even when wounded he doesn't lower network Morale and can stand night watch in camp without penalty."
+          },
+          "cold_blooded": {
+            "Desc": "A ruthless, composed professional. When a job fails, ignores the first complication or loss of network Morale."
+          },
+          "guard_contacts": {
+            "Name": "Contact in the Chancery",
+            "Desc": "Has a debtor or relative among the clerks. Halves the risk of a raid and gives warning of it."
+          },
+          "shadow_tongue": {
+            "Name": "Network Cipher",
+            "Desc": "Knows the network's signs, passwords and ciphers. +10 to scouting, shadowing and selling information."
+          },
+          "craft_merchant": {
+            "Desc": "Knows trade routes, tolls and how to reckon profit. Increases the profit from fencing, theft and scavenging by +2 SS for every successful job."
+          }
+        },
+        "Notify": {
+          "SelectCharacter": "Select a character token or create a player character to open the network sheet!",
+          "OpenFailed": "Could not open the network sheet: {error}",
+          "SelectChiefForCamp": "Select the spymaster's token to call the night camp.",
+          "SelectChief": "Select the spymaster's token on the map.",
+          "NoAccess": "You don't have access to this character's network.",
+          "GMResolvesWeek": "The GM resolves the network's week.",
+          "WeekAlreadyResolved": "This network's week has already been resolved for this world day. Advance the game time.",
+          "CampAlreadyResolved": "This network's night camp has already been resolved for this world day."
+        },
+        "Orders": {
+          "Effects": {
+            "MustFace": "goes for the duellist and ignores the rest of the network until the end of the round"
+          },
+          "meatshield": {
+            "Effect": "The blow hits the informant instead of the spymaster. The informant is wounded (unless saved by armour or a veteran's rank).",
+            "Desc": "The enforcer shoves an informant in front of the spymaster, straight into the blow."
+          },
+          "bullrush": {
+            "Effect": "The enemy is pushed back 2 metres and loses 1 Advantage, and the spymaster closes to melee at once without a test.",
+            "Desc": "The enforcer slams into the enemy with full weight."
+          },
+          "flank": {
+            "Effect": "The target loses its guard – it cannot Dodge or Parry the spymaster's next attack!"
+          },
+          "distract": {
+            "Effect": "The spymaster gains +2 Advantage, and the provoked enemy loses 1 Advantage!",
+            "Name": "A Secret Shouted Out",
+            "Desc": "The eavesdropper shouts the enemy's secret for everyone to hear."
+          },
+          "draught": {
+            "Effect": "The spymaster or a chosen ally removes 1 Fatigued condition or ignores it until the end of the next round."
+          },
+          "rally": {
+            "Desc": "The spymaster roars an order, spurring on his companions and striking fear into the enemy.",
+            "Effect": "Removes the Broken condition from the chosen ally. The spymaster gains Advantage equal to the SL of the test (minimum 1)."
+          },
+          "coordinate": {
+            "Effect": "The spymaster and up to three allies within 6 metres may make a free move of half their Movement; leaving melee requires no test."
+          },
+          "retaliation": {
+            "Name": "Network's Revenge",
+            "Desc": "A furious counterattack! A informant throws himself at the foe to avenge the wounded leader.",
+            "Effect": "If the spymaster or an ally takes damage, the right hand counterattacks at once OR the spymaster gains +2 Advantage in return."
+          },
+          "Notify": {
+            "AlreadyThisRound": "The spymaster has already given an order this round (an order uses their Action)."
+          },
+          "MeatShield": {
+            "Saved": "{name} throws themself in front of the blow, but {reason} absorbs the impact! The informant avoids a wound and stays ready!"
+          },
+          "Dialog": {
+            "ChiefHimself": "the spymaster in person",
+            "Follower": "The informant",
+            "LeadershipHint": "The spymaster makes a Leadership test. Success – the order works; failure – no effect. The order uses the spymaster's Action (one per round)."
+          },
+          "bodyblock": {
+            "Desc": "The bodyguard steps in front of the spymaster and takes the blows on shield and back.",
+            "Effect": "Until the end of the round the first melee attack against the spymaster hits the bodyguard instead. The spymaster gains 1 Advantage (a moment to catch their breath)."
+          },
+          "circle": {
+            "Desc": "The network closes a ring round the spymaster, backs together, faces to the enemy.",
+            "Effect": "The spymaster loses the Surprised condition (if any) and gains 1 Advantage. Nobody comes at them from behind."
+          },
+          "parry": {
+            "Desc": "The duellist steps between the spymaster and the enemy and turns the blow aside with the blade.",
+            "Effect": "The first melee attack against the spymaster this round has −20 to hit. The spymaster gains 1 Advantage."
+          },
+          "riposte": {
+            "Effect": "The chosen opponent loses 1 Advantage. If they attack the spymaster this round and miss, the spymaster may immediately strike back."
+          },
+          "challenge": {
+            "Effect": "The opponent must pass a Willpower test; on a failure they go for the duellist and ignore the rest of the network until the end of the round."
+          },
+          "wagonwall": {
+            "Desc": "The carter stops the wagon so that it shields the spymaster from fire.",
+            "Effect": "The wagon gives cover: ranged attacks against the spymaster this round have −10. The spymaster gains 1 Advantage."
+          },
+          "getaway": {
+            "Effect": "The spymaster loses the Prone condition and may move 4 metres away without provoking opportunity attacks.",
+            "Name": "Out the Window!",
+            "Desc": "The courier throws open a window and shoves the spymaster out onto a stall awning."
+          },
+          "spot": {
+            "Effect": "The spymaster's first attack this round gets +10 to hit. The spymaster gains 1 Advantage.",
+            "Name": "I Know Where the Knife Is",
+            "Desc": "The eavesdropper remembers what the enemy said in the tavern about an old wound."
+          },
+          "salve": {
+            "Effect": "The spymaster (or a chosen ally) loses the Bleeding condition."
+          },
+          "regroup": {
+            "Desc": "The Right Hand claps, whistles and the network falls back into line.",
+            "Effect": "The spymaster loses the Surprised condition and gains 1 Advantage; retinue allies may move 2 metres for free."
+          },
+          "payoff": {
+            "Name": "I Know Your Secret",
+            "Desc": "The go-between whispers in the enemy's ear something only a few people know.",
+            "Effect": "A human opponent must pass a Willpower test; on a failure they withdraw from the fight (the GM decides whether they leave or change sides)."
+          },
+          "forgedorder": {
+            "Name": "False Warrant",
+            "Desc": "The go-between shows a warrant with a court seal and shouts that the watch has come."
+          },
+          "retreat": {
+            "Name": "Over the Rooftops",
+            "Desc": "The courier leads everyone through the attic and over the roofs to the next street."
+          },
+          "resupply": {
+            "Desc": "The courier brings what is missing: a knife, a bandage or a message."
+          },
+          "lure": {
+            "Desc": "The eavesdropper calls the name of someone the enemy knows and draws them into an alley."
+          },
+          "grapple": {
+            "Desc": "The enforcer grabs the enemy by the collar and does not let go."
+          },
+          "trip": {
+            "Desc": "The enforcer kicks the enemy's ankle out from under them."
+          }
+        },
+        "Meta": {
+          "TargetHint": "Target for the simplified test (before network modifiers)"
+        },
+        "Relation": {
+          "strained": {
+            "Desc": "The principal is watching you closely. Delays risk his anger."
+          },
+          "favorite": {
+            "Name": "Principal's Favourites"
+          }
+        },
+        "Recruit": {
+          "NoActor": "Could not find the network actor linked to this recruitment!",
+          "Joined": "{name} has joined the network!",
+          "ChatText": "<strong>{user}</strong> recruited the agent <strong>{name}</strong> ({role}) into the network.",
+          "Flavor": "Recruitment: New Faces in the Network"
+        },
+        "Mod": {
+          "Rank": "Network rank",
+          "Heat": "Exposure {value}",
+          "ShadowTongue": "Network Cipher"
+        },
+        "Ops": {
+          "PatronCut": "Principal's cut ({percent}%): {cut} · to the stash: {net}.",
+          "Cargo": "Document handed over: {item}.",
+          "NoCargo": "{mission}: there is no document in the safehouse.",
+          "DataEffect": {
+            "Heat": "Exposure {value}."
+          }
+        },
+        "Loot": {
+          "ItemDesc": "Network intel: {origin}.",
+          "ItemDescHot": "Network intel: {origin} – hot goods, someone is looking for it.",
+          "DiscardTitle": "Get rid of the intel?",
+          "DiscardText": "Throw away, give away or hide <strong>{name}</strong> (~{value} SS) for good? The intel will disappear from the network's safehouse.",
+          "Hot": "hot goods"
+        },
+        "Card": {
+          "Loot": {
+            "HotHint": "Hot goods are best kept a while before they go to the buyer.",
+            "Haul": "Documents obtained: {loot}."
+          },
+          "Burglary": {
+            "Success": "{name} gets in and leaves before dawn with the intel.",
+            "SuccessAt": "{name} gets into <em>{place}</em> and leaves before dawn with the intel."
+          },
+          "Fence": {
+            "NothingToSell": "{fence}: no intel that can be sold here.",
+            "Returned": "The intel goes back to the safehouse.",
+            "Confiscated": "Hot goods lost: {items}."
+          },
+          "Intimidate": {
+            "Fail": "{name} tried to scare the target but met resistance. The network grumbles (Morale −1).",
+            "Success": "{name} successfully intimidates the victim – takings: {coins} SS."
+          },
+          "Bribe": {
+            "NotArrested": "This network member is not under arrest.",
+            "HeatDown": "The report on the network ends up in the stove – Exposure −1."
+          },
+          "CoverTracks": {
+            "HeatDown": "The network's trail fades – Exposure −1."
+          }
+        },
+        "Camp": {
+          "Food": {
+            "Empty": "No supplies! The network went to bed hungry (−1 Morale)"
+          },
+          "Log": "Night camp [{shelter}]. Watch: {watch}. {food}. Morale: {morale}/10. Exposure: {heat}/5.",
+          "TitleWeek": "Network Week",
+          "FlavorWeek": "Report: Network Week",
+          "GMResolvesWeekHint": "The GM resolves the network's week. Plan assignments in the Assignments tab.",
+          "NoHealthy": "No healthy informants in the camp!",
+          "StateLine": "Morale: {morale}/10, Exposure: {heat}/5, Supplies: {supplies}"
+        },
+        "Desertion": {
+          "Text": "<strong>{name}</strong> no longer believes in the spymaster and vanishes before dawn{taken}."
+        },
+        "Treasury": {
+          "Generous": "The network sees the spymaster's generosity — spirits in the camp rise! (+1 Morale)",
+          "Deposited": "Deposited {amount} into the network's stash.",
+          "DepositTitle": "Deposit to the Network's Stash",
+          "NewBalance": "The network's stash now holds: <strong>{amount}</strong>.",
+          "FlavorDeposit": "Network Finances",
+          "StashShort": "The network's stash doesn't hold that much! Available: {have}",
+          "SmallWithdrawal": "Small expenses taken. The informants don't mind.",
+          "AuthorityHeld": "The spymaster used their authority to silence the whispers. Leadership test passed (Roll: {roll} vs {target}). Morale intact.",
+          "AuthorityLost": "The network mutters in corners that the spymaster is pilfering the common intel! Leadership test failed (Roll: {roll} vs {target}). The network loses {loss} Morale!",
+          "WithdrawTitle": "Withdrawal from the Network's Stash",
+          "FlavorWithdraw": "Paying the Informants"
+        },
+        "Supplies": {
+          "StashShort": "The network's stash is short! Needed: {need}, available: {have}",
+          "SourceStash": "the network's stash"
+        },
+        "Roster": {
+          "NewFollower": "New Informant",
+          "GMOnlyDelete": "Only the GM can remove network members.",
+          "DeleteTitle": "Remove network member",
+          "DeleteText": "Really remove <strong>{name}</strong> from the network?"
+        },
+        "Retinue": {
+          "Left": "{name} left the spymaster's retinue.",
+          "Joined": "{name} joined the spymaster's retinue!",
+          "Full": "The spymaster's retinue can have at most 3 informants!"
+        },
+        "Mission": {
+          "NoFollower": "No informant selected!"
+        },
+        "Tier": {
+          "LeadApplies": "{name}: no penalty, double intel"
+        },
+        "Fence": {
+          "NothingChosen": "No intel selected for sale.",
+          "NoLoot": "The network has no intel to sell.",
+          "Hint": "Each SL of the Haggle test adds +5 points to the rate. Hot goods −20 points; on a bad failure (SL −2 or worse) the buyer may keep them."
+        },
+        "Bribe": {
+          "Hush": "Hush it up: Exposure −1 (20 SS)"
+        },
+        "Terrain": {
+          "RacketWaits": "The city racket waits for the network to return.",
+          "Changed": "The network moves to a new terrain: {terrain}. Buyer: {fence}."
+        },
+        "CampDialog": {
+          "UseSupplies": "Use supplies from the network's larder:",
+          "Fasting": "The network doesn't eat",
+          "TitleWeek": "Network Week – resolution",
+          "WeekDone": "The network's week is resolved – report in the chat."
+        },
+        "RecruitDialog": {
+          "Intro": "Present agent proposals to the players in the chat. The players can choose one recruit to join the network.",
+          "Title": "Recruit New Agents for the Players"
+        },
+        "Upgrade": {
+          "OneCraftHint": "An agent can have only one former trade",
+          "TransferHint": "Pass to another informant",
+          "Stash": "Network stash",
+          "CraftSectionHint": "(at most 1 trade per agent)",
+          "TraitSection": "Agent's Strengths and Flaws",
+          "OneLieutenant": "The network can have only one Right Hand ({name})!",
+          "HasCraft": "This agent already has a former trade ({name})! A character can have only one trade from the past.",
+          "NoFreeSlot": "No other informants have a free gear slot!",
+          "SecondRoleIntro": "A informant who has seen a lot can do more than one thing. A second role unlocks its orders and specialty (the specialty bonus counts once).",
+          "CraftIntro": "The past and the trade from before joining the network. Each informant may choose only one former craft."
+        },
+        "TreasuryDialog": {
+          "DepositHint": "A deposit over 1 GC (20 SS) is rewarded with <strong>+1 Morale</strong> for the whole network!",
+          "Balance": "The network's stash",
+          "MutinyRisk": "<strong>Risk of Mutiny:</strong> Agents keep an eye on the common intel! Taking more than 10 SS requires the spymaster to pass a Leadership test. On a failure the network loses <strong>1–2 Morale</strong>!"
+        },
+        "SuppliesDialog": {
+          "FromStash": "The network's stash (available: {amount})"
+        },
+        "Chat": {
+          "GangTest": "Simplified network test",
+          "Footer": "The Spymaster's Retinue"
+        },
+        "RecruitCard": {
+          "Title": "New Faces in the Network: Recruitment",
+          "Intro": "The GM has presented the candidates. Choose the agent who will join your company!",
+          "Joined": "The character has joined the network!",
+          "Footer": "Network Recruitment"
+        },
+        "TacticCard": {
+          "NotHeard": "The network didn't hear the order in the din of battle – <strong>no effect</strong>.",
+          "UsesAction": "The order uses the spymaster's Action this round."
+        },
+        "Sheet": {
+          "LeaderTitle": "Spymaster / Leader: {name}",
+          "ChiefTitle": "Network Spymaster",
+          "Chief": "SPYMASTER",
+          "Eyebrow": "Network sheet",
+          "NamePlaceholder": "Network / Retinue name",
+          "NameTitle": "Click to rename the network",
+          "MottoTitle": "Network motto",
+          "MoraleTitle": "Network Morale: {value}/10"
+        },
+        "LootTab": {
+          "TerrainHint": "The terrain changes the available jobs, rumours, night events, lodging costs and the buyer.",
+          "TerrainLabel": "Network terrain",
+          "InHideout": "Intel in the safehouse",
+          "FenceNow": "The buyer would pay now about",
+          "SendToFence": "Send to the buyer",
+          "HotHint": "Hot goods: the buyer pays less, and a raid on an unguarded camp takes them. They cool down each night.",
+          "FenceKeen": "buyer keen",
+          "GiveChief": "Give to the spymaster as an item",
+          "Discard": "Get rid of the intel",
+          "HelpHotWeek": "<strong>Hot goods</strong> cool down after a week. Until then the buyer pays 20 points less.",
+          "HelpHotNight": "<strong>Hot goods</strong> cool down after two nights. Until then the buyer pays 20 points less.",
+          "Empty": "The safehouse holds nothing. Documents come from bought secrets, intercepted couriers and swapped letters. Sell them to a buyer or hand them to the principal in a report.",
+          "HelpRecon": "<strong>Recon</strong> (Scouting, Shadowing): +20 to the next letter swap."
+        },
+        "TasksTab": {
+          "Intro": "Send your people out or take them into your personal retinue. Each informant can be given <strong>one task per day</strong>.",
+          "RetinueHint": "Informants in the retinue stay at the spymaster's side during the game day and unlock their unique combat orders in the <strong>Tactics</strong> tab (max. 3 people). Meanwhile they cannot go on separate jobs.",
+          "WatchHint": "People on watch stay awake while the party sleeps. Each informant can have only one task per day."
+        },
+        "RosterTab": {
+          "Title": "Informants and Company",
+          "ToggleAllHint": "Collapse or expand the details of all informants",
+          "AddHint": "Game Master: add a new blank informant",
+          "Add": "Add Informant",
+          "DropHint": "Drag a character or NPC actor from the Foundry sidebar onto a card to link it to a informant",
+          "ToggleOne": "Collapse / expand the agent's details",
+          "NamePlaceholder": "Informant's name...",
+          "LeaveRetinue": "Send back from the spymaster's retinue to the camp",
+          "JoinRetinueHint": "Join the spymaster's personal retinue (unlocks Tactics)",
+          "Delete": "Remove the agent from the retinue",
+          "RoleTitle": "Game Master: choose the informant's role",
+          "EmptyTitle": "No informants in the retinue!"
+        },
+        "InfoTab": {
+          "GMOnlyPatron": "Only the Game Master can change the principal's details",
+          "PatronSetByGM": "The principal's details are set by the Game Master",
+          "RelationShort": {
+            "strained": "Strained (suspicion, the principal watches closely)",
+            "favorite": "Trusted (full confidence, the most important tasks)"
+          },
+          "LawTitle": "Risk of Exposure",
+          "GMOnlyHeat": "Only the Game Master can change Exposure",
+          "HeatLevel": "Exposure Level:",
+          "HeatShort": {
+            "0": "Invisible",
+            "1": "Whispers of ears",
+            "2": "A suspect contact, bribes x2",
+            "3": "A burned informant",
+            "4": "Counter-spies on the trail",
+            "5": "Network exposed"
+          },
+          "Bounty": "Debts / Bounty on the Spymaster:",
+          "BountyPlaceholder": "e.g. 20 Gold Crowns for the spymaster's name",
+          "AlliesPlaceholder": "Bribed scribes, maids, innkeepers, confessors...",
+          "Rivals": "Enemies and Rival Networks:",
+          "RivalsPlaceholder": "Other networks, the secret police, witch hunters, offended nobles...",
+          "Patron": "The Principal",
+          "PatronName": "Principal's Name:",
+          "PatronNamePlaceholder": "e.g. Countess Emmanuelle, the Council Chancellor, a Priest of Verena...",
+          "PatronTitle": "Principal's Position / Title:",
+          "PatronTitlePlaceholder": "e.g. Elector, Head of the Secret Police, Guildmaster...",
+          "PatronRelation": "Trust and Relationship with the Principal:",
+          "PatronCut": "Payment and Terms:",
+          "PatronCutPlaceholder": "e.g. 2 GC per report, a bonus for names...",
+          "PatronNotes": "Contact and Obligations to the Principal:",
+          "Hideout": "Safehouse / Meeting Place:",
+          "Territory": "City / The Network's Area:",
+          "Code": "Network Rules / Passwords and Ciphers:",
+          "CodePlaceholder": "Each knows only their contact, this week's password, the price of betrayal...",
+          "Notes": "Files / The Spymaster's Notes:",
+          "NotesPlaceholder": "The network's history, past cases, the principal's goals..."
+        },
+        "DashTab": {
+          "CampCaption": "Affects recovery and the network's mood while resting. Terrain: <strong>{terrain}</strong> (change it in the Intel tab).",
+          "FlavorHigh": "The network would follow the spymaster into fire! Ready for any sacrifice.",
+          "FlavorMid": "Steady discipline. The network follows orders without complaint.",
+          "FlavorLow": "The network mutters in corners; they're short of coin and drink.",
+          "DepositHint": "Move coins from your purse into the network's common stash (+1 Morale for generous gifts)",
+          "WithdrawHint": "Take coins from the network's stash (taking more than 10 SS requires a Leadership test — risk of losing Morale!)",
+          "ResolveWeek": "Resolve the Network Week",
+          "TablesHint": "Game Master: open the random rumour and camp event tables (RollTable, network folder)",
+          "ChronicleEmpty": "No events recorded yet. The network is just setting out on the road...",
+          "Morale": "Network Morale"
+        },
+        "TacticsTab": {
+          "NoRetinue": "<strong>No informants in the retinue!</strong> The spymaster fights alone. Specialist orders are locked. Assign people in the <em>Assignments</em> tab.",
+          "HowTo": "You give orders through the spymaster's <strong>Leadership Test</strong> (failure means no effect; one order per round, uses the spymaster's Action) or by spending <strong>Advantage</strong> (automatic success).",
+          "FilterEmpty": "No active member of the retinue unlocks any tactics. Add a informant to the retinue or show all tactics.",
+          "PersonalAlways": "The spymaster's personal order (always available)",
+          "WoundRisk": "Risk of a Informant's Wound"
+        },
+        "Roles": {
+          "shadow": {
+            "Name": "Shadow / Tail"
+          },
+          "fixer": {
+            "Name": "Go-Between / Forger"
+          },
+          "charlatan": {
+            "Name": "Chameleon / Hedge Healer"
+          }
+        },
+        "Title": "Network",
+        "WindowTitle": "WFRP4e – Informant Network",
+        "DefaultGangName": "Network",
+        "Badges": {
+          "fence": "Selling",
+          "retinue": "Spymaster's Guard"
+        },
+        "Tiers": {
+          "easy": {
+            "Name": "Minor clerk",
+            "Desc": "+20 to the test, half the pay"
+          },
+          "normal": {
+            "Name": "Merchant or priest"
+          },
+          "rich": {
+            "Name": "Noble",
+            "Desc": "−20 to the test, double pay, any failure risks exposure"
+          }
+        },
+        "Tokens": {
+          "recon": {
+            "Desc": "+20 to the next letter swap"
+          },
+          "lead": {
+            "Desc": "A noble target without the −20 penalty"
+          }
+        },
+        "Notoriety": {
+          "0": {
+            "Name": "Invisible",
+            "Desc": "Nobody knows the network exists. Informants know only their own contact."
+          },
+          "1": {
+            "Name": "Whispers of Ears",
+            "Desc": "Someone in a tavern says the walls have ears. Nobody knows whose."
+          },
+          "2": {
+            "Name": "A Suspect Contact",
+            "Desc": "One of the contacts has drawn attention. Clerks fall silent when they enter. Bribes cost double."
+          },
+          "3": {
+            "Name": "A Burned Informant",
+            "Desc": "A rival knows one informant and watches who they meet."
+          },
+          "4": {
+            "Name": "Counter-Intelligence",
+            "Desc": "A rival or the authorities are hunting the network. Every meeting is a risk."
+          },
+          "5": {
+            "Name": "Network Exposed",
+            "Desc": "Names are going round the city. Informants vanish and hunters are close behind."
+          }
+        },
+        "Risk": {
+          "stealth": "If caught: Exposure, arrest",
+          "Result": {
+            "FaceRemembered": "Someone remembers the contact's face – Exposure +1.",
+            "Arrested": "{name} is detained for questioning – <strong>Arrested</strong> for {time}. Exposure +1.",
+            "Chase": "A chase through the market and shouting in the street – Exposure +1.",
+            "WoundedLoud": "{name} is <strong>Wounded</strong>, and the whole district talks about the fight – Exposure +1."
+          }
+        },
+        "Raid": {
+          "Escaped": "The sentries raised the alarm in time – the network scattered, leaving {lost} rations behind.",
+          "Settled": "After the raid the matter quietens down – Exposure −1.",
+          "Summary": "Raid on the safehouse.",
+          "Arrested": "A rival's men burst into the unguarded safehouse – <strong>{name}</strong> is held for {time}.",
+          "Seized": "The attackers took {amount} from the stash.",
+          "HotLost": "Hot goods lost: {items}."
+        },
+        "Tabs": {
+          "Loot": "Documents"
+        },
+        "Report": {
+          "MissionFlavor": "Spymaster's Orders",
+          "QueueTitle": "Network tasks report"
+        }
+      },
+      "cult": {
+        "Terrains": {
+          "forest": {
+            "Comfortable": "Cultists' dugout",
+            "Raid": "Witch hunters on your trail!"
+          },
+          "city": {
+            "Raid": "Witch hunters break down the door!"
+          },
+          "village": {
+            "Raid": "Villagers with torches and a priest at their head!"
+          },
+          "mountains": {
+            "Raid": "Dwarf wardens search the caves!"
+          }
+        },
+        "Missions": {
+          "bribe": {
+            "Reward": "release from gaol, Suspicion −1 or a favour"
+          },
+          "cover_tracks": {
+            "Reward": "Suspicion −1, a calmer night",
+            "Desc": "Erase the trail and move camp. The only way to lower Suspicion yourselves."
+          },
+          "fence": {
+            "Name": "Fence the Loot",
+            "Reward": "cash for loot (fence's rate)",
+            "Desc": "Sell the loot. The price depends on the fence, a Haggle test and whether the goods are still hot."
+          }
+        },
+        "Ranks": {
+          "rookie": {
+            "Desc": "A fresh cultist without much experience on the road."
+          },
+          "lieutenant": {
+            "Desc": "+30 to tests, authority (+1 cult Morale), command orders (unique rank – one per cult; needs over 60–80 days of service)."
+          }
+        },
+        "Strengths": {
+          "tight_lipped": {
+            "Desc": "Never betrays the sanctum under questioning by the watch"
+          },
+          "tough": {
+            "Desc": "+10: Diversion and Brawl, Abduction"
+          },
+          "stealthy": {
+            "Desc": "+10: Infiltration, The Stone Circle"
+          },
+          "nimble": {
+            "Desc": "+10: Forge Documents"
+          },
+          "talkative": {
+            "Desc": "+10: Listen at the Tavern, Spread Rumours, Fence the Loot"
+          },
+          "eagle_eye": {
+            "Desc": "+10: Sabotage, Cover Tracks, The Stone Circle"
+          },
+          "trusted_face": {
+            "Desc": "+10: Bribery, Fence the Loot"
+          },
+          "local_knowledge": {
+            "Desc": "+10: The Stone Circle"
+          },
+          "field_medic": {
+            "Desc": "+10: Tend the Wounded; 50% chance of instant healing"
+          },
+          "brutal": {
+            "Desc": "+20: Abduction"
+          },
+          "war_veteran": {
+            "Desc": "+10: Diversion and Brawl, Sabotage, Cover Tracks"
+          },
+          "iron_will": {
+            "Desc": "+10: Diversion and Brawl, Cover Tracks, Tend the Wounded; resistant to pain"
+          },
+          "keen_senses": {
+            "Desc": "+10: Listen at the Tavern, The Stone Circle; senses spies"
+          },
+          "quick_escape": {
+            "Desc": "+10: Diversion and Brawl"
+          },
+          "arsonist": {
+            "Desc": "+20: Sabotage"
+          },
+          "juggler": {
+            "Desc": "+10: Spread Rumours, Diversion and Brawl"
+          },
+          "poacher": {
+            "Desc": "+10: The Stone Circle; brings an extra ration"
+          },
+          "drinking_buddy": {
+            "Desc": "+10: Listen at the Tavern, Spread Rumours"
+          },
+          "knife_master": {
+            "Desc": "+10: Diversion and Brawl, Infiltration"
+          },
+          "smooth_liar": {
+            "Desc": "+10: Bribery, Fence the Loot, Forge Documents"
+          },
+          "surefooted": {
+            "Desc": "+10: Cover Tracks, The Stone Circle"
+          },
+          "night_owl": {
+            "Desc": "+10: Infiltration, The Stone Circle"
+          },
+          "ox_strong": {
+            "Desc": "+10: Abduction"
+          },
+          "steady_nerves": {
+            "Desc": "+10: Bribery, Diversion and Brawl, Cover Tracks, Tend the Wounded"
+          },
+          "haggler": {
+            "Desc": "+10: Fence the Loot"
+          },
+          "lucky": {
+            "Desc": "+10: Cover Tracks"
+          }
+        },
+        "Flaws": {
+          "kleptomaniac": {
+            "Camp": "pilfers the cult's treasury (1 SS)"
+          },
+          "wanted": {
+            "Desc": "+1 Suspicion when caught; risk of being recognised"
+          },
+          "gambler": {
+            "Camp": "gambles away the cult's money at cards"
+          },
+          "traitor": {
+            "Desc": "10% chance of leaking information on a spying job (+1 Suspicion)",
+            "Camp": "information about the cult leaks out — +1 Suspicion"
+          },
+          "in_debt": {
+            "Desc": "10% chance after camp that creditors sniff around the sanctum (+1 Suspicion)",
+            "Camp": "creditors are hard on his heels — +1 Suspicion"
+          },
+          "bloodthirsty": {
+            "Desc": "Every successful diversion or intimidation gives +1 Suspicion through needless cruelty"
+          },
+          "witchhunter_mark": {
+            "Desc": "A failure raises Suspicion"
+          },
+          "coward": {
+            "Desc": "−10: Diversion and Brawl, Sabotage"
+          },
+          "alcoholic": {
+            "Desc": "−10: Cover Tracks, The Stone Circle; 20% chance of being unfit after camp"
+          },
+          "loudmouth": {
+            "Desc": "−10: Infiltration"
+          },
+          "old_slow": {
+            "Desc": "−10: Infiltration, The Stone Circle"
+          },
+          "superstitious": {
+            "Desc": "−10: Sabotage, Infiltration"
+          },
+          "repulsive": {
+            "Desc": "−10: Listen at the Tavern, Spread Rumours, Fence the Loot (puts people off)"
+          },
+          "one_eyed": {
+            "Desc": "−10: Cover Tracks, The Stone Circle"
+          },
+          "clumsy": {
+            "Desc": "−10: Forge Documents"
+          },
+          "hothead": {
+            "Desc": "−10: Bribery, Cover Tracks"
+          },
+          "squeamish": {
+            "Desc": "−10: Tend the Wounded, Abduction"
+          },
+          "snorer": {
+            "Desc": "−10: Infiltration, The Stone Circle"
+          },
+          "proud": {
+            "Desc": "−10: Listen at the Tavern, Bribery, Fence the Loot"
+          },
+          "jinxed": {
+            "Desc": "−10: The Stone Circle"
+          }
+        },
+        "Perks": {
+          "craft_chirurgeon": {
+            "Desc": "Before taking to the road he stitched wounds and set bones. During night camp he automatically heals 1 wounded cultist without using supplies."
+          },
+          "craft_blacksmith": {
+            "Desc": "Work at bellows and anvil gives strength and a knowledge of weapons. Permanent +10 to jobs with weapons and a 50% discount on gear for the cult."
+          },
+          "craft_innkeeper": {
+            "Desc": "Knows the secrets of brewing and loosening tongues. Raises cult Morale by +1 every night camp, and tavern eavesdropping brings an extra rumour."
+          },
+          "blood_brotherhood": {
+            "Name": "Blood Oath with the High Priest",
+            "Desc": "Swore a bloody rite of loyalty. Will never betray, never panics in camp and once per session may take a Critical Wound aimed at the high priest."
+          },
+          "battle_scarred": {
+            "Desc": "Survived many wounds and skirmishes. Even when wounded he doesn't lower cult Morale and can stand night watch in camp without penalty."
+          },
+          "cold_blooded": {
+            "Desc": "A ruthless, composed professional. When a job fails, ignores the first complication or loss of cult Morale."
+          },
+          "guard_contacts": {
+            "Name": "Contact in the Temple",
+            "Desc": "Has a debtor or relative among the priests and witch hunters. Halves the risk of a raid and gives warning of it."
+          },
+          "shadow_tongue": {
+            "Name": "Signs of the Brotherhood",
+            "Desc": "Knows the brotherhood's signs, passwords and handshakes. +10 to scouting, shadowing and fencing."
+          }
+        },
+        "Notify": {
+          "SelectCharacter": "Select a character token or create a player character to open the cult sheet!",
+          "OpenFailed": "Could not open the cult sheet: {error}",
+          "SelectChiefForCamp": "Select the high priest's token to call the night camp.",
+          "SelectChief": "Select the high priest's token on the map.",
+          "NoAccess": "You don't have access to this character's cult.",
+          "GMResolvesWeek": "The GM resolves the cult's week.",
+          "WeekAlreadyResolved": "This cult's week has already been resolved for this world day. Advance the game time.",
+          "CampAlreadyResolved": "This cult's night camp has already been resolved for this world day."
+        },
+        "Orders": {
+          "Effects": {
+            "MustFace": "goes for the duellist and ignores the rest of the cult until the end of the round"
+          },
+          "meatshield": {
+            "Effect": "The blow hits the cultist instead of the high priest. The cultist is wounded (unless saved by armour or a veteran's rank).",
+            "Name": "Martyrdom",
+            "Desc": "The zealot throws themself under the blow meant for the high priest and thanks the Master for it."
+          },
+          "bullrush": {
+            "Effect": "The enemy is pushed back 2 metres and loses 1 Advantage, and the high priest closes to melee at once without a test.",
+            "Name": "Fanatic Charge",
+            "Desc": "The zealot crashes into the enemy with a cry, careless of their own life."
+          },
+          "flank": {
+            "Effect": "The target loses its guard – it cannot Dodge or Parry the high priest's next attack!",
+            "Desc": "The spy slips round behind the enemy before they understand whose side the spy is on."
+          },
+          "distract": {
+            "Effect": "The high priest gains +2 Advantage, and the provoked enemy loses 1 Advantage!",
+            "Name": "Blasphemous Litany",
+            "Desc": "The orator begins a litany in a forgotten tongue and the enemy's hands start to shake."
+          },
+          "draught": {
+            "Effect": "The high priest or a chosen ally removes 1 Fatigued condition or ignores it until the end of the next round.",
+            "Name": "Holy Draught",
+            "Desc": "A bitter draught from the brotherhood's chalice restores strength."
+          },
+          "rally": {
+            "Desc": "The high priest roars an order, spurring on his companions and striking fear into the enemy.",
+            "Effect": "Removes the Broken condition from the chosen ally. The high priest gains Advantage equal to the SL of the test (minimum 1)."
+          },
+          "coordinate": {
+            "Effect": "The high priest and up to three allies within 6 metres may make a free move of half their Movement; leaving melee requires no test."
+          },
+          "retaliation": {
+            "Name": "Cult's Revenge",
+            "Desc": "A furious counterattack! A cultist throws himself at the foe to avenge the wounded leader.",
+            "Effect": "If the high priest or an ally takes damage, the right hand counterattacks at once OR the high priest gains +2 Advantage in return."
+          },
+          "Notify": {
+            "AlreadyThisRound": "The high priest has already given an order this round (an order uses their Action)."
+          },
+          "MeatShield": {
+            "Saved": "{name} throws themself in front of the blow, but {reason} absorbs the impact! The cultist avoids a wound and stays ready!"
+          },
+          "Dialog": {
+            "ChiefHimself": "the high priest in person",
+            "Follower": "The cultist",
+            "LeadershipHint": "The high priest makes a Leadership test. Success – the order works; failure – no effect. The order uses the high priest's Action (one per round)."
+          },
+          "bodyblock": {
+            "Desc": "The bodyguard steps in front of the high priest and takes the blows on shield and back.",
+            "Effect": "Until the end of the round the first melee attack against the high priest hits the bodyguard instead. The high priest gains 1 Advantage (a moment to catch their breath)."
+          },
+          "circle": {
+            "Desc": "The cult closes a ring round the high priest, backs together, faces to the enemy.",
+            "Effect": "The high priest loses the Surprised condition (if any) and gains 1 Advantage. Nobody comes at them from behind."
+          },
+          "parry": {
+            "Desc": "The duellist steps between the high priest and the enemy and turns the blow aside with the blade.",
+            "Effect": "The first melee attack against the high priest this round has −20 to hit. The high priest gains 1 Advantage."
+          },
+          "riposte": {
+            "Effect": "The chosen opponent loses 1 Advantage. If they attack the high priest this round and miss, the high priest may immediately strike back."
+          },
+          "wagonwall": {
+            "Desc": "The carter stops the wagon so that it shields the high priest from fire.",
+            "Effect": "The wagon gives cover: ranged attacks against the high priest this round have −10. The high priest gains 1 Advantage."
+          },
+          "getaway": {
+            "Desc": "The carter grabs the high priest by the arm and yanks them out of the melee onto the wagon seat.",
+            "Effect": "The high priest loses the Prone condition and may move 4 metres away without provoking opportunity attacks."
+          },
+          "spot": {
+            "Effect": "The high priest's first attack this round gets +10 to hit. The high priest gains 1 Advantage.",
+            "Desc": "The spy points out a gap in the armour."
+          },
+          "salve": {
+            "Effect": "The high priest (or a chosen ally) loses the Bleeding condition.",
+            "Name": "Black Balm",
+            "Desc": "The wound is smeared with the brotherhood's thick black balm."
+          },
+          "regroup": {
+            "Desc": "The Right Hand claps, whistles and the cult falls back into line.",
+            "Effect": "The high priest loses the Surprised condition and gains 1 Advantage; retinue allies may move 2 metres for free."
+          },
+          "grapple": {
+            "Desc": "The zealot seizes the enemy and holds on, even while being cut."
+          },
+          "challenge": {
+            "Name": "Blasphemy",
+            "Desc": "The zealot insults the enemy's god so badly that they forget everything else.",
+            "Effect": "The opponent must pass a Willpower test; on a failure they go for the zealot and ignore the rest of the cult until the end of the round."
+          },
+          "resupply": {
+            "Name": "The Ritual Dagger",
+            "Desc": "The acolyte hands over a dagger, incense or a bandage before anyone asks."
+          },
+          "retreat": {
+            "Name": "The Secret Passage",
+            "Desc": "The acolyte opens a hidden door and the cult vanishes into the cellars."
+          },
+          "lure": {
+            "Desc": "The spy shows themself at the end of the street and vanishes round the corner."
+          },
+          "kidneystrike": {
+            "Name": "Poisoned Blade",
+            "Desc": "A poisoned blade grazes the enemy under the ribs."
+          },
+          "sand": {
+            "Name": "Powder in the Eyes",
+            "Desc": "The assassin blows a blinding powder into the enemy's face."
+          },
+          "smoke": {
+            "Name": "Censer Smoke",
+            "Desc": "Thick smoke from a censer covers the field."
+          },
+          "evileye": {
+            "Name": "The Master's Curse",
+            "Desc": "The orator points at the enemy and speaks the Master's name."
+          },
+          "payoff": {
+            "Name": "The Master's Promise",
+            "Desc": "The orator promises the enemy what they want most."
+          },
+          "forgedorder": {
+            "Name": "In the Temple's Name",
+            "Desc": "The orator poses as a priest and gives orders in the temple's name."
+          },
+          "fireoil": {
+            "Name": "Alchemical Fire",
+            "Desc": "The alchemist smashes a flask whose contents burst into flame on contact with air."
+          },
+          "fumes": {
+            "Desc": "The alchemist breaks a flask of choking vapour."
+          }
+        },
+        "Meta": {
+          "TargetHint": "Target for the simplified test (before cult modifiers)"
+        },
+        "Relation": {
+          "strained": {
+            "Desc": "The Dark Master is watching you closely. Delays risk his anger."
+          },
+          "favorite": {
+            "Name": "The Master's Chosen"
+          }
+        },
+        "Recruit": {
+          "NoActor": "Could not find the cult actor linked to this recruitment!",
+          "Joined": "{name} has joined the cult!",
+          "ChatText": "<strong>{user}</strong> recruited the cultist <strong>{name}</strong> ({role}) into the cult.",
+          "Flavor": "Recruitment: New Faces in the Cult"
+        },
+        "Mod": {
+          "Rank": "Cult rank",
+          "Heat": "Suspicion {value}",
+          "ShadowTongue": "Signs of the Brotherhood"
+        },
+        "Ops": {
+          "PatronCut": "Dark Master's cut ({percent}%): {cut} · to the stash: {net}.",
+          "DataEffect": {
+            "Heat": "Suspicion {value}."
+          },
+          "NoCargo": "{mission}: no suitable loot to take along."
+        },
+        "Loot": {
+          "ItemDesc": "Cult loot: {origin}.",
+          "ItemDescHot": "Cult loot: {origin} – hot goods, someone is looking for it.",
+          "DiscardText": "Throw away, give away or hide <strong>{name}</strong> (~{value} SS) for good? The loot will disappear from the cult's sanctum.",
+          "DiscardTitle": "Get rid of the loot?"
+        },
+        "Card": {
+          "Fence": {
+            "Returned": "The loot goes back to the sanctum.",
+            "NothingToSell": "{fence}: no loot that can be sold here."
+          },
+          "Intimidate": {
+            "Fail": "{name} tried to scare the target but met resistance. The cult grumbles (Morale −1).",
+            "Success": "{name} successfully intimidates the victim – takings: {coins} SS."
+          },
+          "Bribe": {
+            "NotArrested": "This cult member is not under arrest.",
+            "HeatDown": "The report on the cult ends up in the stove – Suspicion −1."
+          },
+          "CoverTracks": {
+            "HeatDown": "The cult's trail fades – Suspicion −1."
+          },
+          "Loot": {
+            "Haul": "Loot: {loot}."
+          },
+          "Burglary": {
+            "Success": "{name} gets in and leaves before dawn with the loot.",
+            "SuccessAt": "{name} gets into <em>{place}</em> and leaves before dawn with the loot."
+          }
+        },
+        "Camp": {
+          "Food": {
+            "Empty": "No supplies! The cult went to bed hungry (−1 Morale)"
+          },
+          "Log": "Night camp [{shelter}]. Watch: {watch}. {food}. Morale: {morale}/10. Suspicion: {heat}/5.",
+          "TitleWeek": "Cult Week",
+          "FlavorWeek": "Report: Cult Week",
+          "GMResolvesWeekHint": "The GM resolves the cult's week. Plan assignments in the Assignments tab.",
+          "NoHealthy": "No healthy cultists in the camp!",
+          "StateLine": "Morale: {morale}/10, Suspicion: {heat}/5, Supplies: {supplies}"
+        },
+        "Desertion": {
+          "Text": "<strong>{name}</strong> no longer believes in the high priest and vanishes before dawn{taken}."
+        },
+        "Treasury": {
+          "Generous": "The cult sees the high priest's generosity — spirits in the camp rise! (+1 Morale)",
+          "Deposited": "Deposited {amount} into the cult's stash.",
+          "DepositTitle": "Deposit to the Cult's Stash",
+          "NewBalance": "The cult's stash now holds: <strong>{amount}</strong>.",
+          "FlavorDeposit": "Cult Finances",
+          "StashShort": "The cult's stash doesn't hold that much! Available: {have}",
+          "SmallWithdrawal": "Small expenses taken. The cultists don't mind.",
+          "AuthorityHeld": "The high priest used their authority to silence the whispers. Leadership test passed (Roll: {roll} vs {target}). Morale intact.",
+          "AuthorityLost": "The cult mutters in corners that the high priest is pilfering the common loot! Leadership test failed (Roll: {roll} vs {target}). The cult loses {loss} Morale!",
+          "WithdrawTitle": "Withdrawal from the Cult's Stash",
+          "FlavorWithdraw": "Brotherhood Expenses"
+        },
+        "Supplies": {
+          "StashShort": "The cult's stash is short! Needed: {need}, available: {have}",
+          "SourceStash": "the cult's stash"
+        },
+        "Roster": {
+          "NewFollower": "New Cultist",
+          "GMOnlyDelete": "Only the GM can remove cult members.",
+          "DeleteTitle": "Remove cult member",
+          "DeleteText": "Really remove <strong>{name}</strong> from the cult?"
+        },
+        "Retinue": {
+          "Left": "{name} left the high priest's retinue.",
+          "Joined": "{name} joined the high priest's retinue!",
+          "Full": "The high priest's retinue can have at most 3 cultists!"
+        },
+        "Mission": {
+          "NoFollower": "No cultist selected!"
+        },
+        "Fence": {
+          "NoLoot": "The cult has no loot to sell.",
+          "NothingChosen": "No loot selected for sale."
+        },
+        "Bribe": {
+          "Hush": "Hush it up: Suspicion −1 (20 SS)"
+        },
+        "Terrain": {
+          "RacketWaits": "The city racket waits for the cult to return.",
+          "Changed": "The cult moves to a new terrain: {terrain}. Fence: {fence}."
+        },
+        "CampDialog": {
+          "UseSupplies": "Use supplies from the cult's larder:",
+          "Fasting": "The cult doesn't eat",
+          "TitleWeek": "Cult Week – resolution",
+          "WeekDone": "The cult's week is resolved – report in the chat."
+        },
+        "RecruitDialog": {
+          "Intro": "Present cultist proposals to the players in the chat. The players can choose one recruit to join the cult.",
+          "Title": "Recruit New Cultists for the Players"
+        },
+        "Upgrade": {
+          "OneCraftHint": "An cultist can have only one former trade",
+          "TransferHint": "Pass to another cultist",
+          "Stash": "Cult stash",
+          "CraftSectionHint": "(at most 1 trade per cultist)",
+          "TraitSection": "Cultist's Strengths and Flaws",
+          "OneLieutenant": "The cult can have only one Right Hand ({name})!",
+          "HasCraft": "This cultist already has a former trade ({name})! A character can have only one trade from the past.",
+          "NoFreeSlot": "No other cultists have a free gear slot!",
+          "SecondRoleIntro": "A cultist who has seen a lot can do more than one thing. A second role unlocks its orders and specialty (the specialty bonus counts once).",
+          "CraftIntro": "The past and the trade from before joining the cult. Each cultist may choose only one former craft."
+        },
+        "TreasuryDialog": {
+          "DepositHint": "A deposit over 1 GC (20 SS) is rewarded with <strong>+1 Morale</strong> for the whole cult!",
+          "Balance": "The cult's stash",
+          "MutinyRisk": "<strong>Risk of Mutiny:</strong> Cultists keep an eye on the common loot! Taking more than 10 SS requires the high priest to pass a Leadership test. On a failure the cult loses <strong>1–2 Morale</strong>!"
+        },
+        "SuppliesDialog": {
+          "FromStash": "The cult's stash (available: {amount})"
+        },
+        "Chat": {
+          "GangTest": "Simplified cult test",
+          "Footer": "The High Priest's Retinue"
+        },
+        "RecruitCard": {
+          "Title": "New Faces in the Cult: Recruitment",
+          "Intro": "The GM has presented the candidates. Choose the cultist who will join your company!",
+          "Joined": "The character has joined the cult!",
+          "Footer": "Cult Recruitment"
+        },
+        "TacticCard": {
+          "NotHeard": "The cult didn't hear the order in the din of battle – <strong>no effect</strong>.",
+          "UsesAction": "The order uses the high priest's Action this round."
+        },
+        "Sheet": {
+          "LeaderTitle": "High Priest / Leader: {name}",
+          "ChiefTitle": "Cult High Priest",
+          "Chief": "HIGH PRIEST",
+          "Eyebrow": "Cult sheet",
+          "NamePlaceholder": "Cult / Retinue name",
+          "NameTitle": "Click to rename the cult",
+          "MottoTitle": "Cult motto",
+          "MoraleTitle": "Cult Morale: {value}/10"
+        },
+        "LootTab": {
+          "TerrainLabel": "Cult terrain",
+          "InHideout": "Loot in the sanctum",
+          "GiveChief": "Give to the high priest as an item",
+          "Empty": "The sanctum holds nothing. Spoils come from successful abductions and night visits to the stone circles.",
+          "HelpRecon": "<strong>Recon</strong> (Infiltration): +20 to the next abduction.",
+          "Discard": "Get rid of the loot"
+        },
+        "TasksTab": {
+          "Intro": "Send your people out or take them into your personal retinue. Each cultist can be given <strong>one task per day</strong>.",
+          "RetinueHint": "Cultists in the retinue stay at the high priest's side during the game day and unlock their unique combat orders in the <strong>Tactics</strong> tab (max. 3 people). Meanwhile they cannot go on separate jobs.",
+          "WatchHint": "People on watch stay awake while the party sleeps. Each cultist can have only one task per day."
+        },
+        "RosterTab": {
+          "Title": "Cultists and Company",
+          "ToggleAllHint": "Collapse or expand the details of all cultists",
+          "AddHint": "Game Master: add a new blank cultist",
+          "Add": "Add Cultist",
+          "DropHint": "Drag a character or NPC actor from the Foundry sidebar onto a card to link it to a cultist",
+          "ToggleOne": "Collapse / expand the cultist's details",
+          "NamePlaceholder": "Cultist's name...",
+          "LeaveRetinue": "Send back from the high priest's retinue to the camp",
+          "JoinRetinueHint": "Join the high priest's personal retinue (unlocks Tactics)",
+          "Delete": "Remove the cultist from the retinue",
+          "RoleTitle": "Game Master: choose the cultist's role",
+          "EmptyTitle": "No cultists in the retinue!"
+        },
+        "InfoTab": {
+          "GMOnlyPatron": "Only the Game Master can change the Dark Master's details",
+          "PatronSetByGM": "The Dark Master's details are set by the Game Master",
+          "RelationShort": {
+            "strained": "Strained (suspicion, the Dark Master watches closely)",
+            "favorite": "Chosen (full favour, the deepest secrets)"
+          },
+          "LawTitle": "Suspicion of the Authorities and the Temple",
+          "GMOnlyHeat": "Only the Game Master can change Suspicion",
+          "HeatLevel": "Suspicion Level:",
+          "HeatShort": {
+            "0": "Hidden",
+            "1": "Strange rumours",
+            "2": "Sermons, bribes x2",
+            "3": "A hunter in town",
+            "4": "Heretic hunt",
+            "5": "Pyres in the square"
+          },
+          "Bounty": "Debts / Bounty on the High Priest:",
+          "BountyPlaceholder": "e.g. 50 Gold Crowns for the heresiarch, alive",
+          "AlliesPlaceholder": "Bribed gravediggers, impoverished nobles, desperate burghers...",
+          "Rivals": "Enemies and Rival Brotherhoods:",
+          "RivalsPlaceholder": "Witch hunters, the temple, other cults, apostates...",
+          "Patron": "The Dark Master",
+          "PatronName": "The Master's Name or Epithet:",
+          "PatronNamePlaceholder": "e.g. the Grey Lord, He-Who-Waits, Magister Vogel...",
+          "PatronTitle": "The Master's Nature / Title:",
+          "PatronTitlePlaceholder": "e.g. Archmage, a masked noble, a voice in dreams...",
+          "PatronRelation": "Favour and Relationship with the Master:",
+          "PatronCut": "The Master's Tithe:",
+          "PatronCutPlaceholder": "e.g. 25% of every offering, a yearly gift...",
+          "PatronNotes": "Signs and Obligations to the Master:",
+          "Hideout": "Sanctum / Meeting Place:",
+          "Territory": "City / The Cult's Area of Influence:",
+          "Code": "Oaths and Rules of the Brotherhood:",
+          "CodePlaceholder": "The oath of silence, the degrees of initiation, the price of betrayal...",
+          "Notes": "The Book / The High Priest's Notes:",
+          "NotesPlaceholder": "The brotherhood's history, past rituals, the Master's purpose..."
+        },
+        "DashTab": {
+          "CampCaption": "Affects recovery and the cult's mood while resting. Terrain: <strong>{terrain}</strong> (change it in the Loot tab).",
+          "FlavorHigh": "The cult would follow the high priest into fire! Ready for any sacrifice.",
+          "FlavorMid": "Steady discipline. The cult follows orders without complaint.",
+          "FlavorLow": "The cult mutters in corners; they're short of coin and drink.",
+          "DepositHint": "Move coins from your purse into the cult's common stash (+1 Morale for generous gifts)",
+          "WithdrawHint": "Take coins from the cult's stash (taking more than 10 SS requires a Leadership test — risk of losing Morale!)",
+          "ResolveWeek": "Resolve the Cult Week",
+          "TablesHint": "Game Master: open the random rumour and camp event tables (RollTable, cult folder)",
+          "ChronicleEmpty": "No events recorded yet. The cult is just setting out on the road...",
+          "Morale": "Cult Morale"
+        },
+        "TacticsTab": {
+          "NoRetinue": "<strong>No cultists in the retinue!</strong> The high priest fights alone. Specialist orders are locked. Assign people in the <em>Assignments</em> tab.",
+          "HowTo": "You give orders through the high priest's <strong>Leadership Test</strong> (failure means no effect; one order per round, uses the high priest's Action) or by spending <strong>Advantage</strong> (automatic success).",
+          "FilterEmpty": "No active member of the retinue unlocks any tactics. Add a cultist to the retinue or show all tactics.",
+          "PersonalAlways": "The high priest's personal order (always available)",
+          "WoundRisk": "Risk of a Cultist's Wound"
+        },
+        "Title": "Cult",
+        "WindowTitle": "WFRP4e – Secret Brotherhood",
+        "DefaultGangName": "Brotherhood",
+        "Tiers": {
+          "easy": {
+            "Name": "Beggar or vagrant",
+            "Desc": "+20 to the test, half the pay"
+          },
+          "normal": {
+            "Name": "Burgher"
+          },
+          "rich": {
+            "Name": "Someone important",
+            "Desc": "−20 to the test, double pay, any failure risks discovery"
+          }
+        },
+        "Tokens": {
+          "recon": {
+            "Desc": "+20 to the next abduction"
+          },
+          "lead": {
+            "Desc": "Someone important without the −20 penalty"
+          },
+          "commotion": {
+            "Name": "Exaltation",
+            "Desc": "+20 to the next tested task (today); after the rite the faithful act without hesitation"
+          }
+        },
+        "Notoriety": {
+          "0": {
+            "Name": "Hidden",
+            "Desc": "The brotherhood meets in cellars and nobody links the missing candles to anything sinister."
+          },
+          "1": {
+            "Name": "Strange Rumours",
+            "Desc": "Someone saw lights in the graveyard at night. People laugh, but not all of them."
+          },
+          "2": {
+            "Name": "Warning Sermons",
+            "Desc": "Priests preach against heresy from the pulpit. Bribes for the watch cost double."
+          },
+          "3": {
+            "Name": "An Investigation",
+            "Desc": "A witch hunter has come to town and asks about the missing."
+          },
+          "4": {
+            "Name": "Heretic Hunt",
+            "Desc": "The order holds interrogations. Any cultist may be given up."
+          },
+          "5": {
+            "Name": "The Pyres",
+            "Desc": "Pyres burn in the market square. The gates are shut and every house is searched."
+          }
+        },
+        "Risk": {
+          "stealth": "If caught: Suspicion, arrest",
+          "Result": {
+            "FaceRemembered": "Someone remembers the face under the hood – Suspicion +1.",
+            "Arrested": "{name} is taken for interrogation – <strong>Arrested</strong> for {time}. Suspicion +1.",
+            "Chase": "A chase and cries of “heretic!” in the street – Suspicion +1.",
+            "WoundedLoud": "{name} is <strong>Wounded</strong>, and the whole district talks about the bloody fight – Suspicion +1."
+          }
+        },
+        "Raid": {
+          "Escaped": "The sentries raised the alarm in time – the cult fled by a secret passage, leaving {lost} rations behind.",
+          "Settled": "After the raid the hunters consider the matter closed – Suspicion −1.",
+          "Summary": "Witch hunter raid.",
+          "Arrested": "Witch hunters burst into the unguarded sanctum – <strong>{name}</strong> is taken for questioning for {time}.",
+          "Seized": "The hunters “confiscated” {amount} from the stash as evidence of heresy."
+        },
+        "Report": {
+          "MissionFlavor": "High Priest's Orders",
+          "QueueTitle": "Cult tasks report"
+        },
+        "Badges": {
+          "retinue": "High Priest's Guard"
+        },
+        "MissionCategories": {
+          "resources": {
+            "Name": "Resources & Loot"
+          }
+        },
+        "Tier": {
+          "LeadApplies": "{name}: no penalty, double loot"
+        },
+        "Tabs": {
+          "Loot": "Loot"
+        }
+      }
     }
   }
 }

@@ -1,0 +1,172 @@
+{{!-- Księga Kompanii: rejestr członków jako siatka kart (akcje i pola formularza jak w roster.hbs) --}}
+<div class="roster-panel flexcol uw-l-roster">
+  <div class="roster-top-bar">
+    <div class="roster-top-info">
+      <h3 class="roster-panel-title">{{uwIcon "ui-tab_roster"}} {{underworldT "RosterTab.Title"}}</h3>
+      <span class="roster-summary-counts">
+        {{underworldT "RosterTab.Total"}}: <strong>{{gang.roster.length}}</strong> · {{underworldT "RosterTab.ReadyForJobs"}}: <strong>{{availableOutlaws.length}}</strong> · {{underworldT "TasksTab.InRetinue"}}: <strong>{{retinueCount}}</strong>
+      </span>
+    </div>
+    <div class="roster-top-actions">
+      <button type="button" class="btn-theme-action btn-toggle-all-roster" data-action="toggle-all-roster" title="{{underworldT 'RosterTab.ToggleAllHint'}}">
+        <i class="fas fa-compress-arrows-alt"></i> {{underworldT "RosterTab.ToggleAll"}}
+      </button>
+      {{#if isGM}}
+        <button type="button" class="btn-theme-action btn-recruit-chat" data-action="open-recruitment" title="{{underworldT 'RosterTab.RecruitHint'}}">
+          <i class="fas fa-user-plus"></i> {{underworldT "RosterTab.Recruit"}}
+        </button>
+        <button type="button" class="btn-theme-action btn-add-npc" data-action="add-npc" title="{{underworldT 'RosterTab.AddHint'}}">
+          <i class="fas fa-plus"></i> {{underworldT "RosterTab.Add"}}
+        </button>
+      {{/if}}
+    </div>
+  </div>
+
+  <p class="uw-l-hint">{{uwIcon "ui-patron"}} {{underworldT "RosterTab.DropHint"}}</p>
+
+  <div class="npc-cards-grid uw-l-roll">
+    {{#each gang.roster}}
+    <div class="npc-card-box uw-l-member status-{{this.status}} {{#if this.isCollapsed}}collapsed{{/if}}" data-npc-id="{{this.id}}">
+      <div class="uw-l-member-head">
+        <div class="avatar-medallion uw-l-portrait {{#if this.actorId}}is-linked{{/if}}"
+             data-action="{{#if this.actorId}}open-actor{{else}}select-actor{{/if}}"
+             data-actor-id="{{this.actorId}}"
+             title="{{#if this.actorId}}{{underworldT 'RosterTab.OpenActor' name=this.actorName}}{{else}}{{underworldT 'RosterTab.ClickToLink'}}{{/if}}">
+          <img src="{{this.img}}" alt="{{this.name}}" class="avatar-img" />
+          <span class="uw-l-portrait-role" title="{{this.roleConfig.name}}">{{uwIcon this.roleGlyph}}</span>
+        </div>
+
+        <div class="uw-l-member-id">
+          <div class="uw-l-member-name-row">
+            <button type="button" class="npc-collapse-toggle-btn uw-plain" data-action="toggle-npc-collapse" data-npc-id="{{this.id}}" title="{{underworldT 'RosterTab.ToggleOne'}}">
+              <i class="fas fa-chevron-down toggle-icon"></i>
+            </button>
+            <input class="npc-name-input" type="text" name="roster.{{@index}}.name" value="{{this.name}}" placeholder="{{underworldT 'RosterTab.NamePlaceholder'}}" title="{{underworldT 'RosterTab.NameTitle'}}"/>
+          </div>
+          <div class="uw-l-member-roles">
+            <span class="uw-l-role">{{uwIcon this.roleGlyph}} {{this.roleConfig.name}}</span>
+            {{#if this.role2}}<span class="uw-l-role is-second">{{uwIcon this.role2Glyph}} {{this.role2Name}}</span>{{/if}}
+          </div>
+          <div class="uw-l-member-rank" title="{{this.rankName}}">
+            {{uwIcon this.rankGlyph}} <span>{{this.rankName}}</span>
+            <span class="uw-l-oxp">{{uwIcon "ui-xp"}} {{this.operationalXP}} {{underworldT "Units.OXP"}}</span>
+            {{{underworldGearIcons this.gear}}}
+          </div>
+        </div>
+
+        <div class="uw-l-seal status-{{this.status}}" title="{{this.statusLabel}}">
+          {{uwIcon "orn-seal" "uw-l-seal-wax"}}
+          {{uwIcon this.statusGlyph "uw-l-seal-mark"}}
+        </div>
+      </div>
+
+      <div class="uw-l-member-bar">
+        <span class="uw-l-assign">
+          {{#if this.assignGlyph}}{{uwIcon this.assignGlyph}} {{this.assignLabel}}{{else}}{{uwIcon this.statusGlyph}} {{this.statusLabel}}{{/if}}
+        </span>
+        <div class="npc-toolbar-actions">
+          {{#if ../isGM}}
+          <select class="npc-status-select" name="roster.{{@index}}.status" title="{{underworldT 'RosterTab.StatusTitle'}}">
+            {{#bajerySelect this.status}}
+            <option value="ready">{{underworldT "Status.Ready"}}</option>
+            <option value="busy">{{underworldT "Status.Busy"}}</option>
+            <option value="resting">{{underworldT "Status.Resting"}}</option>
+            <option value="wounded">{{underworldT "Status.Wounded"}}</option>
+            <option value="arrested">{{underworldT "Status.Arrested"}}</option>
+            <option value="dead">{{underworldT "Status.Dead"}}</option>
+            {{/bajerySelect}}
+          </select>
+          {{/if}}
+          <div class="npc-collapsible-tools">
+            {{#if this.actorId}}
+              <button type="button" class="tool-btn btn-view-sheet" data-action="open-actor" data-actor-id="{{this.actorId}}" title="{{underworldT 'RosterTab.OpenSheet'}}"><i class="fas fa-address-card"></i></button>
+              <button type="button" class="tool-btn btn-unlink-actor" data-action="unlink-actor" title="{{underworldT 'RosterTab.Unlink'}}"><i class="fas fa-unlink"></i></button>
+            {{else}}
+              <button type="button" class="tool-btn btn-link-actor" data-action="select-actor" title="{{underworldT 'RosterTab.LinkActor'}}"><i class="fas fa-link"></i></button>
+            {{/if}}
+            <button type="button" class="tool-btn btn-upgrade" data-action="upgrade-npc" data-npc-id="{{this.id}}" title="{{underworldT 'RosterTab.UpgradeHint'}}">{{uwIcon "ui-xp"}} {{underworldT "RosterTab.Upgrade"}}</button>
+            {{#if (bajeryEq this.assignment "retinue")}}
+              <button type="button" class="tool-btn btn-retinue-on" data-action="toggle-retinue" data-npc-id="{{this.id}}" title="{{underworldT 'RosterTab.LeaveRetinue'}}">{{uwIcon "ui-retinue"}} {{underworldT "TasksTab.InRetinue"}}</button>
+            {{else}}
+              <button type="button" class="tool-btn btn-retinue-off" data-action="toggle-retinue" data-npc-id="{{this.id}}" title="{{underworldT 'RosterTab.JoinRetinueHint'}}">{{uwIcon "ui-retinue"}} {{underworldT "RosterTab.JoinRetinue"}}</button>
+            {{/if}}
+            {{#if ../isGM}}
+              {{#if (bajeryEq this.status "busy")}}
+                <button type="button" class="tool-btn btn-free" data-action="free-npc" data-npc-id="{{this.id}}" title="{{underworldT 'RosterTab.Free'}}"><i class="fas fa-undo"></i></button>
+              {{else if (bajeryEq this.assignment "guard")}}
+                <button type="button" class="tool-btn btn-free" data-action="free-npc" data-npc-id="{{this.id}}" title="{{underworldT 'RosterTab.OffWatch'}}"><i class="fas fa-undo"></i></button>
+              {{/if}}
+              <a class="npc-delete-btn" data-action="delete-npc" title="{{underworldT 'RosterTab.Delete'}}"><i class="fas fa-trash"></i></a>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+
+      <div class="npc-expandable-body">
+        {{#if this.customBonus}}
+          <span class="bonus-tag" title="{{underworldT 'RosterTab.BonusHint'}}"><i class="fas fa-graduation-cap"></i> +{{this.customBonus}}</span>
+        {{/if}}
+        <div class="npc-traits-grid">
+          <div class="trait-line">
+            <span class="trait-line-label">{{uwIcon this.roleGlyph}} {{underworldT "Upgrade.Role"}}:</span>
+            <div class="trait-line-content">
+              {{#if ../isGM}}
+                <select class="npc-role-select" name="roster.{{@index}}.role" title="{{underworldT 'RosterTab.RoleTitle'}}">{{{underworldRoleSelectOptions this.role}}}</select>
+              {{else}}
+                {{this.roleConfig.name}}<input type="hidden" name="roster.{{@index}}.role" value="{{this.role}}"/>
+              {{/if}}
+            </div>
+          </div>
+          <div class="trait-line">
+            <span class="trait-line-label">{{#if this.role2Glyph}}{{uwIcon this.role2Glyph}}{{else}}{{uwIcon "ui-rank_rookie"}}{{/if}} {{underworldT "Upgrade.SecondRole"}}:</span>
+            <div class="trait-line-content">
+              {{#if ../isGM}}
+                <select class="npc-role-select" name="roster.{{@index}}.role2" title="{{underworldT 'Upgrade.SecondRoleHint'}}">
+                  <option value="">—</option>
+                  {{{underworldRoleSelectOptions this.role2}}}
+                </select>
+              {{else}}
+                {{#if this.role2}}{{this.role2Name}}{{else}}<em>—</em>{{/if}}
+              {{/if}}
+            </div>
+          </div>
+          <div class="trait-line is-strengths">
+            <span class="trait-line-label"><i class="fas fa-plus-circle"></i> {{underworldT "Mod.Strengths"}}:</span>
+            <div class="trait-line-content badges-wrap">
+              {{{underworldStrengthBadges this.strengths this.strength}}}
+              <input type="hidden" name="roster.{{@index}}.strength" value="{{this.strength}}"/>
+            </div>
+          </div>
+          <div class="trait-line is-flaws">
+            <span class="trait-line-label"><i class="fas fa-minus-circle"></i> {{underworldT "Mod.Flaws"}}:</span>
+            <div class="trait-line-content badges-wrap">
+              {{{underworldFlawBadges this.flaws this.flaw}}}
+              <input type="hidden" name="roster.{{@index}}.flaw" value="{{this.flaw}}"/>
+            </div>
+          </div>
+          {{#if this.narrativePerks.length}}
+            <div class="trait-line is-perks">
+              <span class="trait-line-label"><i class="fas fa-feather-alt"></i> {{underworldT "RosterTab.Perks"}}:</span>
+              <div class="trait-line-content badges-wrap">{{{underworldPerkBadges this.narrativePerks}}}</div>
+            </div>
+          {{/if}}
+        </div>
+      </div>
+
+      <input type="hidden" name="roster.{{@index}}.id" value="{{this.id}}"/>
+      <input type="hidden" name="roster.{{@index}}.actorId" value="{{this.actorId}}"/>
+      <input type="hidden" name="roster.{{@index}}.img" value="{{this.img}}"/>
+      <input type="hidden" name="roster.{{@index}}.assignment" value="{{this.assignment}}"/>
+      <input type="hidden" name="roster.{{@index}}.rank" value="{{this.rank}}"/>
+      <input type="hidden" name="roster.{{@index}}.operationalXP" value="{{this.operationalXP}}"/>
+      <input type="hidden" name="roster.{{@index}}.customBonus" value="{{this.customBonus}}"/>
+    </div>
+    {{else}}
+      <div class="empty-roster-banner">
+        {{uwIcon "ui-tab_roster" "uw-l-empty-icon"}}
+        <h4>{{underworldT "RosterTab.EmptyTitle"}}</h4>
+        <p>{{underworldT "RosterTab.EmptyText"}}</p>
+      </div>
+    {{/each}}
+  </div>
+</div>

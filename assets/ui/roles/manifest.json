@@ -1,0 +1,157 @@
+[
+  {
+    "id": "bodyguard",
+    "file": "bodyguard.svg",
+    "subject": "heavy cleaver crossed over a small round buckler"
+  },
+  {
+    "id": "shadow",
+    "file": "shadow.svg",
+    "subject": "hooded head in profile with a dagger held point-down beside it"
+  },
+  {
+    "id": "marksman",
+    "file": "marksman.svg",
+    "subject": "longbow drawn with a nocked arrow"
+  },
+  {
+    "id": "provocateur",
+    "file": "provocateur.svg",
+    "subject": "two dice and a fanned playing card"
+  },
+  {
+    "id": "scavenger",
+    "file": "scavenger.svg",
+    "subject": "stuffed sack with a bone saw leaning on it"
+  },
+  {
+    "id": "smuggler",
+    "file": "smuggler.svg",
+    "subject": "wagon wheel with a coiled whip"
+  },
+  {
+    "id": "saboteur",
+    "file": "saboteur.svg",
+    "subject": "burning torch above a small powder keg"
+  },
+  {
+    "id": "scout",
+    "file": "scout.svg",
+    "subject": "two boot prints under a small spyglass"
+  },
+  {
+    "id": "fixer",
+    "file": "fixer.svg",
+    "subject": "hanging balance scales with a seal stamp"
+  },
+  {
+    "id": "charlatan",
+    "file": "charlatan.svg",
+    "subject": "stoppered potion bottle with a sprig of herb"
+  },
+  {
+    "id": "duelist",
+    "file": "duelist.svg",
+    "subject": "rapier with a swept hilt, point up, and a feather"
+  },
+  {
+    "id": "sergeant",
+    "file": "sergeant.svg",
+    "subject": "short sword with two chevrons beneath"
+  },
+  {
+    "id": "halberdier",
+    "file": "halberdier.svg",
+    "subject": "halberd head (axe blade, hook, spike) on a pole"
+  },
+  {
+    "id": "crossbowman",
+    "file": "crossbowman.svg",
+    "subject": "crossbow seen from above, loaded bolt"
+  },
+  {
+    "id": "standard_bearer",
+    "file": "standard_bearer.svg",
+    "subject": "swallow-tailed banner on a pole"
+  },
+  {
+    "id": "surgeon",
+    "file": "surgeon.svg",
+    "subject": "bone saw crossed with a rolled bandage"
+  },
+  {
+    "id": "quartermaster",
+    "file": "quartermaster.svg",
+    "subject": "barrel with an open ledger leaning on it"
+  },
+  {
+    "id": "helmsman",
+    "file": "helmsman.svg",
+    "subject": "ship's steering wheel with eight handled spokes"
+  },
+  {
+    "id": "boatman",
+    "file": "boatman.svg",
+    "subject": "oar crossed with a boathook"
+  },
+  {
+    "id": "lookout",
+    "file": "lookout.svg",
+    "subject": "lantern held up beside an open eye"
+  },
+  {
+    "id": "forger",
+    "file": "forger.svg",
+    "subject": "quill pen crossed with a wax seal stamp"
+  },
+  {
+    "id": "purser",
+    "file": "purser.svg",
+    "subject": "tied coin purse with a notched tally stick"
+  },
+  {
+    "id": "eavesdropper",
+    "file": "eavesdropper.svg",
+    "subject": "ear next to a tankard"
+  },
+  {
+    "id": "courier",
+    "file": "courier.svg",
+    "subject": "sealed folded letter with a running boot behind it"
+  },
+  {
+    "id": "enforcer",
+    "file": "enforcer.svg",
+    "subject": "clenched fist wearing a studded knuckle band"
+  },
+  {
+    "id": "acolyte",
+    "file": "acolyte.svg",
+    "subject": "lit candle standing on a closed book"
+  },
+  {
+    "id": "zealot",
+    "file": "zealot.svg",
+    "subject": "flail (wooden handle, chained spiked ball) with a small flame"
+  },
+  {
+    "id": "spy",
+    "file": "spy.svg",
+    "subject": "half-face mask with one eye hole"
+  },
+  {
+    "id": "assassin",
+    "file": "assassin.svg",
+    "subject": "slim stiletto with a drop falling from the tip"
+  },
+  {
+    "id": "orator",
+    "file": "orator.svg",
+    "subject": "raised open hand above an unrolled scroll"
+  },
+  {
+    "id": "alchemist",
+    "file": "alchemist.svg",
+    "subject": "alembic / round-bottomed flask with a curved spout and bubbles"
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "id": "meatshield",
+    "file": "meatshield.svg",
+    "subject": "figure stepping in front of a falling blade"
+  },
+  {
+    "id": "trip",
+    "file": "trip.svg",
+    "subject": "boathook catching a boot at the ankle"
+  },
+  {
+    "id": "bullrush",
+    "file": "bullrush.svg",
+    "subject": "shoulder and shield driving forward with motion lines"
+  },
+  {
+    "id": "flank",
+    "file": "flank.svg",
+    "subject": "curved arrow going around a shield to its back"
+  },
+  {
+    "id": "volley",
+    "file": "volley.svg",
+    "subject": "three arrows flying in parallel"
+  },
+  {
+    "id": "kidneystrike",
+    "file": "kidneystrike.svg",
+    "subject": "dagger striking upward with a drop"
+  },
+  {
+    "id": "cover",
+    "file": "cover.svg",
+    "subject": "shield behind which arrows stop"
+  },
+  {
+    "id": "disarm",
+    "file": "disarm.svg",
+    "subject": "sword spinning away from an open hand"
+  },
+  {
+    "id": "distract",
+    "file": "distract.svg",
+    "subject": "open shouting mouth with sound marks"
+  },
+  {
+    "id": "smoke",
+    "file": "smoke.svg",
+    "subject": "billowing smoke cloud from a small pot"
+  },
+  {
+    "id": "sand",
+    "file": "sand.svg",
+    "subject": "hand throwing a spray of grit"
+  },
+  {
+    "id": "resupply",
+    "file": "resupply.svg",
+    "subject": "bottle beside a bundle of three crossbow bolts"
+  },
+  {
+    "id": "retreat",
+    "file": "retreat.svg",
+    "subject": "overturned barrel and planks forming a barricade"
+  },
+  {
+    "id": "draught",
+    "file": "draught.svg",
+    "subject": "hip flask tilted with a drop"
+  },
+  {
+    "id": "rally",
+    "file": "rally.svg",
+    "subject": "horn blowing with sound marks"
+  },
+  {
+    "id": "coordinate",
+    "file": "coordinate.svg",
+    "subject": "pointing hand above three small figures in line"
+  },
+  {
+    "id": "retaliation",
+    "file": "retaliation.svg",
+    "subject": "two curved arrows striking back"
+  },
+  {
+    "id": "bodyblock",
+    "file": "bodyblock.svg",
+    "subject": "broad figure with arms spread as a shield"
+  },
+  {
+    "id": "grapple",
+    "file": "grapple.svg",
+    "subject": "two arms locked together"
+  },
+  {
+    "id": "circle",
+    "file": "circle.svg",
+    "subject": "ring of five spear points facing outward"
+  }
+]

@@ -1,0 +1,723 @@
+/**
+ * Księga Kompanii: nowy wygląd panelu kompanii (ustawienie „Wygląd panelu”).
+ * Działa tylko na oknie z klasą .uw-ledger; klasyczny wygląd zostaje w underworld.css.
+ * Czcionki i tekstury pochodzą z systemu WFRP4e, ikony z assets/ui/sprite.svg.
+ */
+
+@font-face { font-family: "UW Nodesto"; src: url("../../../systems/wfrp4e/fonts/NodestoCapsCondensed.otf") format("opentype"); font-display: swap; }
+@font-face { font-family: "UW Caslon Antique"; src: url("../../../systems/wfrp4e/fonts/CaslonAntique.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "UW Caslon Antique"; font-weight: bold; src: url("../../../systems/wfrp4e/fonts/CaslonAntique-Bold.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "UW Caslon"; src: url("../../../systems/wfrp4e/fonts/ACaslonPro-Regular.otf") format("opentype"); font-display: swap; }
+@font-face { font-family: "UW Caslon"; font-style: italic; src: url("../../../systems/wfrp4e/fonts/ACaslonPro-Italic.otf") format("opentype"); font-display: swap; }
+@font-face { font-family: "UW Caslon"; font-weight: 600; src: url("../../../systems/wfrp4e/fonts/ACaslonPro-Semibold.otf") format("opentype"); font-display: swap; }
+
+/* ─── Paleta i motywy typów ─── */
+.underworld-app.uw-ledger {
+  --l-ink: #1f1711;
+  --l-ink-soft: #4a3a2c;
+  --l-iron: #24201d;
+  --l-iron-rim: #4b4038;
+  --l-leather: #3d2818;
+  --l-leather-hi: #5c3d25;
+  --l-paper: #efe5cb;
+  --l-paper-deep: #dccb9f;
+  --l-paper-line: #b59f74;
+  --l-gold: #c9a24b;
+  --l-gold-pale: #ead7a2;
+  --l-blood: #8a2b22;
+  --l-display: "UW Nodesto", "Nodesto Caps Condensed", "UW Caslon Antique", serif;
+  --l-name: "UW Caslon Antique", "Caslon Antique", serif;
+  --l-text: "UW Caslon", "Adobe Caslon Pro", "Palatino Linotype", Georgia, serif;
+  /* Akcent typu (domyślnie Szajka) */
+  --l-accent: #8e2a22;
+  --l-accent-deep: #4f1611;
+  --l-accent-pale: #e3b3a4;
+}
+.underworld-app.uw-ledger[data-company-type="outlaws"] { --l-accent: #4b6a2c; --l-accent-deep: #22341a; --l-accent-pale: #c7d6a8; }
+.underworld-app.uw-ledger[data-company-type="mercenaries"] { --l-accent: #9b1c2c; --l-accent-deep: #3f2328; --l-accent-pale: #e4b4ba; }
+.underworld-app.uw-ledger[data-company-type="smugglers"] { --l-accent: #2d6a64; --l-accent-deep: #15322f; --l-accent-pale: #a9d2cb; }
+.underworld-app.uw-ledger[data-company-type="investigators"] { --l-accent: #39417a; --l-accent-deep: #1b1f3d; --l-accent-pale: #b8bde3; }
+.underworld-app.uw-ledger[data-company-type="cult"] { --l-accent: #5e2f6e; --l-accent-deep: #2a1533; --l-accent-pale: #d2b3dc; }
+
+/* ─── Ikony ze sprite'a ─── */
+.underworld-app .uw-icon { width: 1em; height: 1em; display: inline-block; vertical-align: -0.14em; fill: currentColor; flex: 0 0 auto; }
+.underworld-app.uw-ledger .uw-icon { filter: url(#uw-woodcut); }
+.underworld-app .uw-l-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+/* ─── Okno: oprawa z żelaza i skóry ─── */
+:is(html, #uw) .underworld-app.uw-ledger {
+  font-family: var(--l-text);
+  color: var(--l-ink);
+  background: var(--l-paper) url("../../../systems/wfrp4e/ui/backgrounds/parchment-texture.webp") repeat;
+  border: 3px solid var(--l-iron);
+  box-shadow: 0 0 0 1px var(--l-iron-rim), 0 12px 36px rgba(0, 0, 0, 0.65);
+}
+:is(html, #uw) .underworld-app.uw-ledger > .window-header {
+  background: linear-gradient(180deg, var(--l-leather-hi), var(--l-leather) 55%, #26170d);
+  border-bottom: 2px solid var(--l-iron);
+  color: var(--l-gold-pale);
+  font-family: var(--l-display);
+  letter-spacing: 0.04em;
+}
+:is(html, #uw) .underworld-app.uw-ledger > .window-header .window-title { font-size: 1.15rem; text-shadow: 0 1px 2px #000; }
+:is(html, #uw) .underworld-app.uw-ledger .window-content { padding: 0; }
+:is(html, #uw) .underworld-app.uw-ledger .underworld-sheet-form { gap: 0; }
+
+/* ─── Nagłówek-chorągiew ─── */
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-header {
+  position: relative;
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr) 300px;
+  gap: 14px;
+  align-items: center;
+  padding: 12px 16px 14px;
+  min-height: 132px;
+  color: var(--l-paper);
+  background:
+    radial-gradient(ellipse at 30% 0%, color-mix(in srgb, var(--l-accent) 35%, transparent), transparent 65%),
+    radial-gradient(ellipse 70% 60px at 60% 100%, rgba(214, 150, 70, 0.38), transparent 100%),
+    linear-gradient(180deg, #2a1d14 0%, var(--l-iron) 55%, #4a3524 100%);
+  border-bottom: 3px solid var(--l-gold);
+  box-shadow: inset 0 -6px 12px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+.underworld-app.uw-ledger .uw-l-skyline { position: absolute; inset: auto 0 0 0; height: 96px; color: #0d0907; opacity: 0.92; pointer-events: none; }
+.underworld-app.uw-ledger .uw-l-skyline .uw-l-skyline-art { width: 100%; height: 100%; filter: none; }
+.underworld-app.uw-ledger .uw-l-crest { position: relative; width: 92px; height: 110px; z-index: 1; }
+.underworld-app.uw-ledger .uw-l-shield { position: absolute; inset: 0; width: 100%; height: 100%; color: var(--l-accent); filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.7)); }
+.underworld-app.uw-ledger .uw-l-charge { position: absolute; left: 11%; top: 11%; width: 78%; height: 66%; color: var(--l-gold-pale); }
+
+.underworld-app.uw-ledger .uw-l-identity { position: relative; z-index: 1; min-width: 0; }
+.underworld-app.uw-ledger .uw-l-eyebrow { font-family: var(--l-display); font-size: 0.85rem; letter-spacing: 0.18em; color: var(--l-gold); text-transform: uppercase; }
+:is(html, #uw) .underworld-app.uw-ledger input.uw-l-name {
+  width: 100%;
+  height: auto;
+  padding: 0;
+  font-family: var(--l-display);
+  font-size: 2.3rem;
+  line-height: 1.05;
+  color: var(--l-paper);
+  background: transparent;
+  border: none;
+  border-bottom: 1px dashed transparent;
+  text-shadow: 0 2px 3px #000;
+  box-shadow: none;
+}
+:is(html, #uw) .underworld-app.uw-ledger input.uw-l-name:focus { border-bottom-color: var(--l-gold); outline: none; }
+.underworld-app.uw-ledger .uw-l-ribbon { position: relative; width: min(100%, 320px); aspect-ratio: 400 / 72; margin: 0 0 2px -10px; }
+.underworld-app.uw-ledger .uw-l-ribbon-art { position: absolute; inset: 0; width: 100%; height: 100%; color: var(--l-paper-deep); filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.6)); }
+:is(html, #uw) .underworld-app.uw-ledger input.uw-l-motto {
+  position: absolute;
+  left: 15%;
+  top: 22%;
+  width: 70%;
+  height: 46%;
+  padding: 0;
+  text-align: center;
+  font-family: var(--l-name);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--l-ink);
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+.underworld-app.uw-ledger .uw-l-sub { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; font-size: 0.85rem; color: var(--l-gold-pale); }
+.underworld-app.uw-ledger .uw-l-leader { display: inline-flex; align-items: center; gap: 6px; }
+.underworld-app.uw-ledger .uw-l-leader img { width: 26px; height: 26px; border-radius: 50%; border: 2px solid var(--l-gold); object-fit: cover; background: #000; }
+.underworld-app.uw-ledger .uw-l-leader-role { font-family: var(--l-display); color: var(--l-gold); letter-spacing: 0.08em; }
+.underworld-app.uw-ledger .uw-l-chip { display: inline-flex; align-items: center; gap: 4px; }
+.underworld-app.uw-ledger .uw-l-chip > :is(span, div) { filter: saturate(0.55) sepia(0.2); }
+
+/* ─── Mierniki zasobów ─── */
+.underworld-app.uw-ledger .uw-l-meters {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 5px;
+  padding: 8px 10px;
+  background: rgba(10, 7, 5, 0.62);
+  border: 1px solid var(--l-iron-rim);
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 1px rgba(201, 162, 75, 0.15);
+}
+.underworld-app.uw-ledger .uw-l-meter { display: grid; grid-template-columns: 92px minmax(0, 1fr) auto; align-items: center; gap: 8px; font-size: 0.8rem; }
+.underworld-app.uw-ledger .uw-l-meter-label { display: inline-flex; align-items: center; gap: 5px; color: var(--l-gold-pale); font-family: var(--l-display); letter-spacing: 0.06em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.underworld-app.uw-ledger .uw-l-meter-label .uw-icon { color: var(--l-gold); font-size: 1.05rem; }
+.underworld-app.uw-ledger .uw-l-meter-value { color: var(--l-paper); font-family: var(--l-name); font-size: 1rem; min-width: 2.2em; text-align: right; }
+.underworld-app.uw-ledger .uw-l-meter-value small { color: var(--l-paper-line); font-size: 0.7rem; }
+.underworld-app.uw-ledger .uw-l-pips { display: flex; gap: 2px; }
+.underworld-app.uw-ledger .uw-l-pip { display: inline-flex; color: #4a3d33; font-size: 0.95rem; }
+.underworld-app.uw-ledger .uw-l-pips-morale .uw-l-pip.on { color: var(--l-gold); }
+.underworld-app.uw-ledger .uw-l-pips-pressure .uw-l-pip { font-size: 1.05rem; }
+.underworld-app.uw-ledger .uw-l-pips-pressure .uw-l-pip.on { color: #c2412f; filter: drop-shadow(0 0 2px rgba(194, 65, 47, 0.55)); }
+.underworld-app.uw-ledger .uw-l-pressure-level { color: var(--l-paper); font-size: 0.72rem; font-style: italic; text-align: right; max-width: 90px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.underworld-app.uw-ledger .uw-l-bar { position: relative; height: 9px; background: #120d0a; border: 1px solid var(--l-iron-rim); border-radius: 2px; overflow: hidden; }
+.underworld-app.uw-ledger .uw-l-bar > span { position: absolute; inset: 0 auto 0 0; background: linear-gradient(90deg, #7a5a2b, var(--l-gold)); }
+.underworld-app.uw-ledger .uw-l-meter-coins { grid-template-columns: 92px minmax(0, 1fr); }
+.underworld-app.uw-ledger .uw-l-coins { display: flex; gap: 10px; justify-content: flex-end; }
+.underworld-app.uw-ledger .uw-l-coin { display: inline-flex; align-items: center; gap: 3px; color: var(--l-paper); font-family: var(--l-name); font-size: 0.95rem; }
+.underworld-app.uw-ledger .uw-l-coin .uw-icon { font-size: 1.05rem; }
+.underworld-app.uw-ledger .uw-l-coin small { font-family: var(--l-display); font-size: 0.65rem; color: var(--l-gold); letter-spacing: 0.05em; }
+.underworld-app.uw-ledger .uw-l-coin.gc .uw-icon { color: #d9b24a; }
+.underworld-app.uw-ledger .uw-l-coin.ss .uw-icon { color: #c4c7c9; }
+.underworld-app.uw-ledger .uw-l-coin.d .uw-icon { color: #b0703f; }
+
+/* ─── Układ: wstążki po lewej, karta po prawej ─── */
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-main {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 146px minmax(0, 1fr);
+}
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 4px;
+  margin: 0;
+  padding: 12px 0 12px 8px;
+  border: none;
+  background: linear-gradient(90deg, #2c1c11, var(--l-leather) 80%, #2c1c11);
+  box-shadow: inset -3px 0 6px rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+}
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-nav .uw-l-tab {
+  position: relative;
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr) auto;
+  align-items: center;
+  justify-content: stretch;
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  gap: 6px;
+  margin: 0;
+  padding: 8px 10px 8px 8px;
+  color: var(--l-paper-deep);
+  font-family: var(--l-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  background: transparent;
+  border: none;
+  border-radius: 3px 0 0 3px;
+  text-shadow: 0 1px 1px #000;
+  transition: background-color 120ms ease, color 120ms ease;
+}
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-nav .uw-l-tab:hover { background: rgba(255, 255, 255, 0.06); color: var(--l-paper); }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-nav .uw-l-tab.active {
+  color: var(--l-ink);
+  background: var(--l-paper) url("../../../systems/wfrp4e/ui/backgrounds/parchment-texture.webp");
+  text-shadow: none;
+  box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-right: -1px;
+}
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-nav .uw-l-tab.active::before {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: 4px;
+  bottom: 4px;
+  width: 5px;
+  background: var(--l-accent);
+  border-radius: 2px;
+}
+.underworld-app.uw-ledger .uw-l-tab-icon { font-size: 1.35rem; color: var(--l-gold); }
+.underworld-app.uw-ledger .uw-l-tab.active .uw-l-tab-icon { color: var(--l-accent); }
+.underworld-app.uw-ledger .uw-l-tab-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.underworld-app.uw-ledger .uw-l-tab-count { font-family: var(--l-name); font-size: 0.75rem; padding: 0 5px; border-radius: 8px; background: rgba(0, 0, 0, 0.35); color: var(--l-gold-pale); }
+.underworld-app.uw-ledger .uw-l-tab.active .uw-l-tab-count { background: var(--l-accent); color: var(--l-paper); }
+
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-main > .underworld-sheet-body { padding: 12px 14px; min-height: 0; }
+
+/* ─── Karta zakładki: wspólny wygląd elementów (bez przebudowy układu) ─── */
+:is(html, #uw) .underworld-app.uw-ledger .underworld-sheet-body :is(h1, h2, h3, h4, legend) {
+  font-family: var(--l-display);
+  font-weight: normal;
+  letter-spacing: 0.04em;
+  color: var(--l-ink);
+}
+:is(html, #uw) .underworld-app.uw-ledger .underworld-sheet-body :is(h2, h3) {
+  border-bottom: 1px solid var(--l-paper-line);
+  padding-bottom: 2px;
+}
+:is(html, #uw) .underworld-app.uw-ledger .underworld-sheet-body :is(h2, h3) > i { color: var(--l-accent); }
+:is(html, #uw) .underworld-app.uw-ledger .underworld-sheet-body button:not(.uw-plain) {
+  font-family: var(--l-display);
+  letter-spacing: 0.04em;
+  color: var(--l-gold-pale);
+  background: linear-gradient(180deg, var(--l-leather-hi), var(--l-leather));
+  border: 1px solid #1a110a;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 1px 2px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 1px 1px #000;
+}
+:is(html, #uw) .underworld-app.uw-ledger .underworld-sheet-body button:not(.uw-plain):hover:not(:disabled) {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--l-accent) 70%, #fff 8%), var(--l-accent-deep));
+  color: #fff;
+}
+:is(html, #uw) .underworld-app.uw-ledger .underworld-sheet-body :is(input[type="text"], input[type="number"], select, textarea) {
+  font-family: var(--l-text);
+  color: var(--l-ink);
+  background: rgba(255, 250, 235, 0.55);
+  border: 1px solid var(--l-paper-line);
+  border-radius: 2px;
+}
+/* Kolorowe plakietki z dawnego wyglądu: przygaszone, żeby pasowały do pergaminu */
+:is(html, #uw) .underworld-app.uw-ledger .underworld-sheet-body :is(.badge-mission, .role-badge, .rank-badge, .meta-chip, .uw-terrain-badge) {
+  filter: saturate(0.5) sepia(0.25) contrast(1.05);
+}
+:is(html, #uw) .underworld-app.uw-ledger .underworld-sheet-body ::selection { background: var(--l-accent-pale); }
+
+/* ─── Wspólne drobiazgi zakładek ─── */
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-hint { margin: 4px 0 8px; font-size: 0.8rem; font-style: italic; color: var(--l-ink-soft); }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-hint .uw-icon { color: var(--l-accent); }
+:is(html, #uw) .underworld-app.uw-ledger button.uw-plain { background: none; border: none; box-shadow: none; padding: 0 4px; color: var(--l-ink-soft); text-shadow: none; }
+
+/* ─── Rejestr: karty członków ─── */
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-roster .roster-panel-title .uw-icon { color: var(--l-accent); }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-roll {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 10px;
+  align-items: start;
+}
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-member {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 10px 10px 8px;
+  background: rgba(255, 250, 235, 0.72);
+  border: 1px solid var(--l-paper-line);
+  border-left: 4px solid var(--l-accent);
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(60, 40, 20, 0.18);
+}
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-member.status-dead { opacity: 0.55; filter: grayscale(0.8); border-left-color: #2a2421; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-member:is(.status-wounded, .status-arrested) { border-left-color: #9a2a1f; }
+.underworld-app.uw-ledger .uw-l-member-head { display: grid; grid-template-columns: 64px minmax(0, 1fr) 46px; gap: 10px; align-items: center; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-portrait {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  margin: 0;
+  border: 3px solid var(--l-iron);
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px var(--l-gold), 0 2px 4px rgba(0, 0, 0, 0.45);
+  overflow: visible;
+  cursor: pointer;
+}
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-portrait img { width: 100%; height: 100%; object-fit: cover; border: none; border-radius: 0; filter: sepia(0.25) contrast(1.05); }
+.underworld-app.uw-ledger .uw-l-portrait-role {
+  position: absolute;
+  right: -8px;
+  bottom: -8px;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  color: var(--l-gold-pale);
+  background: var(--l-accent);
+  border: 2px solid var(--l-iron);
+  border-radius: 50%;
+  font-size: 0.95rem;
+}
+.underworld-app.uw-ledger .uw-l-member-id { min-width: 0; display: grid; gap: 2px; }
+.underworld-app.uw-ledger .uw-l-member-name-row { display: flex; align-items: center; gap: 2px; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-member .npc-name-input {
+  flex: 1;
+  min-width: 0;
+  height: auto;
+  padding: 0;
+  font-family: var(--l-name);
+  font-size: 1.15rem;
+  font-weight: bold;
+  background: transparent;
+  border: none;
+  border-bottom: 1px dashed transparent;
+}
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-member .npc-name-input:focus { border-bottom-color: var(--l-accent); outline: none; }
+.underworld-app.uw-ledger .uw-l-member-roles { display: flex; flex-wrap: wrap; gap: 4px 10px; font-family: var(--l-display); font-size: 0.85rem; color: var(--l-accent-deep); letter-spacing: 0.03em; }
+.underworld-app.uw-ledger .uw-l-role .uw-icon { color: var(--l-accent); }
+.underworld-app.uw-ledger .uw-l-role.is-second { color: var(--l-ink-soft); }
+.underworld-app.uw-ledger .uw-l-member-rank { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; font-size: 0.78rem; color: var(--l-ink-soft); }
+.underworld-app.uw-ledger .uw-l-member-rank > .uw-icon { color: var(--l-gold); filter: drop-shadow(0 0 1px #000); font-size: 1rem; }
+.underworld-app.uw-ledger .uw-l-oxp .uw-icon { color: var(--l-gold); }
+.underworld-app.uw-ledger .uw-l-seal { position: relative; width: 46px; height: 46px; }
+.underworld-app.uw-ledger .uw-l-seal .uw-l-seal-wax { position: absolute; inset: 0; width: 100%; height: 100%; color: #2f6b3b; filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.45)); }
+.underworld-app.uw-ledger .uw-l-seal .uw-l-seal-mark { position: absolute; left: 27%; top: 25%; width: 46%; height: 46%; color: rgba(255, 245, 220, 0.9); filter: none; }
+.underworld-app.uw-ledger .uw-l-seal.status-busy .uw-l-seal-wax { color: #8a6a2a; }
+.underworld-app.uw-ledger .uw-l-seal.status-resting .uw-l-seal-wax { color: #3d5a7a; }
+.underworld-app.uw-ledger .uw-l-seal:is(.status-wounded, .status-arrested) .uw-l-seal-wax { color: #8e2a22; }
+.underworld-app.uw-ledger .uw-l-seal.status-dead .uw-l-seal-wax { color: #2a2421; }
+.underworld-app.uw-ledger .uw-l-member-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px; padding-top: 6px; border-top: 1px dashed var(--l-paper-line); }
+.underworld-app.uw-ledger .uw-l-assign { display: inline-flex; align-items: center; gap: 5px; font-size: 0.82rem; font-style: italic; color: var(--l-ink-soft); }
+.underworld-app.uw-ledger .uw-l-assign .uw-icon { color: var(--l-accent); font-size: 1.05rem; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-member .npc-toolbar-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-member .npc-collapsible-tools { display: flex; flex-wrap: wrap; gap: 3px; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-member .tool-btn { padding: 1px 6px; font-size: 0.75rem; line-height: 1.6; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-member .npc-status-select { height: 22px; font-size: 0.78rem; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-member.collapsed .npc-expandable-body { display: none; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-member .npc-traits-grid { display: grid; gap: 3px; font-size: 0.8rem; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-member .trait-line-label { font-family: var(--l-display); color: var(--l-ink-soft); }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-member .trait-line-label .uw-icon { color: var(--l-accent); }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-member .is-strengths .trait-line-label { color: #2f5b33; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-member .is-flaws .trait-line-label { color: #8e2a22; }
+.underworld-app.uw-ledger .uw-l-empty-icon { font-size: 2.4rem; color: var(--l-accent); }
+
+/* ─── Plan dnia ─── */
+.underworld-app.uw-ledger .uw-l-plan { display: flex; flex-direction: column; gap: 10px; }
+.underworld-app.uw-ledger .uw-l-plan-top { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 10px; }
+.underworld-app.uw-ledger .uw-l-plan-top > section,
+.underworld-app.uw-ledger .uw-l-watch {
+  padding: 8px 10px;
+  background: rgba(255, 250, 235, 0.65);
+  border: 1px solid var(--l-paper-line);
+  border-radius: 2px;
+}
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-plan h3 { display: flex; align-items: center; gap: 6px; margin: 0 0 6px; font-size: 1.1rem; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-plan h3 .uw-icon { color: var(--l-accent); }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-plan h3 small { margin-left: auto; font-family: var(--l-name); color: var(--l-ink-soft); }
+.underworld-app.uw-ledger .uw-l-pool-list { display: flex; flex-wrap: wrap; gap: 8px; }
+.underworld-app.uw-ledger .uw-l-token { position: relative; width: 62px; text-align: center; cursor: grab; user-select: none; }
+.underworld-app.uw-ledger .uw-l-token.is-busy { cursor: not-allowed; opacity: 0.45; filter: grayscale(0.85); }
+.underworld-app.uw-ledger .uw-l-token:active { cursor: grabbing; }
+.underworld-app.uw-ledger .uw-l-token-face { display: block; width: 52px; height: 52px; margin: 0 auto; border: 3px solid var(--l-iron); border-radius: 50%; overflow: hidden; box-shadow: 0 0 0 1px var(--l-gold), 0 2px 4px rgba(0, 0, 0, 0.4); background: #000; }
+.underworld-app.uw-ledger .uw-l-token-face img { width: 100%; height: 100%; object-fit: cover; border: none; }
+.underworld-app.uw-ledger .uw-l-token:not(.is-busy):hover .uw-l-token-face { box-shadow: 0 0 0 2px var(--l-accent), 0 3px 8px rgba(0, 0, 0, 0.5); }
+.underworld-app.uw-ledger :is(.uw-l-token-role, .uw-l-token-job) { position: absolute; top: 34px; display: grid; place-items: center; width: 20px; height: 20px; border: 2px solid var(--l-iron); border-radius: 50%; font-size: 0.72rem; }
+.underworld-app.uw-ledger .uw-l-token-role { left: 2px; color: var(--l-gold-pale); background: var(--l-accent); }
+.underworld-app.uw-ledger .uw-l-token-job { right: 2px; color: var(--l-ink); background: var(--l-paper-deep); }
+.underworld-app.uw-ledger .uw-l-token-name { display: block; margin-top: 3px; font-size: 0.72rem; line-height: 1.1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.underworld-app.uw-ledger .uw-l-slots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+.underworld-app.uw-ledger .uw-l-slot { position: relative; display: grid; justify-items: center; align-content: center; gap: 2px; min-height: 104px; padding: 6px 4px; text-align: center; border-radius: 3px; }
+.underworld-app.uw-ledger .uw-l-slot.is-empty { color: var(--l-ink-soft); border: 2px dashed var(--l-paper-line); font-size: 0.75rem; font-style: italic; }
+.underworld-app.uw-ledger .uw-l-slot.is-empty .uw-icon { font-size: 1.6rem; opacity: 0.5; }
+.underworld-app.uw-ledger .uw-l-slot.is-filled { background: linear-gradient(180deg, var(--l-leather-hi), var(--l-leather)); color: var(--l-paper); border: 1px solid #1a110a; box-shadow: inset 0 0 0 1px rgba(201, 162, 75, 0.25); }
+.underworld-app.uw-ledger .uw-l-slot.is-filled img { width: 44px; height: 44px; object-fit: cover; border: 2px solid var(--l-gold); border-radius: 50%; }
+.underworld-app.uw-ledger .uw-l-slot-name { font-family: var(--l-name); font-size: 0.82rem; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.underworld-app.uw-ledger .uw-l-slot-role { font-size: 0.68rem; color: var(--l-gold-pale); }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-slot-out { position: absolute; top: 2px; right: 2px; color: var(--l-gold-pale); }
+
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-board { margin: 0; border: none; background: none; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-board .category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 8px;
+  font-family: var(--l-display);
+  font-size: 1.05rem;
+  color: var(--l-gold-pale);
+  background: linear-gradient(90deg, var(--l-leather), var(--l-leather-hi) 60%, transparent);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-board .category-header small { font-family: var(--l-text); font-size: 0.75rem; color: var(--l-paper-deep); margin-left: 6px; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-board .category-header .uw-icon { color: var(--l-gold); }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-board.collapsed .category-body { display: none; }
+.underworld-app.uw-ledger .uw-l-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 8px; padding: 8px 0 4px; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-job {
+  position: relative;
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  grid-template-rows: 1fr auto;
+  gap: 4px 8px;
+  padding: 8px;
+  background: rgba(255, 250, 235, 0.8);
+  border: 1px solid var(--l-paper-line);
+  border-radius: 2px;
+  box-shadow: 0 2px 3px rgba(60, 40, 20, 0.15);
+  transition: box-shadow 120ms ease, transform 120ms ease;
+}
+.underworld-app.uw-ledger .uw-l-job::before { content: ""; position: absolute; top: -5px; left: 50%; width: 10px; height: 10px; margin-left: -5px; background: radial-gradient(circle at 35% 35%, #d8b56a, #6b4a1c); border-radius: 50%; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); }
+.underworld-app.uw-ledger .uw-l-job-glyph { grid-row: 1 / span 2; display: grid; place-items: start center; font-size: 2.3rem; color: var(--l-accent); }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-job h4 { margin: 0; font-size: 1rem; line-height: 1.15; border: none; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-job-tier { color: var(--l-gold); }
+.underworld-app.uw-ledger .uw-l-job-desc { margin: 2px 0 4px; font-size: 0.78rem; line-height: 1.25; color: var(--l-ink-soft); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-job .mission-meta { display: flex; flex-wrap: wrap; gap: 3px; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-job .meta-chip { font-size: 0.68rem; padding: 0 4px; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-job .btn-send-mission { grid-column: 2; justify-self: end; padding: 2px 10px; font-size: 0.8rem; }
+.underworld-app.uw-ledger.uw-l-dragging .uw-l-job,
+.underworld-app.uw-ledger.uw-l-dragging .uw-l-slot.is-empty { box-shadow: 0 0 0 2px color-mix(in srgb, var(--l-accent) 45%, transparent); }
+.underworld-app.uw-ledger :is(.uw-l-job, .uw-l-slot).uw-l-drop-hover { box-shadow: 0 0 0 3px var(--l-accent), 0 6px 14px rgba(0, 0, 0, 0.3) !important; transform: translateY(-2px); background: #fffaf0; }
+
+.underworld-app.uw-ledger .uw-l-watch-list { display: flex; flex-wrap: wrap; gap: 6px; }
+.underworld-app.uw-ledger .uw-l-watch-item { display: inline-flex; align-items: center; gap: 5px; padding: 3px 8px 3px 4px; font-size: 0.8rem; background: rgba(255, 255, 255, 0.5); border: 1px solid var(--l-paper-line); border-radius: 14px; cursor: pointer; }
+.underworld-app.uw-ledger .uw-l-watch-item img { width: 22px; height: 22px; object-fit: cover; border-radius: 50%; border: 1px solid var(--l-iron); }
+.underworld-app.uw-ledger .uw-l-watch-item .uw-l-watch-mark { color: var(--l-paper-line); }
+.underworld-app.uw-ledger .uw-l-watch-item:has(input:checked) { border-color: var(--l-accent); background: var(--l-accent-pale); }
+.underworld-app.uw-ledger .uw-l-watch-item:has(input:checked) .uw-l-watch-mark { color: var(--l-accent-deep); }
+.underworld-app.uw-ledger .uw-l-watch-item:has(input:disabled) { opacity: 0.45; cursor: not-allowed; }
+
+/* ─── Wspólne panele etapu 4 ─── */
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-panel {
+  position: relative;
+  margin: 0;
+  padding: 10px 12px;
+  background: rgba(255, 250, 235, 0.7);
+  border: 1px solid var(--l-paper-line);
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(60, 40, 20, 0.15);
+}
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-panel > h3,
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-section-title { display: flex; align-items: center; gap: 6px; margin: 0 0 8px; font-size: 1.1rem; }
+:is(html, #uw) .underworld-app.uw-ledger :is(.uw-l-panel > h3, .uw-l-section-title) .uw-icon { color: var(--l-accent); }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-section-title small { font-family: var(--l-name); color: var(--l-ink-soft); }
+.underworld-app.uw-ledger .uw-l-lock { margin-left: auto; font-family: var(--l-text); font-size: 0.75rem; color: var(--l-ink-soft); }
+.underworld-app.uw-ledger .uw-l-flavor { margin: 6px 0 0; font-size: 0.82rem; font-style: italic; color: var(--l-ink-soft); }
+.underworld-app.uw-ledger .uw-l-row-buttons { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.underworld-app.uw-ledger .uw-l-row-buttons > button { flex: 1; }
+.underworld-app.uw-ledger .uw-l-field { display: grid; gap: 2px; margin: 0 0 7px; }
+.underworld-app.uw-ledger .uw-l-field > span { font-family: var(--l-display); font-size: 0.82rem; letter-spacing: 0.04em; color: var(--l-ink-soft); }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-field :is(input, select, textarea) { width: 100%; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-field textarea { resize: vertical; min-height: 44px; font-family: var(--l-text); }
+
+/* ─── Obóz ─── */
+.underworld-app.uw-ledger .uw-l-camp-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; align-items: start; }
+.underworld-app.uw-ledger .uw-l-night { grid-row: span 2; }
+.underworld-app.uw-ledger .uw-l-shelters { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+.underworld-app.uw-ledger .uw-l-shelter {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  padding: 10px 6px 8px;
+  text-align: center;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.45);
+  border: 2px solid var(--l-paper-line);
+  border-radius: 3px;
+  transition: border-color 120ms ease, background-color 120ms ease;
+}
+.underworld-app.uw-ledger .uw-l-shelter input { position: absolute; opacity: 0; pointer-events: none; }
+.underworld-app.uw-ledger .uw-l-shelter .uw-l-shelter-art { width: 52px; height: 52px; color: var(--l-ink-soft); }
+.underworld-app.uw-ledger .uw-l-shelter-label { font-size: 0.75rem; line-height: 1.2; }
+.underworld-app.uw-ledger .uw-l-shelter-effect { font-family: var(--l-display); font-size: 0.72rem; color: #8e2a22; }
+.underworld-app.uw-ledger .uw-l-shelter:hover { border-color: var(--l-accent); }
+.underworld-app.uw-ledger .uw-l-shelter:has(input:checked) { background: var(--l-accent-pale); border-color: var(--l-accent); box-shadow: inset 0 0 0 1px var(--l-accent); }
+.underworld-app.uw-ledger .uw-l-shelter:has(input:checked) .uw-l-shelter-art { color: var(--l-accent-deep); }
+.underworld-app.uw-ledger .uw-l-shelter:has(input:focus-visible) { outline: 2px solid var(--l-accent); outline-offset: 2px; }
+.underworld-app.uw-ledger .uw-l-camp-actions { display: grid; gap: 6px; margin-top: 8px; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px;
+  font-size: 1.25rem;
+  color: var(--l-gold-pale);
+  background:
+    radial-gradient(ellipse at 50% 0%, color-mix(in srgb, var(--l-accent) 45%, transparent), transparent 70%),
+    linear-gradient(180deg, #2c1d13, var(--l-iron));
+  border: 2px solid var(--l-gold);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(0, 0, 0, 0.6);
+}
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-hero .uw-icon { font-size: 1.6rem; color: var(--l-gold); }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-tables { font-size: 0.85rem; }
+.underworld-app.uw-ledger .uw-l-tier { margin-left: auto; padding: 0 8px; font-family: var(--l-display); font-size: 0.8rem; color: #fff; background: #4b6a2c; border-radius: 2px; }
+.underworld-app.uw-ledger .uw-l-morale.tier-high .uw-l-tier { background: #8a6a1f; }
+.underworld-app.uw-ledger .uw-l-morale.tier-low .uw-l-tier { background: #9a5b1d; }
+.underworld-app.uw-ledger .uw-l-morale.tier-critical .uw-l-tier { background: #8e2a22; }
+.underworld-app.uw-ledger .uw-l-morale-row { display: flex; align-items: center; gap: 10px; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-num { width: 46px; height: 34px; flex: 0 0 auto; text-align: center; font-family: var(--l-name); font-size: 1.3rem; }
+.underworld-app.uw-ledger .uw-l-num.is-read { display: grid; place-items: center; border: 1px solid var(--l-paper-line); }
+.underworld-app.uw-ledger .uw-l-pennants { display: flex; gap: 2px; }
+.underworld-app.uw-ledger .uw-l-pennant { display: inline-flex; font-size: 1.45rem; color: #b9a98a; }
+.underworld-app.uw-ledger .uw-l-pennant.on { color: var(--l-accent); }
+.underworld-app.uw-ledger .uw-l-bar.is-large { flex: 1; height: 14px; }
+.underworld-app.uw-ledger .uw-l-of { font-size: 0.8rem; color: var(--l-ink-soft); white-space: nowrap; }
+.underworld-app.uw-ledger .uw-l-price { margin-left: auto; font-family: var(--l-text); font-size: 0.78rem; color: var(--l-ink-soft); }
+.underworld-app.uw-ledger .uw-l-coins-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+.underworld-app.uw-ledger .uw-l-coinbox { display: grid; justify-items: center; gap: 3px; padding: 8px 4px; text-align: center; background: linear-gradient(180deg, #3a2618, #24170e); border: 1px solid #120b06; border-radius: 3px; color: var(--l-paper); }
+.underworld-app.uw-ledger .uw-l-coinbox .uw-l-coin-art { width: 34px; height: 34px; }
+.underworld-app.uw-ledger .uw-l-coinbox.gc .uw-l-coin-art { color: #d9b24a; }
+.underworld-app.uw-ledger .uw-l-coinbox.ss .uw-l-coin-art { color: #c4c7c9; }
+.underworld-app.uw-ledger .uw-l-coinbox.d .uw-l-coin-art { color: #b0703f; }
+.underworld-app.uw-ledger .uw-l-coin-name { font-family: var(--l-display); font-size: 0.8rem; color: var(--l-gold-pale); }
+.underworld-app.uw-ledger .uw-l-coin-name small { color: var(--l-gold); }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-coinbox input { width: 64px; text-align: center; font-family: var(--l-name); font-size: 1.05rem; color: var(--l-ink); background: var(--l-paper); border-color: var(--l-gold); }
+.underworld-app.uw-ledger .uw-l-coinbox strong { font-family: var(--l-name); font-size: 1.2rem; }
+.underworld-app.uw-ledger .uw-l-purse { display: flex; align-items: center; gap: 6px; margin: 8px 0 0; font-size: 0.85rem; }
+.underworld-app.uw-ledger .uw-l-purse .uw-icon { color: var(--l-accent); }
+
+/* ─── Skrzynia ─── */
+.underworld-app.uw-ledger .uw-l-chestpanel { display: flex; flex-direction: column; gap: 10px; }
+.underworld-app.uw-ledger .uw-l-fence-head { display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; gap: 10px; align-items: center; }
+.underworld-app.uw-ledger .uw-l-fence-art { display: grid; place-items: center; width: 56px; height: 56px; font-size: 2.2rem; color: var(--l-gold-pale); background: var(--l-accent); border: 3px solid var(--l-iron); border-radius: 50%; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-fence-id h3 { margin: 0 0 4px; font-size: 1.2rem; border: none; }
+.underworld-app.uw-ledger .uw-l-fence-chips { display: flex; flex-wrap: wrap; gap: 4px; }
+.underworld-app.uw-ledger .uw-l-chip-l { padding: 1px 8px; font-size: 0.75rem; background: rgba(0, 0, 0, 0.06); border: 1px solid var(--l-paper-line); border-radius: 10px; }
+.underworld-app.uw-ledger .uw-l-chip-l.is-good { color: #2f5b33; border-color: #7fa27a; }
+.underworld-app.uw-ledger .uw-l-chip-l.is-bad { color: #8e2a22; border-color: #c2877f; }
+.underworld-app.uw-ledger .uw-l-fence-totals { display: grid; justify-items: end; gap: 3px; font-size: 0.8rem; }
+.underworld-app.uw-ledger .uw-l-terrain-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px; margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--l-paper-line); }
+.underworld-app.uw-ledger .uw-l-terrain-row .uw-l-hint { margin: 0; flex: 1 1 220px; }
+.underworld-app.uw-ledger .uw-l-terrains { display: flex; gap: 4px; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-terrain { display: flex; align-items: center; gap: 4px; padding: 3px 9px; font-size: 0.8rem; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-terrain.is-active { background: linear-gradient(180deg, var(--l-accent), var(--l-accent-deep)); color: #fff; }
+.underworld-app.uw-ledger .uw-l-items { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 8px; }
+.underworld-app.uw-ledger .uw-l-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 10px;
+  background: rgba(255, 250, 235, 0.8);
+  border: 1px solid var(--l-paper-line);
+  border-radius: 2px;
+}
+.underworld-app.uw-ledger .uw-l-item-art { display: grid; place-items: center; width: 46px; height: 46px; font-size: 1.8rem; color: var(--l-ink); background: var(--l-paper-deep); border: 2px solid var(--l-iron); border-radius: 3px; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-item h4 { margin: 0; font-family: var(--l-name); font-size: 0.95rem; line-height: 1.15; border: none; }
+.underworld-app.uw-ledger .uw-l-item p { margin: 2px 0 0; font-size: 0.72rem; color: var(--l-ink-soft); }
+.underworld-app.uw-ledger .uw-l-item-value { display: grid; justify-items: end; font-size: 0.85rem; }
+.underworld-app.uw-ledger .uw-l-item-value small { font-size: 0.68rem; color: var(--l-ink-soft); }
+.underworld-app.uw-ledger .uw-l-item-actions { position: absolute; right: 4px; bottom: 2px; display: flex; gap: 2px; opacity: 0; transition: opacity 120ms ease; }
+.underworld-app.uw-ledger .uw-l-item:is(:hover, :focus-within) .uw-l-item-actions { opacity: 1; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-item-actions .is-danger { color: #8e2a22; }
+.underworld-app.uw-ledger .uw-l-item.is-hot { border-color: #c2412f; box-shadow: inset 3px 0 0 #c2412f; }
+.underworld-app.uw-ledger .uw-l-item.is-refused { opacity: 0.6; }
+.underworld-app.uw-ledger .uw-l-item.is-liked .uw-l-item-art { background: #cfe0c3; }
+.underworld-app.uw-ledger .uw-l-hot { position: absolute; top: -7px; right: 8px; display: inline-flex; align-items: center; gap: 2px; padding: 0 6px; font-size: 0.72rem; color: #fff; background: #c2412f; border-radius: 8px; }
+.underworld-app.uw-ledger .uw-l-empty { display: flex; align-items: center; gap: 10px; padding: 14px; font-style: italic; color: var(--l-ink-soft); }
+
+/* ─── Kronika ─── */
+.underworld-app.uw-ledger .uw-l-chronicle { display: flex; flex-direction: column; gap: 10px; }
+.underworld-app.uw-ledger .uw-l-chron-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; align-items: start; }
+.underworld-app.uw-ledger .uw-l-chron-col { display: flex; flex-direction: column; gap: 10px; }
+.underworld-app.uw-ledger .uw-l-identity-card { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 12px; align-items: center; }
+.underworld-app.uw-ledger .uw-l-crest-big { position: relative; width: 96px; height: 115px; }
+.underworld-app.uw-ledger .uw-l-crest-big .uw-l-shield { position: absolute; inset: 0; width: 100%; height: 100%; color: var(--l-accent); filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.45)); }
+.underworld-app.uw-ledger .uw-l-crest-big .uw-l-charge { position: absolute; left: 11%; top: 11%; width: 78%; height: 66%; color: var(--l-gold-pale); }
+.underworld-app.uw-ledger .uw-l-track { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 4px; margin: 0; padding: 0; list-style: none; }
+.underworld-app.uw-ledger .uw-l-track li { display: grid; justify-items: center; gap: 3px; text-align: center; opacity: 0.55; }
+.underworld-app.uw-ledger .uw-l-track li.is-passed { opacity: 0.85; }
+.underworld-app.uw-ledger .uw-l-track li.is-active { opacity: 1; }
+.underworld-app.uw-ledger .uw-l-track-seal { position: relative; display: grid; place-items: center; width: 34px; height: 34px; font-size: 2.1rem; color: #b9a98a; }
+.underworld-app.uw-ledger .uw-l-track li:is(.is-passed, .is-active) .uw-l-track-seal { color: #c2412f; }
+.underworld-app.uw-ledger .uw-l-track li.is-active .uw-l-track-seal { filter: drop-shadow(0 0 4px rgba(194, 65, 47, 0.7)); }
+.underworld-app.uw-ledger .uw-l-track-seal .uw-icon { position: absolute; inset: 0; width: 100%; height: 100%; }
+.underworld-app.uw-ledger .uw-l-track-seal b { position: relative; font-family: var(--l-name); font-size: 0.85rem; color: #fff; }
+.underworld-app.uw-ledger .uw-l-track-name { font-size: 0.66rem; line-height: 1.1; }
+.underworld-app.uw-ledger .uw-l-track li.is-active .uw-l-track-name { font-weight: bold; }
+.underworld-app.uw-ledger .uw-l-letter { padding-right: 70px; background: rgba(255, 252, 240, 0.85); }
+.underworld-app.uw-ledger .uw-l-letter-seal { position: absolute; top: 8px; right: 10px; width: 54px; height: 54px; }
+.underworld-app.uw-ledger .uw-l-letter-seal .uw-l-seal-wax { position: absolute; inset: 0; width: 100%; height: 100%; color: #7a5a2a; filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.45)); }
+.underworld-app.uw-ledger .uw-l-letter-seal .uw-l-seal-mark { position: absolute; left: 27%; top: 25%; width: 46%; height: 46%; color: rgba(255, 245, 220, 0.9); }
+.underworld-app.uw-ledger .uw-l-letter-seal.relation-favorite .uw-l-seal-wax { color: #b08d2c; }
+.underworld-app.uw-ledger .uw-l-letter-seal.relation-trusted .uw-l-seal-wax { color: #2f6b3b; }
+.underworld-app.uw-ledger .uw-l-letter-seal.relation-strained .uw-l-seal-wax { color: #b0602a; }
+.underworld-app.uw-ledger .uw-l-letter-seal.relation-hostile .uw-l-seal-wax { color: #8e2a22; }
+.underworld-app.uw-ledger .uw-l-scroll textarea { background-image: repeating-linear-gradient(transparent 0 19px, rgba(120, 90, 50, 0.18) 19px 20px); line-height: 20px; }
+.underworld-app.uw-ledger .uw-l-events { margin: 0; padding: 0 0 0 14px; list-style: none; border-left: 2px solid var(--l-paper-line); max-height: 240px; overflow-y: auto; }
+.underworld-app.uw-ledger .uw-l-events li { position: relative; display: grid; gap: 1px; padding: 0 0 8px 6px; font-size: 0.8rem; }
+.underworld-app.uw-ledger .uw-l-events li::before { content: ""; position: absolute; left: -21px; top: 3px; width: 10px; height: 10px; background: var(--l-accent); border: 2px solid var(--l-paper); border-radius: 50%; }
+.underworld-app.uw-ledger .uw-l-event-date { font-family: var(--l-display); font-size: 0.75rem; color: var(--l-accent-deep); }
+.underworld-app.uw-ledger .uw-l-events li.is-empty { font-style: italic; color: var(--l-ink-soft); }
+
+/* ─── Rozkazy: talia kart ─── */
+.underworld-app.uw-ledger .uw-l-orders { display: flex; flex-direction: column; gap: 10px; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-orders-head h3 small { margin-left: auto; font-family: var(--l-name); color: var(--l-ink-soft); }
+.underworld-app.uw-ledger .uw-l-slots.is-compact .uw-l-slot { min-height: 0; grid-template-columns: 34px minmax(0, 1fr); justify-items: start; text-align: left; padding: 4px 6px; }
+.underworld-app.uw-ledger .uw-l-slots.is-compact .uw-l-slot img { grid-row: span 2; width: 32px; height: 32px; }
+.underworld-app.uw-ledger .uw-l-slots.is-compact .uw-l-slot.is-empty { display: flex; align-items: center; gap: 6px; min-height: 46px; }
+.underworld-app.uw-ledger .uw-l-slots.is-compact .uw-l-slot.is-empty .uw-icon { font-size: 1.1rem; }
+.underworld-app.uw-ledger .uw-l-deck { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-order {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0 0 8px;
+  background: #f7efd9;
+  border: 2px solid var(--l-iron);
+  border-radius: 6px;
+  box-shadow: 0 0 0 2px var(--l-gold), 0 4px 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-order > header {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  color: var(--l-paper);
+  background: linear-gradient(180deg, var(--l-accent), var(--l-accent-deep));
+  border-bottom: 2px solid var(--l-gold);
+}
+.underworld-app.uw-ledger .uw-l-order.is-danger > header { background: linear-gradient(180deg, #8e2a22, #3d110d); }
+.underworld-app.uw-ledger .uw-l-order.is-universal > header { background: linear-gradient(180deg, #6b5320, #2e230d); }
+.underworld-app.uw-ledger .uw-l-order-glyph { display: grid; place-items: center; width: 40px; height: 40px; font-size: 1.8rem; color: var(--l-gold-pale); background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 50%; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-order h4 { margin: 0; font-size: 1.05rem; line-height: 1.1; color: var(--l-paper); border: none; text-shadow: 0 1px 2px #000; }
+.underworld-app.uw-ledger .uw-l-order-cost { display: flex; gap: 3px; color: var(--l-gold-pale); font-size: 1rem; }
+.underworld-app.uw-ledger .uw-l-adv { width: 12px; height: 12px; background: radial-gradient(circle at 35% 35%, #ffe7a0, #b8892d 60%, #5d4210); border-radius: 50%; box-shadow: 0 0 0 1px #2a1d0a; }
+.underworld-app.uw-ledger .uw-l-order-desc { margin: 0 10px; font-size: 0.78rem; font-style: italic; color: var(--l-ink-soft); }
+.underworld-app.uw-ledger .uw-l-order-effect { margin: 0 10px; padding: 6px 8px; font-size: 0.8rem; background: rgba(255, 255, 255, 0.55); border-left: 3px solid var(--l-accent); }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-order > footer { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin: auto 10px 0; }
+.underworld-app.uw-ledger .uw-l-order-who { display: inline-flex; align-items: center; gap: 5px; font-size: 0.75rem; color: var(--l-ink-soft); min-width: 0; }
+.underworld-app.uw-ledger .uw-l-order-who img { width: 22px; height: 22px; object-fit: cover; border-radius: 50%; border: 1px solid var(--l-iron); }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-order .btn-order-tactic { padding: 2px 10px; font-size: 0.8rem; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-locked summary { display: flex; align-items: center; gap: 6px; font-family: var(--l-display); font-size: 1rem; cursor: pointer; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-locked summary .uw-icon { color: var(--l-ink-soft); }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-locked ul { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 4px 12px; margin: 8px 0 0; padding: 0; list-style: none; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-locked li { display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 0 6px; font-size: 0.78rem; opacity: 0.75; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-locked li .uw-icon { grid-row: span 2; font-size: 1.1rem; color: var(--l-ink-soft); }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-locked li span { font-size: 0.7rem; font-style: italic; }
+
+/* ─── Karty czatu w wyglądzie Księgi (klasa body.uw-ledger-chat) ─── */
+:is(html, #uw) body.uw-ledger-chat :is(.uw-card, .tactic-card-chat, .camp-rest-card, .uw-report-card) {
+  --l-accent: #8e2a22;
+  --l-accent-deep: #4f1611;
+  font-family: "UW Caslon", "Adobe Caslon Pro", Georgia, serif;
+}
+:is(html, #uw) body.uw-ledger-chat [data-company-type="outlaws"] { --l-accent: #4b6a2c; --l-accent-deep: #22341a; }
+:is(html, #uw) body.uw-ledger-chat [data-company-type="mercenaries"] { --l-accent: #9b1c2c; --l-accent-deep: #3f2328; }
+:is(html, #uw) body.uw-ledger-chat [data-company-type="smugglers"] { --l-accent: #2d6a64; --l-accent-deep: #15322f; }
+:is(html, #uw) body.uw-ledger-chat [data-company-type="investigators"] { --l-accent: #39417a; --l-accent-deep: #1b1f3d; }
+:is(html, #uw) body.uw-ledger-chat [data-company-type="cult"] { --l-accent: #5e2f6e; --l-accent-deep: #2a1533; }
+:is(html, #uw) body.uw-ledger-chat .uw-ledger-only { display: inline-flex; }
+:is(html, #uw) body.uw-ledger-chat .uw-card-glyph { display: inline-grid; place-items: center; color: var(--l-accent); }
+:is(html, #uw) body.uw-ledger-chat .uw-card-glyph .uw-icon { width: 1.4em; height: 1.4em; fill: currentColor; }
+:is(html, #uw) body.uw-ledger-chat :is(.uw-card-title, .tactic-chat-title, .camp-card-title) { font-family: "UW Nodesto", "Nodesto Caps Condensed", serif; font-weight: normal; letter-spacing: 0.03em; }
+/* Karta zlecenia */
+:is(html, #uw) body.uw-ledger-chat .uw-mission-card .uw-card-header { position: relative; display: flex; align-items: center; gap: 8px; padding-right: 46px; border-bottom: 2px solid var(--l-accent); }
+:is(html, #uw) body.uw-ledger-chat .uw-mission-card .uw-card-glyph { order: -1; font-size: 1.2rem; }
+:is(html, #uw) body.uw-ledger-chat .uw-mission-card .uw-card-seal { position: absolute; top: -4px; right: -2px; width: 42px; height: 42px; transform: rotate(-12deg); }
+:is(html, #uw) body.uw-ledger-chat .uw-mission-card .uw-card-seal .uw-icon { width: 100%; height: 100%; fill: currentColor; filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.45)); }
+:is(html, #uw) body.uw-ledger-chat .uw-mission-card.is-success .uw-card-seal { color: #2f6b3b; }
+:is(html, #uw) body.uw-ledger-chat .uw-mission-card.is-great .uw-card-seal { color: #b08d2c; }
+:is(html, #uw) body.uw-ledger-chat .uw-mission-card.is-failure .uw-card-seal { color: #8e2a22; }
+:is(html, #uw) body.uw-ledger-chat .uw-mission-card .uw-card-avatar { border-radius: 50%; border: 2px solid #24201d; box-shadow: 0 0 0 1px #c9a24b; }
+:is(html, #uw) body.uw-ledger-chat .uw-mission-card .uw-card-footer { border-top: 1px dashed #b59f74; font-family: "UW Nodesto", serif; letter-spacing: 0.04em; }
+/* Karta rozkazu */
+:is(html, #uw) body.uw-ledger-chat .tactic-card-chat .tactic-chat-header { border-bottom: 2px solid var(--l-accent); }
+:is(html, #uw) body.uw-ledger-chat .tactic-card-chat .tactic-chat-title { display: flex; align-items: center; gap: 6px; color: var(--l-accent-deep); }
+:is(html, #uw) body.uw-ledger-chat .tactic-card-chat .tactic-effect { border-left: 3px solid var(--l-accent); border-radius: 0; }
+/* Karta postoju */
+:is(html, #uw) body.uw-ledger-chat .camp-rest-card .camp-card-header { position: relative; min-height: 46px; padding: 6px 8px 8px; margin: -2px -2px 8px; color: #efe5cb; background: radial-gradient(ellipse 80% 26px at 55% 100%, rgba(214, 150, 70, 0.42), transparent 100%), linear-gradient(180deg, #2a1d14, #3d2c1f); border-bottom: 2px solid #c9a24b; overflow: hidden; }
+:is(html, #uw) body.uw-ledger-chat .camp-rest-card .camp-card-skyline { position: absolute; inset: auto 0 0 0; height: 36px; color: #0d0907; opacity: 0.85; pointer-events: none; }
+:is(html, #uw) body.uw-ledger-chat .camp-rest-card .camp-card-skyline .uw-icon { width: 100%; height: 100%; fill: currentColor; }
+:is(html, #uw) body.uw-ledger-chat .camp-rest-card .camp-card-title { position: relative; color: #ead7a2; font-size: 1.15rem; }
+:is(html, #uw) body.uw-ledger-chat .camp-rest-card .camp-card-header .uw-card-sub { position: relative; color: #dccb9f; }
+:is(html, #uw) body.uw-ledger-chat .camp-rest-card .camp-block-event { border-left-color: var(--l-accent); background: rgba(120, 80, 40, 0.08); }
+:is(html, #uw) body.uw-ledger-chat .camp-rest-card .camp-block-event > strong { font-family: "UW Nodesto", serif; font-weight: normal; letter-spacing: 0.03em; }
+:is(html, #uw) body.uw-ledger-chat .camp-rest-card .camp-card-footer { font-family: "UW Nodesto", serif; letter-spacing: 0.04em; }
+
+@media (prefers-reduced-motion: reduce) {
+  .underworld-app.uw-ledger * { transition: none !important; animation: none !important; }
+}
+
+/* ─── Dostępność: widoczny fokus z klawiatury (złota obwódka na pergaminie i na ciemnym nagłówku) ─── */
+:is(html, #uw) .underworld-app.uw-ledger :is(button, a, summary, [role="button"], [role="tab"], [tabindex="0"]):focus-visible {
+  outline: 2px solid var(--l-gold);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(36, 32, 29, 0.55);
+}
+:is(html, #uw) .underworld-app.uw-ledger :is(input, select, textarea):focus-visible { outline: 2px solid var(--l-accent); outline-offset: 1px; }
+/* Kontrast co najmniej 4.5:1 dla drobnych chipów na pergaminie */
+:is(html, #uw) .underworld-app.uw-ledger .uw-token-chip.is-loot { color: #9a3700; }
+:is(html, #uw) .underworld-app.uw-ledger .meta-chip.meta-reward { color: #6e4c1c; }

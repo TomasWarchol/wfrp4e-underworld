@@ -5,6 +5,7 @@
  */
 
 import { t, content, textConfig, withText } from "./i18n.mjs";
+import { DATA_MISSIONS } from "./company-profiles.mjs";
 
 export const TERRAIN_IDS = ["city", "village", "forest", "mountains"];
 
@@ -202,6 +203,8 @@ export const MISSIONS = {
 };
 
 
+
+Object.assign(MISSIONS, DATA_MISSIONS);
 
 // Teksty zleceń jako gettery: reward, inputLabel, inputPlaceholder (nazwa i opis zależą od terenu, patrz niżej)
 for (const mission of Object.values(MISSIONS)) {

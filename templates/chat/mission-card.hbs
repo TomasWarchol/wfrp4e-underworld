@@ -1,5 +1,7 @@
-<div class="wfrp4e-underworld chat-card uw-card uw-mission-card {{#if isSuccess}}is-success{{else}}is-failure{{/if}}">
+<div class="wfrp4e-underworld chat-card uw-card uw-mission-card {{#if isSuccess}}is-success{{else}}is-failure{{/if}} {{#if greatSuccess}}is-great{{/if}}" data-company-type="{{companyType}}">
   <header class="uw-card-header">
+    {{#if roll}}<span class="uw-ledger-only uw-card-seal" data-uw-glyph="{{#if isSuccess}}orn-seal_success{{else}}orn-seal_failure{{/if}}"></span>{{/if}}
+    {{#if jobGlyph}}<span class="uw-ledger-only uw-card-glyph" data-uw-glyph="{{jobGlyph}}"></span>{{/if}}
     <img class="uw-card-avatar" src="{{npcImg}}" alt="" />
     <div class="uw-card-heading">
       <h3 class="uw-card-title">{{title}}</h3>
@@ -9,11 +11,11 @@
 
   {{#if roll}}
   <div class="uw-roll-row">
-    <span class="uw-roll-result">{{#if isSuccess}}<i class="fas fa-check"></i> {{localize "UNDERWORLD.Chat.Success"}}{{else}}<i class="fas fa-xmark"></i> {{localize "UNDERWORLD.Chat.Failure"}}{{/if}}</span>
+    <span class="uw-roll-result">{{#if isSuccess}}<i class="fas fa-check"></i> {{underworldT "Chat.Success"}}{{else}}<i class="fas fa-xmark"></i> {{underworldT "Chat.Failure"}}{{/if}}</span>
     <span class="uw-roll-numbers"><strong>{{roll}}</strong>{{#if target}} / {{target}}{{/if}} · SL {{sl}}</span>
   </div>
   <div class="uw-roll-source">
-    {{#if (bajeryEq testSource "linkedActor")}}{{localize "UNDERWORLD.Chat.SheetTest"}}{{else}}{{localize "UNDERWORLD.Chat.GangTest"}}{{/if}}{{#if modifiers.length}} · {{localize "UNDERWORLD.Chat.Modifiers"}} {{#if (bajeryGt targetModifier 0)}}+{{/if}}{{targetModifier}}{{#if capped}} ({{localize "UNDERWORLD.Chat.Capped"}}){{/if}}{{/if}}
+    {{#if (bajeryEq testSource "linkedActor")}}{{underworldT "Chat.SheetTest"}}{{else}}{{underworldT "Chat.GangTest"}}{{/if}}{{#if modifiers.length}} · {{underworldT "Chat.Modifiers"}} {{#if (bajeryGt targetModifier 0)}}+{{/if}}{{targetModifier}}{{#if capped}} ({{underworldT "Chat.Capped"}}){{/if}}{{/if}}
   </div>
   {{#if modifiers.length}}
   <div class="uw-chips">
@@ -28,7 +30,7 @@
   {{#if rumor}}
   <div class="uw-callout uw-callout-rumor">
     <div class="uw-callout-title">
-      <span><i class="fas fa-comment-dots"></i> {{localize "UNDERWORLD.Chat.Rumor"}}</span>
+      <span><i class="fas fa-comment-dots"></i> {{underworldT "Chat.Rumor"}}</span>
     </div>
     {{#if rumorData.source}}<div class="uw-rumor-source"><span class="uw-chip"><i class="fas fa-user-secret"></i> {{rumorData.source}}</span></div>{{/if}}
     <div class="uw-rumor-text">„{{rumor}}”</div>
@@ -38,7 +40,7 @@
 
   {{#if gains.length}}
   <div class="uw-callout uw-callout-gain">
-    <div class="uw-callout-title"><span><i class="fas fa-chess-knight"></i> {{localize "UNDERWORLD.Chat.Preparation"}}</span></div>
+    <div class="uw-callout-title"><span><i class="fas fa-chess-knight"></i> {{underworldT "Chat.Preparation"}}</span></div>
     <ul>
       {{#each gains}}<li>{{{this}}}</li>{{/each}}
     </ul>
@@ -47,7 +49,7 @@
 
   {{#if consequences.length}}
   <div class="uw-callout uw-callout-danger">
-    <div class="uw-callout-title"><span><i class="fas fa-exclamation-triangle"></i> {{localize "UNDERWORLD.Chat.Consequences"}}</span></div>
+    <div class="uw-callout-title"><span><i class="fas fa-exclamation-triangle"></i> {{underworldT "Chat.Consequences"}}</span></div>
     <ul>
       {{#each consequences}}<li>{{{this}}}</li>{{/each}}
     </ul>
@@ -55,7 +57,7 @@
   {{/if}}
 
   <footer class="uw-card-footer">
-    {{#if operationalXpGained}}<span class="uw-xp"><i class="fas fa-feather-alt"></i> +{{operationalXpGained}} {{localize "UNDERWORLD.Units.OXP"}}</span>{{else}}<span></span>{{/if}}
-    <span>{{localize "UNDERWORLD.Chat.Footer"}}</span>
+    {{#if operationalXpGained}}<span class="uw-xp"><i class="fas fa-feather-alt"></i> +{{operationalXpGained}} {{underworldT "Units.OXP"}}</span>{{else}}<span></span>{{/if}}
+    <span>{{underworldT "Chat.Footer"}}</span>
   </footer>
 </div>

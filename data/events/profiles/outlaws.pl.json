@@ -1,0 +1,18 @@
+[
+  {"id": "outl-001", "title": "Dzik przy obozie", "text": "Nocą do obozu wpada dzik. Po krótkiej awanturze jest mięso na tydzień.", "morale": 1, "supplies": 2, "coinsSS": 0},
+  {"id": "outl-002", "title": "Leśniczy na tropie", "text": "Rano ktoś znajduje świeże ślady butów wokół obozu. Leśniczy grafa wie, gdzie jesteście.", "morale": -1, "supplies": 0, "coinsSS": 0},
+  {"id": "outl-003", "title": "Pieśń o bandzie", "text": "W karczmie na rozstajach śpiewają już o waszej bandzie. Ludzie są dumni, choć to niebezpieczne.", "morale": 1, "supplies": 0, "coinsSS": 0},
+  {"id": "outl-004", "title": "Ulewa w lesie", "text": "Deszcz leje całą noc. Szałasy przeciekają, a ognisko gaśnie co godzinę.", "morale": -1, "supplies": 0, "coinsSS": 0},
+  {"id": "outl-005", "title": "Chłopi z koszem", "text": "Chłopi z pobliskiej wsi przynoszą chleb i ser. Pamiętają, kto przegonił poborcę.", "morale": 1, "supplies": 2, "coinsSS": 0},
+  {"id": "outl-006", "title": "Kłótnia o podział", "text": "Dwóch banitów kłóci się o sakiewkę z ostatniego napadu. Noże idą w ruch, zanim herszt ich rozdzieli.", "morale": -1, "supplies": 0, "coinsSS": 0},
+  {"id": "outl-007", "title": "Zbieg z miasta", "text": "Do obozu przychodzi uciekinier z więzienia. Za miejsce przy ogniu oddaje wszystko, co ma.", "morale": 0, "supplies": 0, "coinsSS": 4},
+  {"id": "outl-008", "title": "Wilki w nocy", "text": "Wycie wilków nie milknie do świtu. Nikt nie śpi, a straż zmienia się co godzinę.", "morale": -1, "supplies": 0, "coinsSS": 0},
+  {"id": "outl-009", "title": "Skarb pod korzeniem", "text": "Kopiąc dół na odpadki, ktoś trafia na zbutwiałą skrzynkę z kilkoma monetami.", "morale": 1, "supplies": 0, "coinsSS": 6},
+  {"id": "outl-010", "title": "List gończy w karczmie", "text": "Zwiadowca przynosi zerwany list gończy. Rysopis herszta jest zaskakująco trafny.", "morale": -1, "supplies": 0, "coinsSS": 0},
+  {"id": "outl-011", "title": "Święto Taala", "text": "Banda obchodzi święto Taala pod starym dębem. Tej nocy las wydaje się przyjazny.", "morale": 1, "supplies": -1, "coinsSS": 0},
+  {"id": "outl-012", "title": "Zgubiona sakwa", "text": "Ktoś zostawił sakwę z prowiantem przy strumieniu. Rano zostały tylko ślady lisa.", "morale": 0, "supplies": -2, "coinsSS": 0},
+  {"id": "outl-r01", "title": "Obcy w lesie", "text": "Wartownik słyszy, że ktoś krąży wokół obozu.", "morale": -1, "supplies": 0, "coinsSS": 0, "role": "scout", "okText": "Zwiadowca zachodzi intruza od tyłu. To tylko zabłąkany pastuch, ale wie, gdzie stoją łowcy.", "ok": {"morale": 1, "supplies": 0, "coinsSS": 0}},
+  {"id": "outl-r02", "title": "Jeleń na skraju polany", "text": "O świcie na polanę wychodzi jeleń. Jeden strzał i będzie mięso.", "morale": 0, "supplies": 0, "coinsSS": 0, "role": "marksman", "okText": "Kłusownik nie chybia. Banda je do syta pierwszy raz od tygodnia.", "ok": {"morale": 1, "supplies": 3, "coinsSS": 0}},
+  {"id": "outl-r03", "title": "Gorączka bagienna", "text": "Po nocy przy bagnie kilku ludzi trzęsie się z zimna i gorączki.", "morale": -2, "supplies": 0, "coinsSS": 0, "role": "charlatan", "okText": "Znachor parzy korę wierzby i do południa gorączka spada.", "ok": {"morale": 1, "supplies": 0, "coinsSS": 0}},
+  {"id": "outl-r04", "title": "Pijany olbrzym", "text": "Do obozu wtacza się pijany drwal i szuka bójki.", "morale": -1, "supplies": 0, "coinsSS": 0, "role": "bodyguard", "okText": "Rębacz bierze go na bary i odnosi do lasu. Wszyscy się śmieją.", "ok": {"morale": 1, "supplies": 0, "coinsSS": 0}}
+]

@@ -5,23 +5,42 @@
 export const NS = "UNDERWORLD";
 
 /** Tłumaczy klucz z przestrzeni UNDERWORLD (z podstawieniami, gdy podano dane). */
+/** Typ kompanii, której teksty są teraz potrzebne; null to teksty podstawowe (Szajka). */
+let textProfile = null;
+
+/** Ustawia typ kompanii dla kolejnych tekstów. Wywołuje go GangData.getGang przy każdym odczycie kompanii. */
+export function setTextProfile(type) {
+  textProfile = type && type !== "underworld" ? String(type) : null;
+}
+
+function lookup(full) {
+  return foundry.utils.getProperty(game.i18n.translations, full) ?? foundry.utils.getProperty(game.i18n._fallback, full) ?? null;
+}
+
+/** Klucz z sekcji Profiles.<typ>, gdy profil nadpisuje ten tekst, w przeciwnym razie klucz podstawowy. */
+function resolveKey(key, profile) {
+  if (profile) {
+    const override = `Profiles.${profile}.${key}`;
+    if (lookup(`${NS}.${override}`) !== null) return override;
+  }
+  return key;
+}
+
 export function t(key, data) {
-  const full = `${NS}.${key}`;
+  return tFor(undefined, key, data);
+}
+
+/** Tekst dla podanego typu kompanii (undefined: typ ustawiony przez setTextProfile). */
+export function tFor(type, key, data) {
+  const profile = type === undefined ? textProfile : (type === "underworld" ? null : type);
+  const full = `${NS}.${resolveKey(key, profile)}`;
   return data ? game.i18n.format(full, data) : game.i18n.localize(full);
 }
 
-/**
- * Surowa wartość z tłumaczeń (tablica, obiekt): bieżący język, potem angielski.
- * Tak samo Foundry czyta przymiotniki tokenów.
- */
 export function content(key) {
-  const full = `${NS}.${key}`;
-  return foundry.utils.getProperty(game.i18n.translations, full)
-    ?? foundry.utils.getProperty(game.i18n._fallback, full)
-    ?? null;
+  return lookup(`${NS}.${resolveKey(key, textProfile)}`);
 }
 
-/** Lista tekstów z tłumaczeń (pusta, gdy brak). */
 export function contentList(key) {
   const value = content(key);
   return Array.isArray(value) ? value : [];

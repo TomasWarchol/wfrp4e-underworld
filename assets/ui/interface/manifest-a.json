@@ -1,0 +1,147 @@
+[
+  {
+    "id": "morale",
+    "file": "morale.svg",
+    "subject": "small pennant flag on a short staff"
+  },
+  {
+    "id": "supplies",
+    "file": "supplies.svg",
+    "subject": "grain sack with a loaf"
+  },
+  {
+    "id": "treasury",
+    "file": "treasury.svg",
+    "subject": "stack of coins with one standing"
+  },
+  {
+    "id": "coin_gc",
+    "file": "coin_gc.svg",
+    "subject": "single large coin with a crown-like stepped rim (no lettering)"
+  },
+  {
+    "id": "coin_ss",
+    "file": "coin_ss.svg",
+    "subject": "single coin with a simple star rosette"
+  },
+  {
+    "id": "coin_d",
+    "file": "coin_d.svg",
+    "subject": "single small coin with a square hole"
+  },
+  {
+    "id": "pressure_underworld",
+    "file": "pressure_underworld.svg",
+    "subject": "nailed wanted poster with a face outline"
+  },
+  {
+    "id": "pressure_outlaws",
+    "file": "pressure_outlaws.svg",
+    "subject": "hunting horn"
+  },
+  {
+    "id": "pressure_mercenaries",
+    "file": "pressure_mercenaries.svg",
+    "subject": "cracked heater shield"
+  },
+  {
+    "id": "pressure_smugglers",
+    "file": "pressure_smugglers.svg",
+    "subject": "round customs seal with an anchor"
+  },
+  {
+    "id": "pressure_investigators",
+    "file": "pressure_investigators.svg",
+    "subject": "wide open eye"
+  },
+  {
+    "id": "pressure_cult",
+    "file": "pressure_cult.svg",
+    "subject": "stake with bundled firewood at its foot"
+  },
+  {
+    "id": "status_ready",
+    "file": "status_ready.svg",
+    "subject": "carved tick mark in a circle"
+  },
+  {
+    "id": "status_busy",
+    "file": "status_busy.svg",
+    "subject": "hourglass"
+  },
+  {
+    "id": "status_resting",
+    "file": "status_resting.svg",
+    "subject": "crescent moon over a bedroll"
+  },
+  {
+    "id": "status_wounded",
+    "file": "status_wounded.svg",
+    "subject": "blood drop with a bandage cross"
+  },
+  {
+    "id": "status_arrested",
+    "file": "status_arrested.svg",
+    "subject": "open shackles"
+  },
+  {
+    "id": "status_dead",
+    "file": "status_dead.svg",
+    "subject": "skull"
+  },
+  {
+    "id": "rank_rookie",
+    "file": "rank_rookie.svg",
+    "subject": "single small dot"
+  },
+  {
+    "id": "rank_seasoned",
+    "file": "rank_seasoned.svg",
+    "subject": "one chevron"
+  },
+  {
+    "id": "rank_veteran",
+    "file": "rank_veteran.svg",
+    "subject": "two chevrons"
+  },
+  {
+    "id": "rank_lieutenant",
+    "file": "rank_lieutenant.svg",
+    "subject": "two chevrons under a small crown of three points"
+  },
+  {
+    "id": "risk_low",
+    "file": "risk_low.svg",
+    "subject": "feather"
+  },
+  {
+    "id": "risk_stealth",
+    "file": "risk_stealth.svg",
+    "subject": "domino mask"
+  },
+  {
+    "id": "risk_violent",
+    "file": "risk_violent.svg",
+    "subject": "skull above two crossed blades"
+  },
+  {
+    "id": "terrain_city",
+    "file": "terrain_city.svg",
+    "subject": "three tall half-timbered gables"
+  },
+  {
+    "id": "terrain_village",
+    "file": "terrain_village.svg",
+    "subject": "cottage with a thatched roof and a well"
+  },
+  {
+    "id": "terrain_forest",
+    "file": "terrain_forest.svg",
+    "subject": "two pine trees and an oak"
+  },
+  {
+    "id": "terrain_mountains",
+    "file": "terrain_mountains.svg",
+    "subject": "two jagged peaks with snow caps"
+  }
+]

@@ -1,0 +1,10 @@
+{{!-- Księga Kompanii: zakładki-wstążki po lewej stronie (te same data-tab co w klasycznym wyglądzie) --}}
+<nav class="sheet-tabs tabs uw-l-nav" data-group="primary" aria-orientation="vertical">
+  {{#each ledgerView.tabs}}
+  <a class="item uw-l-tab" data-action="tab" data-group="primary" data-tab="{{this.id}}" title="{{this.label}}">
+    {{uwIcon this.icon "uw-l-tab-icon"}}
+    <span class="uw-l-tab-label">{{this.label}}</span>
+    {{#if this.count}}<span class="uw-l-tab-count">{{this.count}}</span>{{/if}}
+  </a>
+  {{/each}}
+</nav>

@@ -1,0 +1,3 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor" fill-rule="evenodd">
+<path transform="rotate(-16 32 56)" d="M32 4L36 9V34H28V9ZM24 34H40V38H24ZM29.5 38H34.5V49.5H29.5ZM28.5 53a3.5 3.5 0 1 0 7 0a3.5 3.5 0 1 0-7 0Z"/><path transform="rotate(16 32 56)" d="M32 4L36 9V34H28V9ZM24 34H40V38H24ZM29.5 38H34.5V49.5H29.5ZM28.5 53a3.5 3.5 0 1 0 7 0a3.5 3.5 0 1 0-7 0Z"/><path d="M32 4L36 9V34H28V9ZM24 34H40V38H24ZM29.5 38H34.5V49.5H29.5ZM28.5 53a3.5 3.5 0 1 0 7 0a3.5 3.5 0 1 0-7 0Z"/><path d="M15 21H49V27H15Z"/>
+</svg>

@@ -1,38 +1,38 @@
 <div class="tasks-panel">
   <p class="notes">
-    {{{localize "UNDERWORLD.TasksTab.Intro"}}}
-    {{localize "UNDERWORLD.TasksTab.Available"}}: <strong>{{availableOutlaws.length}}</strong>.
+    {{{underworldT "TasksTab.Intro"}}}
+    {{underworldT "TasksTab.Available"}}: <strong>{{availableOutlaws.length}}</strong>.
   </p>
 
   <!-- ═══════ TEREN I PRZYGOTOWANIE ═══════ -->
   <div class="uw-prep-strip">
-    <span class="uw-terrain-chip"><i class="{{terrain.icon}}"></i> {{localize "UNDERWORLD.Camp.Terrain"}}: <strong>{{terrain.name}}</strong></span>
+    <span class="uw-terrain-chip"><i class="{{terrain.icon}}"></i> {{underworldT "Camp.Terrain"}}: <strong>{{terrain.name}}</strong></span>
     {{#each activeTokens}}
       <span class="uw-token-chip" data-tooltip="{{this.desc}}"><i class="{{this.icon}}"></i> {{this.name}} <small>({{this.left}})</small></span>
     {{else}}
-      <span class="uw-token-chip is-empty"><i class="fas fa-chess-pawn"></i> {{localize "UNDERWORLD.LootTab.NoTokens"}}</span>
+      <span class="uw-token-chip is-empty"><i class="fas fa-chess-pawn"></i> {{underworldT "LootTab.NoTokens"}}</span>
     {{/each}}
-    {{#if gang.racket}}<span class="uw-token-chip is-racket"><i class="fas fa-store"></i> {{localize "UNDERWORLD.Badges.racket"}}: {{gang.racket.district}}</span>{{/if}}
-    {{#if lootCount}}<span class="uw-token-chip is-loot"><i class="fas fa-sack-xmark"></i> {{localize "UNDERWORLD.Tabs.Loot"}}: {{lootCount}}{{#if hotLootCount}} ({{localize "UNDERWORLD.TasksTab.HotCount" count=hotLootCount}}){{/if}}</span>{{/if}}
+    {{#if gang.racket}}<span class="uw-token-chip is-racket"><i class="fas fa-store"></i> {{underworldT "Badges.racket"}}: {{gang.racket.district}}</span>{{/if}}
+    {{#if lootCount}}<span class="uw-token-chip is-loot"><i class="fas fa-sack-xmark"></i> {{underworldT "Tabs.Loot"}}: {{lootCount}}{{#if hotLootCount}} ({{underworldT "TasksTab.HotCount" count=hotLootCount}}){{/if}}</span>{{/if}}
   </div>
 
   <!-- ═══════ SEKCJA SPECJALNA: ŚWITA HERSZTA ═══════ -->
   <div class="retinue-section">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
       <h3 style="margin-bottom: 0;">
-        <i class="fas fa-user-shield"></i> {{localize "UNDERWORLD.Chat.Footer"}} <small>({{localize "UNDERWORLD.TasksTab.Escort"}}: <strong>{{retinueCount}}/{{maxRetinue}}</strong>)</small>
+        <i class="fas fa-user-shield"></i> {{underworldT "Chat.Footer"}} <small>({{underworldT "TasksTab.Escort"}}: <strong>{{retinueCount}}/{{maxRetinue}}</strong>)</small>
       </h3>
       <div class="retinue-heading-tools">
         <span class="badge-mission retinue">
-          <i class="fas fa-bolt"></i> {{localize "UNDERWORLD.TasksTab.UnlocksTactics"}}
+          <i class="fas fa-bolt"></i> {{underworldT "TasksTab.UnlocksTactics"}}
         </span>
-        <button type="button" class="btn-toggle-retinue" data-action="toggle-retinue-section" aria-expanded="true" title="{{localize 'UNDERWORLD.Retinue.Collapse'}}">
-          <i class="fas fa-chevron-up"></i> <span>{{localize "UNDERWORLD.Collapse"}}</span>
+        <button type="button" class="btn-toggle-retinue" data-action="toggle-retinue-section" aria-expanded="true" title="{{underworldT 'Retinue.Collapse'}}">
+          <i class="fas fa-chevron-up"></i> <span>{{underworldT "Collapse"}}</span>
         </button>
       </div>
     </div>
     <p class="notes" style="margin-top: 0;">
-      {{{localize "UNDERWORLD.TasksTab.RetinueHint"}}}
+      {{{underworldT "TasksTab.RetinueHint"}}}
     </p>
 
     <div class="retinue-grid" style="display: flex; flex-direction: column; gap: 4px;">
@@ -52,7 +52,7 @@
                      {{#if (bajeryEq this.status "dead")}}disabled{{/if}}
                      {{#if (bajeryEq this.status "wounded")}}disabled{{/if}}
                      {{#if (bajeryEq this.status "arrested")}}disabled{{/if}} />
-              {{#if (bajeryEq this.assignment "retinue")}}{{localize "UNDERWORLD.TasksTab.InRetinue"}}{{else}}{{localize "UNDERWORLD.TasksTab.Join"}}{{/if}}
+              {{#if (bajeryEq this.assignment "retinue")}}{{underworldT "TasksTab.InRetinue"}}{{else}}{{underworldT "TasksTab.Join"}}{{/if}}
             </label>
           </div>
         </div>
@@ -73,12 +73,12 @@
         <div class="mission-row">
           <div class="mission-row-icon {{../iconClass}}"><i class="{{this.icon}}"></i></div>
           <div class="mission-row-body">
-            <strong>{{this.name}}</strong>{{#if this.tiered}} <span class="uw-tier-flag" data-tooltip="{{localize 'UNDERWORLD.TasksTab.TierHint'}}"><i class="fas fa-layer-group"></i> {{localize "UNDERWORLD.TasksTab.Tier"}}</span>{{/if}}
+            <strong>{{this.name}}</strong>{{#if this.tiered}} <span class="uw-tier-flag" data-tooltip="{{underworldT 'TasksTab.TierHint'}}"><i class="fas fa-layer-group"></i> {{underworldT "TasksTab.Tier"}}</span>{{/if}}
             <span class="mission-desc">{{this.desc}}</span>
             {{{underworldMissionMeta this.id}}}
           </div>
           <button type="button" class="btn-send-mission" data-action="send-mission" data-type="{{this.id}}" title="{{this.name}}">
-            <i class="fas fa-paper-plane"></i> {{#if this.noNpc}}{{localize "UNDERWORLD.Mission.Send"}}{{else}}{{localize "UNDERWORLD.TasksTab.Assign"}}{{/if}}
+            <i class="fas fa-paper-plane"></i> {{#if this.noNpc}}{{underworldT "Mission.Send"}}{{else}}{{underworldT "TasksTab.Assign"}}{{/if}}
           </button>
         </div>
         {{/each}}
@@ -89,9 +89,9 @@
 
   <!-- ═══════ WARTY OBOZOWE ═══════ -->
   <div class="guards-section" style="margin-top: 12px; border-top: 2px solid #5a3d28; padding-top: 8px;">
-    <h3 style="margin: 0 0 6px 0;"><i class="fas fa-shield-alt"></i> {{localize "UNDERWORLD.TasksTab.Watch"}}</h3>
+    <h3 style="margin: 0 0 6px 0;"><i class="fas fa-shield-alt"></i> {{underworldT "TasksTab.Watch"}}</h3>
     <p class="notes">
-      {{localize "UNDERWORLD.TasksTab.WatchHint"}}
+      {{underworldT "TasksTab.WatchHint"}}
     </p>
     <div class="guards-list" style="background: rgba(255,255,255,0.7); border: 1px solid #9e856f; border-radius: 4px; padding: 6px 10px;">
       {{#each gang.roster}}
@@ -107,7 +107,7 @@
                    {{#if (bajeryEq this.status "dead")}}disabled{{/if}}
                    {{#if (bajeryEq this.status "wounded")}}disabled{{/if}}
                    {{#if (bajeryEq this.status "busy")}}disabled{{/if}} />
-            {{localize "UNDERWORLD.Badges.guard"}}
+            {{underworldT "Badges.guard"}}
           </label>
         </div>
       {{/each}}

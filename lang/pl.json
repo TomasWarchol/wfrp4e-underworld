@@ -153,7 +153,7 @@
       },
       "procure": {
         "Name": "Szaber i Zbieractwo",
-        "Reward": "1d3 racji + 1d8+1 ss",
+        "Reward": "1d3 racji + 1d8+1 SS",
         "Names": {
           "village": "Szaber po Polach",
           "forest": "Zbieractwo w Lesie",
@@ -163,7 +163,7 @@
       },
       "pickpocket": {
         "Name": "Kieszonkarstwo",
-        "Reward": "monety (1d10+5 ss × cel), czasem kosztowność",
+        "Reward": "monety (1d10+5 SS × cel), czasem kosztowność",
         "Names": {
           "village": "Kradzież na Jarmarku"
         },
@@ -218,12 +218,12 @@
       },
       "intimidate": {
         "Name": "Zastraszanie / Wymuszenie",
-        "Reward": "1d8+4 ss",
+        "Reward": "1d8+4 SS",
         "Desc": "Jednorazowe wymuszenie od kramarza lub karczmarza."
       },
       "racket": {
         "Name": "Haracz",
-        "Reward": "co noc 1d6 ss (dopóki trwa)",
+        "Reward": "co noc 1d6 SS (dopóki trwa)",
         "Desc": "Objęcie ulicy „ochroną”. Codzienny dochód, ale konkurencja może się upomnieć o swoje.",
         "InputLabel": "Który rewir? (ulica, targ, dzielnica)",
         "InputPlaceholder": "np. Targ Rybny"
@@ -267,7 +267,7 @@
       },
       "smuggle": {
         "Name": "Przemyt",
-        "Reward": "2d10+5 ss (w górach ×1,5)",
+        "Reward": "2d10+5 SS (w górach ×1,5)",
         "Names": {
           "mountains": "Przemyt przez Przełęcz"
         },
@@ -291,6 +291,180 @@
         "Name": "Opieka nad Rannymi",
         "Reward": "Ranny → Odpoczywa (bez testu)",
         "Desc": "Zmiana opatrunków i zioła dla rannego towarzysza."
+      },
+      "patrol": {
+        "Name": "Patrol",
+        "Reward": "żeton Rozpoznania; przy SL 3+ Trop i trofeum",
+        "Desc": "Oddział przeczesuje okolicę, szukając wroga i dobrych dróg.",
+        "Success": "{name} prowadzi patrol i wraca z mapą okolicy w głowie.",
+        "Fail": "{name} krąży po bezdrożach i wraca bez niczego.",
+        "Names": {
+          "city": "Patrol Ulic",
+          "village": "Objazd Wsi",
+          "forest": "Patrol Leśny",
+          "mountains": "Patrol Przełęczy"
+        }
+      },
+      "garrison": {
+        "Name": "Warta",
+        "Reward": "1d8+4 SS (SL 3+: dodatkowo 1d6 SS)",
+        "Desc": "Spokojna służba przy bramie, moście lub składzie. Mały, ale pewny grosz.",
+        "Success": "{name} odstał służbę i odebrał należność.",
+        "Fail": "{name} zasnął na posterunku. Nikt nie zapłaci za taką wartę.",
+        "Names": {
+          "city": "Warta przy Bramie",
+          "village": "Warta przy Młynie",
+          "forest": "Straż przy Trakcie",
+          "mountains": "Posterunek na Przełęczy"
+        }
+      },
+      "requisition": {
+        "Name": "Rekwizycja",
+        "Reward": "1d3+1 racji (SL 3+: +1)",
+        "Desc": "Zapasy od miejscowych, z kwitem albo bez. Porażka psuje opinię kompanii.",
+        "Success": "{name} wraca z wozem prowiantu.",
+        "Fail": "{name} natrafia na opór chłopów i wraca z pustymi rękami.",
+        "Names": {
+          "city": "Kwatery i Prowiant",
+          "village": "Rekwizycja we Wsi",
+          "forest": "Furażowanie",
+          "mountains": "Rekwizycja w Osadzie"
+        }
+      },
+      "escort": {
+        "Name": "Eskorta",
+        "Reward": "2d10+5 SS (SL 3+: Zła sława −1)",
+        "Desc": "Ochrona kupca, wozu lub posłańca na niebezpiecznym odcinku.",
+        "InputLabel": "Kogo chronicie?",
+        "InputPlaceholder": "np. kupiec z Nuln, wóz z solą...",
+        "Success": "{name} bezpiecznie doprowadza do celu: <em>{target}</em>.",
+        "Fail": "{name} nie upilnował(a): <em>{target}</em>. Ludzie stracili ducha.",
+        "Names": {
+          "city": "Eskorta przez Miasto",
+          "village": "Eskorta na Jarmark",
+          "forest": "Eskorta przez Las",
+          "mountains": "Eskorta przez Przełęcz"
+        }
+      },
+      "contract": {
+        "Name": "Kontrakt",
+        "Reward": "3d10+10 SS razy poziom kontraktu (SL 3+: trofeum)",
+        "Desc": "Płatne zadanie zbrojne: rozbicie bandy, obrona wioski, odbicie składu.",
+        "InputLabel": "Na czym polega kontrakt?",
+        "InputPlaceholder": "np. rozbić bandę na trakcie...",
+        "Success": "{name} wypełnia kontrakt: <em>{target}</em>.",
+        "Fail": "{name} zawodzi przy kontrakcie: <em>{target}</em>. Pracodawca nie zapłaci i rozpowie o tym."
+      },
+      "drill": {
+        "Name": "Musztra",
+        "Reward": "żeton Zgrania, +5 DO (SL 3+: +1 Morale)",
+        "Desc": "Cały dzień ćwiczeń w szyku. Ludzie klną, ale potem walczą lepiej.",
+        "Success": "{name} wyciska z ludzi siódme poty. Szyk wygląda jak należy.",
+        "Fail": "{name} krzyczy cały dzień, a szyk dalej się sypie."
+      },
+      "ambush": {
+        "Name": "Odwet na Łowcach",
+        "Reward": "Rozgłos −1 i łup z broni (SL 3+: +1 Morale)",
+        "Desc": "Banda czeka w zaroślach na tych, którzy ją ścigają. Udana zasadzka odstrasza pościg.",
+        "Success": "{name} prowadzi zasadzkę. Łowcy uciekają i zostawiają broń.",
+        "Fail": "{name} wpada we własną pułapkę. Banda wycofuje się w nieładzie."
+      },
+      "ransom": {
+        "Name": "Okup",
+        "Reward": "3d10+5 SS, Rozgłos +1 (SL 3+: +2d10 SS)",
+        "Desc": "Porwanie zamożnego podróżnego i list do rodziny. Złoto przychodzi, ale ludzie gadają.",
+        "InputLabel": "Kogo bierzecie dla okupu?",
+        "InputPlaceholder": "np. syn młynarza, kupiec z Bögenhafen...",
+        "Success": "{name} odbiera okup za: <em>{target}</em>.",
+        "Fail": "{name} nie dostaje okupu za: <em>{target}</em>. Sprawa robi się głośna."
+      },
+      "toll": {
+        "Name": "Myto na Moście",
+        "Reward": "1d10+3 SS (SL 3+: +1 racja)",
+        "Desc": "Banda zagradza most lub bród i pobiera „myto” od każdego, kto chce przejść.",
+        "Success": "{name} zbiera myto do wieczora.",
+        "Fail": "{name} trafia na podróżnych, którzy nie chcą płacić. Ktoś pobiegł po straż."
+      },
+      "river_run": {
+        "Name": "Kurs Barką",
+        "Reward": "wartość ładunku razy 2,5 i razy trasa (SL 3+: Czujność −1); wymaga towaru",
+        "Desc": "Nocny spływ z kontrabandą przez śluzy i posterunki celne. Bierze najcenniejszy towar ze skrytki, a przy porażce ładunek idzie na dno.",
+        "Success": "{name} przeprowadza barkę i oddaje ładunek odbiorcy.",
+        "Fail": "{name} zawraca przed posterunkiem. Ładunek trzeba było zatopić."
+      },
+      "cache": {
+        "Name": "Skrytka",
+        "Reward": "Czujność −1 (SL 3+: +1 racja)",
+        "Desc": "Ukrycie towaru i śladów w zatopionych skrzyniach, pod podłogą lub w trzcinach.",
+        "Success": "{name} chowa wszystko, czego nie powinno być widać.",
+        "Fail": "{name} nie znajduje bezpiecznego miejsca. Towar zostaje na wierzchu."
+      },
+      "contraband": {
+        "Name": "Odbiór Kontrabandy",
+        "Reward": "kontrabanda do przewiezienia (SL 3+: drugi ładunek)",
+        "Desc": "Spotkanie z dostawcą na odludnej przystani. Towar na kredyt, zapłata po sprzedaży.",
+        "Success": "{name} wraca z towarem od dostawcy.",
+        "Fail": "{name} czeka do świtu, ale dostawca nie przychodzi. Ktoś mógł go śledzić."
+      },
+      "buy_secret": {
+        "Name": "Kupno Sekretu",
+        "Reward": "dokument do sprzedaży albo raportu; przy SL 3+ Trop",
+        "Desc": "Kilka monet dla służącej, pisarza albo pijanego sierżanta w zamian za coś, czego nie powinni mówić.",
+        "Success": "{name} wraca z sekretem spisanym na kartce.",
+        "Fail": "{name} trafia na kogoś, kto zaczyna zadawać pytania."
+      },
+      "letter_swap": {
+        "Name": "Podmiana Listu",
+        "Reward": "2d10+5 SS razy waga celu, +5 DO (SL 3+: dokument)",
+        "Desc": "Przechwycenie listu, skopiowanie go i podłożenie z powrotem albo podmiana na fałszywy.",
+        "InputLabel": "Czyj list?",
+        "InputPlaceholder": "np. korespondencja burmistrza, rozkaz dla garnizonu...",
+        "Success": "{name} podmienia list: <em>{target}</em>. Nikt niczego nie zauważył.",
+        "Fail": "{name} nie zdążył odłożyć listu: <em>{target}</em>. Adresat wie, że ktoś go czytał."
+      },
+      "report": {
+        "Name": "Raport dla Mocodawcy",
+        "Reward": "wartość dokumentu razy 1,25, bez ryzyka (SL 3+: +1d10 SS); wymaga dokumentu",
+        "Desc": "Najcenniejszy dokument z kryjówki trafia do mocodawcy. Płaci lepiej niż kupiec sekretów i nikt się o tym nie dowie.",
+        "Success": "{name} przekazuje dokument mocodawcy i odbiera zapłatę.",
+        "Fail": "{name} przynosi dokument, ale mocodawca uznaje go za bezwartościowy. Dokument wraca do kryjówki."
+      },
+      "ritual": {
+        "Name": "Rytuał",
+        "Reward": "żeton Uniesienia, +1 Morale (SL 3+: +5 DO)",
+        "Desc": "Nocne obrzędy w piwnicy lub na wzgórzu. Wyznawcy wracają pełni zapału.",
+        "Success": "{name} prowadzi rytuał. Wyznawcy wychodzą odmienieni.",
+        "Fail": "{name} myli słowa inwokacji. Wyznawcy szepczą o złym znaku."
+      },
+      "infiltrate": {
+        "Name": "Infiltracja",
+        "Reward": "żeton Rozpoznania; przy SL 3+ Trop",
+        "Desc": "Wyznawca wchodzi do cechu, świątyni lub domu bogacza jako sługa albo gość.",
+        "Success": "{name} zdobywa zaufanie i wraca z planem domu i zwyczajami jego mieszkańców.",
+        "Fail": "{name} nie przechodzi przez próg. Nikt tam nie potrzebuje nowej twarzy."
+      },
+      "abduction": {
+        "Name": "Porwanie",
+        "Reward": "2d10+5 SS od Mistrza razy waga celu, +1 Morale (SL 3+: +5 DO i zdobycz)",
+        "Desc": "Ktoś znika nocą z ulicy. Mistrz płaci i nie pyta, a bractwo nie mówi, po co.",
+        "InputLabel": "Kogo porywacie?",
+        "InputPlaceholder": "np. żebrak spod świątyni, syn rajcy...",
+        "Success": "{name} przyprowadza do kryjówki: <em>{target}</em>.",
+        "Fail": "{name} nie zdołał porwać: <em>{target}</em>. Krzyki postawiły na nogi całą ulicę."
+      },
+      "intercept": {
+        "Name": "Przechwycenie Gońca",
+        "Reward": "dokument (SL 3+: Zdemaskowanie −1)",
+        "Desc": "Zasadzka na gońca na trakcie. Torba z listami zmienia właściciela, zanim ktokolwiek się zorientuje.",
+        "Success": "{name} wraca z torbą gońca pełną listów.",
+        "Fail": "{name} spłoszył gońca. Ten pogalopował prosto do najbliższej strażnicy."
+      },
+      "stone_circle": {
+        "Name": "Kamienny Krąg",
+        "Reward": "+1 Morale, +5 DO (SL 3+: zdobycz)",
+        "Desc": "Nocna wyprawa do starego kręgu kamieni na bezdrożach. Czasem zostaje tam coś, co zostawili poprzednicy.",
+        "Success": "{name} wraca z kręgu przed świtem. Wyznawcy słuchają opowieści z zapartym tchem.",
+        "Fail": "{name} błądzi po bezdrożach i wraca przemoczony, z pustymi rękami."
       }
     },
     "MissionCategories": {
@@ -765,6 +939,86 @@
       "duelist": {
         "Name": "Zawadiaka / Szermierz",
         "Desc": "Dawny pojedynkowicz albo najemny rębajło. Ma niewiele honoru, ale za to rapier w ręku; walczy z wdziękiem i na pokaz."
+      },
+      "sergeant": {
+        "Name": "Sierżant",
+        "Desc": "Trzyma szyk i pilnuje dyscypliny. Pierwszy w ścianie tarcz, ostatni przy kotle."
+      },
+      "halberdier": {
+        "Name": "Halabardnik",
+        "Desc": "Zatrzymuje szarże i ściąga jeźdźców z siodeł. Twardy trzon każdego oddziału."
+      },
+      "crossbowman": {
+        "Name": "Kusznik",
+        "Desc": "Celny strzał z dystansu i bystre oko na patrolu."
+      },
+      "standard_bearer": {
+        "Name": "Chorąży",
+        "Desc": "Niesie barwy kompanii. Tam, gdzie powiewa sztandar, ludzie nie uciekają."
+      },
+      "surgeon": {
+        "Name": "Cyrulik",
+        "Desc": "Zszywa rany, nastawia kości i wie, kiedy amputować."
+      },
+      "quartermaster": {
+        "Name": "Kwatermistrz",
+        "Desc": "Zna cenę każdego worka mąki i potrafi wycisnąć z tabor więcej, niż w nim jest."
+      },
+      "helmsman": {
+        "Name": "Sternik",
+        "Desc": "Zna każdą mieliznę i każdy wir. Prowadzi barkę nocą bez latarni."
+      },
+      "boatman": {
+        "Name": "Flisak",
+        "Desc": "Silne ramiona, krótki temperament. Wiosłuje, dźwiga beczki i bije się, kiedy trzeba."
+      },
+      "lookout": {
+        "Name": "Czujka",
+        "Desc": "Siedzi na dziobie i widzi celników, zanim oni zobaczą barkę."
+      },
+      "forger": {
+        "Name": "Fałszerz",
+        "Desc": "Listy przewozowe, plomby, pieczęcie cechu. Każdy ładunek ma u niego czyste papiery."
+      },
+      "purser": {
+        "Name": "Szafarz",
+        "Desc": "Liczy beczki, targuje ceny i pamięta, komu ile się należy."
+      },
+      "eavesdropper": {
+        "Name": "Podsłuchiwacz",
+        "Desc": "Siedzi w kącie szynku z kuflem i słyszy każde słowo przy trzech stołach."
+      },
+      "courier": {
+        "Name": "Kurier",
+        "Desc": "Zna skróty, mosty i bramy. List dociera, zanim ktoś zauważy, że wyszedł."
+      },
+      "enforcer": {
+        "Name": "Pięść",
+        "Desc": "Gdy słowa nie wystarczą, przychodzi Pięść. Cicha robota, bez świadków."
+      },
+      "acolyte": {
+        "Name": "Akolita",
+        "Desc": "Nosi świece, pilnuje kryjówki i uczy się tajemnic, których jeszcze nie rozumie."
+      },
+      "zealot": {
+        "Name": "Zelota",
+        "Desc": "Wierzy bez reszty i rzuca się na każdego, kto stanie bractwu na drodze."
+      },
+      "spy": {
+        "Name": "Szpieg",
+        "Desc": "Ma przyjaciół w ratuszu i świątyni. Nikt nie podejrzewa, komu naprawdę służy."
+      },
+      "assassin": {
+        "Name": "Skrytobójca",
+        "Desc": "Sztylet, trucizna, pętla. Zjawia się raz i nie zostawia śladów."
+      },
+      "orator": {
+        "Name": "Mówca",
+        "Desc": "Potrafi przekonać zrozpaczonych, że bractwo da im to, czego odmówili bogowie."
+      },
+      "alchemist": {
+        "Name": "Alchemik",
+        "Desc": "Kadzidła, trucizny i mikstury do rytuałów. Zna dawki, które leczą, i te, które zabijają."
       }
     },
     "Strengths": {
@@ -1073,7 +1327,7 @@
     "Units": {
       "SS": "SS",
       "GC": "ZK",
-      "BP": "bp",
+      "BP": "BP",
       "OXP": "DO"
     },
     "Rumor": {
@@ -1105,7 +1359,7 @@
       "WeekAlreadyResolved": "Tydzień tej szajki został już rozpatrzony dla tego dnia świata. Przesuń czas gry.",
       "GMResolvesQueue": "Przydziały rozpatruje Mistrz Gry.",
       "NoPendingAssignments": "Brak przydziałów oczekujących na rozpatrzenie.",
-      "NotEnoughFunds": "Za mało funduszy w skarbcu! Potrzeba {cost} ss.",
+      "NotEnoughFunds": "Za mało funduszy w skarbcu! Potrzeba {cost} SS.",
       "CampAlreadyResolved": "Nocny postój tej szajki został już rozstrzygnięty dla tego dnia świata.",
       "CampWaitsForQueue": "Część przydziałów czeka na rozpatrzenie przez MG – postój po ich rozstrzygnięciu."
     },
@@ -1336,7 +1590,7 @@
       "payoff": {
         "Name": "Hojny Datek",
         "Desc": "Paser wciska żołdakowi sakiewkę i szepcze, ile mogłoby ich być więcej.",
-        "Effect": "Przeciwnik-człowiek musi zdać test Siły Woli; przy porażce wycofuje się z walki (MG decyduje, czy odejdzie, czy zmieni stronę). Sakiewka (1d10 ss) przepada."
+        "Effect": "Przeciwnik-człowiek musi zdać test Siły Woli; przy porażce wycofuje się z walki (MG decyduje, czy odejdzie, czy zmieni stronę). Sakiewka (1d10 SS) przepada."
       },
       "salve": {
         "Name": "Maść Znachora",
@@ -1372,7 +1626,12 @@
         "Result": "Wydarzenie"
       },
       "Created": "Szajka: utworzono {count} tabel plotek i wydarzeń w zakładce Tabele (folder „{folder}”).",
-      "EventsUpgraded": "Tabela wydarzeń (teren: {terrain}) została zastąpiona nową wersją ({count} wpisów)."
+      "EventsUpgraded": "Tabela wydarzeń (teren: {terrain}) została zastąpiona nową wersją ({count} wpisów).",
+      "ProfileEvents": {
+        "Name": "Wydarzenia Postoju",
+        "Desc": "Własne wydarzenia nocy tego typu kompanii. Część nocy losuje z tej tabeli zamiast ze zdarzeń terenu. Flagi wyniku (Morale, zapasy, monety, rola, tereny) zmieniają stan kompanii."
+      },
+      "ProfileCreated": "Utworzono edytowalną tabelę „{name}” (folder „{folder}”)."
     },
     "Title": "Szajka",
     "None": "Brak",
@@ -1399,7 +1658,27 @@
       "cover_tracks": "Maskowanie",
       "tend_wounded": "Opatrunki",
       "guard": "Warta",
-      "retinue": "Świta Herszta"
+      "retinue": "Świta Herszta",
+      "patrol": "Patrol",
+      "garrison": "Warta",
+      "requisition": "Rekwizycja",
+      "escort": "Eskorta",
+      "contract": "Kontrakt",
+      "drill": "Musztra",
+      "ambush": "Odwet",
+      "ransom": "Okup",
+      "toll": "Myto",
+      "river_run": "Kurs",
+      "cache": "Skrytka",
+      "contraband": "Odbiór",
+      "buy_secret": "Sekret",
+      "letter_swap": "Podmiana",
+      "report": "Raport",
+      "ritual": "Rytuał",
+      "infiltrate": "Infiltracja",
+      "abduction": "Porwanie",
+      "intercept": "Goniec",
+      "stone_circle": "Krąg"
     },
     "Status": {
       "Busy": "Zajęty",
@@ -1488,6 +1767,12 @@
       "Queue": {
         "Name": "Kolejka MG w trybie dziennym",
         "Hint": "Gdy włączone, zlecenia wysłane przez graczy nie rozstrzygają się od razu – czekają, aż MG kliknie „Rozpatrz Przydziały” (albo rozegra nocny postój). Zlecenia wysyłane przez MG rozstrzygają się od razu. Nie dotyczy Tygodnia Szajki."
+      },
+      "SheetStyle": {
+        "Name": "Wygląd panelu kompanii",
+        "Hint": "Księga Kompanii to nowy wygląd w stylu księgi wojennej Starego Świata. Klasyczny to dotychczasowy panel.",
+        "Ledger": "Księga Kompanii",
+        "Classic": "Klasyczny"
       }
     },
     "Recruit": {
@@ -1530,7 +1815,15 @@
     },
     "Ops": {
       "ToTreasury": "Do skarbca trafiło {amount}.",
-      "PatronCut": "Dola Patrona ({percent}%): {cut} · do skarbca: {net}."
+      "PatronCut": "Dola Patrona ({percent}%): {cut} · do skarbca: {net}.",
+      "DataEffect": {
+        "Morale": "Morale {value}.",
+        "Heat": "Rozgłos {value}.",
+        "Xp": "Doświadczenie Operacyjne {value}."
+      },
+      "NoCargo": "{mission}: brak pasującego łupu, który można by zabrać.",
+      "Cargo": "Ładunek: {item}.",
+      "CargoLost": "Stracony ładunek: {item}."
     },
     "Loot": {
       "Hot": "gorący towar",
@@ -1538,7 +1831,7 @@
       "ItemDescHot": "Łup szajki: {origin} – gorący towar, ktoś go szuka.",
       "Transferred": "{item} trafia do ekwipunku: {actor}.",
       "DiscardTitle": "Pozbyć się łupu?",
-      "DiscardText": "Wyrzucić, oddać albo ukryć na dobre <strong>{name}</strong> (~{value} ss)? Łup zniknie z kryjówki szajki."
+      "DiscardText": "Wyrzucić, oddać albo ukryć na dobre <strong>{name}</strong> (~{value} SS)? Łup zniknie z kryjówki szajki."
     },
     "Report": {
       "QueueTitle": "Raport przydziałów szajki",
@@ -1557,7 +1850,7 @@
         "Fail": "{name} próbował(a) śledzić <strong>{target}</strong>, ale został(a) zauważony(a) i musiał(a) się wycofać."
       },
       "Tavern": {
-        "Success": "{name} postawił(a) kilka kolejek w karczmie ({cost} ss ze skarbca) i wyciągnął(a) ciekawe informacje.",
+        "Success": "{name} postawił(a) kilka kolejek w karczmie ({cost} SS ze skarbca) i wyciągnął(a) ciekawe informacje.",
         "Fail": "{name} siedział(a) w szynku cały dzień, ale nie udało się niczego wartościowego usłyszeć."
       },
       "Procure": {
@@ -1566,7 +1859,7 @@
         "Fail": "Nic wartościowego nie udało się znaleźć bez wszczynania alarmu."
       },
       "Pickpocket": {
-        "Success": "{name} okradł(a) kilka ofiar – gotówka: {coins} ss.",
+        "Success": "{name} okradł(a) kilka ofiar – gotówka: {coins} SS.",
         "Extra": "Do tego: {loot}.",
         "Fail": "{name} został(a) prawie przyłapany(a) na gorącym uczynku! Morale -1."
       },
@@ -1598,7 +1891,7 @@
       },
       "Racket": {
         "DefaultDistrict": "Dzielnica Portowa",
-        "Success": "Rewir <strong>{district}</strong> płaci za „ochronę”. Co noc w mieście skarbiec dostaje {daily} ss (tydzień: {weekly}), dopóki konkurencja nie upomni się o swoje.",
+        "Success": "Rewir <strong>{district}</strong> płaci za „ochronę”. Co noc w mieście skarbiec dostaje {daily} SS (tydzień: {weekly}), dopóki konkurencja nie upomni się o swoje.",
         "Fail": "Rewir <strong>{district}</strong> ma już swoich „opiekunów”. {name} odchodzi z niczym."
       },
       "Fence": {
@@ -1609,7 +1902,7 @@
         "Returned": "Łupy wracają do kryjówki."
       },
       "Intimidate": {
-        "Success": "{name} skutecznie zastrasza ofiarę – łup: {coins} ss.",
+        "Success": "{name} skutecznie zastrasza ofiarę – łup: {coins} SS.",
         "Fail": "{name} próbował(a) nastraszyć cel, ale napotkał(a) opór. Ludzie szemrzą (Morale -1)."
       },
       "RumorSpread": {
@@ -1622,8 +1915,8 @@
         "HeatDown": "Raport o szajce ląduje w piecu – Rozgłos −1.",
         "Favor": "Przysługa kupiona: <em>{favor}</em>.",
         "FavorDefault": "przysługa",
-        "Paid": "{name} wręcza łapówkę ({cost} ss).",
-        "Fail": "{name} wręcza łapówkę ({cost} ss), ale urzędnik bierze pieniądze i nic nie robi."
+        "Paid": "{name} wręcza łapówkę ({cost} SS).",
+        "Fail": "{name} wręcza łapówkę ({cost} SS), ale urzędnik bierze pieniądze i nic nie robi."
       },
       "TheMan": {
         "Courier": "Uliczny Kurier",
@@ -1641,7 +1934,7 @@
       },
       "Smuggle": {
         "Default": "ładunek",
-        "Success": "{name} przemycił(a): <em>{cargo}</em>. Odbiorca zapłacił {coins} ss.",
+        "Success": "{name} przemycił(a): <em>{cargo}</em>. Odbiorca zapłacił {coins} SS.",
         "Fail": "{name} próbował(a) przemycić: <em>{cargo}</em>, ale towar został skonfiskowany lub trzeba było go porzucić!"
       },
       "Forge": {
@@ -1703,7 +1996,7 @@
       "FlavorWeek": "Raport: Tydzień Szajki",
       "FlavorNight": "Koniec Dnia: Nocny Spoczynek Świty",
       "GMResolvesWeekHint": "Tydzień szajki rozpatruje Mistrz Gry. Zaplanuj przydziały w zakładce Przydziały.",
-      "CostPerWeek": "{cost} ss / tydzień",
+      "CostPerWeek": "{cost} SS / tydzień",
       "NoHealthy": "Brak zdrowych popleczników w obozie!",
       "Terrain": "Teren",
       "Lodging": "Miejsce / Kwatery",
@@ -1729,7 +2022,7 @@
     },
     "Racket": {
       "Dormant": "Szajka jest poza miastem – haracz czeka na powrót.",
-      "Income": "Haracz z rewiru {district}: {income} ss.",
+      "Income": "Haracz z rewiru {district}: {income} SS.",
       "Lost": "Konkurencyjny gang przejął rewir po nocnej bijatyce – haracz przepadł, Rozgłos +1."
     },
     "Desertion": {
@@ -1851,13 +2144,13 @@
     },
     "Bribe": {
       "WhatFor": "Za co płacimy?",
-      "Hush": "Uciszenie sprawy: Rozgłos −1 (20 ss)",
-      "Favor": "Przysługa (kwota w opisie, domyślnie 5 ss)",
+      "Hush": "Uciszenie sprawy: Rozgłos −1 (20 SS)",
+      "Favor": "Przysługa (kwota w opisie, domyślnie 5 SS)",
       "WhoToFree": "Kogo wyciągnąć?",
       "WhatFavor": "Jaka przysługa i za ile?",
-      "FavorPlaceholder": "np. Strażnik przy bramie przymknie oko, 5 ss",
+      "FavorPlaceholder": "np. Strażnik przy bramie przymknie oko, 5 SS",
       "LostOnFail": "Łapówka przepada także przy nieudanym teście.",
-      "Release": "Uwolnienie z aresztu (15 ss)"
+      "Release": "Uwolnienie z aresztu (15 SS)"
     },
     "Terrain": {
       "RacketWaits": "Haracz w mieście czeka na powrót szajki.",
@@ -2015,9 +2308,9 @@
       "Buy": "Kup Zapasy"
     },
     "PriceDialog": {
-      "Intro": "Ustal koszt zakupu 1 racji żywności na lokalnym rynku w miedzianych pensach (bp):",
-      "Unit": "pensów (bp)",
-      "Hint": "Podpowiedź: 12 bp = 1 Srebrny Szyling (standard). Podczas zarazy/zimy: 24 bp (2 SS). Na urodzajnych nizinach: 6 bp.",
+      "Intro": "Ustal koszt zakupu 1 racji żywności na lokalnym rynku w brązowych pensach (BP):",
+      "Unit": "pensów (BP)",
+      "Hint": "Podpowiedź: 12 BP = 1 Srebrny Szyling (standard). Podczas zarazy/zimy: 24 BP (2 SS). Na urodzajnych nizinach: 6 BP.",
       "Title": "Ustal Cenę Zapasów (Panel MG)",
       "Save": "Zapisz Cenę"
     },
@@ -2219,7 +2512,9 @@
       "Code": "Kodeks Szajki / Zasady Wewnętrzne:",
       "CodePlaceholder": "Przysięgi krwi, zasady podziału łupów, zakaz donoszenia...",
       "Notes": "Kronika / Notatki Herszta:",
-      "NotesPlaceholder": "Historia powstania świty, dawne przysięgi, cele drużyny..."
+      "NotesPlaceholder": "Historia powstania świty, dawne przysięgi, cele drużyny...",
+      "TypeChangeTitle": "Zmienić typ kompanii?",
+      "TypeChangeText": "Role członków ({count}) zostaną przeliczone na odpowiedniki z nowego typu. Dostępne zlecenia i nazewnictwo też się zmienią. Kontynuować?"
     },
     "DashTab": {
       "CampStandard": "Standard Kwater / Obozowiska",
@@ -2271,7 +2566,7 @@
       "Shillings": "SZYLINGI",
       "ShillingsAbbr": "SS (Srebro)",
       "Pennies": "PENSY",
-      "PenniesAbbr": "bp (Miedź)",
+      "PenniesAbbr": "BP (Brąz)",
       "DepositHint": "Przelej monety ze swojej sakwy do wspólnego skarbca szajki (+1 Morale przy hojnych datkach)",
       "Deposit": "Wpłać ze swojej sakwy",
       "WithdrawHint": "Pobierz monety ze skarbca szajki (Pobranie > 10 SS wymaga testu Dowodzenia — ryzyko utraty Morale!)",
@@ -2313,6 +2608,3199 @@
     },
     "Packs": {
       "Tables": "Szajka – Plotki i Wydarzenia"
+    },
+    "Plan": {
+      "Pool": "Gotowi do zadań",
+      "DragHint": "Przeciągnij portret na kartę zlecenia albo na wolne miejsce w Świcie. Szare portrety są już zajęte.",
+      "SlotEmpty": "Wolne miejsce",
+      "SlotHint": "Upuść tu portret, aby dołączyć do Świty"
+    },
+    "Profiles": {
+      "mercenaries": {
+        "Ranks": {
+          "rookie": {
+            "Desc": "Świeży najemnik bez większego doświadczenia na szlaku."
+          },
+          "lieutenant": {
+            "Desc": "+30 do testów, autorytet (+1 Morale kompanii), rozkazy dowódcze (unikalna ranga — limit 1 na kompanię; wymaga ponad 60-80 dni służby)."
+          }
+        },
+        "Flaws": {
+          "kleptomaniac": {
+            "Camp": "okrada skarbiec kompanii (1 SS)"
+          },
+          "gambler": {
+            "Camp": "przegrywa w karty pieniądze kompanii"
+          },
+          "traitor": {
+            "Desc": "10% szans na wyciek informacji przy misji szpiegowskiej (+1 Zła sława)",
+            "Camp": "wyciekają informacje o kompanii — +1 Zła sława"
+          },
+          "in_debt": {
+            "Desc": "10% szans po postoju, że wierzyciele węszy wokół obozu (+1 Zła sława)",
+            "Camp": "wierzyciele depczą mu po piętach — +1 Zła sława"
+          },
+          "clumsy": {
+            "Desc": "-10 do szabru i fałszerstw; psuje narzędzia i niszczy trofea"
+          },
+          "witchhunter_mark": {
+            "Desc": "Porażka podnosi Zła sława"
+          },
+          "bloodthirsty": {
+            "Desc": "Każda udana eskorta, rekwizycja lub kontrakt daje +1 Złej sławy przez niepotrzebną brutalność"
+          },
+          "wanted": {
+            "Desc": "+1 Złej sławy po wpadce; ryzyko rozpoznania"
+          },
+          "coward": {
+            "Desc": "−10 do eskort"
+          },
+          "alcoholic": {
+            "Desc": "−10 do patroli i wart; 20% szans na niedyspozycję po postoju"
+          },
+          "old_slow": {
+            "Desc": "−10 do patroli i wart"
+          },
+          "repulsive": {
+            "Desc": "−10 do sprzedaży trofeów (odpycha ludzi)"
+          },
+          "one_eyed": {
+            "Desc": "−10 do patroli i wart"
+          },
+          "squeamish": {
+            "Desc": "−10 do rekwizycji, kontraktów i opieki nad rannymi"
+          },
+          "snorer": {
+            "Desc": "−10 do patroli i wart"
+          },
+          "proud": {
+            "Desc": "−10 do sprzedaży trofeów"
+          },
+          "jinxed": {
+            "Desc": "−10 do patroli i wart"
+          }
+        },
+        "Perks": {
+          "craft_chirurgeon": {
+            "Desc": "Zanim zszedł na trakt, zszywał rany i składał kości. Podczas nocnego postoju automatycznie leczy 1 rannego zbrojnego bez zużycia zapasów."
+          },
+          "craft_blacksmith": {
+            "Desc": "Praca przy miechu i kowadle daje krzepę i znajomość oręża. Daje stałe +10 do zleceń z bronią oraz 50% zniżki na rynsztunek dla kompanii."
+          },
+          "craft_innkeeper": {
+            "Desc": "Zna sekrety warzenia trunków i ludzkie języki. Podczas każdego nocnego postoju podnosi Morale kompanii o +1, a nasłuch w szynku przynosi dodatkową plotkę."
+          },
+          "blood_brotherhood": {
+            "Name": "Przysięga Krwi z Kapitanem",
+            "Desc": "Złożył krwawy rytuał wierności. Nigdy nie zdradzi, nie ulega panice w obozie i może raz na sesję przyjąć Ranę Krytyczną wymierzoną w Kapitana."
+          },
+          "battle_scarred": {
+            "Desc": "Przeżył wiele ran i potyczek. Nawet będąc rannym, nie obniża Morale kompanii i może pełnić nocną wartę w obozowisku bez kar."
+          },
+          "cold_blooded": {
+            "Desc": "Bezwzględny opanowany profesjonalista. W razie niepowodzenia misji operacyjnej ignoruje pierwszą komplikację lub utratę morale kompanii."
+          },
+          "craft_merchant": {
+            "Desc": "Zna szlaki handlowe, cła i kalkulację zysków. Zwiększa zysk ze sprzedaży trofeów o +2 SS za każde udane zlecenie."
+          },
+          "guard_contacts": {
+            "Desc": "Ma dłużnika lub krewnego w garnizonie. Obniża ryzyko napaści na obóz o połowę i daje ostrzeżenie przed nią.",
+            "Name": "Stary Kompan w Garnizonie"
+          },
+          "shadow_tongue": {
+            "Name": "Żargon Weteranów",
+            "Desc": "Zna hasła, znaki i gwarę obozów. Zwiększa powodzenie patroli, wart i sprzedaży trofeów o +10."
+          }
+        },
+        "Notify": {
+          "SelectCharacter": "Wybierz token postaci lub stwórz postać gracza, aby otworzyć panel kompanii!",
+          "OpenFailed": "Błąd podczas otwierania panelu kompanii: {error}",
+          "SelectChiefForCamp": "Wybierz token postaci Kapitana, aby zarządzić nocny postój.",
+          "SelectChief": "Wybierz token postaci Kapitana na mapie.",
+          "NoAccess": "Nie masz dostępu do kompanii tej postaci.",
+          "GMResolvesWeek": "Tydzień kompanii rozpatruje Mistrz Gry.",
+          "WeekAlreadyResolved": "Tydzień tej kompanii został już rozpatrzony dla tego dnia świata. Przesuń czas gry.",
+          "CampAlreadyResolved": "Nocny postój tej kompanii został już rozstrzygnięty dla tego dnia świata."
+        },
+        "Orders": {
+          "Effects": {
+            "MustFace": "rzuca się na szermierza i ignoruje resztę kompanii do końca rundy"
+          },
+          "meatshield": {
+            "Effect": "Cios trafia zbrojnego zamiast Kapitana. Zbrojny zostaje ranny (chyba że uratuje go pancerz lub ranga weterana).",
+            "Desc": "Sierżant wypycha zbrojnego przed kapitana, prosto pod śmiertelny cios."
+          },
+          "bullrush": {
+            "Effect": "Wróg zostaje odepchnięty o 2 metry, traci 1 Przewagę, a Kapitan natychmiast zamyka dystans do zwarcia bez testu.",
+            "Name": "Pchnięcie Drzewcem",
+            "Desc": "Halabardnicy pochylają drzewca i spychają wroga całą masą."
+          },
+          "flank": {
+            "Effect": "Cel traci gardę – nie może wykonać Uniku ani Parowania przeciwko najbliższemu atakowi Kapitana!"
+          },
+          "distract": {
+            "Effect": "Kapitan zyskuje +2 Przewagi, a prowokowany wróg traci 1 Przewagę!",
+            "Name": "Pod Sztandar!",
+            "Desc": "Chorąży podnosi sztandar, a kompania odpowiada okrzykiem, który zagłusza wroga."
+          },
+          "draught": {
+            "Effect": "Kapitan lub wskazany sojusznik usuwa 1 Stan Zmęczony (Fatigued) albo ignoruje go do końca następnej rundy.",
+            "Name": "Gorzałka Cyrulika",
+            "Desc": "Łyk mocnej gorzałki z manierki cyrulika stawia na nogi."
+          },
+          "rally": {
+            "Desc": "Kapitan ryczy rozkaz, motywując kompanów i budząc strach u przeciwników.",
+            "Effect": "Usuwa ze wskazanego sojusznika Stan Złamany (Broken). Kapitan zyskuje Przewagę równą SL testu (minimum 1)."
+          },
+          "coordinate": {
+            "Effect": "Kapitan i do trzech sojuszników w promieniu 6 metrów mogą wykonać darmowy ruch o połowę Szybkości; wychodząc ze zwarcia nie muszą zdawać testu."
+          },
+          "retaliation": {
+            "Name": "Odwet Kompanii",
+            "Desc": "Wściekły kontratak! Zbrojny natychmiast rzuca się pomścić ranionego przywódcę.",
+            "Effect": "Jeśli Kapitan lub sojusznik otrzyma obrażenia, Prawa Ręka natychmiast kontratakuje LUB Kapitan zyskuje +2 Przewagi w rewanżu."
+          },
+          "Notify": {
+            "AlreadyThisRound": "Kapitan wydał już rozkaz w tej rundzie (rozkaz zużywa jego Akcję)."
+          },
+          "MeatShield": {
+            "Saved": "{name} rzuca się pod cios, lecz {reason} pochłania impet ataku! Zbrojny unika rany i pozostaje w gotowości!"
+          },
+          "Dialog": {
+            "ChiefHimself": "Kapitan osobiście",
+            "LeadershipHint": "Kapitan wykonuje test Dowodzenia. Sukces – rozkaz działa; porażka – brak efektu. Rozkaz zużywa Akcję Kapitana (jeden na rundę).",
+            "Follower": "Podwładny"
+          },
+          "bodyblock": {
+            "Effect": "Do końca rundy pierwszy atak wręcz na Kapitana trafia ochroniarza zamiast niego. Kapitan zyskuje 1 Przewagi (ma chwilę, by złapać oddech).",
+            "Desc": "Sierżant wchodzi przed kapitana i przyjmuje cios na tarczę."
+          },
+          "circle": {
+            "Effect": "Kapitan traci stan Zaskoczony (jeśli go ma) i zyskuje 1 Przewagi. Nikt nie podejdzie go od tyłu.",
+            "Name": "Jeż!",
+            "Desc": "Kompania zwiera szyk wokół kapitana i sztandaru, ostrza na zewnątrz."
+          },
+          "parry": {
+            "Effect": "Pierwszy atak wręcz na Kapitana w tej rundzie ma −20 do trafienia. Kapitan zyskuje 1 Przewagi.",
+            "Name": "Zapora z Drzewców",
+            "Desc": "Halabardnik wbija drzewce przed kapitana i nikt nie podejdzie bez kłopotu."
+          },
+          "riposte": {
+            "Effect": "Wskazany przeciwnik traci 1 Przewagi. Jeśli w tej rundzie zaatakuje Kapitana i nie trafi, Kapitan może od razu zadać mu cios z kontry."
+          },
+          "wagonwall": {
+            "Effect": "Wóz daje osłonę: ataki dystansowe na Kapitana w tej rundzie mają −10. Kapitan zyskuje 1 Przewagi.",
+            "Desc": "Kwatermistrz ustawia wóz taborowy tak, by zasłonić kapitana."
+          },
+          "getaway": {
+            "Effect": "Kapitan traci stan Powalony i może oddalić się o 4 metry bez prowokowania ataków okazyjnych.",
+            "Name": "Wynieść z Ognia",
+            "Desc": "Cyrulik chwyta kapitana pod ramię i wyciąga go z kłębowiska."
+          },
+          "spot": {
+            "Effect": "Pierwszy atak Kapitana w tej rundzie zyskuje +10 do trafienia. Kapitan zyskuje 1 Przewagi.",
+            "Desc": "Kusznik wskazuje szczelinę w pancerzu, którą widzi przez celownik."
+          },
+          "forgedorder": {
+            "Desc": "Kupiec macha lakowaną pieczęcią i wrzeszczy rozkaz w imieniu miejscowego wójta."
+          },
+          "salve": {
+            "Effect": "Kapitan (lub wskazany sojusznik) traci stan Krwawienie.",
+            "Name": "Szwy Cyrulika",
+            "Desc": "Kilka szybkich szwów i opaska zaciskowa."
+          },
+          "regroup": {
+            "Desc": "Prawa Ręka klaszcze, gwiżdże i kompania wraca do szyku.",
+            "Effect": "Kapitan traci stan Zaskoczony i zyskuje 1 Przewagi; sojusznicy ze Świty mogą przemieścić się o 2 metry bez kosztu."
+          },
+          "challenge": {
+            "Desc": "Sierżant wywołuje dowódcę wroga do walki przed szeregiem.",
+            "Effect": "Przeciwnik musi zdać test Siły Woli; przy porażce rzuca się na sierżanta i ignoruje resztę kompanii do końca rundy."
+          },
+          "trip": {
+            "Name": "Hak Halabardy",
+            "Desc": "Halabardnik zaczepia hakiem nogę albo tarczę wroga i ciągnie."
+          },
+          "disarm": {
+            "Name": "Wytrącenie Broni",
+            "Desc": "Ostrze halabardy uderza w rękojeść i wytrąca broń z ręki."
+          },
+          "volley": {
+            "Name": "Salwa Kuszników",
+            "Desc": "Na komendę kusznicy zwalniają spusty w jednej chwili."
+          },
+          "evileye": {
+            "Name": "Barwy Kompanii",
+            "Desc": "Na widok znanych barw wróg przypomina sobie, z kim ma do czynienia.",
+            "Effect": "Cel musi zdać test Siły Woli albo traci 1 Przewagi i do końca rundy ma −10 do ataków."
+          },
+          "lure": {
+            "Name": "Sztandar na Wzgórzu",
+            "Desc": "Chorąży pokazuje barwy na skraju pola i ściąga uwagę wroga w złą stronę."
+          },
+          "resupply": {
+            "Name": "Opatrunek i Bełty",
+            "Desc": "Cyrulik podbiega z bandażem, bełtem albo zapasową bronią."
+          },
+          "fireoil": {
+            "Name": "Garnek z Olejem",
+            "Desc": "Kwatermistrz ciska z wozu garnek płonącego oleju."
+          },
+          "payoff": {
+            "Name": "Żołd dla Dezertera",
+            "Desc": "Kwatermistrz pokazuje sakiewkę i obiecuje miejsce w kompanii."
+          },
+          "retreat": {
+            "Name": "Odwrót za Tabor",
+            "Desc": "Kompania cofa się za wozy, które zamykają drogę pościgowi."
+          }
+        },
+        "Meta": {
+          "TargetHint": "Próg testu uproszczonego (przed modyfikatorami kompanii)"
+        },
+        "Relation": {
+          "strained": {
+            "Desc": "Pracodawca patrzy na ręce. Spóźnienia grożą gniewem."
+          },
+          "favorite": {
+            "Name": "Zaufani Pracodawcy"
+          }
+        },
+        "Recruit": {
+          "NoActor": "Nie znaleziono aktora kompanii powiązanego z tą rekrutacją!",
+          "Joined": "{name} dołączył(a) do kompanii!",
+          "Flavor": "Rekrutacja: Nowe Twarze w Kompanii",
+          "ChatText": "<strong>{user}</strong> przyjął(ęła) na żołd: <strong>{name}</strong> ({role})."
+        },
+        "Ops": {
+          "PatronCut": "Dola Pracodawcy ({percent}%): {cut} · do skarbca: {net}.",
+          "NoCargo": "{mission}: brak pasującego trofeum, który można by zabrać.",
+          "DataEffect": {
+            "Heat": "Zła sława {value}."
+          }
+        },
+        "Loot": {
+          "Hot": "świeża zdobycz",
+          "DiscardText": "Wyrzucić, oddać albo ukryć na dobre <strong>{name}</strong> (~{value} SS)? Trofeum zniknie z obozu kompanii.",
+          "ItemDesc": "Trofeum kompanii: {origin}.",
+          "ItemDescHot": "Trofeum kompanii: {origin}.",
+          "DiscardTitle": "Pozbyć się trofeum?"
+        },
+        "Card": {
+          "Burglary": {
+            "Success": "{name} wchodzi i wychodzi przed świtem z trofeum.",
+            "SuccessAt": "{name} wchodzi do: <em>{place}</em> i wychodzi przed świtem z trofeum."
+          },
+          "Fence": {
+            "NothingToSell": "{fence}: brak trofeów, które da się tu sprzedać.",
+            "Confiscated": "Świeża zdobycz przepadł: {items}.",
+            "Returned": "Trofea wracają do obozu."
+          },
+          "Intimidate": {
+            "Success": "{name} skutecznie zastrasza ofiarę – trofeum: {coins} SS.",
+            "Fail": "{name} próbował(a) nastraszyć cel, ale napotkał(a) opór. Ludzie szemrzą (Morale -1)."
+          },
+          "Bribe": {
+            "NotArrested": "Ten członek kompanii nie siedzi w areszcie.",
+            "HeatDown": "Raport o kompanii ląduje w piecu – Zła sława −1."
+          },
+          "CoverTracks": {
+            "HeatDown": "Ślady kompanii się zacierają – Zła sława -1."
+          },
+          "Loot": {
+            "Haul": "Zdobycz: {loot}.",
+            "HotHint": ""
+          }
+        },
+        "Camp": {
+          "Log": "Nocny Postój [{shelter}]. Warty: {watch}. {food}. Morale: {morale}/10. Zła sława: {heat}/5.",
+          "TitleWeek": "Tydzień Kompanii",
+          "FlavorWeek": "Raport: Tydzień Kompanii",
+          "GMResolvesWeekHint": "Tydzień kompanii rozpatruje Mistrz Gry. Zaplanuj przydziały w zakładce Przydziały.",
+          "NoHealthy": "Brak zdrowych zbrojnych w obozie!",
+          "StateLine": "Morale: {morale}/10, Zła sława: {heat}/5, Zapasy: {supplies}",
+          "Food": {
+            "Empty": "Brak zapasów! Ludzie poszli spać głodni (-1 Morale)"
+          }
+        },
+        "Raid": {
+          "HotLost": "Przepadł świeża zdobycz: {items}.",
+          "Escaped": "Wartownicy w porę podnieśli alarm – kompania wycofała się w szyku, porzucając {lost} racji zapasów.",
+          "Settled": "Po starciu sprawa uchodzi za wyrównaną – Zła sława -1.",
+          "Summary": "Napaść na obóz."
+        },
+        "Desertion": {
+          "Text": "<strong>{name}</strong> nie wierzy już w Kapitana i znika przed świtem{taken}."
+        },
+        "Treasury": {
+          "Generous": "Kompania widzi hojność Kapitana — nastroje w obozie rosną! (+1 Morale)",
+          "Deposited": "Wpłacono {amount} do skarbca kompanii.",
+          "DepositTitle": "Wpłata do Skarbca Kompanii",
+          "NewBalance": "Nowy stan skarbca kompanii: <strong>{amount}</strong>.",
+          "FlavorDeposit": "Finanse Kompanii",
+          "StashShort": "W skarbcu kompanii nie ma tylu monet! Dostępne: {have}",
+          "SmallWithdrawal": "Pobrano drobne wydatki. Zbrojni nie mają z tym problemu.",
+          "AuthorityHeld": "Kapitan użył autorytetu, by uciszyć szepty. Test Dowodzenia zdany (Rzut: {roll} vs {target}). Morale nienaruszone.",
+          "WithdrawTitle": "Wypłata ze Skarbca Kompanii",
+          "AuthorityLost": "Ludzie szemrzą po kątach, że Kapitan podkrada żołd! Test Dowodzenia nieudany (Rzut: {roll} vs {target}).",
+          "FlavorWithdraw": "Wypłata Żołdu"
+        },
+        "Supplies": {
+          "StashShort": "W skarbcu kompanii brakuje monet! Wymagane: {need}, dostępne: {have}",
+          "SourceStash": "skarbiec kompanii"
+        },
+        "Roster": {
+          "GMOnlyDelete": "Tylko MG może usuwać członków kompanii.",
+          "DeleteTitle": "Usuń członka kompanii",
+          "DeleteText": "Czy na pewno usunąć <strong>{name}</strong> ze kompanii?",
+          "NewFollower": "Nowy Podwładny"
+        },
+        "Retinue": {
+          "Left": "{name} opuścił(a) Świtę Kapitana.",
+          "Joined": "{name} dołączył(a) do Świty Kapitana!",
+          "Full": "Świta Kapitana może liczyć maksymalnie 3 zbrojnych!"
+        },
+        "Mission": {
+          "NoFollower": "Nie wybrano zbrojnego!"
+        },
+        "Tier": {
+          "LeadApplies": "{name}: bez kary, podwójny trofeum"
+        },
+        "Fence": {
+          "NothingChosen": "Nie wybrano żadnego trofeum do sprzedaży.",
+          "NoLoot": "Kompania nie ma żadnych trofeów do sprzedania.",
+          "Hint": "Każdy SL testu Targowania to +5 pkt stawki."
+        },
+        "Terrain": {
+          "RacketWaits": "Haracz w mieście czeka na powrót kompanii.",
+          "Changed": "Kompania zmienia teren: {terrain}. Kupiec trofeów: {fence}."
+        },
+        "CampDialog": {
+          "UseSupplies": "Wydaj zapasy ze spiżarni kompanii:",
+          "TitleWeek": "Tydzień Kompanii – rozpatrzenie",
+          "WeekDone": "Tydzień kompanii rozpatrzony – raport na czacie.",
+          "NoWatchWarning": "Brak wartowników zwiększa ryzyko nocnych komplikacji i napaści.",
+          "Fasting": "Ludzie nie jedzą"
+        },
+        "RecruitDialog": {
+          "Title": "Rekrutacja Nowych Zbrojnych dla Graczy",
+          "Intro": "Przedstaw graczom propozycje zaciągu na czacie. Gracze będą mogli wybrać jednego rekruta, który dołączy do kompanii."
+        },
+        "Upgrade": {
+          "OneCraftHint": "Najemnik może posiadać tylko jeden dawny zawód",
+          "TransferHint": "Przenieś do innego zbrojnego",
+          "Stash": "Skarbiec Kompanii",
+          "CraftSectionHint": "(Maksymalnie 1 zawód na najemnika)",
+          "TraitSection": "Zalety i Wady Najemnika",
+          "OneLieutenant": "W kompanii może być tylko jedna Prawa Ręka ({name})!",
+          "HasCraft": "Ten najemnik ma już wybrany dawny fach ({name})! Postać może mieć tylko jeden fach z przeszłości.",
+          "NoFreeSlot": "Brak innych zbrojnych z wolnym slotem ekwipunku!",
+          "SecondRoleIntro": "Zbrojny, który wiele widział, potrafi więcej niż jedno. Druga rola daje dostęp do jej rozkazów i specjalizacji (premia za specjalizację liczy się raz).",
+          "CraftIntro": "Przeszłość i rzemiosło sprzed zaciągu. Każdy najemnik może wybrać tylko jeden dawny fach."
+        },
+        "TreasuryDialog": {
+          "DepositHint": "Wpłata ponad 1 ZK (20 SS) nagradzana jest <strong>+1 Morale</strong> dla całej kompanii!",
+          "Balance": "Stan skarbca kompanii",
+          "MutinyRisk": "<strong>Ryzyko Buntu:</strong> Zbrojni pilnują wspólnej kasy! Pobranie powyżej 10 SS wymaga Testu Dowodzenia, porażka to -1 Morale."
+        },
+        "SuppliesDialog": {
+          "FromStash": "Skarbiec Kompanii (dostępne: {amount})"
+        },
+        "Chat": {
+          "GangTest": "Test uproszczony kompanii",
+          "Footer": "Świta Kapitana"
+        },
+        "RecruitCard": {
+          "Title": "Nowe Twarze w Kompanii: Rekrutacja",
+          "Intro": "Mistrz Gry przedstawił kandydatów. Wybierzcie najemnika, który dołączy do waszej kompanii!",
+          "Joined": "Postać dołączyła do kompanii!",
+          "Footer": "Zaciąg do Kompanii"
+        },
+        "TacticCard": {
+          "UsesAction": "Rozkaz zużywa Akcję Kapitana w tej rundzie.",
+          "NotHeard": "Ludzie nie usłyszeli rozkazu w zgiełku walki – <strong>brak efektu</strong>."
+        },
+        "Sheet": {
+          "LeaderTitle": "Kapitan / Przywódca: {name}",
+          "ChiefTitle": "Kapitan Kompanii",
+          "Chief": "KAPITAN",
+          "Eyebrow": "Karta kompanii",
+          "NamePlaceholder": "Nazwa Kompanii / Świty",
+          "NameTitle": "Kliknij, aby zmienić nazwę kompanii",
+          "MottoTitle": "Motto kompanii",
+          "MoraleTitle": "Morale Kompanii: {value}/10"
+        },
+        "TasksTab": {
+          "Intro": "Wyślij ludzi w teren lub weź do swojej osobistej świty. Każdego zbrojnego można przypisać do <strong>jednego zadania dziennie</strong>.",
+          "RetinueHint": "Zbrojni przypisani do Świty idą krok w krok z Kapitanem w trakcie dnia gry i odblokowują swoje unikalne rozkazy bojowe w zakładce <strong>Taktyka</strong> (maks. 3 osoby). Nie mogą w tym czasie wyruszać na odrębne misje.",
+          "WatchHint": "Osoby wyznaczone na wartę czuwają podczas snu drużyny. Każdy zbrojny może mieć tylko jedno zadanie na dobę."
+        },
+        "RosterTab": {
+          "Title": "Zbrojni i Kompania",
+          "ToggleAllHint": "Zwiń lub rozwiń szczegóły wszystkich zbrojnych",
+          "AddHint": "Mistrz Gry: Dodaj nowego pustego zbrojnego",
+          "Add": "Dodaj Zbrojnego",
+          "DropHint": "Przeciągnij aktora postaci lub BN z paska Foundry na kartę, aby połączyć go z zbrojnym",
+          "ToggleOne": "Zwiń / Rozwiń szczegóły najemnika",
+          "NamePlaceholder": "Imię zbrojnego...",
+          "LeaveRetinue": "Odeślij ze Świty Kapitana do obozu",
+          "JoinRetinueHint": "Dołącz do osobistej Świty Kapitana (odblokowuje Taktykę)",
+          "Delete": "Usuń najemnika ze świty",
+          "RoleTitle": "Mistrz Gry: Wybierz rolę zbrojnego",
+          "EmptyTitle": "Brak zbrojnych w świcie!"
+        },
+        "InfoTab": {
+          "GMOnlyPatron": "Tylko Mistrz Gry może modyfikować dane Pracodawcy",
+          "PatronSetByGM": "Szczegóły o Pracodawcy ustala Mistrz Gry",
+          "RelationShort": {
+            "strained": "Napięte (Podejrzliwość, pracodawca patrzy na ręce)",
+            "favorite": "Zaufani (pełne zaufanie, najlepsze kontrakty)"
+          },
+          "Hideout": "Główny Obóz / Kwatery:",
+          "Territory": "Obszar Działań / Szlak Kampanii:",
+          "LawTitle": "Reputacja i Zła Sława",
+          "GMOnlyHeat": "Tylko Mistrz Gry może modyfikować złą sławę",
+          "HeatLevel": "Poziom Złej Sławy:",
+          "HeatShort": {
+            "0": "Dobra marka",
+            "1": "Szemrane opinie",
+            "2": "Miejscowi uważają",
+            "3": "Czarna lista",
+            "4": "Rywale szukają okazji",
+            "5": "Wyjęci spod prawa"
+          },
+          "Bounty": "Długi / Nagroda za Głowę Kapitana:",
+          "BountyPlaceholder": "np. 15 Złotych Koron dla tego, kto dostarczy Kapitana",
+          "AlliesPlaceholder": "Oficerowie garnizonu, kwatermistrze, markietanki, cyrulicy...",
+          "Rivals": "Wrogowie i Konkurencyjne Kompanie:",
+          "RivalsPlaceholder": "Inne kompanie, urażeni szlachcice, zawiedzeni pracodawcy...",
+          "Patron": "Pracodawca i Kontrakt",
+          "PatronName": "Imię Pracodawcy:",
+          "PatronNamePlaceholder": "np. Graf Boris, Rada Miasta Altdorf, kupiec Salzer...",
+          "PatronTitle": "Pozycja / Tytuł Pracodawcy:",
+          "PatronTitlePlaceholder": "np. Elektor, Kapitan Garnizonu, Mistrz Cechu...",
+          "PatronRelation": "Zaufanie i Relacja z Pracodawcą:",
+          "PatronCut": "Żołd i Warunki Kontraktu:",
+          "PatronCutPlaceholder": "np. 5 ZK miesięcznie, połowa z góry, prawo do zdobyczy...",
+          "PatronNotes": "Kontakt i Zobowiązania wobec Pracodawcy:",
+          "Code": "Regulamin Kompanii / Artykuły Wojenne:",
+          "CodePlaceholder": "Przysięga pod sztandarem, podział zdobyczy, kara za dezercję...",
+          "Notes": "Kronika / Notatki Kapitana:",
+          "NotesPlaceholder": "Historia kompanii, dawne bitwy, cele kampanii..."
+        },
+        "DashTab": {
+          "CampCaption": "Wpływa na regenerację sił i nastroje w kompanii podczas odpoczynku. Teren: <strong>{terrain}</strong> (zmiana w zakładce Trofea).",
+          "FlavorHigh": "Ludzie pójdą za Kapitanem w ogień! Gotowi na każde poświęcenie.",
+          "FlavorMid": "Stabilna dyscyplina. Kompania wykonuje polecenia bez marudzenia.",
+          "DepositHint": "Przelej monety ze swojej sakwy do wspólnego skarbca kompanii (+1 Morale przy hojnych datkach)",
+          "WithdrawHint": "Pobierz monety ze skarbca kompanii (Pobranie > 10 SS wymaga testu Dowodzenia — ryzyko utraty Morale!)",
+          "ResolveWeek": "Rozpatrz Tydzień Kompanii",
+          "TablesHint": "Mistrz Gry: otwórz tabele losowe plotek i wydarzeń postoju (RollTable, folder kompanii)",
+          "ChronicleEmpty": "Brak odnotowanych zdarzeń. Kompania dopiero wyrusza na trakt...",
+          "Morale": "Morale Kompanii",
+          "FlavorLow": "Ludzie szemrzą po kątach, brakuje im grosza i gorzały."
+        },
+        "TacticsTab": {
+          "NoRetinue": "<strong>Brak zbrojnych w Świcie!</strong> Kapitan walczy sam. Rozkazy specjalistyczne są zablokowane. Przypisz ludzi w zakładce <em>Przydziały</em>.",
+          "HowTo": "Rozkazy wydajesz poprzez <strong>Test Dowodzenia</strong> Kapitana (porażka oznacza brak efektu; jeden rozkaz na rundę, zużywa Akcję Kapitana) lub wydając <strong>Przewagę</strong> (automatyczny sukces).",
+          "FilterEmpty": "Żadna aktywna osoba w świcie nie odblokowuje taktyk. Dodaj zbrojnego do świty lub pokaż wszystkie taktyki.",
+          "PersonalAlways": "Rozkaz osobisty Kapitana (dostępny zawsze)",
+          "WoundRisk": "Ryzyko Rany Zbrojnego"
+        },
+        "Title": "Kompania",
+        "Strengths": {
+          "tight_lipped": {
+            "Desc": "Przesłuchiwany nigdy nie zdradzi planów kompanii"
+          },
+          "tough": {
+            "Desc": "+10 do rekwizycji, kontraktów i eskort"
+          },
+          "stealthy": {
+            "Desc": "+10 do patroli i wart"
+          },
+          "talkative": {
+            "Desc": "+10 do sprzedaży trofeów"
+          },
+          "eagle_eye": {
+            "Desc": "+10 do patroli i wart"
+          },
+          "trusted_face": {
+            "Desc": "+10 do sprzedaży trofeów"
+          },
+          "local_knowledge": {
+            "Desc": "+10 do patroli i wart"
+          },
+          "field_medic": {
+            "Desc": "+10 do opieki nad rannymi; 50% szans na natychmiastowe leczenie"
+          },
+          "brutal": {
+            "Desc": "+20 do rekwizycji i kontraktów"
+          },
+          "war_veteran": {
+            "Desc": "+10 do eskort"
+          },
+          "iron_will": {
+            "Desc": "+10 do eskort i opieki nad rannymi; odporny na ból"
+          },
+          "keen_senses": {
+            "Desc": "+10 do patroli i wart; wyczuwa szpiegów"
+          },
+          "quick_escape": {
+            "Desc": "+10 do eskort"
+          },
+          "juggler": {
+            "Desc": "+10 do eskort"
+          },
+          "poacher": {
+            "Desc": "+10 do patroli i wart; przynosi dodatkową rację żywności"
+          },
+          "knife_master": {
+            "Desc": "+10 do eskort"
+          },
+          "smooth_liar": {
+            "Desc": "+10 do sprzedaży trofeów"
+          },
+          "surefooted": {
+            "Desc": "+10 do patroli i wart"
+          },
+          "night_owl": {
+            "Desc": "+10 do patroli i wart"
+          },
+          "ox_strong": {
+            "Desc": "+10 do rekwizycji i kontraktów"
+          },
+          "steady_nerves": {
+            "Desc": "+10 do eskort i opieki nad rannymi"
+          },
+          "haggler": {
+            "Desc": "+10 do sprzedaży trofeów"
+          }
+        },
+        "WindowTitle": "WFRP4e – Kompania Zbrojnych",
+        "DefaultGangName": "Kompania",
+        "Terrains": {
+          "city": {
+            "Fence": "Handlarz broni w dokach",
+            "Makeshift": "Podmiejski obóz",
+            "Raid": "Miejska milicja przychodzi wyrównać rachunki!"
+          },
+          "village": {
+            "Fence": "Kramarz na jarmarku",
+            "Raid": "Chłopi chwycili za widły – sołtys wezwał landsknechtów!"
+          },
+          "forest": {
+            "Fence": "Obozowi markietanie",
+            "Comfortable": "Warowny obóz",
+            "Raid": "Rywale z wrogiej kompanii zastawili zasadzkę!"
+          },
+          "mountains": {
+            "Fence": "Krasnoludzcy płatnerze",
+            "Raid": "Oddział krasnoludzkich strażników zagradza drogę!"
+          }
+        },
+        "Tiers": {
+          "easy": {
+            "Name": "Skromny kontrakt",
+            "Desc": "+20 do testu, połowa zapłaty"
+          },
+          "normal": {
+            "Name": "Zwykły kontrakt"
+          },
+          "rich": {
+            "Name": "Lukratywny kontrakt",
+            "Desc": "−20 do testu, podwójna zapłata, każda porażka grozi stratami"
+          }
+        },
+        "Tokens": {
+          "recon": {
+            "Desc": "+20 do następnego kontraktu"
+          },
+          "commotion": {
+            "Name": "Zgranie",
+            "Desc": "+20 do następnego zlecenia z testem (dziś); po musztrze ludzie działają jak jeden"
+          },
+          "lead": {
+            "Desc": "Lukratywny kontrakt bez kary −20"
+          }
+        },
+        "MissionCategories": {
+          "resources": {
+            "Name": "Żołd i Zapasy",
+            "Hint": "Pieniądze, zapasy, sprzedaż trofeów"
+          },
+          "intel": {
+            "Hint": "Rozpoznanie terenu"
+          },
+          "operations": {
+            "Hint": "Eskorty i kontrakty"
+          }
+        },
+        "Missions": {
+          "fence": {
+            "Name": "Spieniężenie Trofeów",
+            "Reward": "gotówka za trofea (stawka kupca)",
+            "Names": {
+              "city": "Handlarz Broni w Dokach",
+              "village": "Handel na Jarmarku",
+              "forest": "Obozowi Markietanie",
+              "mountains": "Krasnoludzcy Płatnerze"
+            },
+            "Desc": "Sprzedaż zdobycznej broni i rynsztunku. Cena zależy od kupca i testu Targowania."
+          },
+          "tend_wounded": {
+            "Desc": "Zmiana opatrunków i zioła dla rannego towarzysza broni."
+          }
+        },
+        "Badges": {
+          "fence": "Sprzedaż trofeów",
+          "retinue": "Świta Kapitana"
+        },
+        "Notoriety": {
+          "0": {
+            "Name": "Dobra Marka",
+            "Desc": "Pracodawcy polecają was sobie nawzajem, a miejscowi otwierają bramy."
+          },
+          "1": {
+            "Name": "Szemrane Opinie",
+            "Desc": "W szynkach ktoś narzeka na waszych ludzi. Nikt nie robi z tego sprawy."
+          },
+          "2": {
+            "Name": "Zwrócenie Uwagi",
+            "Desc": "Miejscowi chowają zboże na wasz widok. Rajcy czytają kontrakty dwa razy."
+          },
+          "3": {
+            "Name": "Czarna Lista",
+            "Desc": "Cechy i miasta ostrzegają się przed waszą kompanią. Trudniej o kwatery i kontrakt."
+          },
+          "4": {
+            "Name": "Wilki Wojny",
+            "Desc": "Mówi się o was jak o bandzie grabieżców. Rywale i milicje szukają okazji."
+          },
+          "5": {
+            "Name": "Wyjęci Spod Prawa",
+            "Desc": "Elektor wyznaczył nagrodę za kompanię. Bramy zamknięte, wojsko na tropie."
+          }
+        },
+        "Risk": {
+          "stealth": "Wpadka: Zła sława, areszt",
+          "Result": {
+            "FaceRemembered": "Miejscowi zapamiętali barwy kompanii – Zła sława +1.",
+            "Arrested": "{name} trafia pod klucz miejskiej milicji – <strong>Aresztowany</strong> na {time}. Zła sława +1.",
+            "Chase": "Awantura z miejscowymi kończy się skargą do rady – Zła sława +1.",
+            "WoundedLoud": "{name} zostaje <strong>Ranny</strong>, a o krwawej potyczce mówi cała okolica – Zła sława +1."
+          }
+        },
+        "Mod": {
+          "Heat": "Zła sława {value}",
+          "ShadowTongue": "Żargon Weteranów",
+          "Rank": "Ranga w kompanii"
+        },
+        "Tabs": {
+          "Loot": "Trofea"
+        },
+        "LootTab": {
+          "TerrainHint": "Teren zmienia wydarzenia nocy, koszt kwater i kupca trofeów.",
+          "TerrainLabel": "Teren kompanii",
+          "InHideout": "Trofea w obozie",
+          "FenceNow": "Kupiec da teraz ok.",
+          "SendToFence": "Wyślij do kupca",
+          "FenceKeen": "kupiec chętny",
+          "GiveChief": "Przekaż Kapitanowi jako przedmiot",
+          "Discard": "Pozbądź się trofeum",
+          "Empty": "Obóz jest pusty. Trofea przynoszą udane patrole i kontrakty.",
+          "HotHint": "",
+          "HelpRecon": "<strong>Rozpoznanie</strong> (Patrol): +20 do następnego kontraktu.",
+          "HelpHotWeek": "Trofea nie tracą na wartości.",
+          "HelpHotNight": "Trofea nie tracą na wartości."
+        },
+        "Bribe": {
+          "Hush": "Uciszenie sprawy: Zła sława −1 (20 SS)"
+        },
+        "Report": {
+          "MissionFlavor": "Rozkaz Kapitana",
+          "QueueTitle": "Raport rozkazów kompanii",
+          "QueueFlavor": "Rozkazy rozpatrzone przez MG"
+        },
+        "LootNames": {
+          "weapons": [
+            "Pęk zdobycznych mieczy",
+            "Kusza z rozbitego oddziału",
+            "Halabarda z herbem wroga",
+            "Tarcza ze zdartym malowidłem",
+            "Wiązka grotów włóczni",
+            "Oficerski rapier"
+          ],
+          "metal": [
+            "Pogięty napierśnik",
+            "Worek kolczych pierścieni",
+            "Hełm z pióropuszem",
+            "Stos nagolenników",
+            "Zdobyczna kolczuga"
+          ],
+          "valuables": [
+            "Sygnet poległego oficera",
+            "Srebrny ryngraf",
+            "Zdobyty proporzec kompanii",
+            "Pozłacana klamra pasa",
+            "Sakiewka z żołdem wroga",
+            "Medalion na łańcuchu",
+            "Puchar z oficerskiego namiotu",
+            "Złota ostroga"
+          ],
+          "goods": [
+            "Skrzynia pasów i rzemieni",
+            "Beczka prochu",
+            "Wóz taborowy z płótnem",
+            "Bela namiotowego sukna",
+            "Końskie siodła",
+            "Kocioł polowy",
+            "Zapas podków",
+            "Paczka bandaży"
+          ]
+        }
+      },
+      "outlaws": {
+        "Missions": {
+          "poaching": {
+            "Desc": "Wnyki i łuk w pańskim lesie. Świeże mięso dla bandy.",
+            "Descs": {
+              "mountains": "Polowanie na skalnych półkach. Świeże mięso dla bandy."
+            }
+          }
+        },
+        "Ranks": {
+          "lieutenant": {
+            "Desc": "+30 do testów, autorytet (+1 Morale bandy), rozkazy dowódcze (unikalna ranga — limit 1 na bandę; wymaga ponad 60-80 dni służby)."
+          }
+        },
+        "Roles": {
+          "scout": {
+            "Desc": "Leśny i gościńcowy tropiciel. Czyta ślady, wypatruje pościgu i prowadzi bandę ścieżkami, którymi nie chodzą strażnicy."
+          }
+        },
+        "Strengths": {
+          "tight_lipped": {
+            "Desc": "Przesłuchiwany przez straż nigdy nie zdradzi kryjówki bandy"
+          },
+          "tough": {
+            "Desc": "+10: Napad na Trakcie, Zastraszanie / Wymuszenie, Dywersja i Zadyma, Odwet na Łowcach, Okup, Myto na Moście"
+          },
+          "stealthy": {
+            "Desc": "+10: Zwiad Terenu"
+          },
+          "nimble": {
+            "Desc": "+10: Szaber i Zbieractwo"
+          },
+          "talkative": {
+            "Desc": "+10: Nasłuch w Szynku, Upłynnienie Łupów"
+          },
+          "eagle_eye": {
+            "Desc": "+10: Zwiad Terenu, Kłusownictwo, Sabotaż, Maskowanie Śladów"
+          },
+          "trusted_face": {
+            "Desc": "+10: Upłynnienie Łupów, Przekupstwo"
+          },
+          "local_knowledge": {
+            "Desc": "+10: Zwiad Terenu, Szaber i Zbieractwo"
+          },
+          "field_medic": {
+            "Desc": "+10: Opieka nad Rannymi; 50% szans na natychmiastowe leczenie"
+          },
+          "brutal": {
+            "Desc": "+20: Napad na Trakcie, Zastraszanie / Wymuszenie, Odwet na Łowcach, Okup, Myto na Moście"
+          },
+          "war_veteran": {
+            "Desc": "+10: Napad na Trakcie, Dywersja i Zadyma, Sabotaż, Maskowanie Śladów, Odwet na Łowcach, Myto na Moście"
+          },
+          "horse_thief": {
+            "Desc": "+10: Szaber i Zbieractwo"
+          },
+          "iron_will": {
+            "Desc": "+10: Dywersja i Zadyma, Maskowanie Śladów, Opieka nad Rannymi; odporny na ból"
+          },
+          "keen_senses": {
+            "Desc": "+10: Zwiad Terenu, Nasłuch w Szynku; wyczuwa szpiegów"
+          },
+          "quick_escape": {
+            "Desc": "+10: Dywersja i Zadyma"
+          },
+          "arsonist": {
+            "Desc": "+20: Sabotaż"
+          },
+          "juggler": {
+            "Desc": "+10: Dywersja i Zadyma"
+          },
+          "poacher": {
+            "Desc": "+10: Zwiad Terenu, Szaber i Zbieractwo, Kłusownictwo; przynosi dodatkową rację żywności"
+          },
+          "drinking_buddy": {
+            "Desc": "+10: Nasłuch w Szynku"
+          },
+          "knife_master": {
+            "Desc": "+10: Dywersja i Zadyma"
+          },
+          "smooth_liar": {
+            "Desc": "+10: Upłynnienie Łupów, Przekupstwo"
+          },
+          "surefooted": {
+            "Desc": "+10: Zwiad Terenu, Grabież Kopalni, Maskowanie Śladów"
+          },
+          "night_owl": {
+            "Desc": "+10: Zwiad Terenu"
+          },
+          "pack_rat": {
+            "Desc": "+10: Szaber i Zbieractwo, Kradzież z Obejścia"
+          },
+          "ox_strong": {
+            "Desc": "+10: Napad na Trakcie, Grabież Kopalni, Zastraszanie / Wymuszenie, Odwet na Łowcach, Okup, Myto na Moście"
+          },
+          "animal_friend": {
+            "Desc": "+10: Szaber i Zbieractwo, Kradzież z Obejścia, Kłusownictwo"
+          },
+          "steady_nerves": {
+            "Desc": "+10: Przekupstwo, Dywersja i Zadyma, Maskowanie Śladów, Opieka nad Rannymi"
+          },
+          "haggler": {
+            "Desc": "+10: Upłynnienie Łupów"
+          },
+          "lucky": {
+            "Desc": "+10: Maskowanie Śladów"
+          }
+        },
+        "Flaws": {
+          "kleptomaniac": {
+            "Camp": "okrada skarbiec bandy (1 SS)"
+          },
+          "gambler": {
+            "Camp": "przegrywa w karty pieniądze bandy"
+          },
+          "traitor": {
+            "Camp": "wyciekają informacje o bandzie — +1 Rozgłos"
+          },
+          "coward": {
+            "Desc": "−10: Dywersja i Zadyma, Sabotaż"
+          },
+          "alcoholic": {
+            "Desc": "−10: Zwiad Terenu, Maskowanie Śladów; 20% szans na niedyspozycję po postoju"
+          },
+          "lazy": {
+            "Desc": "−10: Szaber i Zbieractwo"
+          },
+          "old_slow": {
+            "Desc": "−10: Zwiad Terenu"
+          },
+          "superstitious": {
+            "Desc": "−10: Sabotaż"
+          },
+          "repulsive": {
+            "Desc": "−10: Nasłuch w Szynku, Upłynnienie Łupów (odpycha ludzi)"
+          },
+          "one_eyed": {
+            "Desc": "−10: Zwiad Terenu, Maskowanie Śladów"
+          },
+          "clumsy": {
+            "Desc": "−10: Szaber i Zbieractwo"
+          },
+          "hothead": {
+            "Desc": "−10: Przekupstwo, Maskowanie Śladów"
+          },
+          "squeamish": {
+            "Desc": "−10: Zastraszanie / Wymuszenie, Opieka nad Rannymi, Okup"
+          },
+          "snorer": {
+            "Desc": "−10: Zwiad Terenu"
+          },
+          "bad_leg": {
+            "Desc": "−10: Grabież Kopalni"
+          },
+          "proud": {
+            "Desc": "−10: Nasłuch w Szynku, Upłynnienie Łupów, Przekupstwo"
+          },
+          "jinxed": {
+            "Desc": "−10: Zwiad Terenu"
+          }
+        },
+        "Perks": {
+          "craft_blacksmith": {
+            "Desc": "Praca przy miechu i kowadle daje krzepę i znajomość oręża. Daje stałe +10 do zleceń z bronią oraz 50% zniżki na rynsztunek dla bandy."
+          },
+          "craft_innkeeper": {
+            "Desc": "Zna sekrety warzenia trunków i ludzkie języki. Podczas każdego nocnego postoju podnosi Morale bandy o +1, a nasłuch w szynku przynosi dodatkową plotkę."
+          },
+          "battle_scarred": {
+            "Desc": "Przeżył wiele ran i potyczek. Nawet będąc rannym, nie obniża Morale bandy i może pełnić nocną wartę w obozowisku bez kar."
+          },
+          "cold_blooded": {
+            "Desc": "Bezwzględny opanowany profesjonalista. W razie niepowodzenia misji operacyjnej ignoruje pierwszą komplikację lub utratę morale bandy."
+          }
+        },
+        "Notify": {
+          "SelectCharacter": "Wybierz token postaci lub stwórz postać gracza, aby otworzyć panel bandy!",
+          "OpenFailed": "Błąd podczas otwierania panelu bandy: {error}",
+          "NoAccess": "Nie masz dostępu do bandy tej postaci.",
+          "GMResolvesWeek": "Tydzień bandy rozpatruje Mistrz Gry.",
+          "WeekAlreadyResolved": "Tydzień tej bandy został już rozpatrzony dla tego dnia świata. Przesuń czas gry.",
+          "CampAlreadyResolved": "Nocny postój tej bandy został już rozstrzygnięty dla tego dnia świata."
+        },
+        "Orders": {
+          "Effects": {
+            "MustFace": "rzuca się na szermierza i ignoruje resztę bandy do końca rundy"
+          },
+          "retaliation": {
+            "Name": "Odwet Bandy"
+          },
+          "challenge": {
+            "Effect": "Przeciwnik musi zdać test Siły Woli; przy porażce rzuca się na szermierza i ignoruje resztę bandy do końca rundy."
+          },
+          "regroup": {
+            "Desc": "Prawa Ręka klaszcze, gwiżdże i banda wraca do szyku."
+          },
+          "circle": {
+            "Desc": "Ludzie zamykają krąg wokół Herszta, plecami do siebie, twarzami do wroga."
+          }
+        },
+        "Meta": {
+          "TargetHint": "Próg testu uproszczonego (przed modyfikatorami bandy)"
+        },
+        "Relation": {
+          "strained": {
+            "Desc": "Protektor patrzy na ręce. Spóźnienia grożą gniewem."
+          },
+          "favorite": {
+            "Name": "Faworyci Protektora"
+          }
+        },
+        "Recruit": {
+          "NoActor": "Nie znaleziono aktora bandy powiązanego z tą rekrutacją!",
+          "Joined": "{name} dołączył(a) do bandy!",
+          "ChatText": "<strong>{user}</strong> zwerbował(a) banitę: <strong>{name}</strong> ({role}) do bandy.",
+          "Flavor": "Rekrutacja: Nowe Twarze w Bandzie"
+        },
+        "Mod": {
+          "Rank": "Ranga bandy"
+        },
+        "Ops": {
+          "PatronCut": "Dola Protektora ({percent}%): {cut} · do skarbca: {net}."
+        },
+        "Loot": {
+          "ItemDesc": "Łup bandy: {origin}.",
+          "ItemDescHot": "Łup bandy: {origin} – gorący towar, ktoś go szuka.",
+          "DiscardText": "Wyrzucić, oddać albo ukryć na dobre <strong>{name}</strong> (~{value} SS)? Łup zniknie z kryjówki bandy."
+        },
+        "Report": {
+          "QueueTitle": "Raport przydziałów bandy"
+        },
+        "Card": {
+          "Bribe": {
+            "NotArrested": "Ten członek bandy nie siedzi w areszcie.",
+            "HeatDown": "Raport o bandzie ląduje w piecu – Rozgłos −1."
+          },
+          "CoverTracks": {
+            "HeatDown": "Ślady bandy się zacierają – Rozgłos -1."
+          },
+          "Intimidate": {
+            "Fail": "{name} próbował(a) nastraszyć cel, ale napotkał(a) opór. Ludzie szemrzą (Morale -1)."
+          }
+        },
+        "Camp": {
+          "TitleWeek": "Tydzień Bandy",
+          "FlavorWeek": "Raport: Tydzień Bandy",
+          "GMResolvesWeekHint": "Tydzień bandy rozpatruje Mistrz Gry. Zaplanuj przydziały w zakładce Przydziały.",
+          "Food": {
+            "Empty": "Brak zapasów! Ludzie poszli spać głodni (-1 Morale)"
+          }
+        },
+        "Raid": {
+          "Escaped": "Wartownicy w porę podnieśli alarm – banda uciekła zaułkami, porzucając {lost} racji zapasów."
+        },
+        "Treasury": {
+          "Generous": "Banda widzi hojność Herszta — nastroje w obozie rosną! (+1 Morale)",
+          "Deposited": "Wpłacono {amount} do skarbca bandy.",
+          "DepositTitle": "Wpłata do Skarbca Bandy",
+          "NewBalance": "Nowy stan skarbca bandy: <strong>{amount}</strong>.",
+          "FlavorDeposit": "Finanse Bandy",
+          "StashShort": "W skarbcu bandy nie ma tylu monet! Dostępne: {have}",
+          "AuthorityLost": "Ludzie szemrzą po kątach, że Herszt podkrada wspólny łup! Test Dowodzenia nieudany (Rzut: {roll} vs {target}). Banda traci -{loss} Morale!",
+          "WithdrawTitle": "Wypłata ze Skarbca Bandy"
+        },
+        "Supplies": {
+          "StashShort": "W skarbcu bandy brakuje monet! Wymagane: {need}, dostępne: {have}",
+          "SourceStash": "skarbiec bandy"
+        },
+        "Roster": {
+          "GMOnlyDelete": "Tylko MG może usuwać członków bandy.",
+          "DeleteTitle": "Usuń członka bandy",
+          "DeleteText": "Czy na pewno usunąć <strong>{name}</strong> ze bandy?"
+        },
+        "Fence": {
+          "NoLoot": "Banda nie ma żadnych łupów do sprzedania."
+        },
+        "Terrain": {
+          "RacketWaits": "Haracz w mieście czeka na powrót bandy.",
+          "Changed": "Banda zmienia teren: {terrain}. Paser: {fence}."
+        },
+        "CampDialog": {
+          "UseSupplies": "Wydaj zapasy ze spiżarni bandy:",
+          "TitleWeek": "Tydzień Bandy – rozpatrzenie",
+          "WeekDone": "Tydzień bandy rozpatrzony – raport na czacie.",
+          "Fasting": "Ludzie nie jedzą"
+        },
+        "RecruitDialog": {
+          "Intro": "Przedstaw graczom propozycje banitów na czacie. Gracze będą mogli wybrać jednego rekruta, który dołączy do bandy."
+        },
+        "Upgrade": {
+          "Stash": "Skarbiec Bandy",
+          "OneLieutenant": "W bandzie może być tylko jedna Prawa Ręka ({name})!"
+        },
+        "TreasuryDialog": {
+          "DepositHint": "Wpłata ponad 1 ZK (20 SS) nagradzana jest <strong>+1 Morale</strong> dla całej bandy!",
+          "Balance": "Stan skarbca bandy",
+          "MutinyRisk": "<strong>Ryzyko Buntu:</strong> Banici pilnują wspólnego łupu! Pobranie powyżej 10 SS wymaga zdania testu Dowodzenia przez Herszta. W razie niepowodzenia banda traci <strong>1–2 Morale</strong>!"
+        },
+        "SuppliesDialog": {
+          "FromStash": "Skarbiec Bandy (dostępne: {amount})"
+        },
+        "Chat": {
+          "GangTest": "Test uproszczony bandy"
+        },
+        "RecruitCard": {
+          "Title": "Nowe Twarze w Bandzie: Rekrutacja",
+          "Joined": "Postać dołączyła do bandy!",
+          "Footer": "Rekrutacja Bandy"
+        },
+        "Sheet": {
+          "ChiefTitle": "Herszt Bandy",
+          "Eyebrow": "Karta bandy",
+          "NamePlaceholder": "Nazwa Bandy / Świty",
+          "NameTitle": "Kliknij, aby zmienić nazwę bandy",
+          "MottoTitle": "Motto bandy",
+          "MoraleTitle": "Morale Bandy: {value}/10"
+        },
+        "LootTab": {
+          "TerrainLabel": "Teren bandy"
+        },
+        "InfoTab": {
+          "GMOnlyPatron": "Tylko Mistrz Gry może modyfikować dane Protektora",
+          "PatronSetByGM": "Szczegóły o Protektorze ustala Mistrz Gry",
+          "RelationShort": {
+            "strained": "Napięte (Podejrzliwość, protektor patrzy na ręce)"
+          },
+          "Code": "Kodeks Bandy / Zasady Wewnętrzne:",
+          "Hideout": "Główna Kryjówka / Leże Bandy:",
+          "Territory": "Gościniec / Las Bandy:",
+          "Rivals": "Wrogowie i Konkurencyjne Bandy:",
+          "RivalsPlaceholder": "Inne bandy, leśniczowie, łowcy nagród, urażeni szlachcice...",
+          "Patron": "Protektor Bandy",
+          "PatronName": "Imię Protektora:",
+          "PatronNamePlaceholder": "np. zubożały rycerz, leśniczy grafa, karczmarz z rozstajów...",
+          "PatronTitle": "Pozycja / Tytuł Protektora:",
+          "PatronTitlePlaceholder": "np. Rycerz Rabuś, Wójt, Kapłan Taala...",
+          "PatronRelation": "Zaufanie i Relacja z Protektorem:",
+          "PatronCut": "Dola dla Protektora:",
+          "PatronCutPlaceholder": "np. co czwarta sakiewka, dziczyzna na święta...",
+          "PatronNotes": "Kontakt i Zobowiązania wobec Protektora:"
+        },
+        "DashTab": {
+          "CampCaption": "Wpływa na regenerację sił i nastroje w bandzie podczas odpoczynku. Teren: <strong>{terrain}</strong> (zmiana w zakładce Łupy).",
+          "Morale": "Morale Bandy",
+          "FlavorMid": "Stabilna dyscyplina. Banda wykonuje polecenia bez marudzenia.",
+          "DepositHint": "Przelej monety ze swojej sakwy do wspólnego skarbca bandy (+1 Morale przy hojnych datkach)",
+          "WithdrawHint": "Pobierz monety ze skarbca bandy (Pobranie > 10 SS wymaga testu Dowodzenia — ryzyko utraty Morale!)",
+          "ResolveWeek": "Rozpatrz Tydzień Bandy",
+          "TablesHint": "Mistrz Gry: otwórz tabele losowe plotek i wydarzeń postoju (RollTable, folder bandy)",
+          "ChronicleEmpty": "Brak odnotowanych zdarzeń. Banda dopiero wyrusza na trakt...",
+          "FlavorHigh": "Ludzie pójdą za Hersztem w ogień! Gotowi na każde poświęcenie.",
+          "FlavorLow": "Ludzie szemrzą po kątach, brakuje im grosza i gorzały."
+        },
+        "Title": "Banda",
+        "WindowTitle": "WFRP4e – Banda Banitów",
+        "DefaultGangName": "Banda",
+        "TacticCard": {
+          "NotHeard": "Ludzie nie usłyszeli rozkazu w zgiełku walki – <strong>brak efektu</strong>."
+        }
+      },
+      "smugglers": {
+        "Terrains": {
+          "forest": {
+            "Comfortable": "Ziemianka przemytników",
+            "Raid": "Strażnicy dróg na tropie!"
+          },
+          "city": {
+            "Raid": "Rewizja celników w dokach!"
+          },
+          "village": {
+            "Raid": "Chłopi donieśli – sołtys prowadzi celników!"
+          },
+          "mountains": {
+            "Raid": "Krasnoludzka straż przełęczy przeszukuje juki!"
+          }
+        },
+        "Missions": {
+          "fence": {
+            "Name": "Upłynnienie Towarów",
+            "Reward": "gotówka za towary (stawka pasera)",
+            "Desc": "Sprzedaż towarów. Cena zależy od pasera, testu Targowania i tego, czy towar jest jeszcze gorący."
+          },
+          "bribe": {
+            "Reward": "uwolnienie z aresztu, Czujność −1 lub przysługa"
+          },
+          "cover_tracks": {
+            "Reward": "Czujność −1, spokojniejsza noc",
+            "Desc": "Zacieranie tropów i zmiana miejsca obozu. Jedyny sposób, by samemu obniżyć Czujność."
+          }
+        },
+        "MissionCategories": {
+          "resources": {
+            "Name": "Zasoby i Towary"
+          }
+        },
+        "Ranks": {
+          "rookie": {
+            "Desc": "Świeży przemytnik bez większego doświadczenia na szlaku."
+          },
+          "lieutenant": {
+            "Desc": "+30 do testów, autorytet (+1 Morale załogi), rozkazy dowódcze (unikalna ranga — limit 1 na załogę; wymaga ponad 60-80 dni służby)."
+          }
+        },
+        "Strengths": {
+          "tight_lipped": {
+            "Desc": "Przesłuchiwany przez straż nigdy nie zdradzi kryjówki załogi"
+          },
+          "tough": {
+            "Desc": "+10: Dywersja i Zadyma"
+          },
+          "stealthy": {
+            "Desc": "+10: Zwiad Terenu, Przemyt, Kurs Barką"
+          },
+          "nimble": {
+            "Desc": "+10: Szaber i Zbieractwo, Fałszowanie Dokumentów, Odbiór Kontrabandy"
+          },
+          "talkative": {
+            "Desc": "+10: Nasłuch w Szynku, Upłynnienie Towarów"
+          },
+          "eagle_eye": {
+            "Desc": "+10: Zwiad Terenu, Maskowanie Śladów, Skrytka"
+          },
+          "trusted_face": {
+            "Desc": "+10: Upłynnienie Towarów, Przekupstwo"
+          },
+          "local_knowledge": {
+            "Desc": "+10: Zwiad Terenu, Szaber i Zbieractwo, Odbiór Kontrabandy"
+          },
+          "field_medic": {
+            "Desc": "+10: Opieka nad Rannymi; 50% szans na natychmiastowe leczenie"
+          },
+          "war_veteran": {
+            "Desc": "+10: Dywersja i Zadyma, Maskowanie Śladów, Skrytka"
+          },
+          "horse_thief": {
+            "Desc": "+10: Szaber i Zbieractwo, Przemyt, Kurs Barką, Odbiór Kontrabandy"
+          },
+          "iron_will": {
+            "Desc": "+10: Dywersja i Zadyma, Maskowanie Śladów, Opieka nad Rannymi, Skrytka; odporny na ból"
+          },
+          "keen_senses": {
+            "Desc": "+10: Zwiad Terenu, Nasłuch w Szynku; wyczuwa szpiegów"
+          },
+          "quick_escape": {
+            "Desc": "+10: Dywersja i Zadyma, Przemyt, Kurs Barką"
+          },
+          "juggler": {
+            "Desc": "+10: Dywersja i Zadyma"
+          },
+          "poacher": {
+            "Desc": "+10: Zwiad Terenu, Szaber i Zbieractwo, Odbiór Kontrabandy; przynosi dodatkową rację żywności"
+          },
+          "drinking_buddy": {
+            "Desc": "+10: Nasłuch w Szynku"
+          },
+          "knife_master": {
+            "Desc": "+10: Dywersja i Zadyma"
+          },
+          "smooth_liar": {
+            "Desc": "+10: Upłynnienie Towarów, Przekupstwo, Fałszowanie Dokumentów"
+          },
+          "surefooted": {
+            "Desc": "+10: Zwiad Terenu, Maskowanie Śladów, Skrytka"
+          },
+          "night_owl": {
+            "Desc": "+10: Zwiad Terenu"
+          },
+          "pack_rat": {
+            "Desc": "+10: Szaber i Zbieractwo, Odbiór Kontrabandy"
+          },
+          "animal_friend": {
+            "Desc": "+10: Szaber i Zbieractwo, Przemyt, Kurs Barką, Odbiór Kontrabandy"
+          },
+          "steady_nerves": {
+            "Desc": "+10: Przekupstwo, Dywersja i Zadyma, Maskowanie Śladów, Opieka nad Rannymi, Skrytka"
+          },
+          "haggler": {
+            "Desc": "+10: Upłynnienie Towarów"
+          },
+          "lucky": {
+            "Desc": "+10: Przemyt, Maskowanie Śladów, Kurs Barką, Skrytka"
+          }
+        },
+        "Flaws": {
+          "kleptomaniac": {
+            "Camp": "okrada skarbiec załogi (1 SS)"
+          },
+          "wanted": {
+            "Desc": "+1 Czujność po wpadce; ryzyko rozpoznania"
+          },
+          "gambler": {
+            "Camp": "przegrywa w karty pieniądze załogi"
+          },
+          "traitor": {
+            "Desc": "10% szans na wyciek informacji przy misji szpiegowskiej (+1 Czujność)",
+            "Camp": "wyciekają informacje o załodze — +1 Czujność"
+          },
+          "in_debt": {
+            "Desc": "10% szans po postoju, że wierzyciele węszy wokół kryjówki (+1 Czujność)",
+            "Camp": "wierzyciele depczą mu po piętach — +1 Czujność"
+          },
+          "clumsy": {
+            "Desc": "−10: Szaber i Zbieractwo, Fałszowanie Dokumentów, Odbiór Kontrabandy"
+          },
+          "bloodthirsty": {
+            "Desc": "Każda udana dywersja lub zastraszanie daje +1 Czujność przez niepotrzebne okrucieństwo"
+          },
+          "witchhunter_mark": {
+            "Desc": "Porażka podnosi Czujność"
+          },
+          "coward": {
+            "Desc": "−10: Dywersja i Zadyma"
+          },
+          "alcoholic": {
+            "Desc": "−10: Zwiad Terenu, Maskowanie Śladów, Skrytka; 20% szans na niedyspozycję po postoju"
+          },
+          "loudmouth": {
+            "Desc": "−10: Przemyt, Kurs Barką"
+          },
+          "lazy": {
+            "Desc": "−10: Szaber i Zbieractwo, Odbiór Kontrabandy"
+          },
+          "old_slow": {
+            "Desc": "−10: Zwiad Terenu"
+          },
+          "repulsive": {
+            "Desc": "−10: Nasłuch w Szynku, Upłynnienie Towarów (odpycha ludzi)"
+          },
+          "one_eyed": {
+            "Desc": "−10: Zwiad Terenu, Maskowanie Śladów, Skrytka"
+          },
+          "afraid_horses": {
+            "Desc": "−10: Przemyt, Kurs Barką"
+          },
+          "hothead": {
+            "Desc": "−10: Przekupstwo, Maskowanie Śladów, Skrytka"
+          },
+          "squeamish": {
+            "Desc": "−10: Opieka nad Rannymi"
+          },
+          "snorer": {
+            "Desc": "−10: Zwiad Terenu"
+          },
+          "bad_leg": {
+            "Desc": "−10: Przemyt, Kurs Barką"
+          },
+          "proud": {
+            "Desc": "−10: Nasłuch w Szynku, Upłynnienie Towarów, Przekupstwo"
+          },
+          "jinxed": {
+            "Desc": "−10: Zwiad Terenu"
+          }
+        },
+        "Perks": {
+          "craft_chirurgeon": {
+            "Desc": "Zanim zszedł na trakt, zszywał rany i składał kości. Podczas nocnego postoju automatycznie leczy 1 rannego przemytnika bez zużycia zapasów."
+          },
+          "craft_blacksmith": {
+            "Desc": "Praca przy miechu i kowadle daje krzepę i znajomość oręża. Daje stałe +10 do zleceń z bronią oraz 50% zniżki na rynsztunek dla załogi."
+          },
+          "craft_innkeeper": {
+            "Desc": "Zna sekrety warzenia trunków i ludzkie języki. Podczas każdego nocnego postoju podnosi Morale załogi o +1, a nasłuch w szynku przynosi dodatkową plotkę."
+          },
+          "blood_brotherhood": {
+            "Name": "Przysięga Krwi z Szyprem",
+            "Desc": "Złożył krwawy rytuał wierności. Nigdy nie zdradzi, nie ulega panice w obozie i może raz na sesję przyjąć Ranę Krytyczną wymierzoną w Szypra."
+          },
+          "battle_scarred": {
+            "Desc": "Przeżył wiele ran i potyczek. Nawet będąc rannym, nie obniża Morale załogi i może pełnić nocną wartę w obozowisku bez kar."
+          },
+          "cold_blooded": {
+            "Desc": "Bezwzględny opanowany profesjonalista. W razie niepowodzenia misji operacyjnej ignoruje pierwszą komplikację lub utratę morale załogi."
+          },
+          "guard_contacts": {
+            "Name": "Wtyka w Komorze Celnej",
+            "Desc": "Ma dłużnika lub krewnego wśród celników. Obniża ryzyko rewizji o połowę i daje ostrzeżenie przed nią."
+          },
+          "shadow_tongue": {
+            "Name": "Rzeczny Żargon",
+            "Desc": "Zna znaki flisaków i gwarę przystani. Zwiększa powodzenie wywiadu, śledzenia celu i paserstwa o +10."
+          }
+        },
+        "Notify": {
+          "SelectCharacter": "Wybierz token postaci lub stwórz postać gracza, aby otworzyć panel załogi!",
+          "OpenFailed": "Błąd podczas otwierania panelu załogi: {error}",
+          "SelectChiefForCamp": "Wybierz token postaci Szypra, aby zarządzić nocny postój.",
+          "SelectChief": "Wybierz token postaci Szypra na mapie.",
+          "NoAccess": "Nie masz dostępu do załogi tej postaci.",
+          "GMResolvesWeek": "Tydzień załogi rozpatruje Mistrz Gry.",
+          "WeekAlreadyResolved": "Tydzień tej załogi został już rozpatrzony dla tego dnia świata. Przesuń czas gry.",
+          "CampAlreadyResolved": "Nocny postój tej załogi został już rozstrzygnięty dla tego dnia świata."
+        },
+        "Orders": {
+          "Effects": {
+            "MustFace": "rzuca się na szermierza i ignoruje resztę załogi do końca rundy"
+          },
+          "meatshield": {
+            "Effect": "Cios trafia przemytnika zamiast Szypra. Przemytnik zostaje ranny (chyba że uratuje go pancerz lub ranga weterana).",
+            "Desc": "Flisak wypycha przemytnika przed szypra, prosto pod cios."
+          },
+          "bullrush": {
+            "Effect": "Wróg zostaje odepchnięty o 2 metry, traci 1 Przewagę, a Szyper natychmiast zamyka dystans do zwarcia bez testu.",
+            "Name": "Za Burtę!",
+            "Desc": "Flisak spycha przeciwnika wiosłem albo barkiem, najlepiej prosto do wody."
+          },
+          "flank": {
+            "Effect": "Cel traci gardę – nie może wykonać Uniku ani Parowania przeciwko najbliższemu atakowi Szypra!",
+            "Desc": "Czujka zachodzi wroga od strony wody."
+          },
+          "distract": {
+            "Effect": "Szyper zyskuje +2 Przewagi, a prowokowany wróg traci 1 Przewagę!",
+            "Name": "Awantura o Papiery",
+            "Desc": "Fałszerz zaczyna głośną awanturę o papiery i nikt nie wie, kto tu rządzi."
+          },
+          "draught": {
+            "Effect": "Szyper lub wskazany sojusznik usuwa 1 Stan Zmęczony (Fatigued) albo ignoruje go do końca następnej rundy.",
+            "Name": "Łyk z Beczki",
+            "Desc": "Szafarz otwiera beczułkę przemycanej brandy."
+          },
+          "rally": {
+            "Desc": "Szyper ryczy rozkaz, motywując kompanów i budząc strach u przeciwników.",
+            "Effect": "Usuwa ze wskazanego sojusznika Stan Złamany (Broken). Szyper zyskuje Przewagę równą SL testu (minimum 1)."
+          },
+          "coordinate": {
+            "Effect": "Szyper i do trzech sojuszników w promieniu 6 metrów mogą wykonać darmowy ruch o połowę Szybkości; wychodząc ze zwarcia nie muszą zdawać testu."
+          },
+          "retaliation": {
+            "Name": "Odwet Załogi",
+            "Desc": "Wściekły kontratak! Przemytnik natychmiast rzuca się pomścić ranionego przywódcę.",
+            "Effect": "Jeśli Szyper lub sojusznik otrzyma obrażenia, Prawa Ręka natychmiast kontratakuje LUB Szyper zyskuje +2 Przewagi w rewanżu."
+          },
+          "Notify": {
+            "AlreadyThisRound": "Szyper wydał już rozkaz w tej rundzie (rozkaz zużywa jego Akcję)."
+          },
+          "MeatShield": {
+            "Saved": "{name} rzuca się pod cios, lecz {reason} pochłania impet ataku! Przemytnik unika rany i pozostaje w gotowości!"
+          },
+          "Dialog": {
+            "ChiefHimself": "Szyper osobiście",
+            "LeadershipHint": "Szyper wykonuje test Dowodzenia. Sukces – rozkaz działa; porażka – brak efektu. Rozkaz zużywa Akcję Szypra (jeden na rundę).",
+            "Follower": "Podwładny"
+          },
+          "bodyblock": {
+            "Desc": "Ochroniarz zachodzi Szypra od frontu i przyjmuje uderzenia na tarczę i na plecy.",
+            "Effect": "Do końca rundy pierwszy atak wręcz na Szypra trafia ochroniarza zamiast niego. Szyper zyskuje 1 Przewagi (ma chwilę, by złapać oddech)."
+          },
+          "circle": {
+            "Desc": "Ludzie zamykają krąg wokół Szypra, plecami do siebie, twarzami do wroga.",
+            "Effect": "Szyper traci stan Zaskoczony (jeśli go ma) i zyskuje 1 Przewagi. Nikt nie podejdzie go od tyłu."
+          },
+          "parry": {
+            "Desc": "Szermierz wchodzi między Szypra a przeciwnika i odbija cios klingą.",
+            "Effect": "Pierwszy atak wręcz na Szypra w tej rundzie ma −20 do trafienia. Szyper zyskuje 1 Przewagi."
+          },
+          "riposte": {
+            "Effect": "Wskazany przeciwnik traci 1 Przewagi. Jeśli w tej rundzie zaatakuje Szypra i nie trafi, Szyper może od razu zadać mu cios z kontry."
+          },
+          "challenge": {
+            "Effect": "Przeciwnik musi zdać test Siły Woli; przy porażce rzuca się na szermierza i ignoruje resztę załogi do końca rundy."
+          },
+          "getaway": {
+            "Effect": "Szyper traci stan Powalony i może oddalić się o 4 metry bez prowokowania ataków okazyjnych.",
+            "Name": "Na Pokład!",
+            "Desc": "Sternik chwyta szypra za ramię i wciąga go na pokład."
+          },
+          "spot": {
+            "Effect": "Pierwszy atak Szypra w tej rundzie zyskuje +10 do trafienia. Szyper zyskuje 1 Przewagi.",
+            "Desc": "Sternik widzi, że wróg stoi na śliskiej desce."
+          },
+          "salve": {
+            "Effect": "Szyper (lub wskazany sojusznik) traci stan Krwawienie."
+          },
+          "regroup": {
+            "Desc": "Prawa Ręka klaszcze, gwiżdże i załoga wraca do szyku.",
+            "Effect": "Szyper traci stan Zaskoczony i zyskuje 1 Przewagi; sojusznicy ze Świty mogą przemieścić się o 2 metry bez kosztu."
+          },
+          "trip": {
+            "Name": "Bosak pod Nogi",
+            "Desc": "Flisak zahacza bosakiem nogę przeciwnika."
+          },
+          "grapple": {
+            "Desc": "Flisak chwyta przeciwnika wpół jak worek mąki."
+          },
+          "retreat": {
+            "Name": "Odbić od Brzegu!",
+            "Desc": "Sternik odpycha barkę od nabrzeża, zanim pościg zdąży wskoczyć."
+          },
+          "wagonwall": {
+            "Name": "Osłona za Burtą",
+            "Desc": "Sternik obraca barkę burtą do strzelców.",
+            "Effect": "Burta daje osłonę: ataki dystansowe na szypra w tej rundzie mają −10. Szyper zyskuje 1 Przewagi."
+          },
+          "smoke": {
+            "Name": "Zgasić Latarnie",
+            "Desc": "Czujka zrzuca latarnie do wody i przystań tonie w ciemności.",
+            "Effect": "Ciemność zasłania pole walki do końca następnej rundy: wrogowie mają −10 do Percepcji i testów Broni Zasięgowej. Załoga może wycofać się ze zwarcia bez testu."
+          },
+          "lure": {
+            "Desc": "Czujka gwiżdże z drugiego brzegu i ściąga pościg w złą stronę."
+          },
+          "forgedorder": {
+            "Name": "Fałszywy Glejt",
+            "Desc": "Fałszerz macha glejtem z pieczęcią komory celnej i krzyczy, że to kontrola."
+          },
+          "payoff": {
+            "Name": "Łapówka",
+            "Desc": "Ktoś z załogi wciska przeciwnikowi sakiewkę i szepcze, że będzie więcej."
+          },
+          "resupply": {
+            "Desc": "Szafarz podaje z ładowni bełt, broń albo bandaż."
+          }
+        },
+        "Meta": {
+          "TargetHint": "Próg testu uproszczonego (przed modyfikatorami załogi)"
+        },
+        "Relation": {
+          "strained": {
+            "Desc": "Odbiorca patrzy na ręce. Spóźnienia grożą gniewem."
+          },
+          "favorite": {
+            "Name": "Zaufani Odbiorcy"
+          }
+        },
+        "Recruit": {
+          "NoActor": "Nie znaleziono aktora załogi powiązanego z tą rekrutacją!",
+          "Joined": "{name} dołączył(a) do załogi!",
+          "ChatText": "<strong>{user}</strong> zwerbował(a) przemytnika: <strong>{name}</strong> ({role}) do załogi.",
+          "Flavor": "Rekrutacja: Nowe Twarze w Załodze"
+        },
+        "Mod": {
+          "Rank": "Ranga załogi",
+          "Heat": "Czujność {value}",
+          "ShadowTongue": "Rzeczny Żargon"
+        },
+        "Ops": {
+          "PatronCut": "Dola Odbiorcy ({percent}%): {cut} · do skarbca: {net}.",
+          "NoCargo": "{mission}: brak pasującego towaru, który można by zabrać.",
+          "DataEffect": {
+            "Heat": "Czujność {value}."
+          }
+        },
+        "Loot": {
+          "ItemDesc": "Towar załogi: {origin}.",
+          "ItemDescHot": "Towar załogi: {origin} – gorący towar, ktoś go szuka.",
+          "DiscardTitle": "Pozbyć się towaru?",
+          "DiscardText": "Wyrzucić, oddać albo ukryć na dobre <strong>{name}</strong> (~{value} SS)? Towar zniknie z kryjówki załogi."
+        },
+        "Card": {
+          "Loot": {
+            "Haul": "Towar: {loot}."
+          },
+          "Burglary": {
+            "Success": "{name} wchodzi i wychodzi przed świtem z towarem.",
+            "SuccessAt": "{name} wchodzi do: <em>{place}</em> i wychodzi przed świtem z towarem."
+          },
+          "Fence": {
+            "NothingToSell": "{fence}: brak towarów, które da się tu sprzedać.",
+            "Returned": "Towary wracają do kryjówki."
+          },
+          "Intimidate": {
+            "Success": "{name} skutecznie zastrasza ofiarę – towar: {coins} SS."
+          },
+          "Bribe": {
+            "NotArrested": "Ten członek załogi nie siedzi w areszcie.",
+            "HeatDown": "Raport o załodze ląduje w piecu – Czujność −1."
+          },
+          "CoverTracks": {
+            "HeatDown": "Ślady załogi się zacierają – Czujność -1."
+          }
+        },
+        "Camp": {
+          "Log": "Nocny Postój [{shelter}]. Warty: {watch}. {food}. Morale: {morale}/10. Czujność: {heat}/5.",
+          "TitleWeek": "Tydzień Załogi",
+          "FlavorWeek": "Raport: Tydzień Załogi",
+          "GMResolvesWeekHint": "Tydzień załogi rozpatruje Mistrz Gry. Zaplanuj przydziały w zakładce Przydziały.",
+          "NoHealthy": "Brak zdrowych przemytników w obozie!",
+          "StateLine": "Morale: {morale}/10, Czujność: {heat}/5, Zapasy: {supplies}"
+        },
+        "Desertion": {
+          "Text": "<strong>{name}</strong> nie wierzy już w Szypra i znika przed świtem{taken}."
+        },
+        "Treasury": {
+          "Generous": "Załoga widzi hojność Szypra — nastroje w obozie rosną! (+1 Morale)",
+          "Deposited": "Wpłacono {amount} do skarbca załogi.",
+          "DepositTitle": "Wpłata do Skarbca Załogi",
+          "NewBalance": "Nowy stan skarbca załogi: <strong>{amount}</strong>.",
+          "FlavorDeposit": "Finanse Załogi",
+          "StashShort": "W skarbcu załogi nie ma tylu monet! Dostępne: {have}",
+          "SmallWithdrawal": "Pobrano drobne wydatki. Przemytnicy nie mają z tym problemu.",
+          "AuthorityHeld": "Szyper użył autorytetu, by uciszyć szepty. Test Dowodzenia zdany (Rzut: {roll} vs {target}). Morale nienaruszone.",
+          "AuthorityLost": "Ludzie szemrzą po kątach, że Szyper podkrada wspólny towar! Test Dowodzenia nieudany (Rzut: {roll} vs {target}). Załoga traci -{loss} Morale!",
+          "WithdrawTitle": "Wypłata ze Skarbca Załogi",
+          "FlavorWithdraw": "Podział Zysku"
+        },
+        "Supplies": {
+          "StashShort": "W skarbcu załogi brakuje monet! Wymagane: {need}, dostępne: {have}",
+          "SourceStash": "skarbiec załogi"
+        },
+        "Roster": {
+          "GMOnlyDelete": "Tylko MG może usuwać członków załogi.",
+          "DeleteTitle": "Usuń członka załogi",
+          "DeleteText": "Czy na pewno usunąć <strong>{name}</strong> ze załogi?",
+          "NewFollower": "Nowy Podwładny"
+        },
+        "Retinue": {
+          "Left": "{name} opuścił(a) Świtę Szypra.",
+          "Joined": "{name} dołączył(a) do Świty Szypra!",
+          "Full": "Świta Szypra może liczyć maksymalnie 3 przemytników!"
+        },
+        "Mission": {
+          "NoFollower": "Nie wybrano przemytnika!"
+        },
+        "Tier": {
+          "LeadApplies": "{name}: bez kary, podwójny towar"
+        },
+        "Fence": {
+          "NothingChosen": "Nie wybrano żadnego towaru do sprzedaży.",
+          "NoLoot": "Załoga nie ma żadnych towarów do sprzedania."
+        },
+        "Bribe": {
+          "Hush": "Uciszenie sprawy: Czujność −1 (20 SS)"
+        },
+        "Terrain": {
+          "RacketWaits": "Haracz w mieście czeka na powrót załogi.",
+          "Changed": "Załoga zmienia teren: {terrain}. Paser: {fence}."
+        },
+        "CampDialog": {
+          "UseSupplies": "Wydaj zapasy ze spiżarni załogi:",
+          "TitleWeek": "Tydzień Załogi – rozpatrzenie",
+          "WeekDone": "Tydzień załogi rozpatrzony – raport na czacie."
+        },
+        "RecruitDialog": {
+          "Intro": "Przedstaw graczom propozycje przemytników na czacie. Gracze będą mogli wybrać jednego rekruta, który dołączy do załogi.",
+          "Title": "Rekrutacja Nowych Przemytników dla Graczy"
+        },
+        "Upgrade": {
+          "OneCraftHint": "Przemytnik może posiadać tylko jeden dawny zawód",
+          "TransferHint": "Przenieś do innego przemytnika",
+          "Stash": "Skarbiec Załogi",
+          "CraftSectionHint": "(Maksymalnie 1 zawód na przemytnika)",
+          "TraitSection": "Zalety i Wady Przemytnika",
+          "OneLieutenant": "W załodze może być tylko jedna Prawa Ręka ({name})!",
+          "HasCraft": "Ten przemytnik ma już wybrany dawny fach ({name})! Postać może mieć tylko jeden fach z przeszłości.",
+          "NoFreeSlot": "Brak innych przemytników z wolnym slotem ekwipunku!",
+          "SecondRoleIntro": "Przemytnik, który wiele widział, potrafi więcej niż jedno. Druga rola daje dostęp do jej rozkazów i specjalizacji (premia za specjalizację liczy się raz).",
+          "CraftIntro": "Przeszłość i rzemiosło sprzed pierwszego kursu z kontrabandą. Każdy przemytnik może wybrać tylko jeden dawny fach."
+        },
+        "TreasuryDialog": {
+          "DepositHint": "Wpłata ponad 1 ZK (20 SS) nagradzana jest <strong>+1 Morale</strong> dla całej załogi!",
+          "Balance": "Stan skarbca załogi",
+          "MutinyRisk": "<strong>Ryzyko Buntu:</strong> Przemytnicy pilnują wspólnego towaru! Pobranie powyżej 10 SS wymaga zdania testu Dowodzenia przez Szypra. W razie niepowodzenia załoga traci <strong>1–2 Morale</strong>!"
+        },
+        "SuppliesDialog": {
+          "FromStash": "Skarbiec Załogi (dostępne: {amount})"
+        },
+        "Chat": {
+          "GangTest": "Test uproszczony załogi",
+          "Footer": "Świta Szypra"
+        },
+        "RecruitCard": {
+          "Title": "Nowe Twarze w Załodze: Rekrutacja",
+          "Intro": "Mistrz Gry przedstawił kandydatów. Wybierzcie przemytnika, który dołączy do waszej kompanii!",
+          "Joined": "Postać dołączyła do załogi!",
+          "Footer": "Rekrutacja Załogi"
+        },
+        "TacticCard": {
+          "UsesAction": "Rozkaz zużywa Akcję Szypra w tej rundzie."
+        },
+        "Sheet": {
+          "LeaderTitle": "Szyper / Przywódca: {name}",
+          "ChiefTitle": "Szyper Załogi",
+          "Chief": "SZYPER",
+          "Eyebrow": "Karta załogi",
+          "NamePlaceholder": "Nazwa Załogi / Świty",
+          "NameTitle": "Kliknij, aby zmienić nazwę załogi",
+          "MottoTitle": "Motto załogi",
+          "MoraleTitle": "Morale Załogi: {value}/10"
+        },
+        "Tabs": {
+          "Loot": "Towary"
+        },
+        "LootTab": {
+          "TerrainLabel": "Teren załogi",
+          "GiveChief": "Przekaż Szyprowi jako przedmiot",
+          "Discard": "Pozbądź się towaru",
+          "Empty": "Skrytka jest pusta. Towar przynoszą odbiory kontrabandy, a kurs barką zabiera go do odbiorcy.",
+          "HelpRecon": "<strong>Rozpoznanie</strong> (Zwiad): +20 do następnego kursu barką.",
+          "InHideout": "Towar w skrytce"
+        },
+        "TasksTab": {
+          "Intro": "Wyślij ludzi w teren lub weź do swojej osobistej świty. Każdego przemytnika można przypisać do <strong>jednego zadania dziennie</strong>.",
+          "RetinueHint": "Przemytnicy przypisani do Świty idą krok w krok z Szyprem w trakcie dnia gry i odblokowują swoje unikalne rozkazy bojowe w zakładce <strong>Taktyka</strong> (maks. 3 osoby). Nie mogą w tym czasie wyruszać na odrębne misje.",
+          "WatchHint": "Osoby wyznaczone na wartę czuwają podczas snu drużyny. Każdy przemytnik może mieć tylko jedno zadanie na dobę."
+        },
+        "RosterTab": {
+          "Title": "Przemytnicy i Kompania",
+          "ToggleAllHint": "Zwiń lub rozwiń szczegóły wszystkich przemytników",
+          "AddHint": "Mistrz Gry: Dodaj nowego pustego przemytnika",
+          "Add": "Dodaj Przemytnika",
+          "DropHint": "Przeciągnij aktora postaci lub BN z paska Foundry na kartę, aby połączyć go z przemytnikiem",
+          "ToggleOne": "Zwiń / Rozwiń szczegóły przemytnika",
+          "NamePlaceholder": "Imię przemytnika...",
+          "LeaveRetinue": "Odeślij ze Świty Szypra do obozu",
+          "JoinRetinueHint": "Dołącz do osobistej Świty Szypra (odblokowuje Taktykę)",
+          "Delete": "Usuń przemytnika ze świty",
+          "RoleTitle": "Mistrz Gry: Wybierz rolę przemytnika",
+          "EmptyTitle": "Brak przemytników w świcie!"
+        },
+        "InfoTab": {
+          "GMOnlyPatron": "Tylko Mistrz Gry może modyfikować dane Odbiorcy",
+          "PatronSetByGM": "Szczegóły o Odbiorcy ustala Mistrz Gry",
+          "RelationShort": {
+            "strained": "Napięte (Podejrzliwość, odbiorca patrzy na ręce)",
+            "favorite": "Zaufani (pełne zaufanie, najlepsze ładunki)"
+          },
+          "LawTitle": "Czujność Celników",
+          "GMOnlyHeat": "Tylko Mistrz Gry może modyfikować czujność",
+          "HeatLevel": "Poziom Czujności Celników:",
+          "HeatShort": {
+            "0": "Czyste burty",
+            "1": "Pytania w porcie",
+            "2": "Rewizje, łapówki x2",
+            "3": "Rysopis szypra",
+            "4": "Łodzie patrolowe",
+            "5": "Zamknięta rzeka"
+          },
+          "Bounty": "Długi / Nagroda za Głowę Szypra:",
+          "BountyPlaceholder": "np. 10 Złotych Koron za szypra i barkę",
+          "AlliesPlaceholder": "Przekupni celnicy, karczmarze z przystani, flisacy, paserzy...",
+          "Rivals": "Wrogowie i Konkurencyjne Załogi:",
+          "RivalsPlaceholder": "Inne załogi, rzeczna straż, uczciwi kupcy, cech przewoźników...",
+          "Patron": "Odbiorca Towaru",
+          "PatronName": "Imię Odbiorcy:",
+          "PatronNamePlaceholder": "np. kupiec Salzer, karczmarka Gerta, 'Człowiek'...",
+          "PatronTitle": "Pozycja / Zajęcie Odbiorcy:",
+          "PatronTitlePlaceholder": "np. Hurtownik Win, Kapitan Portu, Mistrz Cechu...",
+          "PatronRelation": "Zaufanie i Relacja z Odbiorcą:",
+          "PatronCut": "Stawki i Warunki Odbioru:",
+          "PatronCutPlaceholder": "np. 3 ZK za beczkę, płatne przy odbiorze...",
+          "PatronNotes": "Kontakt i Zobowiązania wobec Odbiorcy:",
+          "Hideout": "Przystań / Skrytka na Towar:",
+          "Territory": "Szlak Rzeczny / Odcinek Kursów:",
+          "Code": "Prawo Pokładu / Zasady Załogi:",
+          "CodePlaceholder": "Podział zysku, milczenie przed celnikami, kara za zdradę...",
+          "Notes": "Dziennik Szypra:",
+          "NotesPlaceholder": "Historia załogi, dawne kursy, cele na przyszłość..."
+        },
+        "DashTab": {
+          "CampCaption": "Wpływa na regenerację sił i nastroje w załodze podczas odpoczynku. Teren: <strong>{terrain}</strong> (zmiana w zakładce Towary).",
+          "FlavorHigh": "Ludzie pójdą za Szyprem w ogień! Gotowi na każde poświęcenie.",
+          "FlavorMid": "Stabilna dyscyplina. Załoga wykonuje polecenia bez marudzenia.",
+          "DepositHint": "Przelej monety ze swojej sakwy do wspólnego skarbca załogi (+1 Morale przy hojnych datkach)",
+          "WithdrawHint": "Pobierz monety ze skarbca załogi (Pobranie > 10 SS wymaga testu Dowodzenia — ryzyko utraty Morale!)",
+          "ResolveWeek": "Rozpatrz Tydzień Załogi",
+          "TablesHint": "Mistrz Gry: otwórz tabele losowe plotek i wydarzeń postoju (RollTable, folder załogi)",
+          "ChronicleEmpty": "Brak odnotowanych zdarzeń. Załoga dopiero wyrusza na trakt...",
+          "Morale": "Morale Załogi"
+        },
+        "TacticsTab": {
+          "NoRetinue": "<strong>Brak przemytników w Świcie!</strong> Szyper walczy sam. Rozkazy specjalistyczne są zablokowane. Przypisz ludzi w zakładce <em>Przydziały</em>.",
+          "HowTo": "Rozkazy wydajesz poprzez <strong>Test Dowodzenia</strong> Szypra (porażka oznacza brak efektu; jeden rozkaz na rundę, zużywa Akcję Szypra) lub wydając <strong>Przewagę</strong> (automatyczny sukces).",
+          "FilterEmpty": "Żadna aktywna osoba w świcie nie odblokowuje taktyk. Dodaj przemytnika do świty lub pokaż wszystkie taktyki.",
+          "PersonalAlways": "Rozkaz osobisty Szypra (dostępny zawsze)",
+          "WoundRisk": "Ryzyko Rany Przemytnika"
+        },
+        "Title": "Załoga",
+        "WindowTitle": "WFRP4e – Flotylla Przemytników",
+        "DefaultGangName": "Załoga",
+        "Tiers": {
+          "easy": {
+            "Name": "Boczne kanały",
+            "Desc": "+20 do testu, połowa zapłaty"
+          },
+          "normal": {
+            "Name": "Zwykły szlak"
+          },
+          "rich": {
+            "Name": "Przez komorę celną",
+            "Desc": "−20 do testu, podwójna zapłata, każda porażka grozi wpadką"
+          }
+        },
+        "Tokens": {
+          "recon": {
+            "Desc": "+20 do następnego kursu barką"
+          },
+          "lead": {
+            "Desc": "Kurs przez komorę celną bez kary −20"
+          }
+        },
+        "Notoriety": {
+          "0": {
+            "Name": "Czyste Burty",
+            "Desc": "Nikt nie zagląda pod wasze pokłady. Celnicy machają ręką."
+          },
+          "1": {
+            "Name": "Pytania w Porcie",
+            "Desc": "Kapitan portu zadaje o jedno pytanie za dużo. Nic poważnego."
+          },
+          "2": {
+            "Name": "Częstsze Rewizje",
+            "Desc": "Celnicy wchodzą na pokład przy każdej śluzie. Łapówki kosztują podwójnie."
+          },
+          "3": {
+            "Name": "Rysopis Szypra",
+            "Desc": "Opis szypra i barki wisi w komorach celnych w górę i w dół rzeki."
+          },
+          "4": {
+            "Name": "Łodzie Patrolowe",
+            "Desc": "Rzeczna straż obserwuje wasze kursy i czeka na błąd."
+          },
+          "5": {
+            "Name": "Zamknięta Rzeka",
+            "Desc": "Łańcuchy na śluzach, przeszukania każdej łodzi, nagroda za szypra."
+          }
+        },
+        "Risk": {
+          "stealth": "Wpadka: Czujność, areszt",
+          "Result": {
+            "FaceRemembered": "Celnik zapamiętał twarz – Czujność +1.",
+            "Arrested": "{name} wpada w ręce celników – <strong>Aresztowany</strong> na {time}. Czujność +1.",
+            "Chase": "Pościg po nabrzeżu i krzyki w porcie – Czujność +1.",
+            "WoundedLoud": "{name} zostaje <strong>Ranny</strong>, a o bijatyce mówi cały port – Czujność +1."
+          }
+        },
+        "Raid": {
+          "Escaped": "Wartownicy w porę podnieśli alarm – załoga odbiła od brzegu, zostawiając {lost} racji zapasów.",
+          "Settled": "Po rewizji celnicy uznają sprawę za zamkniętą – Czujność -1.",
+          "Summary": "Rewizja celników.",
+          "Arrested": "Celnicy wpadli do niestrzeżonego obozu – <strong>{name}</strong> zostaje aresztowany(a) na {time}.",
+          "Seized": "Celnicy „skonfiskowali” {amount} ze skarbca."
+        },
+        "Report": {
+          "MissionFlavor": "Rozkaz Szypra",
+          "QueueTitle": "Raport kursów załogi"
+        },
+        "Badges": {
+          "retinue": "Świta Szypra"
+        }
+      },
+      "investigators": {
+        "Terrains": {
+          "forest": {
+            "Comfortable": "Ziemianka informatorów",
+            "Fence": "Gajowy na usługach grafa"
+          },
+          "city": {
+            "Fence": "Kupiec sekretów z dzielnicy uniwersyteckiej",
+            "Raid": "Kontrwywiad rywala uderza w kryjówkę!"
+          },
+          "village": {
+            "Fence": "Pisarz gminny",
+            "Raid": "Sołtys nasłał straż na obcych!"
+          },
+          "mountains": {
+            "Fence": "Krasnoludzki notariusz"
+          }
+        },
+        "Missions": {
+          "bribe": {
+            "Reward": "uwolnienie z aresztu, Zdemaskowanie −1 lub przysługa"
+          },
+          "cover_tracks": {
+            "Reward": "Zdemaskowanie −1, spokojniejsza noc",
+            "Desc": "Zacieranie tropów i zmiana miejsca obozu. Jedyny sposób, by samemu obniżyć Zdemaskowanie."
+          },
+          "fence": {
+            "Name": "Sprzedaż Informacji",
+            "Reward": "gotówka za dokumenty (stawka nabywcy)",
+            "Desc": "Sprzedaż listów i dokumentów. Cena zależy od nabywcy i testu Targowania.",
+            "Names": {
+              "city": "Kupiec Sekretów",
+              "village": "Pisarz Gminny",
+              "forest": "Gajowy Grafa",
+              "mountains": "Krasnoludzki Notariusz"
+            }
+          },
+          "scout": {
+            "Desc": "Rozpoznanie terenu przed skokiem: patrole, kryjówki, słabe punkty. Sukces daje żeton Rozpoznania."
+          }
+        },
+        "MissionCategories": {
+          "resources": {
+            "Name": "Zasoby i Dokumenty"
+          }
+        },
+        "Ranks": {
+          "rookie": {
+            "Desc": "Świeży informator bez większego doświadczenia na szlaku."
+          },
+          "lieutenant": {
+            "Desc": "+30 do testów, autorytet (+1 Morale siatki), rozkazy dowódcze (unikalna ranga — limit 1 na siatkę; wymaga ponad 60-80 dni służby)."
+          }
+        },
+        "Strengths": {
+          "talkative": {
+            "Desc": "+10: Nasłuch w Szynku, Szerzenie Plotek, Sprzedaż Informacji, Kupno Sekretu, Raport dla Mocodawcy"
+          },
+          "trusted_face": {
+            "Desc": "+10: Przekupstwo, Sprzedaż Informacji"
+          },
+          "tight_lipped": {
+            "Desc": "Przesłuchiwany przez straż nigdy nie zdradzi kryjówki siatki"
+          },
+          "smooth_liar": {
+            "Desc": "+10: Przekupstwo, Fałszowanie Dokumentów, Sprzedaż Informacji, Podmiana Listu"
+          },
+          "haggler": {
+            "Desc": "+10: Sprzedaż Informacji"
+          },
+          "tough": {
+            "Desc": "+10: Dywersja i Zadyma"
+          },
+          "stealthy": {
+            "Desc": "+10: Zwiad Terenu, Śledzenie Celu, Przechwycenie Gońca"
+          },
+          "nimble": {
+            "Desc": "+10: Fałszowanie Dokumentów, Podmiana Listu"
+          },
+          "eagle_eye": {
+            "Desc": "+10: Zwiad Terenu, Maskowanie Śladów"
+          },
+          "local_knowledge": {
+            "Desc": "+10: Zwiad Terenu"
+          },
+          "field_medic": {
+            "Desc": "+10: Opieka nad Rannymi; 50% szans na natychmiastowe leczenie"
+          },
+          "war_veteran": {
+            "Desc": "+10: Dywersja i Zadyma, Maskowanie Śladów"
+          },
+          "iron_will": {
+            "Desc": "+10: Dywersja i Zadyma, Maskowanie Śladów, Opieka nad Rannymi; odporny na ból"
+          },
+          "keen_senses": {
+            "Desc": "+10: Zwiad Terenu, Nasłuch w Szynku, Kupno Sekretu, Raport dla Mocodawcy; wyczuwa szpiegów"
+          },
+          "quick_escape": {
+            "Desc": "+10: Dywersja i Zadyma"
+          },
+          "juggler": {
+            "Desc": "+10: Szerzenie Plotek, Dywersja i Zadyma"
+          },
+          "poacher": {
+            "Desc": "+10: Zwiad Terenu; przynosi dodatkową rację żywności"
+          },
+          "drinking_buddy": {
+            "Desc": "+10: Nasłuch w Szynku, Szerzenie Plotek, Kupno Sekretu, Raport dla Mocodawcy"
+          },
+          "knife_master": {
+            "Desc": "+10: Śledzenie Celu, Dywersja i Zadyma, Przechwycenie Gońca"
+          },
+          "surefooted": {
+            "Desc": "+10: Zwiad Terenu, Maskowanie Śladów"
+          },
+          "night_owl": {
+            "Desc": "+10: Zwiad Terenu, Śledzenie Celu, Przechwycenie Gońca"
+          },
+          "steady_nerves": {
+            "Desc": "+10: Przekupstwo, Dywersja i Zadyma, Maskowanie Śladów, Opieka nad Rannymi"
+          },
+          "lucky": {
+            "Desc": "+10: Maskowanie Śladów"
+          }
+        },
+        "Flaws": {
+          "kleptomaniac": {
+            "Camp": "okrada skarbiec siatki (1 SS)"
+          },
+          "wanted": {
+            "Desc": "+1 Zdemaskowanie po wpadce; ryzyko rozpoznania"
+          },
+          "gambler": {
+            "Camp": "przegrywa w karty pieniądze siatki"
+          },
+          "traitor": {
+            "Desc": "10% szans na wyciek informacji przy misji szpiegowskiej (+1 Zdemaskowanie)",
+            "Camp": "wyciekają informacje o siatce — +1 Zdemaskowanie"
+          },
+          "repulsive": {
+            "Desc": "−10: Nasłuch w Szynku, Szerzenie Plotek, Sprzedaż Informacji, Kupno Sekretu, Raport dla Mocodawcy (odpycha ludzi)"
+          },
+          "in_debt": {
+            "Desc": "10% szans po postoju, że wierzyciele węszy wokół kryjówki (+1 Zdemaskowanie)",
+            "Camp": "wierzyciele depczą mu po piętach — +1 Zdemaskowanie"
+          },
+          "clumsy": {
+            "Desc": "−10: Fałszowanie Dokumentów, Podmiana Listu"
+          },
+          "bloodthirsty": {
+            "Desc": "Każda udana dywersja lub zastraszanie daje +1 Zdemaskowanie przez niepotrzebne okrucieństwo"
+          },
+          "witchhunter_mark": {
+            "Desc": "Porażka podnosi Zdemaskowanie"
+          },
+          "proud": {
+            "Desc": "−10: Nasłuch w Szynku, Przekupstwo, Sprzedaż Informacji, Kupno Sekretu, Raport dla Mocodawcy"
+          },
+          "coward": {
+            "Desc": "−10: Dywersja i Zadyma"
+          },
+          "alcoholic": {
+            "Desc": "−10: Zwiad Terenu, Maskowanie Śladów; 20% szans na niedyspozycję po postoju"
+          },
+          "loudmouth": {
+            "Desc": "−10: Śledzenie Celu, Przechwycenie Gońca"
+          },
+          "old_slow": {
+            "Desc": "−10: Zwiad Terenu, Śledzenie Celu, Przechwycenie Gońca"
+          },
+          "superstitious": {
+            "Desc": "−10: Śledzenie Celu, Przechwycenie Gońca"
+          },
+          "one_eyed": {
+            "Desc": "−10: Zwiad Terenu, Maskowanie Śladów"
+          },
+          "hothead": {
+            "Desc": "−10: Przekupstwo, Maskowanie Śladów"
+          },
+          "squeamish": {
+            "Desc": "−10: Opieka nad Rannymi"
+          },
+          "snorer": {
+            "Desc": "−10: Zwiad Terenu, Śledzenie Celu, Przechwycenie Gońca"
+          },
+          "jinxed": {
+            "Desc": "−10: Zwiad Terenu"
+          }
+        },
+        "Perks": {
+          "craft_chirurgeon": {
+            "Desc": "Zanim zszedł na trakt, zszywał rany i składał kości. Podczas nocnego postoju automatycznie leczy 1 rannego informatora bez zużycia zapasów."
+          },
+          "craft_blacksmith": {
+            "Desc": "Praca przy miechu i kowadle daje krzepę i znajomość oręża. Daje stałe +10 do zleceń z bronią oraz 50% zniżki na rynsztunek dla siatki."
+          },
+          "craft_innkeeper": {
+            "Desc": "Zna sekrety warzenia trunków i ludzkie języki. Podczas każdego nocnego postoju podnosi Morale siatki o +1, a nasłuch w szynku przynosi dodatkową plotkę."
+          },
+          "craft_merchant": {
+            "Desc": "Zna szlaki handlowe, cła i kalkulację zysków. Zwiększa zysk ze sprzedaży informacji, kradzieży i szabru o +2 SS za każde udane zlecenie."
+          },
+          "blood_brotherhood": {
+            "Name": "Przysięga Krwi z Mistrzem szpiegów",
+            "Desc": "Złożył krwawy rytuał wierności. Nigdy nie zdradzi, nie ulega panice w obozie i może raz na sesję przyjąć Ranę Krytyczną wymierzoną w Mistrza szpiegów."
+          },
+          "battle_scarred": {
+            "Desc": "Przeżył wiele ran i potyczek. Nawet będąc rannym, nie obniża Morale siatki i może pełnić nocną wartę w obozowisku bez kar."
+          },
+          "cold_blooded": {
+            "Desc": "Bezwzględny opanowany profesjonalista. W razie niepowodzenia misji operacyjnej ignoruje pierwszą komplikację lub utratę morale siatki."
+          },
+          "guard_contacts": {
+            "Name": "Wtyka w Kancelarii",
+            "Desc": "Ma dłużnika lub krewnego wśród urzędników. Obniża ryzyko nalotu o połowę i daje ostrzeżenie przed nim."
+          },
+          "shadow_tongue": {
+            "Name": "Szyfr Siatki",
+            "Desc": "Zna znaki, hasła i szyfry siatki. Zwiększa powodzenie wywiadu, śledzenia celu i sprzedaży informacji o +10."
+          }
+        },
+        "Notify": {
+          "SelectCharacter": "Wybierz token postaci lub stwórz postać gracza, aby otworzyć panel siatki!",
+          "OpenFailed": "Błąd podczas otwierania panelu siatki: {error}",
+          "SelectChiefForCamp": "Wybierz token postaci Mistrza szpiegów, aby zarządzić nocny postój.",
+          "SelectChief": "Wybierz token postaci Mistrza szpiegów na mapie.",
+          "NoAccess": "Nie masz dostępu do siatki tej postaci.",
+          "GMResolvesWeek": "Tydzień siatki rozpatruje Mistrz Gry.",
+          "WeekAlreadyResolved": "Tydzień tej siatki został już rozpatrzony dla tego dnia świata. Przesuń czas gry.",
+          "CampAlreadyResolved": "Nocny postój tej siatki został już rozstrzygnięty dla tego dnia świata."
+        },
+        "Orders": {
+          "Effects": {
+            "MustFace": "rzuca się na szermierza i ignoruje resztę siatki do końca rundy"
+          },
+          "meatshield": {
+            "Effect": "Cios trafia informatora zamiast Mistrza szpiegów. Informator zostaje ranny (chyba że uratuje go pancerz lub ranga weterana).",
+            "Desc": "Pięść wypycha informatora przed mistrza szpiegów, prosto pod cios."
+          },
+          "bullrush": {
+            "Effect": "Wróg zostaje odepchnięty o 2 metry, traci 1 Przewagę, a Mistrz szpiegów natychmiast zamyka dystans do zwarcia bez testu.",
+            "Desc": "Pięść wpada na przeciwnika całym ciężarem."
+          },
+          "flank": {
+            "Effect": "Cel traci gardę – nie może wykonać Uniku ani Parowania przeciwko najbliższemu atakowi Mistrza szpiegów!"
+          },
+          "distract": {
+            "Effect": "Mistrz szpiegów zyskuje +2 Przewagi, a prowokowany wróg traci 1 Przewagę!",
+            "Name": "Sekret na Cały Głos",
+            "Desc": "Podsłuchiwacz wykrzykuje sekret przeciwnika tak, by wszyscy usłyszeli."
+          },
+          "draught": {
+            "Effect": "Mistrz szpiegów lub wskazany sojusznik usuwa 1 Stan Zmęczony (Fatigued) albo ignoruje go do końca następnej rundy."
+          },
+          "rally": {
+            "Desc": "Mistrz szpiegów ryczy rozkaz, motywując kompanów i budząc strach u przeciwników.",
+            "Effect": "Usuwa ze wskazanego sojusznika Stan Złamany (Broken). Mistrz szpiegów zyskuje Przewagę równą SL testu (minimum 1)."
+          },
+          "coordinate": {
+            "Effect": "Mistrz szpiegów i do trzech sojuszników w promieniu 6 metrów mogą wykonać darmowy ruch o połowę Szybkości; wychodząc ze zwarcia nie muszą zdawać testu."
+          },
+          "retaliation": {
+            "Name": "Odwet Siatki",
+            "Desc": "Wściekły kontratak! Informator natychmiast rzuca się pomścić ranionego przywódcę.",
+            "Effect": "Jeśli Mistrz szpiegów lub sojusznik otrzyma obrażenia, Prawa Ręka natychmiast kontratakuje LUB Mistrz szpiegów zyskuje +2 Przewagi w rewanżu."
+          },
+          "Notify": {
+            "AlreadyThisRound": "Mistrz szpiegów wydał już rozkaz w tej rundzie (rozkaz zużywa jego Akcję)."
+          },
+          "MeatShield": {
+            "Saved": "{name} rzuca się pod cios, lecz {reason} pochłania impet ataku! Informator unika rany i pozostaje w gotowości!"
+          },
+          "Dialog": {
+            "ChiefHimself": "Mistrz szpiegów osobiście",
+            "LeadershipHint": "Mistrz szpiegów wykonuje test Dowodzenia. Sukces – rozkaz działa; porażka – brak efektu. Rozkaz zużywa Akcję Mistrza szpiegów (jeden na rundę).",
+            "Follower": "Podwładny"
+          },
+          "bodyblock": {
+            "Desc": "Ochroniarz zachodzi Mistrza szpiegów od frontu i przyjmuje uderzenia na tarczę i na plecy.",
+            "Effect": "Do końca rundy pierwszy atak wręcz na Mistrza szpiegów trafia ochroniarza zamiast niego. Mistrz szpiegów zyskuje 1 Przewagi (ma chwilę, by złapać oddech)."
+          },
+          "circle": {
+            "Desc": "Ludzie zamykają krąg wokół Mistrza szpiegów, plecami do siebie, twarzami do wroga.",
+            "Effect": "Mistrz szpiegów traci stan Zaskoczony (jeśli go ma) i zyskuje 1 Przewagi. Nikt nie podejdzie go od tyłu."
+          },
+          "parry": {
+            "Desc": "Szermierz wchodzi między Mistrza szpiegów a przeciwnika i odbija cios klingą.",
+            "Effect": "Pierwszy atak wręcz na Mistrza szpiegów w tej rundzie ma −20 do trafienia. Mistrz szpiegów zyskuje 1 Przewagi."
+          },
+          "riposte": {
+            "Effect": "Wskazany przeciwnik traci 1 Przewagi. Jeśli w tej rundzie zaatakuje Mistrza szpiegów i nie trafi, Mistrz szpiegów może od razu zadać mu cios z kontry."
+          },
+          "challenge": {
+            "Effect": "Przeciwnik musi zdać test Siły Woli; przy porażce rzuca się na szermierza i ignoruje resztę siatki do końca rundy."
+          },
+          "wagonwall": {
+            "Desc": "Woźnica zatrzymuje wóz tak, by zasłonić Mistrza szpiegów od ognia.",
+            "Effect": "Wóz daje osłonę: ataki dystansowe na Mistrza szpiegów w tej rundzie mają −10. Mistrz szpiegów zyskuje 1 Przewagi."
+          },
+          "getaway": {
+            "Effect": "Mistrz szpiegów traci stan Powalony i może oddalić się o 4 metry bez prowokowania ataków okazyjnych.",
+            "Name": "Przez Okno!",
+            "Desc": "Kurier otwiera okno i wypycha mistrza szpiegów na daszek nad straganem."
+          },
+          "spot": {
+            "Effect": "Pierwszy atak Mistrza szpiegów w tej rundzie zyskuje +10 do trafienia. Mistrz szpiegów zyskuje 1 Przewagi.",
+            "Name": "Wiem, Gdzie Nosi Nóż",
+            "Desc": "Podsłuchiwacz pamięta, co przeciwnik mówił w szynku o swojej starej ranie."
+          },
+          "salve": {
+            "Effect": "Mistrz szpiegów (lub wskazany sojusznik) traci stan Krwawienie."
+          },
+          "regroup": {
+            "Desc": "Prawa Ręka klaszcze, gwiżdże i siatka wraca do szyku.",
+            "Effect": "Mistrz szpiegów traci stan Zaskoczony i zyskuje 1 Przewagi; sojusznicy ze Świty mogą przemieścić się o 2 metry bez kosztu."
+          },
+          "payoff": {
+            "Name": "Znam Twój Sekret",
+            "Desc": "Pośrednik szepcze przeciwnikowi do ucha coś, co wie tylko kilka osób.",
+            "Effect": "Przeciwnik-człowiek musi zdać test Siły Woli; przy porażce wycofuje się z walki (MG decyduje, czy odejdzie, czy zmieni stronę)."
+          },
+          "forgedorder": {
+            "Name": "Fałszywy Nakaz",
+            "Desc": "Pośrednik pokazuje nakaz z pieczęcią sądu i krzyczy, że przyszła straż."
+          },
+          "retreat": {
+            "Name": "Ucieczka Dachami",
+            "Desc": "Kurier prowadzi wszystkich przez strych i po dachach na sąsiednią ulicę."
+          },
+          "resupply": {
+            "Desc": "Kurier przynosi to, czego brakuje: nóż, bandaż albo wiadomość."
+          },
+          "lure": {
+            "Desc": "Podsłuchiwacz woła imię kogoś, kogo wróg zna, i ściąga go w zaułek."
+          },
+          "grapple": {
+            "Desc": "Pięść łapie przeciwnika za kołnierz i nie puszcza."
+          },
+          "trip": {
+            "Desc": "Pięść podcina przeciwnika kopniakiem w kostkę."
+          }
+        },
+        "Meta": {
+          "TargetHint": "Próg testu uproszczonego (przed modyfikatorami siatki)"
+        },
+        "Relation": {
+          "strained": {
+            "Desc": "Mocodawca patrzy na ręce. Spóźnienia grożą gniewem."
+          },
+          "favorite": {
+            "Name": "Zaufani Mocodawcy"
+          }
+        },
+        "Recruit": {
+          "NoActor": "Nie znaleziono aktora siatki powiązanego z tą rekrutacją!",
+          "Joined": "{name} dołączył(a) do siatki!",
+          "ChatText": "<strong>{user}</strong> zwerbował(a) informatora: <strong>{name}</strong> ({role}) do siatki.",
+          "Flavor": "Rekrutacja: Nowe Twarze w Siatce"
+        },
+        "Mod": {
+          "Rank": "Ranga siatki",
+          "Heat": "Zdemaskowanie {value}",
+          "ShadowTongue": "Szyfr Siatki"
+        },
+        "Ops": {
+          "PatronCut": "Dola Mocodawcy ({percent}%): {cut} · do skarbca: {net}.",
+          "Cargo": "Przekazany dokument: {item}.",
+          "NoCargo": "{mission}: w kryjówce nie ma żadnego dokumentu.",
+          "DataEffect": {
+            "Heat": "Zdemaskowanie {value}."
+          }
+        },
+        "Loot": {
+          "Hot": "świeży sekret",
+          "ItemDesc": "Dokument siatki: {origin}.",
+          "ItemDescHot": "Dokument siatki: {origin} – świeży sekret, ktoś go szuka.",
+          "DiscardTitle": "Pozbyć się dokumentu?",
+          "DiscardText": "Wyrzucić, oddać albo ukryć na dobre <strong>{name}</strong> (~{value} SS)? Dokument zniknie z kryjówki siatki."
+        },
+        "Card": {
+          "Loot": {
+            "HotHint": "Świeży sekret najlepiej przetrzymać, zanim trafi do nabywcy.",
+            "Haul": "Zdobyte dokumenty: {loot}."
+          },
+          "Burglary": {
+            "Success": "{name} wchodzi i wychodzi przed świtem z dokumentem.",
+            "SuccessAt": "{name} wchodzi do: <em>{place}</em> i wychodzi przed świtem z dokumentem."
+          },
+          "Fence": {
+            "NothingToSell": "{fence}: brak dokumentów, które da się tu sprzedać.",
+            "Confiscated": "Świeży sekret przepadł: {items}.",
+            "Returned": "Dokumenty wracają do kryjówki."
+          },
+          "Intimidate": {
+            "Success": "{name} skutecznie zastrasza ofiarę – dokument: {coins} SS.",
+            "Fail": "{name} próbował(a) nastraszyć cel, ale napotkał(a) opór. Ludzie szemrzą (Morale -1)."
+          },
+          "Bribe": {
+            "NotArrested": "Ten członek siatki nie siedzi w areszcie.",
+            "HeatDown": "Raport o siatce ląduje w piecu – Zdemaskowanie −1."
+          },
+          "CoverTracks": {
+            "HeatDown": "Ślady siatki się zacierają – Zdemaskowanie -1."
+          }
+        },
+        "Camp": {
+          "Log": "Nocny Postój [{shelter}]. Warty: {watch}. {food}. Morale: {morale}/10. Zdemaskowanie: {heat}/5.",
+          "TitleWeek": "Tydzień Siatki",
+          "FlavorWeek": "Raport: Tydzień Siatki",
+          "GMResolvesWeekHint": "Tydzień siatki rozpatruje Mistrz Gry. Zaplanuj przydziały w zakładce Przydziały.",
+          "NoHealthy": "Brak zdrowych informatorów w obozie!",
+          "StateLine": "Morale: {morale}/10, Zdemaskowanie: {heat}/5, Zapasy: {supplies}",
+          "Food": {
+            "Empty": "Brak zapasów! Ludzie poszli spać głodni (-1 Morale)"
+          }
+        },
+        "Raid": {
+          "HotLost": "Przepadł świeży sekret: {items}.",
+          "Escaped": "Wartownicy w porę podnieśli alarm – siatka rozproszyła się, porzucając {lost} racji zapasów.",
+          "Settled": "Po nalocie sprawa cichnie – Zdemaskowanie -1.",
+          "Summary": "Nalot na kryjówkę.",
+          "Arrested": "Ludzie rywala wpadli do niestrzeżonej kryjówki – <strong>{name}</strong> zostaje zatrzymany(a) na {time}.",
+          "Seized": "Napastnicy zabrali {amount} ze skarbca."
+        },
+        "Desertion": {
+          "Text": "<strong>{name}</strong> nie wierzy już w Mistrza szpiegów i znika przed świtem{taken}."
+        },
+        "Treasury": {
+          "Generous": "Siatka widzi hojność Mistrza szpiegów — nastroje w obozie rosną! (+1 Morale)",
+          "Deposited": "Wpłacono {amount} do skarbca siatki.",
+          "DepositTitle": "Wpłata do Skarbca Siatki",
+          "NewBalance": "Nowy stan skarbca siatki: <strong>{amount}</strong>.",
+          "FlavorDeposit": "Finanse Siatki",
+          "StashShort": "W skarbcu siatki nie ma tylu monet! Dostępne: {have}",
+          "SmallWithdrawal": "Pobrano drobne wydatki. Informatorzy nie mają z tym problemu.",
+          "AuthorityHeld": "Mistrz szpiegów użył autorytetu, by uciszyć szepty. Test Dowodzenia zdany (Rzut: {roll} vs {target}). Morale nienaruszone.",
+          "AuthorityLost": "Ludzie szemrzą po kątach, że Mistrz szpiegów podkrada wspólny dokument! Test Dowodzenia nieudany (Rzut: {roll} vs {target}). Siatka traci -{loss} Morale!",
+          "WithdrawTitle": "Wypłata ze Skarbca Siatki",
+          "FlavorWithdraw": "Wypłata dla Informatorów"
+        },
+        "Supplies": {
+          "StashShort": "W skarbcu siatki brakuje monet! Wymagane: {need}, dostępne: {have}",
+          "SourceStash": "skarbiec siatki"
+        },
+        "Roster": {
+          "GMOnlyDelete": "Tylko MG może usuwać członków siatki.",
+          "DeleteTitle": "Usuń członka siatki",
+          "DeleteText": "Czy na pewno usunąć <strong>{name}</strong> ze siatki?",
+          "NewFollower": "Nowy Podwładny"
+        },
+        "Retinue": {
+          "Left": "{name} opuścił(a) Świtę Mistrza szpiegów.",
+          "Joined": "{name} dołączył(a) do Świty Mistrza szpiegów!",
+          "Full": "Świta Mistrza szpiegów może liczyć maksymalnie 3 informatorów!"
+        },
+        "Mission": {
+          "NoFollower": "Nie wybrano informatora!"
+        },
+        "Tier": {
+          "LeadApplies": "{name}: bez kary, podwójny dokument"
+        },
+        "Fence": {
+          "NothingChosen": "Nie wybrano żadnego dokumentu do sprzedaży.",
+          "NoLoot": "Siatka nie ma żadnych dokumentów do sprzedania.",
+          "Hint": "Każdy SL testu Targowania to +5 pkt stawki. Świeży sekret −20 pkt; przy wpadce (SL −2 lub gorzej) nabywca może go zatrzymać."
+        },
+        "Bribe": {
+          "Hush": "Uciszenie sprawy: Zdemaskowanie −1 (20 SS)"
+        },
+        "Terrain": {
+          "RacketWaits": "Haracz w mieście czeka na powrót siatki.",
+          "Changed": "Siatka zmienia teren: {terrain}. Nabywca: {fence}."
+        },
+        "CampDialog": {
+          "UseSupplies": "Wydaj zapasy ze spiżarni siatki:",
+          "TitleWeek": "Tydzień Siatki – rozpatrzenie",
+          "WeekDone": "Tydzień siatki rozpatrzony – raport na czacie.",
+          "Fasting": "Ludzie nie jedzą"
+        },
+        "RecruitDialog": {
+          "Intro": "Przedstaw graczom propozycje informatorów na czacie. Gracze będą mogli wybrać jednego rekruta, który dołączy do siatki.",
+          "Title": "Rekrutacja Nowych Informatorów dla Graczy"
+        },
+        "Upgrade": {
+          "OneCraftHint": "Informator może posiadać tylko jeden dawny zawód",
+          "TransferHint": "Przenieś do innego informatora",
+          "Stash": "Skarbiec Siatki",
+          "CraftSectionHint": "(Maksymalnie 1 zawód na informatora)",
+          "TraitSection": "Zalety i Wady Informatora",
+          "OneLieutenant": "W siatce może być tylko jedna Prawa Ręka ({name})!",
+          "HasCraft": "Ten informator ma już wybrany dawny fach ({name})! Postać może mieć tylko jeden fach z przeszłości.",
+          "NoFreeSlot": "Brak innych informatorów z wolnym slotem ekwipunku!",
+          "SecondRoleIntro": "Informator, który wiele widział, potrafi więcej niż jedno. Druga rola daje dostęp do jej rozkazów i specjalizacji (premia za specjalizację liczy się raz).",
+          "CraftIntro": "Przeszłość i rzemiosło sprzed werbunku do siatki. Każdy informator może wybrać tylko jeden dawny fach."
+        },
+        "TreasuryDialog": {
+          "DepositHint": "Wpłata ponad 1 ZK (20 SS) nagradzana jest <strong>+1 Morale</strong> dla całej siatki!",
+          "Balance": "Stan skarbca siatki",
+          "MutinyRisk": "<strong>Ryzyko Buntu:</strong> Informatorzy pilnują wspólnego dokumentu! Pobranie powyżej 10 SS wymaga zdania testu Dowodzenia przez Mistrza szpiegów. W razie niepowodzenia siatka traci <strong>1–2 Morale</strong>!"
+        },
+        "SuppliesDialog": {
+          "FromStash": "Skarbiec Siatki (dostępne: {amount})"
+        },
+        "Chat": {
+          "GangTest": "Test uproszczony siatki",
+          "Footer": "Świta Mistrza szpiegów"
+        },
+        "RecruitCard": {
+          "Title": "Nowe Twarze w Siatce: Rekrutacja",
+          "Intro": "Mistrz Gry przedstawił kandydatów. Wybierzcie informatora, który dołączy do waszej kompanii!",
+          "Joined": "Postać dołączyła do siatki!",
+          "Footer": "Rekrutacja Siatki"
+        },
+        "TacticCard": {
+          "UsesAction": "Rozkaz zużywa Akcję Mistrza szpiegów w tej rundzie.",
+          "NotHeard": "Ludzie nie usłyszeli rozkazu w zgiełku walki – <strong>brak efektu</strong>."
+        },
+        "Sheet": {
+          "LeaderTitle": "Mistrz szpiegów / Przywódca: {name}",
+          "ChiefTitle": "Mistrz szpiegów Siatki",
+          "Chief": "MISTRZ SZPIEGÓW",
+          "Eyebrow": "Karta siatki",
+          "NamePlaceholder": "Nazwa Siatki / Świty",
+          "NameTitle": "Kliknij, aby zmienić nazwę siatki",
+          "MottoTitle": "Motto siatki",
+          "MoraleTitle": "Morale Siatki: {value}/10"
+        },
+        "LootTab": {
+          "TerrainHint": "Teren zmienia dostępne zlecenia, plotki, wydarzenia nocy, koszt noclegu i nabywcy.",
+          "TerrainLabel": "Teren siatki",
+          "InHideout": "Dokumenty w kryjówce",
+          "FenceNow": "Nabywca da teraz ok.",
+          "SendToFence": "Wyślij do nabywcy",
+          "HotHint": "Świeży sekret: nabywca płaci mniej, obława w niestrzeżonym obozie go zabiera. Stygnie z każdą nocą.",
+          "FenceKeen": "nabywca chętny",
+          "GiveChief": "Przekaż Mistrzowi szpiegów jako przedmiot",
+          "Discard": "Pozbądź się dokumentu",
+          "HelpHotWeek": "<strong>Świeży sekret</strong> stygnie po tygodniu. Do tego czasu nabywca płaci o 20 pkt mniej.",
+          "HelpHotNight": "<strong>Świeży sekret</strong> stygnie po dwóch nocach. Do tego czasu nabywca płaci o 20 pkt mniej.",
+          "Empty": "Kryjówka jest pusta. Dokumenty przynoszą kupione sekrety, przechwyceni gońcy i podmienione listy. Sprzedaje się je nabywcy albo oddaje mocodawcy w raporcie.",
+          "HelpRecon": "<strong>Rozpoznanie</strong> (Zwiad, Śledzenie): +20 do następnej podmiany listu."
+        },
+        "TasksTab": {
+          "Intro": "Wyślij ludzi w teren lub weź do swojej osobistej świty. Każdego informatora można przypisać do <strong>jednego zadania dziennie</strong>.",
+          "RetinueHint": "Informatorzy przypisani do Świty idą krok w krok z Mistrzem szpiegów w trakcie dnia gry i odblokowują swoje unikalne rozkazy bojowe w zakładce <strong>Taktyka</strong> (maks. 3 osoby). Nie mogą w tym czasie wyruszać na odrębne misje.",
+          "WatchHint": "Osoby wyznaczone na wartę czuwają podczas snu drużyny. Każdy informator może mieć tylko jedno zadanie na dobę."
+        },
+        "RosterTab": {
+          "Title": "Informatorzy i Kompania",
+          "ToggleAllHint": "Zwiń lub rozwiń szczegóły wszystkich informatorów",
+          "AddHint": "Mistrz Gry: Dodaj nowego pustego informatora",
+          "Add": "Dodaj Informatora",
+          "DropHint": "Przeciągnij aktora postaci lub BN z paska Foundry na kartę, aby połączyć go z informatorem",
+          "ToggleOne": "Zwiń / Rozwiń szczegóły informatora",
+          "NamePlaceholder": "Imię informatora...",
+          "LeaveRetinue": "Odeślij ze Świty Mistrza szpiegów do obozu",
+          "JoinRetinueHint": "Dołącz do osobistej Świty Mistrza szpiegów (odblokowuje Taktykę)",
+          "Delete": "Usuń informatora ze świty",
+          "RoleTitle": "Mistrz Gry: Wybierz rolę informatora",
+          "EmptyTitle": "Brak informatorów w świcie!"
+        },
+        "InfoTab": {
+          "GMOnlyPatron": "Tylko Mistrz Gry może modyfikować dane Mocodawcy",
+          "PatronSetByGM": "Szczegóły o Mocodawcy ustala Mistrz Gry",
+          "RelationShort": {
+            "strained": "Napięte (Podejrzliwość, mocodawca patrzy na ręce)",
+            "favorite": "Zaufani (pełne zaufanie, najważniejsze zlecenia)"
+          },
+          "LawTitle": "Ryzyko Zdemaskowania",
+          "GMOnlyHeat": "Tylko Mistrz Gry może modyfikować zdemaskowanie",
+          "HeatLevel": "Poziom Zdemaskowania:",
+          "HeatShort": {
+            "0": "Niewidzialni",
+            "1": "Szepty o uszach",
+            "2": "Podejrzany łącznik, łapówki x2",
+            "3": "Spalony informator",
+            "4": "Kontrwywiad na tropie",
+            "5": "Siatka zdemaskowana"
+          },
+          "Bounty": "Długi / Nagroda za Mistrza Szpiegów:",
+          "BountyPlaceholder": "np. 20 Złotych Koron za nazwisko mistrza szpiegów",
+          "AlliesPlaceholder": "Przekupni pisarze, służące, karczmarze, spowiednicy...",
+          "Rivals": "Wrogowie i Konkurencyjne Siatki:",
+          "RivalsPlaceholder": "Inne siatki, tajna policja, łowcy czarownic, urażeni szlachcice...",
+          "Patron": "Mocodawca",
+          "PatronName": "Imię Mocodawcy:",
+          "PatronNamePlaceholder": "np. Hrabina Emmanuelle, Kanclerz Rady, Kapłan Vereny...",
+          "PatronTitle": "Pozycja / Tytuł Mocodawcy:",
+          "PatronTitlePlaceholder": "np. Elektor, Szef Tajnej Policji, Mistrz Cechu...",
+          "PatronRelation": "Zaufanie i Relacja z Mocodawcą:",
+          "PatronCut": "Zapłata i Warunki Zlecenia:",
+          "PatronCutPlaceholder": "np. 2 ZK za raport, premia za nazwiska...",
+          "PatronNotes": "Kontakt i Zobowiązania wobec Mocodawcy:",
+          "Hideout": "Kryjówka / Miejsce Spotkań:",
+          "Territory": "Miasto / Obszar Działania Siatki:",
+          "Code": "Zasady Siatki / Hasła i Szyfry:",
+          "CodePlaceholder": "Każdy zna tylko swojego łącznika, hasło na ten tydzień, kara za zdradę...",
+          "Notes": "Akta / Notatki Mistrza Szpiegów:",
+          "NotesPlaceholder": "Historia siatki, dawne sprawy, cele mocodawcy..."
+        },
+        "DashTab": {
+          "CampCaption": "Wpływa na regenerację sił i nastroje w siatce podczas odpoczynku. Teren: <strong>{terrain}</strong> (zmiana w zakładce Dokumenty).",
+          "FlavorHigh": "Ludzie pójdą za Mistrzem szpiegów w ogień! Gotowi na każde poświęcenie.",
+          "FlavorMid": "Stabilna dyscyplina. Siatka wykonuje polecenia bez marudzenia.",
+          "DepositHint": "Przelej monety ze swojej sakwy do wspólnego skarbca siatki (+1 Morale przy hojnych datkach)",
+          "WithdrawHint": "Pobierz monety ze skarbca siatki (Pobranie > 10 SS wymaga testu Dowodzenia — ryzyko utraty Morale!)",
+          "ResolveWeek": "Rozpatrz Tydzień Siatki",
+          "TablesHint": "Mistrz Gry: otwórz tabele losowe plotek i wydarzeń postoju (RollTable, folder siatki)",
+          "ChronicleEmpty": "Brak odnotowanych zdarzeń. Siatka dopiero wyrusza na trakt...",
+          "Morale": "Morale Siatki",
+          "FlavorLow": "Ludzie szemrzą po kątach, brakuje im grosza i gorzały."
+        },
+        "TacticsTab": {
+          "NoRetinue": "<strong>Brak informatorów w Świcie!</strong> Mistrz szpiegów walczy sam. Rozkazy specjalistyczne są zablokowane. Przypisz ludzi w zakładce <em>Przydziały</em>.",
+          "HowTo": "Rozkazy wydajesz poprzez <strong>Test Dowodzenia</strong> Mistrza szpiegów (porażka oznacza brak efektu; jeden rozkaz na rundę, zużywa Akcję Mistrza szpiegów) lub wydając <strong>Przewagę</strong> (automatyczny sukces).",
+          "FilterEmpty": "Żadna aktywna osoba w świcie nie odblokowuje taktyk. Dodaj informatora do świty lub pokaż wszystkie taktyki.",
+          "PersonalAlways": "Rozkaz osobisty Mistrza szpiegów (dostępny zawsze)",
+          "WoundRisk": "Ryzyko Rany Informatora"
+        },
+        "Roles": {
+          "shadow": {
+            "Name": "Cień / Tajniak"
+          },
+          "fixer": {
+            "Name": "Pośrednik / Fałszerz"
+          },
+          "charlatan": {
+            "Name": "Kameleon / Znachor"
+          }
+        },
+        "Title": "Siatka",
+        "WindowTitle": "WFRP4e – Siatka Informatorów",
+        "DefaultGangName": "Siatka",
+        "Badges": {
+          "fence": "Sprzedaż",
+          "retinue": "Ochrona Mistrza Szpiegów"
+        },
+        "Tiers": {
+          "easy": {
+            "Name": "Drobny urzędnik",
+            "Desc": "+20 do testu, połowa zapłaty"
+          },
+          "normal": {
+            "Name": "Kupiec lub kapłan"
+          },
+          "rich": {
+            "Name": "Szlachcic",
+            "Desc": "−20 do testu, podwójna zapłata, każda porażka grozi zdemaskowaniem"
+          }
+        },
+        "Tokens": {
+          "recon": {
+            "Desc": "+20 do następnej podmiany listu"
+          },
+          "lead": {
+            "Desc": "Szlachcic bez kary −20"
+          }
+        },
+        "Notoriety": {
+          "0": {
+            "Name": "Niewidzialni",
+            "Desc": "Nikt nie wie, że siatka istnieje. Informatorzy znają tylko swojego łącznika."
+          },
+          "1": {
+            "Name": "Szepty o Uszach",
+            "Desc": "Ktoś w szynku mówi, że ściany mają uszy. Nikt nie wie czyje."
+          },
+          "2": {
+            "Name": "Podejrzany Łącznik",
+            "Desc": "Jeden z łączników zwrócił uwagę. Urzędnicy milkną, gdy wchodzi. Łapówki kosztują podwójnie."
+          },
+          "3": {
+            "Name": "Spalony Informator",
+            "Desc": "Rywal zna jednego z informatorów i obserwuje, z kim się spotyka."
+          },
+          "4": {
+            "Name": "Kontrwywiad",
+            "Desc": "Rywal lub władze celowo szukają siatki. Każde spotkanie to ryzyko."
+          },
+          "5": {
+            "Name": "Siatka Zdemaskowana",
+            "Desc": "Nazwiska krążą po mieście. Informatorzy znikają, a łowcy depczą po piętach."
+          }
+        },
+        "Risk": {
+          "stealth": "Wpadka: Zdemaskowanie, areszt",
+          "Result": {
+            "FaceRemembered": "Ktoś zapamiętał twarz łącznika – Zdemaskowanie +1.",
+            "Arrested": "{name} zostaje zatrzymany na przesłuchanie – <strong>Aresztowany</strong> na {time}. Zdemaskowanie +1.",
+            "Chase": "Pościg przez targ i krzyki na ulicy – Zdemaskowanie +1.",
+            "WoundedLoud": "{name} zostaje <strong>Ranny</strong>, a o bójce mówi cała dzielnica – Zdemaskowanie +1."
+          }
+        },
+        "Tabs": {
+          "Loot": "Dokumenty"
+        },
+        "Report": {
+          "MissionFlavor": "Polecenie Mistrza Szpiegów",
+          "QueueTitle": "Raport zadań siatki"
+        }
+      },
+      "cult": {
+        "Terrains": {
+          "forest": {
+            "Comfortable": "Ziemianka wyznawców",
+            "Raid": "Łowcy czarownic na tropie!"
+          },
+          "city": {
+            "Raid": "Łowcy czarownic wyważają drzwi!"
+          },
+          "village": {
+            "Raid": "Wieśniacy z pochodniami, a na czele kapłan!"
+          },
+          "mountains": {
+            "Raid": "Krasnoludzcy strażnicy przeszukują jaskinie!"
+          }
+        },
+        "Missions": {
+          "fence": {
+            "Name": "Upłynnienie Zdobyczy",
+            "Reward": "gotówka za zdobycze (stawka pasera)",
+            "Desc": "Sprzedaż zdobyczy. Cena zależy od pasera, testu Targowania i tego, czy towar jest jeszcze gorący."
+          },
+          "bribe": {
+            "Reward": "uwolnienie z aresztu, Podejrzliwość −1 lub przysługa"
+          },
+          "cover_tracks": {
+            "Reward": "Podejrzliwość −1, spokojniejsza noc",
+            "Desc": "Zacieranie tropów i zmiana miejsca obozu. Jedyny sposób, by samemu obniżyć Podejrzliwość."
+          }
+        },
+        "MissionCategories": {
+          "resources": {
+            "Name": "Zasoby i Zdobycze"
+          }
+        },
+        "Ranks": {
+          "rookie": {
+            "Desc": "Świeży wyznawca bez większego doświadczenia na szlaku."
+          },
+          "lieutenant": {
+            "Desc": "+30 do testów, autorytet (+1 Morale sekty), rozkazy dowódcze (unikalna ranga — limit 1 na sektę; wymaga ponad 60-80 dni służby)."
+          }
+        },
+        "Strengths": {
+          "tight_lipped": {
+            "Desc": "Przesłuchiwany przez straż nigdy nie zdradzi kryjówki sekty"
+          },
+          "tough": {
+            "Desc": "+10: Dywersja i Zadyma, Porwanie"
+          },
+          "stealthy": {
+            "Desc": "+10: Infiltracja, Kamienny Krąg"
+          },
+          "nimble": {
+            "Desc": "+10: Fałszowanie Dokumentów"
+          },
+          "talkative": {
+            "Desc": "+10: Nasłuch w Szynku, Szerzenie Plotek, Upłynnienie Zdobyczy"
+          },
+          "eagle_eye": {
+            "Desc": "+10: Sabotaż, Maskowanie Śladów, Kamienny Krąg"
+          },
+          "trusted_face": {
+            "Desc": "+10: Przekupstwo, Upłynnienie Zdobyczy"
+          },
+          "local_knowledge": {
+            "Desc": "+10: Kamienny Krąg"
+          },
+          "field_medic": {
+            "Desc": "+10: Opieka nad Rannymi; 50% szans na natychmiastowe leczenie"
+          },
+          "brutal": {
+            "Desc": "+20: Porwanie"
+          },
+          "war_veteran": {
+            "Desc": "+10: Dywersja i Zadyma, Sabotaż, Maskowanie Śladów"
+          },
+          "iron_will": {
+            "Desc": "+10: Dywersja i Zadyma, Maskowanie Śladów, Opieka nad Rannymi; odporny na ból"
+          },
+          "keen_senses": {
+            "Desc": "+10: Nasłuch w Szynku, Kamienny Krąg; wyczuwa szpiegów"
+          },
+          "quick_escape": {
+            "Desc": "+10: Dywersja i Zadyma"
+          },
+          "arsonist": {
+            "Desc": "+20: Sabotaż"
+          },
+          "juggler": {
+            "Desc": "+10: Szerzenie Plotek, Dywersja i Zadyma"
+          },
+          "poacher": {
+            "Desc": "+10: Kamienny Krąg; przynosi dodatkową rację żywności"
+          },
+          "drinking_buddy": {
+            "Desc": "+10: Nasłuch w Szynku, Szerzenie Plotek"
+          },
+          "knife_master": {
+            "Desc": "+10: Dywersja i Zadyma, Infiltracja"
+          },
+          "smooth_liar": {
+            "Desc": "+10: Przekupstwo, Upłynnienie Zdobyczy, Fałszowanie Dokumentów"
+          },
+          "surefooted": {
+            "Desc": "+10: Maskowanie Śladów, Kamienny Krąg"
+          },
+          "night_owl": {
+            "Desc": "+10: Infiltracja, Kamienny Krąg"
+          },
+          "ox_strong": {
+            "Desc": "+10: Porwanie"
+          },
+          "steady_nerves": {
+            "Desc": "+10: Przekupstwo, Dywersja i Zadyma, Maskowanie Śladów, Opieka nad Rannymi"
+          },
+          "haggler": {
+            "Desc": "+10: Upłynnienie Zdobyczy"
+          },
+          "lucky": {
+            "Desc": "+10: Maskowanie Śladów"
+          }
+        },
+        "Flaws": {
+          "kleptomaniac": {
+            "Camp": "okrada skarbiec sekty (1 SS)"
+          },
+          "wanted": {
+            "Desc": "+1 Podejrzliwość po wpadce; ryzyko rozpoznania"
+          },
+          "gambler": {
+            "Camp": "przegrywa w karty pieniądze sekty"
+          },
+          "traitor": {
+            "Desc": "10% szans na wyciek informacji przy misji szpiegowskiej (+1 Podejrzliwość)",
+            "Camp": "wyciekają informacje o sekcie — +1 Podejrzliwość"
+          },
+          "in_debt": {
+            "Desc": "10% szans po postoju, że wierzyciele węszy wokół kryjówki (+1 Podejrzliwość)",
+            "Camp": "wierzyciele depczą mu po piętach — +1 Podejrzliwość"
+          },
+          "clumsy": {
+            "Desc": "−10: Fałszowanie Dokumentów"
+          },
+          "bloodthirsty": {
+            "Desc": "Każda udana dywersja lub zastraszanie daje +1 Podejrzliwość przez niepotrzebne okrucieństwo"
+          },
+          "witchhunter_mark": {
+            "Desc": "Porażka podnosi Podejrzliwość"
+          },
+          "coward": {
+            "Desc": "−10: Dywersja i Zadyma, Sabotaż"
+          },
+          "alcoholic": {
+            "Desc": "−10: Maskowanie Śladów, Kamienny Krąg; 20% szans na niedyspozycję po postoju"
+          },
+          "loudmouth": {
+            "Desc": "−10: Infiltracja"
+          },
+          "old_slow": {
+            "Desc": "−10: Infiltracja, Kamienny Krąg"
+          },
+          "superstitious": {
+            "Desc": "−10: Sabotaż, Infiltracja"
+          },
+          "repulsive": {
+            "Desc": "−10: Nasłuch w Szynku, Szerzenie Plotek, Upłynnienie Zdobyczy (odpycha ludzi)"
+          },
+          "one_eyed": {
+            "Desc": "−10: Maskowanie Śladów, Kamienny Krąg"
+          },
+          "hothead": {
+            "Desc": "−10: Przekupstwo, Maskowanie Śladów"
+          },
+          "squeamish": {
+            "Desc": "−10: Opieka nad Rannymi, Porwanie"
+          },
+          "snorer": {
+            "Desc": "−10: Infiltracja, Kamienny Krąg"
+          },
+          "proud": {
+            "Desc": "−10: Nasłuch w Szynku, Przekupstwo, Upłynnienie Zdobyczy"
+          },
+          "jinxed": {
+            "Desc": "−10: Kamienny Krąg"
+          }
+        },
+        "Perks": {
+          "craft_chirurgeon": {
+            "Desc": "Zanim zszedł na trakt, zszywał rany i składał kości. Podczas nocnego postoju automatycznie leczy 1 rannego wyznawcy bez zużycia zapasów."
+          },
+          "craft_blacksmith": {
+            "Desc": "Praca przy miechu i kowadle daje krzepę i znajomość oręża. Daje stałe +10 do zleceń z bronią oraz 50% zniżki na rynsztunek dla sekty."
+          },
+          "craft_innkeeper": {
+            "Desc": "Zna sekrety warzenia trunków i ludzkie języki. Podczas każdego nocnego postoju podnosi Morale sekty o +1, a nasłuch w szynku przynosi dodatkową plotkę."
+          },
+          "blood_brotherhood": {
+            "Name": "Przysięga Krwi z Arcykapłanem",
+            "Desc": "Złożył krwawy rytuał wierności. Nigdy nie zdradzi, nie ulega panice w obozie i może raz na sesję przyjąć Ranę Krytyczną wymierzoną w Arcykapłana."
+          },
+          "battle_scarred": {
+            "Desc": "Przeżył wiele ran i potyczek. Nawet będąc rannym, nie obniża Morale sekty i może pełnić nocną wartę w obozowisku bez kar."
+          },
+          "cold_blooded": {
+            "Desc": "Bezwzględny opanowany profesjonalista. W razie niepowodzenia misji operacyjnej ignoruje pierwszą komplikację lub utratę morale sekty."
+          },
+          "guard_contacts": {
+            "Name": "Wtyka w Świątyni",
+            "Desc": "Ma dłużnika lub krewnego wśród kapłanów i łowców czarownic. Obniża ryzyko nalotu o połowę i daje ostrzeżenie przed nim."
+          },
+          "shadow_tongue": {
+            "Name": "Tajne Znaki Bractwa",
+            "Desc": "Zna znaki rozpoznawcze, hasła i uściski dłoni bractwa. Zwiększa powodzenie wywiadu, śledzenia celu i paserstwa o +10."
+          }
+        },
+        "Notify": {
+          "SelectCharacter": "Wybierz token postaci lub stwórz postać gracza, aby otworzyć panel sekty!",
+          "OpenFailed": "Błąd podczas otwierania panelu sekty: {error}",
+          "SelectChiefForCamp": "Wybierz token postaci Arcykapłana, aby zarządzić nocny postój.",
+          "SelectChief": "Wybierz token postaci Arcykapłana na mapie.",
+          "NoAccess": "Nie masz dostępu do sekty tej postaci.",
+          "GMResolvesWeek": "Tydzień sekty rozpatruje Mistrz Gry.",
+          "WeekAlreadyResolved": "Tydzień tej sekty został już rozpatrzony dla tego dnia świata. Przesuń czas gry.",
+          "CampAlreadyResolved": "Nocny postój tej sekty został już rozstrzygnięty dla tego dnia świata."
+        },
+        "Orders": {
+          "Effects": {
+            "MustFace": "rzuca się na szermierza i ignoruje resztę sekty do końca rundy"
+          },
+          "meatshield": {
+            "Effect": "Cios trafia wyznawcy zamiast Arcykapłana. Wyznawca zostaje ranny (chyba że uratuje go pancerz lub ranga weterana).",
+            "Name": "Męczeństwo",
+            "Desc": "Zelota rzuca się pod cios przeznaczony dla arcykapłana i dziękuje za to Mistrzowi."
+          },
+          "bullrush": {
+            "Effect": "Wróg zostaje odepchnięty o 2 metry, traci 1 Przewagę, a Arcykapłan natychmiast zamyka dystans do zwarcia bez testu.",
+            "Name": "Fanatyczna Szarża",
+            "Desc": "Zelota wpada na wroga z okrzykiem, nie dbając o własne życie."
+          },
+          "flank": {
+            "Effect": "Cel traci gardę – nie może wykonać Uniku ani Parowania przeciwko najbliższemu atakowi Arcykapłana!",
+            "Desc": "Szpieg zachodzi wroga od tyłu, zanim ten zrozumie, po czyjej stronie stoi."
+          },
+          "distract": {
+            "Effect": "Arcykapłan zyskuje +2 Przewagi, a prowokowany wróg traci 1 Przewagę!",
+            "Name": "Bluźniercza Litania",
+            "Desc": "Mówca zaczyna litanię w zapomnianym języku i wrogowi drżą ręce."
+          },
+          "draught": {
+            "Effect": "Arcykapłan lub wskazany sojusznik usuwa 1 Stan Zmęczony (Fatigued) albo ignoruje go do końca następnej rundy.",
+            "Name": "Święty Napój",
+            "Desc": "Gorzki napój z kielicha bractwa przywraca siły."
+          },
+          "rally": {
+            "Desc": "Arcykapłan ryczy rozkaz, motywując kompanów i budząc strach u przeciwników.",
+            "Effect": "Usuwa ze wskazanego sojusznika Stan Złamany (Broken). Arcykapłan zyskuje Przewagę równą SL testu (minimum 1)."
+          },
+          "coordinate": {
+            "Effect": "Arcykapłan i do trzech sojuszników w promieniu 6 metrów mogą wykonać darmowy ruch o połowę Szybkości; wychodząc ze zwarcia nie muszą zdawać testu."
+          },
+          "retaliation": {
+            "Name": "Odwet Sekty",
+            "Desc": "Wściekły kontratak! Wyznawca natychmiast rzuca się pomścić ranionego przywódcę.",
+            "Effect": "Jeśli Arcykapłan lub sojusznik otrzyma obrażenia, Prawa Ręka natychmiast kontratakuje LUB Arcykapłan zyskuje +2 Przewagi w rewanżu."
+          },
+          "Notify": {
+            "AlreadyThisRound": "Arcykapłan wydał już rozkaz w tej rundzie (rozkaz zużywa jego Akcję)."
+          },
+          "MeatShield": {
+            "Saved": "{name} rzuca się pod cios, lecz {reason} pochłania impet ataku! Wyznawca unika rany i pozostaje w gotowości!"
+          },
+          "Dialog": {
+            "ChiefHimself": "Arcykapłan osobiście",
+            "LeadershipHint": "Arcykapłan wykonuje test Dowodzenia. Sukces – rozkaz działa; porażka – brak efektu. Rozkaz zużywa Akcję Arcykapłana (jeden na rundę).",
+            "Follower": "Podwładny"
+          },
+          "bodyblock": {
+            "Desc": "Ochroniarz zachodzi Arcykapłana od frontu i przyjmuje uderzenia na tarczę i na plecy.",
+            "Effect": "Do końca rundy pierwszy atak wręcz na Arcykapłana trafia ochroniarza zamiast niego. Arcykapłan zyskuje 1 Przewagi (ma chwilę, by złapać oddech)."
+          },
+          "circle": {
+            "Desc": "Ludzie zamykają krąg wokół Arcykapłana, plecami do siebie, twarzami do wroga.",
+            "Effect": "Arcykapłan traci stan Zaskoczony (jeśli go ma) i zyskuje 1 Przewagi. Nikt nie podejdzie go od tyłu."
+          },
+          "parry": {
+            "Desc": "Szermierz wchodzi między Arcykapłana a przeciwnika i odbija cios klingą.",
+            "Effect": "Pierwszy atak wręcz na Arcykapłana w tej rundzie ma −20 do trafienia. Arcykapłan zyskuje 1 Przewagi."
+          },
+          "riposte": {
+            "Effect": "Wskazany przeciwnik traci 1 Przewagi. Jeśli w tej rundzie zaatakuje Arcykapłana i nie trafi, Arcykapłan może od razu zadać mu cios z kontry."
+          },
+          "wagonwall": {
+            "Desc": "Woźnica zatrzymuje wóz tak, by zasłonić Arcykapłana od ognia.",
+            "Effect": "Wóz daje osłonę: ataki dystansowe na Arcykapłana w tej rundzie mają −10. Arcykapłan zyskuje 1 Przewagi."
+          },
+          "getaway": {
+            "Desc": "Woźnica chwyta Arcykapłana za ramię i wyrywa go z kłębowiska prosto na kozioł.",
+            "Effect": "Arcykapłan traci stan Powalony i może oddalić się o 4 metry bez prowokowania ataków okazyjnych."
+          },
+          "spot": {
+            "Effect": "Pierwszy atak Arcykapłana w tej rundzie zyskuje +10 do trafienia. Arcykapłan zyskuje 1 Przewagi.",
+            "Desc": "Szpieg wskazuje lukę w pancerzu."
+          },
+          "salve": {
+            "Effect": "Arcykapłan (lub wskazany sojusznik) traci stan Krwawienie.",
+            "Name": "Czarny Balsam",
+            "Desc": "Rana zostaje posmarowana gęstym, czarnym balsamem bractwa."
+          },
+          "regroup": {
+            "Desc": "Prawa Ręka klaszcze, gwiżdże i sekta wraca do szyku.",
+            "Effect": "Arcykapłan traci stan Zaskoczony i zyskuje 1 Przewagi; sojusznicy ze Świty mogą przemieścić się o 2 metry bez kosztu."
+          },
+          "grapple": {
+            "Desc": "Zelota chwyta przeciwnika i nie puszcza, choćby go cięto."
+          },
+          "challenge": {
+            "Name": "Bluźnierstwo",
+            "Desc": "Zelota obraża boga przeciwnika tak, że ten zapomina o wszystkim innym.",
+            "Effect": "Przeciwnik musi zdać test Siły Woli; przy porażce rzuca się na zelotę i ignoruje resztę sekty do końca rundy."
+          },
+          "resupply": {
+            "Name": "Rytualny Sztylet",
+            "Desc": "Akolita podaje sztylet, kadzidło albo bandaż, zanim ktoś zdąży poprosić."
+          },
+          "retreat": {
+            "Name": "Tajne Przejście",
+            "Desc": "Akolita otwiera ukryte drzwi i sekta znika w piwnicach."
+          },
+          "lure": {
+            "Desc": "Szpieg pokazuje się na końcu ulicy i znika za rogiem."
+          },
+          "kidneystrike": {
+            "Name": "Zatrute Ostrze",
+            "Desc": "Ostrze posmarowane trucizną drasnęło przeciwnika pod żebrami."
+          },
+          "sand": {
+            "Name": "Proszek w Oczy",
+            "Desc": "Skrytobójca dmucha wrogowi w twarz oślepiającym proszkiem."
+          },
+          "smoke": {
+            "Name": "Kadzidlany Dym",
+            "Desc": "Gęsty dym z kadzielnicy zasłania pole walki."
+          },
+          "evileye": {
+            "Name": "Klątwa Mistrza",
+            "Desc": "Mówca wskazuje wroga i wypowiada imię Mistrza."
+          },
+          "payoff": {
+            "Name": "Obietnica Mistrza",
+            "Desc": "Mówca obiecuje przeciwnikowi to, czego pragnie najbardziej."
+          },
+          "forgedorder": {
+            "Name": "W Imieniu Świątyni",
+            "Desc": "Mówca udaje kapłana i rozkazuje w imieniu świątyni."
+          },
+          "fireoil": {
+            "Name": "Alchemiczny Ogień",
+            "Desc": "Alchemik rozbija flaszkę, której zawartość zapala się w zetknięciu z powietrzem."
+          },
+          "fumes": {
+            "Desc": "Alchemik rozbija flaszkę z duszącym oparem."
+          }
+        },
+        "Meta": {
+          "TargetHint": "Próg testu uproszczonego (przed modyfikatorami sekty)"
+        },
+        "Relation": {
+          "strained": {
+            "Desc": "Mroczny Mistrz patrzy na ręce. Spóźnienia grożą gniewem."
+          },
+          "favorite": {
+            "Name": "Wybrańcy Mistrza"
+          }
+        },
+        "Recruit": {
+          "NoActor": "Nie znaleziono aktora sekty powiązanego z tą rekrutacją!",
+          "Joined": "{name} dołączył(a) do sekty!",
+          "ChatText": "<strong>{user}</strong> zwerbował(a) wyznawcę: <strong>{name}</strong> ({role}) do sekty.",
+          "Flavor": "Rekrutacja: Nowe Twarze w Sekcie"
+        },
+        "Mod": {
+          "Rank": "Ranga sekty",
+          "Heat": "Podejrzliwość {value}",
+          "ShadowTongue": "Tajne Znaki Bractwa"
+        },
+        "Ops": {
+          "PatronCut": "Dola Mrocznego Mistrza ({percent}%): {cut} · do skarbca: {net}.",
+          "NoCargo": "{mission}: brak pasującego zdobyczy, który można by zabrać.",
+          "DataEffect": {
+            "Heat": "Podejrzliwość {value}."
+          }
+        },
+        "Loot": {
+          "ItemDesc": "Zdobycz sekty: {origin}.",
+          "ItemDescHot": "Zdobycz sekty: {origin} – gorący towar, ktoś go szuka.",
+          "DiscardTitle": "Pozbyć się zdobyczy?",
+          "DiscardText": "Wyrzucić, oddać albo ukryć na dobre <strong>{name}</strong> (~{value} SS)? Zdobycz zniknie z kryjówki sekty."
+        },
+        "Card": {
+          "Loot": {
+            "Haul": "Zdobycz: {loot}."
+          },
+          "Burglary": {
+            "Success": "{name} wchodzi i wychodzi przed świtem z zdobyczą.",
+            "SuccessAt": "{name} wchodzi do: <em>{place}</em> i wychodzi przed świtem z zdobyczą."
+          },
+          "Fence": {
+            "NothingToSell": "{fence}: brak zdobyczy, które da się tu sprzedać.",
+            "Returned": "Zdobycze wracają do kryjówki."
+          },
+          "Intimidate": {
+            "Success": "{name} skutecznie zastrasza ofiarę – zdobycz: {coins} SS.",
+            "Fail": "{name} próbował(a) nastraszyć cel, ale napotkał(a) opór. Ludzie szemrzą (Morale -1)."
+          },
+          "Bribe": {
+            "NotArrested": "Ten członek sekty nie siedzi w areszcie.",
+            "HeatDown": "Raport o sekcie ląduje w piecu – Podejrzliwość −1."
+          },
+          "CoverTracks": {
+            "HeatDown": "Ślady sekty się zacierają – Podejrzliwość -1."
+          }
+        },
+        "Camp": {
+          "Log": "Nocny Postój [{shelter}]. Warty: {watch}. {food}. Morale: {morale}/10. Podejrzliwość: {heat}/5.",
+          "TitleWeek": "Tydzień Sekty",
+          "FlavorWeek": "Raport: Tydzień Sekty",
+          "GMResolvesWeekHint": "Tydzień sekty rozpatruje Mistrz Gry. Zaplanuj przydziały w zakładce Przydziały.",
+          "NoHealthy": "Brak zdrowych wyznawców w obozie!",
+          "StateLine": "Morale: {morale}/10, Podejrzliwość: {heat}/5, Zapasy: {supplies}",
+          "Food": {
+            "Empty": "Brak zapasów! Ludzie poszli spać głodni (-1 Morale)"
+          }
+        },
+        "Desertion": {
+          "Text": "<strong>{name}</strong> nie wierzy już w Arcykapłana i znika przed świtem{taken}."
+        },
+        "Treasury": {
+          "Generous": "Sekta widzi hojność Arcykapłana — nastroje w obozie rosną! (+1 Morale)",
+          "Deposited": "Wpłacono {amount} do skarbca sekty.",
+          "DepositTitle": "Wpłata do Skarbca Sekty",
+          "NewBalance": "Nowy stan skarbca sekty: <strong>{amount}</strong>.",
+          "FlavorDeposit": "Finanse Sekty",
+          "StashShort": "W skarbcu sekty nie ma tylu monet! Dostępne: {have}",
+          "SmallWithdrawal": "Pobrano drobne wydatki. Wyznawcy nie mają z tym problemu.",
+          "AuthorityHeld": "Arcykapłan użył autorytetu, by uciszyć szepty. Test Dowodzenia zdany (Rzut: {roll} vs {target}). Morale nienaruszone.",
+          "AuthorityLost": "Ludzie szemrzą po kątach, że Arcykapłan podkrada wspólny zdobycz! Test Dowodzenia nieudany (Rzut: {roll} vs {target}). Sekta traci -{loss} Morale!",
+          "WithdrawTitle": "Wypłata ze Skarbca Sekty",
+          "FlavorWithdraw": "Wydatki Bractwa"
+        },
+        "Supplies": {
+          "StashShort": "W skarbcu sekty brakuje monet! Wymagane: {need}, dostępne: {have}",
+          "SourceStash": "skarbiec sekty"
+        },
+        "Roster": {
+          "GMOnlyDelete": "Tylko MG może usuwać członków sekty.",
+          "DeleteTitle": "Usuń członka sekty",
+          "DeleteText": "Czy na pewno usunąć <strong>{name}</strong> ze sekty?",
+          "NewFollower": "Nowy Podwładny"
+        },
+        "Retinue": {
+          "Left": "{name} opuścił(a) Świtę Arcykapłana.",
+          "Joined": "{name} dołączył(a) do Świty Arcykapłana!",
+          "Full": "Świta Arcykapłana może liczyć maksymalnie 3 wyznawców!"
+        },
+        "Mission": {
+          "NoFollower": "Nie wybrano wyznawcy!"
+        },
+        "Tier": {
+          "LeadApplies": "{name}: bez kary, podwójny zdobycz"
+        },
+        "Fence": {
+          "NothingChosen": "Nie wybrano żadnego zdobyczy do sprzedaży.",
+          "NoLoot": "Sekta nie ma żadnych zdobyczy do sprzedania."
+        },
+        "Bribe": {
+          "Hush": "Uciszenie sprawy: Podejrzliwość −1 (20 SS)"
+        },
+        "Terrain": {
+          "RacketWaits": "Haracz w mieście czeka na powrót sekty.",
+          "Changed": "Sekta zmienia teren: {terrain}. Paser: {fence}."
+        },
+        "CampDialog": {
+          "UseSupplies": "Wydaj zapasy ze spiżarni sekty:",
+          "TitleWeek": "Tydzień Sekty – rozpatrzenie",
+          "WeekDone": "Tydzień sekty rozpatrzony – raport na czacie.",
+          "Fasting": "Ludzie nie jedzą"
+        },
+        "RecruitDialog": {
+          "Intro": "Przedstaw graczom propozycje wyznawców na czacie. Gracze będą mogli wybrać jednego rekruta, który dołączy do sekty.",
+          "Title": "Rekrutacja Nowych Wyznawców dla Graczy"
+        },
+        "Upgrade": {
+          "OneCraftHint": "Wyznawca może posiadać tylko jeden dawny zawód",
+          "TransferHint": "Przenieś do innego wyznawcy",
+          "Stash": "Skarbiec Sekty",
+          "CraftSectionHint": "(Maksymalnie 1 zawód na wyznawcę)",
+          "TraitSection": "Zalety i Wady Wyznawcy",
+          "OneLieutenant": "W sekcie może być tylko jedna Prawa Ręka ({name})!",
+          "HasCraft": "Ten wyznawca ma już wybrany dawny fach ({name})! Postać może mieć tylko jeden fach z przeszłości.",
+          "NoFreeSlot": "Brak innych wyznawców z wolnym slotem ekwipunku!",
+          "SecondRoleIntro": "Wyznawca, który wiele widział, potrafi więcej niż jedno. Druga rola daje dostęp do jej rozkazów i specjalizacji (premia za specjalizację liczy się raz).",
+          "CraftIntro": "Przeszłość i rzemiosło sprzed przystąpienia do sekty. Każdy wyznawca może wybrać tylko jeden dawny fach."
+        },
+        "TreasuryDialog": {
+          "DepositHint": "Wpłata ponad 1 ZK (20 SS) nagradzana jest <strong>+1 Morale</strong> dla całej sekty!",
+          "Balance": "Stan skarbca sekty",
+          "MutinyRisk": "<strong>Ryzyko Buntu:</strong> Wyznawcy pilnują wspólnego zdobyczy! Pobranie powyżej 10 SS wymaga zdania testu Dowodzenia przez Arcykapłana. W razie niepowodzenia sekta traci <strong>1–2 Morale</strong>!"
+        },
+        "SuppliesDialog": {
+          "FromStash": "Skarbiec Sekty (dostępne: {amount})"
+        },
+        "Chat": {
+          "GangTest": "Test uproszczony sekty",
+          "Footer": "Świta Arcykapłana"
+        },
+        "RecruitCard": {
+          "Title": "Nowe Twarze w Sekcie: Rekrutacja",
+          "Intro": "Mistrz Gry przedstawił kandydatów. Wybierzcie wyznawcę, który dołączy do waszej kompanii!",
+          "Joined": "Postać dołączyła do sekty!",
+          "Footer": "Rekrutacja Sekty"
+        },
+        "TacticCard": {
+          "UsesAction": "Rozkaz zużywa Akcję Arcykapłana w tej rundzie.",
+          "NotHeard": "Ludzie nie usłyszeli rozkazu w zgiełku walki – <strong>brak efektu</strong>."
+        },
+        "Sheet": {
+          "LeaderTitle": "Arcykapłan / Przywódca: {name}",
+          "ChiefTitle": "Arcykapłan Sekty",
+          "Chief": "ARCYKAPŁAN",
+          "Eyebrow": "Karta sekty",
+          "NamePlaceholder": "Nazwa Sekty / Świty",
+          "NameTitle": "Kliknij, aby zmienić nazwę sekty",
+          "MottoTitle": "Motto sekty",
+          "MoraleTitle": "Morale Sekty: {value}/10"
+        },
+        "Tabs": {
+          "Loot": "Zdobycze"
+        },
+        "LootTab": {
+          "TerrainLabel": "Teren sekty",
+          "InHideout": "Zdobycze w kryjówce",
+          "GiveChief": "Przekaż Arcykapłanowi jako przedmiot",
+          "Discard": "Pozbądź się zdobyczy",
+          "Empty": "Kryjówka jest pusta. Zdobycze przynoszą udane porwania i nocne wyprawy do kamiennych kręgów.",
+          "HelpRecon": "<strong>Rozpoznanie</strong> (Infiltracja): +20 do następnego porwania."
+        },
+        "TasksTab": {
+          "Intro": "Wyślij ludzi w teren lub weź do swojej osobistej świty. Każdego wyznawcy można przypisać do <strong>jednego zadania dziennie</strong>.",
+          "RetinueHint": "Wyznawcy przypisani do Świty idą krok w krok z Arcykapłanem w trakcie dnia gry i odblokowują swoje unikalne rozkazy bojowe w zakładce <strong>Taktyka</strong> (maks. 3 osoby). Nie mogą w tym czasie wyruszać na odrębne misje.",
+          "WatchHint": "Osoby wyznaczone na wartę czuwają podczas snu drużyny. Każdy wyznawca może mieć tylko jedno zadanie na dobę."
+        },
+        "RosterTab": {
+          "Title": "Wyznawcy i Kompania",
+          "ToggleAllHint": "Zwiń lub rozwiń szczegóły wszystkich wyznawców",
+          "AddHint": "Mistrz Gry: Dodaj nowego pustego wyznawcy",
+          "Add": "Dodaj Wyznawcy",
+          "DropHint": "Przeciągnij aktora postaci lub BN z paska Foundry na kartę, aby połączyć go z wyznawcą",
+          "ToggleOne": "Zwiń / Rozwiń szczegóły wyznawcy",
+          "NamePlaceholder": "Imię wyznawcy...",
+          "LeaveRetinue": "Odeślij ze Świty Arcykapłana do obozu",
+          "JoinRetinueHint": "Dołącz do osobistej Świty Arcykapłana (odblokowuje Taktykę)",
+          "Delete": "Usuń wyznawcę ze świty",
+          "RoleTitle": "Mistrz Gry: Wybierz rolę wyznawcy",
+          "EmptyTitle": "Brak wyznawców w świcie!"
+        },
+        "InfoTab": {
+          "GMOnlyPatron": "Tylko Mistrz Gry może modyfikować dane Mrocznego Mistrza",
+          "PatronSetByGM": "Szczegóły o Mrocznym Mistrzu ustala Mistrz Gry",
+          "RelationShort": {
+            "strained": "Napięte (Podejrzliwość, Mroczny Mistrz patrzy na ręce)",
+            "favorite": "Wybrańcy (pełna łaska, największe tajemnice)"
+          },
+          "LawTitle": "Podejrzliwość Władz i Świątyni",
+          "GMOnlyHeat": "Tylko Mistrz Gry może modyfikować podejrzliwość",
+          "HeatLevel": "Poziom Podejrzliwości:",
+          "HeatShort": {
+            "0": "W ukryciu",
+            "1": "Dziwne plotki",
+            "2": "Kazania, łapówki x2",
+            "3": "Łowca w mieście",
+            "4": "Polowanie na heretyków",
+            "5": "Stosy na rynku"
+          },
+          "Bounty": "Długi / Nagroda za Arcykapłana:",
+          "BountyPlaceholder": "np. 50 Złotych Koron za herezjarchę, żywego",
+          "AlliesPlaceholder": "Przekupni grabarze, zubożali szlachcice, zdesperowani mieszczanie...",
+          "Rivals": "Wrogowie i Wrogie Bractwa:",
+          "RivalsPlaceholder": "Łowcy czarownic, świątynia, inne sekty, odstępcy...",
+          "Patron": "Mroczny Mistrz",
+          "PatronName": "Imię lub Przydomek Mistrza:",
+          "PatronNamePlaceholder": "np. Szary Pan, Ten-Który-Czeka, Magister Vogel...",
+          "PatronTitle": "Natura / Tytuł Mistrza:",
+          "PatronTitlePlaceholder": "np. Arcymag, Szlachcic w masce, Głos ze snów...",
+          "PatronRelation": "Łaska i Relacja z Mistrzem:",
+          "PatronCut": "Dziesięcina dla Mistrza:",
+          "PatronCutPlaceholder": "np. 25% każdej ofiary, coroczny dar...",
+          "PatronNotes": "Znaki i Zobowiązania wobec Mistrza:",
+          "Hideout": "Sanktuarium / Miejsce Spotkań:",
+          "Territory": "Miasto / Obszar Wpływów Sekty:",
+          "Code": "Przysięgi i Zasady Bractwa:",
+          "CodePlaceholder": "Przysięga milczenia, stopnie wtajemniczenia, kara za zdradę...",
+          "Notes": "Księga / Notatki Arcykapłana:",
+          "NotesPlaceholder": "Historia bractwa, dawne rytuały, cel Mistrza..."
+        },
+        "DashTab": {
+          "CampCaption": "Wpływa na regenerację sił i nastroje w sekcie podczas odpoczynku. Teren: <strong>{terrain}</strong> (zmiana w zakładce Zdobycze).",
+          "FlavorHigh": "Ludzie pójdą za Arcykapłanem w ogień! Gotowi na każde poświęcenie.",
+          "FlavorMid": "Stabilna dyscyplina. Sekta wykonuje polecenia bez marudzenia.",
+          "DepositHint": "Przelej monety ze swojej sakwy do wspólnego skarbca sekty (+1 Morale przy hojnych datkach)",
+          "WithdrawHint": "Pobierz monety ze skarbca sekty (Pobranie > 10 SS wymaga testu Dowodzenia — ryzyko utraty Morale!)",
+          "ResolveWeek": "Rozpatrz Tydzień Sekty",
+          "TablesHint": "Mistrz Gry: otwórz tabele losowe plotek i wydarzeń postoju (RollTable, folder sekty)",
+          "ChronicleEmpty": "Brak odnotowanych zdarzeń. Sekta dopiero wyrusza na trakt...",
+          "Morale": "Morale Sekty",
+          "FlavorLow": "Ludzie szemrzą po kątach, brakuje im grosza i gorzały."
+        },
+        "TacticsTab": {
+          "NoRetinue": "<strong>Brak wyznawców w Świcie!</strong> Arcykapłan walczy sam. Rozkazy specjalistyczne są zablokowane. Przypisz ludzi w zakładce <em>Przydziały</em>.",
+          "HowTo": "Rozkazy wydajesz poprzez <strong>Test Dowodzenia</strong> Arcykapłana (porażka oznacza brak efektu; jeden rozkaz na rundę, zużywa Akcję Arcykapłana) lub wydając <strong>Przewagę</strong> (automatyczny sukces).",
+          "FilterEmpty": "Żadna aktywna osoba w świcie nie odblokowuje taktyk. Dodaj wyznawcy do świty lub pokaż wszystkie taktyki.",
+          "PersonalAlways": "Rozkaz osobisty Arcykapłana (dostępny zawsze)",
+          "WoundRisk": "Ryzyko Rany Wyznawcy"
+        },
+        "Title": "Sekta",
+        "WindowTitle": "WFRP4e – Sekretne Bractwo",
+        "DefaultGangName": "Bractwo",
+        "Tiers": {
+          "easy": {
+            "Name": "Żebrak lub włóczęga",
+            "Desc": "+20 do testu, połowa zapłaty"
+          },
+          "normal": {
+            "Name": "Mieszczanin"
+          },
+          "rich": {
+            "Name": "Ktoś ważny",
+            "Desc": "−20 do testu, podwójna zapłata, każda porażka grozi wpadką"
+          }
+        },
+        "Tokens": {
+          "recon": {
+            "Desc": "+20 do następnego porwania"
+          },
+          "lead": {
+            "Desc": "Ktoś ważny bez kary −20"
+          },
+          "commotion": {
+            "Name": "Uniesienie",
+            "Desc": "+20 do następnego zlecenia z testem (dziś); po rytuale wyznawcy działają bez wahania"
+          }
+        },
+        "Notoriety": {
+          "0": {
+            "Name": "W Ukryciu",
+            "Desc": "Bractwo spotyka się w piwnicach i nikt nie łączy znikających świec z niczym groźnym."
+          },
+          "1": {
+            "Name": "Dziwne Plotki",
+            "Desc": "Ktoś widział światła nocą na cmentarzu. Ludzie się śmieją, ale nie wszyscy."
+          },
+          "2": {
+            "Name": "Kazania Ostrzegawcze",
+            "Desc": "Kapłani mówią z ambony o herezji. Łapówki dla straży kosztują podwójnie."
+          },
+          "3": {
+            "Name": "Śledztwo",
+            "Desc": "Łowca czarownic przybył do miasta i wypytuje o zaginionych."
+          },
+          "4": {
+            "Name": "Polowanie na Heretyków",
+            "Desc": "Zakon prowadzi przesłuchania. Każdy wyznawca może zostać wydany."
+          },
+          "5": {
+            "Name": "Stosy",
+            "Desc": "Stosy płoną na rynku. Bramy zamknięte, a każdy dom jest przeszukiwany."
+          }
+        },
+        "Risk": {
+          "stealth": "Wpadka: Podejrzliwość, areszt",
+          "Result": {
+            "FaceRemembered": "Ktoś zapamiętał twarz pod kapturem – Podejrzliwość +1.",
+            "Arrested": "{name} trafia na przesłuchanie – <strong>Aresztowany</strong> na {time}. Podejrzliwość +1.",
+            "Chase": "Pościg i krzyki „heretyk!” na ulicy – Podejrzliwość +1.",
+            "WoundedLoud": "{name} zostaje <strong>Ranny</strong>, a o krwawej bójce mówi cała dzielnica – Podejrzliwość +1."
+          }
+        },
+        "Raid": {
+          "Escaped": "Wartownicy w porę podnieśli alarm – sekta uciekła tajnym przejściem, porzucając {lost} racji zapasów.",
+          "Settled": "Po nalocie łowcy uznają sprawę za zamkniętą – Podejrzliwość -1.",
+          "Summary": "Nalot łowców czarownic.",
+          "Arrested": "Łowcy czarownic wpadli do niestrzeżonej kryjówki – <strong>{name}</strong> trafia na przesłuchanie na {time}.",
+          "Seized": "Łowcy „skonfiskowali” {amount} ze skarbca jako dowód herezji."
+        },
+        "Report": {
+          "MissionFlavor": "Polecenie Arcykapłana",
+          "QueueTitle": "Raport zadań sekty"
+        },
+        "Badges": {
+          "retinue": "Straż Arcykapłana"
+        }
+      }
     }
   }
 }

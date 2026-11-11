@@ -1,0 +1,65 @@
+{{!-- Księga Kompanii: nagłówek-chorągiew z herbem typu, sylwetką terenu i miernikami zasobów --}}
+<svg class="uw-l-defs" width="0" height="0" aria-hidden="true" focusable="false">
+  <filter id="uw-woodcut" x="-5%" y="-5%" width="110%" height="110%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="1" seed="7" result="grain"/>
+    <feDisplacementMap in="SourceGraphic" in2="grain" scale="1.1" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+
+<header class="uw-l-header" data-terrain="{{terrain.id}}">
+  <div class="uw-l-skyline" aria-hidden="true">{{uwIcon ledgerView.skyline "uw-l-skyline-art"}}</div>
+
+  <div class="uw-l-crest" title="{{underworldT 'Sheet.Eyebrow'}}">
+    {{uwIcon "orn-shield" "uw-l-shield"}}
+    {{uwIcon ledgerView.crest "uw-l-charge"}}
+  </div>
+
+  <div class="uw-l-identity">
+    <div class="uw-l-eyebrow">{{underworldT "Sheet.Eyebrow"}}</div>
+    <input type="text" name="name" value="{{gang.name}}" class="uw-l-name" placeholder="{{underworldT 'Sheet.NamePlaceholder'}}" title="{{underworldT 'Sheet.NameTitle'}}"/>
+    <div class="uw-l-ribbon">
+      {{uwIcon "orn-ribbon" "uw-l-ribbon-art"}}
+      <input type="text" name="motto" value="{{gang.motto}}" class="uw-l-motto" placeholder="{{underworldT 'Sheet.MottoPlaceholder'}}" title="{{underworldT 'Sheet.MottoTitle'}}"/>
+    </div>
+    <div class="uw-l-sub">
+      <span class="uw-l-leader" title="{{underworldT 'Sheet.LeaderTitle' name=actor.name}}">
+        <img src="{{actor.img}}" alt=""/> <span class="uw-l-leader-role">{{underworldT "Sheet.Chief"}}</span> {{actor.name}}
+      </span>
+      <span class="uw-l-chip" title="{{terrain.name}}">{{uwIcon ledgerView.terrainIcon}} {{terrain.name}}</span>
+      <span class="uw-l-chip">{{{underworldRelationBadge gang.patron.relation}}}</span>
+    </div>
+  </div>
+
+  <div class="uw-l-meters">
+    <div class="uw-l-meter" title="{{underworldT 'Sheet.MoraleTitle' value=ledgerView.morale.value}}">
+      <span class="uw-l-meter-label">{{uwIcon "ui-morale"}} {{underworldT "Sheet.Morale"}}</span>
+      <span class="uw-l-pips uw-l-pips-morale">
+        {{#each ledgerView.morale.pips}}<span class="uw-l-pip {{#if this.on}}on{{/if}}">{{uwIcon "orn-pip_flag"}}</span>{{/each}}
+      </span>
+      <strong class="uw-l-meter-value">{{ledgerView.morale.value}}</strong>
+    </div>
+
+    <div class="uw-l-meter" title="{{underworldT 'Sheet.SuppliesTitle' value=ledgerView.supplies.value}}">
+      <span class="uw-l-meter-label">{{uwIcon "ui-supplies"}} {{underworldT "Sheet.Supplies"}}</span>
+      <span class="uw-l-bar"><span style="width: {{ledgerView.supplies.pct}}%"></span></span>
+      <strong class="uw-l-meter-value">{{ledgerView.supplies.value}}<small>/{{ledgerView.supplies.max}}</small></strong>
+    </div>
+
+    <div class="uw-l-meter uw-l-meter-coins" title="{{underworldT 'Upgrade.Stash'}}">
+      <span class="uw-l-meter-label">{{uwIcon "ui-treasury"}} {{underworldT "Upgrade.Stash"}}</span>
+      <span class="uw-l-coins">
+        <span class="uw-l-coin gc">{{uwIcon "ui-coin_gc"}}<b>{{ledgerView.treasury.gc}}</b><small>{{underworldT "Units.GC"}}</small></span>
+        <span class="uw-l-coin ss">{{uwIcon "ui-coin_ss"}}<b>{{ledgerView.treasury.ss}}</b><small>{{underworldT "Units.SS"}}</small></span>
+        <span class="uw-l-coin d">{{uwIcon "ui-coin_d"}}<b>{{ledgerView.treasury.d}}</b><small>{{underworldT "Units.BP"}}</small></span>
+      </span>
+    </div>
+
+    <div class="uw-l-meter uw-l-meter-pressure" title="{{ledgerView.pressure.level}}: {{ledgerView.pressure.desc}}">
+      <span class="uw-l-meter-label">{{uwIcon ledgerView.pressureIcon}} {{ledgerView.pressure.label}}</span>
+      <span class="uw-l-pips uw-l-pips-pressure">
+        {{#each ledgerView.pressure.pips}}<span class="uw-l-pip {{#if this.on}}on{{/if}}">{{uwIcon "orn-pip_seal"}}</span>{{/each}}
+      </span>
+      <span class="uw-l-pressure-level">{{ledgerView.pressure.level}}</span>
+    </div>
+  </div>
+</header>

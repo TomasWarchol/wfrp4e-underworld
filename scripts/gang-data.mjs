@@ -2,7 +2,7 @@
  * WFRP4e - Podziemie: Szajka Człowieka (Mobilna Kompania)
  * Model danych i operacje na flagach aktora/świata
  */
-import { t } from "./i18n.mjs";
+import { t, setTextProfile } from "./i18n.mjs";
 
 export class GangData {
   static MODULE_ID = "wfrp4e-underworld";
@@ -53,6 +53,7 @@ export class GangData {
   static getGang(actor) {
     if (!actor) return null;
     const flag = actor.getFlag(this.MODULE_ID, this.FLAG_KEY);
+    setTextProfile(flag?.type);
     const defaults = this.getDefaultData();
     if (!flag) return defaults;
     const result = (typeof foundry !== "undefined" && foundry.utils?.mergeObject)

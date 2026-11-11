@@ -13,7 +13,10 @@
   "text": "Deszcz przebił się przez słomiany dach i zmoczył część posłań. Połowa szajki spała na mokro.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-003",
@@ -21,7 +24,10 @@
   "text": "Kudłaty burek całą noc szczekał przy płocie, a rano zaprzyjaźnił się z szajką za kawałek słoniny.",
   "morale": 0,
   "supplies": -1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-004",
@@ -29,7 +35,10 @@
   "text": "Dziewczynka z sąsiedniej zagrody przyniosła dzban mleka i spytała, czy to prawda, że jesteście bandytami. Dostała chleb i zachowała tajemnicę.",
   "morale": 1,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-005",
@@ -61,7 +70,10 @@
   "text": "Krowa przeszła przez płot i weszła prosto w wasze obozowisko. Nikt nie zdołał jej odprowadzić, zanim ją wydojono.",
   "morale": 0,
   "supplies": 3,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-009",
@@ -77,7 +89,10 @@
   "text": "Grad zniszczył część upraw i wiele dachów. Wieśniacy płakali, a szajka miała wrażenie, że jest tu niepożądana.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-011",
@@ -85,7 +100,10 @@
   "text": "Wieś obchodziła dożynki. Śpiewy, tańce i piwo lało się strumieniami. Szajka stała z boku, ale ktoś wcisnął jej dzban.",
   "morale": 1,
   "supplies": 1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-012",
@@ -101,7 +119,10 @@
   "text": "Wieśniacy szukali zaginionej owcy z latarniami. Szajka zachowała się cicho, a owca przez dwa dni służyła za zapas.",
   "morale": 0,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-014",
@@ -125,7 +146,10 @@
   "text": "Młynarz przyniósł worek mąki i spytał, czy nie potrzeba. Jego oczy zdradzały, że chętnie wyprzedaje towar, którego nie powinien.",
   "morale": 0,
   "supplies": 3,
-  "coinsSS": -2
+  "coinsSS": -2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-017",
@@ -133,7 +157,10 @@
   "text": "Ktoś podpalił stóg siana na polu sąsiada. Wieś rzuciła się do gaszenia, a kilku popleczników, nieproszonych, też pomagało.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-018",
@@ -181,7 +208,10 @@
   "text": "Podróżny z mapą szukał drogi do Altdorfu. Szajka wskazała mu kierunek, a on zostawił kilka drobnych monet.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-024",
@@ -197,7 +227,10 @@
   "text": "Bociany odleciały, a wieśniacy twierdzili, że zima przyjdzie wcześnie. Kilku popleczników zaczęło szukać cieplejszych okryć.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-026",
@@ -205,7 +238,10 @@
   "text": "Na wiejskim targu sprzedawano kury, gęsi i prosięta. Jeden z popleczników wrócił z kurą pod pachą i niewinną miną.",
   "morale": 0,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-027",
@@ -221,7 +257,10 @@
   "text": "Z komina pobliskiej chaty unosił się zapach pieczonego chleba. Kilku popleczników zakradło się po bochenek.",
   "morale": 0,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-029",
@@ -237,7 +276,10 @@
   "text": "Coś spłoszyło konie w stajni. Cała wieś wybiegła z latarniami, ale nic nie znaleźli. Szajka szczęśliwie nie była winna.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-031",
@@ -245,7 +287,10 @@
   "text": "Samotny jeździec w zbroi przejechał przez wieś bez słowa. Wieśniacy zamknęli drzwi, a szajka wstrzymała oddech.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-032",
@@ -253,7 +298,10 @@
   "text": "Do wsi dotarł posłaniec z wieściami o zielonoskórych na wschodniej granicy. Wieśniacy zaczęli ukrywać zboże, a część szajki wolała ruszyć dalej.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-033",
@@ -277,7 +325,10 @@
   "text": "Sołtys wydał ucztę na cześć gości z miasta i zaprosił cały obóz. Szajka grała rolę zacnych kupców, a jedzenie było wyśmienite.",
   "morale": 1,
   "supplies": 3,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-036",
@@ -293,7 +344,10 @@
   "text": "Studnia we wsi wyschła i wieśniacy musieli czerpać wodę z waszego potoku. Szajka dostała kilka drobnych prezentów.",
   "morale": 0,
   "supplies": 1,
-  "coinsSS": 1
+  "coinsSS": 1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-038",
@@ -301,7 +355,10 @@
   "text": "Czarny kot przeszedł przez obozowisko i połowa szajki zaczęła szukać drewna do zrobienia znaku ochronnego.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-039",
@@ -309,7 +366,10 @@
   "text": "We wsi pochowano staruszka. Wszyscy szli za trumną w milczeniu, a szajka zdjęła czapki i ukłoniła się z szacunkiem.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-040",
@@ -325,7 +385,10 @@
   "text": "Kupiec wędrowny z wozem towarów rozłożył kramik przy drodze. Szajka wypatrzyła parę rzeczy, które mogły się przydać.",
   "morale": 0,
   "supplies": 1,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-042",
@@ -341,7 +404,10 @@
   "text": "Gospodyni sprzedawała jajka z kosza i targowała się zawzięcie. Szajka dostała pół kosza za pół ceny, bo „mężczyźni muszą jeść”.",
   "morale": 0,
   "supplies": 3,
-  "coinsSS": -1
+  "coinsSS": -1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-044",
@@ -371,7 +437,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 2
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-046",
@@ -386,7 +455,10 @@
    "morale": 0,
    "supplies": 0,
    "coinsSS": 5
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-047",
@@ -401,7 +473,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-048",
@@ -431,7 +506,10 @@
    "morale": 1,
    "supplies": 4,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-050",
@@ -446,7 +524,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-051",
@@ -506,7 +587,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 6
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-055",
@@ -536,7 +620,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 6
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-057",
@@ -566,7 +653,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 5
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-059",
@@ -596,7 +686,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 7
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-061",
@@ -611,7 +704,10 @@
    "morale": 0,
    "supplies": 0,
    "coinsSS": 7
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-062",
@@ -716,7 +812,10 @@
   "morale": 0,
   "supplies": -1,
   "coinsSS": 0,
-  "next": "v-071"
+  "next": "v-071",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-071",
@@ -725,7 +824,10 @@
   "morale": -1,
   "supplies": 0,
   "coinsSS": 4,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-072",
@@ -733,7 +835,10 @@
   "text": "Przy ognisku kilku popleczników opowiadało zasłyszane historie o strzygach i utopcach. Do rana nikt nie chciał wychodzić na stronę sam.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-073",
@@ -741,7 +846,10 @@
   "text": "Dziewczęta ze wsi zbierały grzyby tuż przy obozie. Wasi ludzie udawali drwali, ale jedna z nich patrzyła podejrzanie długo.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-074",
@@ -757,7 +865,10 @@
   "text": "Gęsi przeszły przez obóz z hałasem i zabrały pół wiadra ziarna. Ktoś musiał się za nimi gonić.",
   "morale": -1,
   "supplies": -1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-076",
@@ -789,7 +900,10 @@
   "text": "Wieśniacy zostawili przy lesie wiązkę zboża i dzban miodu jako ofiarę dla Taala. Szajka nie śmiała jej ruszyć.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-080",
@@ -797,7 +911,10 @@
   "text": "Stado wron obsiadło pole i wieśniacy wyszli z hałasem je przepędzić. W tym zamieszaniu łatwo było wziąć co nieco ze spiżarni.",
   "morale": 0,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-081",
@@ -805,7 +922,10 @@
   "text": "Dzieci ze wsi niosły latarenki i śpiewały pieśń o zimie. Szajka nie wiedziała, czy się śmiać, czy płakać.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-082",
@@ -813,7 +933,10 @@
   "text": "Stodoła sąsiada spłonęła od uderzenia pioruna. Cała wieś gasiła, a szajka dostała podziękowania za pomoc.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-083",
@@ -845,7 +968,10 @@
   "text": "Ludzie hrabiego rozstawili na drodze zapory i legitymują każdego. Wieś jest wzburzona, ale wy macie dobrą kryjówkę.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-087",
@@ -869,7 +995,10 @@
   "text": "Wieśniak złamał nogę przy wozie, a jego rodzina została bez opieki. Szajka podzieliła się zapasami.",
   "morale": 1,
   "supplies": -2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-090",
@@ -877,7 +1006,10 @@
   "text": "Pasieka sąsiada została napadnięta przez niedźwiedzia. Wieśniak biegał z garnkiem, a wasi ludzie przyglądali się z bezpiecznej odległości.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-091",
@@ -885,7 +1017,10 @@
   "text": "Wieśniacy ubili świnię i zaprosili sąsiadów na kiszki i kaszankę. Szajka też dostała swoją porcję.",
   "morale": 1,
   "supplies": 3,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-092",
@@ -901,7 +1036,10 @@
   "text": "Kurier cesarski przejechał przez wieś i zostawił na ławce zgubiony list. Prosiło się o to, żeby go zatrzymać.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 4
+  "coinsSS": 4,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-094",
@@ -909,7 +1047,10 @@
   "text": "Dwa wozy zderzyły się na drodze i woźnice zaczęli się bić. Szajka patrzyła, a po bijatyce zgarnęła resztki ładunku.",
   "morale": 0,
   "supplies": 2,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-095",
@@ -917,7 +1058,10 @@
   "text": "Dziadek ze wsi opowiadał historię o skarbie zakopanym pod starym dębem. Przez noc kilku popleczników kopało, znajdując tylko korzenie.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 1
+  "coinsSS": 1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-096",
@@ -949,7 +1093,10 @@
   "text": "Daleko na horyzoncie widać słupy dymu. Nikt nie wie, czy to pożar, czy napad, ale wieśniacy zamknęli drzwi.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-100",
@@ -957,7 +1104,10 @@
   "text": "Wieśniacy młócili zboże całą noc przy pochodniach. Szajka pomogła i dostała za to worek ziarna.",
   "morale": 1,
   "supplies": 3,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-101",
@@ -973,7 +1123,10 @@
   "text": "Wieśniacy złowili ogromnego szczupaka i podzielili się nim z całą wsią. Szajka też dostała kawał.",
   "morale": 1,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-103",
@@ -981,7 +1134,10 @@
   "text": "Rano okazało się, że sąsiedzki stóg siana zniknął. Wieśniacy podejrzewali szajkę, ale nic nie mogli udowodnić.",
   "morale": -1,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-104",
@@ -996,7 +1152,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-105",
@@ -1026,7 +1185,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-107",
@@ -1041,7 +1203,10 @@
    "morale": 0,
    "supplies": 0,
    "coinsSS": 5
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-108",
@@ -1086,7 +1251,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-111",
@@ -1101,7 +1269,10 @@
    "morale": 1,
    "supplies": 1,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-112",
@@ -1176,7 +1347,10 @@
    "morale": 1,
    "supplies": 2,
    "coinsSS": 4
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-117",
@@ -1191,7 +1365,10 @@
    "morale": 0,
    "supplies": 0,
    "coinsSS": 6
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-118",
@@ -1221,7 +1398,10 @@
    "morale": 1,
    "supplies": 2,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-120",
@@ -1236,7 +1416,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 5
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-121",
@@ -1251,7 +1434,10 @@
    "morale": 0,
    "supplies": 0,
    "coinsSS": 7
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-122",
@@ -1311,7 +1497,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 4
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-126",
@@ -1338,7 +1527,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 0,
-  "next": "v-129"
+  "next": "v-129",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-129",
@@ -1347,7 +1539,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 9,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-130",
@@ -1374,7 +1569,10 @@
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0,
-  "next": "v-133"
+  "next": "v-133",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-133",
@@ -1383,7 +1581,10 @@
   "morale": -1,
   "supplies": 0,
   "coinsSS": 5,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-134",
@@ -1417,7 +1618,10 @@
   "text": "Burza przeszła nad polami z hukiem i ulewą. Szajka siedziała w stodole, patrząc na niebo rozdarte błyskawicami.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-138",
@@ -1481,7 +1685,10 @@
   "text": "Proboszcz przeszedł z koszykiem i prosił o datki na naprawę dachu kościoła. Dostał drobne i pobłogosławił szajkę.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": -1
+  "coinsSS": -1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-146",
@@ -1513,7 +1720,10 @@
   "text": "Wieśniacy zostawili konia uwiązanego do płotu i poszli do karczmy. Koń stał grzecznie całą noc i nikt się o niego nie upomniał.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 4
+  "coinsSS": 4,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-150",
@@ -1521,7 +1731,10 @@
   "text": "Wiejski kapłan wrócił z wesela, zataczając się i śpiewając psalmy. Szajka odprowadziła go do plebanii.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 1
+  "coinsSS": 1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-151",
@@ -1537,7 +1750,10 @@
   "text": "Młody kupiec zatrzymał się w obozie i zachwalał swoje towary. Szajka kupiła kilka drobnostek i usłyszała nowiny.",
   "morale": 0,
   "supplies": 1,
-  "coinsSS": -2
+  "coinsSS": -2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-153",
@@ -1561,7 +1777,10 @@
   "text": "Rzeka wylała i woda zalała łąki. Szajka musiała przenieść obóz na wyżej położone tereny, ale znaleziono tam dobre miejsce.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-156",
@@ -1569,7 +1788,10 @@
   "text": "W stodole znaleziono starą księgę zapisaną w nieznanym języku. Wieśniacy chcieli ją spalić, ale szajka ją zabrała.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-157",
@@ -1577,7 +1799,10 @@
   "text": "Cała wieś poszła do kościoła, a uliczki były puste. Szajka mogła swobodnie przejść przez wieś i obejrzeć okolicę.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-158",
@@ -1593,7 +1818,10 @@
   "text": "Posłaniec w barwach hrabiego zatrzymał się na chwilę i podał wieść, że w okolicy grasują zbóje. Szajka podziękowała i zachowała powagę.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-160",
@@ -1601,7 +1829,10 @@
   "text": "Szajka rozbiła obóz blisko wiejskiego cmentarza. Noc była cicha, ale niektórzy twierdzili, że słyszeli kroki na grobach.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-161",
@@ -1609,7 +1840,10 @@
   "text": "Żniwiarze śpiewali przez całą noc przy pochodniach. Szajka zasnęła przy rytmicznych dźwiękach kos.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-162",
@@ -1617,7 +1851,10 @@
   "text": "W pobliskim miasteczku odbył się targ. Szajka wysłała dwóch ludzi, którzy wrócili z sakiewką pełną, ale wyraźnie nerwowi.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 5
+  "coinsSS": 5,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-163",
@@ -1648,7 +1885,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 6
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-166",
@@ -1678,7 +1918,10 @@
    "morale": 0,
    "supplies": 0,
    "coinsSS": 4
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-168",
@@ -1693,7 +1936,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-169",
@@ -1708,7 +1954,10 @@
    "morale": 1,
    "supplies": 4,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-170",
@@ -1723,7 +1972,10 @@
    "morale": 1,
    "supplies": 2,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-171",
@@ -1738,7 +1990,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 4
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-172",
@@ -1753,7 +2008,10 @@
    "morale": 1,
    "supplies": 1,
    "coinsSS": 5
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-173",
@@ -1798,7 +2056,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 7
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-176",
@@ -1813,7 +2074,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 5
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-177",
@@ -1888,7 +2152,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 4
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-182",
@@ -1903,7 +2170,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-183",
@@ -1933,7 +2203,10 @@
    "morale": 1,
    "supplies": 2,
    "coinsSS": 4
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-185",
@@ -2026,7 +2299,10 @@
   "morale": 1,
   "supplies": -1,
   "coinsSS": 0,
-  "next": "v-194"
+  "next": "v-194",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-194",
@@ -2035,7 +2311,10 @@
   "morale": -1,
   "supplies": 2,
   "coinsSS": 3,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-195",
@@ -2061,7 +2340,10 @@
   "text": "Stary żołnierz z drewnianą nogą przechodził przez wieś i opowiadał o bitwach pod Altdorfem. Szajka słuchała z szacunkiem.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-198",
@@ -2077,7 +2359,10 @@
   "text": "Chłopak zgubił się w polach i trafił do obozu. Dostał chleba, a rano szajka odprowadziła go do wsi.",
   "morale": 1,
   "supplies": -1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-200",
@@ -2101,7 +2386,10 @@
   "text": "Mnich z wyciągniętą ręką żebrał o jałmużnę, ale spod habitu wystawał miecz. Szajka nie zadawała pytań.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 1
+  "coinsSS": 1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-203",
@@ -2117,7 +2405,10 @@
   "text": "Wieśniacy zbierali zapasy na zimę i przyszli prosić o pomoc przy zbiorze. Szajka pomogła i dostała część plonów.",
   "morale": 1,
   "supplies": 3,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-205",
@@ -2125,7 +2416,10 @@
   "text": "Wół jednego z gospodarzy zerwał się z uwięzi i rozniósł pół zagrody. Szajka złapała go i dostała nagrodę w postaci kiełbasy.",
   "morale": 1,
   "supplies": 1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-206",
@@ -2133,7 +2427,10 @@
   "text": "Dwoje popleczników z różnych stron obozu zaręczyło się nagle i zaprosiło wszystkich na wesele. Okazja do zabawy.",
   "morale": 1,
   "supplies": 1,
-  "coinsSS": -2
+  "coinsSS": -2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-207",
@@ -2173,7 +2470,10 @@
   "text": "Szajka pomogła przy żniwach, w zamian za nocleg i wyżywienie. Wieśniacy byli zdziwieni, że obcy ludzie wiedzą, jak trzymać kosę.",
   "morale": 1,
   "supplies": 3,
-  "coinsSS": 1
+  "coinsSS": 1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-212",
@@ -2213,7 +2513,10 @@
   "text": "Wieśniacy zebrali się na wieczorną modlitwę pod przydrożną kapliczką. Szajka stała z tyłu, nie wiedząc, co zrobić z rękami.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-217",
@@ -2229,7 +2532,10 @@
   "text": "W nocy ktoś zaśmiał się głośno za płotem. Nikt go nie widział, ale wszyscy poczuli ciarki.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-219",
@@ -2237,7 +2543,10 @@
   "text": "Kowal wystawił na jarmarku nowe sierpy. Szajka kupiła dwa i nauczyła się je ostrzyć.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": -2
+  "coinsSS": -2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-220",
@@ -2253,7 +2562,10 @@
   "text": "Kupiec z Marienburga pytał o ceny zboża. Wieśniacy ustalili cenę zawyżoną, a szajka dostała prowizję za pośrednictwo.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 4
+  "coinsSS": 4,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-222",
@@ -2261,7 +2573,10 @@
   "text": "Krowa padła w nocy i wieśniacy nie mogli jej pochować. Szajka pomogła w zamian za część mięsa.",
   "morale": 0,
   "supplies": 3,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-223",
@@ -2269,7 +2584,10 @@
   "text": "Dwóch pijaków pokłóciło się o miejsce przy ognisku. Szajka wyrzuciła obu, a potem zjadła ich kolację.",
   "morale": 0,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-224",
@@ -2277,7 +2595,10 @@
   "text": "Rudy chłopiec z wioski ciągle kręcił się wokół obozu. W końcu przyznał, że chciałby do was dołączyć. Szajka go wyśmiała i dała bochenek.",
   "morale": 0,
   "supplies": -1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-225",
@@ -2285,7 +2606,10 @@
   "text": "Garncarz z wioski sprzedawał naczynia po okazyjnej cenie. Szajka kupiła kilka garnków i parę misek.",
   "morale": 0,
   "supplies": 1,
-  "coinsSS": -2
+  "coinsSS": -2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-226",
@@ -2293,7 +2617,10 @@
   "text": "Kruk usiadł na przydrożnym słupie i krakał. Wieśniacy plują przez lewe ramię, a szajka nerwowo patrzy w niebo.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-227",
@@ -2301,7 +2628,10 @@
   "text": "Most na rzece pękł pod ciężkim wozem. Wieśniacy ruszyli go naprawiać, a szajka dołączyła i zyskała ich przychylność.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-228",
@@ -2309,7 +2639,10 @@
   "text": "Wieśniacy rozstawili sidła na zające wokół obozu. Połowa popleczników wpadła w nie przez przypadek.",
   "morale": 0,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-229",
@@ -2325,7 +2658,10 @@
   "text": "Pasterz grał na flecie przy ognisku i połowa szajki zasnęła od tych dźwięków. Najlepszy sen od tygodni.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-231",
@@ -2333,7 +2669,10 @@
   "text": "Młody wół zginął ze stada, a właściciel obiecuje nagrodę. Szajka znalazła go, związanego w lesie, i wiedziała, kto za tym stoi.",
   "morale": 0,
   "supplies": 3,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-232",
@@ -2341,7 +2680,10 @@
   "text": "Na jarmarku sprzedawano konie i woły. Szajka wypatrzyła kilka okazji, a jeden z popleczników kupił nawet kozę.",
   "morale": 0,
   "supplies": 2,
-  "coinsSS": -2
+  "coinsSS": -2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-233",
@@ -2349,7 +2691,10 @@
   "text": "Przy drodze stała kamienna kapliczka z wyrytymi imionami zmarłych. Szajka zatrzymała się na chwilę i zapaliła świeczkę.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": -1
+  "coinsSS": -1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-234",
@@ -2365,7 +2710,10 @@
   "text": "Wielka burza zniszczyła połowę dachów we wsi. Szajka pomogła przy naprawach i zasłużyła na wdzięczność.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 1
+  "coinsSS": 1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-236",
@@ -2373,7 +2721,10 @@
   "text": "Wieśniak zgubił obrączkę w trawie i prosił o pomoc w poszukiwaniach. Szajka znalazła ją po godzinie i dostała kilka srebrników.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-237",
@@ -2381,7 +2732,10 @@
   "text": "Z okazji święta w sąsiedniej wsi odbył się odpust. Na jarmarku było pełno ludzi, a szajka ruszyła na „zbiórkę”.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 5
+  "coinsSS": 5,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-238",
@@ -2389,7 +2743,10 @@
   "text": "Dziecko znalazło w polu zardzewiały miecz z wygrawerowanym herbem. Szajka kupiła go za garść ziarna.",
   "morale": 0,
   "supplies": -1,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-239",
@@ -2397,7 +2754,10 @@
   "text": "Wędrowny śpiewak opowiadał o dawnych bohaterach i zbójcach. Szajka podsłuchała kilka ciekawych szczegółów o okolicy.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-240",
@@ -2405,7 +2765,10 @@
   "text": "Rano w polu znaleziono martwego dzika o dwóch głowach. Wieśniacy przepędzili wszystkich z okolicy, a szajka zebrała się szybko.",
   "morale": -2,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-241",
@@ -2421,7 +2784,10 @@
   "text": "Wędrowiec z bolącą stopą prosił o schronienie. Szajka go opatrzyła, a on opowiedział, że nocą widział dziwne światła w lesie.",
   "morale": 0,
   "supplies": -1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-243",
@@ -2429,7 +2795,10 @@
   "text": "Dziecko zgubiło się w polu, a szajka je znalazła. Rodzice płakali ze szczęścia i dali wszystko, co mieli w spiżarni.",
   "morale": 1,
   "supplies": 3,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-244",
@@ -2437,7 +2806,10 @@
   "text": "Wieczorem na polu dostrzeżono cień bez właściciela. Wieśniacy uciekli w popłochu, a szajka wzięła zapasy.",
   "morale": -1,
   "supplies": 3,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-245",
@@ -2446,7 +2818,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 0,
-  "next": "v-246"
+  "next": "v-246",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-246",
@@ -2455,7 +2830,10 @@
   "morale": 1,
   "supplies": 3,
   "coinsSS": 0,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-247",
@@ -2464,7 +2842,10 @@
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0,
-  "next": "v-248"
+  "next": "v-248",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-248",
@@ -2473,7 +2854,10 @@
   "morale": 0,
   "supplies": 3,
   "coinsSS": 5,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-249",
@@ -2482,7 +2866,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 0,
-  "next": "v-250"
+  "next": "v-250",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-250",
@@ -2491,7 +2878,10 @@
   "morale": -1,
   "supplies": 0,
   "coinsSS": 5,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-251",
@@ -2500,7 +2890,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 0,
-  "next": "v-252"
+  "next": "v-252",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-252",
@@ -2509,7 +2902,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 9,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-253",
@@ -2535,7 +2931,10 @@
   "text": "Dwie gospodynie wydarły sobie kurę i obie dostały dziobem. Cała wieś się zbiegła, a szajka zgarnęła resztę kur.",
   "morale": 0,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-256",
@@ -2543,7 +2942,10 @@
   "text": "We wsi wybrano nowego sołtysa i świętowano do rana. Szajka dostała kilka dzbanów piwa za „życzenia”.",
   "morale": 1,
   "supplies": 1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-257",
@@ -2551,7 +2953,10 @@
   "text": "Słońce świeciło cały dzień, ptaki śpiewały, a wieśniacy bez przeszkód pozwalali szajce przechodzić. Taki dzień rzadko się zdarza.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-258",
@@ -2559,7 +2964,10 @@
   "text": "Liny przy studni zerwały się i wiadro spadło w głąb. Szajka pomogła je wyciągnąć za kilka datków.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-259",
@@ -2583,7 +2991,10 @@
   "text": "W pobliskim lesie stoi opuszczony dwór. Szajka obejrzała go z daleka, a jeden z popleczników twierdził, że widział w oknie świecę.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-262",
@@ -2591,7 +3002,10 @@
   "text": "Wesoły handlarz soli zatrzymał się i opowiadał dowcipy. Szajka kupiła trochę soli i śmiała się do łez.",
   "morale": 1,
   "supplies": 1,
-  "coinsSS": -1
+  "coinsSS": -1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-263",
@@ -2607,7 +3021,10 @@
   "text": "Młody wieśniak przyznał, że chciałby opuścić wioskę i dołączyć do kogoś, kto żyje na wolności. Szajka dała mu dobrą radę i bochen chleba.",
   "morale": 0,
   "supplies": -1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-265",
@@ -2615,7 +3032,10 @@
   "text": "Kupiec zaginął na drodze do wsi, a jego wóz stoi pusty. Wieśniacy boją się zbliżyć, a szajka zrobiła inwentarz.",
   "morale": -1,
   "supplies": 2,
-  "coinsSS": 4
+  "coinsSS": 4,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-266",
@@ -2623,7 +3043,10 @@
   "text": "Szajka pomogła przy sianokosach i wieśniacy się odwdzięczyli. Obóz miał w nocy ciepłą strawę i słodkie mleko.",
   "morale": 1,
   "supplies": 3,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-267",
@@ -2631,7 +3054,10 @@
   "text": "Podróżny zostawił kuferek w karczmie i odjechał. Karczmarz boi się go otworzyć, a szajka mogłaby tu pomóc.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-268",
@@ -2639,7 +3065,10 @@
   "text": "W lesie odkryto porzuconą chatę zbójców z resztkami zapasów. Wieśniacy boją się tam iść, ale szajka nie.",
   "morale": 0,
   "supplies": 3,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-269",
@@ -2647,7 +3076,10 @@
   "text": "Po burzy nad polami rozciągnęła się szeroka tęcza. Wieśniacy mówili, że to znak dobrych plonów, a szajka poczuła się dobrze.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-270",
@@ -2663,7 +3095,10 @@
   "text": "Kuglarz na jarmarku połykał ogień. Szajka klaskała, a kieszonkowcy mieli dobry dzień.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-272",
@@ -2687,7 +3122,10 @@
   "text": "Nauczyciel prowadził dzieci przez pole i pokazywał im ptaki. Szajka z zainteresowaniem słuchała lekcji, a nawet nauczyła się kilku nazw.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-275",
@@ -2703,7 +3141,10 @@
   "text": "Wieśniacy śpiewali pieśni przy ogniskach, a szajka dołączyła, zaskakując wszystkich pięknym głosem jednego z popleczników.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-277",
@@ -2711,7 +3152,10 @@
   "text": "Chłopiec został przyłapany na kradzieży jabłek w sadzie. Szajka wstawiła się za nim i dostała kilka jabłek w nagrodę.",
   "morale": 1,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-278",
@@ -2719,7 +3163,10 @@
   "text": "Wędrowny sprzedawca amuletów zachwalał swoje towary jako chroniące przed wszystkim złym. Szajka kupiła jeden, na wszelki wypadek.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": -2
+  "coinsSS": -2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-279",
@@ -2735,7 +3182,10 @@
   "text": "Przewodnik z wioski wskazał wam ścieżkę przez bagno, którą omijają urzędnicy. Szajka mogła się tamtędy wymknąć.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-281",
@@ -2743,7 +3193,10 @@
   "text": "W karczmie wybuchła burda, bo ktoś oskarżył sąsiada o kradzież kozy. Szajka zjadła kolację bez przeszkód.",
   "morale": 0,
   "supplies": 1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-282",
@@ -2751,7 +3204,10 @@
   "text": "Strażnik hrabiego zabłądził w nocy i zapytał o drogę. Szajka wskazała mu fałszywy kierunek i zachowała dobrą minę.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-283",
@@ -2759,7 +3215,10 @@
   "text": "Wieśniacy odprawiali rytuał przeciw nieszczęściu, polegający na zawieszaniu kosy nad drzwiami. Szajka patrzyła z niepokojem.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-284",
@@ -2775,7 +3234,10 @@
   "text": "Wieśniak przyprowadził krowę, prosząc o pomoc przy porodzie cielęcia. Szajka pomogła i dostała mleka na tydzień.",
   "morale": 1,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-286",
@@ -2791,7 +3253,10 @@
   "text": "W jednej z chat drzwi nie miały zamka, a wieśniacy twierdzili, że nikt nigdy nie kradnie. Szajka musiała się powstrzymać.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-288",
@@ -2799,7 +3264,10 @@
   "text": "Do wsi przyjechała rodzina z miasta, w ładnych strojach, z sakiewkami. Szajka obserwowała ich z uwagą.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-289",
@@ -2815,7 +3283,10 @@
   "text": "Studnia we wsi zawaliła się i wieśniacy mieli problem z wodą. Szajka pomogła ją odbudować.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 1
+  "coinsSS": 1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-291",
@@ -2823,7 +3294,10 @@
   "text": "Jeden z popleczników obudził się z krzykiem, twierdząc, że coś siedziało mu na piersi. Reszta spała niespokojnie.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-292",
@@ -2831,7 +3305,10 @@
   "text": "Wiatr porwał kapelusz jednemu z gości z miasta. Szajka go złapała i zwróciła, zyskując jego wdzięczność.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-293",
@@ -2839,7 +3316,10 @@
   "text": "Bard grał na lutni i opowiadał o upadku dawnych miast. Szajka siedziała w zadumie, a potem długo nie rozmawiała.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-294",
@@ -2847,7 +3327,10 @@
   "text": "W przydrożnej karczmie dawali wyjątkowo dobre piwo za nieprzyzwoicie niską cenę. Nikt nie pytał, dlaczego.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": -1
+  "coinsSS": -1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-295",
@@ -2855,7 +3338,10 @@
   "text": "Starszy poplecznik postanowił odejść i osiąść na wsi. Przed odejściem zostawił całą swoją zdobycz szajce.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 6
+  "coinsSS": 6,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-296",
@@ -2863,7 +3349,10 @@
   "text": "Jeden z popleczników zobaczył swoją rodzinną wioskę z daleka i zamyślił się. Cały dzień milczał.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-297",
@@ -2871,7 +3360,10 @@
   "text": "Szajka usiadła przy ognisku i wspominała dawne czasy. Wszyscy poczuli, że razem mogą wszystko.",
   "morale": 2,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-298",
@@ -2879,7 +3371,10 @@
   "text": "Z sąsiedniej wsi dobiegał zapach pieczonej baraniny. Kilku popleczników poszło „zbadać sprawę” i wróciło najedzonych.",
   "morale": 1,
   "supplies": 1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-299",
@@ -2887,7 +3382,10 @@
   "text": "Złota korona błyszczała w trawie przy drodze. Szajka podniosła ją, choć wiedziała, że ktoś może jej szukać.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 8
+  "coinsSS": 8,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-300",

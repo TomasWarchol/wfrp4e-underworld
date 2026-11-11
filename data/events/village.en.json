@@ -13,7 +13,10 @@
   "text": "Rain broke through the thatch and soaked part of the bedding. Half the crew slept wet.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-003",
@@ -21,7 +24,10 @@
   "text": "A shaggy mutt barked at the fence all night and by morning made friends with the crew for a bit of bacon.",
   "morale": 0,
   "supplies": -1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-004",
@@ -29,7 +35,10 @@
   "text": "A girl from the next farm brought a jug of milk and asked if it's true you're bandits. She got bread and kept the secret.",
   "morale": 1,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-005",
@@ -61,7 +70,10 @@
   "text": "A cow stepped through the fence and walked right into your camp. Nobody managed to lead her back until she'd been milked.",
   "morale": 0,
   "supplies": 3,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-009",
@@ -77,7 +89,10 @@
   "text": "Hail destroyed part of the crops and many roofs. The peasants wept and the crew felt unwelcome.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-011",
@@ -85,7 +100,10 @@
   "text": "The village celebrated harvest home. Songs, dances and ale flowed freely. The crew stood aside but someone pressed a jug on them.",
   "morale": 1,
   "supplies": 1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-012",
@@ -101,7 +119,10 @@
   "text": "Villagers searched for a lost sheep with lanterns. The crew kept quiet and the sheep served as a reserve for two days.",
   "morale": 0,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-014",
@@ -125,7 +146,10 @@
   "text": "The miller brought a sack of flour and asked if you needed any. His eyes betrayed that he's eager to sell goods he shouldn't.",
   "morale": 0,
   "supplies": 3,
-  "coinsSS": -2
+  "coinsSS": -2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-017",
@@ -133,7 +157,10 @@
   "text": "Someone set a haystack ablaze in a neighbour's field. The village rushed to put it out and a few followers, uninvited, helped.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-018",
@@ -181,7 +208,10 @@
   "text": "A traveller with a map was looking for the road to Altdorf. The crew pointed him on his way and he left a few small coins.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-024",
@@ -197,7 +227,10 @@
   "text": "Storks flew away and the villagers claimed winter would come early. A few followers began looking for warmer clothes.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-026",
@@ -205,7 +238,10 @@
   "text": "Hens, geese and piglets were sold at the village market. One follower returned with a hen under his arm and an innocent look.",
   "morale": 0,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-027",
@@ -221,7 +257,10 @@
   "text": "The smell of baking bread drifted from a nearby cottage chimney. A few followers crept over for a loaf.",
   "morale": 0,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-029",
@@ -237,7 +276,10 @@
   "text": "Something frightened the horses in the stable. The whole village ran out with lanterns but found nothing. Luckily the crew wasn't to blame.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-031",
@@ -245,7 +287,10 @@
   "text": "A lone rider in armour rode through the village without a word. The villagers shut their doors and the crew held its breath.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-032",
@@ -253,7 +298,10 @@
   "text": "A messenger reached the village with news of greenskins on the eastern frontier. The peasants began hiding grain and some of the crew would rather move on.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-033",
@@ -277,7 +325,10 @@
   "text": "The reeve gave a feast for guests from town and invited the whole camp. The crew played respectable merchants and the food was excellent.",
   "morale": 1,
   "supplies": 3,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-036",
@@ -293,7 +344,10 @@
   "text": "The village well dried up and the peasants had to draw water from your stream. The crew received a few small gifts.",
   "morale": 0,
   "supplies": 1,
-  "coinsSS": 1
+  "coinsSS": 1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-038",
@@ -301,7 +355,10 @@
   "text": "A black cat crossed the camp and half the crew began looking for wood to make a protective sign.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-039",
@@ -309,7 +366,10 @@
   "text": "The village buried an old man. Everyone followed the coffin in silence and the crew doffed caps and bowed in respect.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-040",
@@ -325,7 +385,10 @@
   "text": "A travelling pedlar with a wagon of goods set up a stall by the road. The crew spotted a few things that could come in handy.",
   "morale": 0,
   "supplies": 1,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-042",
@@ -341,7 +404,10 @@
   "text": "A farmwife sold eggs from a basket and haggled fiercely. The crew got half a basket at half price because \"men need to eat.\"",
   "morale": 0,
   "supplies": 3,
-  "coinsSS": -1
+  "coinsSS": -1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-044",
@@ -371,7 +437,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 2
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-046",
@@ -386,7 +455,10 @@
    "morale": 0,
    "supplies": 0,
    "coinsSS": 5
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-047",
@@ -401,7 +473,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-048",
@@ -431,7 +506,10 @@
    "morale": 1,
    "supplies": 4,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-050",
@@ -446,7 +524,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-051",
@@ -506,7 +587,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 6
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-055",
@@ -536,7 +620,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 6
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-057",
@@ -566,7 +653,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 5
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-059",
@@ -596,7 +686,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 7
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-061",
@@ -611,7 +704,10 @@
    "morale": 0,
    "supplies": 0,
    "coinsSS": 7
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-062",
@@ -716,7 +812,10 @@
   "morale": 0,
   "supplies": -1,
   "coinsSS": 0,
-  "next": "v-071"
+  "next": "v-071",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-071",
@@ -725,7 +824,10 @@
   "morale": -1,
   "supplies": 0,
   "coinsSS": 4,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-072",
@@ -733,7 +835,10 @@
   "text": "Around the fire several followers told tales of vampires and water-spirits. Until morning nobody wanted to go out to relieve himself alone.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-073",
@@ -741,7 +846,10 @@
   "text": "Village girls gathered mushrooms right by the camp. Your men pretended to be woodcutters, but one of them watched suspiciously long.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-074",
@@ -757,7 +865,10 @@
   "text": "Geese marched through the camp with a racket and took half a bucket of grain. Someone had to chase them.",
   "morale": -1,
   "supplies": -1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-076",
@@ -789,7 +900,10 @@
   "text": "Villagers left a bundle of grain and a jug of honey by the forest as an offering to Taal. The crew dared not touch it.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-080",
@@ -797,7 +911,10 @@
   "text": "A flock of crows settled on the field and the peasants came out with a racket to scare them off. In the confusion it was easy to take a little from the pantry.",
   "morale": 0,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-081",
@@ -805,7 +922,10 @@
   "text": "Village children carried little lanterns and sang a winter song. The crew didn't know whether to laugh or cry.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-082",
@@ -813,7 +933,10 @@
   "text": "A neighbour's barn was struck by lightning and burned. The whole village fought the fire and the crew got thanks for helping.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-083",
@@ -845,7 +968,10 @@
   "text": "The count's men set up barriers on the road and check everyone. The village is stirred up but you have a good hiding place.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-087",
@@ -869,7 +995,10 @@
   "text": "A peasant broke his leg at the cart and his family was left without help. The crew shared its supplies.",
   "morale": 1,
   "supplies": -2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-090",
@@ -877,7 +1006,10 @@
   "text": "A neighbour's apiary was raided by a bear. The peasant ran about with a pot while your people watched from a safe distance.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-091",
@@ -885,7 +1017,10 @@
   "text": "The villagers slaughtered a pig and invited neighbours for black pudding and sausages. The crew got its share too.",
   "morale": 1,
   "supplies": 3,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-092",
@@ -901,7 +1036,10 @@
   "text": "An imperial courier rode through the village and left a lost letter on a bench. It begged to be kept.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 4
+  "coinsSS": 4,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-094",
@@ -909,7 +1047,10 @@
   "text": "Two wagons collided on the road and the carters began fighting. The crew watched and after the brawl gathered up the remains of the load.",
   "morale": 0,
   "supplies": 2,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-095",
@@ -917,7 +1058,10 @@
   "text": "A village grandfather told a tale of treasure buried under an old oak. Several followers dug through the night and found only roots.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 1
+  "coinsSS": 1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-096",
@@ -949,7 +1093,10 @@
   "text": "Columns of smoke rise far on the horizon. Nobody knows whether it's a fire or a raid but the villagers locked their doors.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-100",
@@ -957,7 +1104,10 @@
   "text": "Villagers threshed grain all night by torchlight. The crew helped and got a sack of grain for it.",
   "morale": 1,
   "supplies": 3,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-101",
@@ -973,7 +1123,10 @@
   "text": "The villagers caught a giant pike and shared it with the whole village. The crew got a piece too.",
   "morale": 1,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-103",
@@ -981,7 +1134,10 @@
   "text": "By morning a neighbour's haystack had vanished. The villagers suspected the crew but couldn't prove anything.",
   "morale": -1,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-104",
@@ -996,7 +1152,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-105",
@@ -1026,7 +1185,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-107",
@@ -1041,7 +1203,10 @@
    "morale": 0,
    "supplies": 0,
    "coinsSS": 5
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-108",
@@ -1086,7 +1251,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-111",
@@ -1101,7 +1269,10 @@
    "morale": 1,
    "supplies": 1,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-112",
@@ -1176,7 +1347,10 @@
    "morale": 1,
    "supplies": 2,
    "coinsSS": 4
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-117",
@@ -1191,7 +1365,10 @@
    "morale": 0,
    "supplies": 0,
    "coinsSS": 6
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-118",
@@ -1221,7 +1398,10 @@
    "morale": 1,
    "supplies": 2,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-120",
@@ -1236,7 +1416,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 5
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-121",
@@ -1251,7 +1434,10 @@
    "morale": 0,
    "supplies": 0,
    "coinsSS": 7
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-122",
@@ -1311,7 +1497,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 4
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-126",
@@ -1338,7 +1527,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 0,
-  "next": "v-129"
+  "next": "v-129",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-129",
@@ -1347,7 +1539,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 9,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-130",
@@ -1374,7 +1569,10 @@
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0,
-  "next": "v-133"
+  "next": "v-133",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-133",
@@ -1383,7 +1581,10 @@
   "morale": -1,
   "supplies": 0,
   "coinsSS": 5,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-134",
@@ -1417,7 +1618,10 @@
   "text": "A storm swept over the fields with crash and downpour. The crew sat in the barn watching the sky torn by lightning.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-138",
@@ -1481,7 +1685,10 @@
   "text": "The parson came by with a basket asking for donations to fix the church roof. He got small coin and blessed the crew.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": -1
+  "coinsSS": -1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-146",
@@ -1513,7 +1720,10 @@
   "text": "Villagers left a horse tied to a fence and went to the inn. The horse stood quietly all night and nobody claimed it.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 4
+  "coinsSS": 4,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-150",
@@ -1521,7 +1731,10 @@
   "text": "The village priest returned from a wedding staggering and singing psalms. The crew escorted him to the parsonage.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 1
+  "coinsSS": 1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-151",
@@ -1537,7 +1750,10 @@
   "text": "A young merchant stopped at the camp and praised his wares. The crew bought a few trinkets and heard the news.",
   "morale": 0,
   "supplies": 1,
-  "coinsSS": -2
+  "coinsSS": -2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-153",
@@ -1561,7 +1777,10 @@
   "text": "The river overflowed and water flooded the meadows. The crew had to move camp higher but found a good spot there.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-156",
@@ -1569,7 +1788,10 @@
   "text": "An old book written in an unknown language was found in the barn. The villagers wanted to burn it but the crew took it.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-157",
@@ -1577,7 +1799,10 @@
   "text": "The whole village went to church and the streets were empty. The crew could freely cross the village and look around.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-158",
@@ -1593,7 +1818,10 @@
   "text": "A messenger in the count's colours paused to say bandits roam the area. The crew thanked him and kept straight faces.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-160",
@@ -1601,7 +1829,10 @@
   "text": "The crew camped near the village graveyard. The night was quiet but some claimed to hear steps on the graves.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-161",
@@ -1609,7 +1840,10 @@
   "text": "Reapers sang all night by torchlight. The crew fell asleep to the rhythmic sound of scythes.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-162",
@@ -1617,7 +1851,10 @@
   "text": "A market was held in the nearby town. The crew sent two men who returned with full purses but visibly nervous.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 5
+  "coinsSS": 5,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-163",
@@ -1648,7 +1885,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 6
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-166",
@@ -1678,7 +1918,10 @@
    "morale": 0,
    "supplies": 0,
    "coinsSS": 4
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-168",
@@ -1693,7 +1936,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-169",
@@ -1708,7 +1954,10 @@
    "morale": 1,
    "supplies": 4,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-170",
@@ -1723,7 +1972,10 @@
    "morale": 1,
    "supplies": 2,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-171",
@@ -1738,7 +1990,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 4
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-172",
@@ -1753,7 +2008,10 @@
    "morale": 1,
    "supplies": 1,
    "coinsSS": 5
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-173",
@@ -1798,7 +2056,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 7
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-176",
@@ -1813,7 +2074,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 5
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-177",
@@ -1888,7 +2152,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 4
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-182",
@@ -1903,7 +2170,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-183",
@@ -1933,7 +2203,10 @@
    "morale": 1,
    "supplies": 2,
    "coinsSS": 4
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-185",
@@ -2026,7 +2299,10 @@
   "morale": 1,
   "supplies": -1,
   "coinsSS": 0,
-  "next": "v-194"
+  "next": "v-194",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-194",
@@ -2035,7 +2311,10 @@
   "morale": -1,
   "supplies": 2,
   "coinsSS": 3,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-195",
@@ -2061,7 +2340,10 @@
   "text": "An old soldier with a wooden leg passed through the village telling of the battles at Altdorf. The crew listened with respect.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-198",
@@ -2077,7 +2359,10 @@
   "text": "A lad lost himself in the fields and ended up at the camp. He got bread and in the morning the crew took him back to the village.",
   "morale": 1,
   "supplies": -1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-200",
@@ -2101,7 +2386,10 @@
   "text": "A monk with an outstretched hand begged alms but a sword poked out from under the habit. The crew asked no questions.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 1
+  "coinsSS": 1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-203",
@@ -2117,7 +2405,10 @@
   "text": "Villagers gathered stores for winter and came asking for help with the harvest. The crew helped and got a share of the crop.",
   "morale": 1,
   "supplies": 3,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-205",
@@ -2125,7 +2416,10 @@
   "text": "A farmer's ox tore loose and wrecked half the yard. The crew caught it and got a reward in sausage.",
   "morale": 1,
   "supplies": 1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-206",
@@ -2133,7 +2427,10 @@
   "text": "Two followers from different sides of the camp suddenly got engaged and invited everyone to the wedding. A chance for fun.",
   "morale": 1,
   "supplies": 1,
-  "coinsSS": -2
+  "coinsSS": -2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-207",
@@ -2173,7 +2470,10 @@
   "text": "The crew helped with the harvest in return for lodging and board. The villagers were surprised strangers knew how to hold a scythe.",
   "morale": 1,
   "supplies": 3,
-  "coinsSS": 1
+  "coinsSS": 1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-212",
@@ -2213,7 +2513,10 @@
   "text": "Villagers gathered for evening prayer at a roadside shrine. The crew stood at the back not knowing what to do with their hands.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-217",
@@ -2229,7 +2532,10 @@
   "text": "In the night someone laughed loudly behind the fence. Nobody saw him but everyone got chills.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-219",
@@ -2237,7 +2543,10 @@
   "text": "The smith displayed new sickles at the fair. The crew bought two and learned to sharpen them.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": -2
+  "coinsSS": -2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-220",
@@ -2253,7 +2562,10 @@
   "text": "A merchant from Marienburg asked grain prices. The villagers named an inflated price and the crew got a commission for brokering.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 4
+  "coinsSS": 4,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-222",
@@ -2261,7 +2573,10 @@
   "text": "A cow died in the night and the villagers couldn't bury it. The crew helped in exchange for some of the meat.",
   "morale": 0,
   "supplies": 3,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-223",
@@ -2269,7 +2584,10 @@
   "text": "Two drunks quarrelled over a spot by the fire. The crew threw both out and then ate their supper.",
   "morale": 0,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-224",
@@ -2277,7 +2595,10 @@
   "text": "A ginger lad from the village kept hanging round the camp. At last he admitted he'd like to join you. The crew laughed him off and gave him a loaf.",
   "morale": 0,
   "supplies": -1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-225",
@@ -2285,7 +2606,10 @@
   "text": "A village potter sold pots at bargain prices. The crew bought several pots and a few bowls.",
   "morale": 0,
   "supplies": 1,
-  "coinsSS": -2
+  "coinsSS": -2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-226",
@@ -2293,7 +2617,10 @@
   "text": "A raven landed on a post by the road and croaked. The villagers spit over their left shoulders and the crew glances nervously at the sky.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-227",
@@ -2301,7 +2628,10 @@
   "text": "The bridge over the river cracked under a heavy wagon. The villagers set about repairing it and the crew joined, winning their goodwill.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-228",
@@ -2309,7 +2639,10 @@
   "text": "Villagers set snares for hares around the camp. Half your followers stepped into them by accident.",
   "morale": 0,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-229",
@@ -2325,7 +2658,10 @@
   "text": "A shepherd played a flute by the fire and half the crew fell asleep to the sound. The best sleep in weeks.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-231",
@@ -2333,7 +2669,10 @@
   "text": "A young ox vanished from the herd and the owner promises a reward. The crew found it tied in the forest and knew who was behind it.",
   "morale": 0,
   "supplies": 3,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-232",
@@ -2341,7 +2680,10 @@
   "text": "Horses and oxen were sold at the fair. The crew spotted a few bargains and one follower even bought a goat.",
   "morale": 0,
   "supplies": 2,
-  "coinsSS": -2
+  "coinsSS": -2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-233",
@@ -2349,7 +2691,10 @@
   "text": "A stone shrine with names of the dead engraved stood by the road. The crew paused a moment and lit a candle.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": -1
+  "coinsSS": -1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-234",
@@ -2365,7 +2710,10 @@
   "text": "A great storm ruined half the village roofs. The crew helped with repairs and earned gratitude.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 1
+  "coinsSS": 1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-236",
@@ -2373,7 +2721,10 @@
   "text": "A peasant lost his wedding ring in the grass and asked for help searching. The crew found it within an hour and got a few shillings.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-237",
@@ -2381,7 +2732,10 @@
   "text": "A church fair was held in the next village for a holy day. The market was full of people and the crew went out \"collecting\".",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 5
+  "coinsSS": 5,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-238",
@@ -2389,7 +2743,10 @@
   "text": "A child found a rusty sword with an engraved crest in the field. The crew bought it for a handful of grain.",
   "morale": 0,
   "supplies": -1,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-239",
@@ -2397,7 +2754,10 @@
   "text": "A wandering singer told of ancient heroes and bandits. The crew overheard a few interesting details about the area.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-240",
@@ -2405,7 +2765,10 @@
   "text": "In the morning a dead boar with two heads was found in the field. The villagers drove everyone from the area and the crew gathered quickly.",
   "morale": -2,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-241",
@@ -2421,7 +2784,10 @@
   "text": "A wanderer with a sore foot asked for shelter. The crew dressed it and he told of strange lights he saw in the forest at night.",
   "morale": 0,
   "supplies": -1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-243",
@@ -2429,7 +2795,10 @@
   "text": "A child lost itself in the field and the crew found it. The parents wept for joy and gave everything they had in the pantry.",
   "morale": 1,
   "supplies": 3,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-244",
@@ -2437,7 +2806,10 @@
   "text": "In the evening a shadow without an owner was seen in the field. The villagers fled in panic and the crew took the stores.",
   "morale": -1,
   "supplies": 3,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-245",
@@ -2446,7 +2818,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 0,
-  "next": "v-246"
+  "next": "v-246",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-246",
@@ -2455,7 +2830,10 @@
   "morale": 1,
   "supplies": 3,
   "coinsSS": 0,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-247",
@@ -2464,7 +2842,10 @@
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0,
-  "next": "v-248"
+  "next": "v-248",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-248",
@@ -2473,7 +2854,10 @@
   "morale": 0,
   "supplies": 3,
   "coinsSS": 5,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-249",
@@ -2482,7 +2866,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 0,
-  "next": "v-250"
+  "next": "v-250",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-250",
@@ -2491,7 +2878,10 @@
   "morale": -1,
   "supplies": 0,
   "coinsSS": 5,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-251",
@@ -2500,7 +2890,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 0,
-  "next": "v-252"
+  "next": "v-252",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-252",
@@ -2509,7 +2902,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 9,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-253",
@@ -2535,7 +2931,10 @@
   "text": "Two housewives tore a hen between them and both got pecked. The whole village gathered and the crew collected the remaining hens.",
   "morale": 0,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-256",
@@ -2543,7 +2942,10 @@
   "text": "The village elected a new reeve and celebrated till morning. The crew got several jugs of ale for \"well-wishing\".",
   "morale": 1,
   "supplies": 1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-257",
@@ -2551,7 +2953,10 @@
   "text": "The sun shone all day, birds sang and the villagers let the crew pass unhindered. Such a day rarely comes.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-258",
@@ -2559,7 +2964,10 @@
   "text": "The ropes at the well snapped and the bucket fell down. The crew helped retrieve it for a few donations.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-259",
@@ -2583,7 +2991,10 @@
   "text": "An abandoned manor stands in the nearby forest. The crew looked at it from afar and one follower claimed he saw a candle in the window.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-262",
@@ -2591,7 +3002,10 @@
   "text": "A cheerful salt trader stopped and told jokes. The crew bought some salt and laughed to tears.",
   "morale": 1,
   "supplies": 1,
-  "coinsSS": -1
+  "coinsSS": -1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-263",
@@ -2607,7 +3021,10 @@
   "text": "A young peasant confessed he'd like to leave the village and join someone who lives free. The crew gave him good advice and a loaf of bread.",
   "morale": 0,
   "supplies": -1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-265",
@@ -2615,7 +3032,10 @@
   "text": "A merchant vanished on the road to the village and his wagon stands empty. The villagers fear to approach while the crew took inventory.",
   "morale": -1,
   "supplies": 2,
-  "coinsSS": 4
+  "coinsSS": 4,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-266",
@@ -2623,7 +3043,10 @@
   "text": "The crew helped with haymaking and the villagers repaid them. The camp had a hot meal and sweet milk at night.",
   "morale": 1,
   "supplies": 3,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-267",
@@ -2631,7 +3054,10 @@
   "text": "A traveller left a casket in the inn and rode away. The innkeeper fears to open it and the crew could help.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-268",
@@ -2639,7 +3065,10 @@
   "text": "An abandoned robbers' hut with leftover supplies was found in the forest. The villagers fear to go there but the crew doesn't.",
   "morale": 0,
   "supplies": 3,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-269",
@@ -2647,7 +3076,10 @@
   "text": "After the storm a wide rainbow spread over the fields. The villagers said it was a sign of good crops and the crew felt good.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-270",
@@ -2663,7 +3095,10 @@
   "text": "A juggler at the fair swallowed fire. The crew applauded and pickpockets had a good day.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-272",
@@ -2687,7 +3122,10 @@
   "text": "A teacher led children across the field showing them birds. The crew listened with interest and even learned a few names.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-275",
@@ -2703,7 +3141,10 @@
   "text": "Villagers sang songs round the fires and the crew joined, surprising everyone with one follower's beautiful voice.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-277",
@@ -2711,7 +3152,10 @@
   "text": "A boy was caught stealing apples in an orchard. The crew interceded for him and got a few apples as a reward.",
   "morale": 1,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-278",
@@ -2719,7 +3163,10 @@
   "text": "A wandering amulet seller praised his wares as protecting against all evil. The crew bought one just in case.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": -2
+  "coinsSS": -2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-279",
@@ -2735,7 +3182,10 @@
   "text": "A village guide showed a path through the marsh that officials avoid. The crew could slip away that way.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-281",
@@ -2743,7 +3193,10 @@
   "text": "A brawl broke out at the inn because someone accused a neighbour of stealing a goat. The crew ate supper undisturbed.",
   "morale": 0,
   "supplies": 1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-282",
@@ -2751,7 +3204,10 @@
   "text": "A guard from the count lost his way at night and asked directions. The crew pointed him the wrong way and kept a straight face.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-283",
@@ -2759,7 +3215,10 @@
   "text": "Villagers performed a ritual against misfortune by hanging a scythe above the door. The crew watched uneasily.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-284",
@@ -2775,7 +3234,10 @@
   "text": "A peasant brought a cow asking for help with calving. The crew helped and got a week's worth of milk.",
   "morale": 1,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-286",
@@ -2791,7 +3253,10 @@
   "text": "One cottage door had no lock and villagers claimed nobody ever steals. The crew had to restrain themselves.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-288",
@@ -2799,7 +3264,10 @@
   "text": "A family from town arrived in the village in nice clothes with full purses. The crew watched them closely.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-289",
@@ -2815,7 +3283,10 @@
   "text": "The village well collapsed and the villagers had a water problem. The crew helped rebuild it.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 1
+  "coinsSS": 1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-291",
@@ -2823,7 +3294,10 @@
   "text": "One follower woke screaming claiming something sat on his chest. The rest slept uneasily.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-292",
@@ -2831,7 +3305,10 @@
   "text": "The wind carried off a town guest's hat. The crew caught it and returned it, winning his gratitude.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-293",
@@ -2839,7 +3316,10 @@
   "text": "A bard played the lute and told of the fall of old cities. The crew sat deep in thought and long afterwards spoke little.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-294",
@@ -2847,7 +3327,10 @@
   "text": "The roadside inn served exceptionally good ale at an indecently low price. Nobody asked why.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": -1
+  "coinsSS": -1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-295",
@@ -2855,7 +3338,10 @@
   "text": "An elderly follower decided to leave and settle in the countryside. Before leaving he left all his spoils to the crew.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 6
+  "coinsSS": 6,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-296",
@@ -2863,7 +3349,10 @@
   "text": "One follower saw his home village from afar and fell to thinking. He was silent all day.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-297",
@@ -2871,7 +3360,10 @@
   "text": "The crew sat by the fire reminiscing about old days. Everyone felt that together they could do anything.",
   "morale": 2,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-298",
@@ -2879,7 +3371,10 @@
   "text": "The smell of roast mutton drifted from the next village. A few followers went to \"investigate\" and returned well-fed.",
   "morale": 1,
   "supplies": 1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-299",
@@ -2887,7 +3382,10 @@
   "text": "A gold crown gleamed in the grass by the road. The crew picked it up although someone might be looking for it.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 8
+  "coinsSS": 8,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "v-300",

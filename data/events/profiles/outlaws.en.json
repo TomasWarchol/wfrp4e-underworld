@@ -1,0 +1,18 @@
+[
+  {"id": "outl-001", "title": "A Boar in Camp", "text": "A wild boar charges into camp at night. After a brief scuffle there is meat for a week.", "morale": 1, "supplies": 2, "coinsSS": 0},
+  {"id": "outl-002", "title": "The Forester's Trail", "text": "In the morning someone finds fresh boot prints around the camp. The count's forester knows where you are.", "morale": -1, "supplies": 0, "coinsSS": 0},
+  {"id": "outl-003", "title": "A Song about the Band", "text": "At the crossroads inn they already sing about your band. The men are proud, though it is dangerous.", "morale": 1, "supplies": 0, "coinsSS": 0},
+  {"id": "outl-004", "title": "Downpour in the Woods", "text": "Rain pours all night. The shelters leak and the fire goes out every hour.", "morale": -1, "supplies": 0, "coinsSS": 0},
+  {"id": "outl-005", "title": "Peasants with a Basket", "text": "Peasants from a nearby village bring bread and cheese. They remember who chased off the tax collector.", "morale": 1, "supplies": 2, "coinsSS": 0},
+  {"id": "outl-006", "title": "A Quarrel over the Share", "text": "Two outlaws quarrel over a purse from the last robbery. Knives come out before the chief separates them.", "morale": -1, "supplies": 0, "coinsSS": 0},
+  {"id": "outl-007", "title": "A Fugitive from Town", "text": "A prisoner on the run walks into camp. For a place by the fire they give everything they have.", "morale": 0, "supplies": 0, "coinsSS": 4},
+  {"id": "outl-008", "title": "Wolves in the Night", "text": "The howling of wolves does not stop until dawn. Nobody sleeps and the watch changes every hour.", "morale": -1, "supplies": 0, "coinsSS": 0},
+  {"id": "outl-009", "title": "Treasure under a Root", "text": "Digging a refuse pit, someone hits a rotten box with a few coins in it.", "morale": 1, "supplies": 0, "coinsSS": 6},
+  {"id": "outl-010", "title": "A Wanted Poster at the Inn", "text": "A scout brings back a torn wanted poster. The description of the chief is surprisingly accurate.", "morale": -1, "supplies": 0, "coinsSS": 0},
+  {"id": "outl-011", "title": "Taal's Feast", "text": "The band keeps Taal's feast under an old oak. Tonight the forest seems friendly.", "morale": 1, "supplies": -1, "coinsSS": 0},
+  {"id": "outl-012", "title": "A Lost Satchel", "text": "Someone left a satchel of food by the stream. By morning only fox tracks remain.", "morale": 0, "supplies": -2, "coinsSS": 0},
+  {"id": "outl-r01", "title": "A Stranger in the Woods", "text": "The sentry hears someone circling the camp.", "morale": -1, "supplies": 0, "coinsSS": 0, "role": "scout", "okText": "The scout comes up behind the intruder. It is only a lost shepherd, but they know where the hunters are camped.", "ok": {"morale": 1, "supplies": 0, "coinsSS": 0}},
+  {"id": "outl-r02", "title": "A Stag at the Clearing", "text": "At dawn a stag steps into the clearing. One shot and there will be meat.", "morale": 0, "supplies": 0, "coinsSS": 0, "role": "marksman", "okText": "The poacher does not miss. The band eats its fill for the first time in a week.", "ok": {"morale": 1, "supplies": 3, "coinsSS": 0}},
+  {"id": "outl-r03", "title": "Marsh Fever", "text": "After a night by the marsh several men shake with chills and fever.", "morale": -2, "supplies": 0, "coinsSS": 0, "role": "charlatan", "okText": "The hedge healer brews willow bark and the fever breaks by noon.", "ok": {"morale": 1, "supplies": 0, "coinsSS": 0}},
+  {"id": "outl-r04", "title": "A Drunken Giant", "text": "A drunken woodcutter staggers into camp looking for a fight.", "morale": -1, "supplies": 0, "coinsSS": 0, "role": "bodyguard", "okText": "The bruiser hoists him over a shoulder and carries him back to the woods. Everyone laughs.", "ok": {"morale": 1, "supplies": 0, "coinsSS": 0}}
+]

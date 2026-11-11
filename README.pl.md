@@ -48,6 +48,18 @@ Język interfejsu przełącza się razem z językiem Foundry (polski lub angiels
 
 Statusy członków: **Gotowy**, **Zajęty** (po zleceniu do końca dnia), **Odpoczywa**, **Ranny**, **Aresztowany**, **Martwy**.
 
+### 📖 Wygląd Księgi Kompanii
+
+Domyślnie panel wygląda jak księga wojenna: chorągiew z herbem typu kompanii, motto na wstędze i sylwetka terenu, mierniki Morale, zapasów, skarbca i presji oraz zakładki-wstążki po lewej. Portret gotowego członka przeciąga się na kartę zlecenia albo na wolne miejsce w Świcie. Wszystko działa też z klawiatury (strzałki przełączają zakładki, Enter otwiera okno zlecenia). Ustawienie klienta **Wygląd panelu kompanii** przywraca klasyczny panel. Zrzuty pokazują interfejs angielski.
+
+| | |
+|---|---|
+| ![Obozowisko](docs/screenshots/ledger-camp.png) | ![Plan dnia](docs/screenshots/ledger-plan.png) |
+| ![Świta](docs/screenshots/ledger-retinue.png) | ![Rozkazy](docs/screenshots/ledger-orders.png) |
+| ![Skrzynia](docs/screenshots/ledger-chest.png) | ![Kronika](docs/screenshots/ledger-chronicle.png) |
+
+![Karty czatu: zlecenie, rozkaz, nocny postój](docs/screenshots/ledger-chat.png)
+
 ---
 
 ## 📅 Rytm szajki (ustawienie świata)
@@ -60,6 +72,21 @@ Statusy członków: **Gotowy**, **Zajęty** (po zleceniu do końca dnia), **Odpo
 * **Kolejka MG w trybie dziennym** (osobne ustawienie, domyślnie wyłączone): zlecenia wysłane przez graczy czekają na MG. MG klika **Rozpatrz Przydziały** – wszystkie wyniki trafiają do jednego raportu – albo rozgrywa nocny postój, który najpierw rozpatruje zaległe przydziały. Zlecenia wysyłane przez MG rozstrzygają się od razu.
 
 ---
+
+## 🏴 Typy kompanii
+
+Pole **Typ** w zakładce Informacje decyduje, czym jest kompania. Każdy typ ma własne role, zlecenia, nazewnictwo i zdarzenia nocy, a reszta (lista członków, rangi, morale, zapasy, skarbiec, postój, rozkazy) jest wspólna. Zmiana typu kompanii z członkami wymaga potwierdzenia i przelicza ich role.
+
+- **Szajka Półświatka**: wszystko, co opisano niżej.
+- **Zbrojna Kompania**: Kapitan i Pracodawca, który płaci, zamiast pobierać dolę. Zła sława zastępuje Rozgłos. Role: Sierżant, Halabardnik, Kusznik, Chorąży, Cyrulik, Kwatermistrz. Zlecenia: Patrol, Warta, Rekwizycja, Eskorta, Kontrakt, Musztra, spieniężenie trofeów, opieka nad rannymi. Zdobycz to trofea, które nie są gorącym towarem. Ten typ nie korzysta z tabel RollTable świata.
+- **Banda Banitów**: role i słownictwo Szajki, a zamiast Patrona Protektor, który bierze dolę. Zlecenia pasujące do gościńców i lasów (bez haraczu, włamań i kieszonkostwa) oraz Odwet na Łowcach (Rozgłos −1 i broń), Okup i Myto na Moście. Korzysta z tabel RollTable świata i dokłada własne zdarzenia nocy.
+- **Flotylla Przemytników**: Szyper i Odbiorca, który płaci za towar. Czujność celników zastępuje Rozgłos. Role: Woźnica / Przemytnik, Sternik, Flisak, Czujka, Fałszerz, Szafarz. Odbiór Kontrabandy przynosi towar do skrytki, a Kurs Barką 🎯 zabiera najcenniejszy ładunek do odbiorcy za 2,5 jego wartości (cel to trasa kursu). Nieudany kurs topi ładunek. Skrytka obniża Czujność.
+- **Siatka Informatorów**: Mistrz Szpiegów i Mocodawca, który płaci za raporty. Zdemaskowanie zastępuje Rozgłos. Role: Cień / Tajniak, Pośrednik / Fałszerz, Kameleon / Znachor, Podsłuchiwacz, Kurier, Pięść. Kupno Sekretu, Przechwycenie Gońca i Podmiana Listu 🎯 przynoszą dokumenty. Można je sprzedać kupcowi sekretów albo oddać najcenniejszy mocodawcy w Raporcie, za 1,25 wartości i bez ryzyka.
+- **Sekretne Bractwo**: Arcykapłan i Mroczny Mistrz, który pobiera dziesięcinę. Podejrzliwość zastępuje Rozgłos. Role: Akolita, Zelota, Szpieg, Skrytobójca, Mówca, Alchemik. Zlecenia: Rytuał, Infiltracja, Porwanie 🎯 i Kamienny Krąg na bezdrożach. Nowi wyznawcy dołączają przez rekrutację, fabularnie.
+
+Każda rola tych typów wydaje własne 3–5 rozkazów bojowych, nazwanych po swojemu (Hak Halabardy halabardnika, Za Burtę! flisaka, Męczeństwo zeloty). Mechanika jest ta sama co w rozkazach Szajki.
+
+**Zdarzenia nocy.** Szajka losuje z tabel terenu. Pozostałe typy część nocy (Banici co czwartą, reszta co drugą) losują z własnej tabeli, a resztę ze zdarzeń terenu bez motywów przestępczych. Własne zdarzenia mogą być ograniczone do terenów. Gdy typ pierwszy raz potrzebuje swojej tabeli, moduł tworzy ją jako edytowalną tabelę RollTable świata, a przycisk Tabele MG ją otwiera. Jeśli MG ją usunie, moduł używa wbudowanych zdarzeń. Każda kompania pamięta, które zdarzenia już widziała.
 
 ## 🎲 Zlecenia
 

@@ -21,7 +21,10 @@
   "text": "Two guild masters beat each other up over spirits in the next tenement. The watch came, but down the wrong alley.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-004",
@@ -37,7 +40,10 @@
   "text": "The chapel bells of Morr rang for no reason. Some of the crew didn't sleep until dawn.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-006",
@@ -53,7 +59,10 @@
   "text": "To mark a holy day the baker handed out yesterday's loaf to anyone in the queue. The crew queued three times.",
   "morale": 1,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-008",
@@ -61,7 +70,10 @@
   "text": "The chimney drew badly and the whole den filled with smoke. By morning everyone was coughing and complaining of headaches.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-009",
@@ -69,7 +81,10 @@
   "text": "Two followers argued over the last dry blanket. The chief ruled in Solomon's manner, taking the blanket himself.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-010",
@@ -77,7 +92,10 @@
   "text": "A town crier shouted about new taxes and wanted lists under the window. Some of the news was particularly interesting.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-011",
@@ -101,7 +119,10 @@
   "text": "A chimney sweep came down the flue straight onto a follower's lap. They both shrieked until everyone woke.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-014",
@@ -109,7 +130,10 @@
   "text": "The watch passed under the window three times. The crew kept quiet, but more than one lost their nerve.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-015",
@@ -149,7 +173,10 @@
   "text": "A basket of rubbish caught fire somewhere in the alley. People ran out with buckets while the crew quietly tidied up what it could.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-020",
@@ -165,7 +192,10 @@
   "text": "The whole tenement was celebrating a baker's lad's wedding. The crew got leftover cake and a few mugs of ale.",
   "morale": 1,
   "supplies": 1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-022",
@@ -173,7 +203,10 @@
   "text": "A storm flooded the alleys ankle-deep, but the den stayed dry and the rain drowned any traces.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-023",
@@ -221,7 +254,10 @@
   "text": "The washerwoman in the yard loudly cursed the whole crew because someone trampled her laundry. Nobody knows if it means anything.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-029",
@@ -229,7 +265,10 @@
   "text": "A fire broke out nearby. The city watch ran off that way, leaving the streets under your control.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 4
+  "coinsSS": 4,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-030",
@@ -245,7 +284,10 @@
   "text": "A lad from the next street tried to rob you. Caught, he burst into tears and told you all about his own affairs.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-032",
@@ -290,7 +332,10 @@
    "morale": 0,
    "supplies": 0,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-035",
@@ -305,7 +350,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-036",
@@ -365,7 +413,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 6
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-040",
@@ -380,7 +431,10 @@
    "morale": 1,
    "supplies": 1,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-041",
@@ -410,7 +464,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 8
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-043",
@@ -455,7 +512,10 @@
    "morale": 1,
    "supplies": 4,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-046",
@@ -470,7 +530,10 @@
    "morale": 0,
    "supplies": 0,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-047",
@@ -500,7 +563,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 4
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-049",
@@ -515,7 +581,10 @@
    "morale": 0,
    "supplies": 3,
    "coinsSS": 5
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-050",
@@ -575,7 +644,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 6
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-054",
@@ -645,7 +717,10 @@
   "text": "A procession of flagellants passed through the street, singing of the end of the world. Half the crew followed out of curiosity, the rest shut the shutters.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-062",
@@ -653,7 +728,10 @@
   "text": "On Hexenstag Eve people burn fires at street corners to ward off evil spirits. The crew built its own.",
   "morale": 1,
   "supplies": -1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-063",
@@ -677,7 +755,10 @@
   "text": "A recruiting sergeant is looking for young men for the city militia. Two of the crew pretended not to be there.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-066",
@@ -701,7 +782,10 @@
   "text": "A horse thief fled through the alley and abandoned his prize in your gateway. In the morning the horse stood quietly against the wall, regarding the crew.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 6
+  "coinsSS": 6,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-069",
@@ -709,7 +793,10 @@
   "text": "A band of drunken students came down the alley singing bawdy songs. One lost his purse and another borrowed a follower's doublet.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-070",
@@ -733,7 +820,10 @@
   "text": "A clerk from the chancery rented a bed near your den and copied letters until dawn. He left behind an inkwell.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 1
+  "coinsSS": 1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-073",
@@ -765,7 +855,10 @@
   "text": "The watch led away a suspected forger from the tenement. They questioned everyone around, but passed you over.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-077",
@@ -773,7 +866,10 @@
   "text": "Four widows from the next street held a funeral for one's husband. It turned into a feast to which the crew was invited.",
   "morale": 1,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-078",
@@ -789,7 +885,10 @@
   "text": "A fire in a carpenter's workshop lit the sky. The watch was busy putting it out and the district slept soundly.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-080",
@@ -805,7 +904,10 @@
   "text": "Two women fought over their turn at the well and doused each other. A crowd gathered and the pickpockets had a busy day.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 4
+  "coinsSS": 4,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-082",
@@ -829,7 +931,10 @@
   "text": "Artisans set up stalls along the whole street. The crew spotted a few items that could be bought or lifted.",
   "morale": 0,
   "supplies": 1,
-  "coinsSS": 4
+  "coinsSS": 4,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-085",
@@ -845,7 +950,10 @@
   "text": "A high-ranking priest has arrived in the city and the streets are patrolled doubly. The hideout had two unexpected visits.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-087",
@@ -853,7 +961,10 @@
   "text": "A barge of ale hit the quay and the barrels rolled down the ramp. Everyone gathered what they could while pretending to help.",
   "morale": 1,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-088",
@@ -869,7 +980,10 @@
   "text": "Someone saw a figure in a white shirt at the window. Probably a thief, but at midnight everyone preferred to watch their necks.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-090",
@@ -914,7 +1028,10 @@
    "morale": 0,
    "supplies": 0,
    "coinsSS": 4
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-093",
@@ -929,7 +1046,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 2
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-094",
@@ -944,7 +1064,10 @@
    "morale": 1,
    "supplies": 2,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-095",
@@ -959,7 +1082,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-096",
@@ -1019,7 +1145,10 @@
    "morale": 0,
    "supplies": 0,
    "coinsSS": 5
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-100",
@@ -1034,7 +1163,10 @@
    "morale": 0,
    "supplies": 3,
    "coinsSS": 2
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-101",
@@ -1049,7 +1181,10 @@
    "morale": 0,
    "supplies": 0,
    "coinsSS": 7
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-102",
@@ -1079,7 +1214,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 4
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-104",
@@ -1124,7 +1262,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-107",
@@ -1139,7 +1280,10 @@
    "morale": 0,
    "supplies": 0,
    "coinsSS": 8
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-108",
@@ -1154,7 +1298,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-109",
@@ -1184,7 +1331,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 4
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-111",
@@ -1199,7 +1349,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-112",
@@ -1244,7 +1397,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 2,
-  "next": "c-117"
+  "next": "c-117",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-117",
@@ -1253,7 +1409,10 @@
   "morale": -1,
   "supplies": 0,
   "coinsSS": -3,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-118",
@@ -1261,7 +1420,10 @@
   "text": "A fiddler played under your window till dawn. Half the crew was furious, half danced.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 1
+  "coinsSS": 1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-119",
@@ -1277,7 +1439,10 @@
   "text": "Someone dropped the granary key and the crew found it. In the morning the owner promised a reward to whoever returns it.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-121",
@@ -1285,7 +1450,10 @@
   "text": "Men with lanterns hunted rats in the alleys. The crew joined in and searched a few cellars on the way.",
   "morale": 0,
   "supplies": 1,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-122",
@@ -1301,7 +1469,10 @@
   "text": "A market fortune teller told one follower of a long life and a great loss. Nobody knows if that's good news.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-124",
@@ -1309,7 +1480,10 @@
   "text": "Someone smashed a window next door and ran off with chests. The watch was busy investigating and you had a quiet night.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-125",
@@ -1333,7 +1507,10 @@
   "text": "Lads from your circle swiped a basket of fruit from a stall and hid it in the cellar. The trader is looking for them.",
   "morale": 0,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-128",
@@ -1373,7 +1550,10 @@
   "text": "A raven without feet flew to the window and stared at the crew for an hour. Then it left as if it had understood everything.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-133",
@@ -1421,7 +1601,10 @@
   "text": "A former companion from another crew knocked. You reminisced and he left with a heavy head and a lighter purse.",
   "morale": 1,
   "supplies": -1,
-  "coinsSS": -2
+  "coinsSS": -2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-139",
@@ -1445,7 +1628,10 @@
   "text": "The burgomaster passed through the district with his retinue and the crew hid everything that might arouse suspicion.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-142",
@@ -1453,7 +1639,10 @@
   "text": "One of the followers found a strange figurine in the rubbish. A dealer bought it for three shillings and smiled knowingly.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-143",
@@ -1500,7 +1689,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-148",
@@ -1515,7 +1707,10 @@
    "morale": 0,
    "supplies": 0,
    "coinsSS": 8
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-149",
@@ -1530,7 +1725,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-150",
@@ -1575,7 +1773,10 @@
    "morale": 1,
    "supplies": 1,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-153",
@@ -1695,7 +1896,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-161",
@@ -1725,7 +1929,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 7
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-163",
@@ -1740,7 +1947,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 7
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-164",
@@ -1755,7 +1965,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-165",
@@ -1785,7 +1998,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-167",
@@ -1815,7 +2031,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-169",
@@ -1824,7 +2043,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 0,
-  "next": "c-170"
+  "next": "c-170",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-170",
@@ -1833,7 +2055,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 6,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-171",
@@ -1842,7 +2067,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 2,
-  "next": "c-172"
+  "next": "c-172",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-172",
@@ -1851,7 +2079,10 @@
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-173",
@@ -1878,7 +2109,10 @@
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0,
-  "next": "c-176"
+  "next": "c-176",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-176",
@@ -1887,7 +2121,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 4,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-177",
@@ -1929,7 +2166,10 @@
   "text": "A woman without shoes sat at your gate and couldn't remember where she came from. The watch took her in the morning.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-182",
@@ -1961,7 +2201,10 @@
   "text": "One follower's uncle dropped by with a basket of apples and accusations. After an hour everyone had had enough, but the apples stayed.",
   "morale": -1,
   "supplies": 1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-186",
@@ -2001,7 +2244,10 @@
   "text": "Someone abandoned a crested ring on your stairs. Somebody is surely looking for it.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 4
+  "coinsSS": 4,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-191",
@@ -2009,7 +2255,10 @@
   "text": "All bells rang in honour of Sigmar. The streets were clean and the watch more alert than usual.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-192",
@@ -2033,7 +2282,10 @@
   "text": "A bounty hunter asked about someone in your district. The description matched a man from the next tenement, but somebody felt uneasy.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-195",
@@ -2041,7 +2293,10 @@
   "text": "A fishing boat moored at the quay and fishermen gave out yesterday's catch to lighten their load. The crew didn't refuse.",
   "morale": 1,
   "supplies": 3,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-196",
@@ -2049,7 +2304,10 @@
   "text": "An old informant left a note with one sentence: \"Big shipment tomorrow morning on the east quay.\" It can be used.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 4
+  "coinsSS": 4,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-197",
@@ -2065,7 +2323,10 @@
   "text": "The last traders folded their stalls and sold the leftovers for pennies. The crew did the shopping of a lifetime.",
   "morale": 0,
   "supplies": 3,
-  "coinsSS": -1
+  "coinsSS": -1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-199",
@@ -2113,7 +2374,10 @@
   "text": "Two followers turned out to be twin brothers separated in childhood. A touching reunion and a few interesting stories besides.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-205",
@@ -2121,7 +2385,10 @@
   "text": "A pretty lady from next door struck up a conversation with a follower. When she left, his belt pouch was gone.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": -3
+  "coinsSS": -3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-206",
@@ -2129,7 +2396,10 @@
   "text": "The city watch marched through the district with drums. In the ranks one seemed to recognise you.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-207",
@@ -2169,7 +2439,10 @@
   "text": "A baker baked a cake with a coin inside. The crew ate it and the coin went to the one who needed it least.",
   "morale": 1,
   "supplies": 1,
-  "coinsSS": 1
+  "coinsSS": 1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-212",
@@ -2177,7 +2450,10 @@
   "text": "A travelling circus pitched tents on a vacant square. Half the district watched acrobats while the other half searched for lost purses.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 5
+  "coinsSS": 5,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-213",
@@ -2185,7 +2461,10 @@
   "text": "A priest of Morr walked down the street at night carrying a black staff, a boy with a lantern behind him. The crew held its breath until they vanished.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-214",
@@ -2201,7 +2480,10 @@
   "text": "The neighbour above emptied slops from the window onto a follower's shoulder. A quarrel began and ended with apologies and bread.",
   "morale": 0,
   "supplies": 1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-216",
@@ -2257,7 +2539,10 @@
   "text": "The tavern around the corner sent up the smell of roasting meat. Half the crew turned up there before sunrise.",
   "morale": 1,
   "supplies": -1,
-  "coinsSS": -2
+  "coinsSS": -2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-223",
@@ -2266,7 +2551,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 3,
-  "next": "c-224"
+  "next": "c-224",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-224",
@@ -2275,7 +2563,10 @@
   "morale": -1,
   "supplies": 0,
   "coinsSS": -3,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-225",
@@ -2302,7 +2593,10 @@
   "morale": 1,
   "supplies": -1,
   "coinsSS": 0,
-  "next": "c-228"
+  "next": "c-228",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-228",
@@ -2311,7 +2605,10 @@
   "morale": 0,
   "supplies": -2,
   "coinsSS": 0,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-229",
@@ -2337,7 +2634,10 @@
   "text": "Someone spilled tar on the cobbles and several passers-by stuck to the road. A chance for a few brilliant thefts.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 4
+  "coinsSS": 4,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-232",
@@ -2361,7 +2661,10 @@
   "text": "A thief fleeing the watch tossed his loot through your window. Before anyone understood, he was gone.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 5
+  "coinsSS": 5,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-235",
@@ -2401,7 +2704,10 @@
   "text": "Through the wall you can hear two men discussing a plan. From what could be understood it's a raid on a gold transport.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-240",
@@ -2425,7 +2731,10 @@
   "text": "The guards declared a curfew after dusk. The crew sat in the den, angry at the whole world.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-243",
@@ -2433,7 +2742,10 @@
   "text": "A sheep ran into the tenement and froze on the stairs. The lads stole it before the owner could claim it.",
   "morale": 1,
   "supplies": 3,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-244",
@@ -2449,7 +2761,10 @@
   "text": "A smith from the next street invited people to see his work. The crew bought a few horseshoes and let him tell the story of his life.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": -1
+  "coinsSS": -1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-246",
@@ -2457,7 +2772,10 @@
   "text": "Children are looking for a missing cat. One looked into your cellar and saw things he shouldn't have.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-247",
@@ -2465,7 +2783,10 @@
   "text": "The city bathhouse announced a free-entry day. The crew turned up in full and came back clean as a whistle.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": -1
+  "coinsSS": -1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-248",
@@ -2473,7 +2794,10 @@
   "text": "The watch changed the post on your street. The new men don't know the area yet and their eyes shine with zeal.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-249",
@@ -2497,7 +2821,10 @@
   "text": "A rich merchant's funeral went down the street in full pomp. One of the mourners had a suspiciously light purse on his return.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 4
+  "coinsSS": 4,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-252",
@@ -2537,7 +2864,10 @@
   "text": "Travelling Tilean singers gave a concert at the street corner. The crowd was generous and the pickpockets more so.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 5
+  "coinsSS": 5,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-257",
@@ -2553,7 +2883,10 @@
   "text": "Someone painted an insulting drawing of the burgomaster on a wall during the night. The watch began a search and you were in good spirits.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-259",
@@ -2569,7 +2902,10 @@
   "text": "A priest of Shallya heard a follower's confession and he returned visibly lighter and very thoughtful.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": -1
+  "coinsSS": -1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-261",
@@ -2585,7 +2921,10 @@
   "text": "The laundress's girl recognised one follower and threatened to go to the watch unless she got crowns.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": -3
+  "coinsSS": -3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-263",
@@ -2593,7 +2932,10 @@
   "text": "An old friend of the crew died. He was buried with honours and some money was collected for his family.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": -2
+  "coinsSS": -2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-264",
@@ -2625,7 +2967,10 @@
   "text": "A blizzard buried the streets and erased all tracks. The watch was busy clearing snow and nobody looked for anybody.",
   "morale": 1,
   "supplies": -1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-268",
@@ -2633,7 +2978,10 @@
   "text": "Two followers bet on who'd catch a rat first. The winner got a quarter-shilling, the loser laughter.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-269",
@@ -2649,7 +2997,10 @@
   "text": "An old soldier with a wooden leg gave the young followers advice on fighting. Half was good, half invented.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-271",
@@ -2657,7 +3008,10 @@
   "text": "A priest knocked asking for support for an almshouse. He received a few shillings and promised to pray for the whole crew's souls.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": -3
+  "coinsSS": -3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-272",
@@ -2666,7 +3020,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 0,
-  "next": "c-273"
+  "next": "c-273",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-273",
@@ -2675,7 +3032,10 @@
   "morale": 1,
   "supplies": 0,
   "coinsSS": 5,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-274",
@@ -2684,7 +3044,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 2,
-  "next": "c-275"
+  "next": "c-275",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-275",
@@ -2693,7 +3056,10 @@
   "morale": -1,
   "supplies": 0,
   "coinsSS": -2,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-276",
@@ -2719,7 +3085,10 @@
   "text": "The greenish moon Morrslieb hung low over the rooftops. Dogs howled and a few followers wouldn't step over the threshold.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-279",
@@ -2727,7 +3096,10 @@
   "text": "Witch Hunters went through the district with torches, dragging people from their homes. The crew sat quiet as mice until they left.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-280",
@@ -2743,7 +3115,10 @@
   "text": "Armed men from a ship snatched several drunks from the street for barge service. Your people hid in the cellar and waited it out.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-282",
@@ -2791,7 +3166,10 @@
   "text": "It was proclaimed that a new burgomaster takes office. For a day chaos reigned, which the crew cleverly exploited.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 5
+  "coinsSS": 5,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-288",
@@ -2799,7 +3177,10 @@
   "text": "The district well turned murky and foul. Everyone drank ale and the crew sold a few barrels at a good price.",
   "morale": 0,
   "supplies": 1,
-  "coinsSS": 4
+  "coinsSS": 4,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-289",
@@ -2807,7 +3188,10 @@
   "text": "Your man lost a signet bearing the crew's emblem in a drunken brawl. If it falls into the wrong hands it could cause trouble.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-290",
@@ -2823,7 +3207,10 @@
   "text": "A travelling troupe of actors staged a play on the street about noble outlaws. The crew watched intently and some even shed a tear.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-292",
@@ -2863,7 +3250,10 @@
   "text": "The entire shift of guards vanished from the watchtower. The watch seeks culprits and the district whispers of treachery.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-297",
@@ -2879,7 +3269,10 @@
   "text": "One follower's grandmother visited and brought a cake from a recipe passed down through generations. Everyone ate it to the last crumb.",
   "morale": 1,
   "supplies": 1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-299",
@@ -2887,7 +3280,10 @@
   "text": "A wanted notice bearing one follower's likeness appeared on the notice board. The artist had no talent, which is probably why nobody recognised him.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "c-300",

@@ -14,6 +14,7 @@ import {
 } from "./world-data.mjs";
 import { registry, dialogContent, dialogValue, escapeHTML } from "../../wfrp4e-companion-lib/scripts/companion-lib.mjs";
 import { t } from "./i18n.mjs";
+import { profileHasMission, profileOf } from "./company-profiles.mjs";
 
 /** Nazwa stanu członka w bieżącym języku (ready → „Dostępny” itd.). */
 const statusLabel = status => t(`Status.${String(status || "ready").charAt(0).toUpperCase()}${String(status || "ready").slice(1)}`);
@@ -141,9 +142,10 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       if (!Array.isArray(npc.narrativePerks)) {
         npc.narrativePerks = [];
       }
-      npc.role = UnderworldTables.normalizeRole(npc.role);
+      npc.role = UnderworldTables.roleForCompany(npc.role, gang.type);
       npc.role2 = npc.role2 && UnderworldTables.ROLES_CONFIG[npc.role2] && npc.role2 !== npc.role ? npc.role2 : "";
       npc.roleConfig = UnderworldTables.ROLES_CONFIG[npc.role] || UnderworldTables.ROLES_CONFIG["bodyguard"];
+      Object.assign(npc, this._memberGlyphs(npc));
 
       if (npc.actorId) {
         const linkedActor = game.actors.get(npc.actorId);
@@ -180,14 +182,11 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
         isUnlocked = true;
         executor = retinueMembers.find(n => Number(n.rank) >= 3) || null;
       } else {
-        executor = retinueMembers.find(n => {
-          const isLt = Number(n.rank) >= 3;
-          return UnderworldTables.hasRole(n, reqRoles) || (reqRoles.includes("lieutenant") && isLt);
-        }) || null;
+        executor = retinueMembers.find(n => UnderworldTables.canGiveOrder(n, orderId, order)) || null;
         isUnlocked = !!executor;
       }
 
-      const reqRoleNames = reqRoles.map(r => r === "lieutenant" ? t("Ranks.lieutenant.Name") : (UnderworldTables.ROLES_CONFIG[r]?.name || r)).join(` ${t("Or")} `);
+      const reqRoleNames = UnderworldTables.orderRoleNames(orderId, order, gang).join(` ${t("Or")} `);
 
       const [group, icon] = UnderworldOperations.ORDER_META[orderId] || ["offensive", "fas fa-bolt"];
       const cost = orderId === "meatshield" ? { costClass: "sacrifice", costIcon: "fas fa-heart-broken", costLabel: t("TacticsTab.WoundRisk") }
@@ -198,6 +197,8 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       tacticalOrdersView[orderId] = {
         ...order,
         id: orderId,
+        glyph: `order-${orderId}`,
+        costPips: Array.from({ length: Number(order.advantageCost) || 0 }),
         group,
         icon,
         ...cost,
@@ -218,6 +219,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       orders: Object.values(tacticalOrdersView).filter(o => o.group === id)
     }));
     data.rolesConfig = UnderworldTables.ROLES_CONFIG;
+    data.companyType = gang.type;
 
     data.availableOutlaws = gang.roster.filter(n => n.status === "ready" && (!n.assignment || n.assignment === "none"));
 
@@ -244,7 +246,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     const terrainId = UnderworldOperations.getTerrain(gang);
     const terrain = TERRAINS[terrainId];
     data.terrain = { id: terrainId, ...terrain };
-    data.terrainOptions = TERRAIN_IDS.map(id => ({ id, name: TERRAINS[id].name, icon: TERRAINS[id].icon, active: id === terrainId }));
+    data.terrainOptions = TERRAIN_IDS.map(id => ({ id, name: TERRAINS[id].name, icon: TERRAINS[id].icon, glyph: `ui-terrain_${id}`, active: id === terrainId }));
     data.comfortableCostLabel = terrain.comfortableCostSS ? `${terrain.comfortableCostSS} ${t("Units.SS")}` : t("Free");
 
     data.activeTokens = Object.entries(TOKENS).flatMap(([id, cfg]) => {
@@ -264,6 +266,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
         ...item,
         categoryName: LOOT_CATEGORIES[item.category]?.name || item.category,
         categoryIcon: LOOT_CATEGORIES[item.category]?.icon || "fas fa-box",
+        glyph: LOOT_CATEGORIES[item.category] ? `ui-loot_${item.category}` : "ui-loot_goods",
         terrainName: TERRAINS[item.terrain]?.name || "",
         refused,
         liked: fence.likes.includes(item.category),
@@ -286,13 +289,15 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       id,
       ...cat,
       cssKey: id,
+      glyph: `ui-category_${id}`,
       iconClass: CATEGORY_ICON_CLASS[id],
       collapsed: this._categoryCollapsed[id] ?? !OPEN_CATEGORIES.has(id),
       missions: Object.entries(MISSIONS)
-        .filter(([, m]) => m.category === id && missionAvailable(m, terrainId))
+        .filter(([, m]) => m.category === id && missionAvailable(m, terrainId) && profileHasMission(gang, m))
         .map(([missionId, m]) => ({
           id: missionId,
           icon: m.icon,
+          glyph: `job-${missionId}`,
           name: missionName(m, terrainId),
           desc: missionDesc(m, terrainId),
           tiered: !!m.tiered,
@@ -300,7 +305,156 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
         }))
     })).filter(cat => cat.missions.length);
 
+    data.ledger = this.constructor.useLedger();
+    if (data.ledger) data.ledgerView = this._ledgerView(gang, terrainId, data);
     return data;
+  }
+
+  /** Czy panel używa wyglądu „Księga Kompanii” (ustawienie klienta). */
+  static useLedger() {
+    try {
+      return game.settings.get("wfrp4e-underworld", "sheetStyle") !== "classic";
+    } catch (_) {
+      return true;
+    }
+  }
+
+  /**
+   * Plan dnia w Księdze: portret gotowego członka przeciąga się na kartę zlecenia (wysłanie)
+   * albo na wolny slot Świty (dołączenie). Upuszczenie wywołuje te same metody co przyciski.
+   */
+  _bindLedgerDragDrop(html) {
+    const DRAG_TYPE = "UnderworldMember";
+    const readDrag = (ev) => {
+      try {
+        const data = JSON.parse(ev.dataTransfer?.getData("text/plain") || "null");
+        return data?.type === DRAG_TYPE ? data.npcId : null;
+      } catch (_) {
+        return null;
+      }
+    };
+    for (const token of html.querySelectorAll(".uw-l-token[draggable='true']")) {
+      token.addEventListener("dragstart", (ev) => {
+        ev.dataTransfer.setData("text/plain", JSON.stringify({ type: DRAG_TYPE, npcId: token.dataset.npcId }));
+        ev.dataTransfer.effectAllowed = "move";
+        html.classList.add("uw-l-dragging");
+      });
+      token.addEventListener("dragend", () => html.classList.remove("uw-l-dragging"));
+    }
+    const target = (el, onDrop) => {
+      el.addEventListener("dragover", (ev) => {
+        ev.preventDefault();
+        el.classList.add("uw-l-drop-hover");
+      });
+      el.addEventListener("dragleave", () => el.classList.remove("uw-l-drop-hover"));
+      el.addEventListener("drop", async (ev) => {
+        el.classList.remove("uw-l-drop-hover");
+        html.classList.remove("uw-l-dragging");
+        const npcId = readDrag(ev);
+        if (!npcId) return; // np. aktor z paska bocznego – obsługuje go zwykły handler okna
+        ev.preventDefault();
+        ev.stopPropagation();
+        await onDrop(npcId);
+      });
+    };
+    for (const card of html.querySelectorAll(".uw-l-job[data-job]")) {
+      target(card, (npcId) => this._onSendMission(card.dataset.job, { npcId }));
+    }
+    for (const slot of html.querySelectorAll(".uw-l-slot.is-empty")) {
+      target(slot, async (npcId) => {
+        const npc = GangData.getGang(this.actor).roster.find(n => n.id === npcId);
+        if (!npc || npc.assignment === "retinue") return;
+        await this._onClickAction({ preventDefault() {}, stopPropagation() {} }, { dataset: { action: "toggle-retinue", npcId } });
+      });
+    }
+  }
+
+  /** Glify i podpisy członka do widoku Księgi: rola, ranga, stan i bieżący przydział. */
+  _memberGlyphs(npc) {
+    const statuses = { ready: "Ready", busy: "Busy", resting: "Resting", wounded: "Wounded", arrested: "Arrested", dead: "Dead" };
+    const status = statuses[npc.status] ? npc.status : "ready";
+    const rank = Math.max(0, Math.min(3, Number(npc.rank) || 0));
+    const assignment = npc.assignment && npc.assignment !== "none" ? npc.assignment : null;
+    const assignGlyph = !assignment ? null
+      : assignment === "retinue" ? "ui-retinue"
+        : assignment === "guard" ? "ui-watch"
+          : MISSIONS[assignment] ? `job-${assignment}` : null;
+    return {
+      roleGlyph: `role-${npc.role}`,
+      role2Glyph: npc.role2 ? `role-${npc.role2}` : null,
+      role2Name: npc.role2 ? UnderworldTables.ROLES_CONFIG[npc.role2]?.name ?? "" : "",
+      statusGlyph: `ui-status_${status}`,
+      statusLabel: t(`Status.${statuses[status]}`),
+      rankGlyph: ["ui-rank_rookie", "ui-rank_seasoned", "ui-rank_veteran", "ui-rank_lieutenant"][rank],
+      rankName: UnderworldTables.RANKS_CONFIG?.[rank]?.name ?? "",
+      assignGlyph,
+      assignLabel: assignGlyph ? t(`Badges.${assignment}`) : "",
+      available: status === "ready" && !assignment
+    };
+  }
+
+  /** Kafle schronienia na noc (Księga): zamiast listy wyboru trzy ilustrowane opcje z efektem. */
+  _shelterTiles(gang, data) {
+    const terrain = data.terrain || {};
+    const current = gang.camp?.type || "basic";
+    return [
+      { id: "makeshift", glyph: "ui-shelter_makeshift", label: t("DashTab.Makeshift", { place: terrain.makeshiftLabel }), effect: `${terrain.coldMakeshift ? -2 : -1} ${t("DashTab.MoralePerCamp")}`, bad: true },
+      { id: "basic", glyph: "ui-shelter_basic", label: t("DashTab.Basic"), effect: "" },
+      { id: "comfortable", glyph: "ui-shelter_comfortable", label: t("DashTab.Comfortable", { place: terrain.comfortableLabel, cost: data.comfortableCostLabel }), effect: "", good: true }
+    ].map(tile => ({ ...tile, checked: tile.id === current }));
+  }
+
+  /** Dane nagłówka i nawigacji Księgi: herb typu, sylwetka terenu, mierniki zasobów i presji. */
+  _ledgerView(gang, terrainId, data) {
+    const type = profileOf(gang).id;
+    const morale = Math.max(0, Math.min(10, Number(gang.morale) || 0));
+    const supplies = Math.max(0, Math.min(30, Number(gang.supplies) || 0));
+    const pressure = Math.max(0, Math.min(5, Number(gang.notoriety) || 0));
+    const treasury = gang.treasury || {};
+    return {
+      type,
+      crest: `her-crest_${type}`,
+      skyline: `her-skyline_${terrainId}`,
+      terrainIcon: `ui-terrain_${terrainId}`,
+      pressureIcon: `ui-pressure_${type}`,
+      morale: { value: morale, pips: Array.from({ length: 10 }, (_, i) => ({ on: i < morale })) },
+      supplies: { value: supplies, max: 30, pct: Math.round(supplies / 30 * 100) },
+      pressure: {
+        value: pressure,
+        label: t("Mod.Heat", { value: "" }).trim(),
+        level: t(`Notoriety.${pressure}.Name`),
+        desc: t(`Notoriety.${pressure}.Desc`),
+        pips: Array.from({ length: 5 }, (_, i) => ({ on: i < pressure }))
+      },
+      treasury: { gc: Number(treasury.gc) || 0, ss: Number(treasury.ss) || 0, d: Number(treasury.d) || 0 },
+      retinueSlots: Array.from({ length: data.maxRetinue }, (_, i) => ({ npc: data.activeRetinue?.[i] ?? null })),
+      shelters: this._shelterTiles(gang, data),
+      orders: (() => {
+        const all = (data.tacticGroups ?? []).flatMap(group => group.orders.map(order => ({ ...order, groupTitle: group.title })));
+        return { unlocked: all.filter(o => o.isUnlocked), locked: all.filter(o => !o.isUnlocked) };
+      })(),
+      moraleTier: morale >= 8 ? { cls: "high", label: t("DashTab.TierFanatic"), text: t("DashTab.FlavorHigh") }
+        : morale >= 5 ? { cls: "mid", label: t("DashTab.TierDiscipline"), text: t("DashTab.FlavorMid") }
+          : morale >= 3 ? { cls: "low", label: t("DashTab.TierGrumbling"), text: t("DashTab.FlavorLow") }
+            : { cls: "critical", label: t("DashTab.TierMutiny"), text: t("DashTab.FlavorCritical") },
+      pressureLevels: Array.from({ length: 6 }, (_, i) => ({
+        n: i,
+        name: t(`Notoriety.${i}.Name`),
+        short: t(`InfoTab.HeatShort.${i}`),
+        active: i === pressure,
+        passed: i < pressure
+      })),
+      relation: ["favorite", "trusted", "neutral", "strained", "hostile"].includes(gang.patron?.relation) ? gang.patron.relation : "neutral",
+      pool: gang.roster.filter(n => n.status !== "dead"),
+      tabs: [
+        { id: "info", icon: "ui-tab_chronicle", label: t("Tabs.Info") },
+        { id: "dashboard", icon: "ui-tab_camp", label: t("Tabs.Camp") },
+        { id: "roster", icon: "ui-tab_roster", label: t("Tabs.Roster"), count: gang.roster.length },
+        { id: "tasks", icon: "ui-tab_plan", label: t("Tabs.Tasks"), count: data.availableOutlaws?.length ?? 0 },
+        { id: "loot", icon: "ui-tab_chest", label: t("Tabs.Loot"), count: data.lootCount },
+        { id: "tactics", icon: "ui-tab_orders", label: t("Tabs.Tactics"), count: `${data.retinueCount}/${data.maxRetinue}` }
+      ]
+    };
   }
 
   // ════════════════════════════════════════════
@@ -375,13 +529,74 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     });
   }
 
+  /**
+   * Dostępność: zakładki jako tablist, klawiatura dla klikalnych elementów niebędących przyciskami
+   * i etykiety dla przycisków z samą ikoną (czytniki ekranu nie czytają atrybutu title).
+   */
+  changeTab(tab, group, options) {
+    super.changeTab(tab, group, options);
+    if (group === "primary" && this.element) this._applyAccessibility(this.element);
+  }
+
+  _applyAccessibility(html) {
+    const nav = html.querySelector("nav.sheet-tabs[data-group='primary']");
+    if (nav) {
+      nav.setAttribute("role", "tablist");
+      for (const tab of nav.querySelectorAll("[data-tab]")) {
+        tab.setAttribute("role", "tab");
+        const active = tab.classList.contains("active");
+        tab.setAttribute("aria-selected", String(active));
+        tab.tabIndex = active ? 0 : -1;
+      }
+      if (!nav.dataset.uwKeys) {
+        nav.dataset.uwKeys = "1";
+        // Strzałki przełączają zakładki, jak w zwykłej liście kart
+        nav.addEventListener("keydown", ev => {
+          const keys = ["ArrowDown", "ArrowRight", "ArrowUp", "ArrowLeft", "Home", "End"];
+          if (!keys.includes(ev.key)) return;
+          const tabs = Array.from(nav.querySelectorAll("[data-tab]"));
+          const i = tabs.indexOf(document.activeElement);
+          if (i < 0) return;
+          ev.preventDefault();
+          let next = i + (["ArrowDown", "ArrowRight"].includes(ev.key) ? 1 : -1);
+          if (ev.key === "Home") next = 0;
+          if (ev.key === "End") next = tabs.length - 1;
+          const target = tabs[(next + tabs.length) % tabs.length];
+          this.changeTab(target.dataset.tab, "primary");
+          target.focus();
+        });
+      }
+    }
+    for (const el of html.querySelectorAll("[data-action]:not(button, input, select, textarea, [data-tab])")) {
+      if (el.tabIndex < 0 && !el.hasAttribute("tabindex")) el.tabIndex = 0;
+      if (!el.hasAttribute("role")) el.setAttribute("role", "button");
+      if (el.dataset.uwKeys) continue;
+      el.dataset.uwKeys = "1";
+      el.addEventListener("keydown", ev => {
+        if (ev.key !== "Enter" && ev.key !== " ") return;
+        ev.preventDefault();
+        el.click();
+      });
+    }
+    for (const el of html.querySelectorAll("button, [role='button']")) {
+      if (el.hasAttribute("aria-label") || el.textContent.trim()) continue;
+      const label = el.getAttribute("title") || el.dataset.tooltip;
+      if (label) el.setAttribute("aria-label", label);
+    }
+  }
+
   _onRender(context, options) {
     super._onRender(context, options);
     const html = this.element;
+    // Księga Kompanii: klasa okna i typ kompanii dla motywu w CSS (także pasek tytułu)
+    html.classList.toggle("uw-ledger", !!context.ledger);
+    html.dataset.companyType = context.ledgerView?.type ?? "";
+    if (context.ledger) this._bindLedgerDragDrop(html);
     const all = (selector) => Array.from(html.querySelectorAll(selector));
     const on = (selector, type, handler) => all(selector).forEach(el => el.addEventListener(type, handler));
 
     // Przywrócenie aktywnej zakładki po każdym renderze
+    // (changeTab nakłada też atrybuty dostępności, patrz _applyAccessibility)
     this.changeTab(this.tabGroups.primary, "primary", { force: true, updatePosition: false });
 
     // Zwijanie i rozwijanie świty bez utraty stanu przy odświeżeniu karty.
@@ -821,7 +1036,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
 
       case "open-world-editor":
         if (!game.user.isGM) return;
-        return UnderworldRollTables.openTables(UnderworldOperations.getTerrain(GangData.getGang(this.actor)));
+        return UnderworldRollTables.openTables(UnderworldOperations.getTerrain(GangData.getGang(this.actor)), GangData.getGang(this.actor).type);
 
       // ─── TAKTYKA: Rozkazy taktyczne ───
       case "order-tactic":
@@ -844,12 +1059,9 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     let executor = null;
 
     if (reqRoles.length > 0) {
-      executor = activeRetinue.find(n => {
-        const isLt = Number(n.rank) >= 3;
-        return UnderworldTables.hasRole(n, reqRoles) || (reqRoles.includes("lieutenant") && isLt);
-      });
+      executor = activeRetinue.find(n => UnderworldTables.canGiveOrder(n, orderId, orderConfig));
       if (!executor) {
-        const reqNames = reqRoles.map(r => r === "lieutenant" ? t("Ranks.lieutenant.Name") : (UnderworldTables.ROLES_CONFIG[r]?.name || r)).join(` ${t("Or")} `);
+        const reqNames = UnderworldTables.orderRoleNames(orderId, orderConfig, gang).join(` ${t("Or")} `);
         ui.notifications.warn(t("Orders.Dialog.NeedRoles", { order: orderConfig.name, roles: reqNames }));
         return;
       }
@@ -975,13 +1187,18 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
   /**
    * Otwiera dialog wyboru NPC (i opcjonalnie input celu) dla danego typu misji
    */
-  async _onSendMission(missionType) {
+  /**
+   * Wysyła członka na zlecenie. Bez npcId otwiera okno wyboru; z npcId (portret upuszczony na kartę
+   * zlecenia) wysyła od razu, a okno pokazuje tylko wtedy, gdy zlecenie wymaga wyborów (cel, poziom, łupy).
+   */
+  async _onSendMission(missionType, { npcId: chosenId = null } = {}) {
     const mission = MISSIONS[missionType];
     if (!mission) {
       ui.notifications.error(t("Mission.Unknown", { type: missionType }));
       return;
     }
     const gang = GangData.getGang(this.actor);
+    if (!profileHasMission(gang, mission)) return;
     const terrainId = UnderworldOperations.getTerrain(gang);
     const label = missionName(mission, terrainId);
     if (!missionAvailable(mission, terrainId)) {
@@ -1009,9 +1226,19 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       ui.notifications.warn(t("Mission.NobodyFree"));
       return;
     }
+    if (chosenId && !available.some(n => n.id === chosenId)) {
+      const npc = gang.roster.find(n => n.id === chosenId);
+      ui.notifications.warn(t("Notify.NotReadyForAssignment", { name: npc?.name || t("ThisMember") }));
+      return;
+    }
+    const needsChoices = mission.fencePicker || mission.bribePicker || mission.needsInput || mission.tiered;
+    if (chosenId && !needsChoices) {
+      await this._dispatchMission(mission, chosenId, "", null, label);
+      return;
+    }
 
     const npcOptions = available.map(n =>
-      `<option value="${n.id}">${escapeHTML(n.name)} (${escapeHTML(UnderworldOperations.roleName(n.role))})</option>`
+      `<option value="${n.id}" ${n.id === chosenId ? "selected" : ""}>${escapeHTML(n.name)} (${escapeHTML(UnderworldOperations.roleName(n.role))})</option>`
     ).join("");
 
     // Dodatkowe pola zależne od zlecenia
@@ -1077,27 +1304,29 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
             } else if (mission.needsInput) {
               input = dialogValue(dialog, "#mission-target-input");
             }
-
-            // Tydzień Szajki lub kolejka MG: tylko plan – zlecenie rozpatrzy MG
-            if (UnderworldOperations.usesPlanning()) {
-              if (await UnderworldOperations.planMission(this.actor, npcId, mission.fn, input, tier)) {
-                ui.notifications.info(UnderworldOperations.isWeekly()
-                  ? t("Mission.PlannedWeek", { label })
-                  : t("Mission.Queued", { label }));
-              }
-              this.render();
-              return;
-            }
-
-            await UnderworldOperations[mission.fn](this.actor, npcId, input, { tier });
-            ui.notifications.info(t("Mission.DoneCheckChat", { label }));
-            this.render();
+            await this._dispatchMission(mission, npcId, input, tier, label);
           }
         },
         { action: "cancel", icon: "fas fa-times", label: "WFRP4E_COMPANION.Cancel" }
       ],
       rejectClose: false
     });
+  }
+
+  /** Wykonuje zlecenie albo, w trybie tygodnia lub kolejki MG, tylko je planuje. */
+  async _dispatchMission(mission, npcId, input, tier, label) {
+    if (UnderworldOperations.usesPlanning()) {
+      if (await UnderworldOperations.planMission(this.actor, npcId, mission.fn, input, tier)) {
+        ui.notifications.info(UnderworldOperations.isWeekly()
+          ? t("Mission.PlannedWeek", { label })
+          : t("Mission.Queued", { label }));
+      }
+      this.render();
+      return;
+    }
+    await UnderworldOperations[mission.fn](this.actor, npcId, input, { tier });
+    ui.notifications.info(t("Mission.DoneCheckChat", { label }));
+    this.render();
   }
 
   /** Wybór celu (łatwy / zwykły / bogaty) z podglądem żetonów przygotowania. */
@@ -1530,7 +1759,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
             const count = parseInt(dialogValue(dialog, "#recruit-count-select"), 10) || 3;
             const gmNote = dialogValue(dialog, "#recruit-gm-note")?.trim() || "";
 
-            const candidates = UnderworldTables.generateRecruitCandidates(count);
+            const candidates = UnderworldTables.generateRecruitCandidates(count, GangData.getGang(this.actor));
 
             const templateData = {
               actorId: this.actor.id,
@@ -1865,7 +2094,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       secondRoleBody = `<span style="color: #999; font-size: 0.78rem;">🔒 ${t("Upgrade.SecondRoleNeedsRank")}</span>`;
     } else {
       const ownRoles = UnderworldTables.rolesOf(npc);
-      const options = Object.entries(UnderworldTables.ROLES_CONFIG)
+      const options = UnderworldTables.rolesFor(gang)
         .filter(([key]) => !ownRoles.includes(key))
         .map(([key, cfg]) => `<option value="${key}">${cfg.name}</option>`).join("");
       const canAffordRole = npc.operationalXP >= secondRoleDef.costOperationalXP;
@@ -2530,14 +2759,14 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
               item.customBonus = existing.customBonus || 0;
               item.gear = existing.gear || [];
             } else {
-              if (item.role) item.role = UnderworldTables.normalizeRole(item.role);
+              if (item.role) item.role = UnderworldTables.roleForCompany(item.role, gang);
               else item.role = existing.role || "bodyguard";
             }
             // Druga rola: gracz jej nie zmienia formularzem (kupuje ją za DO), MG ustawia ją z listy
             const wantedRole2 = game.user.isGM && item.role2 !== undefined ? item.role2 : existing.role2;
             item.role2 = wantedRole2 && UnderworldTables.ROLES_CONFIG[wantedRole2] && wantedRole2 !== item.role ? wantedRole2 : "";
           } else if (item.role) {
-            item.role = UnderworldTables.normalizeRole(item.role);
+            item.role = UnderworldTables.roleForCompany(item.role, gang);
           }
           newRoster.push(item);
         }
@@ -2553,8 +2782,29 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       }
     }
 
+    // Zmiana typu kompanii z członkami przelicza ich role, więc wymaga potwierdzenia
+    const typeChanged = expanded.type !== undefined && expanded.type !== gang.type;
+    if (typeChanged && gang.roster.length) {
+      const confirmed = await DialogV2.confirm({
+        window: { title: t("InfoTab.TypeChangeTitle") },
+        content: `<p>${t("InfoTab.TypeChangeText", { count: gang.roster.length })}</p>`,
+        rejectClose: false
+      });
+      if (!confirmed) {
+        this.render();
+        return;
+      }
+    }
+
     const baseGang = foundry.utils.deepClone(gang);
     const merged = foundry.utils.mergeObject(gang, expanded, { inplace: false });
+    if (typeChanged) {
+      for (const npc of merged.roster) {
+        npc.role = UnderworldTables.roleForCompany(npc.role, merged);
+        const second = npc.role2 ? UnderworldTables.roleForCompany(npc.role2, merged) : "";
+        npc.role2 = second && second !== npc.role ? second : "";
+      }
+    }
     await GangData.saveGang(this.actor, merged, baseGang);
     this.render();
   }

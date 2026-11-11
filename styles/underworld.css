@@ -6288,3 +6288,55 @@
 :is(html, #uw) .uw-callout-gain { border-left-color: var(--uw-ok); background: var(--uw-ok-bg); }
 :is(html, #uw) .uw-callout-gain .uw-callout-title { color: var(--uw-ok-dark); }
 :is(html, #uw) .uw-callout-rumor .uw-callout-title { color: var(--uw-green); }
+
+/* ─── Karty czatu: rozkaz i postój (dawne style wpisane w szablon) ─── */
+.uw-ledger-only { display: none; }
+.tactic-card-chat .tactic-chat-header { display: flex; align-items: center; gap: 8px; border-bottom: 2px solid #5a3d28; padding-bottom: 6px; margin-bottom: 8px; }
+.tactic-card-chat .tactic-chat-avatar { width: 36px; height: 36px; border-radius: 50%; border: 1px solid #ffd700; object-fit: cover; }
+.tactic-card-chat .tactic-chat-eyebrow { font-size: 0.8rem; text-transform: uppercase; color: #7c5838; font-weight: bold; }
+.tactic-card-chat .tactic-chat-title { margin: 0; font-size: 1.15rem; color: #3b2616; border: none; padding: 0; }
+.tactic-card-chat .tactic-desc { font-style: italic; color: #4a3b2f; font-size: 0.85rem; margin-bottom: 8px; }
+.tactic-card-chat .tactic-desc p { margin: 0; }
+.tactic-card-chat .tactic-executor-card { display: flex; align-items: center; gap: 8px; background: rgba(46, 125, 50, 0.08); border: 1px solid #2e7d32; border-radius: 4px; padding: 4px 8px; margin-bottom: 8px; }
+.tactic-card-chat .tactic-executor-card img { width: 28px; height: 28px; border-radius: 3px; object-fit: cover; border: 1px solid #2e7d32; }
+.tactic-card-chat .tactic-executor-text { min-width: 0; flex: 1; }
+.tactic-card-chat .tactic-executor-label { font-size: 0.8rem; text-transform: uppercase; color: #1b5e20; font-weight: bold; }
+.tactic-card-chat .tactic-executor-name { font-size: 0.85rem; font-weight: bold; color: #1b5e20; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.tactic-card-chat .tactic-roll-box { margin-bottom: 8px; padding: 6px 8px; border-radius: 4px; border: 1px solid #2e7d32; background: rgba(46, 125, 50, 0.1); }
+.tactic-card-chat .tactic-roll-box.is-failure { border-color: #c62828; background: rgba(198, 40, 40, 0.1); }
+.tactic-card-chat .tactic-roll-head { display: flex; align-items: center; justify-content: space-between; font-size: 0.85rem; font-weight: bold; color: #1b5e20; }
+.tactic-card-chat .tactic-roll-box.is-failure .tactic-roll-head { color: #b71c1c; }
+.tactic-card-chat .tactic-roll-line { font-size: 0.8rem; color: #554433; margin-top: 2px; }
+.tactic-card-chat .tactic-advantage { margin-top: 4px; font-size: 0.8rem; font-weight: bold; color: #bf360c; display: flex; align-items: center; gap: 4px; }
+.tactic-card-chat .tactic-advantage-spent-box { margin-bottom: 8px; padding: 6px 8px; border-radius: 4px; border: 1px solid #f57c00; background: rgba(245, 124, 0, 0.12); font-size: 0.85rem; font-weight: bold; color: #bf360c; display: flex; align-items: center; gap: 6px; }
+.tactic-card-chat .tactic-effect { background: rgba(255, 255, 255, 0.65); border: 1px solid #a8947f; border-radius: 4px; padding: 6px 8px; }
+.tactic-card-chat .tactic-effect h4 { margin: 0 0 3px 0; font-size: 0.85rem; color: #5a3d28; display: flex; align-items: center; gap: 4px; }
+.tactic-card-chat .tactic-effect p { margin: 0; font-size: 0.85rem; color: #2b1f15; }
+.tactic-card-chat .tactic-effect.is-failure { background: rgba(198, 40, 40, 0.08); border-color: #c62828; font-size: 0.85rem; color: #b71c1c; }
+.tactic-card-chat .tactic-automation { margin-top: 6px; background: rgba(46, 125, 50, 0.06); border: 1px solid #2e7d32; border-radius: 4px; padding: 4px 8px; font-size: 0.82rem; }
+.tactic-card-chat .tactic-automation ul { margin: 2px 0 0 0; padding-left: 16px; }
+.tactic-card-chat .tactic-uses-action { margin-top: 4px; font-size: 0.8rem; color: #5e584f; }
+
+.camp-rest-card .camp-card-header { border-bottom: 1px solid #7c5e44; padding-bottom: 6px; margin-bottom: 8px; }
+.camp-rest-card .camp-card-title { margin: 0; color: #4a2810; font-size: 1.1rem; }
+.camp-rest-card .rest-details { font-size: 0.85rem; margin-bottom: 8px; }
+.camp-rest-card .rest-details p { margin: 2px 0; }
+.camp-rest-card .camp-block { padding: 6px 8px; margin-top: 6px; border-radius: 2px; font-size: 0.85rem; border-left: 3px solid #7c5e44; background: rgba(120, 80, 40, 0.1); }
+.camp-rest-card .camp-block ul { margin: 4px 0 0 0; padding-left: 16px; }
+.camp-rest-card .camp-block li { margin: 2px 0; }
+.camp-rest-card .camp-block p { margin: 2px 0; }
+.camp-rest-card .camp-block-jobs { background: rgba(90, 61, 40, 0.07); border-left-color: #5a3d28; }
+.camp-rest-card .camp-block-jobs li { margin: 4px 0; }
+.camp-rest-card .camp-block-raid { background: rgba(21, 101, 192, 0.08); border-left-color: #1565c0; }
+.camp-rest-card .camp-block-raid > strong > i { color: #1565c0; }
+.camp-rest-card .camp-block-desertion { background: rgba(66, 66, 66, 0.1); border-left-color: #424242; }
+.camp-rest-card .camp-block-flaws { background: rgba(183, 28, 28, 0.08); border-left-color: #c62828; }
+.camp-rest-card .camp-block-flaws > strong > i { color: #c62828; }
+.camp-rest-card .camp-event-text { font-style: italic; }
+.camp-rest-card .camp-ok { color: #1b5e20; }
+.camp-rest-card .camp-bad { color: #b71c1c; }
+.camp-rest-card span.camp-ok, .camp-rest-card span.camp-bad { font-weight: bold; }
+.camp-rest-card .camp-muted { color: #665544; }
+.camp-rest-card .camp-small { font-size: 0.8rem; }
+.camp-rest-card .camp-quote { font-style: italic; color: #2b1f16; }
+.camp-rest-card .camp-card-footer { border-top: 1px dashed #8e735b; padding-top: 4px; font-size: 0.8rem; color: #5e584f; text-align: right; margin-top: 6px; }

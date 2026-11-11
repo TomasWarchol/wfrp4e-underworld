@@ -45,7 +45,10 @@
   "text": "Od zbocza oderwały się kamienie i potoczyły w dół, rozrzucając zapasy. Szajka musiała gonić wszystko po stoku.",
   "morale": -1,
   "supplies": -2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-007",
@@ -69,7 +72,10 @@
   "text": "Obok ścieżki stał kamienny posąg krasnoluda z toporem. Szajka minęła go z szacunkiem, nie dotykając.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-010",
@@ -77,7 +83,10 @@
   "text": "Świstaki gwizdały na wzgórzu jak wartownicy. Szajka śmiała się, aż jeden z nich rzucił się do ucieczki.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-011",
@@ -101,7 +110,10 @@
   "text": "Pasterz z owcami zgubił się w górach i szedł do waszego obozu na ślepo. Szajka dała mu wody i wskazała drogę.",
   "morale": 1,
   "supplies": -1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-014",
@@ -109,7 +121,10 @@
   "text": "Z doliny unosił się cienki słup dymu. Szajka patrzyła, nie wiedząc, czy to osada, czy pożar.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-015",
@@ -125,7 +140,10 @@
   "text": "Na skale wyryto krasnoludzki znak, a pod nim zaznaczono kierunek. Szajka nie wiedziała, czy jest to ostrzeżenie, czy przewodnik.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-017",
@@ -133,7 +151,10 @@
   "text": "Pod urwiskiem leżał rozbity wóz kupiecki. Szajka zeszła nisko i zebrała kilka rzeczy, które się uchowały.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 4
+  "coinsSS": 4,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-018",
@@ -141,7 +162,10 @@
   "text": "Wilki w górach wyją inaczej niż w lesie: dłużej i niżej. Szajka dorzuciła do ognia i nasłuchiwała.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-019",
@@ -149,7 +173,10 @@
   "text": "Z jaskini w skale wydobywał się zapach siarki. Kilku popleczników chciało zajrzeć, ale reszta ich powstrzymała.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-020",
@@ -173,7 +200,10 @@
   "text": "Szajka natknęła się na szlak wyrąbany w skale przez dawnych górali. Szedł prosto i bezpiecznie przez przełęcz.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-023",
@@ -181,7 +211,10 @@
   "text": "Na zboczu leżał zamarznięty trup wędrowca w grubym płaszczu. Szajka go pochowała pod kamieniami i zabrała to, co mogło się przydać.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-024",
@@ -197,7 +230,10 @@
   "text": "Mgła wypełniła dolinę niczym mleko, a szczyty wyglądały jak wyspy. Szajka stała na zboczu i patrzyła.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-026",
@@ -205,7 +241,10 @@
   "text": "W skale znaleziono suchą jaskinię z zapasem drewna. Szajka rozpaliła ogień i spała ciepło.",
   "morale": 1,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-027",
@@ -213,7 +252,10 @@
   "text": "Góral zaprosił szajkę do swojej chaty i poczęstował oscypkiem. Rozmowa była krótka, ale ciepła.",
   "morale": 1,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-028",
@@ -221,7 +263,10 @@
   "text": "Grzmot w górach rozbrzmiewał jak walące się światy. Szajka kuliła się pod płachtą, a wszystko trwało godzinami.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-029",
@@ -237,7 +282,10 @@
   "text": "Poszukiwacz ze starą łopatą szperał w strumieniu. Szajka poczęstowała go ogniem i dowiedziała się, gdzie szukać żył.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-031",
@@ -282,7 +330,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-034",
@@ -297,7 +348,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 2
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-035",
@@ -312,7 +366,10 @@
    "morale": 1,
    "supplies": 4,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-036",
@@ -342,7 +399,10 @@
    "morale": 1,
    "supplies": 2,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-038",
@@ -357,7 +417,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 4
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-039",
@@ -402,7 +465,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 7
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-042",
@@ -432,7 +498,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 5
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-044",
@@ -462,7 +531,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-046",
@@ -477,7 +549,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 4
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-047",
@@ -492,7 +567,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 8
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-048",
@@ -507,7 +585,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 6
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-049",
@@ -522,7 +603,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 2
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-050",
@@ -537,7 +621,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-051",
@@ -552,7 +639,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 5
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-052",
@@ -567,7 +657,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 7
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-053",
@@ -576,7 +669,10 @@
   "morale": 0,
   "supplies": -1,
   "coinsSS": 0,
-  "next": "m-054"
+  "next": "m-054",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-054",
@@ -585,7 +681,10 @@
   "morale": 1,
   "supplies": 0,
   "coinsSS": 7,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-055",
@@ -681,7 +780,10 @@
   "text": "Przy przełęczy stoi posterunek krasnoludzki. Strażnicy pytają o cel podróży, ale szajka ma dobrą odpowiedź.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": -2
+  "coinsSS": -2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-066",
@@ -689,7 +791,10 @@
   "text": "Jeden z popleczników poślizgnął się i wpadł do górskiego jeziora. Jego krzyk rozległ się po całej dolinie.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-067",
@@ -697,7 +802,10 @@
   "text": "Szajka natknęła się na rozpadlinę, której nie ma na mapie. Trzeba było ją obejść, tracąc pół dnia.",
   "morale": -1,
   "supplies": -1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-068",
@@ -705,7 +813,10 @@
   "text": "W jaskini rozpalono wielkie ognisko, które wydawało się płonąć bez końca. Szajka spała ciepło, ale niespokojnie.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-069",
@@ -713,7 +824,10 @@
   "text": "Wiatr świstał nad przełęczą tak przeraźliwie, że wydawało się, że ktoś woła. Kilku popleczników zatykało uszy.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-070",
@@ -721,7 +835,10 @@
   "text": "Z oddali dobiegała ponura krasnoludzka pieśń, wygrywana na rogach. Szajka siedziała bez słowa, a pieśń trwała do świtu.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-071",
@@ -729,7 +846,10 @@
   "text": "Wodospad zamarzł na rzeźbioną kolumnę lodu. Szajka podziwiała jego piękno, a ktoś odłupał kawałek na napój.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-072",
@@ -753,7 +873,10 @@
   "text": "Z doliny dochodziło brzęczenie dzwonków owiec. Szajka patrzyła, jak pasterze zaganiają stado na noc.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-075",
@@ -761,7 +884,10 @@
   "text": "Rzeka huczała w wąwozie tak głośno, że rozmowa była niemożliwa. Szajka porozumiewała się gestami.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-076",
@@ -785,7 +911,10 @@
   "text": "Ranny jeleń stoczył się ze skały i padł tuż obok obozu. Szajka zrobiła z niego ucztę.",
   "morale": 1,
   "supplies": 4,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-079",
@@ -793,7 +922,10 @@
   "text": "Handlarz z mułem pełnym towarów zatrzymał się w obozie. Szajka kupiła sól i suszone mięso za dobrą cenę.",
   "morale": 0,
   "supplies": 3,
-  "coinsSS": -2
+  "coinsSS": -2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-080",
@@ -801,7 +933,10 @@
   "text": "Górnik uciekający przed hrabiowskim nadzorcą prosił o schronienie. Szajka dała mu chleb i wskazała drogę przez przełęcz.",
   "morale": 1,
   "supplies": -1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-081",
@@ -809,7 +944,10 @@
   "text": "W jaskini znaleziono ogromne legowisko szczurów. Szajka cofnęła się, nie odważając się zbadać go bliżej.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-082",
@@ -825,7 +963,10 @@
   "text": "Szajka poszła śladem górskiego kozła na odludną półkę, gdzie znalazła kilka kolorowych kamieni. Nie były cenne, ale piękne.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 1
+  "coinsSS": 1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-084",
@@ -849,7 +990,10 @@
   "text": "Mgła spadła nagle i szajka musiała się związać linami, żeby się nie pogubić. Ruch był powolny.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-087",
@@ -881,7 +1025,10 @@
   "text": "Przy ścieżce stała złamana kapliczka z imionami zmarłych. Szajka dołożyła do niej świeży kawałek drewna.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": -1
+  "coinsSS": -1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-091",
@@ -926,7 +1073,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 4
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-094",
@@ -941,7 +1091,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-095",
@@ -956,7 +1109,10 @@
    "morale": 1,
    "supplies": 2,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-096",
@@ -1001,7 +1157,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-099",
@@ -1016,7 +1175,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 7
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-100",
@@ -1046,7 +1208,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 7
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-102",
@@ -1091,7 +1256,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 5
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-105",
@@ -1106,7 +1274,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-106",
@@ -1121,7 +1292,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 4
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-107",
@@ -1136,7 +1310,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 9
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-108",
@@ -1151,7 +1328,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 7
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-109",
@@ -1166,7 +1346,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-110",
@@ -1181,7 +1364,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-111",
@@ -1211,7 +1397,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 6
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-113",
@@ -1220,7 +1409,10 @@
   "morale": 1,
   "supplies": -1,
   "coinsSS": 0,
-  "next": "m-114"
+  "next": "m-114",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-114",
@@ -1229,7 +1421,10 @@
   "morale": 1,
   "supplies": 3,
   "coinsSS": 3,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-115",
@@ -1256,7 +1451,10 @@
   "morale": 1,
   "supplies": -1,
   "coinsSS": 0,
-  "next": "m-118"
+  "next": "m-118",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-118",
@@ -1265,7 +1463,10 @@
   "morale": 2,
   "supplies": 2,
   "coinsSS": 2,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-119",
@@ -1274,7 +1475,10 @@
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0,
-  "next": "m-120"
+  "next": "m-120",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-120",
@@ -1283,7 +1487,10 @@
   "morale": -2,
   "supplies": 0,
   "coinsSS": -2,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-121",
@@ -1292,7 +1499,10 @@
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0,
-  "next": "m-122"
+  "next": "m-122",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-122",
@@ -1301,7 +1511,10 @@
   "morale": 0,
   "supplies": 1,
   "coinsSS": 7,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-123",
@@ -1309,7 +1522,10 @@
   "text": "Szajka stanęła nad chmurami. Poniżej leżał biały dywan, a wyżej tylko słońce i skały.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-124",
@@ -1317,7 +1533,10 @@
   "text": "Lód na jeziorze pękał z trzaskiem jak wystrzały armat. Szajka obozowała na brzegu i nie spała do rana.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-125",
@@ -1333,7 +1552,10 @@
   "text": "Wiatr i erozja wyrzeźbiły w skałach kształty podobne do ludzkich twarzy. Szajka patrzyła z dreszczem.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-127",
@@ -1349,7 +1571,10 @@
   "text": "Szajka natknęła się na obozowisko porzucone w pośpiechu: z kociołkiem, kilkoma kocami i jeszcze ciepłym popiołem.",
   "morale": 0,
   "supplies": 2,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-129",
@@ -1357,7 +1582,10 @@
   "text": "W jaskini wisiały tysiące nietoperzy. Szajka obeszła ją szerokim łukiem, nie chcąc ich płoszyć.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-130",
@@ -1365,7 +1593,10 @@
   "text": "Szajka zasnęła w ciszy tak głębokiej, że rano nikt nie pamiętał snów. Odpoczęli doskonale.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-131",
@@ -1373,7 +1604,10 @@
   "text": "Z dołu dochodziły okrzyki ludzi, którzy się zgubili w śnieżycy. Szajka zeszła ich szukać i doprowadziła do obozu.",
   "morale": 1,
   "supplies": -1,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-132",
@@ -1381,7 +1615,10 @@
   "text": "Szajka weszła na szczyt, z którego widać było całą dolinę. Wszyscy poczuli się wielcy i nieśmiertelni.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-133",
@@ -1389,7 +1626,10 @@
   "text": "Chmura owadów przeleciała nad doliną. Szajka patrzyła na nie jak na dziwy.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-134",
@@ -1397,7 +1637,10 @@
   "text": "Szajka natknęła się na krasnoludzki cmentarz, gdzie każdy grób miał wyryte runy. Nikt nie odważył się niczego dotknąć.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-135",
@@ -1413,7 +1656,10 @@
   "text": "Nad doliną uniosła się chmura dymu z kopalni. Szajka wiedziała, że gdzieś w pobliżu jest osada.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 1
+  "coinsSS": 1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-137",
@@ -1421,7 +1667,10 @@
   "text": "Okrzyk jednego z popleczników powrócił echem kilka razy. Zaczęła się zabawa, a potem ktoś kazał wszystkim się uciszyć.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-138",
@@ -1445,7 +1694,10 @@
   "text": "Poranek był mroźny, ale słoneczny, a szron lśnił na każdej skale. Szajka wstała z nowymi siłami.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-141",
@@ -1461,7 +1713,10 @@
   "text": "W skale wykuto kamienne schody, które prowadziły do wąskiego tarasu. Szajka tam spała, chroniona przed wiatrem.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-143",
@@ -1469,7 +1724,10 @@
   "text": "W głębi jaskini rosły pnącza, jakby słońce kiedyś tu docierało. Szajka patrzyła na nie z niedowierzaniem.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-144",
@@ -1477,7 +1735,10 @@
   "text": "Mgła wypełniła przełęcz, a w niej rozlegały się szepty. Szajka zatrzymała się i czekała, aż się rozwieje.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-145",
@@ -1485,7 +1746,10 @@
   "text": "Wśród skał rosły złote kwiaty, o których mówiono, że przynoszą szczęście. Szajka zebrała kilka.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 1
+  "coinsSS": 1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-146",
@@ -1501,7 +1765,10 @@
   "text": "Skalne iglice sterczały jak palce. Szajka obozowała między nimi, chroniona od wiatru.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-148",
@@ -1517,7 +1784,10 @@
   "text": "Wędrowny krasnolud poczęstował szajkę piwem wartym tysiąc koron. Nikt nie narzekał, że nie ma nic na przekąskę.",
   "morale": 1,
   "supplies": -1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-150",
@@ -1525,7 +1795,10 @@
   "text": "Szajka rozbiła obóz na szczycie wzgórza, skąd widać było każde podejście. Czuła się bezpieczna.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-151",
@@ -1541,7 +1814,10 @@
   "text": "Bard z lutnią zatrzymał się na nocleg i grał do późna. Szajka śpiewała razem z nim, a zimno przestało się liczyć.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-153",
@@ -1616,7 +1892,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 2
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-158",
@@ -1661,7 +1940,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 3
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-161",
@@ -1706,7 +1988,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 7
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-164",
@@ -1736,7 +2021,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 8
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-166",
@@ -1766,7 +2054,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 8
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-168",
@@ -1796,7 +2087,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 5
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-170",
@@ -1811,7 +2105,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 7
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-171",
@@ -1826,7 +2123,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 2
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-172",
@@ -1841,7 +2141,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 0
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-173",
@@ -1856,7 +2159,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 4
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-174",
@@ -1871,7 +2177,10 @@
    "morale": 1,
    "supplies": 0,
    "coinsSS": 5
-  }
+  },
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-175",
@@ -1916,7 +2225,10 @@
   "morale": 1,
   "supplies": 0,
   "coinsSS": 0,
-  "next": "m-180"
+  "next": "m-180",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-180",
@@ -1925,7 +2237,10 @@
   "morale": 2,
   "supplies": 3,
   "coinsSS": 0,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-181",
@@ -1934,7 +2249,10 @@
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0,
-  "next": "m-182"
+  "next": "m-182",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-182",
@@ -1943,7 +2261,10 @@
   "morale": -2,
   "supplies": 0,
   "coinsSS": 0,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-183",
@@ -1951,7 +2272,10 @@
   "text": "Szajka rozpaliła ognisko w jaskini, a dym uchodził przez szczelinę w stropie. Było ciepło i sucho.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-184",
@@ -1967,7 +2291,10 @@
   "text": "Jeden z popleczników rozbił małe lusterko i przez resztę dnia chodził blady jak ściana. Uznał, że czeka go nieszczęście.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-186",
@@ -1983,7 +2310,10 @@
   "text": "Karawana krasnoludzka sprzedała szajce kilka beczek ciemnego piwa po okazyjnej cenie. Wszyscy się cieszyli.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": -2
+  "coinsSS": -2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-188",
@@ -1991,7 +2321,10 @@
   "text": "Na zboczu zakwitły górskie róże, choć jeszcze leżał śnieg. Szajka wzięła to za dobry znak.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-189",
@@ -1999,7 +2332,10 @@
   "text": "Dwóch poszukiwaczy skarbów szukało kruszcu w strumieniu. Szajka obserwowała ich z ukrycia i postanowiła im nie przeszkadzać.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 1
+  "coinsSS": 1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-190",
@@ -2023,7 +2359,10 @@
   "text": "Muły zerwały się z uwięzi i uciekły w góry. Szajka goniła je pół dnia.",
   "morale": -1,
   "supplies": -1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-193",
@@ -2031,7 +2370,10 @@
   "text": "Szajka znalazła stary krasnoludzki wózek na szynach. Był zardzewiały, ale koła nadal się kręciły.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-194",
@@ -2047,7 +2389,10 @@
   "text": "W grocie znaleziono kryształy, które lśniły w świetle pochodni jak tysiące świec. Szajka wyłamała kilka.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 4
+  "coinsSS": 4,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-196",
@@ -2055,7 +2400,10 @@
   "text": "Kupiec, któremu zrabowano wóz, błąkał się po przełęczy i prosił o schronienie. Szajka dała mu koc i bochenek.",
   "morale": 1,
   "supplies": -1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-197",
@@ -2063,7 +2411,10 @@
   "text": "W oddali szczekały psy pasterskie, a ich szczekanie niosło się po całej dolinie. Szajka wstała, nasłuchując.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-198",
@@ -2071,7 +2422,10 @@
   "text": "Góralska rodzina poczęstowała szajkę świeżym chlebem z dymiącego pieca. Nikt nie pytał, kim jesteście.",
   "morale": 1,
   "supplies": 2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-199",
@@ -2079,7 +2433,10 @@
   "text": "Martwy kozioł wisiał na drzewie, a pod nim ślady rytualne. Szajka nie rozbiła obozu w pobliżu.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-200",
@@ -2087,7 +2444,10 @@
   "text": "Na zboczu siedział na koniu zamarznięty jeździec, a jego twarz była pokryta szronem. Szajka go pochowała i zabrała jego konia.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 5
+  "coinsSS": 5,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-201",
@@ -2103,7 +2463,10 @@
   "text": "Śnieg wokół obozu zabarwił się na czerwono, jakby pokryty pyłem. Szajka nie zjadła niczego, co z nim miało kontakt.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-203",
@@ -2111,7 +2474,10 @@
   "text": "Mała kapliczka z kamienia stała na szczycie, a przy niej leżały świeże kwiaty. Szajka dołożyła swoje.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": -1
+  "coinsSS": -1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-204",
@@ -2119,7 +2485,10 @@
   "text": "W szczelinie skały tkwił złamany nóż o dziwnym kształcie. Szajka patrzyła na niego, ale nikt go nie wyjął.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-205",
@@ -2135,7 +2504,10 @@
   "text": "Na kamieniu przy ścieżce leżała świeża krew, a obok kawałek rozdartego ubrania. Szajka poszła dalej ostrożniej.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-207",
@@ -2143,7 +2515,10 @@
   "text": "Gorące źródło buchało parą w skale. Szajka zażyła kąpieli i odpoczęła jak nigdy.",
   "morale": 2,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-208",
@@ -2159,7 +2534,10 @@
   "text": "Mała chata z drewna z kominkiem i zapasami drewna czekała na zbłąkanych podróżnych. Szajka zjadła ciepły posiłek.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-210",
@@ -2167,7 +2545,10 @@
   "text": "Górski kowal naostrzył szajce noże i zreperował sprzęt za symboliczną opłatą. Był gadatliwy i wesoły.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": -1
+  "coinsSS": -1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-211",
@@ -2175,7 +2556,10 @@
   "text": "Szajka szła nocą, bo w dzień wiał zbyt zimny wiatr. Księżyc świecił jasno i droga była widoczna.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-212",
@@ -2183,7 +2567,10 @@
   "text": "Drzewa na zboczu rosły pokrzywione od wiatru, jakby ktoś je zginał. Szajka szła między nimi w milczeniu.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-213",
@@ -2191,7 +2578,10 @@
   "text": "Chuda kozica przybłąkała się do obozu i została. Szajka nazwała ją Hildą.",
   "morale": 1,
   "supplies": -1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-214",
@@ -2199,7 +2589,10 @@
   "text": "Wiatr wygrywał w szczelinach skały melodię podobną do śpiewu. Szajka siedziała w milczeniu i słuchała.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-215",
@@ -2207,7 +2600,10 @@
   "text": "Stary górnik umierając wskazał szajce kryjówkę ze swoimi oszczędnościami. W skrzynce znaleziono monety i prosty medalion.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 6
+  "coinsSS": 6,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-216",
@@ -2223,7 +2619,10 @@
   "text": "Wędrowny inżynier z Nuln mierzył góry swoimi przyrządami. Szajka patrzyła z zaciekawieniem, a on opowiedział o nowych drogach.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 1
+  "coinsSS": 1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-218",
@@ -2231,7 +2630,10 @@
   "text": "Most linowy przez przepaść był zerwany. Szajka musiała znaleźć obejście, tracąc cały dzień.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-219",
@@ -2239,7 +2641,10 @@
   "text": "Na śniegu widać było ślady nieznanego zwierzęcia, kroczącego na tylnych łapach. Szajka poszła w przeciwnym kierunku.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-220",
@@ -2247,7 +2652,10 @@
   "text": "Wioska pod szczytem stała pusta, drzwi uchylone, a w piecach jeszcze tliły się węgle. Szajka nie została na noc.",
   "morale": -2,
   "supplies": 1,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-221",
@@ -2255,7 +2663,10 @@
   "text": "Wielki ptak siedział na szczycie skały i patrzył w dół. Szajka postanowiła nie wchodzić na tę stronę.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-222",
@@ -2271,7 +2682,10 @@
   "text": "Kryształowe jeziorko leżało w kotlinie, otoczone skałami. Szajka umyła się i napiła do syta.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-224",
@@ -2287,7 +2701,10 @@
   "text": "Posąg bohatera z toporem stał pośrodku nieczynnej drogi. Szajka złożyła mu cześć i ruszyła dalej.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-226",
@@ -2295,7 +2712,10 @@
   "text": "Szajka znalazła jaskinię, którą ktoś przeszukał przed nimi. Nic cennego nie zostało, ale dach był suchy.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-227",
@@ -2311,7 +2731,10 @@
   "text": "Grupka zbiegłych pracowników kopalni prosiła o jedzenie. Szajka podzieliła się tym, co miała.",
   "morale": 1,
   "supplies": -2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-229",
@@ -2327,7 +2750,10 @@
   "text": "Szajka znalazła krasnoludzką drogę z równymi kamieniami i uważnie wyrytymi runami. Szła nią z szacunkiem.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-231",
@@ -2335,7 +2761,10 @@
   "text": "Dwa orły walczyły w powietrzu nad obozem, a pióra spadały jak śnieg. Szajka patrzyła z podziwem.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-232",
@@ -2343,7 +2772,10 @@
   "text": "Kamienna kapsuła z zapieczętowanym listem tkwiła w szczelinie. Szajka wyjęła go i przeczytała: „Dla tego, kto znajdzie”.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-233",
@@ -2351,7 +2783,10 @@
   "text": "Jeden z popleczników wyziębił się tak, że stracił czucie w palcach. Szajka rozgrzała go przy ognisku i dała ciepły napój.",
   "morale": -1,
   "supplies": -1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-234",
@@ -2359,7 +2794,10 @@
   "text": "Wioska u stóp góry była rozświetlona ogniskami, a z karczmy dochodził śpiew. Szajka wzięła tę kolejną noc za wygraną.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-235",
@@ -2375,7 +2813,10 @@
   "text": "Z jaskini unosiła się zielonkawa mgiełka, która pachniała zgnilizną. Szajka cofnęła się o sto kroków.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-237",
@@ -2391,7 +2832,10 @@
   "text": "Konie szajki stały skostniałe i parowały w mroźnym powietrzu. Rano trzeba było je rozgrzewać przez godzinę.",
   "morale": -1,
   "supplies": -1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-239",
@@ -2400,7 +2844,10 @@
   "morale": 0,
   "supplies": 0,
   "coinsSS": 0,
-  "next": "m-240"
+  "next": "m-240",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-240",
@@ -2409,7 +2856,10 @@
   "morale": 1,
   "supplies": 1,
   "coinsSS": 4,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-241",
@@ -2418,7 +2868,10 @@
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0,
-  "next": "m-242"
+  "next": "m-242",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-242",
@@ -2427,7 +2880,10 @@
   "morale": -1,
   "supplies": 0,
   "coinsSS": 5,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-243",
@@ -2436,7 +2892,10 @@
   "morale": -1,
   "supplies": 0,
   "coinsSS": 0,
-  "next": "m-244"
+  "next": "m-244",
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-244",
@@ -2445,7 +2904,10 @@
   "morale": -1,
   "supplies": 0,
   "coinsSS": 6,
-  "only": true
+  "only": true,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-245",
@@ -2479,7 +2941,10 @@
   "text": "Kozica z dwoma młodymi pasła się na stoku. Szajka patrzyła, jak skaczą po skałach z lekkością tancerzy.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-249",
@@ -2511,7 +2976,10 @@
   "text": "Ruiny starej wieży strażniczej stały nad przełęczą. Szajka obejrzała je i nie znalazła nic cennego, ale miejsce było suche.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-253",
@@ -2527,7 +2995,10 @@
   "text": "Góral z zaśnieżoną brodą zaprosił szajkę do swojej chaty i opowiedział o ścieżkach, których nie ma na mapach. Wszyscy słuchali z uwagą.",
   "morale": 1,
   "supplies": 1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-255",
@@ -2543,7 +3014,10 @@
   "text": "W śniegu leżała padlina górskiej kozicy, nietknięta przez drapieżniki. Szajka obeszła ją z daleka, nie wiedząc, co ją zabiło.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-257",
@@ -2551,7 +3025,10 @@
   "text": "Z zaspy wystawał dach małej kapliczki. Szajka odkopała wejście i znalazła w środku suche drewno i ogarek świecy.",
   "morale": 1,
   "supplies": 1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-258",
@@ -2567,7 +3044,10 @@
   "text": "Wędrowiec z odmrożonymi palcami wszedł do obozu, ledwo żywy. Szajka go ogrzała i nakarmiła.",
   "morale": 1,
   "supplies": -2,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-260",
@@ -2591,7 +3071,10 @@
   "text": "Na przełęczy leżał stary grobowiec z kamienia, a na nim wyryte krasnoludzkie runy. Szajka obeszła go z szacunkiem.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-263",
@@ -2607,7 +3090,10 @@
   "text": "Ktoś wyrzeźbił ze śniegu figurę niedźwiedzia, wielkości człowieka. Szajka nie wiedziała, czy się śmiać, czy bać.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-265",
@@ -2615,7 +3101,10 @@
   "text": "Szajka przeszła przez długi tunel wykuty w skale. W środku było cicho, sucho i dziwnie ciepło.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-266",
@@ -2623,7 +3112,10 @@
   "text": "Wiatr zmienił kierunek i przyniósł zapach dymu i spalenizny. Szajka się niepokoiła, ale nic się nie wydarzyło.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-267",
@@ -2631,7 +3123,10 @@
   "text": "Kupcy z karawany pozwolili szajce rozłożyć się przy ich ognisku. Wymieniono plotki i trochę żywności.",
   "morale": 1,
   "supplies": 1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-268",
@@ -2639,7 +3134,10 @@
   "text": "Zbłąkany pies szczekał na szajkę z oddali, a potem uciekł. Nikt nie wiedział, skąd się wziął.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-269",
@@ -2647,7 +3145,10 @@
   "text": "Szajka znalazła stare kamienne korytarze, wykute w skale przez nieznanych budowniczych. Wejścia były zasypane, ale jeden prowadził do suchego pomieszczenia.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 1
+  "coinsSS": 1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-270",
@@ -2663,7 +3164,10 @@
   "text": "Dzieci pasterzy bawiły się na zboczu w chowanego. Szajka obserwowała z daleka i dostrzegła, że jedno z nich bardzo przypomina jednego z popleczników.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-272",
@@ -2671,7 +3175,10 @@
   "text": "W świetle pochodni wędrowiec, który przysiadł się do ogniska, nie rzucał cienia. Szajka cicho się wycofała.",
   "morale": -2,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-273",
@@ -2687,7 +3194,10 @@
   "text": "Długi pochód mułów przeszedł przez przełęcz, a przewodnik skłonił głowę na powitanie. Szajka odwzajemniła gest.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-275",
@@ -2695,7 +3205,10 @@
   "text": "Szajka natknęła się na obszar pokryty skamieniałymi pniami. Drzewa wyglądały, jakby ktoś zatrzymał czas.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-276",
@@ -2703,7 +3216,10 @@
   "text": "Na kamieniu leżała kobieca chusta, wyhaftowana w piękne wzory. Szajka zabrała ją i czekała, ale nikt się nie zgłosił.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-277",
@@ -2711,7 +3227,10 @@
   "text": "Mróz był tak silny, że wszyscy skakali i klaskali, żeby się rozgrzać. Wyglądało to jak taniec i szajka śmiała się do rana.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-278",
@@ -2719,7 +3238,10 @@
   "text": "Z głębi góry dochodziły głuche pomruki, jakby coś poruszało się pod ziemią. Szajka obozowała na skraju doliny.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-279",
@@ -2735,7 +3257,10 @@
   "text": "Wóz kupiecki zasypany do połowy leżał obok ścieżki. Szajka go odkopała i zabrała kilka rzeczy, które się uchowały.",
   "morale": 0,
   "supplies": 1,
-  "coinsSS": 3
+  "coinsSS": 3,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-281",
@@ -2743,7 +3268,10 @@
   "text": "Samotna chata stała w zagłębieniu, a z komina unosił się dym. Szajka obeszła ją, nie zakłócając spokoju mieszkańców.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-282",
@@ -2751,7 +3279,10 @@
   "text": "Cztery wrony siedziały na krawędzi skały i patrzyły w dół. Szajka cofnęła się i wybrała inną drogę.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-283",
@@ -2759,7 +3290,10 @@
   "text": "Lód w bukłakach topił się wolno i nikt nie mógł się napić. Szajka musiała topić go w kociołku.",
   "morale": -1,
   "supplies": -1,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-284",
@@ -2767,7 +3301,10 @@
   "text": "Na przełęczy ktoś postawił latarnie, które świeciły całą noc. Szajka nie wiedziała, czy to przewodnik, czy pułapka.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-285",
@@ -2775,7 +3312,10 @@
   "text": "Dwa kozły walczyły na skale, uderzając się rogami. Szajka założyła się, który wygra.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-286",
@@ -2783,7 +3323,10 @@
   "text": "Pod skałą ktoś ukrył sakwę z kilkoma monetami i listem. Szajka wzięła monety, a list zostawiła.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 4
+  "coinsSS": 4,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-287",
@@ -2791,7 +3334,10 @@
   "text": "Skały nad szlakiem osypywały się w nocy, a rano szlak był zasypany kamieniami. Szajka mozolnie je usuwała.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-288",
@@ -2799,7 +3345,10 @@
   "text": "Zorza polarna rozświetliła niebo zielenią i różem. Szajka patrzyła, nie wierząc własnym oczom.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-289",
@@ -2807,7 +3356,10 @@
   "text": "Samotny wędrowiec z lampą szedł przez przełęcz, nie reagując na wołanie. Szajka patrzyła, jak znika w ciemności.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-290",
@@ -2815,7 +3367,10 @@
   "text": "Wejście do jaskini zatrzasnęło się za jednym z popleczników i uwięziło go na kilka godzin. Wyciągnięto go przez dziurę.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-291",
@@ -2823,7 +3378,10 @@
   "text": "Gdzieś w górach dzwonił dzwoneczek owcy, mimo że owiec nie było. Szajka postanowiła nie szukać źródła.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-292",
@@ -2831,7 +3389,10 @@
   "text": "Jeden z popleczników rozłupał kamień i znalazł w środku błyszczący kryształ. Nie był cenny, ale piękny.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 1
+  "coinsSS": 1,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-293",
@@ -2839,7 +3400,10 @@
   "text": "Szajka przeszła po zamarzniętej rzece, która trzeszczała pod stopami. Wszyscy przeszli bez szwanku.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-294",
@@ -2847,7 +3411,10 @@
   "text": "Z oddali dochodziły dźwięki młotów kowalskich, rytmiczne i spokojne. Szajka zasnęła przy tym rytmie.",
   "morale": 1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-295",
@@ -2863,7 +3430,10 @@
   "text": "Szajka szła przez mgłę, trzymając się za ręce. Na szczęście nikt się nie zgubił.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-297",
@@ -2871,7 +3441,10 @@
   "text": "Z zamkniętego szybu kopalnianego dochodziły jęki. Szajka wolała nie sprawdzać, czy to wiatr.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-298",
@@ -2879,7 +3452,10 @@
   "text": "Wielka zaspa zablokowała szlak i szajka musiała ją odkopać. Praca zajęła pół dnia.",
   "morale": -1,
   "supplies": 0,
-  "coinsSS": 0
+  "coinsSS": 0,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-299",
@@ -2887,7 +3463,10 @@
   "text": "W kieszeni jednego z popleczników znaleziono garść złotego pyłu. Nikt nie wiedział, skąd się wziął.",
   "morale": 0,
   "supplies": 0,
-  "coinsSS": 4
+  "coinsSS": 4,
+  "types": [
+   "underworld"
+  ]
  },
  {
   "id": "m-300",
@@ -2895,6 +3474,9 @@
   "text": "Pod skałą leżała paczka zapakowana w skórę, z dwoma monetami i notatką: „Dla potrzebujących”. Szajka podziękowała nieznanemu dobroczyńcy.",
   "morale": 1,
   "supplies": 1,
-  "coinsSS": 2
+  "coinsSS": 2,
+  "types": [
+   "underworld"
+  ]
  }
 ]
