@@ -1,0 +1,21 @@
+{{!-- Zlecenia z licznikiem czasu: kto, co i o której świat gry kończy zlecenie (MG może je zakończyć od razu) --}}
+{{#if hasTimedMissions}}
+<section class="uw-timed" aria-label="{{underworldT 'Timed.Title'}}">
+  <h3 class="uw-timed-title"><i class="fas fa-hourglass-half"></i> {{underworldT "Timed.Title"}} <small>{{timedMissions.length}}</small></h3>
+  <ul class="uw-timed-list">
+    {{#each timedMissions}}
+    <li class="uw-timed-item {{#if this.due}}is-due{{/if}}">
+      <img class="uw-timed-face" src="{{this.img}}" alt=""/>
+      <div class="uw-timed-body">
+        <div class="uw-timed-line"><strong>{{this.name}}</strong> <span class="uw-timed-job">{{this.label}}</span></div>
+        <div class="uw-timed-end"><i class="fas fa-calendar-check"></i> {{underworldT "Timed.Ends"}}: <b>{{this.endsLabel}}</b> <span class="uw-timed-left">({{this.remainingLabel}})</span></div>
+        <div class="uw-timed-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{this.progress}}"><span style="width: {{this.progress}}%"></span></div>
+      </div>
+      {{#if @root.isGM}}
+      <button type="button" class="uw-timed-finish" data-action="gm-finish-now" data-npc-id="{{this.npcId}}" title="{{underworldT 'Timed.FinishNowHint'}}"><i class="fas fa-forward-fast"></i> {{underworldT "Timed.FinishNow"}}</button>
+      {{/if}}
+    </li>
+    {{/each}}
+  </ul>
+</section>
+{{/if}}

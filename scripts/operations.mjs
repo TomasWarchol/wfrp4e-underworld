@@ -94,6 +94,78 @@ export class UnderworldOperations {
     }
   }
 
+  // ════════════════════════════════════════════
+  // USTAWIENIA MG: TURA, MNOŻNIK ZŁOTA, CZAS ZLECEŃ
+  // ════════════════════════════════════════════
+
+  static _num(key, fallback = 0) {
+    try {
+      const value = Number(game.settings.get("wfrp4e-underworld", key));
+      return Number.isFinite(value) ? value : fallback;
+    } catch (e) {
+      return fallback;
+    }
+  }
+
+  /** Własna długość tury w dniach ustawiona przez MG (0 = standard: noc albo tydzień kompanii). */
+  static customTurnDays() {
+    const days = Math.round(this._num("turnDays", 0));
+    return days >= 2 ? Math.min(days, 60) : 0;
+  }
+
+  /** Ile dni świata trwa jedna tura (postój, rozliczenie tygodnia). */
+  static turnDays() {
+    return this.customTurnDays() || (this.isWeekly() ? 7 : 1);
+  }
+
+  /** Mnożnik złota w procentach (100 = bez zmian); działa na przychody, nie na wydatki. */
+  static goldMultiplier() {
+    const pct = this._num("goldMultiplier", 100);
+    return Math.max(0, Math.min(1000, pct));
+  }
+
+  static applyGoldMultiplier(pennies) {
+    return Math.max(0, Math.round(Number(pennies) * this.goldMultiplier() / 100));
+  }
+
+  /** Czas trwania zlecenia w godzinach: wartość dla danego zlecenia albo domyślna (0 = od razu). */
+  static missionHours(missionId) {
+    let overrides = {};
+    try { overrides = game.settings.get("wfrp4e-underworld", "missionHoursById") || {}; } catch (e) { overrides = {}; }
+    const own = overrides?.[missionId];
+    const hours = own === undefined || own === null || own === "" ? this._num("missionHours", 0) : Number(own);
+    return Number.isFinite(hours) ? Math.max(0, Math.min(720, hours)) : 0;
+  }
+
+  /** Czy zlecenia mają licznik czasu (nie w Tygodniu Szajki, tam rozlicza MG). */
+  static usesTimers() {
+    return !this.isWeekly();
+  }
+
+  /** Data i godzina w świecie gry, np. „12 Sigmarzeit 2512, 14:30”. */
+  static formatDateTime(ts) {
+    const date = time.format(ts);
+    const spd = time.secondsPerDay();
+    const secondsOfDay = ((Number(ts) % spd) + spd) % spd;
+    const h = Math.floor(secondsOfDay / 3600);
+    const m = Math.floor((secondsOfDay % 3600) / 60);
+    return `${date}, ${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}`;
+  }
+
+  /** Pozostały czas jako „2 d 3 godz. 15 min”. */
+  static formatRemaining(seconds) {
+    const total = Math.max(0, Math.round(Number(seconds) || 0));
+    const spd = time.secondsPerDay();
+    const days = Math.floor(total / spd);
+    const hours = Math.floor((total % spd) / 3600);
+    const minutes = Math.floor((total % 3600) / 60);
+    const parts = [];
+    if (days) parts.push(`${days} ${t("Time.DaysShort")}`);
+    if (hours) parts.push(`${hours} ${t("Time.HoursShort")}`);
+    if (minutes || !parts.length) parts.push(`${minutes} ${t("Time.MinutesShort")}`);
+    return parts.join(" ");
+  }
+
   /** Kolejka MG w trybie dziennym: przydziały graczy czekają na rozpatrzenie przez MG. */
   static usesDailyQueue() {
     try {
@@ -113,7 +185,7 @@ export class UnderworldOperations {
 
   /** Długość aresztu / leczenia w jednostkach cyklu, np. „2 noce” albo „1 tydzień”. */
   static cycleLabel(count) {
-    const unit = this.isWeekly() ? "Week" : "Night";
+    const unit = this.isWeekly() ? "Week" : (this.customTurnDays() ? "Turn" : "Night");
     return t(`Cycle.${unit}${count === 1 ? "One" : "Many"}`, { count });
   }
 
@@ -123,8 +195,11 @@ export class UnderworldOperations {
     return actor.isOwner && registry.isFeatureUnlocked(actor, "underworld");
   }
 
-  static _worldDayKey() {
-    return time.dayKey();
+  /** Klucz bieżącej tury: dzień kalendarza, a przy własnej długości tury numer tury (jedno rozliczenie na turę). */
+  static _worldDayKey(ts = time.now()) {
+    const turn = this.customTurnDays();
+    if (!turn) return time.dayKey(ts);
+    return `T${Math.floor(Number(ts) / (turn * time.secondsPerDay()))}`;
   }
 
   // ════════════════════════════════════════════
@@ -181,7 +256,7 @@ export class UnderworldOperations {
   static _creditMissionProfit(gang, grossPennies) {
     const configured = profileOf(gang).patronCut ? Number(game.settings.get("wfrp4e-underworld", "cutPercentage")) : 0;
     const percentage = Math.max(0, Math.min(100, Number.isFinite(configured) ? configured : 25));
-    const gross = Math.max(0, Math.trunc(Number(grossPennies) || 0));
+    const gross = this.applyGoldMultiplier(Math.max(0, Math.trunc(Number(grossPennies) || 0)));
     const cut = Math.floor(gross * percentage / 100);
     const current = GangData.treasuryToPennies(gang.treasury);
     gang.treasury = GangData.penniesToTreasury(current + gross - cut);
@@ -600,7 +675,7 @@ export class UnderworldOperations {
    * @param {string} fn     Nazwa metody zlecenia (musi być w PLANNABLE_MISSIONS)
    * @param {string} input  Opis celu / ładunku albo id rannego dla Opieki nad Rannymi
    */
-  static async planMission(actor, npcId, fn, input = "", tier = null) {
+  static async planMission(actor, npcId, fn, input = "", tier = null, { hours = 0 } = {}) {
     if (!this._canManageGang(actor)) {
       ui.notifications.warn(t("Notify.NoAccess"));
       return false;
@@ -622,6 +697,13 @@ export class UnderworldOperations {
     npc.status = "busy";
     npc.assignment = assignment;
     npc.plannedMission = { fn, input: String(input ?? "").slice(0, 300), tier: TARGET_TIERS[tier] ? tier : null };
+    // Licznik czasu: zlecenie kończy się o wskazanej porze świata (MG może zakończyć je od razu)
+    const seconds = Math.round(Math.max(0, Number(hours) || 0) * 3600);
+    if (seconds > 0) {
+      const startedAt = time.now();
+      npc.plannedMission.startedAt = startedAt;
+      npc.plannedMission.endsAt = startedAt + seconds;
+    }
     await GangData.saveGang(actor, gang);
     return true;
   }
@@ -646,7 +728,7 @@ export class UnderworldOperations {
     const { missionCards, extraRolls } = await this._resolvePlans(actor);
     const result = await this.executeCampRest(actor, { ...options, weekly: true, missionCards, extraRolls });
     if (result !== false && options.advanceTime) {
-      await game.time.advance(7 * time.secondsPerDay());
+      await game.time.advance(this.turnDays() * time.secondsPerDay());
     }
     return result;
   }
@@ -655,15 +737,22 @@ export class UnderworldOperations {
    * Rozpatruje wszystkie zaplanowane zlecenia szajki (u MG) i zbiera ich karty zamiast publikować je osobno.
    * @returns {Promise<{missionCards: object[], extraRolls: Roll[]}>}
    */
-  static async _resolvePlans(actor) {
+  /** Czy plan czeka na rozpatrzenie przez MG: bez licznika albo z licznikiem, który już minął. */
+  static isPlanDue(plan, now = time.now()) {
+    return !plan?.endsAt || Number(plan.endsAt) <= now;
+  }
+
+  static async _resolvePlans(actor, { filter = null } = {}) {
     const gang = GangData.getGang(actor);
 
     // Zaplanowani członkowie wracają do gotowości, aby zlecenia mogły ich wysłać
     const plans = [];
     for (const npc of gang.roster) {
       const plan = npc.plannedMission;
+      if (!plan) continue;
+      if (filter && !filter(npc, plan)) continue;
       delete npc.plannedMission;
-      if (!plan || !PLANNABLE_MISSIONS[plan.fn] || npc.status !== "busy") continue;
+      if (!PLANNABLE_MISSIONS[plan.fn] || npc.status !== "busy") continue;
       npc.status = "ready";
       npc.assignment = "none";
       // Plan sprzed zmiany typu kompanii przepada, a członek wraca do gotowości
@@ -693,23 +782,88 @@ export class UnderworldOperations {
       return false;
     }
     if (!this._canManageGang(actor)) return false;
-    const { missionCards, extraRolls } = await this._resolvePlans(actor);
+    const now = time.now();
+    return this._resolveAndReport(actor, { filter: (npc, plan) => this.isPlanDue(plan, now), title: t("Report.QueueTitle"), flavor: t("Report.QueueFlavor") });
+  }
+
+  /** Rozpatruje wskazane plany, a gdy coś się wykonało, publikuje jeden raport na czacie. */
+  static async _resolveAndReport(actor, { filter, title, flavor }) {
+    const { missionCards, extraRolls } = await this._resolvePlans(actor, { filter });
     if (!missionCards.length) {
       ui.notifications.info(t("Notify.NoPendingAssignments"));
       return false;
     }
     const html = await foundry.applications.handlebars.renderTemplate(
       "modules/wfrp4e-underworld/templates/chat/missions-report.hbs",
-      { title: t("Report.QueueTitle"), missions: missionCards }
+      { title, missions: missionCards }
     );
     await ChatMessage.create({
       user: game.user.id,
       speaker: ChatMessage.getSpeaker({ actor }),
       content: html,
       rolls: extraRolls,
-      flavor: t("Report.QueueFlavor")
+      flavor
     });
     return true;
+  }
+
+  /** MG: kończy zlecenie członka od razu, nie czekając na licznik. */
+  static async finishMissionNow(actor, npcId) {
+    if (!game.user.isGM) {
+      ui.notifications.warn(t("Notify.GMOnly"));
+      return false;
+    }
+    if (!this._canManageGang(actor)) return false;
+    return this._resolveAndReport(actor, { filter: npc => npc.id === npcId, title: t("Report.TimedTitle"), flavor: t("Report.TimedFlavor") });
+  }
+
+  /** MG: kończy od razu wszystkie zlecenia z licznikiem tej kompanii. */
+  static async finishAllMissionsNow(actor) {
+    if (!game.user.isGM || !this._canManageGang(actor)) return false;
+    return this._resolveAndReport(actor, { filter: (npc, plan) => !!plan.endsAt, title: t("Report.TimedTitle"), flavor: t("Report.TimedFlavor") });
+  }
+
+  /** Zlecenia z licznikiem, które już minęły: rozpatruje je aktywny MG po upływie czasu świata. */
+  static async resolveDueMissions() {
+    if (!game.users.activeGM?.isSelf) return;
+    if (this._dueRunning) return;
+    this._dueRunning = true;
+    try {
+      const now = time.now();
+      for (const actor of game.actors) {
+        const flag = actor.getFlag("wfrp4e-underworld", "gang");
+        if (!flag?.roster?.some(n => n.plannedMission?.endsAt && Number(n.plannedMission.endsAt) <= now && n.status === "busy")) continue;
+        await this._resolveAndReport(actor, { filter: (npc, plan) => !!plan.endsAt && Number(plan.endsAt) <= now, title: t("Report.TimedTitle"), flavor: t("Report.TimedFlavor") });
+      }
+    } finally {
+      this._dueRunning = false;
+    }
+  }
+
+  /** Zlecenia kompanii z licznikiem do pokazania w panelu: kto, co, kiedy się kończy. */
+  static timedMissions(gang) {
+    const now = time.now();
+    return (gang.roster || [])
+      .filter(n => n.plannedMission?.endsAt && n.status === "busy")
+      .map(n => {
+        const plan = n.plannedMission;
+        const missionId = PLANNABLE_MISSIONS[plan.fn];
+        const mission = MISSIONS[missionId];
+        const endsAt = Number(plan.endsAt);
+        const total = Math.max(1, endsAt - Number(plan.startedAt || endsAt));
+        return {
+          npcId: n.id,
+          name: n.name,
+          img: n.img,
+          label: mission ? missionName(mission, gang.terrain) : plan.fn,
+          endsAt,
+          endsLabel: this.formatDateTime(endsAt),
+          remainingLabel: endsAt <= now ? t("Time.Due") : this.formatRemaining(endsAt - now),
+          due: endsAt <= now,
+          progress: Math.max(0, Math.min(100, Math.round(((now - Number(plan.startedAt || now)) / total) * 100)))
+        };
+      })
+      .sort((a, b) => a.endsAt - b.endsAt);
   }
 
   // ════════════════════════════════════════════
@@ -1458,7 +1612,7 @@ export class UnderworldOperations {
     }
 
     // Kolejka MG w trybie dziennym: zaległe przydziały rozpatrujemy przed postojem, w tym samym raporcie
-    if (!options.weekly && GangData.getGang(actor).roster.some(n => n.plannedMission)) {
+    if (!options.weekly && GangData.getGang(actor).roster.some(n => n.plannedMission && this.isPlanDue(n.plannedMission))) {
       if (GangData.getGang(actor).lastCampRestDay === this._worldDayKey()) {
         ui.notifications.warn(t("Notify.CampAlreadyResolved"));
         return false;
@@ -1467,7 +1621,7 @@ export class UnderworldOperations {
         ui.notifications.warn(t("Notify.CampWaitsForQueue"));
         return false;
       }
-      const resolved = await this._resolvePlans(actor);
+      const resolved = await this._resolvePlans(actor, { filter: (npc, plan) => this.isPlanDue(plan) });
       options = {
         ...options,
         missionCards: [...(options.missionCards || []), ...resolved.missionCards],
@@ -1635,7 +1789,7 @@ export class UnderworldOperations {
       const coins = Number(event.coinsFoundSS ?? event.coinsSS) || 0;
       if (coins) {
         const curP = GangData.treasuryToPennies(gang.treasury);
-        gang.treasury = GangData.penniesToTreasury(Math.max(0, curP + coins * 12));
+        gang.treasury = GangData.penniesToTreasury(Math.max(0, curP + (coins > 0 ? this.applyGoldMultiplier(coins * 12) : coins * 12)));
       }
       const mor = Number(event.moraleDelta ?? event.morale) || 0;
       if (mor) this.changeMorale(gang, mor);
@@ -1880,7 +2034,7 @@ export class UnderworldOperations {
     // W trybie tygodniowym nie ma nocnych postojów do przypominania
     if (this.isWeekly()) return;
     const { hour } = time.components(worldTime);
-    const dayKey = time.dayKey(worldTime);
+    const dayKey = this._worldDayKey(worldTime);
 
     if (hour >= 3 && hour < 4) {
       const lastSentDay = game.settings.get("wfrp4e-underworld", "lastReminderDay");

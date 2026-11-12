@@ -1,0 +1,70 @@
+{{!-- Zakładka MG: zasady świata (tura, złoto, czas zleceń), widoczność zakładek gracza i zlecenia z licznikiem --}}
+{{#if isGM}}
+<div class="uw-gm-panel">
+  <p class="uw-gm-intro"><i class="fas fa-crown"></i> {{underworldT "GM.Intro"}}</p>
+
+  <section class="uw-gm-card">
+    <h3><i class="fas fa-globe"></i> {{underworldT "GM.WorldRules"}}</h3>
+    <div class="uw-gm-grid">
+      <label class="uw-gm-field">
+        <span class="uw-gm-label">{{underworldT "GM.TurnDays"}}</span>
+        <input type="number" min="0" max="60" step="1" value="{{gmView.turnDays}}" data-gm-field="turnDays"/>
+        <span class="uw-gm-hint">{{underworldT "GM.TurnDaysHint" effective=gmView.effectiveTurn}}</span>
+      </label>
+      <label class="uw-gm-field">
+        <span class="uw-gm-label">{{underworldT "GM.GoldMultiplier"}}</span>
+        <input type="number" min="0" max="1000" step="5" value="{{gmView.goldMultiplier}}" data-gm-field="goldMultiplier"/>
+        <span class="uw-gm-hint">{{underworldT "GM.GoldMultiplierHint"}}</span>
+      </label>
+      <label class="uw-gm-field">
+        <span class="uw-gm-label">{{underworldT "GM.MissionHours"}}</span>
+        <input type="number" min="0" max="720" step="0.5" value="{{gmView.missionHours}}" data-gm-field="missionHours"/>
+        <span class="uw-gm-hint">{{underworldT "GM.MissionHoursHint"}}</span>
+      </label>
+    </div>
+    {{#if gmView.weekly}}<p class="uw-gm-note"><i class="fas fa-info-circle"></i> {{underworldT "GM.WeeklyNote"}}</p>{{/if}}
+    <p class="uw-gm-note"><i class="fas fa-clock"></i> {{underworldT "GM.WorldNow"}}: <b>{{gmView.now}}</b></p>
+
+    <details class="uw-gm-details">
+      <summary>{{underworldT "GM.PerMission"}}</summary>
+      <p class="uw-gm-hint">{{underworldT "GM.PerMissionHint"}}</p>
+      <div class="uw-gm-missions">
+        {{#each gmView.missions}}
+        <label class="uw-gm-mission">
+          <span>{{this.name}}</span>
+          <input type="number" min="0" max="720" step="0.5" value="{{this.hours}}" placeholder="–" data-gm-mission-hours="{{this.id}}"/>
+        </label>
+        {{/each}}
+      </div>
+    </details>
+  </section>
+
+  <section class="uw-gm-card">
+    <h3><i class="fas fa-eye"></i> {{underworldT "GM.PlayerTabs"}}</h3>
+    <p class="uw-gm-hint">{{underworldT "GM.PlayerTabsHint"}}</p>
+    <div class="uw-gm-tabs">
+      <label class="uw-gm-tab is-fixed"><input type="checkbox" checked disabled/> {{underworldT "Tabs.Info"}}</label>
+      {{#each gmView.tabs}}
+      <label class="uw-gm-tab"><input type="checkbox" data-gm-tab="{{this.id}}" {{#if this.visible}}checked{{/if}}/> {{this.label}}</label>
+      {{/each}}
+    </div>
+  </section>
+
+  <section class="uw-gm-card">
+    <h3><i class="fas fa-hourglass-half"></i> {{underworldT "GM.TimedMissions"}}</h3>
+    {{#if hasTimedMissions}}
+      {{> "modules/wfrp4e-underworld/templates/parts/timed-missions.hbs"}}
+      <button type="button" class="uw-gm-btn" data-action="gm-finish-all"><i class="fas fa-forward-fast"></i> {{underworldT "GM.FinishAll"}}</button>
+    {{else}}
+      <p class="uw-gm-hint">{{underworldT "GM.NoTimed"}}</p>
+    {{/if}}
+    {{#if gmView.restLocked}}
+    <button type="button" class="uw-gm-btn is-secondary" data-action="gm-reset-rest" title="{{underworldT 'GM.ResetRestHint'}}"><i class="fas fa-unlock"></i> {{underworldT "GM.ResetRest"}}</button>
+    {{/if}}
+  </section>
+
+  <div class="uw-gm-actions">
+    <button type="button" class="uw-gm-btn is-primary" data-action="gm-save"><i class="fas fa-save"></i> {{underworldT "GM.Save"}}</button>
+  </div>
+</div>
+{{/if}}

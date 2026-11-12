@@ -64,6 +64,17 @@ Hooks.once("init", async function () {
     }
   });
 
+  // Zasady świata ustawiane przez MG w zakładce MG panelu szajki
+  const rerenderSheets = () => {
+    for (const app of foundry.applications.instances.values()) {
+      if (app instanceof GangSheet) app.render();
+    }
+  };
+  game.settings.register(MODULE_ID, "turnDays", { scope: "world", config: false, type: Number, default: 0, onChange: rerenderSheets });
+  game.settings.register(MODULE_ID, "goldMultiplier", { scope: "world", config: false, type: Number, default: 100, onChange: rerenderSheets });
+  game.settings.register(MODULE_ID, "missionHours", { scope: "world", config: false, type: Number, default: 0, onChange: rerenderSheets });
+  game.settings.register(MODULE_ID, "missionHoursById", { scope: "world", config: false, type: Object, default: {}, onChange: rerenderSheets });
+
   game.settings.register(MODULE_ID, "dailyQueue", {
     name: "UNDERWORLD.Settings.Queue.Name",
     hint: "UNDERWORLD.Settings.Queue.Hint",
@@ -167,6 +178,8 @@ Hooks.once("init", async function () {
     `modules/${MODULE_ID}/templates/parts/tasks.hbs`,
     `modules/${MODULE_ID}/templates/parts/loot.hbs`,
     `modules/${MODULE_ID}/templates/parts/tactics.hbs`,
+    `modules/${MODULE_ID}/templates/parts/gm.hbs`,
+    `modules/${MODULE_ID}/templates/parts/timed-missions.hbs`,
     `modules/${MODULE_ID}/templates/chat/mission-card.hbs`,
     `modules/${MODULE_ID}/templates/chat/camp-rest.hbs`,
     `modules/${MODULE_ID}/templates/chat/recruit-proposals.hbs`,
@@ -509,8 +522,22 @@ Hooks.on("chatMessage", (chatLog, message) => {
 /* -------------------------------------------- */
 
 Hooks.on("updateWorldTime", (worldTime, delta) => {
+  // Odświeżenie liczników zleceń w otwartych panelach (każdy klient)
+  const nowMs = Date.now();
+  for (const app of foundry.applications.instances.values()) {
+    if (app instanceof GangSheet && app._hasTimers && nowMs - (app._lastTimerRender || 0) > 20000) {
+      app._lastTimerRender = nowMs;
+      app.render();
+    }
+  }
   if (!game.user.isGM) return;
   UnderworldOperations.checkCalendarReminder(worldTime);
+  // Zlecenia, którym minął licznik, rozpatruje aktywny MG
+  UnderworldOperations.resolveDueMissions().catch(err => console.error(`${MODULE_ID} |`, err));
+});
+
+Hooks.once("ready", () => {
+  if (game.user.isGM) UnderworldOperations.resolveDueMissions().catch(err => console.error(`${MODULE_ID} |`, err));
 });
 
 /* -------------------------------------------- */

@@ -1361,7 +1361,8 @@
       "NoPendingAssignments": "Brak przydziałów oczekujących na rozpatrzenie.",
       "NotEnoughFunds": "Za mało funduszy w skarbcu! Potrzeba {cost} SS.",
       "CampAlreadyResolved": "Nocny postój tej szajki został już rozstrzygnięty dla tego dnia świata.",
-      "CampWaitsForQueue": "Część przydziałów czeka na rozpatrzenie przez MG – postój po ich rozstrzygnięciu."
+      "CampWaitsForQueue": "Część przydziałów czeka na rozpatrzenie przez MG – postój po ich rozstrzygnięciu.",
+      "GMOnly": "Tylko MG."
     },
     "Orders": {
       "Effects": {
@@ -1790,7 +1791,9 @@
       "NightOne": "{count} noc",
       "NightMany": "{count} noce",
       "WeekOne": "{count} tydzień",
-      "WeekMany": "{count} tygodnie"
+      "WeekMany": "{count} tygodnie",
+      "TurnOne": "{count} tura",
+      "TurnMany": "{count} tury"
     },
     "Mod": {
       "MoraleFanatic": "Morale: Fanatyzm",
@@ -1836,7 +1839,9 @@
     "Report": {
       "QueueTitle": "Raport przydziałów szajki",
       "QueueFlavor": "Przydziały Świty rozpatrzone przez MG",
-      "MissionFlavor": "Przydział Świty"
+      "MissionFlavor": "Przydział Świty",
+      "TimedTitle": "Zlecenia zakończone",
+      "TimedFlavor": "Zlecenia, którym minął czas (albo zakończył je MG)"
     },
     "Card": {
       "Scout": {
@@ -2124,7 +2129,8 @@
       "Queued": "Przydział „{label}” czeka na rozpatrzenie przez MG.",
       "DoneCheckChat": "Misja „{label}” – wykonano! Sprawdź czat.",
       "Unknown": "Nieznany typ misji: {type}",
-      "NoFollower": "Nie wybrano poplecznika!"
+      "NoFollower": "Nie wybrano poplecznika!",
+      "Timed": "Zlecenie „{label}” wyruszyło. Zakończy się: {end}."
     },
     "Tier": {
       "LeadApplies": "{name}: bez kary, podwójny łup",
@@ -2374,7 +2380,8 @@
       "Roster": "Świta",
       "Tasks": "Przydziały",
       "Loot": "Łupy",
-      "Tactics": "Taktyka"
+      "Tactics": "Taktyka",
+      "GM": "MG"
     },
     "LootTab": {
       "TerrainHint": "Teren zmienia dostępne zlecenia, plotki, wydarzenia nocy, koszt noclegu i pasera.",
@@ -5801,6 +5808,42 @@
           "retinue": "Straż Arcykapłana"
         }
       }
+    },
+    "Time": {
+      "DaysShort": "d",
+      "HoursShort": "godz.",
+      "MinutesShort": "min",
+      "Due": "gotowe do rozliczenia"
+    },
+    "Timed": {
+      "Title": "Zlecenia w toku",
+      "Ends": "Koniec",
+      "FinishNow": "Zakończ teraz",
+      "FinishNowHint": "MG: rozpatrz to zlecenie natychmiast"
+    },
+    "GM": {
+      "Intro": "Panel MG: zasady świata, widoczność zakładek gracza i zlecenia z licznikiem. Zmiany zapisuje przycisk na dole.",
+      "WorldRules": "Zasady świata",
+      "TurnDays": "Długość tury (dni)",
+      "TurnDaysHint": "Jedno rozliczenie (postój, odpoczynek, testy obozu) na turę. 0 = standard: noc albo tydzień. Teraz: {effective} d.",
+      "GoldMultiplier": "Mnożnik złota (%)",
+      "GoldMultiplierHint": "Mnoży przychody szajki (zlecenia, paser, haracze, znaleziska w obozie). 100 = bez zmian, 150 = półtora raza. Wydatki bez zmian.",
+      "MissionHours": "Czas zlecenia (godziny)",
+      "MissionHoursHint": "Domyślny czas, po którym zlecenie się kończy w świecie gry. 0 = natychmiast.",
+      "WeeklyNote": "Tydzień Szajki: zlecenia nie mają liczników, MG rozlicza je razem z tygodniem.",
+      "WorldNow": "Teraz w świecie gry",
+      "PerMission": "Czas dla poszczególnych zleceń",
+      "PerMissionHint": "Puste pole = czas domyślny. 0 = to zlecenie kończy się od razu.",
+      "PlayerTabs": "Zakładki gracza",
+      "PlayerTabsHint": "Odznacz zakładki, z których gracz rezygnuje. MG zawsze widzi wszystkie. Informacje są zawsze widoczne.",
+      "TimedMissions": "Zlecenia z licznikiem",
+      "FinishAll": "Zakończ wszystkie teraz",
+      "NoTimed": "Brak zleceń z licznikiem.",
+      "ResetRest": "Odblokuj postój",
+      "ResetRestHint": "Pozwala rozliczyć postój albo tydzień jeszcze raz w tej turze",
+      "RestUnlocked": "Postój odblokowany.",
+      "Save": "Zapisz ustawienia MG",
+      "Saved": "Ustawienia MG zapisane."
     }
   }
 }

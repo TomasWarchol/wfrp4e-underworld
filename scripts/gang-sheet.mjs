@@ -16,6 +16,10 @@ import { registry, dialogContent, dialogValue, escapeHTML } from "../../wfrp4e-c
 import { t } from "./i18n.mjs";
 import { profileHasMission, profileOf } from "./company-profiles.mjs";
 
+/** Zakładki, które MG może ukryć przed graczem (Informacje są zawsze widoczne). */
+export const HIDEABLE_TABS = ["dashboard", "roster", "tasks", "loot", "tactics"];
+const TAB_LABEL_KEYS = { dashboard: "Tabs.Camp", roster: "Tabs.Roster", tasks: "Tabs.Tasks", loot: "Tabs.Loot", tactics: "Tabs.Tactics" };
+
 /** Nazwa stanu członka w bieżącym języku (ready → „Dostępny” itd.). */
 const statusLabel = status => t(`Status.${String(status || "ready").charAt(0).toUpperCase()}${String(status || "ready").slice(1)}`);
 
@@ -240,7 +244,14 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     data.isGM = game.user.isGM;
     data.isWeekly = UnderworldOperations.isWeekly();
     data.dailyQueue = !data.isWeekly && UnderworldOperations.usesDailyQueue();
-    data.plannedCount = gang.roster.filter(n => n.plannedMission).length;
+    data.plannedCount = gang.roster.filter(n => n.plannedMission && !n.plannedMission.endsAt).length;
+
+    // Zakładki widoczne dla gracza (MG widzi wszystkie) i zlecenia z licznikiem czasu
+    const hidden = new Set(Array.isArray(gang.hiddenTabs) ? gang.hiddenTabs : []);
+    data.tabsVisible = Object.fromEntries(["info", ...HIDEABLE_TABS].map(id => [id, data.isGM || id === "info" || !hidden.has(id)]));
+    data.timedMissions = UnderworldOperations.timedMissions(gang);
+    data.hasTimedMissions = data.timedMissions.length > 0;
+    if (data.isGM) data.gmView = this._gmView(gang);
 
     // Teren, żetony przygotowania, łupy i zlecenia dostępne w tym terenie
     const terrainId = UnderworldOperations.getTerrain(gang);
@@ -308,6 +319,27 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     data.ledger = this.constructor.useLedger();
     if (data.ledger) data.ledgerView = this._ledgerView(gang, terrainId, data);
     return data;
+  }
+
+  /** Dane zakładki MG: zasady świata (tura, złoto, czas zleceń) i ustawienia tej kompanii. */
+  _gmView(gang) {
+    const hidden = new Set(Array.isArray(gang.hiddenTabs) ? gang.hiddenTabs : []);
+    let overrides = {};
+    try { overrides = game.settings.get("wfrp4e-underworld", "missionHoursById") || {}; } catch (e) { overrides = {}; }
+    const terrainId = UnderworldOperations.getTerrain(gang);
+    return {
+      turnDays: UnderworldOperations.customTurnDays(),
+      effectiveTurn: UnderworldOperations.turnDays(),
+      goldMultiplier: UnderworldOperations.goldMultiplier(),
+      missionHours: UnderworldOperations._num("missionHours", 0),
+      weekly: UnderworldOperations.isWeekly(),
+      now: UnderworldOperations.formatDateTime(game.time.worldTime),
+      tabs: HIDEABLE_TABS.map(id => ({ id, label: t(TAB_LABEL_KEYS[id]), visible: !hidden.has(id) })),
+      missions: Object.entries(MISSIONS)
+        .filter(([, m]) => !m.noNpc && !m.targetWounded && profileHasMission(gang, m) && missionAvailable(m, terrainId))
+        .map(([id, m]) => ({ id, name: missionName(m, terrainId), hours: overrides[id] === undefined || overrides[id] === null ? "" : overrides[id] })),
+      restLocked: !!gang.lastCampRestDay
+    };
   }
 
   /** Czy panel używa wyglądu „Księga Kompanii” (ustawienie klienta). */
@@ -452,8 +484,9 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
         { id: "roster", icon: "ui-tab_roster", label: t("Tabs.Roster"), count: gang.roster.length },
         { id: "tasks", icon: "ui-tab_plan", label: t("Tabs.Tasks"), count: data.availableOutlaws?.length ?? 0 },
         { id: "loot", icon: "ui-tab_chest", label: t("Tabs.Loot"), count: data.lootCount },
-        { id: "tactics", icon: "ui-tab_orders", label: t("Tabs.Tactics"), count: `${data.retinueCount}/${data.maxRetinue}` }
-      ]
+        { id: "tactics", icon: "ui-tab_orders", label: t("Tabs.Tactics"), count: `${data.retinueCount}/${data.maxRetinue}` },
+        ...(data.isGM ? [{ id: "gm", icon: "ui-patron", label: t("Tabs.GM") }] : [])
+      ].filter(tab => tab.id === "gm" || data.tabsVisible[tab.id])
     };
   }
 
@@ -597,6 +630,9 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
 
     // Przywrócenie aktywnej zakładki po każdym renderze
     // (changeTab nakłada też atrybuty dostępności, patrz _applyAccessibility)
+    this._hasTimers = !!context.hasTimedMissions;
+    const visible = context.tabsVisible ?? {};
+    if (this.tabGroups.primary === "gm" ? !context.isGM : visible[this.tabGroups.primary] === false) this.tabGroups.primary = "info";
     this.changeTab(this.tabGroups.primary, "primary", { force: true, updatePosition: false });
 
     // Zwijanie i rozwijanie świty bez utraty stanu przy odświeżeniu karty.
@@ -1034,6 +1070,30 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
         this.render();
         return;
 
+      // ─── ZAKŁADKA MG ───
+      case "gm-finish-now":
+        if (!game.user.isGM) return;
+        await UnderworldOperations.finishMissionNow(this.actor, target.dataset.npcId);
+        this.render();
+        return;
+      case "gm-finish-all":
+        if (!game.user.isGM) return;
+        await UnderworldOperations.finishAllMissionsNow(this.actor);
+        this.render();
+        return;
+      case "gm-save":
+        return this._onGmSave();
+      case "gm-reset-rest": {
+        if (!game.user.isGM) return;
+        const gang = GangData.getGang(this.actor);
+        delete gang.lastCampRestDay;
+        delete gang.campRestInProgress;
+        await GangData.saveGang(this.actor, gang);
+        ui.notifications.info(t("GM.RestUnlocked"));
+        this.render();
+        return;
+      }
+
       case "open-world-editor":
         if (!game.user.isGM) return;
         return UnderworldRollTables.openTables(UnderworldOperations.getTerrain(GangData.getGang(this.actor)), GangData.getGang(this.actor).type);
@@ -1191,6 +1251,35 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
    * Wysyła członka na zlecenie. Bez npcId otwiera okno wyboru; z npcId (portret upuszczony na kartę
    * zlecenia) wysyła od razu, a okno pokazuje tylko wtedy, gdy zlecenie wymaga wyborów (cel, poziom, łupy).
    */
+  /** MG: zapis zakładki MG (zasady świata i widoczność zakładek tej kompanii). */
+  async _onGmSave() {
+    if (!game.user.isGM) return;
+    const root = this.element;
+    const read = (name) => root.querySelector(`[data-gm-field="${name}"]`);
+    const num = (name, min, max, fallback) => {
+      const value = Number(read(name)?.value);
+      return Number.isFinite(value) ? Math.max(min, Math.min(max, value)) : fallback;
+    };
+    const MODULE_ID = "wfrp4e-underworld";
+    await game.settings.set(MODULE_ID, "turnDays", Math.round(num("turnDays", 0, 60, 0)));
+    await game.settings.set(MODULE_ID, "goldMultiplier", Math.round(num("goldMultiplier", 0, 1000, 100)));
+    await game.settings.set(MODULE_ID, "missionHours", num("missionHours", 0, 720, 0));
+    const overrides = {};
+    for (const input of root.querySelectorAll("[data-gm-mission-hours]")) {
+      const raw = input.value.trim();
+      if (raw === "") continue;
+      const value = Number(raw);
+      if (Number.isFinite(value) && value >= 0) overrides[input.dataset.gmMissionHours] = Math.min(720, value);
+    }
+    await game.settings.set(MODULE_ID, "missionHoursById", overrides);
+
+    const gang = GangData.getGang(this.actor);
+    gang.hiddenTabs = Array.from(root.querySelectorAll("[data-gm-tab]")).filter(el => !el.checked).map(el => el.dataset.gmTab);
+    await GangData.saveGang(this.actor, gang);
+    ui.notifications.info(t("GM.Saved"));
+    this.render();
+  }
+
   async _onSendMission(missionType, { npcId: chosenId = null } = {}) {
     const mission = MISSIONS[missionType];
     if (!mission) {
@@ -1315,11 +1404,18 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
 
   /** Wykonuje zlecenie albo, w trybie tygodnia lub kolejki MG, tylko je planuje. */
   async _dispatchMission(mission, npcId, input, tier, label) {
-    if (UnderworldOperations.usesPlanning()) {
-      if (await UnderworldOperations.planMission(this.actor, npcId, mission.fn, input, tier)) {
-        ui.notifications.info(UnderworldOperations.isWeekly()
-          ? t("Mission.PlannedWeek", { label })
-          : t("Mission.Queued", { label }));
+    // Licznik czasu: zlecenie z czasem trwania kończy się o wskazanej porze świata (MG może je zakończyć od razu)
+    const hours = UnderworldOperations.usesTimers() ? UnderworldOperations.missionHours(UnderworldOperations.PLANNABLE_MISSIONS[mission.fn]) : 0;
+    if (hours > 0 || UnderworldOperations.usesPlanning()) {
+      if (await UnderworldOperations.planMission(this.actor, npcId, mission.fn, input, tier, { hours })) {
+        if (hours > 0) {
+          const end = UnderworldOperations.formatDateTime(game.time.worldTime + Math.round(hours * 3600));
+          ui.notifications.info(t("Mission.Timed", { label, end }));
+        } else {
+          ui.notifications.info(UnderworldOperations.isWeekly()
+            ? t("Mission.PlannedWeek", { label })
+            : t("Mission.Queued", { label }));
+        }
       }
       this.render();
       return;
@@ -1521,7 +1617,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     const comfortableCost = terrain.comfortableCostSS
       ? (weekly ? t("Camp.CostPerWeek", { cost: terrain.comfortableCostSS * 7 }) : `${terrain.comfortableCostSS} ${t("Units.SS")}`)
       : t("Free");
-    const plannedCount = gang.roster.filter(n => n.plannedMission).length;
+    const plannedCount = gang.roster.filter(n => n.plannedMission && !n.plannedMission.endsAt).length;
     const availableWatchmen = gang.roster.filter(n => !["dead", "wounded", "arrested"].includes(n.status));
 
     let watchmenHtml = availableWatchmen.map(n => {

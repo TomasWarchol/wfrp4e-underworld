@@ -60,11 +60,12 @@
   <!-- NAWIGACJA ZAKŁADKOWA -->
   <nav class="sheet-tabs tabs underworld-tabs" data-group="primary">
     <a class="item" data-action="tab" data-group="primary" data-tab="info"><i class="fas fa-scroll"></i> {{underworldT "Tabs.Info"}}</a>
-    <a class="item" data-action="tab" data-group="primary" data-tab="dashboard"><i class="fas fa-campground"></i> {{underworldT "Tabs.Camp"}}</a>
-    <a class="item" data-action="tab" data-group="primary" data-tab="roster"><i class="fas fa-users"></i> {{underworldT "Tabs.Roster"}} <span class="tab-counter">({{gang.roster.length}})</span></a>
-    <a class="item" data-action="tab" data-group="primary" data-tab="tasks"><i class="fas fa-tasks"></i> {{underworldT "Tabs.Tasks"}} <span class="tab-counter">({{availableOutlaws.length}})</span></a>
-    <a class="item" data-action="tab" data-group="primary" data-tab="loot"><i class="fas fa-sack-xmark"></i> {{underworldT "Tabs.Loot"}} <span class="tab-counter">({{lootCount}})</span></a>
-    <a class="item" data-action="tab" data-group="primary" data-tab="tactics"><i class="fas fa-chess-knight"></i> {{underworldT "Tabs.Tactics"}} <span class="tab-counter">({{retinueCount}}/{{maxRetinue}})</span></a>
+    {{#if tabsVisible.dashboard}}<a class="item" data-action="tab" data-group="primary" data-tab="dashboard"><i class="fas fa-campground"></i> {{underworldT "Tabs.Camp"}}</a>{{/if}}
+    {{#if tabsVisible.roster}}<a class="item" data-action="tab" data-group="primary" data-tab="roster"><i class="fas fa-users"></i> {{underworldT "Tabs.Roster"}} <span class="tab-counter">({{gang.roster.length}})</span></a>{{/if}}
+    {{#if tabsVisible.tasks}}<a class="item" data-action="tab" data-group="primary" data-tab="tasks"><i class="fas fa-tasks"></i> {{underworldT "Tabs.Tasks"}} <span class="tab-counter">({{availableOutlaws.length}})</span></a>{{/if}}
+    {{#if tabsVisible.loot}}<a class="item" data-action="tab" data-group="primary" data-tab="loot"><i class="fas fa-sack-xmark"></i> {{underworldT "Tabs.Loot"}} <span class="tab-counter">({{lootCount}})</span></a>{{/if}}
+    {{#if tabsVisible.tactics}}<a class="item" data-action="tab" data-group="primary" data-tab="tactics"><i class="fas fa-chess-knight"></i> {{underworldT "Tabs.Tactics"}} <span class="tab-counter">({{retinueCount}}/{{maxRetinue}})</span></a>{{/if}}
+    {{#if isGM}}<a class="item" data-action="tab" data-group="primary" data-tab="gm"><i class="fas fa-crown"></i> {{underworldT "Tabs.GM"}}</a>{{/if}}
   </nav>
   {{/if}}
 
@@ -93,6 +94,12 @@
     <div class="tab" data-group="primary" data-tab="tactics">
       {{#if ledger}}{{> "modules/wfrp4e-underworld/templates/parts/ledger-orders.hbs"}}{{else}}{{> "modules/wfrp4e-underworld/templates/parts/tactics.hbs"}}{{/if}}
     </div>
+
+    {{#if isGM}}
+    <div class="tab" data-group="primary" data-tab="gm">
+      {{> "modules/wfrp4e-underworld/templates/parts/gm.hbs"}}
+    </div>
+    {{/if}}
   </section>
   {{#if ledger}}</div>{{/if}}
 </div>

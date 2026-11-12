@@ -1361,7 +1361,8 @@
       "NoPendingAssignments": "No assignments are waiting to be resolved.",
       "NotEnoughFunds": "Not enough money in the stash! You need {cost} SS.",
       "CampAlreadyResolved": "This crew's night camp has already been resolved for this world day.",
-      "CampWaitsForQueue": "Some assignments are waiting for the GM – the camp comes after they are resolved."
+      "CampWaitsForQueue": "Some assignments are waiting for the GM – the camp comes after they are resolved.",
+      "GMOnly": "GM only."
     },
     "Orders": {
       "Effects": {
@@ -1790,7 +1791,9 @@
       "NightOne": "{count} night",
       "NightMany": "{count} nights",
       "WeekOne": "{count} week",
-      "WeekMany": "{count} weeks"
+      "WeekMany": "{count} weeks",
+      "TurnOne": "{count} turn",
+      "TurnMany": "{count} turns"
     },
     "Mod": {
       "MoraleFanatic": "Morale: Fanatical",
@@ -1836,7 +1839,9 @@
     "Report": {
       "QueueTitle": "Crew assignments report",
       "QueueFlavor": "Retinue assignments resolved by the GM",
-      "MissionFlavor": "Retinue assignment"
+      "MissionFlavor": "Retinue assignment",
+      "TimedTitle": "Jobs completed",
+      "TimedFlavor": "Jobs whose time ran out (or that the GM finished)"
     },
     "Card": {
       "Scout": {
@@ -2124,7 +2129,8 @@
       "Queued": "Assignment “{label}” is waiting for the GM.",
       "DoneCheckChat": "Job “{label}” – done! Check the chat.",
       "Unknown": "Unknown job type: {type}",
-      "NoFollower": "No follower selected!"
+      "NoFollower": "No follower selected!",
+      "Timed": "The job \"{label}\" has set out. It ends: {end}."
     },
     "Tier": {
       "LeadApplies": "{name}: no penalty, double loot",
@@ -2374,7 +2380,8 @@
       "Roster": "Retinue",
       "Tasks": "Assignments",
       "Loot": "Loot",
-      "Tactics": "Tactics"
+      "Tactics": "Tactics",
+      "GM": "GM"
     },
     "LootTab": {
       "TerrainHint": "The terrain changes the available jobs, rumours, night events, lodging costs and the fence.",
@@ -5801,6 +5808,42 @@
           "Loot": "Loot"
         }
       }
+    },
+    "Time": {
+      "DaysShort": "d",
+      "HoursShort": "h",
+      "MinutesShort": "min",
+      "Due": "ready to resolve"
+    },
+    "Timed": {
+      "Title": "Jobs under way",
+      "Ends": "Ends",
+      "FinishNow": "Finish now",
+      "FinishNowHint": "GM: resolve this job at once"
+    },
+    "GM": {
+      "Intro": "GM panel: world rules, which tabs the player sees and timed jobs. The button at the bottom saves the changes.",
+      "WorldRules": "World rules",
+      "TurnDays": "Turn length (days)",
+      "TurnDaysHint": "One resolution (camp, rest, camp tests) per turn. 0 = standard: a night or a week. Now: {effective} d.",
+      "GoldMultiplier": "Gold multiplier (%)",
+      "GoldMultiplierHint": "Multiplies the crew's income (jobs, fence, rackets, camp finds). 100 = unchanged, 150 = one and a half times. Expenses unchanged.",
+      "MissionHours": "Job duration (hours)",
+      "MissionHoursHint": "Default time after which a job ends in the game world. 0 = instant.",
+      "WeeklyNote": "Crew Week: jobs have no timers, the GM resolves them with the week.",
+      "WorldNow": "Now in the game world",
+      "PerMission": "Duration of individual jobs",
+      "PerMissionHint": "Empty = the default duration. 0 = this job ends at once.",
+      "PlayerTabs": "Player tabs",
+      "PlayerTabsHint": "Untick the tabs the player gives up. The GM always sees all of them. Info is always visible.",
+      "TimedMissions": "Timed jobs",
+      "FinishAll": "Finish all now",
+      "NoTimed": "No timed jobs.",
+      "ResetRest": "Unlock camp",
+      "ResetRestHint": "Lets you resolve camp or the week once more this turn",
+      "RestUnlocked": "Camp unlocked.",
+      "Save": "Save GM settings",
+      "Saved": "GM settings saved."
     }
   }
 }
