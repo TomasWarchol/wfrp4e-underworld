@@ -1083,6 +1083,15 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
         return;
       case "gm-save":
         return this._onGmSave();
+      case "gm-advance": {
+        const d = target.dataset;
+        return this._advanceGameTime({ hours: Number(d.hours) || 0, days: Number(d.days) || 0, turns: Number(d.turn) || 0 });
+      }
+      case "gm-advance-custom": {
+        const amount = Math.max(0, Number(this.element.querySelector("[data-gm-time-amount]")?.value) || 0);
+        const unit = this.element.querySelector("[data-gm-time-unit]")?.value;
+        return this._advanceGameTime({ minutes: unit === "minutes" ? amount : 0, hours: unit === "hours" ? amount : 0, days: unit === "days" ? amount : 0, turns: unit === "turns" ? amount : 0 });
+      }
       case "gm-reset-rest": {
         if (!game.user.isGM) return;
         const gang = GangData.getGang(this.actor);
@@ -1251,6 +1260,18 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
    * Wysyła członka na zlecenie. Bez npcId otwiera okno wyboru; z npcId (portret upuszczony na kartę
    * zlecenia) wysyła od razu, a okno pokazuje tylko wtedy, gdy zlecenie wymaga wyborów (cel, poziom, łupy).
    */
+  /** MG: przesuwa czas gry do przodu; po drodze rozpatrują się zlecenia, którym minął licznik. */
+  async _advanceGameTime({ minutes = 0, hours = 0, days = 0, turns = 0 }) {
+    if (!game.user.isGM) return;
+    const spd = UnderworldOperations.secondsPerDay();
+    const seconds = Math.round(minutes * 60 + hours * 3600 + (days + turns * UnderworldOperations.turnDays()) * spd);
+    if (seconds <= 0) return;
+    await game.time.advance(seconds);
+    await UnderworldOperations.resolveDueMissions();
+    ui.notifications.info(t("GM.Advanced", { now: UnderworldOperations.formatDateTime(game.time.worldTime) }));
+    this.render();
+  }
+
   /** MG: zapis zakładki MG (zasady świata i widoczność zakładek tej kompanii). */
   async _onGmSave() {
     if (!game.user.isGM) return;

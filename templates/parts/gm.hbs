@@ -40,6 +40,29 @@
   </section>
 
   <section class="uw-gm-card">
+    <h3><i class="fas fa-clock"></i> {{underworldT "GM.GameTime"}}</h3>
+    <p class="uw-gm-time-now">{{underworldT "GM.WorldNow"}}: <b>{{gmView.now}}</b></p>
+    <div class="uw-gm-time-buttons">
+      <button type="button" class="uw-gm-btn" data-action="gm-advance" data-hours="1">+1 {{underworldT "Time.HoursShort"}}</button>
+      <button type="button" class="uw-gm-btn" data-action="gm-advance" data-hours="4">+4 {{underworldT "Time.HoursShort"}}</button>
+      <button type="button" class="uw-gm-btn" data-action="gm-advance" data-hours="12">+12 {{underworldT "Time.HoursShort"}}</button>
+      <button type="button" class="uw-gm-btn" data-action="gm-advance" data-days="1">+1 {{underworldT "Time.DaysShort"}}</button>
+      <button type="button" class="uw-gm-btn" data-action="gm-advance" data-turn="1">+1 {{underworldT "GM.Turn"}} ({{gmView.effectiveTurn}} {{underworldT "Time.DaysShort"}})</button>
+    </div>
+    <div class="uw-gm-time-custom">
+      <input type="number" min="1" max="999" step="1" value="1" data-gm-time-amount/>
+      <select data-gm-time-unit>
+        <option value="minutes">{{underworldT "Time.MinutesShort"}}</option>
+        <option value="hours" selected>{{underworldT "Time.HoursShort"}}</option>
+        <option value="days">{{underworldT "Time.DaysShort"}}</option>
+        <option value="turns">{{underworldT "GM.Turn"}}</option>
+      </select>
+      <button type="button" class="uw-gm-btn" data-action="gm-advance-custom"><i class="fas fa-forward"></i> {{underworldT "GM.Advance"}}</button>
+    </div>
+    <p class="uw-gm-hint">{{underworldT "GM.AdvanceHint"}}</p>
+  </section>
+
+  <section class="uw-gm-card">
     <h3><i class="fas fa-eye"></i> {{underworldT "GM.PlayerTabs"}}</h3>
     <p class="uw-gm-hint">{{underworldT "GM.PlayerTabsHint"}}</p>
     <div class="uw-gm-tabs">

@@ -6387,3 +6387,6 @@
 .uw-gm-tab { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
 .uw-gm-tab.is-fixed { opacity: 0.6; cursor: default; }
 .uw-gm-actions { display: flex; justify-content: flex-end; }
+.uw-gm-time-now { margin: 0 0 6px; }
+.uw-gm-time-buttons, .uw-gm-time-custom { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-bottom: 6px; }
+.uw-gm-time-custom input { width: 80px; }

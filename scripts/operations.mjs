@@ -142,6 +142,10 @@ export class UnderworldOperations {
     return !this.isWeekly();
   }
 
+  static secondsPerDay() {
+    return time.secondsPerDay();
+  }
+
   /** Data i godzina w świecie gry, np. „12 Sigmarzeit 2512, 14:30”. */
   static formatDateTime(ts) {
     const date = time.format(ts);

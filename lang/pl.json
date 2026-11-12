@@ -5843,7 +5843,12 @@
       "ResetRestHint": "Pozwala rozliczyć postój albo tydzień jeszcze raz w tej turze",
       "RestUnlocked": "Postój odblokowany.",
       "Save": "Zapisz ustawienia MG",
-      "Saved": "Ustawienia MG zapisane."
+      "Saved": "Ustawienia MG zapisane.",
+      "GameTime": "Czas gry",
+      "Turn": "tura",
+      "Advance": "Przesuń",
+      "AdvanceHint": "Przesuwa czas świata do przodu (nie wstecz). Zlecenia, którym minie licznik, rozpatrzą się od razu z raportem na czacie.",
+      "Advanced": "Czas gry: {now}."
     }
   }
 }

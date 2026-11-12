@@ -5843,7 +5843,12 @@
       "ResetRestHint": "Lets you resolve camp or the week once more this turn",
       "RestUnlocked": "Camp unlocked.",
       "Save": "Save GM settings",
-      "Saved": "GM settings saved."
+      "Saved": "GM settings saved.",
+      "GameTime": "Game time",
+      "Turn": "turn",
+      "Advance": "Advance",
+      "AdvanceHint": "Moves world time forward (not back). Jobs whose timer runs out are resolved at once with a report in chat.",
+      "Advanced": "Game time: {now}."
     }
   }
 }
