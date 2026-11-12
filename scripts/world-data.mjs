@@ -212,6 +212,47 @@ for (const mission of Object.values(MISSIONS)) {
   if (mission.needsInput) withText(mission, `Missions.${mission.id}`, { inputLabel: "InputLabel", inputPlaceholder: "InputPlaceholder" });
 }
 
+/**
+ * Czas trwania zleceń w godzinach świata (zwykły cel, zlecenie w osadzie).
+ * Wspólna zasada: członek wykonuje jedno zlecenie na postój, więc czas nie zmienia zarobku,
+ * tylko to, KIEDY przychodzi wynik i ile postojów członek opuszcza.
+ * - Szybkie (do 3 godz.): wsparcie w tej samej scenie. Dywersja daje Zamieszanie, zanim skończy się nocny skok.
+ * - Nocne (4–12 godz.): wysłane wieczorem kończą się przed rannym postojem. Zwiad jest krótszy niż skoki,
+ *   które z niego korzystają (Rozpoznanie trwa 2 noce), więc wysłany razem z nimi zdąży przed nimi.
+ * - Wyprawy (24–48 godz.): członek opuszcza 1–2 postoje (tyle co areszt 1d3 nocy), dlatego tylko zlecenia,
+ *   które płacą jak 2–3 zwykłe (kontrakt, okup, przemyt, eskorta, spływ).
+ */
+export const MISSION_HOURS = {
+  // Wywiad
+  scout: 4, shadow: 5, tavern: 4, patrol: 5, buy_secret: 3, intercept: 8, infiltrate: 8,
+  // Zasoby i łupy
+  procure: 3, pickpocket: 3, burglary: 6, farm_theft: 5, poaching: 8, highway_robbery: 8, mine_raid: 10,
+  fence: 2, garrison: 12, requisition: 4, ransom: 24, toll: 8, contraband: 6, report: 3,
+  // Wpływy
+  intimidate: 2, racket: 6, rumor_spread: 4, bribe: 2,
+  // Operacje
+  distract: 2, sabotage: 6, smuggle: 24, forge: 12, escort: 24, contract: 48, ambush: 8,
+  river_run: 24, letter_swap: 6, abduction: 12,
+  // Obóz (bez dojścia, teren nie wydłuża)
+  cover_tracks: 2, tend_wounded: 8, drill: 4, cache: 3, ritual: 3, stone_circle: 8
+};
+
+/** Cel wpływa na czas: łatwy to szybki skok, bogaty wymaga czatowania i omijania straży. */
+export const TIER_HOURS = { easy: 0.5, normal: 1, rich: 1.5 };
+
+/** Dojście w dziczy: zlecenia „wszędzie” trwają dłużej w lesie i górach (zlecenia obozu i dzikie z natury bez zmian). */
+export const TERRAIN_HOURS = { city: 1, village: 1, forest: 1.25, mountains: 1.5 };
+
+/** Domyślny czas zlecenia po uwzględnieniu celu i terenu (bez tempa i ustawień MG). */
+export function missionBaseHours(missionId, { tier = null, terrain = null, base = null } = {}) {
+  const mission = MISSIONS[missionId];
+  let hours = Number(base ?? MISSION_HOURS[missionId] ?? 0);
+  if (!mission || !(hours > 0)) return 0;
+  if (mission.tiered && TIER_HOURS[tier]) hours *= TIER_HOURS[tier];
+  if (mission.terrains === "all" && mission.category !== "camp" && TERRAIN_HOURS[terrain]) hours *= TERRAIN_HOURS[terrain];
+  return hours;
+}
+
 export const MISSION_CATEGORIES = textConfig({
   intel: { icon: "fas fa-eye" },
   resources: { icon: "fas fa-coins" },

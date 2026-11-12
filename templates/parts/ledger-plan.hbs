@@ -69,7 +69,7 @@
           <div class="uw-l-job-body">
             <h4>{{this.name}}{{#if this.tiered}} <span class="uw-l-job-tier" data-tooltip="{{underworldT 'TasksTab.TierHint'}}">{{uwIcon "ui-token_lead"}}</span>{{/if}}</h4>
             <p class="uw-l-job-desc">{{this.desc}}</p>
-            {{{underworldMissionMeta this.id}}}
+            {{{underworldMissionMeta this.id this.duration}}}
           </div>
           <button type="button" class="btn-send-mission" data-action="send-mission" data-type="{{this.id}}" title="{{this.name}}">
             {{#if this.noNpc}}{{underworldT "Mission.Send"}}{{else}}{{underworldT "TasksTab.Assign"}}{{/if}}

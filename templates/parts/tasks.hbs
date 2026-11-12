@@ -76,7 +76,7 @@
           <div class="mission-row-body">
             <strong>{{this.name}}</strong>{{#if this.tiered}} <span class="uw-tier-flag" data-tooltip="{{underworldT 'TasksTab.TierHint'}}"><i class="fas fa-layer-group"></i> {{underworldT "TasksTab.Tier"}}</span>{{/if}}
             <span class="mission-desc">{{this.desc}}</span>
-            {{{underworldMissionMeta this.id}}}
+            {{{underworldMissionMeta this.id this.duration}}}
           </div>
           <button type="button" class="btn-send-mission" data-action="send-mission" data-type="{{this.id}}" title="{{this.name}}">
             <i class="fas fa-paper-plane"></i> {{#if this.noNpc}}{{underworldT "Mission.Send"}}{{else}}{{underworldT "TasksTab.Assign"}}{{/if}}

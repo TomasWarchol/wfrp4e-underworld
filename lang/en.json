@@ -1704,7 +1704,8 @@
     "Meta": {
       "Target": "Target {value}",
       "TargetHint": "Target for the simplified test (before crew modifiers)",
-      "SkillHint": "Skill used when testing from the member's sheet"
+      "SkillHint": "Skill used when testing from the member's sheet",
+      "TimeHint": "Time in the game world (normal target, current terrain). A member does one job per camp rest."
     },
     "Notoriety": {
       "0": {
@@ -2195,7 +2196,11 @@
       "ResolveWeek": "Resolve the Week",
       "StartRest": "Start Resting",
       "WeekDone": "The crew's week is resolved – report in the chat.",
-      "NightDone": "Night camp resolved! Assignments reset for the new day."
+      "NightDone": "Night camp resolved! Assignments reset for the new day.",
+      "NightPasses": "The night passes: move world time to morning",
+      "TurnPasses": "The turn passes: move world time by {days} days",
+      "NightPassesHint": "(until {time}). Jobs that end by then go into the camp report.",
+      "NightPassesJobs": "Jobs under way: {total}, {done} will end by morning. The rest come back after a later rest."
     },
     "LinkDialog": {
       "NoActors": "There are no other actors in the world to link.",
@@ -5828,12 +5833,10 @@
       "TurnDaysHint": "One resolution (camp, rest, camp tests) per turn. 0 = standard: a night or a week. Now: {effective} d.",
       "GoldMultiplier": "Gold multiplier (%)",
       "GoldMultiplierHint": "Multiplies the crew's income (jobs, fence, rackets, camp finds). 100 = unchanged, 150 = one and a half times. Expenses unchanged.",
-      "MissionHours": "Job duration (hours)",
-      "MissionHoursHint": "Default time after which a job ends in the game world. 0 = instant.",
       "WeeklyNote": "Crew Week: jobs have no timers, the GM resolves them with the week.",
       "WorldNow": "Now in the game world",
       "PerMission": "Duration of individual jobs",
-      "PerMissionHint": "Empty = the default duration. 0 = this job ends at once.",
+      "PerMissionHint": "Base duration in hours (normal target, settlement). Empty = the default shown as a hint. 0 = this job ends at once. Target and terrain still change it: easy ×0.5, rich ×1.5, forest ×1.25, mountains ×1.5.",
       "PlayerTabs": "Player tabs",
       "PlayerTabsHint": "Untick the tabs the player gives up. The GM always sees all of them. Info is always visible.",
       "TimedMissions": "Timed jobs",
@@ -5848,7 +5851,11 @@
       "Turn": "turn",
       "Advance": "Advance",
       "AdvanceHint": "Moves world time forward (not back). Jobs whose timer runs out are resolved at once with a report in chat.",
-      "Advanced": "Game time: {now}."
+      "Advanced": "Game time: {now}.",
+      "MissionTempo": "Job tempo (%)",
+      "MissionTempoHint": "100 = default durations, 50 = twice as fast, 200 = twice as slow. 0 = every job ends at once.",
+      "EffectiveHint": "Duration now: normal target, current terrain, with tempo.",
+      "Instant": "at once"
     }
   }
 }

@@ -6390,3 +6390,6 @@
 .uw-gm-time-now { margin: 0 0 6px; }
 .uw-gm-time-buttons, .uw-gm-time-custom { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-bottom: 6px; }
 .uw-gm-time-custom input { width: 80px; }
+.uw-gm-mission-eff { opacity: 0.7; font-size: 0.75rem; margin-left: 4px; white-space: nowrap; }
+.uw-tier-time { display: inline-block; margin-left: 6px; font-size: 0.78rem; opacity: 0.8; white-space: nowrap; }
+.meta-chip.meta-time { background: rgba(80, 60, 120, 0.12); }

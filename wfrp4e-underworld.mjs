@@ -72,7 +72,7 @@ Hooks.once("init", async function () {
   };
   game.settings.register(MODULE_ID, "turnDays", { scope: "world", config: false, type: Number, default: 0, onChange: rerenderSheets });
   game.settings.register(MODULE_ID, "goldMultiplier", { scope: "world", config: false, type: Number, default: 100, onChange: rerenderSheets });
-  game.settings.register(MODULE_ID, "missionHours", { scope: "world", config: false, type: Number, default: 0, onChange: rerenderSheets });
+  game.settings.register(MODULE_ID, "missionTempo", { scope: "world", config: false, type: Number, default: 100, onChange: rerenderSheets });
   game.settings.register(MODULE_ID, "missionHoursById", { scope: "world", config: false, type: Object, default: {}, onChange: rerenderSheets });
 
   game.settings.register(MODULE_ID, "dailyQueue", {
@@ -348,7 +348,7 @@ Hooks.once("init", async function () {
   });
 
   // Parametry zlecenia przy przycisku „Przydziel”: próg, umiejętność, ryzyko porażki, spodziewany efekt
-  Handlebars.registerHelper("underworldMissionMeta", function (type) {
+  Handlebars.registerHelper("underworldMissionMeta", function (type, duration) {
     const info = UnderworldOperations.MISSION_INFO?.[type];
     if (!info) return "";
     const riskLabels = {
@@ -362,6 +362,7 @@ Hooks.once("init", async function () {
     if (info.skill) chips.push(`<span class="meta-chip meta-skill" data-tooltip="${t("Meta.SkillHint")}"><i class="fas fa-dice-d20"></i> ${esc(game.i18n.localize(info.skill))}</span>`);
     if (info.risk) chips.push(`<span class="meta-chip ${riskLabels[info.risk].cls}"><i class="fas fa-triangle-exclamation"></i> ${riskLabels[info.risk].text}</span>`);
     if (info.reward) chips.push(`<span class="meta-chip meta-reward"><i class="fas fa-sack-dollar"></i> ${esc(info.reward)}</span>`);
+    if (typeof duration === "string" && duration) chips.push(`<span class="meta-chip meta-time" data-tooltip="${t("Meta.TimeHint")}"><i class="fas fa-hourglass-half"></i> ${esc(duration)}</span>`);
     return new Handlebars.SafeString(`<div class="mission-meta">${chips.join("")}</div>`);
   });
 

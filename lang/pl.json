@@ -1704,7 +1704,8 @@
     "Meta": {
       "Target": "Próg {value}",
       "TargetHint": "Próg testu uproszczonego (przed modyfikatorami szajki)",
-      "SkillHint": "Umiejętność przy teście z karty członka"
+      "SkillHint": "Umiejętność przy teście z karty członka",
+      "TimeHint": "Czas wykonania w świecie gry (zwykły cel, obecny teren). Członek wykonuje jedno zlecenie na postój."
     },
     "Notoriety": {
       "0": {
@@ -2195,7 +2196,11 @@
       "ResolveWeek": "Rozpatrz Tydzień",
       "StartRest": "Rozpocznij Odpoczynek",
       "WeekDone": "Tydzień szajki rozpatrzony – raport na czacie.",
-      "NightDone": "Nocny postój rozstrzygnięty! Przydziały zresetowane na nowy dzień."
+      "NightDone": "Nocny postój rozstrzygnięty! Przydziały zresetowane na nowy dzień.",
+      "NightPasses": "Noc mija: przesuń czas świata do rana",
+      "TurnPasses": "Tura mija: przesuń czas świata o {days} dni",
+      "NightPassesHint": "(do {time}). Zlecenia zakończone w tym czasie trafią do raportu postoju.",
+      "NightPassesJobs": "Zlecenia w toku: {total}, do rana skończy się {done}. Reszta wraca po kolejnym postoju."
     },
     "LinkDialog": {
       "NoActors": "Brak innych aktorów w świecie do połączenia.",
@@ -5828,12 +5833,10 @@
       "TurnDaysHint": "Jedno rozliczenie (postój, odpoczynek, testy obozu) na turę. 0 = standard: noc albo tydzień. Teraz: {effective} d.",
       "GoldMultiplier": "Mnożnik złota (%)",
       "GoldMultiplierHint": "Mnoży przychody szajki (zlecenia, paser, haracze, znaleziska w obozie). 100 = bez zmian, 150 = półtora raza. Wydatki bez zmian.",
-      "MissionHours": "Czas zlecenia (godziny)",
-      "MissionHoursHint": "Domyślny czas, po którym zlecenie się kończy w świecie gry. 0 = natychmiast.",
       "WeeklyNote": "Tydzień Szajki: zlecenia nie mają liczników, MG rozlicza je razem z tygodniem.",
       "WorldNow": "Teraz w świecie gry",
       "PerMission": "Czas dla poszczególnych zleceń",
-      "PerMissionHint": "Puste pole = czas domyślny. 0 = to zlecenie kończy się od razu.",
+      "PerMissionHint": "Czas bazowy w godzinach (zwykły cel, osada). Puste pole = wartość domyślna z podpowiedzi. 0 = to zlecenie kończy się od razu. Cel i teren nadal go zmieniają: łatwy ×0,5, bogaty ×1,5, las ×1,25, góry ×1,5.",
       "PlayerTabs": "Zakładki gracza",
       "PlayerTabsHint": "Odznacz zakładki, z których gracz rezygnuje. MG zawsze widzi wszystkie. Informacje są zawsze widoczne.",
       "TimedMissions": "Zlecenia z licznikiem",
@@ -5848,7 +5851,11 @@
       "Turn": "tura",
       "Advance": "Przesuń",
       "AdvanceHint": "Przesuwa czas świata do przodu (nie wstecz). Zlecenia, którym minie licznik, rozpatrzą się od razu z raportem na czacie.",
-      "Advanced": "Czas gry: {now}."
+      "Advanced": "Czas gry: {now}.",
+      "MissionTempo": "Tempo zleceń (%)",
+      "MissionTempoHint": "100 = czasy domyślne, 50 = dwa razy szybciej, 200 = dwa razy wolniej. 0 = wszystkie zlecenia kończą się od razu.",
+      "EffectiveHint": "Czas teraz: zwykły cel, obecny teren, z tempem.",
+      "Instant": "od razu"
     }
   }
 }

@@ -9,7 +9,7 @@ import { UnderworldTables } from "./tables-data.mjs";
 import { UnderworldRollTables } from "./roll-tables.mjs";
 import { OrderEffects } from "./order-effects.mjs";
 import {
-  MISSIONS, MISSION_CATEGORIES, CATEGORY_ICON_CLASS, TERRAINS, TERRAIN_IDS, TARGET_TIERS, TOKENS, LOOT_CATEGORIES,
+  MISSIONS, MISSION_CATEGORIES, CATEGORY_ICON_CLASS, TERRAINS, TERRAIN_IDS, TARGET_TIERS, TOKENS, LOOT_CATEGORIES, MISSION_HOURS,
   missionAvailable, missionName, missionDesc
 } from "./world-data.mjs";
 import { registry, dialogContent, dialogValue, escapeHTML } from "../../wfrp4e-companion-lib/scripts/companion-lib.mjs";
@@ -312,7 +312,8 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
           name: missionName(m, terrainId),
           desc: missionDesc(m, terrainId),
           tiered: !!m.tiered,
-          noNpc: !!m.noNpc
+          noNpc: !!m.noNpc,
+          duration: this._durationLabel(missionId, terrainId, m.tiered ? "normal" : null)
         }))
     })).filter(cat => cat.missions.length);
 
@@ -331,13 +332,19 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       turnDays: UnderworldOperations.customTurnDays(),
       effectiveTurn: UnderworldOperations.turnDays(),
       goldMultiplier: UnderworldOperations.goldMultiplier(),
-      missionHours: UnderworldOperations._num("missionHours", 0),
+      missionTempo: UnderworldOperations.missionTempo(),
       weekly: UnderworldOperations.isWeekly(),
       now: UnderworldOperations.formatDateTime(game.time.worldTime),
       tabs: HIDEABLE_TABS.map(id => ({ id, label: t(TAB_LABEL_KEYS[id]), visible: !hidden.has(id) })),
       missions: Object.entries(MISSIONS)
-        .filter(([, m]) => !m.noNpc && !m.targetWounded && profileHasMission(gang, m) && missionAvailable(m, terrainId))
-        .map(([id, m]) => ({ id, name: missionName(m, terrainId), hours: overrides[id] === undefined || overrides[id] === null ? "" : overrides[id] })),
+        .filter(([, m]) => !m.noNpc && profileHasMission(gang, m) && missionAvailable(m, terrainId))
+        .map(([id, m]) => ({
+          id,
+          name: missionName(m, terrainId),
+          hours: overrides[id] === undefined || overrides[id] === null ? "" : overrides[id],
+          defaultHours: MISSION_HOURS[id] ?? 0,
+          effective: this._durationLabel(id, terrainId, m.tiered ? "normal" : null) || t("GM.Instant")
+        })),
       restLocked: !!gang.lastCampRestDay
     };
   }
@@ -1284,7 +1291,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     const MODULE_ID = "wfrp4e-underworld";
     await game.settings.set(MODULE_ID, "turnDays", Math.round(num("turnDays", 0, 60, 0)));
     await game.settings.set(MODULE_ID, "goldMultiplier", Math.round(num("goldMultiplier", 0, 1000, 100)));
-    await game.settings.set(MODULE_ID, "missionHours", num("missionHours", 0, 720, 0));
+    await game.settings.set(MODULE_ID, "missionTempo", Math.round(num("missionTempo", 0, 400, 100)));
     const overrides = {};
     for (const input of root.querySelectorAll("[data-gm-mission-hours]")) {
       const raw = input.value.trim();
@@ -1365,7 +1372,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
           <input type="text" id="mission-target-input" placeholder="${escapeHTML(mission.inputPlaceholder || "")}" />
         </div>`;
     }
-    if (mission.tiered) extraHtml = this._tierPickerHtml(gang) + extraHtml;
+    if (mission.tiered) extraHtml = this._tierPickerHtml(gang, mission, terrainId) + extraHtml;
     if (mission.target && UnderworldOperations.getToken(gang, "commotion")) {
       extraHtml += `<p class="uw-dialog-note is-gain"><i class="${TOKENS.commotion.icon}"></i> ${t("Mission.CommotionNote", { name: TOKENS.commotion.name, bonus: TOKENS.commotion.bonus })}</p>`;
     }
@@ -1426,7 +1433,10 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
   /** Wykonuje zlecenie albo, w trybie tygodnia lub kolejki MG, tylko je planuje. */
   async _dispatchMission(mission, npcId, input, tier, label) {
     // Licznik czasu: zlecenie z czasem trwania kończy się o wskazanej porze świata (MG może je zakończyć od razu)
-    const hours = UnderworldOperations.usesTimers() ? UnderworldOperations.missionHours(UnderworldOperations.PLANNABLE_MISSIONS[mission.fn]) : 0;
+    const terrain = UnderworldOperations.getTerrain(GangData.getGang(this.actor));
+    const hours = UnderworldOperations.usesTimers()
+      ? UnderworldOperations.missionHours(UnderworldOperations.PLANNABLE_MISSIONS[mission.fn], { tier: mission.tiered ? (tier || "normal") : null, terrain })
+      : 0;
     if (hours > 0 || UnderworldOperations.usesPlanning()) {
       if (await UnderworldOperations.planMission(this.actor, npcId, mission.fn, input, tier, { hours })) {
         if (hours > 0) {
@@ -1446,10 +1456,22 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     this.render();
   }
 
+  /** Czas zlecenia do pokazania graczowi („~6 godz.”); pusty, gdy zlecenie kończy się od razu. */
+  _durationLabel(missionId, terrainId, tier = null) {
+    const mission = MISSIONS[missionId];
+    if (!mission || mission.noNpc || !UnderworldOperations.usesTimers()) return "";
+    const hours = UnderworldOperations.missionHours(missionId, { tier, terrain: terrainId });
+    return hours > 0 ? UnderworldOperations.formatRemaining(hours * 3600) : "";
+  }
+
   /** Wybór celu (łatwy / zwykły / bogaty) z podglądem żetonów przygotowania. */
-  _tierPickerHtml(gang) {
+  _tierPickerHtml(gang, mission = null, terrainId = null) {
     const recon = UnderworldOperations.getToken(gang, "recon");
     const lead = UnderworldOperations.getToken(gang, "lead");
+    const durationNote = (tierId) => {
+      const label = mission ? this._durationLabel(mission.id, terrainId, tierId) : "";
+      return label ? ` <span class="uw-tier-time"><i class="fas fa-hourglass-half"></i> ${label}</span>` : "";
+    };
     const options = Object.entries(TARGET_TIERS).map(([id, tier]) => {
       const leadApplies = id === "rich" && lead;
       const modifier = leadApplies ? 0 : tier.modifier;
@@ -1459,7 +1481,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
           <input type="radio" name="mission-tier" value="${id}" ${id === "normal" ? "checked" : ""} />
           <span class="uw-tier-name">${tier.name}</span>
           <span class="uw-tier-mod">${modText}</span>
-          <span class="uw-tier-desc">${leadApplies ? t("Tier.LeadApplies", { name: TOKENS.lead.name }) : tier.desc}</span>
+          <span class="uw-tier-desc">${leadApplies ? t("Tier.LeadApplies", { name: TOKENS.lead.name }) : tier.desc}${durationNote(id)}</span>
         </label>`;
     }).join("");
     const notes = [];
@@ -1639,6 +1661,25 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       ? (weekly ? t("Camp.CostPerWeek", { cost: terrain.comfortableCostSS * 7 }) : `${terrain.comfortableCostSS} ${t("Units.SS")}`)
       : t("Free");
     const plannedCount = gang.roster.filter(n => n.plannedMission && !n.plannedMission.endsAt).length;
+    // „Noc mija” (MG, tryb dzienny): czas świata przesuwa się do rana i postój rozlicza zlecenia zakończone w nocy
+    const nightOption = !weekly && game.user.isGM;
+    let nightHtml = "";
+    if (nightOption) {
+      const nightSeconds = UnderworldOperations.nightSeconds();
+      const morning = game.time.worldTime + nightSeconds;
+      const timed = gang.roster.filter(n => n.status === "busy" && n.plannedMission?.endsAt);
+      const endingTonight = timed.filter(n => Number(n.plannedMission.endsAt) <= morning).length;
+      const custom = UnderworldOperations.customTurnDays();
+      nightHtml = `
+        <div class="dialog-section" style="margin-bottom: 12px; border-bottom: 1px dashed #9e856f; padding-bottom: 10px;">
+          <label style="cursor: pointer; display: flex; align-items: center; gap: 8px; margin: 0;">
+            <input type="checkbox" id="rest-night-passes" checked style="margin: 0; width: 16px; height: 16px;" />
+            <span><strong>${custom ? t("CampDialog.TurnPasses", { days: custom }) : t("CampDialog.NightPasses")}</strong>
+              <span style="color: #554433;">${t("CampDialog.NightPassesHint", { time: UnderworldOperations.formatDateTime(morning) })}</span></span>
+          </label>
+          ${timed.length ? `<p style="margin: 6px 0 0; font-size: 0.82rem; color: #554433;"><i class="fas fa-hourglass-half"></i> ${t("CampDialog.NightPassesJobs", { done: endingTonight, total: timed.length })}</p>` : ""}
+        </div>`;
+    }
     const availableWatchmen = gang.roster.filter(n => !["dead", "wounded", "arrested"].includes(n.status));
 
     let watchmenHtml = availableWatchmen.map(n => {
@@ -1663,6 +1704,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
 
     const contentHtml = `
       <div class="underworld-dialog camp-rest-dialog" style="font-size: 0.9rem; padding: 2px 4px;">
+        ${nightHtml}
         ${weekly ? `
         <div class="dialog-section" style="margin-bottom: 12px; border-bottom: 1px dashed #9e856f; padding-bottom: 10px;">
           <p style="margin: 0 0 6px;"><i class="fas fa-tasks"></i> ${t("CampDialog.Planned", { count: plannedCount })}</p>
@@ -1764,7 +1806,8 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
               const result = await UnderworldOperations.executeWeek(this.actor, { ...campOptions, advanceTime });
               if (result !== false) ui.notifications.info(t("CampDialog.WeekDone"));
             } else {
-              await UnderworldOperations.executeCampRest(this.actor, campOptions);
+              const nightPasses = nightOption && !!el.querySelector("#rest-night-passes")?.checked;
+              await UnderworldOperations.executeCampRest(this.actor, { ...campOptions, nightPasses });
               ui.notifications.info(t("CampDialog.NightDone"));
             }
             this.render();

@@ -7,7 +7,7 @@ import { GangData } from "./gang-data.mjs";
 import { UnderworldTables } from "./tables-data.mjs";
 import { registry, time } from "../../wfrp4e-companion-lib/scripts/companion-lib.mjs";
 import { OrderEffects } from "./order-effects.mjs";
-import { MISSIONS, TERRAINS, TARGET_TIERS, LOOT_VALUE, TOKENS, LOOT_NAMES, LOOT_CATEGORIES, missionName, missionLootCategories } from "./world-data.mjs";
+import { MISSIONS, TERRAINS, TARGET_TIERS, LOOT_VALUE, TOKENS, LOOT_NAMES, LOOT_CATEGORIES, MISSION_HOURS, missionName, missionLootCategories, missionBaseHours } from "./world-data.mjs";
 import { t, textConfig } from "./i18n.mjs";
 import { DATA_MISSIONS, profileHasMission, profileOf } from "./company-profiles.mjs";
 
@@ -128,13 +128,32 @@ export class UnderworldOperations {
     return Math.max(0, Math.round(Number(pennies) * this.goldMultiplier() / 100));
   }
 
-  /** Czas trwania zlecenia w godzinach: wartość dla danego zlecenia albo domyślna (0 = od razu). */
-  static missionHours(missionId) {
+  /** Tempo zleceń w procentach (100 = czasy domyślne, 0 = wszystko od razu, jak przed licznikami). */
+  static missionTempo() {
+    const pct = this._num("missionTempo", 100);
+    return Math.max(0, Math.min(400, pct));
+  }
+
+  /** Czas bazowy zlecenia (zwykły cel, osada): ustawienie MG albo wartość domyślna z tabeli. */
+  static missionBaseSetting(missionId) {
     let overrides = {};
     try { overrides = game.settings.get("wfrp4e-underworld", "missionHoursById") || {}; } catch (e) { overrides = {}; }
     const own = overrides?.[missionId];
-    const hours = own === undefined || own === null || own === "" ? this._num("missionHours", 0) : Number(own);
-    return Number.isFinite(hours) ? Math.max(0, Math.min(720, hours)) : 0;
+    if (own === undefined || own === null || own === "" || !Number.isFinite(Number(own))) return { hours: MISSION_HOURS[missionId] ?? 0, custom: false };
+    return { hours: Math.max(0, Math.min(720, Number(own))), custom: true };
+  }
+
+  /**
+   * Czas trwania zlecenia w godzinach świata (0 = od razu): baza (MG albo tabela) × cel × teren × tempo,
+   * zaokrąglone do pół godziny, co najmniej 1 godz.
+   */
+  static missionHours(missionId, { tier = null, terrain = null } = {}) {
+    const tempo = this.missionTempo();
+    const { hours: base } = this.missionBaseSetting(missionId);
+    if (!(tempo > 0) || !(base > 0)) return 0;
+    const hours = missionBaseHours(missionId, { tier, terrain, base }) * tempo / 100;
+    if (!(hours > 0)) return 0;
+    return Math.min(720, Math.max(1, Math.round(hours * 2) / 2));
   }
 
   /** Czy zlecenia mają licznik czasu (nie w Tygodniu Szajki, tam rozlicza MG). */
@@ -741,6 +760,21 @@ export class UnderworldOperations {
    * Rozpatruje wszystkie zaplanowane zlecenia szajki (u MG) i zbiera ich karty zamiast publikować je osobno.
    * @returns {Promise<{missionCards: object[], extraRolls: Roll[]}>}
    */
+  /**
+   * Ile sekund świata mija w czasie postoju z opcją „Noc mija”: przy własnej turze cała tura,
+   * w trybie dziennym do najbliższej 6:00 rano.
+   */
+  static nightSeconds(now = time.now()) {
+    const spd = time.secondsPerDay();
+    const custom = this.customTurnDays();
+    if (custom) return custom * spd;
+    const morning = Math.min(6 * 3600, Math.floor(spd / 4));
+    const secondsOfDay = ((Number(now) % spd) + spd) % spd;
+    let delta = morning - secondsOfDay;
+    if (delta <= 0) delta += spd;
+    return delta;
+  }
+
   /** Czy plan czeka na rozpatrzenie przez MG: bez licznika albo z licznikiem, który już minął. */
   static isPlanDue(plan, now = time.now()) {
     return !plan?.endsAt || Number(plan.endsAt) <= now;
@@ -763,6 +797,8 @@ export class UnderworldOperations {
       if (!profileHasMission(gang, MISSIONS[PLANNABLE_MISSIONS[plan.fn]])) continue;
       plans.push({ npcId: npc.id, ...plan });
     }
+    // Kolejność jak w świecie: najpierw to, co skończyło się wcześniej (zwiad przed skokiem)
+    plans.sort((a, b) => (Number(a.endsAt) || 0) - (Number(b.endsAt) || 0));
     await GangData.saveGang(actor, gang);
 
     const missionCards = [];
@@ -1615,9 +1651,31 @@ export class UnderworldOperations {
       return false;
     }
 
+    // „Noc mija” (MG, tryb dzienny): najpierw czas świata przesuwa się do rana, potem zlecenia zakończone
+    // w nocy trafiają do raportu postoju. Postój liczy się dla dnia, w którym się zaczął.
+    if (options.nightPasses && !options.dayKey) {
+      if (!game.user.isGM || options.weekly) return this.executeCampRest(actor, { ...options, nightPasses: false });
+      const dayKey = this._worldDayKey();
+      if (GangData.getGang(actor).lastCampRestDay === dayKey) {
+        ui.notifications.warn(t("Notify.CampAlreadyResolved"));
+        return false;
+      }
+      // Licznik zleceń czeka, aż postój sam rozpatrzy to, co skończyło się w nocy
+      const wasRunning = this._dueRunning;
+      this._dueRunning = true;
+      try {
+        await game.time.advance(this.nightSeconds());
+        return await this.executeCampRest(actor, { ...options, dayKey });
+      } finally {
+        this._dueRunning = wasRunning;
+        if (!wasRunning) this.resolveDueMissions();
+      }
+    }
+    const restDayKey = options.dayKey || this._worldDayKey();
+
     // Kolejka MG w trybie dziennym: zaległe przydziały rozpatrujemy przed postojem, w tym samym raporcie
     if (!options.weekly && GangData.getGang(actor).roster.some(n => n.plannedMission && this.isPlanDue(n.plannedMission))) {
-      if (GangData.getGang(actor).lastCampRestDay === this._worldDayKey()) {
+      if (GangData.getGang(actor).lastCampRestDay === restDayKey) {
         ui.notifications.warn(t("Notify.CampAlreadyResolved"));
         return false;
       }
@@ -1634,7 +1692,8 @@ export class UnderworldOperations {
     }
 
     const gang = GangData.getGang(actor);
-    const dayKey = this._worldDayKey();
+    const dayKey = restDayKey;
+    const nowKey = this._worldDayKey();
     const restLock = gang.campRestInProgress;
     const lockIsFresh = restLock?.dayKey === dayKey && Date.now() - restLock.startedAt < 120000;
     if (gang.lastCampRestDay === dayKey || lockIsFresh) {
@@ -1757,7 +1816,7 @@ export class UnderworldOperations {
           healedList.push(t("Camp.Heal.Healing", { name: n.name }));
         }
       } else if (n.status === "arrested") {
-        if (n.arrestedOn === dayKey) {
+        if (n.arrestedOn === dayKey || n.arrestedOn === nowKey) {
           healedList.push(t("Camp.Heal.JustArrested", { name: n.name, time: this.cycleLabel(Number(n.arrestedNights) || 1) }));
           n.assignment = "none";
           return;
@@ -1772,6 +1831,8 @@ export class UnderworldOperations {
           healedList.push(t("Camp.Heal.StillArrested", { name: n.name, time: this.cycleLabel(n.arrestedNights) }));
         }
       } else if (n.status === "busy") {
+        // Zlecenie z licznikiem jeszcze trwa: członek zostaje w terenie i nie traci przydziału
+        if (n.plannedMission && !this.isPlanDue(n.plannedMission)) return;
         n.status = "ready";
       }
       n.assignment = "none";

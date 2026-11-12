@@ -17,9 +17,9 @@
         <span class="uw-gm-hint">{{underworldT "GM.GoldMultiplierHint"}}</span>
       </label>
       <label class="uw-gm-field">
-        <span class="uw-gm-label">{{underworldT "GM.MissionHours"}}</span>
-        <input type="number" min="0" max="720" step="0.5" value="{{gmView.missionHours}}" data-gm-field="missionHours"/>
-        <span class="uw-gm-hint">{{underworldT "GM.MissionHoursHint"}}</span>
+        <span class="uw-gm-label">{{underworldT "GM.MissionTempo"}}</span>
+        <input type="number" min="0" max="400" step="5" value="{{gmView.missionTempo}}" data-gm-field="missionTempo"/>
+        <span class="uw-gm-hint">{{underworldT "GM.MissionTempoHint"}}</span>
       </label>
     </div>
     {{#if gmView.weekly}}<p class="uw-gm-note"><i class="fas fa-info-circle"></i> {{underworldT "GM.WeeklyNote"}}</p>{{/if}}
@@ -31,8 +31,8 @@
       <div class="uw-gm-missions">
         {{#each gmView.missions}}
         <label class="uw-gm-mission">
-          <span>{{this.name}}</span>
-          <input type="number" min="0" max="720" step="0.5" value="{{this.hours}}" placeholder="–" data-gm-mission-hours="{{this.id}}"/>
+          <span>{{this.name}} <small class="uw-gm-mission-eff" data-tooltip="{{underworldT 'GM.EffectiveHint'}}">{{this.effective}}</small></span>
+          <input type="number" min="0" max="720" step="0.5" value="{{this.hours}}" placeholder="{{this.defaultHours}}" data-gm-mission-hours="{{this.id}}"/>
         </label>
         {{/each}}
       </div>
