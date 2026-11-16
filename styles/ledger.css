@@ -11,6 +11,14 @@
 @font-face { font-family: "UW Caslon"; font-style: italic; src: url("../../../systems/wfrp4e/fonts/ACaslonPro-Italic.otf") format("opentype"); font-display: swap; }
 @font-face { font-family: "UW Caslon"; font-weight: 600; src: url("../../../systems/wfrp4e/fonts/ACaslonPro-Semibold.otf") format("opentype"); font-display: swap; }
 
+/* Polskie litery: Nodesto i Caslon Antique ich nie mają (przeglądarka wstawiałaby glify z innego kroju),
+   więc w polskiej wersji (Foundry ustawia <html lang>) nagłówki i tytuły piszemy krojami z pełnym
+   alfabetem: Grenze Gotisch i Almendra (licencja SIL OFL, pliki w assets/fonts Grimoires/Underworld). */
+@font-face { font-family: "WFRP Grenze Gotisch"; src: url("../assets/fonts/GrenzeGotisch-PL.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "WFRP Almendra"; src: url("../assets/fonts/Almendra-Regular.ttf") format("truetype"); font-display: swap; }
+:root { --uw-font-display: "UW Nodesto", "Nodesto Caps Condensed"; --uw-font-title: "UW Caslon Antique", "Caslon Antique"; }
+:root:lang(pl) { --uw-font-display: "WFRP Grenze Gotisch"; --uw-font-title: "WFRP Almendra"; }
+
 /* ─── Paleta i motywy typów ─── */
 .underworld-app.uw-ledger {
   --l-ink: #1f1711;
@@ -25,8 +33,8 @@
   --l-gold: #c9a24b;
   --l-gold-pale: #ead7a2;
   --l-blood: #8a2b22;
-  --l-display: "UW Nodesto", "Nodesto Caps Condensed", "UW Caslon Antique", serif;
-  --l-name: "UW Caslon Antique", "Caslon Antique", serif;
+  --l-display: var(--uw-font-display), var(--uw-font-title), serif;
+  --l-name: var(--uw-font-title), serif;
   --l-text: "UW Caslon", "Adobe Caslon Pro", "Palatino Linotype", Georgia, serif;
   /* Akcent typu (domyślnie Szajka) */
   --l-accent: #8e2a22;
@@ -682,7 +690,7 @@
 :is(html, #uw) body.uw-ledger-chat .uw-ledger-only { display: inline-flex; }
 :is(html, #uw) body.uw-ledger-chat .uw-card-glyph { display: inline-grid; place-items: center; color: var(--l-accent); }
 :is(html, #uw) body.uw-ledger-chat .uw-card-glyph .uw-icon { width: 1.4em; height: 1.4em; fill: currentColor; }
-:is(html, #uw) body.uw-ledger-chat :is(.uw-card-title, .tactic-chat-title, .camp-card-title) { font-family: "UW Nodesto", "Nodesto Caps Condensed", serif; font-weight: normal; letter-spacing: 0.03em; }
+:is(html, #uw) body.uw-ledger-chat :is(.uw-card-title, .tactic-chat-title, .camp-card-title) { font-family: var(--uw-font-display), serif; font-weight: normal; letter-spacing: 0.03em; }
 /* Karta zlecenia */
 :is(html, #uw) body.uw-ledger-chat .uw-mission-card .uw-card-header { position: relative; display: flex; align-items: center; gap: 8px; padding-right: 46px; border-bottom: 2px solid var(--l-accent); }
 :is(html, #uw) body.uw-ledger-chat .uw-mission-card .uw-card-glyph { order: -1; font-size: 1.2rem; }
@@ -692,7 +700,7 @@
 :is(html, #uw) body.uw-ledger-chat .uw-mission-card.is-great .uw-card-seal { color: #b08d2c; }
 :is(html, #uw) body.uw-ledger-chat .uw-mission-card.is-failure .uw-card-seal { color: #8e2a22; }
 :is(html, #uw) body.uw-ledger-chat .uw-mission-card .uw-card-avatar { border-radius: 50%; border: 2px solid #24201d; box-shadow: 0 0 0 1px #c9a24b; }
-:is(html, #uw) body.uw-ledger-chat .uw-mission-card .uw-card-footer { border-top: 1px dashed #b59f74; font-family: "UW Nodesto", serif; letter-spacing: 0.04em; }
+:is(html, #uw) body.uw-ledger-chat .uw-mission-card .uw-card-footer { border-top: 1px dashed #b59f74; font-family: var(--uw-font-display), serif; letter-spacing: 0.04em; }
 /* Karta rozkazu */
 :is(html, #uw) body.uw-ledger-chat .tactic-card-chat .tactic-chat-header { border-bottom: 2px solid var(--l-accent); }
 :is(html, #uw) body.uw-ledger-chat .tactic-card-chat .tactic-chat-title { display: flex; align-items: center; gap: 6px; color: var(--l-accent-deep); }
@@ -704,8 +712,8 @@
 :is(html, #uw) body.uw-ledger-chat .camp-rest-card .camp-card-title { position: relative; color: #ead7a2; font-size: 1.15rem; }
 :is(html, #uw) body.uw-ledger-chat .camp-rest-card .camp-card-header .uw-card-sub { position: relative; color: #dccb9f; }
 :is(html, #uw) body.uw-ledger-chat .camp-rest-card .camp-block-event { border-left-color: var(--l-accent); background: rgba(120, 80, 40, 0.08); }
-:is(html, #uw) body.uw-ledger-chat .camp-rest-card .camp-block-event > strong { font-family: "UW Nodesto", serif; font-weight: normal; letter-spacing: 0.03em; }
-:is(html, #uw) body.uw-ledger-chat .camp-rest-card .camp-card-footer { font-family: "UW Nodesto", serif; letter-spacing: 0.04em; }
+:is(html, #uw) body.uw-ledger-chat .camp-rest-card .camp-block-event > strong { font-family: var(--uw-font-display), serif; font-weight: normal; letter-spacing: 0.03em; }
+:is(html, #uw) body.uw-ledger-chat .camp-rest-card .camp-card-footer { font-family: var(--uw-font-display), serif; letter-spacing: 0.04em; }
 
 @media (prefers-reduced-motion: reduce) {
   .underworld-app.uw-ledger * { transition: none !important; animation: none !important; }

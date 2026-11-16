@@ -59,7 +59,7 @@
  */
 
 :is(html, #uw) .underworld-app{
-  font-family: "Caslon Antique", "Palatino", "Georgia", serif;
+  font-family: var(--uw-font-title), "Palatino", "Georgia", serif;
   background: var(--uw-paper) url('/systems/wfrp4e/ui/backgrounds/parchment-texture.webp') repeat;
   color: var(--uw-ink);
 }
@@ -511,7 +511,7 @@
 /* ======================================================= */
 
 :is(html, #uw) .underworld-chat-card{
-  font-family: "Caslon Antique", "Palatino", serif;
+  font-family: var(--uw-font-title), "Palatino", serif;
   background: var(--uw-paper);
   border: 2px solid var(--uw-leather-dark);
   border-radius: 4px;
@@ -1278,7 +1278,7 @@
 }
 
 :is(html, #uw) .input-gang-name{
-  font-family: "Caslon Antique", "Palatino", serif;
+  font-family: var(--uw-font-title), "Palatino", serif;
   font-size: 1.25rem;
   font-weight: bold;
   color: var(--uw-gold);
@@ -2023,7 +2023,7 @@
 :is(html, #uw) .underworld-dialog-window .window-content{
   background: var(--uw-paper);
   color: var(--uw-ink);
-  font-family: "Caslon Antique", Palatino, serif;
+  font-family: var(--uw-font-title), Palatino, serif;
 }
 
 :is(html, #uw) .underworld-dialog .form-group{
@@ -2107,7 +2107,7 @@
   background: var(--uw-umber);
   color: var(--uw-parchment);
   border: 1px solid var(--uw-night);
-  font-family: "Caslon Antique", Palatino, serif;
+  font-family: var(--uw-font-title), Palatino, serif;
   font-weight: bold;
   padding: 5px 10px;
   border-radius: 3px;
@@ -2135,7 +2135,7 @@
   border-radius: 6px;
   padding: 8px 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  font-family: "Caslon Antique", Palatino, serif;
+  font-family: var(--uw-font-title), Palatino, serif;
 }
 
 :is(html, #uw) .recruit-candidate-card{
@@ -3830,7 +3830,7 @@
   --wfrp-parchment-light: var(--uw-paper);
   --wfrp-parchment: var(--uw-parchment);
   --wfrp-parchment-dark: #d8c8ab;
-  --wfrp-font: "Caslon Antique", "CaslonAntiquePL", "Palatino", "Georgia", serif;
+  --wfrp-font: var(--uw-font-title), "Palatino", "Georgia", serif;
 }
 
 /* 1. Globalna typografia i podłoże pergaminowe */
@@ -5056,7 +5056,7 @@
   margin: 0;
   font-size: 1.25rem;
   color: var(--uw-umber);
-  font-family: "Caslon Antique", "Palatino", serif;
+  font-family: var(--uw-font-title), "Palatino", serif;
   display: flex;
   align-items: center;
   gap: 8px;
