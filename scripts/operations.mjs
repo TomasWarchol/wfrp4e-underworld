@@ -1954,6 +1954,33 @@ export class UnderworldOperations {
     });
   }
 
+  /**
+   * Rozkazy taktyczne, które Herszt może teraz wydać (ma w Świcie kogoś z wymaganą rolą),
+   * z kosztem w Przewadze. Dla innych modułów, np. Warhammer Battle HUD (game.underworld.tacticalOrders).
+   * Postać bez kompanii albo bez dostępu do niej dostaje pustą listę.
+   */
+  static availableOrders(actor) {
+    if (!actor?.getFlag?.(GangData.MODULE_ID, GangData.FLAG_KEY) || !this._canManageGang(actor)) return [];
+    const gang = GangData.getGang(actor);
+    const retinue = gang.roster.filter(n => n.assignment === "retinue" && !["dead", "wounded", "arrested"].includes(n.status));
+    return Object.entries(this.TACTICAL_ORDERS).flatMap(([id, order]) => {
+      const roles = Array.isArray(order.requiredRoles) ? order.requiredRoles : [];
+      const executor = roles.length
+        ? retinue.find(n => UnderworldTables.canGiveOrder(n, id, order))
+        : retinue.find(n => Number(n.rank) >= 3);
+      if (roles.length && !executor) return [];
+      const [group, icon] = this.ORDER_META[id] || ["offensive", "fas fa-bolt"];
+      return [{
+        id, group, icon,
+        name: order.name,
+        description: order.desc ?? "",
+        effect: order.effect ?? "",
+        cost: Number(order.advantageCost) || 0,
+        executor: executor?.name ?? null
+      }];
+    });
+  }
+
   static TACTICAL_ORDERS = textConfig({
     // 🛡️ OCHRONIARZ / GORYL
     "meatshield": {
