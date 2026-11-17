@@ -264,4 +264,6 @@ Nowych członków przyjmuje wyłącznie decyzja MG: żadne zlecenie ani wydarzen
 game.underworld.openGangSheet();                                   // szajka zaznaczonego tokena / własnej postaci
 game.underworld.openGangSheet(game.actors.getName("Imię Herszta")); // konkretna postać
 game.underworld.openHub();                                         // Centrum Dodatków MG
+game.underworld.tacticalOrders(actor);                             // rozkazy, które Herszt może teraz wydać: [{ id, name, cost, executor, ... }]
+game.underworld.issueOrder(actor, "trip");                         // okno rozkazu, jak w zakładce Taktyka
 ```

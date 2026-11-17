@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.11.0
+- Tactical orders for other modules: `game.underworld.tacticalOrders(actor)` lists the orders the Chief can give right now (with Advantage cost and the retinue member who carries it out), and `game.underworld.issueOrder(actor, orderId)` opens the same order dialog as the Tactics tab. Warhammer Battle HUD uses them to show crew orders next to the Advantage counter.
+
 ## 1.10.1
 - Polish letters in the decorative fonts: Nodesto Caps and Caslon Antique have no ą, ę, ł, ś, ż…, so the browser filled them in from another typeface. When Foundry runs in Polish, headings now use Grenze Gotisch and titles Almendra, both with the full Polish alphabet (SIL Open Font License, files and licences in `assets/fonts`). English keeps the original fonts. This covers both the Ledger and the classic look.
 

@@ -473,6 +473,13 @@ Hooks.once("ready", function () {
         console.error(`${MODULE_ID} | Could not open the crew sheet:`, err);
         ui.notifications.error(t("Notify.OpenFailed", { error: err.message }));
       }
+    },
+    /** Rozkazy taktyczne, które Herszt może teraz wydać: [{ id, name, description, effect, cost, group, icon, executor }]. */
+    tacticalOrders: (actor) => UnderworldOperations.availableOrders(actor),
+    /** Otwiera dialog rozkazu (Dowodzenie, Przewaga albo rozkaz wprost), jak przycisk w zakładce Taktyka. */
+    issueOrder: (actor, orderId) => {
+      if (!UnderworldOperations._canManageGang(actor)) return ui.notifications.warn(t("Notify.NoAccess"));
+      return GangSheet.orderTacticDialog(actor, orderId);
     }
   };
 

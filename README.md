@@ -161,6 +161,8 @@ Ranks bought with OXP (+10 / +20 / +30 to tests; rank 3 is the unique **Right Ha
 game.underworld.openGangSheet();                                    // crew of the selected token / your character
 game.underworld.openGangSheet(game.actors.getName("Chief's name")); // a specific character
 game.underworld.openHub();                                          // GM's Companion Hub
+game.underworld.tacticalOrders(actor);                              // orders the Chief can give now: [{ id, name, cost, executor, ... }]
+game.underworld.issueOrder(actor, "trip");                          // the order dialog, as in the Tactics tab
 ```
 
 ---

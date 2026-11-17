@@ -1047,11 +1047,24 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
   /**
    * Dialog wyboru sposobu wydania rozkazu taktycznego (Dowodzenie vs Przewaga)
    */
-  async _onOrderTacticDialog(orderId) {
+  _onOrderTacticDialog(orderId) {
+    return GangSheet.orderTacticDialog(this.actor, orderId);
+  }
+
+  /** Odświeża otwarte panele kompanii tej postaci (np. po rozkazie wydanym z innego modułu). */
+  static rerender(actor) {
+    foundry.applications.instances.get(GangSheet.appIdFor(actor))?.render();
+  }
+
+  /**
+   * Dialog rozkazu taktycznego dla Herszta. Statyczny, bo wywołują go też inne moduły
+   * (game.underworld.issueOrder, np. z Warhammer Battle HUD).
+   */
+  static async orderTacticDialog(actor, orderId) {
     const orderConfig = UnderworldOperations.TACTICAL_ORDERS[orderId];
     if (!orderConfig) return;
 
-    const gang = GangData.getGang(this.actor);
+    const gang = GangData.getGang(actor);
     const activeRetinue = gang.roster.filter(n =>
       n.assignment === "retinue" && !["dead", "wounded", "arrested"].includes(n.status)
     );
@@ -1072,7 +1085,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     const executorRoleCfg = executor ? UnderworldTables.ROLES_CONFIG[UnderworldTables.normalizeRole(executor.role)] : null;
     const executorHtml = `
       <div style="background: rgba(46, 125, 50, 0.08); border: 1px solid #2e7d32; border-radius: 4px; padding: 6px 10px; margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
-        <img src="${executor ? executor.img : (this.actor.img || 'icons/svg/mystery-man.svg')}" style="width: 32px; height: 32px; border-radius: 4px; object-fit: cover; border: 1px solid #2e7d32;" />
+        <img src="${executor ? executor.img : (actor.img || 'icons/svg/mystery-man.svg')}" style="width: 32px; height: 32px; border-radius: 4px; object-fit: cover; border: 1px solid #2e7d32;" />
         <div>
           <div style="font-weight: bold; font-size: 0.88rem; color: #1b5e20;">
             ${t("Orders.Dialog.Executor")}: ${executor ? executor.name : t("Orders.Dialog.ChiefHimself")}
@@ -1104,8 +1117,8 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
             label: t("Orders.Dialog.MeatShieldButton"),
             default: true,
             callback: async () => {
-              await UnderworldOperations.postTacticalOrder(this.actor, orderId, { method: "direct", executorNpc: executor });
-              this.render();
+              await UnderworldOperations.postTacticalOrder(actor, orderId, { method: "direct", executorNpc: executor });
+              GangSheet.rerender(actor);
             }
           },
           { action: "cancel", label: "WFRP4E_COMPANION.Cancel" }
@@ -1115,8 +1128,8 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       return;
     }
 
-    const curAdvantage = this.actor.status?.advantage?.value 
-      ?? this.actor.system?.status?.advantage?.value 
+    const curAdvantage = actor.status?.advantage?.value 
+      ?? actor.system?.status?.advantage?.value 
       ?? 0;
     const cost = orderConfig.advantageCost || 1;
     const canSpendAdvantage = curAdvantage >= cost;
@@ -1169,9 +1182,9 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
           default: true,
           callback: async (event, button, dialog) => {
             const method = dialog.element.querySelector('input[name="tactic_method"]:checked')?.value || "leadership";
-            await UnderworldOperations.postTacticalOrder(this.actor, orderId, { method, executorNpc: executor });
+            await UnderworldOperations.postTacticalOrder(actor, orderId, { method, executorNpc: executor });
             ui.notifications.info(t("Orders.Dialog.Issued", { order: orderConfig.name }));
-            this.render();
+            GangSheet.rerender(actor);
           }
         },
         { action: "cancel", label: "WFRP4E_COMPANION.Cancel" }
