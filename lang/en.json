@@ -163,7 +163,7 @@
       },
       "pickpocket": {
         "Name": "Pickpocketing",
-        "Reward": "coin (1d10+5 SS × target), sometimes a valuable",
+        "Reward": "coin (1d8+2 SS × target), chance of a valuable",
         "Names": {
           "village": "Thieving at the Fair"
         },
@@ -307,7 +307,7 @@
       },
       "garrison": {
         "Name": "Garrison Duty",
-        "Reward": "1d8+4 SS (SL 3+: another 1d6 SS)",
+        "Reward": "1d6+3 SS (SL 3+: another 1d6 SS)",
         "Desc": "Quiet service at a gate, bridge or storehouse. Small but steady money.",
         "Success": "{name} stands the watch and collects the pay.",
         "Fail": "{name} falls asleep at the post. Nobody pays for a watch like that.",
@@ -333,7 +333,7 @@
       },
       "escort": {
         "Name": "Escort",
-        "Reward": "2d10+5 SS (SL 3+: Infamy −1)",
+        "Reward": "2d8+4 SS, Infamy −1 (SL 3+: another 1d8 SS)",
         "Desc": "Protecting a merchant, a cart or a messenger on a dangerous stretch.",
         "InputLabel": "Who are you protecting?",
         "InputPlaceholder": "e.g. a merchant from Nuln, a salt cart...",
@@ -348,7 +348,7 @@
       },
       "contract": {
         "Name": "Contract",
-        "Reward": "3d10+10 SS times the contract tier (SL 3+: trophy)",
+        "Reward": "2d10+6 SS times the contract tier (SL 3+: trophy)",
         "Desc": "A paid military task: breaking a warband, defending a village, retaking a depot.",
         "InputLabel": "What is the contract?",
         "InputPlaceholder": "e.g. break the band on the highway...",
@@ -387,7 +387,7 @@
       },
       "river_run": {
         "Name": "River Run",
-        "Reward": "the load's value times 2.5 and times the route (SL 3+: Scrutiny −1); needs cargo",
+        "Reward": "the load's value times 2 and times the route (SL 3+: Scrutiny −1); needs cargo",
         "Desc": "A night run with contraband past the locks and customs posts. Takes the most valuable cargo from the stash; on a failure the load goes to the bottom.",
         "Success": "{name} brings the barge through and hands the load to the buyer.",
         "Fail": "{name} turns back before the post. The cargo had to be sunk."
@@ -415,7 +415,7 @@
       },
       "letter_swap": {
         "Name": "Swap a Letter",
-        "Reward": "2d10+5 SS times the target, +5 OXP (SL 3+: a document)",
+        "Reward": "1d10+5 SS times the target, +5 OXP (SL 3+: a document)",
         "Desc": "Intercept a letter, copy it and slip it back, or swap it for a forgery.",
         "InputLabel": "Whose letter?",
         "InputPlaceholder": "e.g. the burgomaster's correspondence, orders for the garrison...",
@@ -424,14 +424,14 @@
       },
       "report": {
         "Name": "Report to the Principal",
-        "Reward": "the document's value times 1.25, no risk (SL 3+: another 1d10 SS); needs a document",
+        "Reward": "the document's value times 1.75, no risk (SL 3+: another 1d10 SS); needs a document",
         "Desc": "The most valuable document in the safehouse goes to the principal, who pays better than a secret-buyer and tells no one.",
         "Success": "{name} hands the document to the principal and collects the payment.",
         "Fail": "{name} brings the document, but the principal finds it worthless. It goes back to the safehouse."
       },
       "ritual": {
         "Name": "Ritual",
-        "Reward": "Exaltation token, +1 Morale (SL 3+: +5 OXP)",
+        "Reward": "Exaltation token, +5 OXP (SL 3+: +1 Morale)",
         "Desc": "Night rites in a cellar or on a hilltop. The faithful return full of fervour.",
         "Success": "{name} leads the ritual. The faithful leave changed.",
         "Fail": "{name} stumbles over the invocation. The faithful whisper of an ill omen."
@@ -461,7 +461,7 @@
       },
       "stone_circle": {
         "Name": "The Stone Circle",
-        "Reward": "+1 Morale, +5 OXP (SL 3+: spoils)",
+        "Reward": "Recon token (SL 3+: Lead and spoils), +1 Morale, +5 OXP",
         "Desc": "A night journey to an old ring of standing stones in the wilds. Sometimes those who came before left something behind.",
         "Success": "{name} returns from the circle before dawn. The faithful hang on every word of the tale.",
         "Fail": "{name} wanders the wilds and comes back soaked and empty-handed."
@@ -866,7 +866,7 @@
       },
       "lieutenant": {
         "Name": "Right Hand",
-        "Desc": "+30 to tests, authority (+1 crew Morale), command orders (unique rank – one per crew; needs over 60–80 days of service)."
+        "Desc": "+30 to tests, authority (+1 crew Morale when < 7), command orders (unique rank – one per crew)."
       }
     },
     "Gear": {
@@ -880,7 +880,7 @@
       },
       "lockpicks": {
         "Name": "Lockpicks and Tools",
-        "Bonus": "+10 to scavenging, pickpocketing and sabotage."
+        "Bonus": "+10 to burglary, farmyard theft, scavenging, pickpocketing and sabotage."
       },
       "disguise": {
         "Name": "Cloak and Disguise",
@@ -1237,7 +1237,7 @@
       },
       "squeamish": {
         "Name": "Squeamish",
-        "Desc": "−10 to intimidation and tending the wounded"
+        "Desc": "−10 to intimidation, poaching and highway robbery"
       },
       "snorer": {
         "Name": "Snorer",
@@ -1249,7 +1249,8 @@
       },
       "greedy": {
         "Name": "Greedy",
-        "Desc": "10% chance each night to pocket some small coin from the stash"
+        "Desc": "10% chance each night to pocket some small coin from the stash",
+        "Camp": "pockets small coins from the stash"
       },
       "homesick": {
         "Name": "Homesick",
@@ -1269,7 +1270,8 @@
       },
       "nightmares": {
         "Name": "Nightmares",
-        "Desc": "15% chance each night of being unfit for duty"
+        "Desc": "15% chance each night of being unfit for duty",
+        "Camp": "wakes screaming and is unfit for duty"
       }
     },
     "Perks": {
@@ -1283,7 +1285,7 @@
       },
       "craft_innkeeper": {
         "Name": "Former Trade: Innkeeper / Brewer",
-        "Desc": "Knows the secrets of brewing and loosening tongues. Raises crew Morale by +1 every night camp, and tavern eavesdropping brings an extra rumour."
+        "Desc": "Knows the secrets of brewing and loosening tongues. Raises crew Morale by +1 at night camp (when Morale < 8), and tavern eavesdropping brings an extra rumour."
       },
       "craft_merchant": {
         "Name": "Former Trade: Factor / Merchant",
@@ -1342,7 +1344,8 @@
       "RoleSaved": "<strong>{name}</strong> ({role}) handles it (d100 {roll} ≤ {target}).",
       "RoleFailed": "<strong>{name}</strong> ({role}) tries but fails (d100 {roll} > {target}).",
       "FollowUp": "A sequel to an earlier event.",
-      "HookSet": "This matter will make itself known again."
+      "HookSet": "This matter will make itself known again.",
+      "ClearHook": "Clear pending event hook (GM)"
     },
     "Notify": {
       "RumorPoolReset": "Every rumour in the pool has been shown! The rumour pool has been refreshed.",
@@ -1361,7 +1364,8 @@
       "NoPendingAssignments": "No assignments are waiting to be resolved.",
       "NotEnoughFunds": "Not enough money in the stash! You need {cost} SS.",
       "CampAlreadyResolved": "This crew's night camp has already been resolved for this world day.",
-      "CampWaitsForQueue": "Some assignments are waiting for the GM – the camp comes after they are resolved."
+      "CampWaitsForQueue": "Some assignments are waiting for the GM – the camp comes after they are resolved.",
+      "GMOnly": "Only the Gamemaster can perform this action."
     },
     "Orders": {
       "Effects": {
@@ -1408,7 +1412,7 @@
       "kidneystrike": {
         "Name": "Kidney Strike",
         "Desc": "A silent leap from the shadows and a precise dagger thrust under the ribs.",
-        "Effect": "The opponent immediately gains the Bleeding condition and loses 1 Advantage!"
+        "Effect": "The opponent must pass an Agility test (difficulty rises with the follower's rank) or gain the Bleeding condition and lose 1 Advantage!"
       },
       "cover": {
         "Name": "Harassing Fire",
@@ -1423,7 +1427,7 @@
       "distract": {
         "Name": "Feint / Steal the Advantage",
         "Desc": "The provocateur yells at the top of his lungs, throws stones and shouts insults about the enemy's mother.",
-        "Effect": "The chief gains +2 Advantage, and the provoked enemy loses 1 Advantage!"
+        "Effect": "On a Leadership test the chief gains +1 Advantage (+2 on SL 3+), and the provoked enemy loses 1 Advantage!"
       },
       "smoke": {
         "Name": "Smoke Screen",
@@ -1433,7 +1437,7 @@
       "sand": {
         "Name": "Sand in the Eyes",
         "Desc": "A sudden handful of gravel, ground glass and ash thrown straight into the eyes.",
-        "Effect": "The opponent gains the Blinded condition. It can only be removed by passing an Endurance test at the end of the turn."
+        "Effect": "The opponent must pass an Agility test (difficulty rises with the follower's rank) or gain the Blinded condition."
       },
       "resupply": {
         "Name": "Battlefield Resupply",
@@ -1453,7 +1457,7 @@
       "rally": {
         "Name": "Battle Cry",
         "Desc": "The chief roars an order, spurring on his companions and striking fear into the enemy.",
-        "Effect": "Removes the Broken condition from the chosen ally. The chief gains Advantage equal to the SL of the test (minimum 1)."
+        "Effect": "Removes the Broken condition from the chosen ally. On a Leadership test the chief gains Advantage equal to the SL (1–3)."
       },
       "coordinate": {
         "Name": "Coordinate the Line",
@@ -1474,14 +1478,16 @@
         "NotInRetinue": "The chosen member is not part of the active retinue.",
         "NeedsMember": "This order needs a suitable member of the active retinue.",
         "WrongRole": "The chosen member doesn't meet this order's requirements.",
-        "NoTest": "Cannot make a WFRP4e Leadership test for this character."
+        "NoTest": "Cannot make a WFRP4e Leadership test for this character.",
+        "DirectDisabled": "Issuing orders via “Direct” is disabled by the Gamemaster."
       },
       "MeatShield": {
         "Armour": "sturdy leather armour",
         "Veteran": "a veteran's experience",
         "Saved": "{name} throws themself in front of the blow, but {reason} absorbs the impact! The follower avoids a wound and stays ready!",
         "Wounded": "{name} takes the blow and is badly wounded!",
-        "Nobody": "None of your people is able to throw themself in front of the blow!"
+        "Nobody": "None of your people is able to throw themself in front of the blow!",
+        "BloodBond": "Blood Oath"
       },
       "Dialog": {
         "NeedRoles": "To give the order “{order}” you need in the retinue: {roles}!",
@@ -1505,7 +1511,7 @@
       "bodyblock": {
         "Name": "Body Block",
         "Desc": "The bodyguard steps in front of the chief and takes the blows on shield and back.",
-        "Effect": "Until the end of the round the first melee attack against the chief hits the bodyguard instead. The chief gains 1 Advantage (a moment to catch their breath)."
+        "Effect": "Until the end of the round the first melee attack against the chief hits the bodyguard instead. The chief gains 1 Advantage (if Advantage was not spent on this order)."
       },
       "grapple": {
         "Name": "Neck Grab",
@@ -1515,12 +1521,12 @@
       "circle": {
         "Name": "Ring of Guards",
         "Desc": "The crew closes a ring round the chief, backs together, faces to the enemy.",
-        "Effect": "The chief loses the Surprised condition (if any) and gains 1 Advantage. Nobody comes at them from behind."
+        "Effect": "The crew closes a ring: the chief and allies (up to 4) lose the Surprised condition and gain 1 Advantage (if Advantage was not spent on this order)."
       },
       "parry": {
         "Name": "Parry",
         "Desc": "The duellist steps between the chief and the enemy and turns the blow aside with the blade.",
-        "Effect": "The first melee attack against the chief this round has −20 to hit. The chief gains 1 Advantage."
+        "Effect": "The first melee attack against the chief this round has −20 to hit. The chief gains 1 Advantage (if Advantage was not spent on this order)."
       },
       "riposte": {
         "Name": "Riposte",
@@ -1555,7 +1561,7 @@
       "wagonwall": {
         "Name": "Wagon Across",
         "Desc": "The carter stops the wagon so that it shields the chief from fire.",
-        "Effect": "The wagon gives cover: ranged attacks against the chief this round have −10. The chief gains 1 Advantage."
+        "Effect": "The wagon gives cover: ranged attacks against the chief this round have −10. The chief gains 1 Advantage (if Advantage was not spent on this order)."
       },
       "spooked": {
         "Name": "Spooked Horses",
@@ -1570,7 +1576,7 @@
       "spot": {
         "Name": "Weak Spot",
         "Desc": "The scout points out a gap in the armour, a hole in the line or a lame leg.",
-        "Effect": "The chief's first attack this round gets +10 to hit. The chief gains 1 Advantage."
+        "Effect": "The chief's first attack this round gets +10 to hit. The chief gains 1 Advantage (if Advantage was not spent on this order)."
       },
       "lure": {
         "Name": "Decoy",
@@ -1610,8 +1616,9 @@
       "regroup": {
         "Name": "Regroup",
         "Desc": "The Right Hand claps, whistles and the crew falls back into line.",
-        "Effect": "The chief loses the Surprised condition and gains 1 Advantage; retinue allies may move 2 metres for free."
-      }
+        "Effect": "The chief loses the Surprised condition and gains 1 Advantage (if Advantage was not spent); retinue allies may move 2 metres for free."
+      },
+      "PayoffCost": "Bribe paid: {cost} SS from the stash (or purse)."
     },
     "Tables": {
       "Folder": "Underworld Crew",
@@ -1631,7 +1638,11 @@
         "Name": "Camp Events",
         "Desc": "Night events of this company type. Some nights draw from this table instead of the terrain events. The result flags (Morale, supplies, coins, role, terrains) change the company's state."
       },
-      "ProfileCreated": "Created the editable table “{name}” (folder “{folder}”)."
+      "ProfileCreated": "Created the editable table “{name}” (folder “{folder}”).",
+      "Regenerated": "Rebuilt world tables for terrain: {terrain}.",
+      "ResetTitle": "Rebuild world tables?",
+      "ResetConfirm": "Replace the world table results for “{terrain}” (and company profile) with built-in module data?",
+      "ResetBtn": "Rebuild Tables"
     },
     "Title": "Crew",
     "None": "None",
@@ -1697,7 +1708,9 @@
         "Arrested": "{name} falls into the hands of the watch – <strong>Arrested</strong> for {time}. Heat +1.",
         "Chase": "A chase and shouting in the street – Heat +1.",
         "WoundedLoud": "{name} is <strong>Wounded</strong>, and the whole district talks about the brawl – Heat +1.",
-        "Wounded": "{name} comes back beaten – <strong>Wounded</strong>."
+        "Wounded": "{name} comes back beaten – <strong>Wounded</strong>.",
+        "WoundAvoided": "{name} avoids a serious wound ({reason})!",
+        "ColdBlooded": "{name} keeps <strong>Cold Blood</strong> – the first complication and Morale loss this cycle are ignored."
       }
     },
     "Meta": {
@@ -1734,23 +1747,23 @@
     "Relation": {
       "favorite": {
         "Name": "Patron's Favourites",
-        "Desc": "Full trust, protection and access to lucrative jobs."
+        "Desc": "Full trust: Patron's cut −5 pts, bribes 20% cheaper and +10 to bribery tests."
       },
       "trusted": {
         "Name": "Trusted Hands",
-        "Desc": "Proven in the field. Regular jobs and bonuses."
+        "Desc": "Proven in the field: +10 to bribery tests."
       },
       "neutral": {
         "Name": "Strictly Business",
-        "Desc": "A purely business relationship. Coin for work, no sentiment."
+        "Desc": "Strictly business. Standard cut and no special favours."
       },
       "strained": {
         "Name": "Strained Relations",
-        "Desc": "The patron is watching you closely. Delays risk his anger."
+        "Desc": "The patron is watching you closely: their cut increases by +5 pts."
       },
       "hostile": {
         "Name": "On Thin Ice",
-        "Desc": "Facing punishment or elimination! You must prove your loyalty."
+        "Desc": "Facing elimination! Cut +10 pts, −10 to fencing and bribery."
       }
     },
     "Settings": {
@@ -1773,6 +1786,87 @@
         "Hint": "The Company Ledger is the new look of an Old World war ledger. Classic is the previous sheet.",
         "Ledger": "Company Ledger",
         "Classic": "Classic"
+      },
+      "Upkeep": {
+        "Name": "Crew upkeep and pay",
+        "Hint": "Whether the company pays coin from the stash for active members during night camp (or the Crew Week); running short lowers Morale."
+      },
+      "CampRestGMOnly": {
+        "Name": "Night camp by GM only",
+        "Hint": "When enabled, even in daily mode only the GM can resolve the night camp (players cannot close the day alone)."
+      },
+      "DirectOrders": {
+        "Name": "“Direct” tactical order",
+        "Hint": "Who can issue tactical orders via “Direct” (chat card without a roll, Advantage cost, or automation).",
+        "All": "Players and GM",
+        "GM": "GM only (default)",
+        "Off": "Disabled"
+      },
+      "LootTransfer": {
+        "Name": "Transfer loot to Chief",
+        "Hint": "Who can move loot from the company stash into the Chief’s inventory at full value without a fence.",
+        "GM": "GM only",
+        "CoolOnly": "Player: cooled loot only (hot loot GM only)",
+        "All": "Player and GM: all loot"
+      },
+      "MaxRetinue": {
+        "Name": "Maximum Retinue size",
+        "Hint": "How many followers may join the Chief’s combat Retinue at once (1–6, default 3; can be overridden per company)."
+      },
+      "MaxRoster": {
+        "Name": "Company roster cap (0 = unlimited)",
+        "Hint": "Maximum living members allowed during recruitment (0 disables the cap)."
+      },
+      "MaxGearSlots": {
+        "Name": "Follower gear limit",
+        "Hint": "How many Armoury items one follower can carry at a time (1–5, default 2)."
+      },
+      "RationsMode": {
+        "Name": "Ration consumption",
+        "Hint": "How rations are calculated during a night camp.",
+        "Scaled": "Scaled by headcount (1 per 3 daily / 1 per member weekly)",
+        "Flat1": "Simplified (1 ration per camp)",
+        "Off": "Disabled (no rations consumed)"
+      },
+      "DefaultSupplyPrice": {
+        "Name": "Default ration price (BP)",
+        "Hint": "Default cost of one ration in Brass Pennies (12 BP = 1 SS) when no company-specific price is set."
+      },
+      "UpkeepMultiplier": {
+        "Name": "Upkeep multiplier",
+        "Hint": "Scales the crew upkeep paid at camp (when upkeep is enabled)."
+      },
+      "OxpMultiplier": {
+        "Name": "Operational XP (OXP) multiplier",
+        "Hint": "Speeds up or slows down OXP gained from jobs and night watch."
+      },
+      "OrderAutomation": {
+        "Name": "Combat order automation",
+        "Hint": "Whether tactical orders trigger automatic defence tests and conditions on targeted tokens, or post chat cards only.",
+        "Full": "Full (defence tests and token conditions)",
+        "ChatOnly": "Chat cards only"
+      },
+      "OrderRoundLimit": {
+        "Name": "Combat order limit per round",
+        "Hint": "Whether the Chief may issue at most 1 Action order per combat round (Human Shield stays a separate Reaction), or unlimited.",
+        "One": "1 Action order per round (+ Reaction)",
+        "Unlimited": "No round limit"
+      },
+      "RaidsEnabled": {
+        "Name": "Watch raids",
+        "Hint": "Whether raids can occur during camp rest at high Heat/Pressure."
+      },
+      "DesertionEnabled": {
+        "Name": "Low-Morale desertions",
+        "Hint": "Whether desperate followers can desert at critically low Morale (0–2)."
+      },
+      "CampReminder": {
+        "Name": "Night camp reminder",
+        "Hint": "Whether to post a camp reminder chat card when Foundry world time passes 03:00."
+      },
+      "MaxHistoryEntries": {
+        "Name": "Company Chronicle length",
+        "Hint": "Maximum number of history entries kept per company sheet (5–100)."
       }
     },
     "Recruit": {
@@ -1811,7 +1905,9 @@
       "Disguise": "Disguise",
       "GMBonus": "GM bonus",
       "Flaws": "Flaws",
-      "RichWithLead": "Rich target – the Lead removes the penalty"
+      "RichWithLead": "Rich target – the Lead removes the penalty",
+      "MissionDifficulty": "Job difficulty",
+      "PatronRelation": "Patron relation"
     },
     "Ops": {
       "ToTreasury": "{amount} went into the stash.",
@@ -1831,7 +1927,12 @@
       "ItemDescHot": "Crew loot: {origin} – hot goods, someone is looking for it.",
       "Transferred": "{item} goes into {actor}'s inventory.",
       "DiscardTitle": "Get rid of the loot?",
-      "DiscardText": "Throw away, give away or hide <strong>{name}</strong> (~{value} SS) for good? The loot will disappear from the crew's hideout."
+      "DiscardText": "Throw away, give away or hide <strong>{name}</strong> (~{value} SS) for good? The loot will disappear from the crew's hideout.",
+      "TransferGMOnly": "Transferring loot directly to the Chief is restricted to the Gamemaster.",
+      "TransferHotBlocked": "Hot goods must be sold through a fence or transferred by the Gamemaster.",
+      "ChatTransferred": "{item} ({value} SS) moved from the company stash to {actor}’s inventory.",
+      "ChatDiscarded": "Removed from the company stash: {item} ({value} SS).",
+      "Flavor": "Company Stash"
     },
     "Report": {
       "QueueTitle": "Crew assignments report",
@@ -1851,7 +1952,8 @@
       },
       "Tavern": {
         "Success": "{name} bought a few rounds at the inn ({cost} SS from the stash) and drew out some interesting information.",
-        "Fail": "{name} sat in the tavern all day but heard nothing of value."
+        "Fail": "{name} sat in the tavern all day but heard nothing of value.",
+        "ExtraRumor": "Extra rumour (Innkeeper): “{rumor}”"
       },
       "Procure": {
         "HorseBonus": " (including +1 ration thanks to the pack horse)",
@@ -1949,8 +2051,10 @@
       "Tend": {
         "Medkit": "{name} used a proper surgeon's bag and herbs to dress {wounded}'s wounds. Status: <strong>Wounded → Fully Ready!</strong> Can act right away!",
         "Resting": "{name} looks after the wounded {wounded} – changed the dressings and gave herbs. Status: <strong>Wounded → Resting</strong>. Ready for action tomorrow.",
-        "Nobody": "{name} checked on the wounded, but everyone is already cared for or fully fit. A day spent sorting bandages and salves."
-      }
+        "Nobody": "{name} checked on the wounded, but everyone is already cared for or fully fit. A day spent sorting bandages and salves.",
+        "FieldMedic": "{name} tended {wounded} with a field medic's skill! Status: <strong>Wounded → Fully Ready!</strong>"
+      },
+      "PlannedReserved": "This resource is already reserved in another planned job."
     },
     "Camp": {
       "Shelter": {
@@ -1967,7 +2071,9 @@
         "Used": "{used} rations used ({left} left)",
         "Empty": "No supplies! The crew went to bed hungry (−1 Morale)",
         "Brewer": "(Innkeeper {name} poured a splendid drink: +1 Morale)",
-        "Woodsman": "(Forester {name} caught a hare: +1 free ration)"
+        "Woodsman": "(Forester {name} caught a hare: +1 free ration)",
+        "Short": "Used {used} of {needed} needed rations – the crew went to bed hungry (-1 Morale, left: {left})",
+        "Off": "Ration consumption is disabled in world settings."
       },
       "Heal": {
         "Rested": "{name} (rested – ready)",
@@ -1980,7 +2086,8 @@
       },
       "Perk": {
         "Poacher": "<strong>{name}</strong> <em>(Poacher)</em>: caught a hare for supper (+1 ration).",
-        "OldCraft": "<strong>{name}</strong> <em>(Former Trade)</em>: prepared dressings and forest herbs to help recovery."
+        "OldCraft": "<strong>{name}</strong> <em>(Former Trade)</em>: prepared dressings and forest herbs to help recovery.",
+        "Lieutenant": "<strong>{name}</strong> <em>(Right Hand)</em>: keeps discipline and lifts spirits in camp (+1 Morale)."
       },
       "Flaw": {
         "Resting": "status: resting",
@@ -2009,7 +2116,16 @@
       "Desertion": "Desertion!",
       "NightEvent": "Night event",
       "FlawsShowed": "Flaws made themselves felt:",
-      "EndOfDay": "End of Day"
+      "EndOfDay": "End of Day",
+      "Upkeep": "Upkeep and pay",
+      "UpkeepPaid": "Paid {amount} from the stash.",
+      "UpkeepShort": "Paid only {paid} of {due} owed — arrears hurt morale (-1 Morale)!",
+      "PerksShowed": "Perks and rank made the difference:",
+      "GMResolvesNightHint": "Only the Gamemaster can resolve this company’s night camp.",
+      "LocksReset": "Cycle and combat order locks have been cleared.",
+      "ResetLocksTitle": "Clear cycle locks?",
+      "ResetLocksConfirm": "Clear today’s camp rest lock, combat order round lock, and current-cycle treasury counters?",
+      "ResetLocksBtn": "Unlock Cycle"
     },
     "Raid": {
       "Escaped": "The sentries raised the alarm in time – the crew escaped through the alleys, leaving {lost} rations behind.",
@@ -2018,7 +2134,9 @@
       "HotLost": "Hot goods lost: {items}.",
       "Morale": "Morale −1.",
       "Settled": "After the raid the watch considers the matter closed – Heat −1.",
-      "Summary": "Watch raid."
+      "Summary": "Watch raid.",
+      "EscapedCoin": "Lost {amount} from the stash in the scramble.",
+      "GuardTipOff": "Your contact in the watch warned you in time – the camp cleared out despite having no sentries!"
     },
     "Racket": {
       "Dormant": "The crew is out of the city – the racket waits for its return.",
@@ -2089,12 +2207,14 @@
       "DeleteNote": "The linked Foundry actor will not be deleted.",
       "ReadyAgain": "{name} is Ready again.",
       "LinkedMissing": "The linked actor doesn't exist or has been deleted.",
-      "Unlinked": "Unlinked the actor from “{name}”."
+      "Unlinked": "Unlinked the actor from “{name}”.",
+      "MaxReached": "The company has reached its maximum size ({max} active members).",
+      "OverMaxWarning": "GM note: added a member above the world roster cap ({count}/{max})."
     },
     "Retinue": {
       "Left": "{name} left the chief's retinue.",
       "Joined": "{name} joined the chief's retinue!",
-      "Full": "The chief's retinue can have at most 3 followers!",
+      "Full": "The chief’s retinue can have at most {max} followers!",
       "Expand": "Expand the retinue",
       "Collapse": "Collapse the retinue",
       "CannotJoin": "{name} cannot join the retinue (status: {status})!"
@@ -2189,7 +2309,10 @@
       "ResolveWeek": "Resolve the Week",
       "StartRest": "Start Resting",
       "WeekDone": "The crew's week is resolved – report in the chat.",
-      "NightDone": "Night camp resolved! Assignments reset for the new day."
+      "NightDone": "Night camp resolved! Assignments reset for the new day.",
+      "RationsNeeded": "Rations needed for active crew: <strong>{count}</strong>",
+      "UpkeepHint": "Expected upkeep cost: <strong>{amount}</strong>",
+      "FoodOff": "Food consumption is disabled in world settings — camp rest spends no rations."
     },
     "LinkDialog": {
       "NoActors": "There are no other actors in the world to link.",
@@ -2283,7 +2406,17 @@
       "SecondRoleHint": "(bought with OXP, requires rank 1)",
       "SecondRoleIntro": "A follower who has seen a lot can do more than one thing. A second role unlocks its orders and specialty (the specialty bonus counts once).",
       "SecondRoleNeedsRank": "Requires rank 1",
-      "SecondRoleGained": "{name} gains a second role: {role}!"
+      "SecondRoleGained": "{name} gains a second role: {role}!",
+      "BlacksmithDiscount": "−50% Smith",
+      "GMGrantFree": "Grant free as GM",
+      "GMGrantShort": "GM",
+      "GMRemovePerk": "Remove perk (GM)",
+      "GMRemoveGear": "Remove gear without refund (GM)",
+      "GMRankLabel": "Rank (GM)",
+      "ArrestDuration": "Nights arrested",
+      "ChangePortrait": "Change portrait (GM)",
+      "Notes": "Member notes",
+      "NotesPlaceholder": "Short description, scars, contacts, debts..."
     },
     "Close": "Close",
     "TreasuryDialog": {
@@ -2514,12 +2647,18 @@
       "Notes": "Chronicle / Chief's Notes:",
       "NotesPlaceholder": "How the retinue was founded, old oaths, the party's goals...",
       "TypeChangeTitle": "Change the company type?",
-      "TypeChangeText": "The roles of {count} members will be converted to their equivalents in the new type. Available jobs and wording will change too. Continue?"
+      "TypeChangeText": "The roles of {count} members will be converted to their equivalents in the new type. Available jobs and wording will change too. Continue?",
+      "MaxRetinueOverride": "Retinue cap (0 = default)",
+      "MaxRetinueOverrideHint": "Per-company Retinue size cap (0 uses the world setting).",
+      "UpkeepOverride": "Company upkeep",
+      "UpkeepDefault": "Use world setting",
+      "UpkeepFree": "Exempt from upkeep",
+      "PatronNoCut": "Exempt from Patron cut (0%)"
     },
     "DashTab": {
       "CampStandard": "Lodging / Camp Standard",
       "Makeshift": "Makeshift ({place}",
-      "MoralePerCamp": "Morale per camp)",
+      "MoralePerCamp": "Morale per camp, ½ raid risk)",
       "Basic": "Basic (tents, a stable, a simple inn)",
       "Comfortable": "Comfortable ({place}, +1 Morale, {cost})",
       "CampCaption": "Affects recovery and the crew's mood while resting. Terrain: <strong>{terrain}</strong> (change it in the Loot tab).",
@@ -2582,7 +2721,9 @@
       "TablesHint": "Game Master: open the random rumour and camp event tables (RollTable, crew folder)",
       "Tables": "Rumour and Event Tables (GM)",
       "Chronicle": "Camp Chronicle",
-      "ChronicleEmpty": "No events recorded yet. The crew is just setting out on the road..."
+      "ChronicleEmpty": "No events recorded yet. The crew is just setting out on the road...",
+      "MakeshiftEffect": "{morale} Morale, ½ raid risk",
+      "NightByGM": "Camp resolved by GM"
     },
     "TacticsTab": {
       "Title": "Combat Tactical Orders",
@@ -2622,7 +2763,7 @@
             "Desc": "A fresh mercenary without much experience on the road."
           },
           "lieutenant": {
-            "Desc": "+30 to tests, authority (+1 company Morale), command orders (unique rank – one per company; needs over 60–80 days of service)."
+            "Desc": "+30 to tests, authority (+1 company Morale when < 7), command orders (unique rank – one per company)."
           }
         },
         "Flaws": {
@@ -2668,7 +2809,7 @@
             "Desc": "−10 to patrols and garrison duty"
           },
           "squeamish": {
-            "Desc": "−10 to requisitions, contracts and tending the wounded"
+            "Desc": "−10 to requisitions and contracts"
           },
           "snorer": {
             "Desc": "−10 to patrols and garrison duty"
@@ -2688,7 +2829,7 @@
             "Desc": "Work at bellows and anvil gives strength and a knowledge of weapons. Permanent +10 to jobs with weapons and a 50% discount on gear for the company."
           },
           "craft_innkeeper": {
-            "Desc": "Knows the secrets of brewing and loosening tongues. Raises company Morale by +1 every night camp, and tavern eavesdropping brings an extra rumour."
+            "Desc": "Knows the secrets of brewing and loosening tongues. Raises company Morale by +1 at night camp (when Morale < 8), and tavern eavesdropping brings an extra rumour."
           },
           "blood_brotherhood": {
             "Name": "Blood Oath with the Captain",
@@ -2739,7 +2880,7 @@
             "Effect": "The target loses its guard – it cannot Dodge or Parry the captain's next attack!"
           },
           "distract": {
-            "Effect": "The captain gains +2 Advantage, and the provoked enemy loses 1 Advantage!",
+            "Effect": "On a Leadership test the captain gains +1 Advantage (+2 on SL 3+), and the provoked enemy loses 1 Advantage!",
             "Name": "To the Banner!",
             "Desc": "The standard bearer raises the banner and the company answers with a roar that drowns out the enemy."
           },
@@ -2750,7 +2891,7 @@
           },
           "rally": {
             "Desc": "The captain roars an order, spurring on his companions and striking fear into the enemy.",
-            "Effect": "Removes the Broken condition from the chosen ally. The captain gains Advantage equal to the SL of the test (minimum 1)."
+            "Effect": "Removes the Broken condition from the chosen ally. On a Leadership test the captain gains Advantage equal to the SL (1–3)."
           },
           "coordinate": {
             "Effect": "The captain and up to three allies within 6 metres may make a free move of half their Movement; leaving melee requires no test."
@@ -2772,16 +2913,16 @@
             "LeadershipHint": "The captain makes a Leadership test. Success – the order works; failure – no effect. The order uses the captain's Action (one per round)."
           },
           "bodyblock": {
-            "Effect": "Until the end of the round the first melee attack against the captain hits the bodyguard instead. The captain gains 1 Advantage (a moment to catch their breath).",
+            "Effect": "Until the end of the round the first melee attack against the captain hits the bodyguard instead. The captain gains 1 Advantage (if Advantage was not spent on this order).",
             "Desc": "The sergeant steps in front of the captain and takes the blow on the shield."
           },
           "circle": {
-            "Effect": "The captain loses the Surprised condition (if any) and gains 1 Advantage. Nobody comes at them from behind.",
+            "Effect": "The captain and allies (up to 4) lose the Surprised condition and gain 1 Advantage (if Advantage was not spent on this order).",
             "Name": "Hedgehog!",
             "Desc": "The company closes ranks around the captain and the banner, blades outward."
           },
           "parry": {
-            "Effect": "The first melee attack against the captain this round has −20 to hit. The captain gains 1 Advantage.",
+            "Effect": "The first melee attack against the captain this round has −20 to hit. The captain gains 1 Advantage (if Advantage was not spent on this order).",
             "Name": "Wall of Polearms",
             "Desc": "The halberdier sets the polearm before the captain; nobody gets close without trouble."
           },
@@ -2789,7 +2930,7 @@
             "Effect": "The chosen opponent loses 1 Advantage. If they attack the captain this round and miss, the captain may immediately strike back."
           },
           "wagonwall": {
-            "Effect": "The wagon gives cover: ranged attacks against the captain this round have −10. The captain gains 1 Advantage.",
+            "Effect": "The wagon gives cover: ranged attacks against the captain this round suffer −10. The captain gains 1 Advantage (if Advantage was not spent on this order).",
             "Desc": "The quartermaster sets a baggage cart to shield the captain."
           },
           "getaway": {
@@ -2798,7 +2939,7 @@
             "Desc": "The barber-surgeon grabs the captain by the arm and drags them out of the melee."
           },
           "spot": {
-            "Effect": "The captain's first attack this round gets +10 to hit. The captain gains 1 Advantage.",
+            "Effect": "The captain's first attack this round gets +10 to hit. The captain gains 1 Advantage (if Advantage was not spent on this order).",
             "Desc": "The crossbowman points out a gap in the armour seen down the sights."
           },
           "forgedorder": {
@@ -2811,7 +2952,7 @@
           },
           "regroup": {
             "Desc": "The Right Hand claps, whistles and the company falls back into line.",
-            "Effect": "The captain loses the Surprised condition and gains 1 Advantage; retinue allies may move 2 metres for free."
+            "Effect": "The captain loses the Surprised condition and gains 1 Advantage (if Advantage was not spent); retinue allies may move 2 metres for free."
           },
           "challenge": {
             "Desc": "The sergeant calls out the enemy's leader to fight before the line.",
@@ -2860,7 +3001,7 @@
         },
         "Relation": {
           "strained": {
-            "Desc": "The employer is watching you closely. Delays risk his anger."
+            "Desc": "The employer is watching you closely: their cut increases by +5 pts (where a cut applies)."
           },
           "favorite": {
             "Name": "Employer's Favourites"
@@ -2952,7 +3093,7 @@
         "Retinue": {
           "Left": "{name} left the captain's retinue.",
           "Joined": "{name} joined the captain's retinue!",
-          "Full": "The captain's retinue can have at most 3 soldiers!"
+          "Full": "The captain's retinue can have at most {max} soldiers!"
         },
         "Mission": {
           "NoFollower": "No soldier selected!"
@@ -3370,7 +3511,7 @@
         },
         "Ranks": {
           "lieutenant": {
-            "Desc": "+30 to tests, authority (+1 band Morale), command orders (unique rank – one per band; needs over 60–80 days of service)."
+            "Desc": "+30 to tests, authority (+1 band Morale when < 7), command orders (unique rank – one per band)."
           }
         },
         "Roles": {
@@ -3416,7 +3557,7 @@
             "Desc": "−10: Bribery, Cover Tracks"
           },
           "squeamish": {
-            "Desc": "−10: Intimidation / Extortion, Tend the Wounded, Ransom"
+            "Desc": "−10: Intimidation, Poaching, Robberies and Ransom"
           },
           "snorer": {
             "Desc": "−10: Scout the Area"
@@ -3436,7 +3577,7 @@
             "Desc": "Work at bellows and anvil gives strength and a knowledge of weapons. Permanent +10 to jobs with weapons and a 50% discount on gear for the band."
           },
           "craft_innkeeper": {
-            "Desc": "Knows the secrets of brewing and loosening tongues. Raises band Morale by +1 every night camp, and tavern eavesdropping brings an extra rumour."
+            "Desc": "Knows the secrets of brewing and loosening tongues. Raises band Morale by +1 at night camp (when Morale < 8), and tavern eavesdropping brings an extra rumour."
           },
           "battle_scarred": {
             "Desc": "Survived many wounds and skirmishes. Even when wounded he doesn't lower band Morale and can stand night watch in camp without penalty."
@@ -3475,7 +3616,7 @@
         },
         "Relation": {
           "strained": {
-            "Desc": "The protector is watching you closely. Delays risk his anger."
+            "Desc": "The protector is watching you closely: their cut increases by +5 pts (where a cut applies)."
           },
           "favorite": {
             "Name": "Protector's Favourites"
@@ -3759,7 +3900,7 @@
             "Desc": "A fresh smuggler without much experience on the road."
           },
           "lieutenant": {
-            "Desc": "+30 to tests, authority (+1 crew Morale), command orders (unique rank – one per crew; needs over 60–80 days of service)."
+            "Desc": "+30 to tests, authority (+1 crew Morale when < 7), command orders (unique rank – one per crew)."
           }
         },
         "Flaws": {
@@ -3811,7 +3952,7 @@
             "Desc": "−10: Bribery, Cover Tracks, The Stash"
           },
           "squeamish": {
-            "Desc": "−10: Tend the Wounded"
+            "Desc": "−10: violent jobs"
           },
           "snorer": {
             "Desc": "−10: Scout the Area"
@@ -3852,7 +3993,7 @@
             "Desc": "Work at bellows and anvil gives strength and a knowledge of weapons. Permanent +10 to jobs with weapons and a 50% discount on gear for the crew."
           },
           "craft_innkeeper": {
-            "Desc": "Knows the secrets of brewing and loosening tongues. Raises crew Morale by +1 every night camp, and tavern eavesdropping brings an extra rumour."
+            "Desc": "Knows the secrets of brewing and loosening tongues. Raises crew Morale by +1 at night camp (when Morale < 8), and tavern eavesdropping brings an extra rumour."
           },
           "battle_scarred": {
             "Desc": "Survived many wounds and skirmishes. Even when wounded he doesn't lower crew Morale and can stand night watch in camp without penalty."
@@ -3886,7 +4027,7 @@
             "Desc": "The lookout comes at the enemy from the water side."
           },
           "distract": {
-            "Effect": "The skipper gains +2 Advantage, and the provoked enemy loses 1 Advantage!",
+            "Effect": "On a Leadership test the skipper gains +1 Advantage (+2 on SL 3+), and the provoked enemy loses 1 Advantage!",
             "Name": "A Row over the Papers",
             "Desc": "The forger starts a loud row about the papers and nobody knows who is in charge."
           },
@@ -3897,7 +4038,7 @@
           },
           "rally": {
             "Desc": "The skipper roars an order, spurring on his companions and striking fear into the enemy.",
-            "Effect": "Removes the Broken condition from the chosen ally. The skipper gains Advantage equal to the SL of the test (minimum 1)."
+            "Effect": "Removes the Broken condition from the chosen ally. On a Leadership test the skipper gains Advantage equal to the SL (1–3)."
           },
           "coordinate": {
             "Effect": "The skipper and up to three allies within 6 metres may make a free move of half their Movement; leaving melee requires no test."
@@ -3920,15 +4061,15 @@
           },
           "bodyblock": {
             "Desc": "The bodyguard steps in front of the skipper and takes the blows on shield and back.",
-            "Effect": "Until the end of the round the first melee attack against the skipper hits the bodyguard instead. The skipper gains 1 Advantage (a moment to catch their breath)."
+            "Effect": "Until the end of the round the first melee attack against the skipper hits the bodyguard instead. The skipper gains 1 Advantage (if Advantage was not spent on this order)."
           },
           "circle": {
             "Desc": "The crew closes a ring round the skipper, backs together, faces to the enemy.",
-            "Effect": "The skipper loses the Surprised condition (if any) and gains 1 Advantage. Nobody comes at them from behind."
+            "Effect": "The skipper and allies (up to 4) lose the Surprised condition and gain 1 Advantage (if Advantage was not spent on this order)."
           },
           "parry": {
             "Desc": "The duellist steps between the skipper and the enemy and turns the blow aside with the blade.",
-            "Effect": "The first melee attack against the skipper this round has −20 to hit. The skipper gains 1 Advantage."
+            "Effect": "The first melee attack against the skipper this round has −20 to hit. The skipper gains 1 Advantage (if Advantage was not spent on this order)."
           },
           "riposte": {
             "Effect": "The chosen opponent loses 1 Advantage. If they attack the skipper this round and miss, the skipper may immediately strike back."
@@ -3939,14 +4080,14 @@
             "Desc": "The helmsman grabs the skipper by the arm and hauls them aboard."
           },
           "spot": {
-            "Effect": "The skipper's first attack this round gets +10 to hit. The skipper gains 1 Advantage.",
+            "Effect": "The skipper's first attack this round gets +10 to hit. The skipper gains 1 Advantage (if Advantage was not spent on this order).",
             "Desc": "The helmsman sees the enemy is standing on a slippery plank."
           },
           "salve": {
             "Effect": "The skipper (or a chosen ally) loses the Bleeding condition."
           },
           "regroup": {
-            "Effect": "The skipper loses the Surprised condition and gains 1 Advantage; retinue allies may move 2 metres for free.",
+            "Effect": "The skipper loses the Surprised condition and gains 1 Advantage (if Advantage was not spent); retinue allies may move 2 metres for free.",
             "Desc": "The Right Hand claps, whistles and the crew falls back into line."
           },
           "trip": {
@@ -3963,7 +4104,7 @@
           "wagonwall": {
             "Name": "Duck Behind the Gunwale",
             "Desc": "The helmsman turns the barge broadside to the archers.",
-            "Effect": "The gunwale gives cover: ranged attacks on the skipper this round suffer −10. The skipper gains 1 Advantage."
+            "Effect": "The gunwale gives cover: ranged attacks against the skipper this round suffer −10. The skipper gains 1 Advantage (if Advantage was not spent on this order)."
           },
           "smoke": {
             "Name": "Douse the Lanterns",
@@ -3993,7 +4134,7 @@
         },
         "Relation": {
           "strained": {
-            "Desc": "The buyer is watching you closely. Delays risk his anger."
+            "Desc": "The buyer is watching you closely: their cut increases by +5 pts (where a cut applies)."
           },
           "favorite": {
             "Name": "Buyer's Favourites"
@@ -4074,7 +4215,7 @@
         "Retinue": {
           "Left": "{name} left the skipper's retinue.",
           "Joined": "{name} joined the skipper's retinue!",
-          "Full": "The skipper's retinue can have at most 3 smugglers!"
+          "Full": "The skipper's retinue can have at most {max} smugglers!"
         },
         "Mission": {
           "NoFollower": "No smuggler selected!"
@@ -4449,7 +4590,7 @@
             "Desc": "A fresh agent without much experience on the road."
           },
           "lieutenant": {
-            "Desc": "+30 to tests, authority (+1 network Morale), command orders (unique rank – one per network; needs over 60–80 days of service)."
+            "Desc": "+30 to tests, authority (+1 network Morale when < 7), command orders (unique rank – one per network)."
           }
         },
         "Strengths": {
@@ -4575,7 +4716,7 @@
             "Desc": "−10: Bribery, Cover Tracks"
           },
           "squeamish": {
-            "Desc": "−10: Tend the Wounded"
+            "Desc": "−10: violent jobs"
           },
           "snorer": {
             "Desc": "−10: Scout the Area, Shadow a Target, Intercept a Courier"
@@ -4595,7 +4736,7 @@
             "Desc": "Work at bellows and anvil gives strength and a knowledge of weapons. Permanent +10 to jobs with weapons and a 50% discount on gear for the network."
           },
           "craft_innkeeper": {
-            "Desc": "Knows the secrets of brewing and loosening tongues. Raises network Morale by +1 every night camp, and tavern eavesdropping brings an extra rumour."
+            "Desc": "Knows the secrets of brewing and loosening tongues. Raises network Morale by +1 at night camp (when Morale < 8), and tavern eavesdropping brings an extra rumour."
           },
           "blood_brotherhood": {
             "Name": "Blood Oath with the Spymaster",
@@ -4645,7 +4786,7 @@
             "Effect": "The target loses its guard – it cannot Dodge or Parry the spymaster's next attack!"
           },
           "distract": {
-            "Effect": "The spymaster gains +2 Advantage, and the provoked enemy loses 1 Advantage!",
+            "Effect": "On a Leadership test the spymaster gains +1 Advantage (+2 on SL 3+), and the provoked enemy loses 1 Advantage!",
             "Name": "A Secret Shouted Out",
             "Desc": "The eavesdropper shouts the enemy's secret for everyone to hear."
           },
@@ -4654,7 +4795,7 @@
           },
           "rally": {
             "Desc": "The spymaster roars an order, spurring on his companions and striking fear into the enemy.",
-            "Effect": "Removes the Broken condition from the chosen ally. The spymaster gains Advantage equal to the SL of the test (minimum 1)."
+            "Effect": "Removes the Broken condition from the chosen ally. On a Leadership test the spymaster gains Advantage equal to the SL (1–3)."
           },
           "coordinate": {
             "Effect": "The spymaster and up to three allies within 6 metres may make a free move of half their Movement; leaving melee requires no test."
@@ -4677,15 +4818,15 @@
           },
           "bodyblock": {
             "Desc": "The bodyguard steps in front of the spymaster and takes the blows on shield and back.",
-            "Effect": "Until the end of the round the first melee attack against the spymaster hits the bodyguard instead. The spymaster gains 1 Advantage (a moment to catch their breath)."
+            "Effect": "Until the end of the round the first melee attack against the spymaster hits the bodyguard instead. The spymaster gains 1 Advantage (if Advantage was not spent on this order)."
           },
           "circle": {
             "Desc": "The network closes a ring round the spymaster, backs together, faces to the enemy.",
-            "Effect": "The spymaster loses the Surprised condition (if any) and gains 1 Advantage. Nobody comes at them from behind."
+            "Effect": "The spymaster and allies (up to 4) lose the Surprised condition and gain 1 Advantage (if Advantage was not spent on this order)."
           },
           "parry": {
             "Desc": "The duellist steps between the spymaster and the enemy and turns the blow aside with the blade.",
-            "Effect": "The first melee attack against the spymaster this round has −20 to hit. The spymaster gains 1 Advantage."
+            "Effect": "The first melee attack against the spymaster this round has −20 to hit. The spymaster gains 1 Advantage (if Advantage was not spent on this order)."
           },
           "riposte": {
             "Effect": "The chosen opponent loses 1 Advantage. If they attack the spymaster this round and miss, the spymaster may immediately strike back."
@@ -4695,7 +4836,7 @@
           },
           "wagonwall": {
             "Desc": "The carter stops the wagon so that it shields the spymaster from fire.",
-            "Effect": "The wagon gives cover: ranged attacks against the spymaster this round have −10. The spymaster gains 1 Advantage."
+            "Effect": "The wagon gives cover: ranged attacks against the spymaster this round suffer −10. The spymaster gains 1 Advantage (if Advantage was not spent on this order)."
           },
           "getaway": {
             "Effect": "The spymaster loses the Prone condition and may move 4 metres away without provoking opportunity attacks.",
@@ -4703,7 +4844,7 @@
             "Desc": "The courier throws open a window and shoves the spymaster out onto a stall awning."
           },
           "spot": {
-            "Effect": "The spymaster's first attack this round gets +10 to hit. The spymaster gains 1 Advantage.",
+            "Effect": "The spymaster's first attack this round gets +10 to hit. The spymaster gains 1 Advantage (if Advantage was not spent on this order).",
             "Name": "I Know Where the Knife Is",
             "Desc": "The eavesdropper remembers what the enemy said in the tavern about an old wound."
           },
@@ -4712,7 +4853,7 @@
           },
           "regroup": {
             "Desc": "The Right Hand claps, whistles and the network falls back into line.",
-            "Effect": "The spymaster loses the Surprised condition and gains 1 Advantage; retinue allies may move 2 metres for free."
+            "Effect": "The spymaster loses the Surprised condition and gains 1 Advantage (if Advantage was not spent); retinue allies may move 2 metres for free."
           },
           "payoff": {
             "Name": "I Know Your Secret",
@@ -4745,7 +4886,7 @@
         },
         "Relation": {
           "strained": {
-            "Desc": "The principal is watching you closely. Delays risk his anger."
+            "Desc": "The principal is watching you closely: their cut increases by +5 pts (where a cut applies)."
           },
           "favorite": {
             "Name": "Principal's Favourites"
@@ -4843,7 +4984,7 @@
         "Retinue": {
           "Left": "{name} left the spymaster's retinue.",
           "Joined": "{name} joined the spymaster's retinue!",
-          "Full": "The spymaster's retinue can have at most 3 informants!"
+          "Full": "The spymaster's retinue can have at most {max} informants!"
         },
         "Mission": {
           "NoFollower": "No informant selected!"
@@ -5134,7 +5275,7 @@
             "Desc": "A fresh cultist without much experience on the road."
           },
           "lieutenant": {
-            "Desc": "+30 to tests, authority (+1 cult Morale), command orders (unique rank – one per cult; needs over 60–80 days of service)."
+            "Desc": "+30 to tests, authority (+1 cult Morale when < 7), command orders (unique rank – one per cult)."
           }
         },
         "Strengths": {
@@ -5269,7 +5410,7 @@
             "Desc": "−10: Bribery, Cover Tracks"
           },
           "squeamish": {
-            "Desc": "−10: Tend the Wounded, Abduction"
+            "Desc": "−10: Abduction"
           },
           "snorer": {
             "Desc": "−10: Infiltration, The Stone Circle"
@@ -5289,7 +5430,7 @@
             "Desc": "Work at bellows and anvil gives strength and a knowledge of weapons. Permanent +10 to jobs with weapons and a 50% discount on gear for the cult."
           },
           "craft_innkeeper": {
-            "Desc": "Knows the secrets of brewing and loosening tongues. Raises cult Morale by +1 every night camp, and tavern eavesdropping brings an extra rumour."
+            "Desc": "Knows the secrets of brewing and loosening tongues. Raises cult Morale by +1 at night camp (when Morale < 8), and tavern eavesdropping brings an extra rumour."
           },
           "blood_brotherhood": {
             "Name": "Blood Oath with the High Priest",
@@ -5339,7 +5480,7 @@
             "Desc": "The spy slips round behind the enemy before they understand whose side the spy is on."
           },
           "distract": {
-            "Effect": "The high priest gains +2 Advantage, and the provoked enemy loses 1 Advantage!",
+            "Effect": "On a Leadership test the high priest gains +1 Advantage (+2 on SL 3+), and the provoked enemy loses 1 Advantage!",
             "Name": "Blasphemous Litany",
             "Desc": "The orator begins a litany in a forgotten tongue and the enemy's hands start to shake."
           },
@@ -5350,7 +5491,7 @@
           },
           "rally": {
             "Desc": "The high priest roars an order, spurring on his companions and striking fear into the enemy.",
-            "Effect": "Removes the Broken condition from the chosen ally. The high priest gains Advantage equal to the SL of the test (minimum 1)."
+            "Effect": "Removes the Broken condition from the chosen ally. On a Leadership test the high priest gains Advantage equal to the SL (1–3)."
           },
           "coordinate": {
             "Effect": "The high priest and up to three allies within 6 metres may make a free move of half their Movement; leaving melee requires no test."
@@ -5373,29 +5514,29 @@
           },
           "bodyblock": {
             "Desc": "The bodyguard steps in front of the high priest and takes the blows on shield and back.",
-            "Effect": "Until the end of the round the first melee attack against the high priest hits the bodyguard instead. The high priest gains 1 Advantage (a moment to catch their breath)."
+            "Effect": "Until the end of the round the first melee attack against the high priest hits the bodyguard instead. The high priest gains 1 Advantage (if Advantage was not spent on this order)."
           },
           "circle": {
             "Desc": "The cult closes a ring round the high priest, backs together, faces to the enemy.",
-            "Effect": "The high priest loses the Surprised condition (if any) and gains 1 Advantage. Nobody comes at them from behind."
+            "Effect": "The high priest and allies (up to 4) lose the Surprised condition and gain 1 Advantage (if Advantage was not spent on this order)."
           },
           "parry": {
             "Desc": "The duellist steps between the high priest and the enemy and turns the blow aside with the blade.",
-            "Effect": "The first melee attack against the high priest this round has −20 to hit. The high priest gains 1 Advantage."
+            "Effect": "The first melee attack against the high priest this round has −20 to hit. The high priest gains 1 Advantage (if Advantage was not spent on this order)."
           },
           "riposte": {
             "Effect": "The chosen opponent loses 1 Advantage. If they attack the high priest this round and miss, the high priest may immediately strike back."
           },
           "wagonwall": {
             "Desc": "The carter stops the wagon so that it shields the high priest from fire.",
-            "Effect": "The wagon gives cover: ranged attacks against the high priest this round have −10. The high priest gains 1 Advantage."
+            "Effect": "The wagon gives cover: ranged attacks against the high priest this round suffer −10. The high priest gains 1 Advantage (if Advantage was not spent on this order)."
           },
           "getaway": {
             "Desc": "The carter grabs the high priest by the arm and yanks them out of the melee onto the wagon seat.",
             "Effect": "The high priest loses the Prone condition and may move 4 metres away without provoking opportunity attacks."
           },
           "spot": {
-            "Effect": "The high priest's first attack this round gets +10 to hit. The high priest gains 1 Advantage.",
+            "Effect": "The high priest's first attack this round gets +10 to hit. The high priest gains 1 Advantage (if Advantage was not spent on this order).",
             "Desc": "The spy points out a gap in the armour."
           },
           "salve": {
@@ -5405,7 +5546,7 @@
           },
           "regroup": {
             "Desc": "The Right Hand claps, whistles and the cult falls back into line.",
-            "Effect": "The high priest loses the Surprised condition and gains 1 Advantage; retinue allies may move 2 metres for free."
+            "Effect": "The high priest loses the Surprised condition and gains 1 Advantage (if Advantage was not spent); retinue allies may move 2 metres for free."
           },
           "grapple": {
             "Desc": "The zealot seizes the enemy and holds on, even while being cut."
@@ -5463,7 +5604,7 @@
         },
         "Relation": {
           "strained": {
-            "Desc": "The Dark Master is watching you closely. Delays risk his anger."
+            "Desc": "The Dark Master is watching you closely: their cut increases by +5 pts (where a cut applies)."
           },
           "favorite": {
             "Name": "The Master's Chosen"
@@ -5557,7 +5698,7 @@
         "Retinue": {
           "Left": "{name} left the high priest's retinue.",
           "Joined": "{name} joined the high priest's retinue!",
-          "Full": "The high priest's retinue can have at most 3 cultists!"
+          "Full": "The high priest's retinue can have at most {max} cultists!"
         },
         "Mission": {
           "NoFollower": "No cultist selected!"
@@ -5801,6 +5942,46 @@
           "Loot": "Loot"
         }
       }
+    },
+    "LootDialog": {
+      "AddTitle": "Add Loot to Stash (GM)",
+      "EditTitle": "Edit Loot (GM)",
+      "Add": "Add Loot",
+      "Name": "Item / cargo name",
+      "NamePlaceholder": "e.g. Gold chalice from a manor",
+      "Category": "Category",
+      "ValueSS": "Base value (SS)",
+      "Hot": "Hot level (0–5)",
+      "Origin": "Origin / description",
+      "OriginPlaceholder": "e.g. Taken during session",
+      "Terrain": "Origin terrain"
+    },
+    "TokensDialog": {
+      "Title": "Add Preparation Token (GM)",
+      "Kind": "Token type",
+      "Nights": "Duration (nights)",
+      "Add": "Add Token",
+      "AddBtn": "Add Token",
+      "Remove": "Remove token (GM)"
+    },
+    "RacketDialog": {
+      "Title": "Manage Racket (GM)",
+      "District": "District / turf",
+      "Placeholder": "e.g. The Docks or Goldsmiths Row",
+      "Hint": "Leave empty or click “Clear Racket” to remove the protection racket.",
+      "Clear": "Clear Racket",
+      "EditBtn": "Set Racket"
+    },
+    "History": {
+      "AddTitle": "Add Chronicle Entry (GM)",
+      "AddBtn": "Add Entry",
+      "DeleteTitle": "Delete Chronicle entry",
+      "DeleteConfirm": "Remove this entry from the company Chronicle?",
+      "Date": "Date / header",
+      "DatePlaceholder": "e.g. 14th Sigmarzeit",
+      "Summary": "Entry text",
+      "SummaryPlaceholder": "Describe an event in the company’s history...",
+      "Add": "Add to Chronicle"
     }
   }
 }

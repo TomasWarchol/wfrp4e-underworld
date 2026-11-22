@@ -65,7 +65,7 @@ By default the sheet looks like a war ledger: a banner with the company type's c
 ## 📅 Crew rhythm (world setting)
 
 * **Daily** (default): a job resolves as soon as it is sent, and the crew makes camp every night.
-* **Weekly – Crew Week**: players only **plan** assignments. The GM clicks **Resolve the Crew Week** on the Camp tab: the module resolves every planned job, then a week in camp (food, healing, an event, raids, desertion), and posts **one report** with all the rolls. It can also advance world time by 7 days.
+* **Weekly – Crew Week**: players only **plan** assignments. The GM clicks **Resolve the Crew Week** on the Camp tab: the module resolves every planned job, then a week in camp (food, upkeep/pay, healing, an event, raids, desertion), and posts **one report** with all the rolls. OXP rewards scale ×3 and comfortable lodging costs ×3. It can also advance world time by 7 days.
 * **GM queue in daily mode** (separate setting, off by default): jobs sent by players wait for the GM, who resolves them with **Resolve Assignments** or by running the night camp.
 
 ---
@@ -77,8 +77,8 @@ The **Type** field on the Information tab decides what the company is. Each type
 - **Underworld Crew**: everything described below.
 - **Armed Company**: a Captain and an Employer who pays instead of taking a cut. Infamy replaces Heat. Roles: Sergeant, Halberdier, Crossbowman, Standard Bearer, Barber-Surgeon, Quartermaster. Jobs: Patrol, Garrison Duty, Requisition, Escort, Contract, Drill, selling trophies, tending the wounded. Spoils are trophies, which never go hot. This type does not use the world's RollTables.
 - **Outlaw Band**: the crew's roles and wording, with a Protector who takes a share. Jobs suited to roads and forests (no rackets, burglary or pickpocketing) plus Turn on the Hunters (Heat −1 and weapons), Ransom and Bridge Toll. Uses the world's RollTables and adds its own night events.
-- **Smugglers' Flotilla**: a Skipper and a Buyer who pays for the cargo. Customs Scrutiny replaces Heat. Roles: Carter / Smuggler, Helmsman, Boatman, Lookout, Forger, Purser. Contraband Pickup brings contraband to the stash; River Run 🎯 takes the most valuable load to the buyer for 2.5 times its value (the target is the route), and a failed run sinks it. The Stash lowers Scrutiny.
-- **Informant Network**: a Spymaster and a Principal who pays for reports. Exposure replaces Heat. Roles: Shadow / Tail, Go-Between / Forger, Chameleon / Hedge Healer, Eavesdropper, Courier, Enforcer. Buy a Secret, Intercept a Courier and Swap a Letter 🎯 bring documents. Sell them to the secret-buyer, or hand the best one to the principal in Report to the Principal for 1.25 times its value with no risk.
+- **Smugglers' Flotilla**: a Skipper and a Buyer who pays for the cargo. Customs Scrutiny replaces Heat. Roles: Carter / Smuggler, Helmsman, Boatman, Lookout, Forger, Purser. Contraband Pickup brings contraband to the stash; River Run 🎯 takes the most valuable load to the buyer for 2× its value (the target is the route), and a failed run sinks it. The Stash lowers Scrutiny.
+- **Informant Network**: a Spymaster and a Principal who pays for reports. Exposure replaces Heat. Roles: Shadow / Tail, Go-Between / Forger, Chameleon / Hedge Healer, Eavesdropper, Courier, Enforcer. Buy a Secret, Intercept a Courier and Swap a Letter 🎯 bring documents. Sell them to the secret-buyer, or hand the best one to the principal in Report to the Principal for 1.75 times its value with no risk.
 - **Secret Brotherhood**: a High Priest and a Dark Master who takes a tithe. Suspicion replaces Heat. Roles: Acolyte, Zealot, Spy, Assassin, Orator, Alchemist. Jobs: Ritual, Infiltration, Abduction 🎯 and The Stone Circle in the wilds. New believers join through recruitment, as part of the story.
 
 Each role of these types gives its own 3–5 combat orders, named for the type (the halberdier's Halberd Hook, the boatman's Overboard!, the zealot's Martyrdom); the mechanics are those of the crew's orders.
@@ -87,7 +87,7 @@ Each role of these types gives its own 3–5 combat orders, named for the type (
 
 ## 🎲 Jobs
 
-Every job shows its target number, skill, failure risk and expected reward. If the member is linked to an actor sheet the user controls, the module makes a **normal WFRP4e skill test** from that sheet, with the crew modifiers in the test dialog. Otherwise it rolls **1d100 against the job's target** (01–05 always succeeds, 96–00 always fails). All rolls appear in the chat.
+Every job shows its target number, skill, failure risk and expected reward. If the member is linked to an actor sheet the user controls, the module makes a **normal WFRP4e skill test** (Challenging `+0` base difficulty adjusted for the job's target, without double-counting crew rank), with the crew modifiers in the test dialog. Otherwise it rolls **1d100 against the job's target** (01–05 always succeeds with min. +1 SL, 96–00 always fails with max. −1 SL). Total crew modifiers are bounded from −30 to +40. All rolls appear in the chat.
 
 Terrain: **C** – city, **V** – village, **F** – forest, **M** – mountains. Some job names change with the terrain. Jobs marked 🎯 let you **choose a target**.
 
@@ -97,7 +97,7 @@ Terrain: **C** – city, **V** – village, **F** – forest, **M** – mountain
 | Shadow a Target | CV | 50 | Stealth | stealth | report, **Recon** token |
 | Listen at the Tavern / Question the Peasants | CV | 55 | Gossip | low | rumour (costs 1d2 s); SL 3+: **Lead** |
 | Scavenge and Forage | CVFM | 50 | Stealth | stealth | 1d3 rations + 1d8+1 s |
-| Pickpocketing 🎯 | CV | 45 | Sleight of Hand | stealth | 1d10+5 s × target; chance of a valuable |
+| Pickpocketing 🎯 | CV | 45 | Sleight of Hand | stealth | 1d8+2 s × target; chance of a valuable |
 | Burglary 🎯 | C | 40 | Pick Lock | stealth | loot to sell (SL 3+: two) |
 | Farmyard Theft 🎯 | V | 50 | Stealth | stealth | rations + goods |
 | Poaching | FM | 50 | Outdoor Survival | low | 1d3+1 rations |
@@ -116,7 +116,7 @@ Terrain: **C** – city, **V** – village, **F** – forest, **M** – mountain
 | Cover Tracks | CVFM | 45 | Stealth | low | Heat −1, fewer night troubles |
 | Tend the Wounded | CVFM | – | – | – | Wounded → Resting (with a Surgeon's Bag: Ready) |
 
-Coins go to the stash **after the Patron's cut** (25% by default, world setting). Every job grants **Operational XP (OXP)**: success +10 (SL ≥ 3: +15), failure +5.
+Coins go to the stash **after the Patron's cut** (25% by default or the company's configured cut, modified by the Patron's relation). Every job grants **Operational XP (OXP)**: success +10 (SL ≥ 3: +15), failure +5 (×3 in weekly mode).
 
 ### 🎯 Target choice, ♟️ preparation tokens, 💰 loot
 
@@ -137,23 +137,25 @@ Coins go to the stash **after the Patron's cut** (25% by default, world setting)
 
 ## 🌙 Night camp
 
-Lodging (makeshift, basic, comfortable), sentries, food, recovery, a night event from the terrain's table (**300 events** each for city, village, forest and mountains), a watch **raid** at high Heat, the city racket, flaws and strengths of the members, and **desertion** at low Morale – all resolved in one chat card.
+Lodging (makeshift halves raid chance, basic, comfortable – 3 s in the forest; ×3 weekly), sentries (+3 OXP × rhythm; wounded with *Battle-Scarred* can keep watch), food (1 ration per 3 active members daily, 1 per member weekly), optional upkeep/pay (world setting, on by default), recovery, a night event from the terrain's table (**300 events** each for city, village, forest and mountains), a watch **raid** at high Heat (sentries or *Watch Contacts* escape at the cost of 1d3 rations and 1d6 s), the city racket, flaws and strengths of the members, and **desertion** at low Morale (*Blood Brotherhood* prevents desertion) – all resolved in one chat card.
 
 Some night events are **role events** (6 per role in every table): if a capable member with that role (main or second) is in the crew, they roll d100 (50 + 10 per rank, max. 80). Success turns the event's effects into good ones and adds the resolution; a failure or no specialist leaves the base effects. **Chains** (18 per terrain): event A leaves a hook and the next night with an event brings its sequel B; B entries never come up at random.
 
 ## ⚔️ Retinue and tactical orders
 
-Up to 3 members can join the chief's retinue. There are **39 orders** in three groups (offensive, control, protection) and **11 roles**: Bruiser, Shadow, Marksman, Provocateur, Scavenger, Carter, Arsonist, plus Scout, Fence / Forger, Charlatan and Swashbuckler. An order needs a member with the right role (**main or second**) or the Right Hand, and many orders are shared by several roles (e.g. Smoke Screen: Provocateur, Arsonist, Carter). Give them with a **Leadership test**, by **spending Advantage**, or as a **plain order** decided by the GM. One order per round – it uses the chief's Action. Target a token (**T**) first: the GM's client applies conditions such as Prone, Bleeding or Blinded through the WFRP4e system.
+Up to 3 members can join the chief's retinue. There are **39 orders** in three groups (offensive, control, protection) and **11 roles**: Bruiser, Shadow, Marksman, Provocateur, Scavenger, Carter, Arsonist, plus Scout, Fence / Forger, Charlatan and Swashbuckler. An order needs a member with the right role (**main or second**) or the Right Hand, and many orders are shared by several roles (e.g. Smoke Screen: Provocateur, Arsonist, Carter). Give them with a **Leadership test** (Challenging +0), by **spending Advantage** (supports both Personal Advantage and *Up in Arms* Group Advantage without refunding allied Advantage), or as a **plain order** decided by the GM. One order per round – it uses the chief's Action (*Meat Shield* is a separate Reaction once per round). Target a token (**T**) first (1 target by default, 3–4 for area orders): the GM's client applies conditions such as Prone, Bleeding or Blinded through the WFRP4e system, with enemy defence tests scaling with the follower's rank.
 
 ## 📈 Followers
 
 Ranks bought with OXP (+10 / +20 / +30 to tests; rank 3 is the unique **Right Hand**), a **second role** for 80 OXP (from rank 1: its orders and specialty; the specialty bonus counts once), a **Former Trade** and story perks, gear from the stash (max. 2 items), and 30 strengths and 30 flaws set by the GM. Taking on new followers is always the GM's decision: no job or event adds people to the crew. The GM sends recruit proposals to the chat, where the GM or the chief's player picks a candidate.
 
-## 🛠️ GM tools
+## 🛠️ GM tools & configuration
 
-* Manual editing of Morale, Heat, stash, statuses and bonuses.
-* **Rumour and event RollTables**: a crew folder in the Tables tab with a rumour table and a camp event table for each terrain. Reference copies are in the **Underworld Crew – Rumours and Events** compendium, which is rebuilt in the world's language.
+* **Full GM company editing:** manually edit Morale, Heat/Pressure, stash coins, ration price, follower statuses and bonuses, add/edit stash loot, preparation tokens, protection rackets and event hooks, add/delete Chronicle entries, pick portraits and ranks (`0–3`), grant/remove perks and gear without spending resources, link Foundry actors, adjust arrest duration, clear cycle/combat locks, and rebuild world RollTables.
+* **Player vs GM boundary:** the Chief’s player edits narrative identity (name, motto, hideout/turf, code, allies/rivals, member names and notes), plans jobs, manages the Retinue, and upgrades/equips followers through the stash and OXP rules, without bypassing mechanical costs or GM-controlled state.
+* **Rumour and event RollTables**: a crew folder in the Tables tab with a rumour table and a camp event table for each terrain. Reference copies are in the **Underworld Crew – Rumours and Events** compendium, which is rebuilt in the world's language. Use **Rebuild Tables** in Camp to refresh world tables from built-in module data.
 * **Custom rumours and events**: `data/rumors.<lang>.json` and `data/events.<lang>.json` replace the built-in city rumours and events for that language (a Polish rumour set ships as `rumors.pl.json`). The built-in event tables live in `data/events/<terrain>.<lang>.json` (fields `title`, `text`, `morale`, `supplies`, `coinsSS`, optionally `role`, `okText`, `ok`, `next`, `only`).
+* **World settings & per-company overrides:** configure Patron cut, Crew rhythm, GM daily queue, GM-only night camp, Direct orders permission, loot-to-Chief transfer policy, Retinue/roster/gear caps (`maxRetinue`, `maxRoster`, `maxGearSlots`), ration mode & default ration price, upkeep/OXP multipliers, order automation & round limit, raids/desertions/reminders toggles, and Chronicle length — plus per-company overrides on the Information/Chronicle tab for Retinue cap, Upkeep exemption, and Patron cut exemption (`0%`).
 
 ## 📜 Macros
 

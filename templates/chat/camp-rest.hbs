@@ -9,6 +9,7 @@
     <p><strong>{{underworldT "Camp.Lodging"}}:</strong> {{shelterName}}</p>
     <p><strong>{{underworldT "Camp.Sentries"}}:</strong> {{watchmenNames}}</p>
     <p><strong>{{underworldT "Camp.Meal"}}:</strong> {{foodSummary}}</p>
+    {{#if upkeepSummary}}<p><strong>{{underworldT "Camp.Upkeep"}}:</strong> {{{upkeepSummary}}}</p>{{/if}}
     <p><strong>{{underworldT "Camp.Recovery"}}:</strong> {{healedList}}</p>
     <p><strong>{{underworldT "Camp.State"}}:</strong> {{underworldT "Camp.StateLine" morale=morale heat=notoriety supplies=supplies}}</p>
     {{#if racket}}<p><strong><i class="fas fa-store"></i> {{underworldT "Badges.racket"}}:</strong> {{{racket.text}}}</p>{{/if}}
@@ -55,6 +56,13 @@
     {{#if event.roleNote}}<p class="camp-small"><i class="fas fa-id-badge"></i> {{{event.roleNote}}}</p>{{/if}}
     {{#if event.followUp}}<p class="camp-small camp-muted"><i class="fas fa-link"></i> {{underworldT "CampEvent.FollowUp"}}</p>{{/if}}
     {{#if event.next}}<p class="camp-small camp-muted"><i class="fas fa-link"></i> {{underworldT "CampEvent.HookSet"}}</p>{{/if}}
+  </div>
+  {{/if}}
+
+  {{#if perkEffects.length}}
+  <div class="camp-block camp-block-perks">
+    <strong><i class="fas fa-star"></i> {{underworldT "Camp.PerksShowed"}}</strong>
+    <ul>{{#each perkEffects}}<li>{{{this}}}</li>{{/each}}</ul>
   </div>
   {{/if}}
 

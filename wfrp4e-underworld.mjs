@@ -36,6 +36,12 @@ Hooks.once("init", async function () {
   // Wybór rekruta z czatu – gracz pyta MG, a serwer potwierdza, kto pyta
   registerQuery(`${MODULE_ID}.recruit`, onRecruitQuery);
 
+  const rerenderSheets = () => {
+    for (const app of foundry.applications?.instances?.values() ?? []) {
+      if (app instanceof GangSheet) app.render();
+    }
+  };
+
   // 1. Rejestracja ustawień modułu
   game.settings.register(MODULE_ID, "cutPercentage", {
     name: "UNDERWORLD.Settings.Cut.Name",
@@ -57,11 +63,7 @@ Hooks.once("init", async function () {
       weekly: "UNDERWORLD.Settings.Cycle.Weekly"
     },
     default: "daily",
-    onChange: () => {
-      for (const app of foundry.applications.instances.values()) {
-        if (app instanceof GangSheet) app.render();
-      }
-    }
+    onChange: rerenderSheets
   });
 
   game.settings.register(MODULE_ID, "dailyQueue", {
@@ -71,11 +73,208 @@ Hooks.once("init", async function () {
     config: true,
     type: Boolean,
     default: false,
-    onChange: () => {
-      for (const app of foundry.applications.instances.values()) {
-        if (app instanceof GangSheet) app.render();
-      }
-    }
+    onChange: rerenderSheets
+  });
+
+  game.settings.register(MODULE_ID, "campRestGMOnly", {
+    name: "UNDERWORLD.Settings.CampRestGMOnly.Name",
+    hint: "UNDERWORLD.Settings.CampRestGMOnly.Hint",
+    scope: "world",
+    config: true,
+    type: Boolean,
+    default: false,
+    onChange: rerenderSheets
+  });
+
+  game.settings.register(MODULE_ID, "directOrdersMode", {
+    name: "UNDERWORLD.Settings.DirectOrders.Name",
+    hint: "UNDERWORLD.Settings.DirectOrders.Hint",
+    scope: "world",
+    config: true,
+    type: String,
+    choices: {
+      all: "UNDERWORLD.Settings.DirectOrders.All",
+      gm: "UNDERWORLD.Settings.DirectOrders.GM",
+      off: "UNDERWORLD.Settings.DirectOrders.Off"
+    },
+    default: "gm"
+  });
+
+  game.settings.register(MODULE_ID, "lootTransferMode", {
+    name: "UNDERWORLD.Settings.LootTransfer.Name",
+    hint: "UNDERWORLD.Settings.LootTransfer.Hint",
+    scope: "world",
+    config: true,
+    type: String,
+    choices: {
+      gm: "UNDERWORLD.Settings.LootTransfer.GM",
+      coolOnly: "UNDERWORLD.Settings.LootTransfer.CoolOnly",
+      all: "UNDERWORLD.Settings.LootTransfer.All"
+    },
+    default: "coolOnly",
+    onChange: rerenderSheets
+  });
+
+  game.settings.register(MODULE_ID, "maxRetinue", {
+    name: "UNDERWORLD.Settings.MaxRetinue.Name",
+    hint: "UNDERWORLD.Settings.MaxRetinue.Hint",
+    scope: "world",
+    config: true,
+    type: Number,
+    range: { min: 1, max: 6, step: 1 },
+    default: 3,
+    onChange: rerenderSheets
+  });
+
+  game.settings.register(MODULE_ID, "maxRoster", {
+    name: "UNDERWORLD.Settings.MaxRoster.Name",
+    hint: "UNDERWORLD.Settings.MaxRoster.Hint",
+    scope: "world",
+    config: true,
+    type: Number,
+    range: { min: 0, max: 30, step: 1 },
+    default: 0,
+    onChange: rerenderSheets
+  });
+
+  game.settings.register(MODULE_ID, "maxGearSlots", {
+    name: "UNDERWORLD.Settings.MaxGearSlots.Name",
+    hint: "UNDERWORLD.Settings.MaxGearSlots.Hint",
+    scope: "world",
+    config: true,
+    type: Number,
+    range: { min: 1, max: 5, step: 1 },
+    default: 2
+  });
+
+  game.settings.register(MODULE_ID, "rationsMode", {
+    name: "UNDERWORLD.Settings.RationsMode.Name",
+    hint: "UNDERWORLD.Settings.RationsMode.Hint",
+    scope: "world",
+    config: true,
+    type: String,
+    choices: {
+      scaled: "UNDERWORLD.Settings.RationsMode.Scaled",
+      flat1: "UNDERWORLD.Settings.RationsMode.Flat1",
+      off: "UNDERWORLD.Settings.RationsMode.Off"
+    },
+    default: "scaled",
+    onChange: rerenderSheets
+  });
+
+  game.settings.register(MODULE_ID, "defaultSupplyPrice", {
+    name: "UNDERWORLD.Settings.DefaultSupplyPrice.Name",
+    hint: "UNDERWORLD.Settings.DefaultSupplyPrice.Hint",
+    scope: "world",
+    config: true,
+    type: Number,
+    range: { min: 1, max: 240, step: 1 },
+    default: 12,
+    onChange: rerenderSheets
+  });
+
+  game.settings.register(MODULE_ID, "upkeepEnabled", {
+    name: "UNDERWORLD.Settings.Upkeep.Name",
+    hint: "UNDERWORLD.Settings.Upkeep.Hint",
+    scope: "world",
+    config: true,
+    type: Boolean,
+    default: true,
+    onChange: rerenderSheets
+  });
+
+  game.settings.register(MODULE_ID, "upkeepMultiplier", {
+    name: "UNDERWORLD.Settings.UpkeepMultiplier.Name",
+    hint: "UNDERWORLD.Settings.UpkeepMultiplier.Hint",
+    scope: "world",
+    config: true,
+    type: Number,
+    choices: {
+      0.5: "0.5×",
+      1: "1×",
+      1.5: "1.5×",
+      2: "2×"
+    },
+    default: 1,
+    onChange: rerenderSheets
+  });
+
+  game.settings.register(MODULE_ID, "oxpMultiplier", {
+    name: "UNDERWORLD.Settings.OxpMultiplier.Name",
+    hint: "UNDERWORLD.Settings.OxpMultiplier.Hint",
+    scope: "world",
+    config: true,
+    type: Number,
+    choices: {
+      0.5: "0.5×",
+      1: "1×",
+      1.5: "1.5×",
+      2: "2×"
+    },
+    default: 1
+  });
+
+  game.settings.register(MODULE_ID, "orderAutomation", {
+    name: "UNDERWORLD.Settings.OrderAutomation.Name",
+    hint: "UNDERWORLD.Settings.OrderAutomation.Hint",
+    scope: "world",
+    config: true,
+    type: String,
+    choices: {
+      full: "UNDERWORLD.Settings.OrderAutomation.Full",
+      chatOnly: "UNDERWORLD.Settings.OrderAutomation.ChatOnly"
+    },
+    default: "full"
+  });
+
+  game.settings.register(MODULE_ID, "orderRoundLimit", {
+    name: "UNDERWORLD.Settings.OrderRoundLimit.Name",
+    hint: "UNDERWORLD.Settings.OrderRoundLimit.Hint",
+    scope: "world",
+    config: true,
+    type: String,
+    choices: {
+      one: "UNDERWORLD.Settings.OrderRoundLimit.One",
+      unlimited: "UNDERWORLD.Settings.OrderRoundLimit.Unlimited"
+    },
+    default: "one"
+  });
+
+  game.settings.register(MODULE_ID, "raidsEnabled", {
+    name: "UNDERWORLD.Settings.RaidsEnabled.Name",
+    hint: "UNDERWORLD.Settings.RaidsEnabled.Hint",
+    scope: "world",
+    config: true,
+    type: Boolean,
+    default: true
+  });
+
+  game.settings.register(MODULE_ID, "desertionEnabled", {
+    name: "UNDERWORLD.Settings.DesertionEnabled.Name",
+    hint: "UNDERWORLD.Settings.DesertionEnabled.Hint",
+    scope: "world",
+    config: true,
+    type: Boolean,
+    default: true
+  });
+
+  game.settings.register(MODULE_ID, "campReminder", {
+    name: "UNDERWORLD.Settings.CampReminder.Name",
+    hint: "UNDERWORLD.Settings.CampReminder.Hint",
+    scope: "world",
+    config: true,
+    type: Boolean,
+    default: true
+  });
+
+  game.settings.register(MODULE_ID, "maxHistoryEntries", {
+    name: "UNDERWORLD.Settings.MaxHistoryEntries.Name",
+    hint: "UNDERWORLD.Settings.MaxHistoryEntries.Hint",
+    scope: "world",
+    config: true,
+    type: Number,
+    range: { min: 5, max: 100, step: 5 },
+    default: 20
   });
 
   // Wygląd panelu: nowa „Księga Kompanii” albo dotychczasowy (na czas przebudowy oba działają)
@@ -92,9 +291,7 @@ Hooks.once("init", async function () {
     default: "ledger",
     onChange: (value) => {
       document.body.classList.toggle("uw-ledger-chat", value !== "classic");
-      for (const app of foundry.applications.instances.values()) {
-        if (app instanceof GangSheet) app.render();
-      }
+      rerenderSheets();
     }
   });
 
@@ -572,7 +769,7 @@ addTokenTool({
 /*  Obsługa Rekrutacji przez Czat               */
 /* -------------------------------------------- */
 
-async function executeRecruitChoice({ actorId, messageId, candidateId, userName }) {
+export async function executeRecruitChoice({ actorId, messageId, candidateId, userName }) {
   if (!game.user.isGM) return;
   if (recruitmentLocks.has(messageId)) return;
   const message = game.messages.get(messageId);
@@ -599,6 +796,15 @@ async function executeRecruitChoice({ actorId, messageId, candidateId, userName 
     return;
   }
 
+  const gang = GangData.getGang(actor);
+  if (!Array.isArray(gang.roster)) gang.roster = [];
+  const maxRoster = UnderworldOperations.maxRoster();
+  const aliveCount = gang.roster.filter(n => n.status !== "dead").length;
+  if (maxRoster > 0 && aliveCount >= maxRoster) {
+    ui.notifications.warn(t("Roster.MaxReached", { max: maxRoster }));
+    return null;
+  }
+
   recruitmentLocks.add(messageId);
   try {
     await message.setFlag("wfrp4e-underworld", "chosen", "__processing__");
@@ -606,10 +812,6 @@ async function executeRecruitChoice({ actorId, messageId, candidateId, userName 
     recruitmentLocks.delete(messageId);
     throw err;
   }
-
-  // Dodaj rekruta do szajki
-  const gang = GangData.getGang(actor);
-  if (!Array.isArray(gang.roster)) gang.roster = [];
 
   const newNpc = {
     id: foundry.utils.randomID ? foundry.utils.randomID() : Math.random().toString(36).substring(2, 11),
@@ -627,7 +829,8 @@ async function executeRecruitChoice({ actorId, messageId, candidateId, userName 
     customBonus: 0,
     status: "ready",
     assignment: "none",
-    gear: []
+    gear: [],
+    notes: ""
   };
 
   gang.roster.push(newNpc);

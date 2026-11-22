@@ -10,6 +10,7 @@
         <div class="uw-l-identity-fields">
           <label class="uw-l-field">
             <span>{{underworldT "InfoTab.Type"}}</span>
+            {{#if isGM}}
             <select name="type">
               {{#bajerySelect gang.type}}
               <option value="underworld">{{underworldT "InfoTab.Types.underworld"}}</option>
@@ -20,6 +21,9 @@
               <option value="cult">{{underworldT "InfoTab.Types.cult"}}</option>
               {{/bajerySelect}}
             </select>
+            {{else}}
+            <span class="uw-l-readonly">{{companyTypeLabel}}</span>
+            {{/if}}
           </label>
           <label class="uw-l-field">
             <span>{{underworldT "InfoTab.Hideout"}}</span>
@@ -29,6 +33,21 @@
             <span>{{underworldT "InfoTab.Territory"}}</span>
             <input type="text" name="territory" value="{{gang.territory}}" placeholder="{{underworldT 'InfoTab.TerritoryPlaceholder'}}"/>
           </label>
+          {{#if isGM}}
+          <label class="uw-l-field">
+            <span>{{underworldT "InfoTab.MaxRetinueOverride"}}</span>
+            <input type="number" name="maxRetinueOverride" value="{{gang.maxRetinueOverride}}" min="0" max="6" title="{{underworldT 'InfoTab.MaxRetinueOverrideHint'}}"/>
+          </label>
+          <label class="uw-l-field">
+            <span>{{underworldT "InfoTab.UpkeepOverride"}}</span>
+            <select name="upkeepOverride">
+              {{#bajerySelect gang.upkeepOverride}}
+              <option value="default">{{underworldT "InfoTab.UpkeepDefault"}}</option>
+              <option value="free">{{underworldT "InfoTab.UpkeepFree"}}</option>
+              {{/bajerySelect}}
+            </select>
+          </label>
+          {{/if}}
         </div>
       </section>
 
@@ -120,6 +139,12 @@
           <span>{{underworldT "InfoTab.PatronCut"}}</span>
           {{#if isGM}}<input type="text" name="patron.cut" value="{{gang.patron.cut}}" placeholder="{{underworldT 'InfoTab.PatronCutPlaceholder'}}"/>{{else}}<input type="text" value="{{gang.patron.cut}}" disabled/>{{/if}}
         </label>
+        {{#if isGM}}{{#if profileHasPatronCut}}
+        <label class="uw-l-field uw-check-label">
+          <input type="checkbox" name="patron.noCut" {{#if gang.patron.noCut}}checked{{/if}} />
+          <span>{{underworldT "InfoTab.PatronNoCut"}}</span>
+        </label>
+        {{/if}}{{/if}}
         <label class="uw-l-field">
           <span>{{underworldT "InfoTab.PatronNotes"}}</span>
           {{#if isGM}}<textarea name="patron.notes" rows="3" placeholder="{{underworldT 'InfoTab.PatronNotesPlaceholder'}}">{{gang.patron.notes}}</textarea>{{else}}<textarea disabled rows="3">{{gang.patron.notes}}</textarea>{{/if}}
@@ -141,10 +166,16 @@
   </div>
 
   <section class="uw-l-panel uw-l-timeline">
-    <h3>{{uwIcon "ui-day"}} {{underworldT "DashTab.Chronicle"}}</h3>
+    <div class="uw-l-section-head">
+      <h3>{{uwIcon "ui-day"}} {{underworldT "DashTab.Chronicle"}}</h3>
+      {{#if isGM}}<button type="button" class="btn-theme-action uw-btn-sm" data-action="history-add" title="{{underworldT 'History.AddTitle'}}"><i class="fas fa-plus"></i> {{underworldT "History.AddBtn"}}</button>{{/if}}
+    </div>
     <ol class="uw-l-events">
       {{#each gang.history}}
-        <li><span class="uw-l-event-date">{{this.date}}</span><span class="uw-l-event-text">{{this.logSummary}}</span></li>
+        <li>
+          <span class="uw-l-event-date">{{this.date}}{{#if ../isGM}} <button type="button" class="uw-chip-x uw-danger" data-action="history-delete" data-index="{{@index}}" title="{{underworldT 'History.DeleteTitle'}}"><i class="fas fa-trash"></i></button>{{/if}}</span>
+          <span class="uw-l-event-text">{{this.logSummary}}</span>
+        </li>
       {{else}}
         <li class="is-empty">{{underworldT "DashTab.ChronicleEmpty"}}</li>
       {{/each}}

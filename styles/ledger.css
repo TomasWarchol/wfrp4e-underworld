@@ -729,3 +729,8 @@
 /* Kontrast co najmniej 4.5:1 dla drobnych chipów na pergaminie */
 :is(html, #uw) .underworld-app.uw-ledger .uw-token-chip.is-loot { color: #9a3700; }
 :is(html, #uw) .underworld-app.uw-ledger .meta-chip.meta-reward { color: #6e4c1c; }
+
+/* Nagłówki sekcji i kontrolki MG w Księdze */
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-section-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-section-head h3 { margin: 0; }
+:is(html, #uw) .underworld-app.uw-ledger .uw-l-field.uw-check-label { flex-direction: row; align-items: center; gap: 6px; }

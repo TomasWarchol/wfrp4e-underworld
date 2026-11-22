@@ -578,21 +578,21 @@ export class UnderworldTables {
       icon: "fas fa-shield-alt",
       badgeClass: "role-bodyguard",
       tactics: ["meatshield", "trip", "bullrush"],
-      bonusAssignments: ["intimidate", "distract"]
+      bonusAssignments: ["intimidate", "distract", "highway_robbery", "racket", "ransom", "toll"]
     },
     shadow: {
       id: "shadow",
       icon: "fas fa-user-ninja",
       badgeClass: "role-shadow",
       tactics: ["flank", "volley", "kidneystrike"],
-      bonusAssignments: ["scout", "shadow", "pickpocket", "smuggle"]
+      bonusAssignments: ["scout", "shadow", "pickpocket", "smuggle", "burglary", "farm_theft", "ambush"]
     },
     marksman: {
       id: "marksman",
       icon: "fas fa-crosshairs",
       badgeClass: "role-marksman",
       tactics: ["cover", "disarm", "volley"],
-      bonusAssignments: ["scout", "procure", "sabotage"]
+      bonusAssignments: ["scout", "procure", "sabotage", "poaching", "highway_robbery", "ambush"]
     },
     provocateur: {
       id: "provocateur",
@@ -606,35 +606,35 @@ export class UnderworldTables {
       icon: "fas fa-toolbox",
       badgeClass: "role-scavenger",
       tactics: ["resupply", "retreat", "draught"],
-      bonusAssignments: ["procure", "fence", "tend_wounded"]
+      bonusAssignments: ["procure", "fence", "tend_wounded", "farm_theft", "mine_raid"]
     },
     smuggler: {
       id: "smuggler",
       icon: "fas fa-horse-head",
       badgeClass: "role-smuggler",
       tactics: ["retreat", "resupply", "flank"],
-      bonusAssignments: ["smuggle", "procure", "cover_tracks"]
+      bonusAssignments: ["smuggle", "procure", "cover_tracks", "toll"]
     },
     saboteur: {
       id: "saboteur",
       icon: "fas fa-fire",
       badgeClass: "role-saboteur",
       tactics: ["smoke", "sand", "volley"],
-      bonusAssignments: ["sabotage", "distract", "cover_tracks"]
+      bonusAssignments: ["sabotage", "distract", "cover_tracks", "burglary", "mine_raid"]
     },
     scout: {
       id: "scout",
       icon: "fas fa-binoculars",
       badgeClass: "role-scout",
       tactics: ["spot", "lure", "snare"],
-      bonusAssignments: ["scout", "cover_tracks", "procure"]
+      bonusAssignments: ["scout", "cover_tracks", "procure", "poaching", "mine_raid", "ambush"]
     },
     fixer: {
       id: "fixer",
       icon: "fas fa-file-signature",
       badgeClass: "role-fixer",
       tactics: ["payoff", "forgedorder", "resupply"],
-      bonusAssignments: ["fence", "forge", "bribe"]
+      bonusAssignments: ["fence", "forge", "bribe", "racket", "ransom"]
     },
     charlatan: {
       id: "charlatan",
@@ -648,7 +648,7 @@ export class UnderworldTables {
       icon: "fas fa-khanda",
       badgeClass: "role-duelist",
       tactics: ["parry", "riposte", "challenge"],
-      bonusAssignments: ["intimidate", "distract"]
+      bonusAssignments: ["intimidate", "distract", "highway_robbery", "racket", "ambush", "ransom"]
     },
     ...PROFILE_ROLES
   }, "Roles", { name: "Name", shortDesc: "Desc" });
@@ -965,7 +965,7 @@ export class UnderworldTables {
       squeamish: {
         id: "squeamish",
         icon: "fas fa-face-grimace",
-        penaltyAssignments: ["intimidate", "tend_wounded"],
+        penaltyAssignments: ["intimidate", "poaching", "highway_robbery"],
         slPenalty: 1
       },
       snorer: {

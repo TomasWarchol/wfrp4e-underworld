@@ -7,12 +7,12 @@ import { GangData } from "./gang-data.mjs";
 import { UnderworldOperations } from "./operations.mjs";
 import { UnderworldTables } from "./tables-data.mjs";
 import { UnderworldRollTables } from "./roll-tables.mjs";
-import { OrderEffects } from "./order-effects.mjs";
+import { OrderEffects, getAdvantage } from "./order-effects.mjs";
 import {
   MISSIONS, MISSION_CATEGORIES, CATEGORY_ICON_CLASS, TERRAINS, TERRAIN_IDS, TARGET_TIERS, TOKENS, LOOT_CATEGORIES,
   missionAvailable, missionName, missionDesc
 } from "./world-data.mjs";
-import { registry, dialogContent, dialogValue, escapeHTML } from "../../wfrp4e-companion-lib/scripts/companion-lib.mjs";
+import { registry, dialogContent, dialogValue, escapeHTML, time } from "../../wfrp4e-companion-lib/scripts/companion-lib.mjs";
 import { t } from "./i18n.mjs";
 import { profileHasMission, profileOf } from "./company-profiles.mjs";
 
@@ -145,6 +145,14 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       npc.role = UnderworldTables.roleForCompany(npc.role, gang.type);
       npc.role2 = npc.role2 && UnderworldTables.ROLES_CONFIG[npc.role2] && npc.role2 !== npc.role ? npc.role2 : "";
       npc.roleConfig = UnderworldTables.ROLES_CONFIG[npc.role] || UnderworldTables.ROLES_CONFIG["bodyguard"];
+      npc.notes = typeof npc.notes === "string" ? npc.notes : "";
+      npc.arrestedNights = npc.status === "arrested" ? (Math.max(1, Number(npc.arrestedNights) || 1)) : 0;
+      npc.hasBattleScarred = Array.isArray(npc.narrativePerks) && npc.narrativePerks.includes("battle_scarred");
+      npc.canGuard = !["dead", "arrested"].includes(npc.status)
+        && (npc.status !== "wounded" || npc.hasBattleScarred)
+        && (npc.status !== "busy" || npc.assignment === "guard");
+      npc.canToggleRetinue = npc.assignment === "retinue"
+        || (npc.status === "ready" && (!npc.assignment || npc.assignment === "none"));
       Object.assign(npc, this._memberGlyphs(npc));
 
       if (npc.actorId) {
@@ -167,8 +175,10 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     );
     data.activeRetinue = retinueMembers;
     data.retinueCount = retinueMembers.length;
-    data.maxRetinue = 3;
-    data.canAddRetinue = retinueMembers.length < 3;
+    data.maxRetinue = UnderworldOperations.maxRetinue(gang);
+    data.canAddRetinue = retinueMembers.length < data.maxRetinue;
+    data.maxRoster = UnderworldOperations.maxRoster();
+    data.activeRosterCount = gang.roster.filter(n => n.status !== "dead").length;
 
     // Przygotowanie widoku rozkazów taktycznych
     const tacticalOrdersView = {};
@@ -228,7 +238,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     data.treasuryPennies = treasuryPennies;
     data.treasuryFormatted = UnderworldOperations.formatPennies(treasuryPennies);
 
-    const supplyPrice = gang.camp?.supplyPricePennies || 12;
+    const supplyPrice = UnderworldOperations.supplyPrice(gang);
     data.supplyPricePennies = supplyPrice;
     data.supplyPriceFormatted = UnderworldOperations.formatPennies(supplyPrice);
 
@@ -237,10 +247,17 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     data.actorMoneyFormatted = UnderworldOperations.formatPennies(actorPennies);
     data.actor = this.actor;
     data.gang = gang;
+    data.companyTypeLabel = t(`InfoTab.Types.${gang.type}`);
     data.isGM = game.user.isGM;
     data.isWeekly = UnderworldOperations.isWeekly();
     data.dailyQueue = !data.isWeekly && UnderworldOperations.usesDailyQueue();
+    data.campRestGMOnly = UnderworldOperations.campRestGMOnly();
+    data.canTriggerCampRest = data.isGM || (!data.isWeekly && !data.campRestGMOnly);
+    data.profileHasPatronCut = !!profileOf(gang).patronCut;
     data.plannedCount = gang.roster.filter(n => n.plannedMission).length;
+    data.requiredRations = UnderworldOperations.requiredRations(gang, data.isWeekly);
+    data.upkeepSS = UnderworldOperations.calculateUpkeepSS(gang, data.isWeekly);
+    data.eventHookInfo = gang.eventHook ? { id: gang.eventHook.id, terrain: TERRAINS[gang.eventHook.terrain]?.name || gang.eventHook.terrain || "" } : null;
 
     // Teren, żetony przygotowania, łupy i zlecenia dostępne w tym terenie
     const terrainId = UnderworldOperations.getTerrain(gang);
@@ -271,6 +288,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
         refused,
         liked: fence.likes.includes(item.category),
         rate,
+        canTransfer: UnderworldOperations.canTransferLoot(item),
         estimateSS: refused ? 0 : Math.max(1, Math.floor(item.valueSS * rate / 100))
       };
     });
@@ -398,7 +416,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     const terrain = data.terrain || {};
     const current = gang.camp?.type || "basic";
     return [
-      { id: "makeshift", glyph: "ui-shelter_makeshift", label: t("DashTab.Makeshift", { place: terrain.makeshiftLabel }), effect: `${terrain.coldMakeshift ? -2 : -1} ${t("DashTab.MoralePerCamp")}`, bad: true },
+      { id: "makeshift", glyph: "ui-shelter_makeshift", label: t("DashTab.Makeshift", { place: terrain.makeshiftLabel }), effect: t("DashTab.MakeshiftEffect", { morale: terrain.coldMakeshift ? -2 : -1 }), bad: true },
       { id: "basic", glyph: "ui-shelter_basic", label: t("DashTab.Basic"), effect: "" },
       { id: "comfortable", glyph: "ui-shelter_comfortable", label: t("DashTab.Comfortable", { place: terrain.comfortableLabel, cost: data.comfortableCostLabel }), effect: "", good: true }
     ].map(tile => ({ ...tile, checked: tile.id === current }));
@@ -470,6 +488,10 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       return false;
     }
     if (!dropData || dropData.type !== "Actor") return false;
+    if (!game.user.isGM) {
+      ui.notifications.warn(t("Notify.GMOnly"));
+      return false;
+    }
 
     let droppedActor = null;
     if (dropData.uuid) droppedActor = await fromUuid(dropData.uuid);
@@ -477,7 +499,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     if (!droppedActor) return false;
 
     const gang = GangData.getGang(this.actor);
-    const targetCard = event.target.closest?.(".npc-card");
+    const targetCard = event.target.closest?.(".npc-card-box, .npc-card");
 
     if (targetCard) {
       const npcId = targetCard.dataset.npcId;
@@ -489,6 +511,11 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
         ui.notifications.info(t("Roster.Linked", { actor: droppedActor.name, name: npc.name }));
       }
     } else {
+      const maxRoster = UnderworldOperations.maxRoster();
+      const aliveCount = gang.roster.filter(n => n.status !== "dead").length;
+      if (maxRoster > 0 && aliveCount >= maxRoster) {
+        ui.notifications.warn(t("Roster.OverMaxWarning", { count: aliveCount + 1, max: maxRoster }));
+      }
       const careerName = droppedActor.system?.details?.career?.value
         || (droppedActor.itemTypes?.career?.[0]?.name)
         || (droppedActor.type === "character" ? "Awanturnik" : "Poplecznik");
@@ -498,9 +525,17 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
         actorId: droppedActor.id,
         img: droppedActor.img || "icons/svg/mystery-man.svg",
         name: droppedActor.name,
-        role: careerName,
+        role: UnderworldTables.roleForCompany(careerName, gang),
+        strengths: [],
+        flaws: [],
         strength: "",
         flaw: "",
+        narrativePerks: [],
+        rank: 0,
+        operationalXP: 0,
+        customBonus: 0,
+        gear: [],
+        notes: "",
         status: "ready",
         assignment: "none"
       });
@@ -622,8 +657,9 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     });
     this._syncAllTacticsButton();
 
-    // Natychmiastowa aktualizacja rozgłosu i relacji z patronem
+    // Natychmiastowa aktualizacja rozgłosu i relacji z patronem (tylko MG)
     on('select[name="notoriety"], select[name="patron.relation"]', "change", async (ev) => {
+      if (!game.user.isGM) return;
       const name = ev.currentTarget.name;
       const val = ev.currentTarget.value;
       const gang = GangData.getGang(this.actor);
@@ -670,37 +706,27 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       const isGuarding = ev.currentTarget.checked;
       const gang = GangData.getGang(this.actor);
       const npc = gang.roster.find(n => n.id === npcId);
-      if (npc) {
-        if (isGuarding) {
-          // Sprawdź czy nie jest już na misji
-          if (npc.status === "busy") {
-            ui.notifications.warn(t("Roster.Busy", { name: npc.name }));
-            ev.currentTarget.checked = false;
-            return;
-          }
-          npc.assignment = "guard";
-          npc.status = "busy";
-        } else {
-          npc.assignment = "none";
-          npc.status = "ready";
-        }
-        await GangData.saveGang(this.actor, gang);
-        this.render();
-      }
-    });
+      if (!npc) return;
 
-    // ─── ROSTER: Zmiana statusu z selecta ───
-    on(".npc-status", "change", async (ev) => {
-      const npcId = ev.currentTarget.closest(".npc-card")?.dataset.npcId;
-      const newStatus = ev.currentTarget.value;
-      const gang = GangData.getGang(this.actor);
-      const npc = gang.roster.find(n => n.id === npcId);
-      if (npc) {
-        npc.status = newStatus;
-        if (newStatus === "ready") npc.assignment = "none";
-        await GangData.saveGang(this.actor, gang);
-        this.render();
+      const hasBattleScarred = Array.isArray(npc.narrativePerks) && npc.narrativePerks.includes("battle_scarred");
+      if (isGuarding) {
+        if (["dead", "arrested"].includes(npc.status) || (npc.status === "wounded" && !hasBattleScarred)) {
+          ev.currentTarget.checked = false;
+          return;
+        }
+        if (npc.status === "busy" && npc.assignment !== "guard") {
+          ui.notifications.warn(t("Roster.Busy", { name: npc.name }));
+          ev.currentTarget.checked = false;
+          return;
+        }
+        npc.assignment = "guard";
+        if (!["wounded", "resting"].includes(npc.status)) npc.status = "busy";
+      } else {
+        npc.assignment = "none";
+        if (npc.status === "busy") npc.status = "ready";
       }
+      await GangData.saveGang(this.actor, gang);
+      this.render();
     });
 
     on(".retinue-checkbox", "change", async (ev) => {
@@ -716,9 +742,15 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
         ui.notifications.info(t("Retinue.Left", { name: npc.name }));
         this.render();
       } else {
+        if (npc.status !== "ready" || (npc.assignment && npc.assignment !== "none")) {
+          ui.notifications.warn(t("Retinue.CannotJoin", { name: npc.name, status: statusLabel(npc.status) }));
+          ev.currentTarget.checked = false;
+          return;
+        }
         const activeCount = gang.roster.filter(n => n.assignment === "retinue").length;
-        if (activeCount >= 3) {
-          ui.notifications.warn(t("Retinue.Full"));
+        const maxRetinue = UnderworldOperations.maxRetinue(gang);
+        if (activeCount >= maxRetinue) {
+          ui.notifications.warn(t("Retinue.Full", { max: maxRetinue }));
           ev.currentTarget.checked = false;
           return;
         }
@@ -904,17 +936,34 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       case "open-recruitment":
         return this._onOpenRecruitmentDialog();
 
-      // ─── ROSTER: Dodaj NPC ───
+      // ─── ROSTER: Dodaj NPC (tylko MG) ───
       case "add-npc": {
+        if (!game.user.isGM) {
+          ui.notifications.warn(t("Notify.GMOnly"));
+          return;
+        }
         const gang = GangData.getGang(this.actor);
+        const maxRoster = UnderworldOperations.maxRoster();
+        const aliveCount = gang.roster.filter(n => n.status !== "dead").length;
+        if (maxRoster > 0 && aliveCount >= maxRoster) {
+          ui.notifications.warn(t("Roster.OverMaxWarning", { count: aliveCount + 1, max: maxRoster }));
+        }
         gang.roster.push({
           id: foundry.utils.randomID(),
           actorId: null,
           img: "icons/svg/mystery-man.svg",
           name: t("Roster.NewFollower"),
-          role: "Rola",
+          role: UnderworldTables.roleForCompany("bodyguard", gang),
+          strengths: [],
+          flaws: [],
           strength: "",
           flaw: "",
+          narrativePerks: [],
+          rank: 0,
+          operationalXP: 0,
+          customBonus: 0,
+          gear: [],
+          notes: "",
           status: "ready",
           assignment: "none"
         });
@@ -923,7 +972,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
         return;
       }
 
-      // ─── ROSTER: Usuń NPC ───
+      // ─── ROSTER: Usuń NPC (tylko MG) ───
       case "delete-npc": {
         if (!game.user.isGM) {
           ui.notifications.warn(t("Roster.GMOnlyDelete"));
@@ -949,14 +998,17 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       case "upgrade-npc":
         return this._onUpgradeNpcDialog(target.dataset.npcId);
 
-      // ─── ROSTER: Uwolnij z zadania ───
+      // ─── ROSTER: Uwolnij z zadania (tylko MG) ───
       case "free-npc": {
+        if (!game.user.isGM) return;
         const gang = GangData.getGang(this.actor);
         const npc = gang.roster.find(n => n.id === target.dataset.npcId);
         if (npc) {
           npc.status = "ready";
           npc.assignment = "none";
           delete npc.plannedMission;
+          delete npc.arrestedNights;
+          delete npc.arrestedOn;
           await GangData.saveGang(this.actor, gang);
           ui.notifications.info(t("Roster.ReadyAgain", { name: npc.name }));
           this.render();
@@ -967,14 +1019,22 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       // ─── ROSTER: Otwórz kartę aktora ───
       case "open-actor": {
         const actor = game.actors.get(target.dataset.actorId);
-        if (actor) actor.sheet.render({ force: true });
-        else ui.notifications.warn(t("Roster.LinkedMissing"));
+        if (!actor) {
+          ui.notifications.warn(t("Roster.LinkedMissing"));
+          return;
+        }
+        if (!game.user.isGM && !actor.testUserPermission?.(game.user, "OBSERVER")) {
+          ui.notifications.warn(t("Notify.NoAccess"));
+          return;
+        }
+        actor.sheet.render({ force: true });
         return;
       }
 
-      // ─── ROSTER: Odłącz aktora ───
+      // ─── ROSTER: Odłącz aktora (tylko MG) ───
       case "unlink-actor": {
-        const npcId = target.closest(".npc-card")?.dataset.npcId;
+        if (!game.user.isGM) return;
+        const npcId = target.dataset.npcId || target.closest(".npc-card-box, .npc-card")?.dataset.npcId;
         const gang = GangData.getGang(this.actor);
         const npc = gang.roster.find(n => n.id === npcId);
         if (npc) {
@@ -986,9 +1046,12 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
         return;
       }
 
-      // ─── ROSTER: Wybierz aktora z dialogu ───
-      case "select-actor":
-        return this._onSelectActorDialog(target.closest(".npc-card")?.dataset.npcId);
+      // ─── ROSTER: Wybierz aktora z dialogu (tylko MG) ───
+      case "select-actor": {
+        if (!game.user.isGM) return;
+        const npcId = target.dataset.npcId || target.closest(".npc-card-box, .npc-card")?.dataset.npcId;
+        return this._onSelectActorDialog(npcId);
+      }
 
       // ─── ROSTER / PRZYDZIAŁY: Przełącz Świtę Herszta ───
       case "toggle-retinue": {
@@ -1002,21 +1065,99 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
           ui.notifications.info(t("Retinue.Left", { name: npc.name }));
           this.render();
         } else {
-          if (["dead", "wounded", "arrested"].includes(npc.status)) {
+          if (npc.status !== "ready" || (npc.assignment && npc.assignment !== "none")) {
             ui.notifications.warn(t("Retinue.CannotJoin", { name: npc.name, status: statusLabel(npc.status) }));
             return;
           }
           const activeCount = gang.roster.filter(n => n.assignment === "retinue").length;
-          if (activeCount >= 3) {
-            ui.notifications.warn(t("Retinue.Full"));
+          const maxRetinue = UnderworldOperations.maxRetinue(gang);
+          if (activeCount >= maxRetinue) {
+            ui.notifications.warn(t("Retinue.Full", { max: maxRetinue }));
             return;
           }
           npc.assignment = "retinue";
-          if (npc.status === "busy") npc.status = "ready";
           await GangData.saveGang(this.actor, gang);
           ui.notifications.info(t("Retinue.Joined", { name: npc.name }));
           this.render();
         }
+        return;
+      }
+
+      // ─── NARZĘDZIA MG: ŁUPY, ŻETONY, HARACZ, KRONIKA, BLOKADY ───
+      case "loot-add":
+        if (!game.user.isGM) return;
+        return this._onLootDialog(null);
+      case "loot-edit":
+        if (!game.user.isGM) return;
+        return this._onLootDialog(target.dataset.lootId);
+      case "token-add":
+        if (!game.user.isGM) return;
+        return this._onAddTokenDialog();
+      case "token-remove": {
+        if (!game.user.isGM) return;
+        const tokenId = target.dataset.tokenId;
+        if (!tokenId) return;
+        const gang = GangData.getGang(this.actor);
+        if (gang.tokens?.[tokenId]) {
+          delete gang.tokens[tokenId];
+          await GangData.saveGang(this.actor, gang);
+          this.render();
+        }
+        return;
+      }
+      case "edit-racket":
+        if (!game.user.isGM) return;
+        return this._onEditRacketDialog();
+      case "clear-event-hook": {
+        if (!game.user.isGM) return;
+        const gang = GangData.getGang(this.actor);
+        if (gang.eventHook) {
+          delete gang.eventHook;
+          await GangData.saveGang(this.actor, gang);
+          this.render();
+        }
+        return;
+      }
+      case "history-add":
+        if (!game.user.isGM) return;
+        return this._onAddHistoryDialog();
+      case "history-delete": {
+        if (!game.user.isGM) return;
+        const index = Number(target.dataset.index);
+        if (!Number.isInteger(index) || index < 0) return;
+        const gang = GangData.getGang(this.actor);
+        if (!Array.isArray(gang.history) || index >= gang.history.length) return;
+        const confirmed = await DialogV2.confirm({
+          window: { title: t("History.DeleteTitle") },
+          content: `<p>${t("History.DeleteConfirm")}</p>`
+        });
+        if (!confirmed) return;
+        gang.history.splice(index, 1);
+        await GangData.saveGang(this.actor, gang);
+        this.render();
+        return;
+      }
+      case "reset-locks": {
+        if (!game.user.isGM) return;
+        const confirmed = await DialogV2.confirm({
+          window: { title: t("Camp.ResetLocksTitle") },
+          content: `<p>${t("Camp.ResetLocksConfirm")}</p>`
+        });
+        if (!confirmed) return;
+        await UnderworldOperations.resetCycleLocks(this.actor);
+        this.render();
+        return;
+      }
+      case "reset-world-tables": {
+        if (!game.user.isGM) return;
+        const gang = GangData.getGang(this.actor);
+        const terrainId = UnderworldOperations.getTerrain(gang);
+        const confirmed = await DialogV2.confirm({
+          window: { title: t("Tables.ResetTitle") },
+          content: `<p>${t("Tables.ResetConfirm", { terrain: TERRAINS[terrainId]?.name ?? terrainId })}</p>`
+        });
+        if (!confirmed) return;
+        await UnderworldRollTables.regenerateTables(terrainId, gang.type);
         return;
       }
 
@@ -1128,11 +1269,10 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       return;
     }
 
-    const curAdvantage = actor.status?.advantage?.value 
-      ?? actor.system?.status?.advantage?.value 
-      ?? 0;
-    const cost = orderConfig.advantageCost || 1;
-    const canSpendAdvantage = curAdvantage >= cost;
+    const curAdvantage = getAdvantage(actor);
+    const cost = Number(orderConfig.advantageCost) || 0;
+    const canSpendAdvantage = cost > 0 && curAdvantage >= cost;
+    const showDirect = UnderworldOperations.canUseDirectOrder();
 
     await DialogV2.wait({
       window: { title: `${t("Orders.Flavor")}: ${orderConfig.name}` },
@@ -1155,21 +1295,21 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
                 </div>
               </label>
 
-              <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; ${canSpendAdvantage ? '' : 'opacity: 0.45;'}">
+              ${cost > 0 ? `<label style="display: flex; align-items: center; gap: 8px; cursor: pointer; ${canSpendAdvantage ? '' : 'opacity: 0.45;'}">
                 <input type="radio" name="tactic_method" value="advantage" ${canSpendAdvantage ? '' : 'disabled'} />
                 <div>
                   <strong>⚡ ${t("Orders.Dialog.Advantage")}</strong>
                   <div style="font-size: 0.78rem; color: #554433;">${t("Orders.Dialog.AdvantageHint", { cost, current: curAdvantage })}</div>
                 </div>
-              </label>
+              </label>` : ""}
 
-              <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+              ${showDirect ? `<label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
                 <input type="radio" name="tactic_method" value="direct" />
                 <div>
                   <strong>📢 ${t("Orders.Dialog.Direct")}</strong>
                   <div style="font-size: 0.78rem; color: #554433;">${t("Orders.Dialog.DirectHint")}</div>
                 </div>
-              </label>
+              </label>` : ""}
             </div>
           </div>
         </div>
@@ -1377,17 +1517,22 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       ui.notifications.warn(t("Fence.NoLoot"));
       return null;
     }
+    const reserved = UnderworldOperations.usesPlanning()
+      ? UnderworldOperations.plannedResourceUsage(gang).lootIds
+      : new Set();
     const rows = loot.map(item => {
       const refused = fence.refuses.includes(item.category);
+      const isReserved = reserved.has(item.id);
+      const disabled = refused || isReserved;
       const rate = UnderworldOperations.fenceRate(terrainId, item, 0);
       const estimate = Math.max(1, Math.floor(item.valueSS * rate / 100));
       const cat = LOOT_CATEGORIES[item.category];
       return `
-        <label class="uw-loot-option ${refused ? "is-refused" : ""}">
-          <input type="checkbox" name="fence-loot" value="${item.id}" ${refused ? "disabled" : "checked"} />
+        <label class="uw-loot-option ${disabled ? "is-refused" : ""}">
+          <input type="checkbox" name="fence-loot" value="${item.id}" ${disabled ? "disabled" : "checked"} />
           <i class="${cat?.icon || "fas fa-box"}"></i>
           <span class="uw-loot-name">${escapeHTML(item.name)}${item.hot ? ` <span class="uw-hot-badge"><i class="fas fa-fire"></i> ${t("Fence.Hot")}</span>` : ""}</span>
-          <span class="uw-loot-price">${refused ? t("Fence.Refuses") : `~${estimate} ${t("Units.SS")} <small>${t("Fence.RateOf", { rate, value: item.valueSS })}</small>`}</span>
+          <span class="uw-loot-price">${refused ? t("Fence.Refuses") : isReserved ? t("Card.PlannedReserved") : `~${estimate} ${t("Units.SS")} <small>${t("Fence.RateOf", { rate, value: item.valueSS })}</small>`}</span>
         </label>`;
     }).join("");
     return `
@@ -1455,7 +1600,10 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
    */
   async _onTendWoundedDialog(gang) {
     const available = gang.roster.filter(n => n.status === "ready" && (!n.assignment || n.assignment === "none"));
-    const wounded = gang.roster.filter(n => n.status === "wounded");
+    const reservedWounded = UnderworldOperations.usesPlanning()
+      ? UnderworldOperations.plannedResourceUsage(gang).woundedIds
+      : new Set();
+    const wounded = gang.roster.filter(n => n.status === "wounded" && !reservedWounded.has(n.id));
 
     if (available.length === 0) {
       ui.notifications.warn(t("Tend.NobodyFree"));
@@ -1525,17 +1673,24 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
 
   async _onCampRestDialog() {
     const weekly = UnderworldOperations.isWeekly();
-    if (weekly && !game.user.isGM) {
-      ui.notifications.info(t("Camp.GMResolvesWeekHint"));
+    const isGM = !!game.user?.isGM;
+    if ((weekly || UnderworldOperations.campRestGMOnly()) && !isGM) {
+      ui.notifications.info(t(weekly ? "Camp.GMResolvesWeekHint" : "Camp.GMResolvesNightHint"));
       return;
     }
     const gang = GangData.getGang(this.actor);
     const terrain = TERRAINS[UnderworldOperations.getTerrain(gang)];
     const comfortableCost = terrain.comfortableCostSS
-      ? (weekly ? t("Camp.CostPerWeek", { cost: terrain.comfortableCostSS * 7 }) : `${terrain.comfortableCostSS} ${t("Units.SS")}`)
+      ? (weekly ? t("Camp.CostPerWeek", { cost: terrain.comfortableCostSS * 3 }) : `${terrain.comfortableCostSS} ${t("Units.SS")}`)
       : t("Free");
     const plannedCount = gang.roster.filter(n => n.plannedMission).length;
-    const availableWatchmen = gang.roster.filter(n => !["dead", "wounded", "arrested"].includes(n.status));
+    const availableWatchmen = gang.roster.filter(n =>
+      !["dead", "arrested"].includes(n.status)
+      && (n.status !== "wounded" || (Array.isArray(n.narrativePerks) && n.narrativePerks.includes("battle_scarred")))
+    );
+    const requiredRations = UnderworldOperations.requiredRations(gang, weekly);
+    const rationsOff = UnderworldOperations.rationsMode() === "off";
+    const upkeepSS = UnderworldOperations.calculateUpkeepSS(gang, weekly);
 
     let watchmenHtml = availableWatchmen.map(n => {
       const isChecked = n.assignment === "guard" ? "checked" : "";
@@ -1573,7 +1728,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
             <i class="fas fa-campground"></i> ${t("CampDialog.Shelter")}
           </label>
           <select id="rest-shelter" style="width: 100%; padding: 5px 8px; font-size: 0.88rem; border-radius: 4px; border: 1px solid #7c5e44;">
-            <option value="makeshift" ${gang.camp.type === "makeshift" ? "selected" : ""}>⛺ ${t("CampDialog.Makeshift", { place: terrain.makeshiftLabel, effect: terrain.coldMakeshift ? t("CampDialog.MoraleFrost") : "-1 Morale" })}</option>
+            <option value="makeshift" ${gang.camp.type === "makeshift" ? "selected" : ""}>⛺ ${t("CampDialog.Makeshift", { place: terrain.makeshiftLabel, effect: t("DashTab.MakeshiftEffect", { morale: terrain.coldMakeshift ? -2 : -1 }) })}</option>
             <option value="basic" ${gang.camp.type === "basic" ? "selected" : ""}>🏕️ ${t("CampDialog.Basic")}</option>
             <option value="comfortable" ${gang.camp.type === "comfortable" ? "selected" : ""}>🛏️ ${t("CampDialog.Comfortable", { place: terrain.comfortableLabel, cost: comfortableCost })}</option>
           </select>
@@ -1601,6 +1756,10 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
             <i class="fas fa-bread-slice"></i> ${t("CampDialog.Food")}
           </label>
           
+          ${rationsOff ? `
+          <div style="background: rgba(0,0,0,0.03); border: 1px solid #c0b0a0; border-radius: 4px; padding: 8px 10px; font-size: 0.85rem; color: #554433;">
+            ${t("CampDialog.FoodOff")}
+          </div>` : `
           <div style="background: rgba(0,0,0,0.03); border: 1px solid #c0b0a0; border-radius: 4px; padding: 8px 10px; display: flex; flex-direction: column; gap: 8px;">
             
             <!-- Standardowy posiłek ze spiżarni -->
@@ -1609,10 +1768,11 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
                 <i class="fas fa-box-open"></i> ${t("CampDialog.UseSupplies")}
               </label>
               <div style="display: flex; align-items: center; gap: 6px;">
-                <input type="number" id="rest-supplies-count" value="${weekly ? Math.min(7, gang.supplies) : 1}" min="0" max="${gang.supplies}" style="width: 55px; text-align: center; font-weight: bold; padding: 3px;" />
+                <input type="number" id="rest-supplies-count" value="${Math.min(requiredRations, gang.supplies)}" min="0" max="${gang.supplies}" style="width: 55px; text-align: center; font-weight: bold; padding: 3px;" />
                 <span style="font-size: 0.8rem; color: #665544;">${t("CampDialog.Available", { value: gang.supplies })}</span>
               </div>
             </div>
+            <div style="font-size: 0.76rem; color: #665544;">${t("CampDialog.RationsNeeded", { count: requiredRations })}</div>
 
             <div style="border-top: 1px dashed #d0c0b0; padding-top: 6px; display: flex; flex-direction: column; gap: 6px;">
               <!-- Opcja: ludzie nie jedzą -->
@@ -1621,14 +1781,16 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
                 <span><strong>${t("CampDialog.Fasting")}</strong> <span style="color: #c62828;">${t("CampDialog.FastingHint")}</span></span>
               </label>
 
-              <!-- Opcja: inne źródło -->
+              ${isGM ? `
+              <!-- Opcja: inne źródło (tylko MG) -->
               <label style="cursor: pointer; display: flex; align-items: center; gap: 8px; font-size: 0.85rem; margin: 0;">
                 <input type="checkbox" id="rest-external" style="margin: 0; width: 16px; height: 16px;" />
                 <span><strong>${t("CampDialog.External")}</strong> <span style="color: #554433;">${t("CampDialog.ExternalHint")}</span></span>
-              </label>
+              </label>` : ""}
             </div>
 
-          </div>
+          </div>`}
+          ${upkeepSS > 0 ? `<p style="font-size: 0.78rem; color: #554433; margin: 6px 0 0 0;"><i class="fas fa-coins"></i> ${t("CampDialog.UpkeepHint", { amount: UnderworldOperations.formatPennies(upkeepSS * 12) })}</p>` : ""}
         </div>
 
       </div>
@@ -1649,7 +1811,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
             const el = dialog.element;
             const shelterType = el.querySelector("#rest-shelter")?.value;
             const fasting = !!el.querySelector("#rest-fasting")?.checked;
-            const externalSupplies = !!el.querySelector("#rest-external")?.checked;
+            const externalSupplies = isGM && !!el.querySelector("#rest-external")?.checked;
             const suppliesCount = parseInt(el.querySelector("#rest-supplies-count")?.value, 10) || 0;
 
             const watchmenIds = Array.from(el.querySelectorAll('input[name="watchmen"]:checked'), input => input.value);
@@ -1677,6 +1839,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
   // ════════════════════════════════════════════
 
   async _onSelectActorDialog(npcId) {
+    if (!game.user.isGM) return;
     const actors = game.actors.filter(a => a.id !== this.actor.id);
     if (!actors.length) {
       ui.notifications.warn(t("LinkDialog.NoActors"));
@@ -1825,13 +1988,15 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     npc.rank = Number(npc.rank) || 0;
     npc.operationalXP = Number(npc.operationalXP) || 0;
     npc.customBonus = Number(npc.customBonus) || 0;
+    npc.notes = typeof npc.notes === "string" ? npc.notes : "";
+    npc.arrestedNights = npc.status === "arrested" ? Math.max(1, Number(npc.arrestedNights) || 1) : 0;
 
     const ranks = UnderworldTables.RANKS_CONFIG || [];
     const gearConfig = UnderworldTables.GEAR_CONFIG || {};
     const totalPennies = GangData.treasuryToPennies(gang.treasury);
     const isGM = game.user.isGM;
     const gearCount = npc.gear.length;
-    const gearMax = 2;
+    const gearMax = UnderworldOperations.maxGearSlots();
     const oxp = t("Units.OXP");
 
     // Sprawdź czy ktoś inny w szajce jest już Prawą Ręką
@@ -1890,14 +2055,17 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
 
       let actionHtml = '';
       if (isOwned) {
-        actionHtml = '<span class="badge-mission ready" style="font-size: 0.72rem;"><i class="fas fa-check-circle"></i> ' + t("Upgrade.ChosenCraft") + '</span>';
+        actionHtml = '<span class="badge-mission ready" style="font-size: 0.72rem;"><i class="fas fa-check-circle"></i> ' + t("Upgrade.ChosenCraft") + '</span>'
+          + (isGM ? ` <button type="button" class="btn-gm-remove-perk btn-unlink" data-perk-id="${perk.id}" title="${t("Upgrade.GMRemovePerk")}" style="margin-left: 4px;"><i class="fas fa-times"></i></button>` : '');
       } else if (currentCraft) {
-        actionHtml = `<span style="color: #888; font-size: 0.74rem;" title="${t("Upgrade.OneCraftHint")}"><i class="fas fa-lock"></i> ${t("Upgrade.Chosen", { name: currentCraft.name.split(": ").pop() })}</span>`;
+        actionHtml = `<span style="color: #888; font-size: 0.74rem;" title="${t("Upgrade.OneCraftHint")}"><i class="fas fa-lock"></i> ${t("Upgrade.Chosen", { name: currentCraft.name.split(": ").pop() })}</span>`
+          + (isGM ? ` <button type="button" class="btn-gm-grant-perk btn-actor-action" data-perk-id="${perk.id}" title="${t("Upgrade.GMGrantFree")}" style="margin-left: 4px; font-size: 0.72rem;"><i class="fas fa-crown"></i> ${t("Upgrade.GMGrantShort")}</button>` : '');
       } else {
         actionHtml = `
           <button type="button" class="btn-buy-narrative-perk btn-actor-action" data-perk-id="${perk.id}" data-cost-xp="${perk.costOperationalXP}" ${canAfford ? '' : 'disabled style="opacity: 0.5;"'} title="${canAfford ? t("Upgrade.ChooseCraftFor", { cost: perk.costOperationalXP, unit: oxp }) : t("Upgrade.Requires", { cost: perk.costOperationalXP, unit: oxp, have: npc.operationalXP })}">
             <i class="fas fa-tools"></i> ${t("Upgrade.Choose")} (${perk.costOperationalXP} ${oxp})
           </button>
+          ${isGM ? `<button type="button" class="btn-gm-grant-perk btn-actor-action" data-perk-id="${perk.id}" title="${t("Upgrade.GMGrantFree")}" style="margin-left: 4px; font-size: 0.72rem;"><i class="fas fa-crown"></i> ${t("Upgrade.GMGrantShort")}</button>` : ""}
         `;
       }
 
@@ -1932,10 +2100,12 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
           <div>
             ${isOwned ? `
               <span style="color: #2e7d32; font-weight: bold; font-size: 0.75rem;"><i class="fas fa-check-circle"></i> ${t("Upgrade.Owned")}</span>
+              ${isGM ? `<button type="button" class="btn-gm-remove-perk btn-unlink" data-perk-id="${perk.id}" title="${t("Upgrade.GMRemovePerk")}" style="margin-left: 4px;"><i class="fas fa-times"></i></button>` : ""}
             ` : `
               <button type="button" class="btn-buy-narrative-perk btn-actor-action" data-perk-id="${perk.id}" data-cost-xp="${perk.costOperationalXP}" ${canAfford ? '' : 'disabled style="opacity: 0.5;"'} title="${canAfford ? t("Upgrade.BuyFor", { cost: perk.costOperationalXP, unit: oxp }) : t("Upgrade.Requires", { cost: perk.costOperationalXP, unit: oxp, have: npc.operationalXP })}">
                 <i class="fas fa-feather-alt"></i> ${t("Upgrade.Buy")} (${perk.costOperationalXP} ${oxp})
               </button>
+              ${isGM ? `<button type="button" class="btn-gm-grant-perk btn-actor-action" data-perk-id="${perk.id}" title="${t("Upgrade.GMGrantFree")}" style="margin-left: 4px; font-size: 0.72rem;"><i class="fas fa-crown"></i> ${t("Upgrade.GMGrantShort")}</button>` : ""}
             `}
           </div>
         </div>
@@ -2004,12 +2174,19 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       </div>
     ` : '';
 
-    // 4. Ekwipunek
+    // 4. Ekwipunek (Kowal / Płatnerz daje 50% zniżki dla całej kompanii)
     const otherNpcs = gang.roster.filter(n => n.id !== npc.id && n.status !== "dead");
+    const hasBlacksmith = gang.roster.some(n =>
+      !["dead", "arrested"].includes(n.status)
+      && Array.isArray(n.narrativePerks)
+      && n.narrativePerks.includes("craft_blacksmith")
+    );
+    const effectiveGearCost = g => (hasBlacksmith ? Math.floor((g?.costPennies || 0) / 2) : (g?.costPennies || 0));
 
     let gearHtml = Object.values(gearConfig).map(g => {
       const isOwned = npc.gear.includes(g.id);
-      const canAfford = totalPennies >= g.costPennies;
+      const itemCost = effectiveGearCost(g);
+      const canAfford = totalPennies >= itemCost;
       const atLimit = gearCount >= gearMax;
 
       if (isOwned) {
@@ -2034,6 +2211,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
               <button type="button" class="btn-sell-gear btn-actor-action btn-unlink" data-gear-id="${g.id}" title="${t("Upgrade.SellHint")}">
                 <i class="fas fa-coins"></i> ${t("Upgrade.Sell")}
               </button>
+              ${isGM ? `<button type="button" class="btn-gm-remove-gear btn-unlink" data-gear-id="${g.id}" title="${t("Upgrade.GMRemoveGear")}"><i class="fas fa-times"></i></button>` : ""}
             </div>
           </div>
         `;
@@ -2044,19 +2222,24 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
         else if (!canAfford) disabledTitle = t("Upgrade.NotEnoughCoin");
         else disabledTitle = t("Upgrade.BuyFromStash");
 
+        const priceLabel = hasBlacksmith
+          ? `${UnderworldOperations.formatPennies(itemCost)} · ${t("Upgrade.BlacksmithDiscount")}`
+          : g.costLabel;
+
         return `
           <div class="upgrade-gear-row" style="display: flex; align-items: center; justify-content: space-between; padding: 5px 8px; margin-bottom: 4px; border: 1px solid #c8b8a6; background: rgba(255,255,255,0.4); border-radius: 4px;">
             <div style="flex: 1;">
               <div style="font-weight: bold; font-size: 0.85rem; color: #2b231d;">
                 <i class="${g.icon}"></i> ${g.name}
-                <span style="font-weight: normal; font-size: 0.75rem; color: #7c5832; margin-left: 6px;">[${g.costLabel}]</span>
+                <span style="font-weight: normal; font-size: 0.75rem; color: #7c5832; margin-left: 6px;">[${priceLabel}]</span>
               </div>
               <div style="font-size: 0.74rem; color: #5c4431;">${g.bonusDesc}</div>
             </div>
-            <div>
-              <button type="button" class="btn-buy-gear btn-actor-action" data-gear-id="${g.id}" data-cost-pennies="${g.costPennies}" ${disabled} title="${disabledTitle}">
+            <div style="display: flex; gap: 4px;">
+              <button type="button" class="btn-buy-gear btn-actor-action" data-gear-id="${g.id}" data-cost-pennies="${itemCost}" ${disabled} title="${disabledTitle}">
                 <i class="fas fa-shopping-cart"></i> ${t("Upgrade.BuyGear")}
               </button>
+              ${isGM ? `<button type="button" class="btn-gm-grant-gear btn-actor-action" data-gear-id="${g.id}" ${atLimit ? 'disabled style="opacity: 0.5;"' : ''} title="${t("Upgrade.GMGrantFree")}"><i class="fas fa-crown"></i> ${t("Upgrade.GMGrantShort")}</button>` : ""}
             </div>
           </div>
         `;
@@ -2065,14 +2248,17 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
 
     const treasurySummary = UnderworldOperations.formatPennies(totalPennies);
 
-    // Sekcja DO i Treningu
+    // Sekcja DO, Rangi, Aresztu i Treningu (MG)
+    const rankOptionsHtml = ranks.map(r =>
+      `<option value="${r.level}" ${npc.rank === r.level ? "selected" : ""}>${r.level} – ${escapeHTML(r.name)}</option>`
+    ).join("");
     const operationalXPSection = isGM ? `
       <div style="border-top: 1px dashed #9e856f; padding-top: 8px; margin-top: 4px;">
         <h4 style="margin: 0 0 6px 0; color: #4a2810; font-size: 0.95rem; border-bottom: 1px dashed #9e856f; padding-bottom: 3px;">
           <i class="fas fa-user-cog"></i> ${t("Upgrade.GMPanel")}
         </h4>
-        <div style="display: flex; gap: 12px; align-items: flex-end;">
-          <div style="flex: 1;">
+        <div style="display: flex; gap: 12px; align-items: flex-end; flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 180px;">
             <label style="font-size: 0.8rem; font-weight: bold; display: block; margin-bottom: 3px;">
               <i class="fas fa-star" style="color: #b78103;"></i> ${t("Upgrade.GrantXP", { unit: oxp })}
             </label>
@@ -2089,10 +2275,19 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
               </button>
             </div>
           </div>
-          <div style="flex: 1;">
+          <div>
             <label style="font-size: 0.8rem; font-weight: bold; display: block; margin-bottom: 3px;">${t("Upgrade.ManualBonus")}</label>
             <input type="number" id="dialog-npc-bonus" value="${npc.customBonus}" style="width: 70px; text-align: center;" />
           </div>
+          <div>
+            <label style="font-size: 0.8rem; font-weight: bold; display: block; margin-bottom: 3px;">${t("Upgrade.GMRankLabel")}</label>
+            <select id="dialog-npc-rank" style="padding: 3px;">${rankOptionsHtml}</select>
+          </div>
+          ${npc.status === "arrested" ? `
+          <div>
+            <label style="font-size: 0.8rem; font-weight: bold; display: block; margin-bottom: 3px;">${t("Upgrade.ArrestDuration")}</label>
+            <input type="number" id="dialog-npc-arrested-nights" value="${npc.arrestedNights}" min="1" max="10" style="width: 65px; text-align: center;" />
+          </div>` : ""}
         </div>
       </div>
     ` : '';
@@ -2124,13 +2319,21 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       <div class="underworld-dialog upgrade-dialog" style="font-size: 0.9rem; max-height: 540px; overflow-y: auto; padding-right: 4px;">
         <div style="display: flex; gap: 10px; align-items: center; border-bottom: 2px solid #5a3d28; padding-bottom: 8px; margin-bottom: 10px;">
           <img src="${npc.img || 'icons/svg/mystery-man.svg'}" style="width: 44px; height: 44px; object-fit: cover; border-radius: 4px; border: 1px solid #7c5e44;" />
+          ${isGM && !npc.actorId ? `<button type="button" class="btn-gm-pick-img btn-actor-action" title="${t("Upgrade.ChangePortrait")}" style="padding: 4px 6px;"><i class="fas fa-image"></i></button>` : ""}
           <div style="flex: 1;">
             <div style="font-size: 1.1rem; font-weight: bold; color: #3b2a1a;">
-              ${npc.name} ${npc.rank === 3 ? `<span class="boss-badge" style="font-size: 0.7rem; margin-left: 6px;"><i class="fas fa-crown"></i> ${t("Ranks.lieutenant.Name")}</span>` : ''}
+              ${escapeHTML(npc.name)} ${npc.rank === 3 ? `<span class="boss-badge" style="font-size: 0.7rem; margin-left: 6px;"><i class="fas fa-crown"></i> ${t("Ranks.lieutenant.Name")}</span>` : ''}
             </div>
             <div style="font-size: 0.8rem; color: #665544;">${t("Upgrade.Role")}: <strong>${UnderworldTables.ROLES_CONFIG[UnderworldTables.normalizeRole(npc.role)]?.name || npc.role}</strong> | ${t("Upgrade.AvailableXP", { unit: oxp })}: <strong style="color: #1b5e20; font-size: 0.95rem;">${npc.operationalXP} ${oxp}</strong></div>
             <div style="font-size: 0.78rem; color: #775533;"><i class="fas fa-coins"></i> ${t("Upgrade.Stash")}: <strong>${treasurySummary}</strong></div>
           </div>
+        </div>
+
+        <div style="margin-bottom: 12px;">
+          <label for="dialog-npc-notes" style="font-size: 0.82rem; font-weight: bold; color: #4a2810; display: block; margin-bottom: 4px;">
+            <i class="fas fa-feather-alt"></i> ${t("Upgrade.Notes")}
+          </label>
+          <textarea id="dialog-npc-notes" rows="2" maxlength="500" placeholder="${t("Upgrade.NotesPlaceholder")}" style="width: 100%; font-size: 0.82rem; resize: vertical;">${escapeHTML(npc.notes)}</textarea>
         </div>
 
         <div style="margin-bottom: 12px;">
@@ -2344,7 +2547,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       on(".btn-buy-gear", async (ev) => {
         ev.preventDefault();
         const gearId = ev.currentTarget.dataset.gearId;
-        const costPennies = parseInt(ev.currentTarget.dataset.costPennies, 10);
+        const costPennies = effectiveGearCost(gearConfig[gearId]);
 
         if (totalPennies < costPennies) {
           ui.notifications.warn(t("Upgrade.NotEnoughCoin"));
@@ -2366,7 +2569,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       on(".btn-sell-gear", async (ev) => {
         ev.preventDefault();
         const gearId = ev.currentTarget.dataset.gearId;
-        const refundPennies = Math.floor((gearConfig[gearId]?.costPennies || 0) / 2);
+        const refundPennies = Math.floor(effectiveGearCost(gearConfig[gearId]) / 2);
 
         npc.gear = npc.gear.filter(g => g !== gearId);
         const newTotal = totalPennies + refundPennies;
@@ -2433,16 +2636,82 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
         });
       });
 
-      // 7. Szybkie dodawanie DO (tylko MG)
-      on(".btn-add-xp", async (ev) => {
-        ev.preventDefault();
-        const amount = parseInt(ev.currentTarget.dataset.amount, 10) || 1;
-        const operationalXPInput = dlgElement.querySelector("#dialog-npc-operational-xp");
-        if (!operationalXPInput) return;
-        const currentVal = parseInt(operationalXPInput.value, 10) || 0;
-        operationalXPInput.value = currentVal + amount;
-        ui.notifications.info(t("Upgrade.XPAdded", { amount, unit: oxp, name: npc.name }));
-      });
+      // 7. Szybkie dodawanie DO, portretu, atutów i ekwipunku (tylko MG)
+      if (isGM) {
+        on(".btn-add-xp", async (ev) => {
+          ev.preventDefault();
+          const amount = parseInt(ev.currentTarget.dataset.amount, 10) || 1;
+          const operationalXPInput = dlgElement.querySelector("#dialog-npc-operational-xp");
+          if (!operationalXPInput) return;
+          const currentVal = parseInt(operationalXPInput.value, 10) || 0;
+          operationalXPInput.value = currentVal + amount;
+          ui.notifications.info(t("Upgrade.XPAdded", { amount, unit: oxp, name: npc.name }));
+        });
+
+        on(".btn-gm-pick-img", async (ev) => {
+          ev.preventDefault();
+          const Picker = foundry.applications?.apps?.FilePicker?.implementation ?? globalThis.FilePicker;
+          if (!Picker) return;
+          new Picker({
+            type: "image",
+            current: npc.img || "",
+            callback: async (path) => {
+              npc.img = path || "icons/svg/mystery-man.svg";
+              await GangData.saveGang(this.actor, gang);
+              dlg.close();
+              this._onUpgradeNpcDialog(npcId);
+              this.render();
+            }
+          }).render(true);
+        });
+
+        on(".btn-gm-grant-perk", async (ev) => {
+          ev.preventDefault();
+          const perkId = ev.currentTarget.dataset.perkId;
+          const perkDef = UnderworldTables.NARRATIVE_PERKS[perkId];
+          if (!perkDef) return;
+          if (perkDef.isCraft) {
+            npc.narrativePerks = npc.narrativePerks.filter(id => !UnderworldTables.NARRATIVE_PERKS[id]?.isCraft);
+          }
+          if (!npc.narrativePerks.includes(perkId)) npc.narrativePerks.push(perkId);
+          await GangData.saveGang(this.actor, gang);
+          ui.notifications.info(t("Upgrade.PerkGained", { name: npc.name, perk: perkDef.name || perkId }));
+          dlg.close();
+          this._onUpgradeNpcDialog(npcId);
+          this.render();
+        });
+
+        on(".btn-gm-remove-perk", async (ev) => {
+          ev.preventDefault();
+          const perkId = ev.currentTarget.dataset.perkId;
+          npc.narrativePerks = npc.narrativePerks.filter(id => id !== perkId);
+          await GangData.saveGang(this.actor, gang);
+          dlg.close();
+          this._onUpgradeNpcDialog(npcId);
+          this.render();
+        });
+
+        on(".btn-gm-grant-gear", async (ev) => {
+          ev.preventDefault();
+          const gearId = ev.currentTarget.dataset.gearId;
+          if (!gearConfig[gearId] || npc.gear.length >= gearMax) return;
+          if (!npc.gear.includes(gearId)) npc.gear.push(gearId);
+          await GangData.saveGang(this.actor, gang);
+          dlg.close();
+          this._onUpgradeNpcDialog(npcId);
+          this.render();
+        });
+
+        on(".btn-gm-remove-gear", async (ev) => {
+          ev.preventDefault();
+          const gearId = ev.currentTarget.dataset.gearId;
+          npc.gear = npc.gear.filter(g => g !== gearId);
+          await GangData.saveGang(this.actor, gang);
+          dlg.close();
+          this._onUpgradeNpcDialog(npcId);
+          this.render();
+        });
+      }
     };
 
     await DialogV2.wait({
@@ -2458,11 +2727,26 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
           label: t("Upgrade.Save"),
           default: true,
           callback: async (event, button, dlg) => {
+            const notesVal = dialogValue(dlg, "#dialog-npc-notes");
+            if (typeof notesVal === "string") npc.notes = notesVal.trim().slice(0, 500);
             if (isGM) {
               const newOperationalXP = Math.max(0, parseInt(dialogValue(dlg, "#dialog-npc-operational-xp"), 10) || 0);
               const newBonus = parseInt(dialogValue(dlg, "#dialog-npc-bonus"), 10) || 0;
               npc.operationalXP = newOperationalXP;
               npc.customBonus = newBonus;
+              const newRankRaw = dialogValue(dlg, "#dialog-npc-rank");
+              if (newRankRaw !== null && newRankRaw !== undefined && newRankRaw !== "") {
+                const newRank = Math.max(0, Math.min(3, parseInt(newRankRaw, 10) || 0));
+                if (newRank === 3 && otherLt) {
+                  ui.notifications.warn(t("Upgrade.OneLieutenant", { name: otherLt.name }));
+                } else {
+                  npc.rank = newRank;
+                }
+              }
+              if (npc.status === "arrested") {
+                const nights = parseInt(dialogValue(dlg, "#dialog-npc-arrested-nights"), 10);
+                if (Number.isFinite(nights)) npc.arrestedNights = Math.max(1, Math.min(10, nights));
+              }
             }
             await GangData.saveGang(this.actor, gang);
             this.render();
@@ -2592,7 +2876,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
    */
   async _onBuySuppliesDialog() {
     const gang = GangData.getGang(this.actor);
-    const pricePerUnit = gang.camp?.supplyPricePennies || 12;
+    const pricePerUnit = UnderworldOperations.supplyPrice(gang);
     const priceFormatted = UnderworldOperations.formatPennies(pricePerUnit);
     const treasuryPennies = GangData.treasuryToPennies(gang.treasury);
     const pursePennies = UnderworldOperations.getActorPennies(this.actor);
@@ -2659,7 +2943,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
   async _onSetSupplyPriceDialog() {
     if (!game.user.isGM) return;
     const gang = GangData.getGang(this.actor);
-    const currentPrice = gang.camp?.supplyPricePennies || 12;
+    const currentPrice = UnderworldOperations.supplyPrice(gang);
 
     const priceHtml = `
       <div class="underworld-dialog" style="font-size: 0.9rem;">
@@ -2684,8 +2968,240 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
           label: t("PriceDialog.Save"),
           default: true,
           callback: async (event, button, dialog) => {
-            const price = Math.max(1, parseInt(dialogValue(dialog, "#supply-price-input"), 10) || 12);
+            const price = Math.max(1, parseInt(dialogValue(dialog, "#supply-price-input"), 10) || UnderworldOperations.defaultSupplyPrice());
             await UnderworldOperations.setSupplyPrice(this.actor, price);
+            this.render();
+          }
+        },
+        { action: "cancel", label: "WFRP4E_COMPANION.Cancel" }
+      ],
+      rejectClose: false
+    });
+  }
+
+  // ════════════════════════════════════════════
+  // DIALOGI EDYCJI MG (ŁUPY, ŻETONY, HARACZ, KRONIKA)
+  // ════════════════════════════════════════════
+
+  /** Dodawanie lub edycja łupu w skrzyni kompanii (tylko MG). */
+  async _onLootDialog(lootId = null) {
+    if (!game.user.isGM) return;
+    const gang = GangData.getGang(this.actor);
+    if (!Array.isArray(gang.loot)) gang.loot = [];
+    const existing = lootId ? gang.loot.find(l => l.id === lootId) : null;
+    const terrainId = UnderworldOperations.getTerrain(gang);
+
+    const catOptions = Object.values(LOOT_CATEGORIES).map(cat =>
+      `<option value="${cat.id}" ${(existing?.category || "valuables") === cat.id ? "selected" : ""}>${escapeHTML(cat.name)}</option>`
+    ).join("");
+    const terrainOptions = TERRAIN_IDS.map(id =>
+      `<option value="${id}" ${(existing?.terrain || terrainId) === id ? "selected" : ""}>${escapeHTML(TERRAINS[id].name)}</option>`
+    ).join("");
+
+    const html = `
+      <div class="underworld-dialog uw-mission-dialog">
+        <div class="form-group uw-dialog-field">
+          <label>${t("LootDialog.Name")}</label>
+          <input type="text" id="gm-loot-name" value="${escapeHTML(existing?.name || "")}" placeholder="${t("LootDialog.NamePlaceholder")}" />
+        </div>
+        <div class="form-group uw-dialog-field">
+          <label>${t("LootDialog.Category")}</label>
+          <select id="gm-loot-category">${catOptions}</select>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+          <div class="form-group uw-dialog-field">
+            <label>${t("LootDialog.ValueSS")}</label>
+            <input type="number" id="gm-loot-value" min="1" value="${existing ? (Number(existing.valueSS) || 1) : 10}" />
+          </div>
+          <div class="form-group uw-dialog-field">
+            <label>${t("LootDialog.Hot")}</label>
+            <input type="number" id="gm-loot-hot" min="0" max="5" value="${existing ? (Number(existing.hot) || 0) : 0}" />
+          </div>
+        </div>
+        <div class="form-group uw-dialog-field">
+          <label>${t("LootDialog.Origin")}</label>
+          <input type="text" id="gm-loot-origin" value="${escapeHTML(existing?.origin || "")}" placeholder="${t("LootDialog.OriginPlaceholder")}" />
+        </div>
+        <div class="form-group uw-dialog-field">
+          <label>${t("LootDialog.Terrain")}</label>
+          <select id="gm-loot-terrain">${terrainOptions}</select>
+        </div>
+      </div>`;
+
+    await DialogV2.wait({
+      window: { title: existing ? t("LootDialog.EditTitle") : t("LootDialog.AddTitle") },
+      position: { width: 420 },
+      content: dialogContent(html),
+      buttons: [
+        {
+          action: "save",
+          icon: "fas fa-check",
+          label: t("Upgrade.Save"),
+          default: true,
+          callback: async (event, button, dialog) => {
+            const name = String(dialogValue(dialog, "#gm-loot-name") || "").trim();
+            if (!name) return;
+            const category = dialogValue(dialog, "#gm-loot-category") || "valuables";
+            const valueSS = Math.max(1, parseInt(dialogValue(dialog, "#gm-loot-value"), 10) || 1);
+            const hot = Math.max(0, Math.min(5, parseInt(dialogValue(dialog, "#gm-loot-hot"), 10) || 0));
+            const origin = String(dialogValue(dialog, "#gm-loot-origin") || "").trim();
+            const terrain = TERRAIN_IDS.includes(dialogValue(dialog, "#gm-loot-terrain")) ? dialogValue(dialog, "#gm-loot-terrain") : terrainId;
+
+            if (existing) {
+              Object.assign(existing, { name, category, valueSS, hot, origin, terrain });
+            } else {
+              gang.loot.push({
+                id: foundry.utils.randomID(),
+                name,
+                category,
+                valueSS,
+                hot,
+                origin,
+                terrain
+              });
+            }
+            await GangData.saveGang(this.actor, gang);
+            this.render();
+          }
+        },
+        { action: "cancel", label: "WFRP4E_COMPANION.Cancel" }
+      ],
+      rejectClose: false
+    });
+  }
+
+  /** Ręczne dodanie żetonu przygotowania przez MG. */
+  async _onAddTokenDialog() {
+    if (!game.user.isGM) return;
+    const gang = GangData.getGang(this.actor);
+    const options = Object.entries(TOKENS).map(([id, cfg]) =>
+      `<option value="${id}">${escapeHTML(cfg.name)} — ${escapeHTML(cfg.desc)}</option>`
+    ).join("");
+    const html = `
+      <div class="underworld-dialog uw-mission-dialog">
+        <div class="form-group uw-dialog-field">
+          <label>${t("TokensDialog.Kind")}</label>
+          <select id="gm-token-kind">${options}</select>
+        </div>
+        <div class="form-group uw-dialog-field">
+          <label>${t("TokensDialog.Nights")}</label>
+          <input type="number" id="gm-token-nights" min="1" max="10" value="2" />
+        </div>
+      </div>`;
+
+    await DialogV2.wait({
+      window: { title: t("TokensDialog.Title") },
+      position: { width: 420 },
+      content: dialogContent(html),
+      buttons: [
+        {
+          action: "save",
+          icon: "fas fa-chess-knight",
+          label: t("TokensDialog.Add"),
+          default: true,
+          callback: async (event, button, dialog) => {
+            const kind = dialogValue(dialog, "#gm-token-kind");
+            if (!TOKENS[kind]) return;
+            const nights = Math.max(1, Math.min(10, parseInt(dialogValue(dialog, "#gm-token-nights"), 10) || TOKENS[kind].nights || 1));
+            gang.tokens = gang.tokens && typeof gang.tokens === "object" ? gang.tokens : {};
+            gang.tokens[kind] = { nightsLeft: nights };
+            await GangData.saveGang(this.actor, gang);
+            this.render();
+          }
+        },
+        { action: "cancel", label: "WFRP4E_COMPANION.Cancel" }
+      ],
+      rejectClose: false
+    });
+  }
+
+  /** Ustawienie lub usunięcie aktywnego Haraczu przez MG. */
+  async _onEditRacketDialog() {
+    if (!game.user.isGM) return;
+    const gang = GangData.getGang(this.actor);
+    const current = gang.racket?.district || "";
+    const html = `
+      <div class="underworld-dialog uw-mission-dialog">
+        <div class="form-group uw-dialog-field">
+          <label>${t("RacketDialog.District")}</label>
+          <input type="text" id="gm-racket-district" value="${escapeHTML(current)}" placeholder="${t("RacketDialog.Placeholder")}" />
+        </div>
+        <p class="uw-dialog-note">${t("RacketDialog.Hint")}</p>
+      </div>`;
+
+    await DialogV2.wait({
+      window: { title: t("RacketDialog.Title") },
+      position: { width: 400 },
+      content: dialogContent(html),
+      buttons: [
+        {
+          action: "save",
+          icon: "fas fa-store",
+          label: t("Upgrade.Save"),
+          default: true,
+          callback: async (event, button, dialog) => {
+            const district = String(dialogValue(dialog, "#gm-racket-district") || "").trim();
+            if (district) {
+              gang.racket = { district, since: gang.racket?.since || UnderworldOperations._worldDayKey() };
+            } else {
+              delete gang.racket;
+            }
+            await GangData.saveGang(this.actor, gang);
+            this.render();
+          }
+        },
+        ...(gang.racket ? [{
+          action: "clear",
+          icon: "fas fa-trash",
+          label: t("RacketDialog.Clear"),
+          callback: async () => {
+            delete gang.racket;
+            await GangData.saveGang(this.actor, gang);
+            this.render();
+          }
+        }] : []),
+        { action: "cancel", label: "WFRP4E_COMPANION.Cancel" }
+      ],
+      rejectClose: false
+    });
+  }
+
+  /** Ręczny wpis MG do Kroniki kompanii. */
+  async _onAddHistoryDialog() {
+    if (!game.user.isGM) return;
+    const gang = GangData.getGang(this.actor);
+    const today = time.format(time.now()) || "";
+    const html = `
+      <div class="underworld-dialog uw-mission-dialog">
+        <div class="form-group uw-dialog-field">
+          <label>${t("History.Date")}</label>
+          <input type="text" id="gm-history-date" value="${escapeHTML(today)}" placeholder="${t("History.DatePlaceholder")}" />
+        </div>
+        <div class="form-group uw-dialog-field">
+          <label>${t("History.Summary")}</label>
+          <textarea id="gm-history-text" rows="3" placeholder="${t("History.SummaryPlaceholder")}"></textarea>
+        </div>
+      </div>`;
+
+    await DialogV2.wait({
+      window: { title: t("History.AddTitle") },
+      position: { width: 420 },
+      content: dialogContent(html),
+      buttons: [
+        {
+          action: "save",
+          icon: "fas fa-feather-alt",
+          label: t("History.Add"),
+          default: true,
+          callback: async (event, button, dialog) => {
+            const summary = String(dialogValue(dialog, "#gm-history-text") || "").trim();
+            if (!summary) return;
+            const date = String(dialogValue(dialog, "#gm-history-date") || "").trim() || today;
+            if (!Array.isArray(gang.history)) gang.history = [];
+            gang.history.unshift({ date, logSummary: summary });
+            const maxH = UnderworldOperations.maxHistoryEntries();
+            if (gang.history.length > maxH) gang.history.length = maxH;
+            await GangData.saveGang(this.actor, gang);
             this.render();
           }
         },
@@ -2725,22 +3241,49 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       }
     }
 
-    // Zabezpieczenie skarbca (Gracz NIE może edytować ręcznie skarbca z pól tekstowych!)
+    // Zabezpieczenie skarbca, statystyk, patrona i ustawień per-kompania (Gracz NIE może ich ręcznie edytować)
     if (!game.user.isGM) {
+      expanded.type = gang.type;
       expanded.treasury = gang.treasury;
       expanded.morale = gang.morale;
       expanded.supplies = gang.supplies;
       expanded.notoriety = gang.notoriety;
-    } else if (expanded.treasury) {
-      if (expanded.treasury.gc !== undefined) expanded.treasury.gc = Math.max(0, parseInt(expanded.treasury.gc, 10) || 0);
-      if (expanded.treasury.ss !== undefined) expanded.treasury.ss = Math.max(0, parseInt(expanded.treasury.ss, 10) || 0);
-      if (expanded.treasury.d !== undefined) expanded.treasury.d = Math.max(0, parseInt(expanded.treasury.d, 10) || 0);
+      expanded.patron = gang.patron;
+      expanded.bounty = gang.bounty;
+      expanded.maxRetinueOverride = gang.maxRetinueOverride;
+      expanded.upkeepOverride = gang.upkeepOverride;
+      expanded.racket = gang.racket;
+      expanded.tokens = gang.tokens;
+      expanded.loot = gang.loot;
+      expanded.history = gang.history;
+      expanded.eventHook = gang.eventHook;
+      if (expanded.camp) {
+        const campType = ["makeshift", "basic", "comfortable"].includes(expanded.camp.type)
+          ? expanded.camp.type
+          : (gang.camp?.type || "basic");
+        expanded.camp = { ...(gang.camp || {}), type: campType };
+      }
+    } else {
+      if (expanded.treasury) {
+        if (expanded.treasury.gc !== undefined) expanded.treasury.gc = Math.max(0, parseInt(expanded.treasury.gc, 10) || 0);
+        if (expanded.treasury.ss !== undefined) expanded.treasury.ss = Math.max(0, parseInt(expanded.treasury.ss, 10) || 0);
+        if (expanded.treasury.d !== undefined) expanded.treasury.d = Math.max(0, parseInt(expanded.treasury.d, 10) || 0);
+      }
+      if (expanded.patron && "noCut" in expanded.patron) {
+        expanded.patron.noCut = Boolean(expanded.patron.noCut);
+      }
+      if (expanded.maxRetinueOverride !== undefined) {
+        expanded.maxRetinueOverride = Math.max(0, Math.min(6, parseInt(expanded.maxRetinueOverride, 10) || 0));
+      }
+      if (expanded.upkeepOverride !== undefined) {
+        expanded.upkeepOverride = expanded.upkeepOverride === "free" ? "free" : "default";
+      }
     }
     if (expanded.morale !== undefined) expanded.morale = Math.max(0, Math.min(10, parseInt(expanded.morale, 10) || 0));
     if (expanded.supplies !== undefined) expanded.supplies = Math.max(0, Math.min(30, parseInt(expanded.supplies, 10) || 0));
     if (expanded.notoriety !== undefined) expanded.notoriety = Math.max(0, Math.min(5, parseInt(expanded.notoriety, 10) || 0));
 
-    // Bezpieczne mapowanie roster
+    // Bezpieczne mapowanie roster (zachowuje ukryte pola jak notes, arrestedNights, plannedMission)
     if (expanded.roster) {
       const newRoster = [];
       for (const idx of Object.keys(expanded.roster)) {
@@ -2748,40 +3291,45 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
         if (item && item.id) {
           const existing = gang.roster.find(n => n.id === item.id);
           if (existing) {
-            if (!item.assignment) item.assignment = existing.assignment;
-            if (item.gear === undefined) item.gear = existing.gear || [];
-            if (item.rank === undefined) item.rank = existing.rank || 0;
-            else item.rank = Number(item.rank) || 0;
-            if (item.operationalXP === undefined) item.operationalXP = existing.operationalXP || 0;
-            else item.operationalXP = Number(item.operationalXP) || 0;
-            if (item.customBonus === undefined) item.customBonus = existing.customBonus || 0;
-            else item.customBonus = Number(item.customBonus) || 0;
-            if (item.extraStrength === undefined) item.extraStrength = existing.extraStrength || "";
-            if (existing.strengths) item.strengths = existing.strengths;
-            if (existing.flaws) item.flaws = existing.flaws;
-            if (existing.narrativePerks) item.narrativePerks = existing.narrativePerks;
+            const mergedItem = { ...existing, ...item };
+            if (!mergedItem.assignment) mergedItem.assignment = existing.assignment;
+            mergedItem.gear = Array.isArray(existing.gear) ? existing.gear : [];
+            mergedItem.rank = Number(mergedItem.rank ?? existing.rank) || 0;
+            mergedItem.operationalXP = Number(mergedItem.operationalXP ?? existing.operationalXP) || 0;
+            mergedItem.customBonus = Number(mergedItem.customBonus ?? existing.customBonus) || 0;
+            mergedItem.extraStrength = mergedItem.extraStrength ?? existing.extraStrength ?? "";
+            if (existing.strengths) mergedItem.strengths = existing.strengths;
+            if (existing.flaws) mergedItem.flaws = existing.flaws;
+            if (existing.narrativePerks) mergedItem.narrativePerks = existing.narrativePerks;
 
-            // Ochrona przed zmianą przez gracza (tylko MG może zmieniać rolę, zalety i wady)
             if (!game.user.isGM) {
-              item.role = existing.role || "bodyguard";
-              item.strength = existing.strength || "";
-              item.flaw = existing.flaw || "";
-              item.status = existing.status || "ready";
-              item.rank = existing.rank || 0;
-              item.operationalXP = existing.operationalXP || 0;
-              item.customBonus = existing.customBonus || 0;
-              item.gear = existing.gear || [];
+              mergedItem.role = existing.role || "bodyguard";
+              mergedItem.strength = existing.strength || "";
+              mergedItem.flaw = existing.flaw || "";
+              mergedItem.status = existing.status || "ready";
+              mergedItem.rank = existing.rank || 0;
+              mergedItem.operationalXP = existing.operationalXP || 0;
+              mergedItem.customBonus = existing.customBonus || 0;
+              mergedItem.gear = existing.gear || [];
             } else {
-              if (item.role) item.role = UnderworldTables.roleForCompany(item.role, gang);
-              else item.role = existing.role || "bodyguard";
+              mergedItem.role = mergedItem.role ? UnderworldTables.roleForCompany(mergedItem.role, gang) : (existing.role || "bodyguard");
+              if (mergedItem.status === "arrested" && !mergedItem.arrestedNights) {
+                mergedItem.arrestedNights = 1;
+              } else if (mergedItem.status !== "arrested") {
+                delete mergedItem.arrestedNights;
+                delete mergedItem.arrestedOn;
+              }
+              if (mergedItem.status === "ready" && existing.status !== "ready") {
+                mergedItem.assignment = "none";
+              }
             }
-            // Druga rola: gracz jej nie zmienia formularzem (kupuje ją za DO), MG ustawia ją z listy
             const wantedRole2 = game.user.isGM && item.role2 !== undefined ? item.role2 : existing.role2;
-            item.role2 = wantedRole2 && UnderworldTables.ROLES_CONFIG[wantedRole2] && wantedRole2 !== item.role ? wantedRole2 : "";
-          } else if (item.role) {
-            item.role = UnderworldTables.roleForCompany(item.role, gang);
+            mergedItem.role2 = wantedRole2 && UnderworldTables.ROLES_CONFIG[wantedRole2] && wantedRole2 !== mergedItem.role ? wantedRole2 : "";
+            newRoster.push(mergedItem);
+          } else if (game.user.isGM) {
+            if (item.role) item.role = UnderworldTables.roleForCompany(item.role, gang);
+            newRoster.push(item);
           }
-          newRoster.push(item);
         }
       }
       expanded.roster = newRoster;

@@ -1,5 +1,27 @@
 # Changelog
 
+## 1.12.0
+- **Bug & exploit fixes**:
+  - Night watch now properly recognises sentries assigned via the Plan tab (`assignment === "guard"`) as well as `battle_scarred` wounded followers.
+  - Closed the infinite-actions-per-day exploit via toggling Retinue on `busy` / `resting` members, the deposit-withdraw free Morale exploit in the stash (net cycle tracking for +1 Morale and cumulative withdrawals for Leadership checks), the player company-type edit bypass, and the `craft_blacksmith` buy/sell gear exploit.
+  - Planned jobs in Weekly / GM Queue modes now reserve cargo, fenced loot, and tended patients so the same resource cannot be scheduled twice; chat cards now accurately report `0%` Patron cut for profiles without a cut (`mercenaries`, `smugglers`, `investigators`).
+  - Added missing Polish/English camp texts for `greedy` and `nightmares` flaws, and rendered `perkEffects` (e.g., `poacher`, Right Hand authority) on the night camp chat card.
+- **Perks, traits, gear & Patron relation implemented**:
+  - Implemented `blood_brotherhood` (desertion immunity + 50% Meat Shield blow absorption), `battle_scarred` (wounded can stand watch + immune to failure morale drop), `guard_contacts` (halves raid chance + warns unguarded camp), `cold_blooded` (ignores first failure complication and morale loss per cycle), `craft_blacksmith` (50% gear discount in the armoury), `craft_innkeeper` (extra rumour in tavern + camp Morale capped at < 8), `craft_merchant` (+2 SS on fencing and data missions), `craft_woodsman` (extra ration only in the forest), `lockpicks` (+10 on `burglary` and `farm_theft`), `field_medic` (50% instant heal in `tend_wounded`), `armor` / Veteran (50% wound avoidance on violent failure), and Right Hand authority (+1 Morale when < 7).
+  - Patron relation now mechanically affects the Patron's cut (`favorite` −5%, `strained` +5%, `hostile` +10%), bribery costs (`favorite` −20%) and tests (`+10` / `−10`).
+- **WFRP 4e balance, upkeep & Crew Week scaling**:
+  - WFRP4e sheet skill tests and treasury Leadership/Fellowship tests now use Challenging (`+0`) instead of hidden Average (`+20`); linked-actor job tests factor in job target difficulty and skip double-counting crew rank.
+  - Added headcount-scaled ration consumption (`1` per 3 active crew daily, `1` per member weekly) and optional crew upkeep/pay (`upkeepEnabled` world setting, on by default).
+  - Rebalanced job payouts, target modifier cap (`+40`), Mutiny penalty (`−20`), makeshift camp (`½` raid chance), forest dugout cost (`3 SS`), weekly comfortable lodging (`×3`) and weekly OXP (`×3`), role specialties for terrain jobs, and `stone_circle` Recon/Lead generation.
+- **Tactical orders & Advantage**:
+  - Added full support for both WFRP4e Personal Advantage and *Up in Arms* Group Advantage (`wfrp4e.useGroupAdvantage`).
+  - Removed the 0-cost Advantage loop on allied orders when spending Advantage, capped `rally`/`distract` Advantage gains, added Agility defence tests to `sand` and `kidneystrike`, scaled enemy defence test difficulty with executor rank, enforced single-target vs explicit multi-target (`maxTargets`) limits, separated `meatshield` as a once-per-round Reaction, and wired `payoff` to deduct `1d10 SS`.
+- **Player vs GM permissions, GM tools & configuration**:
+  - Restricted actor drag-and-drop, actor linking/unlinking, `add-npc`, and `free-npc` strictly to the GM; locked `patron.*`, `bounty`, `camp.supplyPricePennies`, `loot`, `history`, `eventHook`, `racket`, `tokens`, and per-company overrides against non-GM form tampering.
+  - Fixed toggling night watch on `battle_scarred` wounded followers so they retain `wounded` status instead of healing for free; restricted camp `externalSupplies` to the GM; made direct tactical orders and hot loot transfers configurable (`directOrdersMode`, `lootTransferMode`) with chat audit notices for loot transfers/discards.
+  - Added full GM editing tools: add/edit loot items in the stash, add/remove preparation tokens, edit/clear protection rackets, inspect/clear pending event hooks, add/delete Chronicle entries, reset cycle/combat locks, rebuild world RollTables, pick custom member portraits, edit member notes (also editable by players), grant/remove free perks and gear, edit follower ranks (`0–3`), and adjust arrest duration.
+  - Added 16 new world settings (`campRestGMOnly`, `directOrdersMode`, `lootTransferMode`, `maxRetinue`, `maxRoster`, `maxGearSlots`, `rationsMode`, `defaultSupplyPrice`, `upkeepMultiplier`, `oxpMultiplier`, `orderAutomation`, `orderRoundLimit`, `raidsEnabled`, `desertionEnabled`, `campReminder`, `maxHistoryEntries`) plus per-company overrides (`maxRetinueOverride`, `upkeepOverride`, `patron.noCut`).
+
 ## 1.11.0
 - Tactical orders for other modules: `game.underworld.tacticalOrders(actor)` lists the orders the Chief can give right now (with Advantage cost and the retinue member who carries it out), and `game.underworld.issueOrder(actor, orderId)` opens the same order dialog as the Tactics tab. Warhammer Battle HUD uses them to show crew orders next to the Advantage counter.
 

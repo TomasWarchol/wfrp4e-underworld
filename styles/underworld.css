@@ -6340,3 +6340,25 @@
 .camp-rest-card .camp-small { font-size: 0.8rem; }
 .camp-rest-card .camp-quote { font-style: italic; color: #2b1f16; }
 .camp-rest-card .camp-card-footer { border-top: 1px dashed #8e735b; padding-top: 4px; font-size: 0.8rem; color: #5e584f; text-align: right; margin-top: 6px; }
+
+/* ─── Narzędzia edycji MG i drobne akcenty UI ─── */
+:is(html, #uw) .uw-gm-tools-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+:is(html, #uw) .uw-btn-sm { padding: 3px 8px; font-size: 12px; line-height: 1.3; }
+:is(html, #uw) .uw-ml-auto { margin-left: auto; }
+:is(html, #uw) .uw-chip-x {
+  width: auto;
+  height: auto;
+  margin: 0 0 0 2px;
+  padding: 0 3px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  opacity: 0.7;
+  cursor: pointer;
+  line-height: 1;
+}
+:is(html, #uw) .uw-chip-x:hover { opacity: 1; }
+:is(html, #uw) .uw-chip-x.uw-danger { color: #a12828; }
+:is(html, #uw) .uw-check-label { display: flex; align-items: center; gap: 6px; cursor: pointer; }
+:is(html, #uw) .uw-check-label input[type="checkbox"] { margin: 0; }
+:is(html, #uw) .uw-npc-note { font-style: italic; color: #554433; white-space: pre-wrap; }

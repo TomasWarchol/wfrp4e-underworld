@@ -33,7 +33,10 @@
     </div>
   </section>
 
-  <h3 class="uw-l-section-title">{{uwIcon "ui-tab_chest"}} {{underworldT "LootTab.InHideout"}} <small>{{lootCount}}</small></h3>
+  <div class="uw-l-section-head">
+    <h3 class="uw-l-section-title">{{uwIcon "ui-tab_chest"}} {{underworldT "LootTab.InHideout"}} <small>{{lootCount}}</small></h3>
+    {{#if isGM}}<button type="button" class="btn-theme-action uw-btn-sm" data-action="loot-add" title="{{underworldT 'LootDialog.AddTitle'}}"><i class="fas fa-plus"></i> {{underworldT "LootDialog.Add"}}</button>{{/if}}
+  </div>
   {{#if lootCount}}
   <div class="uw-l-items">
     {{#each lootView}}
@@ -49,7 +52,8 @@
       </div>
       {{#if this.hot}}<span class="uw-l-hot" data-tooltip="{{underworldT 'LootTab.HotHint'}}">{{uwIcon "ui-hot"}} {{this.hot}}</span>{{/if}}
       <div class="uw-l-item-actions">
-        <button type="button" class="uw-plain" data-action="loot-transfer" data-loot-id="{{this.id}}" data-tooltip="{{underworldT 'LootTab.GiveChief'}}"><i class="fas fa-hand-holding"></i></button>
+        {{#if ../isGM}}<button type="button" class="uw-plain" data-action="loot-edit" data-loot-id="{{this.id}}" data-tooltip="{{underworldT 'LootDialog.EditTitle'}}"><i class="fas fa-pen"></i></button>{{/if}}
+        {{#if this.canTransfer}}<button type="button" class="uw-plain" data-action="loot-transfer" data-loot-id="{{this.id}}" data-tooltip="{{underworldT 'LootTab.GiveChief'}}"><i class="fas fa-hand-holding"></i></button>{{/if}}
         <button type="button" class="uw-plain is-danger" data-action="loot-discard" data-loot-id="{{this.id}}" data-tooltip="{{underworldT 'LootTab.Discard'}}"><i class="fas fa-trash"></i></button>
       </div>
     </article>
@@ -63,12 +67,19 @@
     <h3>{{uwIcon "ui-token_recon"}} {{underworldT "LootTab.PrepIncome"}}</h3>
     <div class="uw-prep-strip">
       {{#each activeTokens}}
-        <span class="uw-token-chip" data-tooltip="{{this.desc}}"><i class="{{this.icon}}"></i> {{this.name}} <small>({{this.left}})</small></span>
+        <span class="uw-token-chip" data-tooltip="{{this.desc}}"><i class="{{this.icon}}"></i> {{this.name}} <small>({{this.left}})</small>{{#if ../isGM}} <button type="button" class="uw-chip-x" data-action="token-remove" data-token-id="{{this.id}}" title="{{underworldT 'TokensDialog.Remove'}}"><i class="fas fa-times"></i></button>{{/if}}</span>
       {{else}}
         <span class="uw-token-chip is-empty"><i class="fas fa-chess-pawn"></i> {{underworldT "LootTab.NoTokens"}}</span>
       {{/each}}
       {{#if gang.racket}}<span class="uw-token-chip is-racket"><i class="fas fa-store"></i> {{underworldT "Badges.racket"}}: {{gang.racket.district}}{{#unless (bajeryEq terrain.id "city")}} <small>({{underworldT "LootTab.RacketDormant"}})</small>{{/unless}}</span>{{/if}}
+      {{#if isGM}}{{#if eventHookInfo}}<span class="uw-token-chip" title="{{eventHookInfo.id}}"><i class="fas fa-link"></i> {{underworldT "CampEvent.HookSet"}}{{#if eventHookInfo.terrain}} ({{eventHookInfo.terrain}}){{/if}} <button type="button" class="uw-chip-x" data-action="clear-event-hook" title="{{underworldT 'CampEvent.ClearHook'}}"><i class="fas fa-times"></i></button></span>{{/if}}{{/if}}
     </div>
+    {{#if isGM}}
+    <div class="uw-gm-tools-row">
+      <button type="button" class="btn-theme-action uw-btn-sm" data-action="token-add"><i class="fas fa-chess-knight"></i> {{underworldT "TokensDialog.AddBtn"}}</button>
+      <button type="button" class="btn-theme-action uw-btn-sm" data-action="edit-racket"><i class="fas fa-store"></i> {{underworldT "RacketDialog.EditBtn"}}</button>
+    </div>
+    {{/if}}
     <ul class="uw-prep-help">
       <li>{{{underworldT "LootTab.HelpRecon"}}}</li>
       <li>{{{underworldT "LootTab.HelpCommotion"}}}</li>

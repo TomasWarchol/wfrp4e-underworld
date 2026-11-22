@@ -129,6 +129,55 @@ export class UnderworldRollTables {
   // KOMPENDIUM I TABELE ŚWIATA (tylko MG)
   // ════════════════════════════════════════════
 
+  /** Odbudowuje (lub odtwarza) tabele świata dla podanego terenu i profilu z wbudowanych danych modułu (tylko MG). */
+  static async regenerateTables(terrain = "city", profileId = DEFAULT_PROFILE) {
+    if (!game.user?.isGM) return false;
+    const safeTerrain = TERRAIN_IDS.includes(terrain) ? terrain : "city";
+    const profile = profileOf(profileId);
+    const builtIn = await this._builtInContent(safeTerrain);
+    const created = new Set(game.settings.get(MODULE_ID, "worldTablesCreatedKeys") || []);
+    const folder = await this._folder();
+
+    const replaceOrCreate = async (type, tTerrain, tProfile, data, createdKey) => {
+      const existing = this.findWorldTable(type, tTerrain, tProfile);
+      if (existing) {
+        const ids = existing.results?.map(r => r.id) || [];
+        if (ids.length) await existing.deleteEmbeddedDocuments("TableResult", ids);
+        await existing.update({
+          name: data.name,
+          description: data.description,
+          formula: data.formula,
+          replacement: data.replacement,
+          flags: data.flags
+        });
+        if (data.results?.length) await existing.createEmbeddedDocuments("TableResult", data.results);
+      } else {
+        await RollTable.createDocuments([{ ...data, folder: folder.id }]);
+      }
+      created.add(createdKey);
+    };
+
+    const rumorData = this.buildRumorTableData(builtIn.rumors, [], safeTerrain);
+    await replaceOrCreate("rumors", safeTerrain, null, rumorData, tableKey("rumors", safeTerrain));
+
+    if (profile.worldTables) {
+      const eventData = this.buildEventTableData(builtIn.events, safeTerrain);
+      await replaceOrCreate("events", safeTerrain, null, eventData, tableKey("events", safeTerrain));
+    }
+
+    if (profile.id !== DEFAULT_PROFILE) {
+      const profileEvents = await UnderworldTables.loadProfileEvents(profile.id);
+      if (profileEvents.length) {
+        const pData = this.buildEventTableData(profileEvents, null, profile.id);
+        await replaceOrCreate("events", null, profile.id, pData, `events:profile:${profile.id}`);
+      }
+    }
+
+    await game.settings.set(MODULE_ID, "worldTablesCreatedKeys", [...created]);
+    ui.notifications.info(t("Tables.Regenerated", { terrain: TERRAINS[safeTerrain]?.name ?? safeTerrain }));
+    return true;
+  }
+
   /** Odbudowuje tabele w kompendium modułu, jeśli są puste lub nieaktualne. */
   static async seedCompendium() {
     if (game.user !== game.users.activeGM) return;

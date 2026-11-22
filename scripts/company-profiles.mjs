@@ -64,7 +64,7 @@ export const PROFILE_ROLES = {
   lookout: {
     id: "lookout", icon: "fas fa-eye", badgeClass: "role-shadow",
     actsAs: ["shadow", "provocateur"], orders: ["lure", "flank", "smoke", "sand"],
-    bonusAssignments: ["cache", "scout", "cover_tracks"]
+    bonusAssignments: ["cache", "scout", "cover_tracks", "tavern"]
   },
   forger: {
     id: "forger", icon: "fas fa-feather-pointed", badgeClass: "role-fixer",
@@ -86,7 +86,7 @@ export const PROFILE_ROLES = {
   courier: {
     id: "courier", icon: "fas fa-envelope", badgeClass: "role-smuggler",
     actsAs: ["smuggler", "scavenger"], orders: ["retreat", "getaway", "resupply", "flank"],
-    bonusAssignments: ["letter_swap", "report", "intercept"]
+    bonusAssignments: ["letter_swap", "report", "intercept", "cover_tracks"]
   },
   enforcer: {
     id: "enforcer", icon: "fas fa-hand-fist", badgeClass: "role-duelist",
@@ -108,7 +108,7 @@ export const PROFILE_ROLES = {
   spy: {
     id: "spy", icon: "fas fa-user-secret", badgeClass: "role-shadow",
     actsAs: ["shadow", "scout"], orders: ["flank", "lure", "spot", "kidneystrike"],
-    bonusAssignments: ["infiltrate", "tavern", "abduction"]
+    bonusAssignments: ["infiltrate", "tavern", "abduction", "forge"]
   },
   assassin: {
     id: "assassin", icon: "fas fa-skull", badgeClass: "role-marksman",
@@ -118,7 +118,7 @@ export const PROFILE_ROLES = {
   orator: {
     id: "orator", icon: "fas fa-bullhorn", badgeClass: "role-provocateur",
     actsAs: ["provocateur", "fixer"], orders: ["distract", "evileye", "payoff", "forgedorder"],
-    bonusAssignments: ["rumor_spread", "bribe", "infiltrate"]
+    bonusAssignments: ["rumor_spread", "bribe", "infiltrate", "fence"]
   },
   alchemist: {
     id: "alchemist", icon: "fas fa-flask", badgeClass: "role-charlatan",
@@ -145,8 +145,8 @@ export const DATA_MISSIONS = {
     loot: ["weapons", "metal"], success: {}, great: { loot: "easy" }, failure: {}
   },
   garrison: {
-    category: "resources", icon: "fas fa-chess-rook", badge: "guard", terrains: "all", target: 60, skill: "NAME.Perception",
-    risk: "low", like: "scout", success: { coins: "1d8+4" }, great: { coins: "1d6" }, failure: {}
+    category: "resources", icon: "fas fa-chess-rook", badge: "guard", terrains: "all", target: 55, skill: "NAME.Perception",
+    risk: "low", like: "scout", success: { coins: "1d6+3" }, great: { coins: "1d6" }, failure: {}
   },
   requisition: {
     category: "resources", icon: "fas fa-wheat-awn", badge: "procure", terrains: "all", target: 50, skill: "NAME.Intimidate",
@@ -155,17 +155,17 @@ export const DATA_MISSIONS = {
   escort: {
     category: "operations", icon: "fas fa-shield-halved", badge: "guard", terrains: "all", target: 50, skill: "NAME.Perception",
     risk: "violent", like: "distract", needsInput: true,
-    success: { coins: "2d10+5" }, great: { notoriety: -1 }, failure: { morale: -1 }
+    success: { coins: "2d8+4", notoriety: -1 }, great: { coins: "1d8" }, failure: { morale: -1 }
   },
   contract: {
     category: "operations", icon: "fas fa-file-contract", badge: "intimidate", terrains: "all", target: 45, skill: "NAME.Leadership",
     risk: "violent", like: "intimidate", tiered: true, needsInput: true,
     loot: ["weapons", "metal", "valuables"],
-    success: { coins: "3d10+10" }, great: { loot: "normal" }, failure: { morale: -1, notoriety: 1 }
+    success: { coins: "2d10+6" }, great: { loot: "normal" }, failure: { morale: -1, notoriety: 1 }
   },
   drill: {
     category: "camp", icon: "fas fa-person-military-rifle", badge: "tend-wounded", terrains: "all", target: 55, skill: "NAME.Leadership",
-    risk: null, produces: "commotion", success: { xp: 5 }, great: { morale: 1 }, failure: {}
+    risk: "low", produces: "commotion", success: { xp: 5 }, great: { morale: 1 }, failure: {}
   },
 
   // ─── BANICI ───
@@ -188,7 +188,7 @@ export const DATA_MISSIONS = {
   river_run: {
     category: "operations", icon: "fas fa-ship", badge: "smuggle", terrains: "all", target: 45, skill: "NAME.Stealth",
     risk: "stealth", like: "smuggle", tiered: true,
-    consumes: { categories: ["contraband", "goods", "valuables"], multiplier: 2.5, always: true },
+    consumes: { categories: ["contraband", "goods", "valuables"], multiplier: 2, always: true },
     success: {}, great: { notoriety: -1 }, failure: { notoriety: 1 }
   },
   cache: {
@@ -215,18 +215,18 @@ export const DATA_MISSIONS = {
   letter_swap: {
     category: "operations", icon: "fas fa-envelopes-bulk", badge: "forge", terrains: ["city", "village"], target: 40, skill: "NAME.SleightOfHand",
     risk: "stealth", like: "forge", tiered: true, needsInput: true, loot: ["documents"],
-    success: { coins: "2d10+5", xp: 5 }, great: { loot: "normal" }, failure: { notoriety: 1 }
+    success: { coins: "1d10+5", xp: 5 }, great: { loot: "normal" }, failure: { notoriety: 1 }
   },
   report: {
     category: "resources", icon: "fas fa-file-lines", badge: "rumor", terrains: "all", target: 50, skill: "NAME.Intuition",
-    risk: null, like: "tavern", consumes: { categories: ["documents"], multiplier: 1.25 },
+    risk: null, like: "tavern", consumes: { categories: ["documents"], multiplier: 1.75 },
     success: {}, great: { coins: "1d10" }, failure: { morale: -1 }
   },
 
   // ─── SEKRETNE BRACTWO ───
   ritual: {
     category: "camp", icon: "fas fa-fire-flame-curved", badge: "tend-wounded", terrains: "all", target: 50, skill: "NAME.Cool",
-    risk: null, produces: "commotion", success: { morale: 1 }, great: { xp: 5 }, failure: { morale: -1 }
+    risk: "low", produces: "commotion", success: { xp: 5 }, great: { morale: 1 }, failure: { morale: -1 }
   },
   infiltrate: {
     category: "intel", icon: "fas fa-masks-theater", badge: "shadow", terrains: ["city", "village"], target: 45, skill: "NAME.Charm",
@@ -234,7 +234,7 @@ export const DATA_MISSIONS = {
   },
   stone_circle: {
     category: "camp", icon: "fas fa-circle-notch", badge: "rumor", terrains: ["forest", "mountains"], target: 50, skill: "NAME.Cool",
-    risk: "low", like: "scout", loot: ["contraband", "valuables"],
+    risk: "low", like: "scout", produces: "recon", leadOnGreat: true, loot: ["contraband", "valuables"],
     success: { morale: 1, xp: 5 }, great: { loot: "normal" }, failure: { morale: -1 }
   },
   abduction: {

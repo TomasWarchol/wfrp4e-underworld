@@ -88,9 +88,7 @@
         <label class="uw-l-watch-item status-{{this.status}}">
           <input type="checkbox" class="guard-checkbox" data-npc-id="{{this.id}}"
                  {{#if (bajeryEq this.assignment "guard")}}checked{{/if}}
-                 {{#if (bajeryEq this.status "dead")}}disabled{{/if}}
-                 {{#if (bajeryEq this.status "wounded")}}disabled{{/if}}
-                 {{#if (bajeryEq this.status "busy")}}disabled{{/if}} />
+                 {{#unless this.canGuard}}disabled{{/unless}} />
           <img src="{{this.img}}" alt=""/>
           <span>{{this.name}}</span>
           {{uwIcon "ui-watch" "uw-l-watch-mark"}}

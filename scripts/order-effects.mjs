@@ -10,18 +10,68 @@ import { t } from "./i18n.mjs";
 
 const MODULE_ID = "wfrp4e-underworld";
 const QUERY_NAME = `${MODULE_ID}.applyOrder`;
+const DIFFICULTY_STEPS = ["average", "challenging", "difficult", "hard", "veryHard"];
+
+/**
+ * Zwraca aktualną Przewagę postaci, obsługując zarówno Przewagę Osobistą z podstawki WFRP4e,
+ * jak i Przewagę Grupową z Up in Arms (`wfrp4e.useGroupAdvantage`).
+ */
+export function getAdvantage(actor) {
+  if (!actor) return 0;
+  try {
+    if (game.settings?.get("wfrp4e", "useGroupAdvantage")) {
+      const group = game.settings?.get("wfrp4e", "groupAdvantageValues");
+      const side = (actor.hasPlayerOwner || actor.type === "character") ? "players" : "enemies";
+      if (group && group[side] !== undefined) return Number(group[side]) || 0;
+    }
+  } catch (_) {}
+  return Number(actor.status?.advantage?.value ?? actor.system?.status?.advantage?.value ?? actor.system?.status?.advantage ?? 0);
+}
+
+/**
+ * Modyfikuje Przewagę postaci (WFRP4e obsłuży pulę osobistą lub grupową).
+ */
+export async function modifyAdvantage(actor, delta) {
+  const change = Math.trunc(Number(delta) || 0);
+  if (!actor || !change) return;
+  if (typeof actor.modifyAdvantage === "function") {
+    await actor.modifyAdvantage(change);
+    return;
+  }
+  try {
+    if (game.settings?.get("wfrp4e", "useGroupAdvantage") && typeof game.wfrp4e?.utility?.updateGroupAdvantage === "function") {
+      const side = (actor.hasPlayerOwner || actor.type === "character") ? "players" : "enemies";
+      await game.wfrp4e.utility.updateGroupAdvantage({ [side]: Math.max(0, getAdvantage(actor) + change) });
+      return;
+    }
+  } catch (_) {}
+  if (change < 0 && typeof actor.spend === "function") {
+    await actor.spend("system.status.advantage.value", Math.abs(change));
+    return;
+  }
+  const cur = Number(actor.system?.status?.advantage?.value ?? actor.system?.status?.advantage ?? 0);
+  await actor.update?.({ "system.status.advantage.value": Math.max(0, cur + change) });
+}
+
+function stepDifficulty(base, rank = 0) {
+  const idx = DIFFICULTY_STEPS.indexOf(base);
+  const start = idx >= 0 ? idx : 1;
+  const shift = Math.max(0, Math.min(3, Math.trunc(Number(rank) || 0)));
+  return DIFFICULTY_STEPS[Math.min(DIFFICULTY_STEPS.length - 1, start + shift)];
+}
 
 /**
  * Automatyzacja rozkazów. Rozkazy bez wpisu (np. Salwa, Taran, Żywa Tarcza) rozstrzyga MG z karty.
- * - test: test cechy celu; skutki z onFail stosowane tylko przy porażce celu
+ * - test: test cechy celu; skutki z onFail stosowane tylko przy porażce celu (trudność rośnie z rangą wykonawcy)
  * - apply: skutki stosowane od razu
  * - ally: cele to sojusznicy (gdy brak celów – Herszt)
+ * - maxTargets: limit celów (domyślnie 1 dla rozkazów jednotargetowych)
  * Skutek: { add: "prone" } | { remove: "fatigued" } | { advantage: -1 } | { note: "klucz tłumaczenia" }
  */
 export const ORDER_AUTOMATION = {
   trip: { test: { characteristic: "ag", difficulty: "challenging" }, onFail: [{ add: "prone" }] },
-  kidneystrike: { apply: [{ add: "bleeding" }, { advantage: -1 }] },
-  sand: { apply: [{ add: "blinded" }] },
+  kidneystrike: { test: { characteristic: "ag", difficulty: "challenging" }, onFail: [{ add: "bleeding" }, { advantage: -1 }] },
+  sand: { test: { characteristic: "ag", difficulty: "challenging" }, onFail: [{ add: "blinded" }] },
   cover: { apply: [{ advantage: -1 }] },
   bullrush: { apply: [{ advantage: -1 }] },
   distract: { apply: [{ advantage: -1 }] },
@@ -30,26 +80,26 @@ export const ORDER_AUTOMATION = {
   draught: { ally: true, apply: [{ remove: "fatigued" }] },
   bodyblock: { ally: true, apply: [{ advantage: 1 }] },
   grapple: { test: { characteristic: "s", difficulty: "challenging" }, onFail: [{ add: "entangled" }] },
-  circle: { ally: true, apply: [{ remove: "surprised" }, { advantage: 1 }] },
+  circle: { ally: true, maxTargets: 4, apply: [{ remove: "surprised" }, { advantage: 1 }] },
   parry: { ally: true, apply: [{ advantage: 1 }] },
   riposte: { apply: [{ advantage: -1 }] },
   challenge: { test: { characteristic: "wp", difficulty: "challenging" }, onFail: [{ note: "Orders.Effects.MustFace" }] },
-  pindown: { test: { characteristic: "wp", difficulty: "challenging" }, onFail: [{ add: "surprised" }] },
-  fireoil: { test: { characteristic: "ag", difficulty: "challenging" }, onFail: [{ add: "ablaze" }] },
-  caltrops: { test: { characteristic: "ag", difficulty: "average" }, onFail: [{ add: "prone" }] },
-  collapse: { test: { characteristic: "ag", difficulty: "difficult" }, onFail: [{ add: "stunned" }] },
+  pindown: { maxTargets: 3, test: { characteristic: "wp", difficulty: "challenging" }, onFail: [{ add: "surprised" }] },
+  fireoil: { maxTargets: 4, test: { characteristic: "ag", difficulty: "challenging" }, onFail: [{ add: "ablaze" }] },
+  caltrops: { maxTargets: 4, test: { characteristic: "ag", difficulty: "challenging" }, onFail: [{ add: "prone" }] },
+  collapse: { maxTargets: 3, test: { characteristic: "ag", difficulty: "difficult" }, onFail: [{ add: "stunned" }] },
   wagonwall: { ally: true, apply: [{ advantage: 1 }] },
   spooked: { apply: [{ advantage: -1 }] },
   getaway: { ally: true, apply: [{ remove: "prone" }] },
   spot: { ally: true, apply: [{ advantage: 1 }] },
   lure: { test: { characteristic: "int", difficulty: "challenging" }, onFail: [{ advantage: -1 }, { note: "Orders.Effects.Lured" }] },
-  snare: { test: { characteristic: "ag", difficulty: "average" }, onFail: [{ add: "entangled" }] },
+  snare: { test: { characteristic: "ag", difficulty: "challenging" }, onFail: [{ add: "entangled" }] },
   forgedorder: { test: { characteristic: "int", difficulty: "challenging" }, onFail: [{ add: "surprised" }] },
   payoff: { test: { characteristic: "wp", difficulty: "challenging" }, onFail: [{ note: "Orders.Effects.StandsDown" }] },
   salve: { ally: true, apply: [{ remove: "bleeding" }] },
-  fumes: { test: { characteristic: "t", difficulty: "challenging" }, onFail: [{ add: "fatigued" }] },
+  fumes: { maxTargets: 4, test: { characteristic: "t", difficulty: "challenging" }, onFail: [{ add: "fatigued" }] },
   evileye: { test: { characteristic: "wp", difficulty: "challenging" }, onFail: [{ advantage: -1 }, { note: "Orders.Effects.EvilEye" }] },
-  regroup: { ally: true, apply: [{ remove: "surprised" }, { advantage: 1 }] }
+  regroup: { ally: true, maxTargets: 4, apply: [{ remove: "surprised" }, { advantage: 1 }] }
 };
 
 export class OrderEffects {
@@ -64,7 +114,7 @@ export class OrderEffects {
    * Wywoływane po stronie wydającego rozkaz: zbiera wskazane cele i prosi MG o zastosowanie efektów.
    * @returns {Promise<string[]>} opisy zastosowanych efektów do karty rozkazu
    */
-  static async applyFromIssuer(actor, orderId) {
+  static async applyFromIssuer(actor, orderId, { method = "leadership", executorRank = 0 } = {}) {
     const automation = ORDER_AUTOMATION[orderId];
     if (!automation) return [];
 
@@ -76,42 +126,63 @@ export class OrderEffects {
       return [t("Orders.Effects.NoTarget")];
     }
 
-    const result = await queryGM(QUERY_NAME, { orderId, issuerUuid: actor.uuid, targetUuids });
+    const result = await queryGM(QUERY_NAME, {
+      orderId,
+      issuerUuid: actor.uuid,
+      targetUuids,
+      method,
+      executorRank: Math.max(0, Math.min(3, Math.trunc(Number(executorRank) || 0)))
+    });
     return Array.isArray(result) ? result : [t("Orders.Effects.GMFailed")];
   }
 
   /**
    * Handler zapytania wykonywany u MG. Wydający musi być właścicielem Herszta.
    */
-  static async onQuery({ orderId, issuerUuid, targetUuids } = {}, { user } = {}) {
+  static async onQuery({ orderId, issuerUuid, targetUuids, method = "leadership", executorRank = 0 } = {}, { user } = {}) {
     const automation = ORDER_AUTOMATION[orderId];
     if (!automation || !Array.isArray(targetUuids)) return [];
     const issuer = issuerUuid ? await fromUuid(issuerUuid) : null;
     if (!user || !issuer || (!user.isGM && !issuer.testUserPermission(user, "OWNER"))) return [];
 
+    const safeMethod = ["leadership", "advantage", "direct"].includes(method) ? method : "leadership";
+    let safeRank = Math.max(0, Math.min(3, Math.trunc(Number(executorRank) || 0)));
+    const roster = issuer.getFlag?.(MODULE_ID, "gang")?.roster;
+    if (Array.isArray(roster)) {
+      const activeRetinue = roster.filter(n => n.assignment === "retinue" && !["dead", "wounded", "arrested"].includes(n.status));
+      if (activeRetinue.length) {
+        const maxRank = activeRetinue.reduce((m, n) => Math.max(m, Math.max(0, Math.min(3, Math.trunc(Number(n.rank) || 0)))), 0);
+        safeRank = Math.min(safeRank, maxRank);
+      } else {
+        safeRank = 0;
+      }
+    }
+
+    const limit = automation.maxTargets ?? 1;
     const lines = [];
-    for (const uuid of targetUuids.slice(0, 6)) {
+    for (const uuid of targetUuids.slice(0, limit)) {
       const target = await fromUuid(uuid);
       if (!target) continue;
-      lines.push(...await this._applyToTarget(target, automation));
+      lines.push(...await this._applyToTarget(target, automation, { method: safeMethod, executorRank: safeRank }));
     }
     return lines;
   }
 
-  static async _applyToTarget(target, automation) {
+  static async _applyToTarget(target, automation, { method = "leadership", executorRank = 0 } = {}) {
     const name = Handlebars.escapeExpression(target.name ?? "");
     const lines = [];
     let effects = automation.apply ?? [];
 
     if (automation.test) {
       const { characteristic, difficulty } = automation.test;
+      const effectiveDifficulty = stepDifficulty(difficulty, executorRank);
       const label = game.i18n.localize(game.wfrp4e?.config?.characteristics?.[characteristic] ?? characteristic);
       let failed = true;
       try {
         const test = await target.setupCharacteristic?.(characteristic, {
           appendTitle: ` – ${t("Orders.Effects.DefenceTitle")}`,
           skipTargets: true,
-          fields: { difficulty }
+          fields: { difficulty: effectiveDifficulty }
         });
         if (test) {
           await test.roll();
@@ -137,10 +208,11 @@ export class OrderEffects {
           lines.push(t("Orders.Effects.NoCondition", { name, condition: this._conditionName(effect.remove) }));
         }
       } else if (effect.advantage) {
-        const current = Number(target.system?.status?.advantage?.value) || 0;
+        // Przy wydaniu Przewagi na rozkaz sojuszniczy nie oddajemy kosztu z powrotem (blokada pętli 0-kosztowej)
+        if (method === "advantage" && automation.ally && effect.advantage > 0) continue;
+        const current = getAdvantage(target);
         if (current > 0 || effect.advantage > 0) {
-          if (typeof target.modifyAdvantage === "function") await target.modifyAdvantage(effect.advantage);
-          else await target.update({ "system.status.advantage.value": Math.max(0, current + effect.advantage) });
+          await modifyAdvantage(target, effect.advantage);
           lines.push(t("Orders.Effects.Advantage", { name, value: `${effect.advantage > 0 ? "+" : ""}${effect.advantage}` }));
         }
       } else if (effect.note) {

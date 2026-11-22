@@ -217,7 +217,7 @@
         {{else}}
         <button type="button" class="btn-hero-camp-rest" data-action="camp-rest" title="{{underworldT 'DashTab.NightHint'}}">
           <i class="fas fa-moon"></i>
-          <span>{{underworldT "DashTab.Night"}}</span>
+          <span>{{#if canTriggerCampRest}}{{underworldT "DashTab.Night"}}{{else}}{{underworldT "DashTab.NightByGM"}}{{/if}}</span>
         </button>
         {{/if}}
 
@@ -226,6 +226,10 @@
             <i class="fas fa-table-list text-gold"></i>
             <span>{{underworldT "DashTab.Tables"}}</span>
           </button>
+          <div class="uw-gm-tools-row">
+            <button type="button" class="btn-theme-action uw-btn-sm" data-action="reset-world-tables" title="{{underworldT 'Tables.ResetTitle'}}"><i class="fas fa-rotate"></i> {{underworldT "Tables.ResetBtn"}}</button>
+            <button type="button" class="btn-theme-action uw-btn-sm" data-action="reset-locks" title="{{underworldT 'Camp.ResetLocksTitle'}}"><i class="fas fa-unlock"></i> {{underworldT "Camp.ResetLocksBtn"}}</button>
+          </div>
         {{/if}}
       </div>
     </div>
@@ -236,12 +240,14 @@
     <div class="history-log-header">
       <i class="fas fa-history text-gold"></i>
       <h4>{{underworldT "DashTab.Chronicle"}}</h4>
+      {{#if isGM}}<button type="button" class="btn-theme-action uw-btn-sm uw-ml-auto" data-action="history-add" title="{{underworldT 'History.AddTitle'}}"><i class="fas fa-plus"></i> {{underworldT "History.AddBtn"}}</button>{{/if}}
     </div>
     <ul class="history-list">
       {{#each gang.history}}
         <li class="history-item">
           <span class="history-date"><i class="fas fa-calendar-alt"></i> {{this.date}}</span>
           <span class="history-summary">{{this.logSummary}}</span>
+          {{#if ../isGM}}<button type="button" class="uw-chip-x uw-danger" data-action="history-delete" data-index="{{@index}}" title="{{underworldT 'History.DeleteTitle'}}"><i class="fas fa-trash"></i></button>{{/if}}
         </li>
       {{else}}
         <li class="history-empty">

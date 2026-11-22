@@ -6,7 +6,7 @@
 import { GangData } from "./gang-data.mjs";
 import { UnderworldTables } from "./tables-data.mjs";
 import { registry, time } from "../../wfrp4e-companion-lib/scripts/companion-lib.mjs";
-import { OrderEffects } from "./order-effects.mjs";
+import { OrderEffects, getAdvantage, modifyAdvantage } from "./order-effects.mjs";
 import { MISSIONS, TERRAINS, TARGET_TIERS, LOOT_VALUE, TOKENS, LOOT_NAMES, LOOT_CATEGORIES, missionName, missionLootCategories } from "./world-data.mjs";
 import { t, textConfig } from "./i18n.mjs";
 import { DATA_MISSIONS, profileHasMission, profileOf } from "./company-profiles.mjs";
@@ -40,15 +40,15 @@ const sanitizeCardHTML = value => {
   return template.innerHTML;
 };
 
-/** Granice łącznego modyfikatora szajki do progu testu (skala trudności WFRP: od Bardzo Trudnego do Łatwego). */
+/** Granice łącznego modyfikatora szajki do progu testu (skala trudności WFRP: od Bardzo Trudnego do Wymagającego +40). */
 const MIN_TARGET_MODIFIER = -30;
-const MAX_TARGET_MODIFIER = 60;
+const MAX_TARGET_MODIFIER = 40;
 
 /** Formuły łupów i zapasów (w srebrnych szylingach, chyba że zaznaczono inaczej). */
 const LOOT_FORMULAS = {
   procureSupplies: "1d3",
   procureCoins: "1d8+1",
-  pickpocketCoins: "1d10+5",
+  pickpocketCoins: "1d8+2",
   intimidateCoins: "1d8+4",
   smuggleCoins: "2d10+5",
   tavernDrinks: "1d2",
@@ -117,6 +117,88 @@ export class UnderworldOperations {
     return t(`Cycle.${unit}${count === 1 ? "One" : "Many"}`, { count });
   }
 
+  static _setting(key, fallback) {
+    try {
+      const val = game.settings.get("wfrp4e-underworld", key);
+      return val !== undefined ? val : fallback;
+    } catch (_) {
+      return fallback;
+    }
+  }
+
+  static maxRetinue(gang) {
+    const ovr = Math.trunc(Number(gang?.maxRetinueOverride) || 0);
+    if (ovr > 0) return Math.max(1, Math.min(6, ovr));
+    return Math.max(1, Math.min(6, Math.trunc(Number(this._setting("maxRetinue", 3)) || 3)));
+  }
+
+  static maxRoster() {
+    return Math.max(0, Math.trunc(Number(this._setting("maxRoster", 0)) || 0));
+  }
+
+  static maxGearSlots() {
+    return Math.max(1, Math.min(5, Math.trunc(Number(this._setting("maxGearSlots", 2)) || 2)));
+  }
+
+  static defaultSupplyPrice() {
+    return Math.max(1, Math.trunc(Number(this._setting("defaultSupplyPrice", 12)) || 12));
+  }
+
+  static supplyPrice(gang) {
+    const custom = Number(gang?.camp?.supplyPricePennies);
+    return custom > 0 ? Math.trunc(custom) : this.defaultSupplyPrice();
+  }
+
+  static rationsMode() {
+    const mode = this._setting("rationsMode", "scaled");
+    return ["scaled", "flat1", "off"].includes(mode) ? mode : "scaled";
+  }
+
+  static campRestGMOnly() {
+    return this._setting("campRestGMOnly", false) === true;
+  }
+
+  static directOrdersMode() {
+    const mode = this._setting("directOrdersMode", "gm");
+    return ["all", "gm", "off"].includes(mode) ? mode : "gm";
+  }
+
+  static canUseDirectOrder() {
+    const mode = this.directOrdersMode();
+    return mode === "all" || (mode === "gm" && !!game.user?.isGM);
+  }
+
+  static lootTransferMode() {
+    const mode = this._setting("lootTransferMode", "coolOnly");
+    return ["gm", "coolOnly", "all"].includes(mode) ? mode : "coolOnly";
+  }
+
+  static canTransferLoot(item) {
+    if (game.user?.isGM) return true;
+    const mode = this.lootTransferMode();
+    if (mode === "all") return true;
+    if (mode === "coolOnly") return !item?.hot;
+    return false;
+  }
+
+  static orderAutomation() {
+    return this._setting("orderAutomation", "full") === "chatOnly" ? "chatOnly" : "full";
+  }
+
+  static orderRoundLimit() {
+    return this._setting("orderRoundLimit", "one") === "unlimited" ? "unlimited" : "one";
+  }
+
+  static maxHistoryEntries() {
+    return Math.max(5, Math.min(100, Math.trunc(Number(this._setting("maxHistoryEntries", 20)) || 20)));
+  }
+
+  /** Mnożnik Doświadczenia Operacyjnego (w trybie tygodniowym 3× za tydzień pracy × mnożnik świata). */
+  static doMultiplier() {
+    const mult = Number(this._setting("oxpMultiplier", 1)) || 1;
+    return (this.isWeekly() ? 3 : 1) * mult;
+  }
+
   static _canManageGang(actor) {
     if (!actor || actor.type !== "character") return false;
     if (game.user.isGM) return true;
@@ -157,7 +239,7 @@ export class UnderworldOperations {
     const morale = this.getMorale(gang);
     if (morale >= 8) return { label: t("Mod.MoraleFanatic"), value: 10 };
     if (morale <= 4 && morale >= 3) return { label: t("Mod.MoraleGrumbling"), value: -10 };
-    if (morale <= 2) return { label: t("Mod.MoraleMutiny"), value: -10 };
+    if (morale <= 2) return { label: t("Mod.MoraleMutiny"), value: -20 };
     return null;
   }
 
@@ -178,9 +260,26 @@ export class UnderworldOperations {
     return roll.total;
   }
 
+  /** Procent doli Patrona uwzględniający indywidualny wpis kompanii i relację z Patronem. */
+  static effectiveCutPercentage(gang) {
+    if (!profileOf(gang).patronCut || gang?.patron?.noCut) return 0;
+    let base;
+    const cutText = String(gang?.patron?.cut ?? "").trim();
+    const match = cutText.match(/(\d+)/);
+    if (match) {
+      base = Number(match[1]);
+      if (base === 0) return 0;
+    } else {
+      base = Number(this._setting("cutPercentage", 25));
+    }
+    if (!Number.isFinite(base)) base = 25;
+    const relation = gang?.patron?.relation || "neutral";
+    const relMod = relation === "favorite" ? -5 : relation === "strained" ? 5 : relation === "hostile" ? 10 : 0;
+    return Math.max(0, Math.min(75, base + relMod));
+  }
+
   static _creditMissionProfit(gang, grossPennies) {
-    const configured = profileOf(gang).patronCut ? Number(game.settings.get("wfrp4e-underworld", "cutPercentage")) : 0;
-    const percentage = Math.max(0, Math.min(100, Number.isFinite(configured) ? configured : 25));
+    const percentage = this.effectiveCutPercentage(gang);
     const gross = Math.max(0, Math.trunc(Number(grossPennies) || 0));
     const cut = Math.floor(gross * percentage / 100);
     const current = GangData.treasuryToPennies(gang.treasury);
@@ -205,6 +304,14 @@ export class UnderworldOperations {
   // ════════════════════════════════════════════
   // POMOCNIK: Test i przygotowanie misji
   // ════════════════════════════════════════════
+
+  /** Czy w bieżącym terenie i profilu istnieje zlecenie z wyborem celu (tiered). */
+  static terrainHasTieredMission(gang) {
+    const terrain = this.getTerrain(gang);
+    return Object.values(MISSIONS).some(m =>
+      m.tiered && profileHasMission(gang, m) && (m.terrains === "all" || m.terrains.includes(terrain))
+    );
+  }
 
   /**
    * Zbiera modyfikatory szajki do progu testu (+10 za każdy stopień przewagi).
@@ -238,12 +345,12 @@ export class UnderworldOperations {
     if (perks.includes("craft_woodsman") && assignment === "cover_tracks") add(t("Mod.CraftWoodsman"), 20);
     if (perks.includes("craft_innkeeper") && assignment === "tavern") add(t("Mod.CraftInnkeeper"), 10);
 
-    // 3. Ranga i rynsztunek
-    add(t("Mod.Rank"), 10 * (Number(npc.rank) || 0));
+    // 3. Ranga i rynsztunek (powiązany aktor rozwija własne umiejętności na karcie, więc nie dublujemy rangi)
+    if (!opts.forLinkedActor) add(t("Mod.Rank"), 10 * (Number(npc.rank) || 0));
 
     const gear = Array.isArray(npc.gear) ? npc.gear : [];
     if (gear.includes("weapon") && ["distract", "intimidate", "sabotage"].includes(like)) add(t("Mod.Weapon"), 10);
-    if (gear.includes("lockpicks") && ["procure", "pickpocket", "sabotage"].includes(like)) add(t("Mod.Lockpicks"), 10);
+    if (gear.includes("lockpicks") && ["burglary", "farm_theft", "procure", "pickpocket", "sabotage"].includes(like)) add(t("Mod.Lockpicks"), 10);
     if (gear.includes("disguise") && ["scout", "shadow", "tavern", "rumor_spread", "smuggle", "forge"].includes(like)) add(t("Mod.Disguise"), 10);
 
     // 4. Zatwierdzony bonus MG (w punktach procentowych, jak modyfikator testu WFRP)
@@ -253,11 +360,17 @@ export class UnderworldOperations {
     const flaws = Array.isArray(npc.flaws) ? [...npc.flaws] : [npc.flaw].filter(Boolean);
     add(t("Mod.Flaws"), 10 * UnderworldTables.getTraitSLModifier(flaws, "flaw", like));
 
-    // 6. Stan szajki
+    // 6. Stan szajki i relacja z Patronem
     const morale = this.moraleModifier(gang);
     if (morale) add(morale.label, morale.value);
     const notoriety = this.notorietyModifier(gang, assignment);
     if (notoriety) add(notoriety.label, notoriety.value);
+    const patronRelation = gang?.patron?.relation || "neutral";
+    if (["favorite", "trusted"].includes(patronRelation) && assignment === "bribe") {
+      add(t("Mod.PatronRelation"), 10);
+    } else if (patronRelation === "hostile" && ["fence", "bribe"].includes(assignment)) {
+      add(t("Mod.PatronRelation"), -10);
+    }
 
     // 7. Wybór celu (łatwy / zwykły / bogaty) i żetony przygotowania
     const tier = mission?.tiered ? (TARGET_TIERS[opts.tier] ? opts.tier : "normal") : null;
@@ -268,10 +381,10 @@ export class UnderworldOperations {
       } else {
         add(TARGET_TIERS[tier].name, TARGET_TIERS[tier].modifier);
       }
-      if (this.getToken(gang, "recon")) {
-        add(TOKENS.recon.name, TOKENS.recon.bonus);
-        tokensUsed.push("recon");
-      }
+    }
+    if ((tier || (mission?.target && !this.terrainHasTieredMission(gang))) && this.getToken(gang, "recon")) {
+      add(TOKENS.recon.name, TOKENS.recon.bonus);
+      tokensUsed.push("recon");
     }
     if (mission?.target && this.getToken(gang, "commotion")) {
       add(TOKENS.commotion.name, TOKENS.commotion.bonus);
@@ -358,6 +471,10 @@ export class UnderworldOperations {
     const gang = GangData.getGang(actor);
     const item = (gang.loot || []).find(l => l.id === lootId);
     if (!item) return false;
+    if (!this.canTransferLoot(item)) {
+      ui.notifications.warn(t(this.lootTransferMode() === "gm" ? "Loot.TransferGMOnly" : "Loot.TransferHotBlocked"));
+      return false;
+    }
     await actor.createEmbeddedDocuments("Item", [{
       name: item.name,
       type: "trapping",
@@ -372,6 +489,12 @@ export class UnderworldOperations {
     gang.loot = gang.loot.filter(l => l.id !== lootId);
     await GangData.saveGang(actor, gang);
     ui.notifications.info(t("Loot.Transferred", { item: item.name, actor: actor.name }));
+    await ChatMessage.create({
+      user: game.user.id,
+      speaker: ChatMessage.getSpeaker({ actor }),
+      content: `<div class="wfrp4e-underworld-chat"><p><i class="fas fa-hand-holding"></i> ${t("Loot.ChatTransferred", { item: escapeHTML(item.name), value: item.valueSS, actor: escapeHTML(actor.name) })}</p></div>`,
+      flavor: t("Loot.Flavor")
+    });
     return true;
   }
 
@@ -379,8 +502,16 @@ export class UnderworldOperations {
   static async discardLoot(actor, lootId) {
     if (!this._canManageGang(actor)) return false;
     const gang = GangData.getGang(actor);
+    const item = (gang.loot || []).find(l => l.id === lootId);
+    if (!item) return false;
     gang.loot = (gang.loot || []).filter(l => l.id !== lootId);
     await GangData.saveGang(actor, gang);
+    await ChatMessage.create({
+      user: game.user.id,
+      speaker: ChatMessage.getSpeaker({ actor }),
+      content: `<div class="wfrp4e-underworld-chat"><p><i class="fas fa-trash"></i> ${t("Loot.ChatDiscarded", { item: escapeHTML(item.name), value: item.valueSS })}</p></div>`,
+      flavor: t("Loot.Flavor")
+    });
     return true;
   }
 
@@ -393,7 +524,7 @@ export class UnderworldOperations {
     const test = await actor.setupSkill(skillName, {
       appendTitle: ` - ${title}`,
       skipTargets: true,
-      fields: { difficulty: "average", modifier: Number(modifier) || 0 }
+      fields: { difficulty: "challenging", modifier: Number(modifier) || 0 }
     });
     if (!test) return null;
     await test.roll();
@@ -417,8 +548,8 @@ export class UnderworldOperations {
       ? Math.trunc(Math.abs(target - roll) / 10) * (target >= roll ? 1 : -1)
       : Math.floor(target / 10) - Math.floor(roll / 10);
     let isSuccess = roll <= target;
-    if (roll <= 5) { isSuccess = true; sl = Math.max(sl, 0); }
-    if (roll >= 96) { isSuccess = false; sl = Math.min(sl, 0); }
+    if (roll <= 5) { isSuccess = true; sl = Math.max(sl, 1); }
+    if (roll >= 96) { isSuccess = false; sl = Math.min(sl, -1); }
     return { roll, sl, isSuccess, target };
   }
 
@@ -451,13 +582,26 @@ export class UnderworldOperations {
         consequences.push(t("Risk.Result.Chase"));
       }
     } else if (risk === "violent") {
-      npc.status = "wounded";
-      npc.assignment = "none";
-      if (severe) {
-        this.changeNotoriety(gang, 1);
-        consequences.push(t("Risk.Result.WoundedLoud", { name: escapeHTML(npc.name) }));
+      const gear = Array.isArray(npc.gear) ? npc.gear : [];
+      const hasArmor = gear.includes("armor");
+      const isVeteran = (Number(npc.rank) || 0) >= 2;
+      const avoided = (hasArmor || isVeteran) && (await this._roll("1d2", rolls)) === 1;
+      if (avoided) {
+        const reason = hasArmor ? t("Orders.MeatShield.Armour") : t("Orders.MeatShield.Veteran");
+        consequences.push(t("Risk.Result.WoundAvoided", { name: escapeHTML(npc.name), reason }));
+        if (severe) {
+          this.changeNotoriety(gang, 1);
+          consequences.push(t("Risk.Result.FaceRemembered"));
+        }
       } else {
-        consequences.push(t("Risk.Result.Wounded", { name: escapeHTML(npc.name) }));
+        npc.status = "wounded";
+        npc.assignment = "none";
+        if (severe) {
+          this.changeNotoriety(gang, 1);
+          consequences.push(t("Risk.Result.WoundedLoud", { name: escapeHTML(npc.name) }));
+        } else {
+          consequences.push(t("Risk.Result.Wounded", { name: escapeHTML(npc.name) }));
+        }
       }
     }
     return consequences;
@@ -481,20 +625,31 @@ export class UnderworldOperations {
       return null;
     }
 
-    const { modifiers, total: targetModifier, capped, tier, tokensUsed } = this._collectTargetModifiers(gang, npc, assignment, opts);
-    const rolls = [];
-    let result = null;
-    let testSource = "module";
-
     const linkedActor = npc.actorId ? game.actors.get(npc.actorId) : null;
     const testActor = linkedActor?.setupSkill && (game.user.isGM || linkedActor.isOwner) ? linkedActor : null;
     const skillName = game.i18n.localize(MISSION_INFO[assignment]?.skill || "NAME.Leadership");
 
+    const { modifiers, total: baseTotalModifier, capped, tier, tokensUsed } = this._collectTargetModifiers(
+      gang, npc, assignment, { ...opts, forLinkedActor: !!testActor }
+    );
+    let targetModifier = baseTotalModifier;
+    const rolls = [];
+    let result = null;
+    let testSource = "module";
+
     if (testActor) {
       try {
-        result = await this._rollWfrpSkill(testActor, skillName, { title: `${t("Title")}: ${npc.name}`, modifier: targetModifier });
+        const missionDiffMod = (Number(baseTarget) || 50) - 50;
+        result = await this._rollWfrpSkill(testActor, skillName, {
+          title: `${t("Title")}: ${npc.name}`,
+          modifier: baseTotalModifier + missionDiffMod
+        });
         if (!result) return null; // okno testu zamknięte – misja nie wystartowała
         testSource = "linkedActor";
+        if (missionDiffMod) {
+          modifiers.push({ label: t("Mod.MissionDifficulty"), value: missionDiffMod });
+          targetModifier += missionDiffMod;
+        }
       } catch (err) {
         console.error("wfrp4e-underworld | WFRP4e test failed, falling back to the job target:", err);
         result = null;
@@ -504,12 +659,20 @@ export class UnderworldOperations {
     // Bez dostępnej karty członka używamy progu misji. Nie pożyczamy umiejętności
     // herszta, bo rozwój bohatera nie może zastępować rozwoju poplecznika.
     if (!result) {
-      result = await this._rollGangTest(Math.max(1, baseTarget + targetModifier), rolls);
+      result = await this._rollGangTest(Math.max(1, baseTarget + baseTotalModifier), rolls);
     }
     const { roll, sl, isSuccess, target } = result;
 
     npc.status = "busy";
     npc.assignment = assignment;
+
+    const perks = Array.isArray(npc.narrativePerks) ? npc.narrativePerks : [];
+    const skipMoraleOnFail = perks.includes("battle_scarred") || perks.includes("blood_brotherhood");
+    let coldBloodedTriggered = false;
+    if (!isSuccess && perks.includes("cold_blooded") && !npc.coldBloodedUsedCycle) {
+      npc.coldBloodedUsedCycle = true;
+      coldBloodedTriggered = true;
+    }
 
     // Efekty wad po misji
     const flaws = Array.isArray(npc.flaws) ? [...npc.flaws] : [npc.flaw].filter(Boolean);
@@ -519,9 +682,13 @@ export class UnderworldOperations {
       // Kleptoman: -1 Morale po każdej misji
       if (flawCfg.moralePenalty) this.changeMorale(gang, -flawCfg.moralePenalty);
       // Mściwy / Panikarz: -1 Morale po przegranej misji
-      if (!isSuccess && flawCfg.moraleOnFail) this.changeMorale(gang, -flawCfg.moraleOnFail);
+      if (!isSuccess && flawCfg.moraleOnFail && !coldBloodedTriggered && !skipMoraleOnFail) {
+        this.changeMorale(gang, -flawCfg.moraleOnFail);
+      }
       // Poszukiwany: +1 Rozgłos po wpadce
-      if (!isSuccess && flawCfg.notorietyOnFail) this.changeNotoriety(gang, flawCfg.notorietyOnFail);
+      if (!isSuccess && flawCfg.notorietyOnFail && !coldBloodedTriggered) {
+        this.changeNotoriety(gang, flawCfg.notorietyOnFail);
+      }
       // Krwiożerczy: +1 Rozgłos po udanej dywersji lub zastraszaniu
       if (isSuccess && flawCfg.notorietyOnSuccess && ["distract", "intimidate"].includes(MISSIONS[assignment]?.like || assignment)) {
         this.changeNotoriety(gang, flawCfg.notorietyOnSuccess);
@@ -541,18 +708,26 @@ export class UnderworldOperations {
       gains.push(t("Tokens.Gained", { name: TOKENS.lead.name, desc: TOKENS.lead.desc }));
     }
 
-    // Ryzyko poważnej porażki (bogaty cel: każda porażka)
-    const consequences = isSuccess ? [] : await this._applyFailureRisk(gang, npc, assignment, sl, rolls, {
-      forceRisk: !!TARGET_TIERS[tier]?.riskOnAnyFailure
-    });
+    // Ryzyko poważnej porażki (bogaty cel: każda porażka); Zimna Krew chroni przed pierwszą wpadką
+    let consequences = [];
+    if (!isSuccess) {
+      if (coldBloodedTriggered) {
+        consequences = [t("Risk.Result.ColdBlooded", { name: escapeHTML(npc.name) })];
+      } else {
+        consequences = await this._applyFailureRisk(gang, npc, assignment, sl, rolls, {
+          forceRisk: !!TARGET_TIERS[tier]?.riskOnAnyFailure
+        });
+      }
+    }
 
     // Doświadczenie (DO): sukces +10 (SL >= 3: +15), porażka +5 (nauka na błędach)
-    const operationalXpGained = isSuccess ? (sl >= 3 ? 15 : 10) : 5;
+    const baseXP = isSuccess ? (sl >= 3 ? 15 : 10) : 5;
+    const operationalXpGained = Math.max(1, Math.round(baseXP * this.doMultiplier()));
     npc.operationalXP = (Number(npc.operationalXP) || 0) + operationalXpGained;
 
     return {
       gang, npc, roll, sl, isSuccess, target, targetModifier, capped, operationalXpGained,
-      modifiers, consequences, rolls, testSource, tier, gains
+      modifiers, consequences, rolls, testSource, tier, gains, coldBloodedTriggered
     };
   }
 
@@ -584,6 +759,8 @@ export class UnderworldOperations {
       tierName: r.tier ? TARGET_TIERS[r.tier].name : null,
       rolls: r.rolls,
       testSource: r.testSource,
+      noPatronCut: !profileOf(r.gang).patronCut || !!r.gang?.patron?.noCut,
+      patronCutPct: this.effectiveCutPercentage(r.gang),
       // Wygląd Księgi: glif zlecenia, typ kompanii i wielki sukces (pieczęć na karcie czatu)
       jobGlyph: MISSIONS[r.npc.assignment] ? `job-${r.npc.assignment}` : null,
       companyType: profileOf(r.gang).id,
@@ -594,6 +771,27 @@ export class UnderworldOperations {
   // ════════════════════════════════════════════
   // TYDZIEŃ SZAJKI: PLANOWANIE I ROZPATRZENIE
   // ════════════════════════════════════════════
+
+  /** Zwraca zbiór łupów i rannych już zarezerwowanych w aktywnych planach. */
+  static plannedResourceUsage(gang) {
+    const lootIds = new Set();
+    const woundedIds = new Set();
+    for (const npc of gang?.roster || []) {
+      const plan = npc.plannedMission;
+      if (!plan || npc.status !== "busy") continue;
+      const assignment = PLANNABLE_MISSIONS[plan.fn];
+      if (assignment === "fence") {
+        for (const id of String(plan.input || "").split(",").map(s => s.trim()).filter(Boolean)) {
+          lootIds.add(id);
+        }
+      } else if (assignment === "tend_wounded" && plan.input) {
+        woundedIds.add(String(plan.input));
+      } else if (plan.cargoId) {
+        lootIds.add(String(plan.cargoId));
+      }
+    }
+    return { lootIds, woundedIds };
+  }
 
   /**
    * Planuje zlecenie na tydzień – bez testu. Członek jest zajęty do rozpatrzenia tygodnia przez MG.
@@ -608,12 +806,33 @@ export class UnderworldOperations {
     const assignment = PLANNABLE_MISSIONS[fn];
     if (!assignment) return false;
     const gang = GangData.getGang(actor);
-    // Zlecenie musi należeć do typu kompanii, a zlecenie z ładunkiem wymaga pasującego łupu
+    // Zlecenie musi należeć do typu kompanii, a zlecenie z ładunkiem wymaga niezarezerwowanego łupu
     if (!profileHasMission(gang, MISSIONS[assignment])) return false;
-    if (MISSIONS[assignment].consumes && !this.cargoFor(gang, MISSIONS[assignment])) {
-      ui.notifications.warn(t("Ops.NoCargo", { mission: t(`Missions.${assignment}.Name`) }));
-      return false;
+    const usage = this.plannedResourceUsage(gang);
+    let plannedInput = String(input ?? "").slice(0, 300);
+    let cargoId = null;
+
+    if (MISSIONS[assignment].consumes) {
+      const cargo = this.cargoFor(gang, MISSIONS[assignment], usage.lootIds);
+      if (!cargo) {
+        ui.notifications.warn(t("Ops.NoCargo", { mission: t(`Missions.${assignment}.Name`) }));
+        return false;
+      }
+      cargoId = cargo.id;
+    } else if (assignment === "fence") {
+      const freeIds = plannedInput.split(",").map(s => s.trim()).filter(id => id && !usage.lootIds.has(id));
+      if (!freeIds.length) {
+        ui.notifications.warn(t("Card.PlannedReserved"));
+        return false;
+      }
+      plannedInput = freeIds.join(",");
+    } else if (assignment === "tend_wounded") {
+      if (!plannedInput || usage.woundedIds.has(plannedInput)) {
+        ui.notifications.warn(t("Card.PlannedReserved"));
+        return false;
+      }
     }
+
     const npc = gang.roster.find(n => n.id === npcId);
     if (!npc || npc.status !== "ready" || npc.assignment === "retinue") {
       ui.notifications.warn(t("Notify.NotReadyForAssignment", { name: npc?.name || t("ThisMember") }));
@@ -621,7 +840,12 @@ export class UnderworldOperations {
     }
     npc.status = "busy";
     npc.assignment = assignment;
-    npc.plannedMission = { fn, input: String(input ?? "").slice(0, 300), tier: TARGET_TIERS[tier] ? tier : null };
+    npc.plannedMission = {
+      fn,
+      input: plannedInput,
+      tier: TARGET_TIERS[tier] ? tier : null,
+      ...(cargoId ? { cargoId } : {})
+    };
     await GangData.saveGang(actor, gang);
     return true;
   }
@@ -676,7 +900,7 @@ export class UnderworldOperations {
     this._batch = missionCards;
     try {
       for (const plan of plans) {
-        await this[plan.fn](actor, plan.npcId, plan.input, { tier: plan.tier });
+        await this[plan.fn](actor, plan.npcId, plan.input, { tier: plan.tier, cargoId: plan.cargoId });
       }
     } finally {
       this._batch = null;
@@ -770,13 +994,22 @@ export class UnderworldOperations {
 
     const rumorObj = r.isSuccess ? await UnderworldTables.drawRumor(r.gang) : null;
     const gossip = rumorObj ? (typeof rumorObj === "string" ? rumorObj : rumorObj.text) : null;
+    let extraRumorText = "";
 
-    // Drobny koszt: kolejki dla gadatliwych
+    // Drobny koszt: kolejki dla gadatliwych + dodatkowa plotka przy Dawnym Fachu Szynkarza
     let drinksSS = 0;
     if (r.isSuccess) {
       drinksSS = await this._roll(LOOT_FORMULAS.tavernDrinks, r.rolls);
       const curP = GangData.treasuryToPennies(r.gang.treasury);
       r.gang.treasury = GangData.penniesToTreasury(Math.max(0, curP - drinksSS * 12));
+
+      if (Array.isArray(r.npc.narrativePerks) && r.npc.narrativePerks.includes("craft_innkeeper")) {
+        const extraObj = await UnderworldTables.drawRumor(r.gang);
+        const extraText = extraObj ? (typeof extraObj === "string" ? extraObj : extraObj.text) : null;
+        if (extraText && extraText !== gossip) {
+          extraRumorText = ` ${t("Card.Tavern.ExtraRumor", { rumor: escapeHTML(extraText) })}`;
+        }
+      }
     }
 
     await GangData.saveGang(actor, r.gang);
@@ -786,7 +1019,7 @@ export class UnderworldOperations {
       rumor: gossip,
       rumorData: rumorObj,
       notes: r.isSuccess
-        ? t("Card.Tavern.Success", { name: escapeHTML(r.npc.name), cost: drinksSS })
+        ? t("Card.Tavern.Success", { name: escapeHTML(r.npc.name), cost: drinksSS }) + extraRumorText
         : t("Card.Tavern.Fail", { name: escapeHTML(r.npc.name) })
     };
     await this.postMissionChatCard(actor, card);
@@ -846,11 +1079,12 @@ export class UnderworldOperations {
       const multiplier = TARGET_TIERS[r.tier]?.multiplier ?? 1;
       coinsFoundSS = this._applyMerchantBonus(r.npc, Math.max(1, Math.round((await this._roll(LOOT_FORMULAS.pickpocketCoins, r.rolls)) * multiplier)));
       this._creditMissionProfit(r.gang, coinsFoundSS * 12);
-      const lootChance = r.tier === "rich" ? 60 : 30;
-      if ((await this._roll("1d100", r.rolls)) <= lootChance) {
-        lootItem = await this._createLoot(r.gang, "pickpocket", r.tier, r.rolls);
+      const lootChance = r.tier === "rich" ? 35 : (r.tier === "normal" ? 15 : 0);
+      if (lootChance > 0 && (await this._roll("1d100", r.rolls)) <= lootChance) {
+        const lootTier = r.tier === "rich" ? "normal" : "easy";
+        lootItem = await this._createLoot(r.gang, "pickpocket", lootTier, r.rolls);
       }
-    } else {
+    } else if (!r.coldBloodedTriggered) {
       this.changeMorale(r.gang, -1);
     }
 
@@ -904,8 +1138,10 @@ export class UnderworldOperations {
    */
   static async executeDataMission(id, actor, npcId, input, opts = {}) {
     const mission = MISSIONS[id];
+    const initialGang = GangData.getGang(actor);
+    const plannedCargo = opts.cargoId ? (initialGang.loot || []).find(item => item.id === opts.cargoId) : null;
     // Zlecenie z ładunkiem (np. kurs barką, raport) nie rusza bez pasującego łupu
-    if (mission.consumes && !this.cargoFor(GangData.getGang(actor), mission)) {
+    if (mission.consumes && !plannedCargo && !this.cargoFor(initialGang, mission)) {
       ui.notifications.warn(t("Ops.NoCargo", { mission: t(`Missions.${id}.Name`) }));
       return;
     }
@@ -918,7 +1154,9 @@ export class UnderworldOperations {
 
     let coinsFoundSS = 0;
     const cargoNotes = [];
-    const cargo = mission.consumes ? this.cargoFor(r.gang, mission) : null;
+    const cargo = mission.consumes
+      ? ((opts.cargoId && (r.gang.loot || []).find(item => item.id === opts.cargoId)) || this.cargoFor(r.gang, mission))
+      : null;
     if (cargo && (r.isSuccess || mission.consumes.always)) {
       r.gang.loot = r.gang.loot.filter(item => item.id !== cargo.id);
       if (r.isSuccess) coinsFoundSS += Math.max(1, Math.round(cargo.valueSS * mission.consumes.multiplier * multiplier));
@@ -937,6 +1175,10 @@ export class UnderworldOperations {
       xp += Number(outcome.xp) || 0;
       if (outcome.loot) loot.push(await this._createLoot(r.gang, id, outcome.loot, r.rolls));
     }
+
+    if (r.isSuccess && coinsFoundSS > 0) coinsFoundSS = this._applyMerchantBonus(r.npc, coinsFoundSS);
+    if (!r.isSuccess && r.coldBloodedTriggered && morale < 0) morale = 0;
+    if (xp) xp = Math.max(1, Math.round(xp * this.doMultiplier()));
 
     if (coinsFoundSS) this._creditMissionProfit(r.gang, coinsFoundSS * 12);
     if (suppliesFound) r.gang.supplies = Math.min(30, (r.gang.supplies || 0) + suppliesFound);
@@ -961,7 +1203,6 @@ export class UnderworldOperations {
       ...this._baseCard(r, missionName(mission, this.getTerrain(r.gang))),
       coinsFoundSS,
       suppliesFound,
-      noPatronCut: !profileOf(r.gang).patronCut,
       notes: notes.join(" ")
     };
     await this.postMissionChatCard(actor, card);
@@ -969,11 +1210,11 @@ export class UnderworldOperations {
   }
 
   /** Najcenniejszy łup, który zlecenie może zużyć (null, gdy zlecenie niczego nie zużywa albo nic nie pasuje). */
-  static cargoFor(gang, mission) {
+  static cargoFor(gang, mission, excludedIds = null) {
     const categories = mission?.consumes?.categories;
     if (!categories) return null;
     return (gang?.loot || [])
-      .filter(item => categories.includes(item.category))
+      .filter(item => categories.includes(item.category) && (!excludedIds || !excludedIds.has(item.id)))
       .sort((a, b) => (Number(b.valueSS) || 0) - (Number(a.valueSS) || 0))[0] ?? null;
   }
 
@@ -1105,16 +1346,18 @@ export class UnderworldOperations {
 
     const sold = [];
     let confiscated = [];
+    let totalSS = 0;
     if (r.isSuccess) {
-      let grossPennies = 0;
+      let grossSS = 0;
       for (const item of offered) {
         const rate = this.fenceRate(terrain, item, r.sl);
         const priceSS = Math.max(1, Math.floor(item.valueSS * rate / 100));
-        grossPennies += priceSS * 12;
+        grossSS += priceSS;
         sold.push({ item, rate, priceSS });
       }
+      totalSS = this._applyMerchantBonus(r.npc, grossSS);
       r.gang.loot = r.gang.loot.filter(item => !sold.some(s => s.item.id === item.id));
-      r.profit = this._creditMissionProfit(r.gang, grossPennies);
+      r.profit = this._creditMissionProfit(r.gang, totalSS * 12);
     } else if (r.sl <= -2) {
       // Paser okazał się donosicielem: gorący towar przepada
       confiscated = offered.filter(item => item.hot);
@@ -1125,7 +1368,7 @@ export class UnderworldOperations {
     const soldText = sold.map(s => `${escapeHTML(s.item.name)}: ${s.priceSS} ${t("Units.SS")} (${s.rate}%)`).join("; ");
     const card = {
       ...this._baseCard(r, missionName(MISSIONS.fence, terrain)),
-      coinsFoundSS: sold.reduce((sum, s) => sum + s.priceSS, 0),
+      coinsFoundSS: totalSS,
       notes: r.isSuccess
         ? t("Card.Fence.Success", { fence: escapeHTML(fence.name), sold: soldText })
         : `${t("Card.Fence.Fail", { fence: escapeHTML(fence.name) })} ${confiscated.length ? t("Card.Fence.Confiscated", { items: confiscated.map(c => escapeHTML(c.name)).join(", ") }) : t("Card.Fence.Returned")}`
@@ -1151,7 +1394,7 @@ export class UnderworldOperations {
     if (r.isSuccess) {
       coinsFoundSS = await this._roll(LOOT_FORMULAS.intimidateCoins, r.rolls);
       this._creditMissionProfit(r.gang, coinsFoundSS * 12);
-    } else {
+    } else if (!r.coldBloodedTriggered) {
       this.changeMorale(r.gang, -1);
     }
 
@@ -1215,6 +1458,9 @@ export class UnderworldOperations {
     else {
       const costMatch = detail.match(/(\d+)\s*(?:ss|s\b|szyling|shilling)/i);
       if (costMatch) costSS = Math.max(1, Math.min(10000, parseInt(costMatch[1], 10) || 5));
+    }
+    if (gang?.patron?.relation === "favorite") {
+      costSS = Math.max(1, Math.round(costSS * 0.8));
     }
     const prisoner = mode === "release" ? gang.roster.find(n => n.id === detail && n.status === "arrested") : null;
     if (mode === "release" && !prisoner) {
@@ -1412,15 +1658,21 @@ export class UnderworldOperations {
     npc.status = "busy";
     npc.assignment = "tend_wounded";
 
-    const operationalXpGained = wounded ? 10 : 5;
+    const operationalXpGained = Math.max(1, Math.round((wounded ? 10 : 5) * this.doMultiplier()));
     npc.operationalXP = (Number(npc.operationalXP) || 0) + operationalXpGained;
 
+    const rolls = [];
     let notes = "";
     if (wounded) {
       const hasMedkit = Array.isArray(npc.gear) && npc.gear.includes("medkit");
+      const strengths = Array.isArray(npc.strengths) ? npc.strengths : [npc.strength].filter(Boolean);
+      const isFieldMedic = strengths.includes("field_medic");
       if (hasMedkit) {
         wounded.status = "ready";
         notes = t("Card.Tend.Medkit", { name: escapeHTML(npc.name), wounded: escapeHTML(wounded.name) });
+      } else if (isFieldMedic && (await this._roll("1d2", rolls)) === 1) {
+        wounded.status = "ready";
+        notes = t("Card.Tend.FieldMedic", { name: escapeHTML(npc.name), wounded: escapeHTML(wounded.name) });
       } else {
         wounded.status = "resting";
         notes = t("Card.Tend.Resting", { name: escapeHTML(npc.name), wounded: escapeHTML(wounded.name) });
@@ -1438,6 +1690,8 @@ export class UnderworldOperations {
       npcImg: npc.img || "icons/svg/mystery-man.svg",
       isSuccess: !!wounded,
       operationalXpGained,
+      rolls,
+      companyType: profileOf(gang).id,
       notes
     };
     await this.postMissionChatCard(actor, card);
@@ -1448,12 +1702,42 @@ export class UnderworldOperations {
   // NOCNY POSTÓJ / ODPOCZYNEK
   // ════════════════════════════════════════════
 
+  /** Liczba racji wymagana do wyżywienia kompanii na jeden postój (zależna od ustawienia świata). */
+  static requiredRations(gang, weekly = false) {
+    const mode = this.rationsMode();
+    if (mode === "off") return 0;
+    const mouths = (gang?.roster || []).filter(n => !["dead", "arrested"].includes(n.status)).length;
+    if (mouths === 0) return 0;
+    if (mode === "flat1") return 1;
+    return weekly ? mouths : Math.max(1, Math.ceil(mouths / 3));
+  }
+
+  /** Żołd / koszt utrzymania kompanii w szylingach (0, gdy wyłączone globalnie lub dla tej kompanii). */
+  static calculateUpkeepSS(gang, weekly = false) {
+    if (gang?.upkeepOverride === "free") return 0;
+    if (this._setting("upkeepEnabled", true) === false) return 0;
+    const isMerc = profileOf(gang).id === "mercenaries";
+    const active = (gang?.roster || []).filter(n => !["dead", "arrested"].includes(n.status));
+    let total = 0;
+    for (const n of active) {
+      const rank = Math.max(0, Number(n.rank) || 0);
+      total += weekly ? ((isMerc ? 2 : 1) + rank) : (1 + (rank >= 2 ? 1 : 0) + (isMerc ? 1 : 0));
+    }
+    if (total <= 0) return 0;
+    const mult = Number(this._setting("upkeepMultiplier", 1)) || 1;
+    return Math.max(1, Math.round(total * mult));
+  }
+
   /**
    * Nocny Postój / Długi Odpoczynek Obozowiska
    */
   static async executeCampRest(actor, options = {}) {
     if (!this._canManageGang(actor)) {
       ui.notifications.warn(t("Notify.NoAccess"));
+      return false;
+    }
+    if (!options.weekly && this.campRestGMOnly() && !game.user.isGM) {
+      ui.notifications.warn(t("Camp.GMResolvesNightHint"));
       return false;
     }
 
@@ -1497,18 +1781,19 @@ export class UnderworldOperations {
     const allowedShelters = ["makeshift", "basic", "comfortable"];
     const requestedShelter = options.shelterType || gang.camp.type || "basic";
     const shelterType = allowedShelters.includes(requestedShelter) ? requestedShelter : "basic";
+    const isMakeshift = shelterType === "makeshift";
     gang.camp.type = shelterType;
     let shelterName = t("Camp.Shelter.Basic");
     let shelterMoraleDelta = 0;
 
-    if (shelterType === "makeshift") {
+    if (isMakeshift) {
       shelterName = t("Camp.Shelter.Makeshift", { place: terrain.makeshiftLabel });
       shelterMoraleDelta = terrain.coldMakeshift ? -2 : -1;
       if (terrain.coldMakeshift) shelterName += ` – ${t("Camp.Shelter.Frost")}`;
     } else if (shelterType === "comfortable") {
       shelterName = t("Camp.Shelter.Comfortable", { place: terrain.comfortableLabel });
       const curP = GangData.treasuryToPennies(gang.treasury);
-      const costSS = terrain.comfortableCostSS * (weekly ? 7 : 1);
+      const costSS = terrain.comfortableCostSS * (weekly ? 3 : 1);
       const costP = costSS * 12;
       if (curP >= costP) {
         shelterMoraleDelta = 1;
@@ -1520,61 +1805,102 @@ export class UnderworldOperations {
       }
     }
 
-    // 2. Wartownicy (nagradzani +3 DO za czuwanie)
+    // 2. Wartownicy (nagradzani +3 DO × mnożnik rytmu; ranni z Wojennymi Bliznami też mogą pełnić wartę)
     const watchmenIds = [...new Set(Array.isArray(options.watchmenIds) ? options.watchmenIds : [])];
     const watchmenNames = [];
+    const watchXP = Math.max(1, Math.round(3 * this.doMultiplier()));
     gang.roster.forEach(n => {
-      if (watchmenIds.includes(n.id) && n.status === "ready") {
+      const canWatch = !["dead", "arrested"].includes(n.status)
+        && (n.status !== "wounded" || (Array.isArray(n.narrativePerks) && n.narrativePerks.includes("battle_scarred")));
+      if (watchmenIds.includes(n.id) && canWatch) {
         watchmenNames.push(n.name);
-        n.operationalXP = (Number(n.operationalXP) || 0) + 3;
+        n.operationalXP = (Number(n.operationalXP) || 0) + watchXP;
       }
     });
     const isUnprotected = watchmenNames.length === 0;
 
-    // 3. Wyżywienie
+    // 3. Wyżywienie (skalowane ustawieniem i liczbą członków; zewnętrzne zaopatrzenie tylko dla MG)
+    const needed = this.requiredRations(gang, weekly);
+    const rationsOff = this.rationsMode() === "off";
+    const externalSupplies = game.user.isGM && !!options.externalSupplies;
     let foodSummary = "";
     let foodMoraleDelta = 0;
 
-    if (options.fasting) {
+    if (options.fasting && !rationsOff) {
       foodSummary = t("Camp.Food.Fasting");
       foodMoraleDelta = -1;
-    } else if (options.externalSupplies) {
+    } else if (externalSupplies) {
       foodSummary = t("Camp.Food.External");
+    } else if (needed === 0) {
+      foodSummary = rationsOff ? t("Camp.Food.Off") : t("Camp.Food.Used", { used: 0, left: gang.supplies || 0 });
     } else {
-      const requested = Math.max(0, parseInt(options.suppliesCount, 10) || 1);
+      const parsedCount = parseInt(options.suppliesCount, 10);
+      const requested = Number.isFinite(parsedCount) ? Math.max(0, parsedCount) : needed;
       const used = Math.min(gang.supplies || 0, requested);
       gang.supplies = Math.max(0, (gang.supplies || 0) - used);
-      foodSummary = t("Camp.Food.Used", { used, left: gang.supplies });
       if (used === 0) {
         foodSummary = t("Camp.Food.Empty");
         foodMoraleDelta = -1;
+      } else if (used < needed) {
+        foodSummary = t("Camp.Food.Short", { used, needed, left: gang.supplies });
+        foodMoraleDelta = -1;
+      } else {
+        foodSummary = t("Camp.Food.Used", { used, left: gang.supplies });
       }
     }
 
-    // Efekty Dawnego Fachu (Perks) w obozowisku
+    // 3b. Żołd i utrzymanie
+    const upkeepSS = this.calculateUpkeepSS(gang, weekly);
+    let upkeepSummary = "";
+    let upkeepMoraleDelta = 0;
+    if (upkeepSS > 0) {
+      const upkeepPennies = upkeepSS * 12;
+      const curP = GangData.treasuryToPennies(gang.treasury);
+      if (curP >= upkeepPennies) {
+        gang.treasury = GangData.penniesToTreasury(curP - upkeepPennies);
+        upkeepSummary = t("Camp.UpkeepPaid", { amount: this.formatPennies(upkeepPennies) });
+      } else {
+        gang.treasury = GangData.penniesToTreasury(0);
+        upkeepMoraleDelta = -1;
+        upkeepSummary = t("Camp.UpkeepShort", {
+          paid: this.formatPennies(curP),
+          due: this.formatPennies(upkeepPennies)
+        });
+      }
+    }
+
+    // Efekty Dawnego Fachu (Perks) w obozowisku (tylko aktywni członkowie)
     const perksInGang = [];
     gang.roster.forEach(n => {
+      if (["dead", "arrested"].includes(n.status)) return;
       if (Array.isArray(n.narrativePerks)) {
         n.narrativePerks.forEach(p => perksInGang.push({ perkId: p, npcName: n.name }));
       }
     });
 
-    // Dawny Fach: Szynkarz / Piwowar -> +1 Morale z napitku
+    // 4. Morale (schronienie, jedzenie, żołd, potem Prawa Ręka i Szynkarz)
+    this.changeMorale(gang, shelterMoraleDelta + foodMoraleDelta + upkeepMoraleDelta);
+
+    const perkEffects = [];
+    const lieutenant = gang.roster.find(n => !["dead", "arrested", "wounded"].includes(n.status) && (Number(n.rank) || 0) >= 3);
+    if (lieutenant && this.getMorale(gang) < 7) {
+      this.changeMorale(gang, 1);
+      perkEffects.push(t("Camp.Perk.Lieutenant", { name: escapeHTML(lieutenant.name) }));
+    }
+
+    // Dawny Fach: Szynkarz / Piwowar -> +1 Morale z napitku (gdy Morale < 8)
     const brewer = perksInGang.find(p => p.perkId === "craft_innkeeper");
-    if (brewer) {
+    if (brewer && this.getMorale(gang) < 8) {
       this.changeMorale(gang, 1);
       foodSummary += ` ${t("Camp.Food.Brewer", { name: brewer.npcName })}`;
     }
 
-    // Dawny Fach: Leśnik / Kłusownik -> +1 darmowa racja dziczyzny z lasu
+    // Dawny Fach: Leśnik / Kłusownik -> +1 darmowa racja dziczyzny (tylko w lesie)
     const woodsman = perksInGang.find(p => p.perkId === "craft_woodsman");
-    if (woodsman) {
+    if (woodsman && terrainId === "forest") {
       gang.supplies = Math.min(30, (gang.supplies || 0) + 1);
       foodSummary += ` ${t("Camp.Food.Woodsman", { name: woodsman.npcName })}`;
     }
-
-    // 4. Morale
-    this.changeMorale(gang, shelterMoraleDelta + foodMoraleDelta);
 
     // 5. Leczenie, areszt i reset przydziałów
     const healedList = [];
@@ -1582,6 +1908,7 @@ export class UnderworldOperations {
     let chirurgeonHealed = false;
 
     gang.roster.forEach(n => {
+      delete n.coldBloodedUsedCycle;
       if (n.status === "resting") {
         n.status = "ready";
         healedList.push(t("Camp.Heal.Rested", { name: n.name }));
@@ -1641,11 +1968,14 @@ export class UnderworldOperations {
       if (mor) this.changeMorale(gang, mor);
     }
 
-    // 7. Obława straży przy wysokim Rozgłosie (4: 20%, 5: 40%; maskowanie śladów o połowę mniej)
-    const raid = await this._resolveRaid(gang, { isUnprotected, tracksCovered, rolls });
+    // 7. Obława straży przy wysokim Rozgłosie (maskowanie, prowizoryczne kryjówki i wtyka zmniejszają ryzyko)
+    const raid = await this._resolveRaid(gang, { isUnprotected, isMakeshift, tracksCovered, rolls });
 
-    // Reset flagi maskowania na nowy dzień
+    // Reset flag cyklu na nowy dzień/tydzień
     gang.camp.tracksCovered = false;
+    delete gang.cycleTreasuryNetPennies;
+    delete gang.cycleDepositMoraleAwarded;
+    delete gang.cycleWithdrawnPennies;
 
     // 7b. Haracz: dochód z rewiru (tylko w mieście), czasem konkurencja zrywa układ
     const racket = await this._resolveRacket(gang, { weekly, terrainId, rolls });
@@ -1655,21 +1985,16 @@ export class UnderworldOperations {
 
     // 8. Efekty wad i zalet popleczników podczas postoju
     const flawEffects = [];
-    const perkEffects = [];
 
     for (const n of gang.roster) {
       if (n.status === "dead" || n.status === "arrested") continue;
 
-      // ZALETY I FABULARNE ATUTY
+      // ZALETY
       const strengths = Array.isArray(n.strengths) ? n.strengths : [n.strength].filter(Boolean);
-      const perks = Array.isArray(n.narrativePerks) ? n.narrativePerks : [];
 
       if (strengths.includes("poacher")) {
         gang.supplies = Math.min(30, (gang.supplies || 0) + 1);
         perkEffects.push(t("Camp.Perk.Poacher", { name: escapeHTML(n.name) }));
-      }
-      if (perks.includes("old_craft")) {
-        perkEffects.push(t("Camp.Perk.OldCraft", { name: escapeHTML(n.name) }));
       }
 
       // WADY
@@ -1729,7 +2054,8 @@ export class UnderworldOperations {
     };
     if (!gang.history) gang.history = [];
     gang.history.unshift(entry);
-    if (gang.history.length > 10) gang.history.pop();
+    const maxHistory = this.maxHistoryEntries();
+    if (gang.history.length > maxHistory) gang.history.length = maxHistory;
 
     await GangData.saveGang(actor, gang);
 
@@ -1746,6 +2072,7 @@ export class UnderworldOperations {
       watchmenNames: watchmenNames.join(", ") || t("Camp.NoWatch"),
       watchmenCount: watchmenNames.length,
       foodSummary,
+      upkeepSummary,
       healedList: healedList.join(", ") || t("Camp.AllHealthy"),
       morale: gang.morale,
       notoriety: this.getNotoriety(gang),
@@ -1770,26 +2097,40 @@ export class UnderworldOperations {
   }
 
   /**
-   * Obława straży w nocy. Wartownicy pozwalają uciec (tracąc część zapasów),
-   * bez warty jeden z ludzi trafia do aresztu, a straż zabiera część skarbca.
+   * Obława straży w nocy. Wartownicy lub wtyka w straży pozwalają uciec (tracąc część zapasów i drobne),
+   * bez warty i wtyki jeden z ludzi trafia do aresztu, a straż zabiera część skarbca i gorący towar.
    * Po obławie Rozgłos spada o 1 – straż uznaje sprawę za załatwioną.
    * @returns {Promise<object|null>}
    */
-  static async _resolveRaid(gang, { isUnprotected, tracksCovered, rolls }) {
+  static async _resolveRaid(gang, { isUnprotected, isMakeshift = false, tracksCovered, rolls }) {
+    if (this._setting("raidsEnabled", true) === false) return null;
     const notoriety = this.getNotoriety(gang);
     const terrain = TERRAINS[this.getTerrain(gang)];
     const minNotoriety = terrain.raidMinNotoriety;
     if (notoriety < minNotoriety) return null;
+    const hasGuardContacts = (gang.roster || []).some(n =>
+      !["dead", "arrested"].includes(n.status)
+      && Array.isArray(n.narrativePerks)
+      && n.narrativePerks.includes("guard_contacts")
+    );
     let chance = (notoriety - minNotoriety + 1) * 20;
     if (tracksCovered) chance = Math.floor(chance / 2);
+    if (isMakeshift) chance = Math.floor(chance / 2);
+    if (hasGuardContacts) chance = Math.floor(chance / 2);
     const check = await this._roll("1d100", rolls);
     if (check > chance) return null;
 
     const raid = { title: terrain.raidTitle, lines: [] };
-    if (!isUnprotected) {
+    if (!isUnprotected || hasGuardContacts) {
+      if (isUnprotected && hasGuardContacts) raid.lines.push(t("Raid.GuardTipOff"));
       const lost = Math.min(gang.supplies || 0, await this._roll("1d3", rolls));
       gang.supplies = Math.max(0, (gang.supplies || 0) - lost);
       raid.lines.push(t("Raid.Escaped", { lost }));
+      const seizedSS = await this._roll("1d6", rolls);
+      const curP = GangData.treasuryToPennies(gang.treasury);
+      const seized = Math.min(curP, seizedSS * 12);
+      gang.treasury = GangData.penniesToTreasury(curP - seized);
+      if (seized > 0) raid.lines.push(t("Raid.EscapedCoin", { amount: this.formatPennies(seized) }));
     } else {
       const candidates = gang.roster.filter(n => ["ready", "resting"].includes(n.status));
       const victim = candidates.length ? candidates[Math.floor(await this._roll(`1d${candidates.length}`, rolls)) - 1] : null;
@@ -1846,13 +2187,16 @@ export class UnderworldOperations {
    * @returns {Promise<object|null>}
    */
   static async _resolveDesertion(gang, rolls) {
+    if (this._setting("desertionEnabled", true) === false) return null;
     const morale = this.getMorale(gang);
     if (morale > 2) return null;
     const chance = (3 - morale) * 15;
     if (await this._roll("1d100", rolls) > chance) return null;
 
     const candidates = gang.roster
-      .filter(n => !["dead", "arrested"].includes(n.status) && n.assignment !== "retinue")
+      .filter(n => !["dead", "arrested"].includes(n.status)
+        && n.assignment !== "retinue"
+        && !(Array.isArray(n.narrativePerks) && n.narrativePerks.includes("blood_brotherhood")))
       .sort((a, b) => (Number(a.rank) || 0) - (Number(b.rank) || 0));
     const deserter = candidates[0];
     if (!deserter) return null;
@@ -1877,8 +2221,8 @@ export class UnderworldOperations {
   // ════════════════════════════════════════════
 
   static async checkCalendarReminder(worldTime) {
-    // W trybie tygodniowym nie ma nocnych postojów do przypominania
-    if (this.isWeekly()) return;
+    // W trybie tygodniowym ani gdy przypomnienia są wyłączone nie wysyłamy karty nocnej
+    if (this.isWeekly() || this._setting("campReminder", true) === false) return;
     const { hour } = time.components(worldTime);
     const dayKey = time.dayKey(worldTime);
 
@@ -1921,13 +2265,18 @@ export class UnderworldOperations {
   static async postMissionChatCard(actor, data) {
     const template = "modules/wfrp4e-underworld/templates/chat/mission-card.hbs";
     let notes = String(data.notes ?? "");
-    if (Number(data.coinsFoundSS) > 0 && data.noPatronCut) {
-      notes += ` ${t("Ops.ToTreasury", { amount: this.formatPennies(Math.trunc(Number(data.coinsFoundSS) * 12)) })}`;
-    } else if (Number(data.coinsFoundSS) > 0) {
+    if (Number(data.coinsFoundSS) > 0) {
+      const needsFallback = data.noPatronCut === undefined || !Number.isFinite(Number(data.patronCutPct));
+      const fallbackGang = needsFallback ? GangData.getGang(actor) : null;
+      const noCut = data.noPatronCut ?? (fallbackGang ? (!profileOf(fallbackGang).patronCut || !!fallbackGang?.patron?.noCut) : false);
       const gross = Math.trunc(Number(data.coinsFoundSS) * 12);
-      const configured = Number(game.settings.get("wfrp4e-underworld", "cutPercentage"));
-      const percentage = Math.max(0, Math.min(100, Number.isFinite(configured) ? configured : 25));
-      notes += ` ${this._patronCutNote({ gross, cut: Math.floor(gross * percentage / 100), net: gross - Math.floor(gross * percentage / 100), percentage })}`;
+      if (noCut) {
+        notes += ` ${t("Ops.ToTreasury", { amount: this.formatPennies(gross) })}`;
+      } else {
+        const percentage = Math.max(0, Math.min(100, Number.isFinite(Number(data.patronCutPct)) ? Number(data.patronCutPct) : this.effectiveCutPercentage(fallbackGang)));
+        const cut = Math.floor(gross * percentage / 100);
+        notes += ` ${this._patronCutNote({ gross, cut, net: gross - cut, percentage })}`;
+      }
     }
     const safeNotes = sanitizeCardHTML(notes);
     const { rolls = [], ...cardData } = data;
@@ -2240,15 +2589,21 @@ export class UnderworldOperations {
 
     const gang = GangData.getGang(actor);
     const method = ["leadership", "advantage", "direct"].includes(options.method) ? options.method : "leadership";
-    const advantage = Number(actor.system?.status?.advantage?.value ?? actor.system?.status?.advantage ?? 0);
-    if (method === "advantage" && advantage < Number(order.advantageCost || 1)) {
+    if (method === "direct" && orderId !== "meatshield" && !this.canUseDirectOrder()) {
+      ui.notifications.warn(t("Orders.Notify.DirectDisabled"));
+      return false;
+    }
+    const advantage = getAdvantage(actor);
+    const advCost = Number(order.advantageCost) || 0;
+    if (method === "advantage" && (orderId === "rally" || advCost <= 0 || advantage < advCost)) {
       ui.notifications.warn(t("Orders.Notify.NoAdvantage"));
       return false;
     }
-    // Limit: jeden rozkaz na rundę walki – rozkaz zużywa Akcję Herszta
+    // Limit: jeden rozkaz na rundę walki (akcja Herszta), a Żywa Tarcza osobno jako Reakcja
     const combat = game.combat;
     const roundKey = combat?.started ? `${combat.id}:${combat.round}` : null;
-    if (roundKey && gang.lastOrderRound === roundKey) {
+    const isReaction = orderId === "meatshield";
+    if (roundKey && this.orderRoundLimit() !== "unlimited" && (isReaction ? gang.lastReactionRound === roundKey : gang.lastOrderRound === roundKey)) {
       ui.notifications.warn(t("Orders.Notify.AlreadyThisRound"));
       return false;
     }
@@ -2300,16 +2655,11 @@ export class UnderworldOperations {
       // Przewaga tylko tam, gdzie jest efektem rozkazu (Okrzyk Bojowy, Zmyłka) – nie za sam test
       let advantageGained = 0;
       if (isSuccess) {
-        if (orderId === "rally") advantageGained = Math.max(1, sl);
-        if (orderId === "distract") advantageGained = 2;
+        if (orderId === "rally") advantageGained = Math.min(3, Math.max(1, sl));
+        if (orderId === "distract") advantageGained = sl >= 3 ? 2 : 1;
       }
       if (advantageGained > 0) {
-        if (typeof actor.modifyAdvantage === "function") {
-          await actor.modifyAdvantage(advantageGained);
-        } else if (actor.system?.status?.advantage) {
-          const cur = actor.system.status.advantage.value || 0;
-          await actor.update({ "system.status.advantage.value": cur + advantageGained });
-        }
+        await modifyAdvantage(actor, advantageGained);
       }
 
       rollResult = {
@@ -2321,17 +2671,14 @@ export class UnderworldOperations {
         advantageGained
       };
     } else if (method === "advantage") {
-      const cost = order.advantageCost || 1;
-      if (typeof actor.modifyAdvantage === "function") {
-        await actor.modifyAdvantage(-cost);
-      } else if (actor.system?.status?.advantage) {
-        const cur = actor.system.status.advantage.value || 0;
-        await actor.update({ "system.status.advantage.value": Math.max(0, cur - cost) });
-      }
+      await modifyAdvantage(actor, -advCost);
     }
 
     const orderFailed = method === "leadership" && rollResult && !rollResult.isSuccess;
-    if (roundKey) gang.lastOrderRound = roundKey;
+    if (roundKey) {
+      if (isReaction) gang.lastReactionRound = roundKey;
+      else gang.lastOrderRound = roundKey;
+    }
 
     if (orderId === "meatshield" && !orderFailed) {
       // Wybierz ochroniarza ze świty jako ofiarę ciosu
@@ -2347,11 +2694,12 @@ export class UnderworldOperations {
       if (victim) {
         const hasArmor = Array.isArray(victim.gear) && victim.gear.includes("armor");
         const isVeteran = (Number(victim.rank) || 0) >= 2;
-        const absorbsBlow = (hasArmor || isVeteran) && (await this._roll("1d2", orderRolls)) === 1;
+        const hasBloodBond = Array.isArray(victim.narrativePerks) && victim.narrativePerks.includes("blood_brotherhood");
+        const absorbsBlow = (hasArmor || isVeteran || hasBloodBond) && (await this._roll("1d2", orderRolls)) === 1;
 
         if (absorbsBlow) {
           victim.status = "ready";
-          const reason = hasArmor ? t("Orders.MeatShield.Armour") : t("Orders.MeatShield.Veteran");
+          const reason = hasArmor ? t("Orders.MeatShield.Armour") : isVeteran ? t("Orders.MeatShield.Veteran") : t("Orders.MeatShield.BloodBond");
           order.effect += `<br><br><strong>${t("Orders.MeatShield.Saved", { name: escapeHTML(victim.name), reason })}</strong>`;
         } else {
           victim.status = "wounded";
@@ -2365,16 +2713,34 @@ export class UnderworldOperations {
       }
     }
 
-    // Efekty na wskazanych tokenach (stany WFRP4e, Przewaga) – wykonuje MG
-    const automationLines = !orderFailed && method !== "direct" && OrderEffects.isAutomated(orderId)
-      ? await OrderEffects.applyFromIssuer(actor, orderId)
+    // Hojny Datek (payoff): pobiera 1d10 SS ze skarbca (lub sakwy) przy próbie przekupstwa wroga
+    if (orderId === "payoff" && !orderFailed && method !== "direct") {
+      const bribeSS = await this._roll("1d10", orderRolls);
+      const bribePennies = bribeSS * 12;
+      const treasuryP = GangData.treasuryToPennies(gang.treasury);
+      const fromTreasury = Math.min(treasuryP, bribePennies);
+      if (fromTreasury > 0) {
+        gang.treasury = GangData.penniesToTreasury(treasuryP - fromTreasury);
+      }
+      const remaining = bribePennies - fromTreasury;
+      if (remaining > 0) {
+        const actorP = this.getActorPennies(actor);
+        const fromPurse = Math.min(actorP, remaining);
+        if (fromPurse > 0) await this.deductActorPennies(actor, fromPurse);
+      }
+      order.effect += `<br><br><strong>${t("Orders.PayoffCost", { cost: bribeSS })}</strong>`;
+    }
+
+    // Efekty na wskazanych tokenach (stany WFRP4e, Przewaga) – wykonuje MG (o ile automatyzacja jest włączona)
+    const automationLines = !orderFailed && method !== "direct" && this.orderAutomation() !== "chatOnly" && OrderEffects.isAutomated(orderId)
+      ? await OrderEffects.applyFromIssuer(actor, orderId, { method, executorRank: Number(executorNpc?.rank) || 0 })
       : [];
 
-    // Dołącz dane roli wykonawcy
-    if (executorNpc) {
-      const normRole = UnderworldTables.normalizeRole(executorNpc.role);
-      executorNpc.roleConfig = UnderworldTables.ROLES_CONFIG[normRole] || null;
-    }
+    // Dołącz dane roli wykonawcy na kopii (bez zanieczyszczania flag aktora)
+    const cardExecutor = executorNpc ? {
+      ...executorNpc,
+      roleConfig: UnderworldTables.ROLES_CONFIG[UnderworldTables.normalizeRole(executorNpc.role)] || null
+    } : null;
 
     const template = "modules/wfrp4e-underworld/templates/chat/tactic-card.hbs";
     order.effect = sanitizeCardHTML(order.effect);
@@ -2388,7 +2754,7 @@ export class UnderworldOperations {
       orderFailed,
       automationLines,
       inCombat: !!roundKey,
-      executor: executorNpc
+      executor: cardExecutor
     });
     await GangData.saveGang(actor, gang);
 
@@ -2552,9 +2918,11 @@ export class UnderworldOperations {
     const gang = GangData.getGang(actor);
     const currentTreasuryP = GangData.treasuryToPennies(gang.treasury);
     gang.treasury = GangData.penniesToTreasury(currentTreasuryP + amountPennies);
+    gang.cycleTreasuryNetPennies = (Number(gang.cycleTreasuryNetPennies) || 0) + amountPennies;
 
     let moraleBoostMsg = "";
-    if (amountPennies >= 240) {
+    if (!gang.cycleDepositMoraleAwarded && gang.cycleTreasuryNetPennies >= 240) {
+      gang.cycleDepositMoraleAwarded = true;
       this.changeMorale(gang, 1);
       moraleBoostMsg = ` ${t("Treasury.Generous")}`;
     }
@@ -2606,12 +2974,14 @@ export class UnderworldOperations {
       return false;
     }
     gang.treasury = GangData.penniesToTreasury(currentTreasuryP - amountPennies);
+    gang.cycleTreasuryNetPennies = (Number(gang.cycleTreasuryNetPennies) || 0) - amountPennies;
+    gang.cycleWithdrawnPennies = (Number(gang.cycleWithdrawnPennies) || 0) + amountPennies;
 
-    const amountSS = amountPennies / 12;
+    const cycleWithdrawnSS = gang.cycleWithdrawnPennies / 12;
     const formattedAmount = this.formatPennies(amountPennies);
 
     let moraleResult = "";
-    if (amountSS < 10) {
+    if (cycleWithdrawnSS < 10) {
       moraleResult = t("Treasury.SmallWithdrawal");
     } else {
       let skillTarget = 40;
@@ -2623,7 +2993,7 @@ export class UnderworldOperations {
         skillTarget = Number(tgt.system.characteristics.fel.value);
       }
 
-      const isLarge = amountSS > 40;
+      const isLarge = cycleWithdrawnSS > 40;
       const diffMod = isLarge ? -20 : 0;
       let finalTarget = Math.max(5, skillTarget + diffMod);
       let roll;
@@ -2638,7 +3008,7 @@ export class UnderworldOperations {
           const test = await tgt.setupCharacteristic("fel", {
             appendTitle: ` - ${t("Treasury.WithdrawTest")}`,
             skipTargets: true,
-            fields: { difficulty: "average" }
+            fields: { difficulty: "challenging" }
           });
           if (test.preData) test.preData.testModifier = (Number(test.preData.testModifier) || 0) + diffMod;
           await test.roll();
@@ -2699,7 +3069,7 @@ export class UnderworldOperations {
     }
 
     const actualCount = Math.min(count, 30 - currentSupplies);
-    const pricePerUnit = gang.camp?.supplyPricePennies || 12; // Domyślnie 1 SS (12 d)
+    const pricePerUnit = this.supplyPrice(gang);
     const totalCostPennies = actualCount * pricePerUnit;
     const formattedCost = this.formatPennies(totalCostPennies);
 
@@ -2751,6 +3121,24 @@ export class UnderworldOperations {
     gang.camp.supplyPricePennies = Math.max(1, parseInt(pricePennies, 10) || 12);
     await GangData.saveGang(actor, gang);
     ui.notifications.info(t("Supplies.PriceSet", { price: this.formatPennies(gang.camp.supplyPricePennies) }));
+    return true;
+  }
+
+  /**
+   * Czyści blokady cyklu i walki dla MG (np. po cofnięciu sceny lub pomyłce).
+   */
+  static async resetCycleLocks(actor) {
+    if (!game.user.isGM || !actor) return false;
+    const gang = GangData.getGang(actor);
+    delete gang.lastCampRestDay;
+    delete gang.campRestInProgress;
+    delete gang.lastOrderRound;
+    delete gang.lastReactionRound;
+    delete gang.cycleTreasuryNetPennies;
+    delete gang.cycleDepositMoraleAwarded;
+    delete gang.cycleWithdrawnPennies;
+    await GangData.saveGang(actor, gang);
+    ui.notifications.info(t("Camp.LocksReset"));
     return true;
   }
 

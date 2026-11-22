@@ -31,13 +31,17 @@
         </button>
         {{else}}
         <button type="button" class="uw-l-hero" data-action="camp-rest" title="{{underworldT 'DashTab.NightHint'}}">
-          {{uwIcon "ui-night"}} <span>{{underworldT "DashTab.Night"}}</span>
+          {{uwIcon "ui-night"}} <span>{{#if canTriggerCampRest}}{{underworldT "DashTab.Night"}}{{else}}{{underworldT "DashTab.NightByGM"}}{{/if}}</span>
         </button>
         {{/if}}
         {{#if isGM}}
           <button type="button" class="uw-l-tables" data-action="open-world-editor" title="{{underworldT 'DashTab.TablesHint'}}">
             <i class="fas fa-table-list"></i> {{underworldT "DashTab.Tables"}}
           </button>
+          <div class="uw-gm-tools-row">
+            <button type="button" class="btn-theme-action uw-btn-sm" data-action="reset-world-tables" title="{{underworldT 'Tables.ResetTitle'}}"><i class="fas fa-rotate"></i> {{underworldT "Tables.ResetBtn"}}</button>
+            <button type="button" class="btn-theme-action uw-btn-sm" data-action="reset-locks" title="{{underworldT 'Camp.ResetLocksTitle'}}"><i class="fas fa-unlock"></i> {{underworldT "Camp.ResetLocksBtn"}}</button>
+          </div>
         {{/if}}
       </div>
     </section>

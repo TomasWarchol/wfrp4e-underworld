@@ -49,9 +49,7 @@
             <label style="font-size: 0.82rem; cursor: pointer; font-weight: bold; color: {{#if (bajeryEq this.assignment 'retinue')}}#8a6422{{else}}#554433{{/if}}; display: flex; align-items: center; gap: 5px;">
               <input type="checkbox" class="retinue-checkbox" data-npc-id="{{this.id}}"
                      {{#if (bajeryEq this.assignment "retinue")}}checked{{/if}}
-                     {{#if (bajeryEq this.status "dead")}}disabled{{/if}}
-                     {{#if (bajeryEq this.status "wounded")}}disabled{{/if}}
-                     {{#if (bajeryEq this.status "arrested")}}disabled{{/if}} />
+                     {{#unless this.canToggleRetinue}}disabled{{/unless}} />
               {{#if (bajeryEq this.assignment "retinue")}}{{underworldT "TasksTab.InRetinue"}}{{else}}{{underworldT "TasksTab.Join"}}{{/if}}
             </label>
           </div>
@@ -104,9 +102,7 @@
           <label style="font-size: 0.85rem; cursor: pointer; font-weight: bold; color: #4a3828; display: flex; align-items: center; gap: 4px;">
             <input type="checkbox" class="guard-checkbox" data-npc-id="{{this.id}}"
                    {{#if (bajeryEq this.assignment "guard")}}checked{{/if}}
-                   {{#if (bajeryEq this.status "dead")}}disabled{{/if}}
-                   {{#if (bajeryEq this.status "wounded")}}disabled{{/if}}
-                   {{#if (bajeryEq this.status "busy")}}disabled{{/if}} />
+                   {{#unless this.canGuard}}disabled{{/unless}} />
             {{underworldT "Badges.guard"}}
           </label>
         </div>

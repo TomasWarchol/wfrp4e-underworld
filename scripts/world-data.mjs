@@ -33,7 +33,7 @@ const TERRAIN_DATA = {
   forest: {
     icon: "fas fa-tree",
     fence: { rate: 40, likes: ["weapons", "goods"], refuses: ["documents"] },
-    comfortableCostSS: 0,
+    comfortableCostSS: 3,
     raidMinNotoriety: 4,
     eventChance: { unguarded: 70, guarded: 40 },
     coldMakeshift: false

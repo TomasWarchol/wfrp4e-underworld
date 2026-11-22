@@ -25,8 +25,11 @@ export class GangData {
         title: "",
         relation: "neutral",
         cut: "",
+        noCut: false,
         notes: ""
       },
+      maxRetinueOverride: 0,
+      upkeepOverride: "default",
       notoriety: 0,
       bounty: "",
       allies: "",

@@ -11,6 +11,7 @@
         
         <div class="info-field">
           <label><i class="fas fa-users-cog"></i> {{underworldT "InfoTab.Type"}}</label>
+          {{#if isGM}}
           <select name="type">
             {{#bajerySelect gang.type}}
             <option value="underworld">{{underworldT "InfoTab.Types.underworld"}}</option>
@@ -21,6 +22,9 @@
             <option value="cult">{{underworldT "InfoTab.Types.cult"}}</option>
             {{/bajerySelect}}
           </select>
+          {{else}}
+          <div class="readonly-display-field">{{companyTypeLabel}}</div>
+          {{/if}}
         </div>
 
         <div class="info-field">
@@ -32,6 +36,21 @@
           <label><i class="fas fa-map-marked-alt"></i> {{underworldT "InfoTab.Territory"}}</label>
           <input type="text" name="territory" value="{{gang.territory}}" placeholder="{{underworldT 'InfoTab.TerritoryPlaceholder'}}"/>
         </div>
+        {{#if isGM}}
+        <div class="info-field">
+          <label><i class="fas fa-user-shield"></i> {{underworldT "InfoTab.MaxRetinueOverride"}}</label>
+          <input type="number" name="maxRetinueOverride" value="{{gang.maxRetinueOverride}}" min="0" max="6" title="{{underworldT 'InfoTab.MaxRetinueOverrideHint'}}"/>
+        </div>
+        <div class="info-field">
+          <label><i class="fas fa-coins"></i> {{underworldT "InfoTab.UpkeepOverride"}}</label>
+          <select name="upkeepOverride">
+            {{#bajerySelect gang.upkeepOverride}}
+            <option value="default">{{underworldT "InfoTab.UpkeepDefault"}}</option>
+            <option value="free">{{underworldT "InfoTab.UpkeepFree"}}</option>
+            {{/bajerySelect}}
+          </select>
+        </div>
+        {{/if}}
       </div>
 
       <!-- KARTA 2: CZUJNOŚĆ PRAWA I ROZGŁOS (TYLKO MG EDYTUJE) -->
@@ -151,6 +170,14 @@
             <input type="text" value="{{gang.patron.cut}}" disabled class="input-readonly"/>
           {{/if}}
         </div>
+        {{#if isGM}}{{#if profileHasPatronCut}}
+        <div class="info-field">
+          <label class="uw-check-label">
+            <input type="checkbox" name="patron.noCut" {{#if gang.patron.noCut}}checked{{/if}} />
+            <span>{{underworldT "InfoTab.PatronNoCut"}}</span>
+          </label>
+        </div>
+        {{/if}}{{/if}}
 
         <div class="info-field">
           <label><i class="fas fa-envelope-open-text"></i> {{underworldT "InfoTab.PatronNotes"}}</label>

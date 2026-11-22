@@ -4,7 +4,7 @@
     <div class="roster-top-info">
       <h3 class="roster-panel-title">{{uwIcon "ui-tab_roster"}} {{underworldT "RosterTab.Title"}}</h3>
       <span class="roster-summary-counts">
-        {{underworldT "RosterTab.Total"}}: <strong>{{gang.roster.length}}</strong> · {{underworldT "RosterTab.ReadyForJobs"}}: <strong>{{availableOutlaws.length}}</strong> · {{underworldT "TasksTab.InRetinue"}}: <strong>{{retinueCount}}</strong>
+        {{underworldT "RosterTab.Total"}}: <strong>{{gang.roster.length}}</strong>{{#if maxRoster}} <small>({{activeRosterCount}}/{{maxRoster}})</small>{{/if}} · {{underworldT "RosterTab.ReadyForJobs"}}: <strong>{{availableOutlaws.length}}</strong> · {{underworldT "TasksTab.InRetinue"}}: <strong>{{retinueCount}}</strong>
       </span>
     </div>
     <div class="roster-top-actions">
@@ -22,16 +22,16 @@
     </div>
   </div>
 
-  <p class="uw-l-hint">{{uwIcon "ui-patron"}} {{underworldT "RosterTab.DropHint"}}</p>
+  {{#if isGM}}<p class="uw-l-hint">{{uwIcon "ui-patron"}} {{underworldT "RosterTab.DropHint"}}</p>{{/if}}
 
   <div class="npc-cards-grid uw-l-roll">
     {{#each gang.roster}}
     <div class="npc-card-box uw-l-member status-{{this.status}} {{#if this.isCollapsed}}collapsed{{/if}}" data-npc-id="{{this.id}}">
       <div class="uw-l-member-head">
         <div class="avatar-medallion uw-l-portrait {{#if this.actorId}}is-linked{{/if}}"
-             data-action="{{#if this.actorId}}open-actor{{else}}select-actor{{/if}}"
+             {{#if this.actorId}}data-action="open-actor"{{else if ../isGM}}data-action="select-actor"{{/if}}
              data-actor-id="{{this.actorId}}"
-             title="{{#if this.actorId}}{{underworldT 'RosterTab.OpenActor' name=this.actorName}}{{else}}{{underworldT 'RosterTab.ClickToLink'}}{{/if}}">
+             title="{{#if this.actorId}}{{underworldT 'RosterTab.OpenActor' name=this.actorName}}{{else if ../isGM}}{{underworldT 'RosterTab.ClickToLink'}}{{else}}{{this.name}}{{/if}}">
           <img src="{{this.img}}" alt="{{this.name}}" class="avatar-img" />
           <span class="uw-l-portrait-role" title="{{this.roleConfig.name}}">{{uwIcon this.roleGlyph}}</span>
         </div>
@@ -80,15 +80,15 @@
           <div class="npc-collapsible-tools">
             {{#if this.actorId}}
               <button type="button" class="tool-btn btn-view-sheet" data-action="open-actor" data-actor-id="{{this.actorId}}" title="{{underworldT 'RosterTab.OpenSheet'}}"><i class="fas fa-address-card"></i></button>
-              <button type="button" class="tool-btn btn-unlink-actor" data-action="unlink-actor" title="{{underworldT 'RosterTab.Unlink'}}"><i class="fas fa-unlink"></i></button>
-            {{else}}
-              <button type="button" class="tool-btn btn-link-actor" data-action="select-actor" title="{{underworldT 'RosterTab.LinkActor'}}"><i class="fas fa-link"></i></button>
+              {{#if ../isGM}}<button type="button" class="tool-btn btn-unlink-actor" data-action="unlink-actor" data-npc-id="{{this.id}}" title="{{underworldT 'RosterTab.Unlink'}}"><i class="fas fa-unlink"></i></button>{{/if}}
+            {{else if ../isGM}}
+              <button type="button" class="tool-btn btn-link-actor" data-action="select-actor" data-npc-id="{{this.id}}" title="{{underworldT 'RosterTab.LinkActor'}}"><i class="fas fa-link"></i></button>
             {{/if}}
             <button type="button" class="tool-btn btn-upgrade" data-action="upgrade-npc" data-npc-id="{{this.id}}" title="{{underworldT 'RosterTab.UpgradeHint'}}">{{uwIcon "ui-xp"}} {{underworldT "RosterTab.Upgrade"}}</button>
             {{#if (bajeryEq this.assignment "retinue")}}
               <button type="button" class="tool-btn btn-retinue-on" data-action="toggle-retinue" data-npc-id="{{this.id}}" title="{{underworldT 'RosterTab.LeaveRetinue'}}">{{uwIcon "ui-retinue"}} {{underworldT "TasksTab.InRetinue"}}</button>
             {{else}}
-              <button type="button" class="tool-btn btn-retinue-off" data-action="toggle-retinue" data-npc-id="{{this.id}}" title="{{underworldT 'RosterTab.JoinRetinueHint'}}">{{uwIcon "ui-retinue"}} {{underworldT "RosterTab.JoinRetinue"}}</button>
+              <button type="button" class="tool-btn btn-retinue-off" data-action="toggle-retinue" data-npc-id="{{this.id}}" title="{{underworldT 'RosterTab.JoinRetinueHint'}}" {{#unless this.canToggleRetinue}}disabled{{/unless}}>{{uwIcon "ui-retinue"}} {{underworldT "RosterTab.JoinRetinue"}}</button>
             {{/if}}
             {{#if ../isGM}}
               {{#if (bajeryEq this.status "busy")}}
@@ -148,6 +148,20 @@
             <div class="trait-line is-perks">
               <span class="trait-line-label"><i class="fas fa-feather-alt"></i> {{underworldT "RosterTab.Perks"}}:</span>
               <div class="trait-line-content badges-wrap">{{{underworldPerkBadges this.narrativePerks}}}</div>
+            </div>
+          {{/if}}
+          {{#if (bajeryEq this.status "arrested")}}
+            {{#if this.arrestedNights}}
+              <div class="trait-line">
+                <span class="trait-line-label"><i class="fas fa-lock"></i> {{underworldT "Status.Arrested"}}:</span>
+                <div class="trait-line-content">{{this.arrestedNights}}</div>
+              </div>
+            {{/if}}
+          {{/if}}
+          {{#if this.notes}}
+            <div class="trait-line is-notes">
+              <span class="trait-line-label"><i class="fas fa-feather-alt"></i> {{underworldT "Upgrade.Notes"}}:</span>
+              <div class="trait-line-content uw-npc-note">{{this.notes}}</div>
             </div>
           {{/if}}
         </div>
