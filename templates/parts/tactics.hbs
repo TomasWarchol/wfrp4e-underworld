@@ -29,12 +29,19 @@
               <img src="{{this.img}}" style="width: 20px; height: 20px; border-radius: 2px; object-fit: cover;" />
               <strong>{{this.name}}</strong>
               {{{underworldRoleBadge this.role}}}
+              <button type="button" class="uw-plain uw-chip-x" data-action="toggle-retinue" data-npc-id="{{this.id}}" title="{{underworldT 'RosterTab.LeaveRetinue'}}"><i class="fas fa-times"></i></button>
             </div>
           {{/each}}
+          {{#if canAddRetinue}}
+            <button type="button" class="uw-btn-mini is-primary" data-action="pick-retinue"><i class="fas fa-user-plus"></i> {{underworldT "TacticsTab.AddRetinueBtn"}}</button>
+          {{/if}}
         </div>
       {{else}}
-        <div style="background: rgba(183, 28, 28, 0.25); border: 1px solid #e57373; border-radius: 4px; padding: 6px 8px; font-size: 0.82rem; color: #ffcdd2;">
-          <i class="fas fa-exclamation-triangle"></i> {{{underworldT "TacticsTab.NoRetinue"}}}
+        <div style="background: rgba(183, 28, 28, 0.25); border: 1px solid #e57373; border-radius: 4px; padding: 6px 8px; font-size: 0.82rem; color: #ffcdd2; display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap;">
+          <span><i class="fas fa-exclamation-triangle"></i> {{{underworldT "TacticsTab.NoRetinue"}}}</span>
+          {{#if canAddRetinue}}
+            <button type="button" class="uw-btn-mini is-primary" data-action="pick-retinue"><i class="fas fa-user-plus"></i> {{underworldT "TacticsTab.AddRetinueBtn"}}</button>
+          {{/if}}
         </div>
       {{/if}}
     </div>

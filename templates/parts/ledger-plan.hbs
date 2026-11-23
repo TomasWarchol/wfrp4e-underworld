@@ -8,7 +8,7 @@
           <div class="uw-l-token status-{{this.status}} {{#unless this.available}}is-busy{{/unless}}"
                draggable="{{#if this.available}}true{{else}}false{{/if}}" data-npc-id="{{this.id}}"
                title="{{this.name}} · {{this.roleConfig.name}} · {{#if this.assignGlyph}}{{this.assignLabel}}{{else}}{{this.statusLabel}}{{/if}}">
-            <span class="uw-l-token-face"><img src="{{this.img}}" alt=""/></span>
+            <span class="uw-l-token-face"><img src="{{this.img}}" alt="" draggable="false"/></span>
             <span class="uw-l-token-role">{{uwIcon this.roleGlyph}}</span>
             {{#if this.assignGlyph}}<span class="uw-l-token-job">{{uwIcon this.assignGlyph}}</span>{{else}}{{#unless this.available}}<span class="uw-l-token-job">{{uwIcon this.statusGlyph}}</span>{{/unless}}{{/if}}
             <span class="uw-l-token-name">{{this.name}}</span>
@@ -32,7 +32,7 @@
               <button type="button" class="uw-plain uw-l-slot-out" data-action="toggle-retinue" data-npc-id="{{this.npc.id}}" title="{{underworldT 'RosterTab.LeaveRetinue'}}"><i class="fas fa-times"></i></button>
             </div>
           {{else}}
-            <div class="uw-l-slot is-empty" title="{{underworldT 'Plan.SlotHint'}}">
+            <div class="uw-l-slot is-empty is-clickable" data-action="pick-retinue" title="{{underworldT 'TacticsTab.PickRetinueSlotHint'}}">
               {{uwIcon "ui-retinue"}}
               <span>{{underworldT "Plan.SlotEmpty"}}</span>
             </div>

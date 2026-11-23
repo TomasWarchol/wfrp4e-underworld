@@ -24,6 +24,34 @@ const { ApplicationV2, HandlebarsApplicationMixin, DialogV2 } = foundry.applicat
 /** Kategorie zleceń rozwinięte przy pierwszym otwarciu panelu. */
 const OPEN_CATEGORIES = new Set(["intel", "resources"]);
 
+/** Domyślne wartości konfigurowalnych ustawień modułu (wspólne dla zakładki MG i resetu). */
+const WORLD_SETTING_DEFAULTS = {
+  cycleMode: "daily",
+  operationTiming: "timed",
+  operationRestHours: 8,
+  dailyQueue: false,
+  campReminder: true,
+  upkeepEnabled: true,
+  upkeepMultiplier: 1,
+  rationsMode: "scaled",
+  defaultSupplyPrice: 12,
+  cutPercentage: 25,
+  lootTransferMode: "coolOnly",
+  maxRetinue: 3,
+  maxRoster: 0,
+  maxGearSlots: 2,
+  oxpMultiplier: 1,
+  orderAutomation: "full",
+  orderRoundLimit: "one",
+  directOrdersMode: "gm",
+  raidsEnabled: true,
+  desertionEnabled: true,
+  campRestGMOnly: false,
+  gmRumorTruthWhisper: true,
+  maxHistoryEntries: 20,
+  sheetStyle: "ledger"
+};
+
 export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
   constructor(actor, options = {}) {
     super({ id: GangSheet.appIdFor(actor), ...options });
@@ -148,6 +176,8 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       if (!Array.isArray(npc.narrativePerks)) {
         npc.narrativePerks = [];
       }
+      npc.quirk = typeof npc.quirk === "string" ? npc.quirk : "";
+      npc.hasQuickTraits = npc.strengths.length > 0 || npc.flaws.length > 0 || !!npc.quirk;
       npc.role = UnderworldTables.roleForCompany(npc.role, gang.type);
       npc.role2 = npc.role2 && UnderworldTables.ROLES_CONFIG[npc.role2] && npc.role2 !== npc.role ? npc.role2 : "";
       npc.roleConfig = UnderworldTables.ROLES_CONFIG[npc.role] || UnderworldTables.ROLES_CONFIG["bodyguard"];
@@ -448,6 +478,24 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     })).filter(cat => cat.missions.length);
 
     data.ledger = this.constructor.useLedger();
+    if (data.isGM) {
+      const readSetting = (key, fallback) => {
+        try {
+          const val = game.settings?.get?.("wfrp4e-underworld", key);
+          return val !== undefined ? val : fallback;
+        } catch (_) {
+          return fallback;
+        }
+      };
+      data.gmSettings = {
+        ...Object.fromEntries(Object.entries(WORLD_SETTING_DEFAULTS).map(([k, d]) => [k, readSetting(k, d)])),
+        upkeepMultiplier: String(readSetting("upkeepMultiplier", WORLD_SETTING_DEFAULTS.upkeepMultiplier)),
+        oxpMultiplier: String(readSetting("oxpMultiplier", WORLD_SETTING_DEFAULTS.oxpMultiplier)),
+        supplyPricePennies: UnderworldOperations.supplyPrice(gang),
+        maxRetinueOverride: Number(gang.maxRetinueOverride) || 0,
+        upkeepOverride: gang.upkeepOverride || "default"
+      };
+    }
     if (data.ledger) data.ledgerView = this._ledgerView(gang, terrainId, data);
     return data;
   }
@@ -470,29 +518,41 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     const readDrag = (ev) => {
       try {
         const data = JSON.parse(ev.dataTransfer?.getData("text/plain") || "null");
-        return data?.type === DRAG_TYPE ? data.npcId : null;
-      } catch (_) {
-        return null;
-      }
+        if (data?.type === DRAG_TYPE && data.npcId) return data.npcId;
+      } catch (_) {}
+      return this._draggingMemberId || null;
     };
     for (const token of html.querySelectorAll(".uw-l-token[draggable='true']")) {
       token.addEventListener("dragstart", (ev) => {
-        ev.dataTransfer.setData("text/plain", JSON.stringify({ type: DRAG_TYPE, npcId: token.dataset.npcId }));
-        ev.dataTransfer.effectAllowed = "move";
+        this._draggingMemberId = token.dataset.npcId || null;
+        if (ev.dataTransfer) {
+          ev.dataTransfer.setData("text/plain", JSON.stringify({ type: DRAG_TYPE, npcId: token.dataset.npcId }));
+          ev.dataTransfer.effectAllowed = "copyMove";
+        }
         html.classList.add("uw-l-dragging");
       });
-      token.addEventListener("dragend", () => html.classList.remove("uw-l-dragging"));
+      token.addEventListener("dragend", () => {
+        this._draggingMemberId = null;
+        html.classList.remove("uw-l-dragging");
+        for (const el of html.querySelectorAll(".uw-l-drop-hover")) el.classList.remove("uw-l-drop-hover");
+      });
     }
     const target = (el, onDrop) => {
       el.addEventListener("dragover", (ev) => {
+        if (!this._draggingMemberId && !ev.dataTransfer?.types?.includes?.("text/plain")) return;
         ev.preventDefault();
+        ev.stopPropagation();
+        if (ev.dataTransfer) ev.dataTransfer.dropEffect = "move";
         el.classList.add("uw-l-drop-hover");
       });
-      el.addEventListener("dragleave", () => el.classList.remove("uw-l-drop-hover"));
+      el.addEventListener("dragleave", (ev) => {
+        if (!el.contains(ev.relatedTarget)) el.classList.remove("uw-l-drop-hover");
+      });
       el.addEventListener("drop", async (ev) => {
         el.classList.remove("uw-l-drop-hover");
         html.classList.remove("uw-l-dragging");
         const npcId = readDrag(ev);
+        this._draggingMemberId = null;
         if (!npcId) return; // np. aktor z paska bocznego – obsługuje go zwykły handler okna
         ev.preventDefault();
         ev.stopPropagation();
@@ -594,7 +654,8 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
         { id: "roster", icon: "ui-tab_roster", label: t("Tabs.Roster"), count: gang.roster.length },
         { id: "tasks", icon: "ui-tab_plan", label: t("Tabs.Tasks"), count: data.availableOutlaws?.length ?? 0 },
         { id: "loot", icon: "ui-tab_chest", label: t("Tabs.Loot"), count: data.lootCount },
-        { id: "tactics", icon: "ui-tab_orders", label: t("Tabs.Tactics"), count: `${data.retinueCount}/${data.maxRetinue}` }
+        { id: "tactics", icon: "ui-tab_orders", label: t("Tabs.Tactics"), count: `${data.retinueCount}/${data.maxRetinue}` },
+        ...(data.isGM ? [{ id: "settings", icon: "ui-tab_settings", label: t("Tabs.Settings"), isGmTab: true }] : [])
       ]
     };
   }
@@ -654,6 +715,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
         flaws: [],
         strength: "",
         flaw: "",
+        quirk: UnderworldTables.randomQuirk(),
         narrativePerks: [],
         rank: 0,
         operationalXP: 0,
@@ -680,12 +742,12 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     await super._onFirstRender(context, options);
     this.element.addEventListener("dragover", (ev) => {
       ev.preventDefault();
-      if (ev.dataTransfer) ev.dataTransfer.dropEffect = "copy";
+      if (ev.dataTransfer) ev.dataTransfer.dropEffect = this._draggingMemberId ? "move" : "copy";
       const card = ev.target?.closest?.(".npc-card-box, .npc-card");
       for (const el of this.element.querySelectorAll(".uw-drop-target")) {
         if (el !== card) el.classList.remove("uw-drop-target");
       }
-      if (card && game.user?.isGM) card.classList.add("uw-drop-target");
+      if (!this._draggingMemberId && card && game.user?.isGM) card.classList.add("uw-drop-target");
     });
     this.element.addEventListener("dragleave", (ev) => {
       if (!this.element.contains(ev.relatedTarget)) {
@@ -695,13 +757,25 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     this.element.addEventListener("drop", async (ev) => {
       ev.preventDefault();
       for (const el of this.element.querySelectorAll(".uw-drop-target")) el.classList.remove("uw-drop-target");
+      if (this._draggingMemberId) {
+        this._draggingMemberId = null;
+        return;
+      }
       await this._handleActorDrop(ev);
     });
     this.element.addEventListener("keydown", (ev) => {
       if (ev.altKey || ev.ctrlKey || ev.metaKey || ev.shiftKey) return;
       const tag = ev.target?.tagName;
       if (["INPUT", "TEXTAREA", "SELECT", "OPTION"].includes(tag) || ev.target?.isContentEditable) return;
-      const tabMap = { "1": "info", "2": "dashboard", "3": "roster", "4": "tasks", "5": "loot", "6": "tactics" };
+      const tabMap = {
+        "1": "info",
+        "2": "dashboard",
+        "3": "roster",
+        "4": "tasks",
+        "5": "loot",
+        "6": "tactics",
+        ...(game.user?.isGM ? { "7": "settings" } : {})
+      };
       const nextTab = tabMap[ev.key];
       if (nextTab) {
         ev.preventDefault();
@@ -715,6 +789,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
    * i etykiety dla przycisków z samą ikoną (czytniki ekranu nie czytają atrybutu title).
    */
   changeTab(tab, group, options) {
+    if (group === "primary" && tab === "settings" && !game.user?.isGM) return;
     super.changeTab(tab, group, options);
     if (group === "primary" && this.element) this._applyAccessibility(this.element);
   }
@@ -818,7 +893,41 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       this.render();
     });
 
-    // Natychmiastowa zmiana nazwy i motta na blur / Enter
+    // Ustawienia modułu w zakładce MG (nie używają atrybutu name, by nie kolidować z formularzem aktora)
+    on("[data-world-setting]", "change", async (ev) => {
+      if (!game.user.isGM) return;
+      const el = ev.currentTarget;
+      const key = el.dataset.worldSetting;
+      const type = el.dataset.settingType;
+      if (!key) return;
+      let val;
+      if (type === "boolean") val = !!el.checked;
+      else if (type === "number") val = Number(el.value);
+      else val = el.value;
+      if (type === "number" && !Number.isFinite(val)) return;
+      await game.settings.set("wfrp4e-underworld", key, val);
+      if (key === "sheetStyle") {
+        document.body?.classList?.toggle?.("uw-ledger-chat", val !== "classic");
+      }
+      this.render();
+    });
+
+    on("[data-gang-setting]", "change", async (ev) => {
+      if (!game.user.isGM) return;
+      const el = ev.currentTarget;
+      const key = el.dataset.gangSetting;
+      const gang = GangData.getGang(this.actor);
+      if (key === "maxRetinueOverride") {
+        gang.maxRetinueOverride = Math.max(0, Math.min(6, parseInt(el.value, 10) || 0));
+      } else if (key === "upkeepOverride") {
+        gang.upkeepOverride = el.value === "free" ? "free" : "default";
+      } else if (key === "supplyPricePennies") {
+        if (!gang.camp) gang.camp = {};
+        gang.camp.supplyPricePennies = Math.max(1, Math.min(240, parseInt(el.value, 10) || 12));
+      }
+      await GangData.saveGang(this.actor, gang);
+      this.render();
+    });
     on(".master-gang-name, .master-gang-motto", "keydown", (ev) => {
       if (ev.key === "Enter") {
         ev.preventDefault();
@@ -1158,6 +1267,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
           flaws: [],
           strength: "",
           flaw: "",
+          quirk: UnderworldTables.randomQuirk(),
           narrativePerks: [],
           rank: 0,
           operationalXP: 0,
@@ -1434,10 +1544,154 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
         if (!game.user.isGM) return;
         return UnderworldRollTables.openTables(UnderworldOperations.getTerrain(GangData.getGang(this.actor)), GangData.getGang(this.actor).type);
 
-      // ─── TAKTYKA: Rozkazy taktyczne ───
+      case "reset-gm-settings": {
+        if (!game.user.isGM) return;
+        const confirmed = await DialogV2.confirm({
+          window: { title: t("SettingsTab.ResetTitle") },
+          classes: ["wfrp4e", "underworld-dialog-window"],
+          content: dialogContent(`<div class="underworld-dialog"><p>${t("SettingsTab.ResetConfirm")}</p></div>`)
+        });
+        if (!confirmed) return;
+        for (const [key, defVal] of Object.entries(WORLD_SETTING_DEFAULTS)) {
+          await game.settings.set("wfrp4e-underworld", key, defVal);
+        }
+        document.body?.classList?.toggle?.("uw-ledger-chat", WORLD_SETTING_DEFAULTS.sheetStyle !== "classic");
+        ui.notifications.info(t("SettingsTab.ResetDone"));
+        this.render();
+        return;
+      }
+
+      // ─── TAKTYKA: Wybór członka do Świty i Rozkazy taktyczne ───
+      case "pick-retinue":
+        return this._onPickRetinueDialog();
       case "order-tactic":
         return this._onOrderTacticDialog(target.dataset.order);
     }
+  }
+
+  /**
+   * Wizualne okno wyboru poplecznika do obstawy (Świty) ze wskazaniem portretu, roli, DO, cech i odblokowywanych rozkazów.
+   */
+  async _onPickRetinueDialog() {
+    const gang = GangData.getGang(this.actor);
+    const activeRetinue = gang.roster.filter(n =>
+      n.assignment === "retinue" && !["dead", "wounded", "arrested"].includes(n.status)
+    );
+    const maxRetinue = UnderworldOperations.maxRetinue(gang);
+    if (activeRetinue.length >= maxRetinue) {
+      ui.notifications.warn(t("Retinue.Full", { max: maxRetinue }));
+      return;
+    }
+
+    const eligible = gang.roster.filter(n => n.status === "ready" && (!n.assignment || n.assignment === "none"));
+    if (!eligible.length) {
+      ui.notifications.warn(t("TacticsTab.NoAvailableForRetinue"));
+      return;
+    }
+
+    const currentlyUnlocked = new Set();
+    for (const [oid, cfg] of Object.entries(UnderworldOperations.TACTICAL_ORDERS)) {
+      const req = Array.isArray(cfg.requiredRoles) ? cfg.requiredRoles : [];
+      if (req.length === 0 || activeRetinue.some(m => UnderworldTables.canGiveOrder(m, oid, cfg))) {
+        currentlyUnlocked.add(oid);
+      }
+    }
+
+    const isWeekly = UnderworldOperations.isWeekly();
+    const oxpUnit = t("Units.OXP");
+    const ssUnit = t("Units.SS");
+    const cardsHtml = eligible.map(npc => {
+      const normNpc = {
+        ...npc,
+        role: UnderworldTables.roleForCompany(npc.role, gang.type),
+        strengths: Array.isArray(npc.strengths) ? npc.strengths : [npc.strength].filter(Boolean),
+        flaws: Array.isArray(npc.flaws) ? npc.flaws : [npc.flaw].filter(Boolean)
+      };
+      const role1 = UnderworldTables.ROLES_CONFIG[normNpc.role];
+      const role2 = normNpc.role2 && normNpc.role2 !== normNpc.role ? UnderworldTables.ROLES_CONFIG[normNpc.role2] : null;
+      const rankNum = Math.max(0, Math.min(3, Number(npc.rank) || 0));
+      const rankName = UnderworldTables.RANKS_CONFIG?.[rankNum]?.name ?? "";
+      const upkeep = UnderworldOperations.memberUpkeepSS(normNpc, gang, isWeekly);
+
+      const strengthsHtml = normNpc.strengths.map(sid => {
+        const cfg = UnderworldTables.TRAITS_CONFIG?.strengths?.[sid];
+        return cfg ? `<span class="trait-badge trait-strength"><i class="${cfg.icon || "fas fa-star"}"></i> ${escapeHTML(cfg.name)}</span>` : "";
+      }).join("");
+      const flawsHtml = normNpc.flaws.map(fid => {
+        const cfg = UnderworldTables.TRAITS_CONFIG?.flaws?.[fid];
+        return cfg ? `<span class="trait-badge trait-flaw"><i class="${cfg.icon || "fas fa-exclamation-triangle"}"></i> ${escapeHTML(cfg.name)}</span>` : "";
+      }).join("");
+
+      const orderChips = [];
+      for (const [oid, cfg] of Object.entries(UnderworldOperations.TACTICAL_ORDERS)) {
+        const req = Array.isArray(cfg.requiredRoles) ? cfg.requiredRoles : [];
+        if (req.length === 0) continue;
+        if (UnderworldTables.canGiveOrder(normNpc, oid, cfg)) {
+          const isNew = !currentlyUnlocked.has(oid);
+          orderChips.push(`<span class="uw-retinue-order-chip ${isNew ? "is-new" : ""}">${escapeHTML(cfg.name)}${isNew ? ` <small>${t("TacticsTab.NewOrder")}</small>` : ""}</span>`);
+        }
+      }
+
+      return `
+        <button type="button" class="uw-retinue-pick-card" data-npc-id="${escapeHTML(npc.id)}">
+          <div class="uw-retinue-pick-head">
+            <img src="${escapeHTML(npc.img || "icons/svg/mystery-man.svg")}" alt="${escapeHTML(npc.name)}"/>
+            <div class="uw-retinue-pick-id">
+              <strong>${escapeHTML(npc.name)}</strong>
+              <span class="uw-retinue-pick-roles">
+                <i class="${role1?.icon || "fas fa-user"}"></i> ${escapeHTML(role1?.name || normNpc.role)}${role2 ? ` / ${escapeHTML(role2.name)}` : ""}
+              </span>
+              <span class="uw-retinue-pick-meta">${escapeHTML(rankName)} · ${Number(npc.operationalXP) || 0} ${oxpUnit} · ${upkeep} ${ssUnit}</span>
+            </div>
+          </div>
+          ${(strengthsHtml || flawsHtml || npc.quirk) ? `
+          <div class="uw-retinue-pick-traits">
+            ${strengthsHtml}${flawsHtml}
+            ${npc.quirk ? `<div class="npc-quirk-line"><i class="fas fa-masks-theater"></i> <span>${escapeHTML(npc.quirk)}</span></div>` : ""}
+          </div>` : ""}
+          <div class="uw-retinue-orders">
+            <span class="uw-retinue-orders-label">${t("TacticsTab.UnlocksOrders")}:</span>
+            <div class="uw-retinue-orders-list">
+              ${orderChips.length ? orderChips.join("") : `<em>${t("TacticsTab.NoSpecificOrders")}</em>`}
+            </div>
+          </div>
+        </button>`;
+    }).join("");
+
+    await DialogV2.wait({
+      window: { title: t("TacticsTab.PickRetinueTitle", { current: activeRetinue.length, max: maxRetinue }) },
+      position: { width: 580 },
+      classes: ["wfrp4e", "underworld-dialog-window"],
+      content: dialogContent(`
+        <div class="underworld-dialog uw-retinue-picker">
+          <p class="uw-dialog-note">${t("TacticsTab.PickRetinueHint")}</p>
+          <div class="uw-retinue-pick-grid">${cardsHtml}</div>
+        </div>
+      `),
+      render: (event, dlg) => {
+        const root = dlg.element ?? dlg;
+        root.querySelectorAll(".uw-retinue-pick-card").forEach(btn => {
+          btn.addEventListener("click", async () => {
+            const npcId = btn.dataset.npcId;
+            const latestGang = GangData.getGang(this.actor);
+            const npc = latestGang.roster.find(n => n.id === npcId);
+            if (!npc || npc.status !== "ready" || (npc.assignment && npc.assignment !== "none")) return;
+            const curCount = latestGang.roster.filter(n => n.assignment === "retinue").length;
+            if (curCount >= UnderworldOperations.maxRetinue(latestGang)) {
+              ui.notifications.warn(t("Retinue.Full", { max: UnderworldOperations.maxRetinue(latestGang) }));
+              return;
+            }
+            npc.assignment = "retinue";
+            await GangData.saveGang(this.actor, latestGang);
+            ui.notifications.info(t("Retinue.Joined", { name: npc.name }));
+            dlg.close();
+            this.render();
+          });
+        });
+      },
+      buttons: [{ action: "cancel", icon: "fas fa-times", label: t("Close") }],
+      rejectClose: false
+    });
   }
 
   /**
@@ -2574,6 +2828,25 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       </div>
     ` : '';
 
+    const quirkOptions = UnderworldTables.getPersonalityQuirks()
+      .map(q => `<option value="${escapeHTML(q)}">${escapeHTML(q)}</option>`).join("");
+    const quirkBlockHtml = `
+      <div class="uw-upgrade-quirk" style="margin-top: 8px; padding-top: 8px; border-top: 1px dashed #c8b8a6;">
+        <strong style="font-size: 0.8rem; color: #4a3525; display: block; margin-bottom: 4px;">
+          <i class="fas fa-masks-theater"></i> ${t("Upgrade.QuirkSection")}
+        </strong>
+        <div style="display: flex; gap: 6px; align-items: center; margin-bottom: 4px;">
+          <input type="text" id="dialog-npc-quirk" value="${escapeHTML(npc.quirk || "")}" placeholder="${escapeHTML(t("Upgrade.QuirkPlaceholder"))}" style="flex: 1; font-size: 0.82rem; padding: 3px 6px;" />
+          <button type="button" class="btn-roll-quirk btn-actor-action" style="padding: 3px 8px; font-size: 0.76rem;" title="${escapeHTML(t("Upgrade.QuirkReroll"))}">
+            <i class="fas fa-dice"></i> ${t("Upgrade.QuirkReroll")}
+          </button>
+        </div>
+        <select id="select-preset-quirk" style="width: 100%; font-size: 0.78rem; padding: 2px;">
+          <option value="">-- ${escapeHTML(t("Upgrade.QuirkPreset"))} --</option>
+          ${quirkOptions}
+        </select>
+      </div>`;
+
     // 4. Ekwipunek (Kowal / Płatnerz daje 50% zniżki dla całej kompanii)
     const otherNpcs = gang.roster.filter(n => n.id !== npc.id && n.status !== "dead");
     const hasBlacksmith = gang.roster.some(n =>
@@ -2783,6 +3056,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
             <div class="flaws-wrapper" style="margin-top: 2px;">${flawsListHtml}</div>
           </div>
           ${gmTraitManagement}
+          ${quirkBlockHtml}
         </div>
 
         <div style="margin-bottom: 12px;">
@@ -2803,6 +3077,17 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     const bindUpgradeListeners = (dlg) => {
       const dlgElement = dlg.element;
       const on = (selector, handler) => dlgElement.querySelectorAll(selector).forEach(el => el.addEventListener("click", handler));
+
+      dlgElement.querySelector(".btn-roll-quirk")?.addEventListener("click", (ev) => {
+        ev.preventDefault();
+        const inp = dlgElement.querySelector("#dialog-npc-quirk");
+        if (inp) inp.value = UnderworldTables.randomQuirk();
+      });
+      dlgElement.querySelector("#select-preset-quirk")?.addEventListener("change", (ev) => {
+        const val = ev.currentTarget.value;
+        const inp = dlgElement.querySelector("#dialog-npc-quirk");
+        if (val && inp) inp.value = val;
+      });
 
       // 1. Awans Rangi za DO
       on(".btn-buy-rank", async (ev) => {
@@ -3129,6 +3414,8 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
           callback: async (event, button, dlg) => {
             const notesVal = dialogValue(dlg, "#dialog-npc-notes");
             if (typeof notesVal === "string") npc.notes = notesVal.trim().slice(0, 500);
+            const quirkVal = dialogValue(dlg, "#dialog-npc-quirk");
+            if (typeof quirkVal === "string") npc.quirk = quirkVal.trim().slice(0, 180);
             if (isGM) {
               const newOperationalXP = Math.max(0, parseInt(dialogValue(dlg, "#dialog-npc-operational-xp"), 10) || 0);
               const newBonus = parseInt(dialogValue(dlg, "#dialog-npc-bonus"), 10) || 0;

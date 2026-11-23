@@ -6801,3 +6801,241 @@
 :is(html, #uw) .uw-prep-help-details[open] > summary {
   margin-bottom: 6px;
 }
+
+/* ─── Widoczne zalety, wady i osobowość na zwiniętych kartach rejestru ─── */
+:is(html, #uw) .npc-quick-traits {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 6px;
+  margin: 4px 0;
+  font-size: 0.76rem;
+}
+:is(html, #uw) .uw-qt-badges {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+:is(html, #uw) .npc-quirk-line {
+  flex: 1 1 100%;
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  font-size: 0.76rem;
+  font-style: italic;
+  color: #554233;
+  line-height: 1.25;
+}
+:is(html, #uw) .npc-quirk-line i {
+  color: #7c5838;
+  font-size: 0.72rem;
+}
+
+/* ─── Wizualny wybór obstawy (Świty) ─── */
+:is(html, #uw) .uw-retinue-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+:is(html, #uw) .uw-retinue-pick-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
+  gap: 8px;
+  max-height: 430px;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+:is(html, #uw) .uw-retinue-pick-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #9e856f;
+  background: rgba(255, 251, 240, 0.88);
+  color: #2b1f15;
+  cursor: pointer;
+  transition: border-color 0.12s ease, box-shadow 0.12s ease, transform 0.1s ease;
+}
+:is(html, #uw) .uw-retinue-pick-card:hover {
+  border-color: #7c3818;
+  background: #fffdf7;
+  box-shadow: 0 2px 8px rgba(74, 40, 16, 0.18);
+  transform: translateY(-1px);
+}
+:is(html, #uw) .uw-retinue-pick-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+:is(html, #uw) .uw-retinue-pick-head img {
+  width: 44px;
+  height: 44px;
+  border-radius: 4px;
+  object-fit: cover;
+  border: 2px solid #5a3d28;
+  flex-shrink: 0;
+}
+:is(html, #uw) .uw-retinue-pick-id {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 1px;
+}
+:is(html, #uw) .uw-retinue-pick-id strong {
+  font-size: 0.92rem;
+  color: #2b1f15;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+:is(html, #uw) .uw-retinue-pick-roles {
+  font-size: 0.78rem;
+  color: #6b3c1b;
+  font-weight: 600;
+}
+:is(html, #uw) .uw-retinue-pick-meta {
+  font-size: 0.72rem;
+  color: #5c4938;
+}
+:is(html, #uw) .uw-retinue-pick-traits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding-top: 4px;
+  border-top: 1px dashed rgba(110, 82, 56, 0.3);
+}
+:is(html, #uw) .uw-retinue-orders {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-top: 4px;
+  border-top: 1px dashed rgba(110, 82, 56, 0.3);
+  font-size: 0.74rem;
+}
+:is(html, #uw) .uw-retinue-orders-label {
+  font-weight: 700;
+  color: #4a3525;
+}
+:is(html, #uw) .uw-retinue-orders-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+:is(html, #uw) .uw-retinue-order-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  background: rgba(90, 61, 40, 0.12);
+  border: 1px solid rgba(90, 61, 40, 0.3);
+  color: #3a2614;
+  font-size: 0.71rem;
+}
+:is(html, #uw) .uw-retinue-order-chip.is-new {
+  background: rgba(46, 107, 59, 0.14);
+  border-color: #2e6b3b;
+  color: #174521;
+  font-weight: 600;
+}
+:is(html, #uw) .uw-retinue-order-chip small {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+/* ─── Zakładka Ustawienia MG ─── */
+:is(html, #uw) .uw-tab-gm {
+  margin-left: auto;
+  color: #f3d799;
+}
+:is(html, #uw) .uw-gm-settings {
+  gap: 10px;
+}
+:is(html, #uw) .uw-settings-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+:is(html, #uw) .uw-settings-header h3 {
+  margin: 0;
+}
+:is(html, #uw) .uw-settings-header .notes {
+  margin: 2px 0 0;
+}
+:is(html, #uw) .uw-settings-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  align-items: start;
+}
+:is(html, #uw) .uw-settings-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 12px;
+  background: rgba(255, 250, 238, 0.78);
+  border: 1px solid #9e856f;
+  border-radius: 5px;
+}
+:is(html, #uw) .uw-settings-card.is-wide {
+  grid-column: 1 / -1;
+}
+:is(html, #uw) .uw-settings-card h4 {
+  margin: 0 0 4px;
+  padding-bottom: 4px;
+  border-bottom: 1px dashed rgba(110, 82, 56, 0.4);
+  font-size: 0.96rem;
+  color: #4a2810;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+:is(html, #uw) .uw-setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 4px 0;
+  border-bottom: 1px dotted rgba(110, 82, 56, 0.22);
+  cursor: pointer;
+}
+:is(html, #uw) .uw-setting-row:last-of-type {
+  border-bottom: none;
+}
+:is(html, #uw) .uw-setting-label {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+  flex: 1;
+}
+:is(html, #uw) .uw-setting-label strong {
+  font-size: 0.82rem;
+  color: #2b1f15;
+}
+:is(html, #uw) .uw-setting-label small {
+  font-size: 0.72rem;
+  color: #5c4938;
+  line-height: 1.25;
+}
+:is(html, #uw) .uw-setting-row select,
+:is(html, #uw) .uw-setting-row input[type="number"] {
+  flex: 0 0 auto;
+  width: 155px;
+  max-width: 45%;
+  font-size: 0.8rem;
+}
+:is(html, #uw) .uw-setting-row input[type="number"] {
+  width: 78px;
+  text-align: center;
+}
+:is(html, #uw) .uw-settings-company-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px 12px;
+}

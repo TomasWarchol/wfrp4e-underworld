@@ -135,6 +135,14 @@
           </div>
         </div>
 
+        {{#if this.hasQuickTraits}}
+        <div class="npc-quick-traits">
+          {{#if this.strengths.length}}<span class="uw-qt-badges">{{{underworldStrengthBadges this.strengths this.strength}}}</span>{{/if}}
+          {{#if this.flaws.length}}<span class="uw-qt-badges">{{{underworldFlawBadges this.flaws this.flaw}}}</span>{{/if}}
+          {{#if this.quirk}}<div class="npc-quirk-line" title="{{underworldT 'RosterTab.QuirkHint'}}"><i class="fas fa-masks-theater"></i> <span>{{this.quirk}}</span></div>{{/if}}
+        </div>
+        {{/if}}
+
         {{#if this.activeOpView}}
         <div class="uw-card-op-strip {{#if this.activeOpView.isDone}}is-ready{{/if}}">
           <span class="uw-card-op-text">
@@ -209,24 +217,6 @@
               <input type="hidden" name="roster.{{@index}}.role" value="{{this.role}}"/>
             {{/if}}
 
-            <!-- Zalety -->
-            <div class="trait-line">
-              <span class="trait-line-label text-green"><i class="fas fa-plus-circle"></i> {{underworldT "Mod.Strengths"}}:</span>
-              <div class="trait-line-content badges-wrap">
-                {{{underworldStrengthBadges this.strengths this.strength}}}
-                <input type="hidden" name="roster.{{@index}}.strength" value="{{this.strength}}"/>
-              </div>
-            </div>
-
-            <!-- Wady -->
-            <div class="trait-line">
-              <span class="trait-line-label text-danger"><i class="fas fa-minus-circle"></i> {{underworldT "Mod.Flaws"}}:</span>
-              <div class="trait-line-content badges-wrap">
-                {{{underworldFlawBadges this.flaws this.flaw}}}
-                <input type="hidden" name="roster.{{@index}}.flaw" value="{{this.flaw}}"/>
-              </div>
-            </div>
-
             <!-- Fabularne Atuty za DO -->
             {{#if this.narrativePerks}}
               {{#if this.narrativePerks.length}}
@@ -263,6 +253,8 @@
         <input type="hidden" name="roster.{{@index}}.rank" value="{{this.rank}}"/>
         <input type="hidden" name="roster.{{@index}}.operationalXP" value="{{this.operationalXP}}"/>
         <input type="hidden" name="roster.{{@index}}.customBonus" value="{{this.customBonus}}"/>
+        <input type="hidden" name="roster.{{@index}}.strength" value="{{this.strength}}"/>
+        <input type="hidden" name="roster.{{@index}}.flaw" value="{{this.flaw}}"/>
       </div>
     </div>
     {{else}}

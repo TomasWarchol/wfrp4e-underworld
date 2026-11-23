@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.12.3
+- **GM Settings tab** (GM only): one place on the company sheet to set the mechanics, limits and per-company overrides (timing, operations, camp, upkeep, orders and more), with a button to reset them.
+- **Personality quirks** for crew members (28 in English and Polish), and a rewritten description for every combat order.
+- Recruit proposals chat card, roster, plan, tactics and orders views and the Ledger header and navigation got layout and style fixes, plus new icons in the UI sprite.
+
 ## 1.12.2
 - **Timed operations (Daily mode)**: new world settings "Operation Duration" (timed in the in-game calendar or instant) and "Post-Operation Rest (Hours)" (0–24, default 8). Jobs take several in-game hours, then the member rests before taking a new job. Each job shows its estimated duration and the member's skill.
 - **Ongoing Operations & Rest panel**: lists running operations and resting members with the remaining time and ETA. The GM can advance world time by 1 h or 4 h, speed up one or all operations, finish a rest early or cancel an operation; players resolve the finished report with their own roll. A chat card announces when a report is ready.

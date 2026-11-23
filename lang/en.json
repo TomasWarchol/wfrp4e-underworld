@@ -1119,7 +1119,37 @@
           "A clan scout out of Karak Hirn",
           "A goblin-hunter by the campfire"
         ]
-      }
+      },
+      "PersonalityQuirks": [
+        "Constantly runs a whetstone along a blade, even mid-conversation.",
+        "Collects teeth, brass buttons, or odd trinkets taken from fallen foes.",
+        "Refers to themselves in the third person, as if watching a stranger.",
+        "Flips a chipped coin before any serious choice and abides by its verdict.",
+        "Insists every scratch must first be doused with strong spirit before binding.",
+        "Keeps a stained little notebook full of names, debts, and old grudges.",
+        "Hates sleeping under a solid roof — even in town, prefers an awning or porch.",
+        "Whistles an off-key tune whenever tension starts to rise.",
+        "Carries a dried knucklebone on a cord as a ward against the evil eye.",
+        "Spits over the left shoulder at the mere mention of watchmen or gallows.",
+        "Knows the gossip on every merchant around, yet cannot remember their own age.",
+        "Drinks only dark ale and sneers at anyone ordering wine or plain water.",
+        "Fusses endlessly with cloak, cuffs, and collar to keep a sharp appearance.",
+        "Mutters quietly to weapons or gear as though steel understood commands.",
+        "Has a faint twitch below the left eye whenever someone nearby tells a lie.",
+        "Always sits with back to the wall and eyes fixed on the nearest exit.",
+        "Whispers quick prayers to Ranald or Morr, though never sets foot in a temple.",
+        "Chews bitter medicinal roots that scent their breath from ten paces away.",
+        "Never gives the same name twice in the same tavern.",
+        "Silently weighs the coin value of everything that catches their eye.",
+        "Boasts of an old border campaign whose outcome somehow changes every week.",
+        "Drops asleep in any posture the instant the noise around camp dies down.",
+        "Guards one battered, empty coin pouch more jealously than their weapon.",
+        "Lets out a dry, barking chuckle right when everyone else holds their breath.",
+        "Has a soft spot for stray hounds and sneaks them scraps from the stew pot.",
+        "When idle, ties intricate knots in a length of twine only to undo them.",
+        "Addresses the leader with stiff, exaggerated, almost courtly politeness.",
+        "Swears an old ache in their joints warns of trouble an hour before ambush."
+      ]
     },
     "Ranks": {
       "rookie": {
@@ -1664,87 +1694,87 @@
       },
       "meatshield": {
         "Name": "Meat Shield!",
-        "Desc": "A ruthless reflex – yanking a follower straight into the path of a deadly blow.",
+        "Desc": "Cold calculation — a follower is yanked directly into the path of a blow meant for the leader.",
         "Effect": "The blow hits the follower instead of the chief. The follower is wounded (unless saved by armour or a veteran's rank)."
       },
       "trip": {
         "Name": "Trip",
-        "Desc": "The bruiser throws himself at the enemy's legs or jams a staff between his shins.",
+        "Desc": "A sharp sweep or well-timed strike behind the knee sends the opponent crashing down.",
         "Effect": "The opponent must pass an Agility test or immediately gains the Prone condition."
       },
       "bullrush": {
         "Name": "Bull Rush",
-        "Desc": "The bruiser charges headlong, ramming into the enemy line with a great shield or sheer bulk.",
+        "Desc": "A driving charge with full weight breaks the enemy stance and shoves them off their ground.",
         "Effect": "The enemy is pushed back 2 metres and loses 1 Advantage, and the chief closes to melee at once without a test."
       },
       "flank": {
         "Name": "Flank",
-        "Desc": "The shadow slips round behind the enemy, drawing away his guard and shield.",
+        "Desc": "A swift slip to the side pulls the opponent's guard wide open for a follow-up strike.",
         "Effect": "The target loses its guard – it cannot Dodge or Parry the chief's next attack!"
       },
       "volley": {
         "Name": "Volley from Hiding",
-        "Desc": "Archers hidden in the dark loose a hail of bolts, stones and poisoned knives.",
+        "Desc": "Coordinated, disciplined fire from ready positions forces the chosen target onto the back foot.",
         "Effect": "The chosen target is shot at: a ranged hit with Damage 4 + the SL of the Leadership test. The target may defend with a Dodge test."
       },
       "kidneystrike": {
         "Name": "Kidney Strike",
-        "Desc": "A silent leap from the shadows and a precise dagger thrust under the ribs.",
+        "Desc": "A sudden thrust into an unguarded flank the moment the rival's focus wavers.",
         "Effect": "The opponent must pass an Agility test (difficulty rises with the follower's rank) or gain the Bleeding condition and lose 1 Advantage!"
       },
       "cover": {
         "Name": "Harassing Fire",
-        "Desc": "A steady hail of crossbow bolts forcing the enemy to cower behind cover.",
+        "Desc": "Measured harassing fire keeps the opponent pinned down and unable to strike cleanly.",
         "Effect": "The enemy suffers −10 to all tests until the end of their turn and loses 1 Advantage."
       },
       "disarm": {
         "Name": "Disarming Shot",
-        "Desc": "A steady hand – a precise bolt strikes the hand, hilt or belt of the foe.",
+        "Desc": "A sharp, accurate strike to the hand or hilt wrenches the opponent's weapon loose.",
         "Effect": "The opponent must immediately pass a Difficult (−10) Strength test or drop the weapon in hand!"
       },
       "distract": {
         "Name": "Feint / Steal the Advantage",
-        "Desc": "The provocateur yells at the top of his lungs, throws stones and shouts insults about the enemy's mother.",
+        "Desc": "A loud taunt and clever feint throw the enemy off rhythm, handing momentum back to the crew.",
         "Effect": "On a Leadership test the chief gains +1 Advantage (+2 on SL 3+), and the provoked enemy loses 1 Advantage!"
       },
       "smoke": {
         "Name": "Smoke Screen",
-        "Desc": "Bags of pepper and soot are thrown, or an alchemical smoke candle is lit.",
+        "Desc": "Scattered powder or a lit smoke mix rapidly cuts visibility across the clash.",
         "Effect": "Smoke covers the battlefield until the end of the next round: enemies suffer −10 to Perception and Ranged tests. The party may leave melee without a test."
       },
       "sand": {
         "Name": "Sand in the Eyes",
-        "Desc": "A sudden handful of gravel, ground glass and ash thrown straight into the eyes.",
+        "Desc": "A sudden handful of grit or ash flung into the eyes leaves the opponent reeling blind.",
         "Effect": "The opponent must pass an Agility test (difficulty rises with the follower's rank) or gain the Blinded condition."
       },
       "resupply": {
         "Name": "Battlefield Resupply",
-        "Desc": "The scavenger runs in under fire, handing over a new weapon, a bolt or an alchemical draught.",
+        "Desc": "Swift field support delivers fresh shot, a spare blade, or an emergency bandage mid-fight.",
         "Effect": "An immediate free reload, an item passed into a hand, or 1 Bleeding condition bandaged."
       },
       "retreat": {
         "Name": "Barricade and Retreat",
-        "Desc": "A follower tips over a market stall, sets barrels alight in an alley or slams a portcullis shut.",
+        "Desc": "An improvised barrier and sudden commotion block pursuit, buying the crew room to disengage.",
         "Effect": "The pursuit is blocked – the party may break off combat at once and leave the fight safely."
       },
       "draught": {
         "Name": "Bitter Battle Draught",
-        "Desc": "A swig of the barber-surgeon's foul, throat-burning spirit with a predator's claw in the bottle.",
+        "Desc": "A harsh swig of invigorating camp tonic puts a flagging companion back on their feet.",
         "Effect": "The chief or a chosen ally removes 1 Fatigued condition or ignores it until the end of the next round."
       },
       "rally": {
         "Name": "Battle Cry",
-        "Desc": "The chief roars an order, spurring on his companions and striking fear into the enemy.",
+        "Desc": "A booming, resolute command restores discipline along the line and breaks hesitation.",
         "Effect": "Removes the Broken condition from the chosen ally. On a Leadership test the chief gains Advantage equal to the SL (1–3)."
       },
       "coordinate": {
         "Name": "Coordinate the Line",
-        "Desc": "The right hand takes command of the line, pointing out gaps in the enemy's defence.",
+        "Desc": "Crisp hand signals and calls align the crew so fighters reposition smoothly without chaos.",
         "Effect": "The chief and up to three allies within 6 metres may make a free move of half their Movement; leaving melee requires no test."
       },
       "retaliation": {
         "Name": "Crew's Revenge",
-        "Desc": "A furious counterattack! A follower throws himself at the foe to avenge the wounded leader.",
+        "Desc": "An immediate fury at seeing the leader struck turns defence into a fierce counterattack.",
         "Effect": "If the chief or an ally takes damage, the right hand counterattacks at once OR the chief gains +2 Advantage in return."
       },
       "Order": "Order",
@@ -1788,112 +1818,112 @@
       },
       "bodyblock": {
         "Name": "Body Block",
-        "Desc": "The bodyguard steps in front of the chief and takes the blows on shield and back.",
+        "Desc": "A trained interception steps between blade and leader, taking the impact on shield or armour.",
         "Effect": "Until the end of the round the first melee attack against the chief hits the bodyguard instead. The chief gains 1 Advantage (if Advantage was not spent on this order)."
       },
       "grapple": {
         "Name": "Neck Grab",
-        "Desc": "The bruiser grabs the enemy round the waist or by the collar and won't let go.",
+        "Desc": "A locked grip on wrist, belt, or collar pins the enemy firmly in place.",
         "Effect": "The opponent must pass a Strength test or gains the Entangled condition."
       },
       "circle": {
         "Name": "Ring of Guards",
-        "Desc": "The crew closes a ring round the chief, backs together, faces to the enemy.",
+        "Desc": "Closing shoulder to shoulder shields the leader from flanking strikes and steadies the crew.",
         "Effect": "The crew closes a ring: the chief and allies (up to 4) lose the Surprised condition and gain 1 Advantage (if Advantage was not spent on this order)."
       },
       "parry": {
         "Name": "Parry",
-        "Desc": "The duellist steps between the chief and the enemy and turns the blow aside with the blade.",
+        "Desc": "Stepping cleanly into the attack's line turns aside the force of the enemy's first strike.",
         "Effect": "The first melee attack against the chief this round has −20 to hit. The chief gains 1 Advantage (if Advantage was not spent on this order)."
       },
       "riposte": {
         "Name": "Riposte",
-        "Desc": "The swashbuckler baits an attack to answer it in the same breath with a quick thrust.",
+        "Desc": "A measured bait draws an overcommitted swing, opening the attacker to an instant counter.",
         "Effect": "The chosen opponent loses 1 Advantage. If they attack the chief this round and miss, the chief may immediately strike back."
       },
       "challenge": {
         "Name": "Challenge to a Duel",
-        "Desc": "The swashbuckler insults the enemy with a smile and calls them to an honourable fight.",
+        "Desc": "A bold challenge singles out a key foe and pulls their focus onto the duellist alone.",
         "Effect": "The opponent must pass a Willpower test; on a failure they go for the duellist and ignore the rest of the crew until the end of the round."
       },
       "pindown": {
         "Name": "Pinning Fire",
-        "Desc": "A string of shots just over the head forces the target to hug the ground.",
+        "Desc": "Accurate shots snapped close over the target force them to hug cover and stay down.",
         "Effect": "The chosen target must pass a Willpower test or gains the Surprised condition (takes cover and won't move)."
       },
       "fireoil": {
         "Name": "Barrel of Lamp Oil",
-        "Desc": "The arsonist rolls a small barrel of lamp oil at the enemy and flings a lit rag after it.",
+        "Desc": "A shattered flask of lamp oil turns the ground ahead into a sudden hazard of flame.",
         "Effect": "The target must pass an Agility test or gains the Ablaze condition."
       },
       "caltrops": {
         "Name": "Caltrops",
-        "Desc": "A handful of iron spikes flung under the feet of the charging.",
+        "Desc": "A handful of iron spikes scattered across the approach punishes any reckless charge.",
         "Effect": "The target must pass an Agility test or gains the Prone condition."
       },
       "collapse": {
         "Name": "Cut Beam",
-        "Desc": "A prop pulled away on a rope; a weight of crates or a slab of roof falls on their heads.",
+        "Desc": "Pulling away a prop or loose support drops heavy gear or debris onto the enemy.",
         "Effect": "The target must pass a Difficult Agility test or gains the Stunned condition."
       },
       "wagonwall": {
         "Name": "Wagon Across",
-        "Desc": "The carter stops the wagon so that it shields the chief from fire.",
+        "Desc": "Using a cart, heavy crate, or improvised cover shields the leader from incoming fire.",
         "Effect": "The wagon gives cover: ranged attacks against the chief this round have −10. The chief gains 1 Advantage (if Advantage was not spent on this order)."
       },
       "spooked": {
         "Name": "Spooked Horses",
-        "Desc": "A crack of the whip and the enemy's horses rear up.",
+        "Desc": "A sharp crack and sudden movement spook nearby mounts or draught beasts.",
         "Effect": "The chosen mounted opponent, or one beside a wagon, loses 1 Advantage. If they ride a horse the GM may ask for a Ride test; failing it means the Prone condition."
       },
       "getaway": {
         "Name": "Hauled Aboard",
-        "Desc": "The carter grabs the chief by the arm and yanks them out of the melee onto the wagon seat.",
+        "Desc": "A quick grab by arm or cloak hauls the leader cleanly clear of the melee.",
         "Effect": "The chief loses the Prone condition and may move 4 metres away without provoking opportunity attacks."
       },
       "spot": {
         "Name": "Weak Spot",
-        "Desc": "The scout points out a gap in the armour, a hole in the line or a lame leg.",
+        "Desc": "A sharp eye picks out a gap in armour, balance, or stance before the next blow.",
         "Effect": "The chief's first attack this round gets +10 to hit. The chief gains 1 Advantage (if Advantage was not spent on this order)."
       },
       "lure": {
         "Name": "Decoy",
-        "Desc": "The scout shows up at a window or on a ridge and vanishes, drawing the enemy's attention.",
+        "Desc": "A brief, deliberate sightline from the flank pulls the enemy's attention off the real threat.",
         "Effect": "The opponent must pass an Intelligence test; on a failure they lose 1 Advantage and fall for the lure."
       },
       "snare": {
         "Name": "Snares",
-        "Desc": "A taut cord with a noose across the path of pursuit.",
+        "Desc": "A concealed loop and taut cord tighten sharply around an advancing foe's ankle.",
         "Effect": "The target must pass an Agility test or gains the Entangled condition."
       },
       "forgedorder": {
         "Name": "Forged Order",
-        "Desc": "The fence waves a sealed paper and bellows an order in the name of the local reeve.",
+        "Desc": "An authoritative bark backed by an official-looking writ sows confusion in the enemy ranks.",
         "Effect": "The target must pass an Intelligence test or gains the Surprised condition (frozen, unsure whom to believe)."
       },
       "payoff": {
         "Name": "Generous Gift",
-        "Desc": "The fence presses a purse into a soldier's hand and whispers how many more there could be.",
+        "Desc": "A well-timed purse and quiet hint of more coin cool a mercenary foe's enthusiasm.",
         "Effect": "A human opponent must pass a Willpower test; on a failure they leave the fight (the GM decides whether they walk away or switch sides). The purse (1d10 SS) is lost."
       },
       "salve": {
         "Name": "Hedge Healer's Salve",
-        "Desc": "The healer slathers the wound with a foul but surprisingly effective ointment.",
+        "Desc": "Pungent field salve and firm binding staunch heavy bleeding in moments.",
         "Effect": "The chief (or a chosen ally) loses the Bleeding condition."
       },
       "fumes": {
         "Name": "Noxious Fumes",
-        "Desc": "The charlatan smashes a flask of fluid smelling of rotten eggs and a dead cat.",
+        "Desc": "A smashed vial releases acrid, choking fumes that sap breath and focus.",
         "Effect": "The target must pass a Toughness test or gains the Fatigued condition."
       },
       "evileye": {
         "Name": "Evil Eye",
-        "Desc": "The healer mutters an old curse and points a finger.",
+        "Desc": "A cold stare and murmured curse rattle the nerves of superstitious foes.",
         "Effect": "A superstitious target must pass a Willpower test or loses 1 Advantage and has −10 to attacks until the end of the round."
       },
       "regroup": {
         "Name": "Regroup",
-        "Desc": "The Right Hand claps, whistles and the crew falls back into line.",
+        "Desc": "A sharp signal brings scattered followers back into a tight, ready formation.",
         "Effect": "The chief loses the Surprised condition and gains 1 Advantage (if Advantage was not spent); retinue allies may move 2 metres for free."
       },
       "PayoffCost": "Bribe paid: {cost} SS from the stash (or purse)."
@@ -2743,7 +2773,11 @@
       "ArrestDuration": "Nights arrested",
       "ChangePortrait": "Change portrait (GM)",
       "Notes": "Member notes",
-      "NotesPlaceholder": "Short description, scars, contacts, debts..."
+      "NotesPlaceholder": "Short description, scars, contacts, debts...",
+      "QuirkSection": "Personality / Quirk (Roleplay)",
+      "QuirkPlaceholder": "e.g. Constantly whets a blade before speaking...",
+      "QuirkReroll": "Roll random",
+      "QuirkPreset": "Pick from list..."
     },
     "Close": "Close",
     "TreasuryDialog": {
@@ -2804,7 +2838,8 @@
       "Strength": "Strength",
       "Flaw": "Flaw",
       "Recruit": "Recruit {name}",
-      "Footer": "Crew Recruitment"
+      "Footer": "Crew Recruitment",
+      "Quirk": "Personality"
     },
     "TacticCard": {
       "Gives": "{name} gives an order:",
@@ -2833,7 +2868,8 @@
       "MoraleTitle": "Crew Morale: {value}/10",
       "Morale": "Morale",
       "SuppliesTitle": "Food in the larder: {value}/30 rations",
-      "Supplies": "Supplies"
+      "Supplies": "Supplies",
+      "Treasury": "Treasury"
     },
     "Tabs": {
       "Info": "Information",
@@ -2841,7 +2877,8 @@
       "Roster": "Retinue",
       "Tasks": "Assignments",
       "Loot": "Loot",
-      "Tactics": "Tactics"
+      "Tactics": "Tactics",
+      "Settings": "Settings"
     },
     "LootTab": {
       "TerrainHint": "The terrain changes the available jobs, rumours, night events, lodging costs and the fence.",
@@ -2928,7 +2965,10 @@
         "Busy": "Busy / Retinue",
         "Injured": "Wounded / Arrested"
       },
-      "UpgradeReady": "Rank promotion or perk available for OXP!"
+      "UpgradeReady": "Rank promotion or perk available for OXP!",
+      "QuirkLabel": "Personality",
+      "QuirkHint": "Roleplay mannerism or background trait (no mechanical effect).",
+      "NoTraits": "No traits"
     },
     "InfoTab": {
       "Profile": "Profile and Area of Operations",
@@ -3101,7 +3141,15 @@
       "OrderUsed": "Order used this round",
       "ReactionReady": "Reaction ready",
       "ReactionUsed": "Reaction used this round",
-      "OutOfCombat": "Out of combat"
+      "OutOfCombat": "Out of combat",
+      "PickRetinueSlotHint": "Click to choose a follower for the retinue (or drag a portrait here).",
+      "PickRetinueTitle": "Choose Retinue Member ({current}/{max})",
+      "PickRetinueHint": "Pick a ready company member to join the Chief's retinue and unlock their tactical orders in combat.",
+      "AddRetinueBtn": "Add to Retinue",
+      "NoAvailableForRetinue": "No ready, unassigned members are available to join the retinue.",
+      "UnlocksOrders": "Unlocks tactical orders",
+      "NewOrder": "NEW",
+      "NoSpecificOrders": "No specific role orders (serves directly in the escort)."
     },
     "Packs": {
       "Tables": "Underworld Crew – Rumours and Events"
@@ -3110,7 +3158,7 @@
       "Pool": "Ready for tasks",
       "DragHint": "Drag a portrait onto a job card or onto a free place in the retinue. Grey portraits are already busy.",
       "SlotEmpty": "Free place",
-      "SlotHint": "Drop a portrait here to join the retinue",
+      "SlotHint": "Click to pick a member, or drag a portrait here.",
       "ToggleAllCategories": "Expand / collapse categories"
     },
     "Profiles": {
@@ -3300,7 +3348,7 @@
             "Desc": "The crossbowman points out a gap in the armour seen down the sights."
           },
           "forgedorder": {
-            "Desc": "The trader waves a sealed paper and bellows an order in the name of the local reeve."
+            "Desc": "The quartermaster flourishes a sealed dispatch and barks an order with full rank authority."
           },
           "salve": {
             "Effect": "The captain (or a chosen ally) loses the Bleeding condition.",
@@ -3334,7 +3382,7 @@
           },
           "lure": {
             "Name": "Banner on the Hill",
-            "Desc": "The standard bearer shows the colours at the edge of the field and draws the enemy's eye the wrong way."
+            "Desc": "The standard-bearer flashes colours from the flank, drawing enemy eyes off the main push."
           },
           "resupply": {
             "Name": "Bandage and Bolts",
@@ -3350,7 +3398,7 @@
           },
           "retreat": {
             "Name": "Fall Back to the Wagons",
-            "Desc": "The company falls back behind the wagons, which block the pursuit."
+            "Desc": "The company falls back behind baggage wagons or locked shields, sealing off pursuit."
           }
         },
         "Meta": {
@@ -4377,11 +4425,11 @@
           "bullrush": {
             "Effect": "The enemy is pushed back 2 metres and loses 1 Advantage, and the skipper closes to melee at once without a test.",
             "Name": "Overboard!",
-            "Desc": "The boatman shoves the enemy with an oar or a shoulder, preferably straight into the water."
+            "Desc": "A riverhand rams forward with pole or shoulder, shoving the foe off steady footing."
           },
           "flank": {
             "Effect": "The target loses its guard – it cannot Dodge or Parry the skipper's next attack!",
-            "Desc": "The lookout comes at the enemy from the water side."
+            "Desc": "The lookout slips round the blind flank before the foe can turn a shield."
           },
           "distract": {
             "Effect": "On a Leadership test the skipper gains +1 Advantage (+2 on SL 3+), and the provoked enemy loses 1 Advantage!",
@@ -4438,7 +4486,7 @@
           },
           "spot": {
             "Effect": "The skipper's first attack this round gets +10 to hit. The skipper gains 1 Advantage (if Advantage was not spent on this order).",
-            "Desc": "The helmsman sees the enemy is standing on a slippery plank."
+            "Desc": "The steersman points out treacherous footing beneath the opponent's boots."
           },
           "salve": {
             "Effect": "The skipper (or a chosen ally) loses the Bleeding condition."
@@ -4456,20 +4504,20 @@
           },
           "retreat": {
             "Name": "Push Off!",
-            "Desc": "The helmsman pushes the barge off the quay before the pursuers can jump aboard."
+            "Desc": "The steersman cuts a mooring line or drops cargo across the path, winning crucial seconds."
           },
           "wagonwall": {
             "Name": "Duck Behind the Gunwale",
-            "Desc": "The helmsman turns the barge broadside to the archers.",
+            "Desc": "Stepping behind a wagon, hull plating, or stacked cargo cuts the line of fire.",
             "Effect": "The gunwale gives cover: ranged attacks against the skipper this round suffer −10. The skipper gains 1 Advantage (if Advantage was not spent on this order)."
           },
           "smoke": {
             "Name": "Douse the Lanterns",
-            "Desc": "The lookout knocks the lanterns into the water and the landing goes dark.",
+            "Desc": "The lookout douses nearby lanterns or pops smoke, plunging the clash into gloom.",
             "Effect": "Darkness covers the field until the end of the next round: enemies suffer −10 to Perception and Ranged tests. The crew may leave melee without a test."
           },
           "lure": {
-            "Desc": "The lookout whistles from the far bank and draws the pursuit the wrong way."
+            "Desc": "A sharp whistle from the flank draws the pursuit off course."
           },
           "forgedorder": {
             "Name": "Forged Pass",
@@ -5198,7 +5246,7 @@
           "getaway": {
             "Effect": "The spymaster loses the Prone condition and may move 4 metres away without provoking opportunity attacks.",
             "Name": "Out the Window!",
-            "Desc": "The courier throws open a window and shoves the spymaster out onto a stall awning."
+            "Desc": "The courier opens a side passage or gap in the line and pulls the spymaster clear."
           },
           "spot": {
             "Effect": "The spymaster's first attack this round gets +10 to hit. The spymaster gains 1 Advantage (if Advantage was not spent on this order).",
@@ -5223,13 +5271,13 @@
           },
           "retreat": {
             "Name": "Over the Rooftops",
-            "Desc": "The courier leads everyone through the attic and over the roofs to the next street."
+            "Desc": "The courier knows every shortcut, slipping the cell away through side passages and cover."
           },
           "resupply": {
             "Desc": "The courier brings what is missing: a knife, a bandage or a message."
           },
           "lure": {
-            "Desc": "The eavesdropper calls the name of someone the enemy knows and draws them into an alley."
+            "Desc": "The eavesdropper calls a familiar name from off-angle, pulling the target aside."
           },
           "grapple": {
             "Desc": "The enforcer grabs the enemy by the collar and does not let go."
@@ -5919,10 +5967,10 @@
           },
           "retreat": {
             "Name": "The Secret Passage",
-            "Desc": "The acolyte opens a hidden door and the cult vanishes into the cellars."
+            "Desc": "The acolyte unbolts a prepared escape route and vanishes with the cult ahead of pursuit."
           },
           "lure": {
-            "Desc": "The spy shows themself at the end of the street and vanishes round the corner."
+            "Desc": "A spy shows briefly at the edge of sight and slips away, baiting the foe out of line."
           },
           "kidneystrike": {
             "Name": "Poisoned Blade",
@@ -6349,6 +6397,22 @@
       "HoursMinutes": "{h}h {m}m",
       "HoursOnly": "{h}h",
       "MinutesOnly": "{m}m"
+    },
+    "SettingsTab": {
+      "Title": "Module Settings (GM Only)",
+      "Subtitle": "Changes save immediately across the world so every group can enable, tune, or disable any system mechanic.",
+      "ResetBtn": "Reset to defaults",
+      "ResetHint": "Restore all world module settings to their default values.",
+      "ResetTitle": "Reset default settings?",
+      "ResetConfirm": "Reset all world module settings back to their defaults? Overrides saved only on this company will remain untouched.",
+      "ResetDone": "Module settings restored to defaults.",
+      "GroupTiming": "Time, Cycle & Operations",
+      "GroupEconomy": "Economy, Upkeep & Loot",
+      "GroupScale": "Company Size & Progression",
+      "GroupCombat": "Combat, Risks & Permissions",
+      "GroupCompany": "Overrides for This Company Only",
+      "CompanySupplyPrice": "Ration price for this company (pennies)",
+      "CompanySupplyPriceHint": "Local cost of 1 ration used when buying supplies."
     }
   }
 }

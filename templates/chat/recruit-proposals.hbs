@@ -47,6 +47,11 @@
         <div style="color: #6b1414;">
           <i class="fas fa-minus-circle"></i> <strong>{{underworldT "RecruitCard.Flaw"}}:</strong> {{this.flawName}} <span style="color: #554433;">({{this.flawDesc}})</span>
         </div>
+        {{#if this.quirk}}
+        <div style="color: #4a3525;">
+          <i class="fas fa-masks-theater"></i> <strong>{{underworldT "RecruitCard.Quirk"}}:</strong> <em>{{this.quirk}}</em>
+        </div>
+        {{/if}}
       </div>
 
       {{#unless ../chosen}}

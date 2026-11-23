@@ -1316,6 +1316,11 @@ export class UnderworldTables {
 
 
   static get RECRUIT_NAMES() { return contentList("Content.RecruitNames"); }
+  static getPersonalityQuirks() { return contentList("Content.PersonalityQuirks"); }
+  static randomQuirk() {
+    const list = this.getPersonalityQuirks();
+    return list.length ? list[Math.floor(Math.random() * list.length)] : "";
+  }
 
   static RECRUIT_AVATARS = [
     "icons/svg/mystery-man.svg",
@@ -1364,7 +1369,8 @@ export class UnderworldTables {
         flaws: [fKey],
         flaw: fKey,
         flawName: fCfg.name,
-        flawDesc: fCfg.desc
+        flawDesc: fCfg.desc,
+        quirk: this.randomQuirk()
       });
     }
 

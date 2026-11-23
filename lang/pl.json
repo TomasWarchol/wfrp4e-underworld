@@ -1119,7 +1119,37 @@
           "Zwiadowca klanowy z Karak Hirn",
           "Łowca goblinów przy ognisku"
         ]
-      }
+      },
+      "PersonalityQuirks": [
+        "Nieustannie ostrzy swój nóż osełką, nawet w środku rozmowy.",
+        "Kolekcjonuje zęby, guziki lub drobne pamiątki po pokonanych rywalach.",
+        "Mówi o sobie wyłącznie w trzeciej osobie, jakby obserwował kogoś obcego.",
+        "Przed każdym ważnym krokiem rzuca wyszczerbioną monetą i ufa jej wyrokom.",
+        "Wierzy, że każda rana musi najpierw zostać przemyta mocnym trunkiem.",
+        "Notuje nazwiska dłużników i wrogów w postrzępionym, poplamionym notesiku.",
+        "Unika spania pod dachem — nawet w mieście woli kąt pod okapem niż izbę.",
+        "Gwiżdże cichą, fałszywą melodię zawsze, gdy zaczyna robić się gorąco.",
+        "Nosi przy pasie wysuszony kawałek kości jako talizman od złego uroku.",
+        "Spluwa za lewe ramię za każdym razem, gdy padnie słowo „straż” lub „szubienica”.",
+        "Zna na pamięć plotki o każdym kupcu w okolicy, ale nie pamięta własnego wieku.",
+        "Pije tylko ciemne piwo i pogardza każdym, kto zamawia wino albo wodę.",
+        "Wciąż poprawia ułożenie płaszcza lub kaptura, dbając o nienaganny styl.",
+        "Rozmawia półgłosem ze swoim ekwipunkiem, jakby broń rozumiała rozkazy.",
+        "Ma nerwowy tik lewej powieki, który pojawia się, gdy ktoś kłamie.",
+        "Zawsze zajmuje miejsce plecami do ściany i z okiem na najbliższe wyjście.",
+        "Modli się krótko do Ranalda lub Morra, choć nigdy nie przekroczył progu świątyni.",
+        "Żuje gorzkie korzenie, przez co jego oddech czuć apteką z dziesięciu kroków.",
+        "Nigdy nie podaje prawdziwego imienia dwa razy w tej samej karczmie.",
+        "Przelicza w myślach wartość każdej rzeczy, na której zatrzyma wzrok.",
+        "Wspomina starą służbę w kampanii granicznej, choć co tydzień zmienia jej wynik.",
+        "Zasypia natychmiast w dowolnej pozycji, jak tylko ustanie hałas wokół.",
+        "Strzeże jednej starej, pękniętej sakiewki bardziej niż własnego oręża.",
+        "Śmieje się krótko i sucho wtedy, gdy reszta kompanii wstrzymuje oddech.",
+        "Ma słabość do bezpańskich psów i zawsze podrzuca im resztki z obozu.",
+        "Kiedy nie ma zajęcia, wyplata drobne pętle ze sznurka i od razu je rozplątuje.",
+        "Traktuje kapitana lub herszta z przesadną, niemal dworską uprzejmością.",
+        "Twierdzi, że słyszy kłopoty w kościach na godzinę przed pojawieniem się wroga."
+      ]
     },
     "Ranks": {
       "rookie": {
@@ -1664,87 +1694,87 @@
       },
       "meatshield": {
         "Name": "Żywa Tarcza!",
-        "Desc": "Bezwzględny odruch – pociągnięcie poplecznika prosto pod śmiertelny cios.",
+        "Desc": "Chłodna kalkulacja — poplecznik zostaje ściągnięty na linię ciosu wymierzonego w przywódcę.",
         "Effect": "Cios trafia poplecznika zamiast Herszta. Poplecznik zostaje ranny (chyba że uratuje go pancerz lub ranga weterana)."
       },
       "trip": {
         "Name": "Podcięcie z Nóg",
-        "Desc": "Goryl rzuca się pod nogi wroga lub wsuwa drąg między jego piszczele.",
+        "Desc": "Gwałtowne szarpnięcie lub uderzenie pod kolano wytrąca przeciwnika z równowagi.",
         "Effect": "Przeciwnik musi zdać test Zwinności lub natychmiast otrzymuje Stan Powalony (Prone)."
       },
       "bullrush": {
         "Name": "Taran i Przełom",
-        "Desc": "Goryl szarżuje z impetem, wbijając się w szeregi wroga wielką tarczą lub cielskiem.",
+        "Desc": "Zdecydowane natarcie całym ciężarem rozbija szyk wroga i spycha go z pozycji.",
         "Effect": "Wróg zostaje odepchnięty o 2 metry, traci 1 Przewagę, a Herszt natychmiast zamyka dystans do zwarcia bez testu."
       },
       "flank": {
         "Name": "Zajście z Flanki",
-        "Desc": "Cień wślizguje się z boku za plecy wroga, odciągając jego gardę i tarczę.",
+        "Desc": "Szybkie obejście z boku rozprasza przeciwnika i otwiera lukę w jego gardzie.",
         "Effect": "Cel traci gardę – nie może wykonać Uniku ani Parowania przeciwko najbliższemu atakowi Herszta!"
       },
       "volley": {
         "Name": "Salwa z Ukrycia",
-        "Desc": "Ukryci w mroku strzelcy posyłają grad bełtów, kamieni i zatrutych noży.",
+        "Desc": "Zgrany, precyzyjny ostrzał ze stanowisk zmusza wybrany cel do gwałtownej obrony.",
         "Effect": "Wybrany cel zostaje ostrzelany: trafienie dystansowe o Obrażeniach 4 + SL testu Dowodzenia. Cel może się bronić testem Uniku."
       },
       "kidneystrike": {
         "Name": "Cios w Nerkę",
-        "Desc": "Bezszelestny skok z mroku i precyzyjne pchnięcie sztyletem pod żebra rywala.",
+        "Desc": "Błyskawiczny cios wymierzony w odsłonięty bok w chwili, gdy uwaga rywala ucieka.",
         "Effect": "Przeciwnik musi zdać test Zwinności (trudność rośnie z rangą wykonawcy) lub otrzymuje Stan Krwawienie (Bleeding) oraz traci 1 punkt Przewagi!"
       },
       "cover": {
         "Name": "Ostrzał Nękający",
-        "Desc": "Ciągły grad bełtów z kuszy zmuszający rywali do kulenia się za osłonami.",
+        "Desc": "Mierzony ogień osłonowy nie pozwala przeciwnikowi bezpiecznie wychylić się do ataku.",
         "Effect": "Wróg otrzymuje karę -10 do wszystkich testów do końca swojej tury i traci 1 punkt Przewagi."
       },
       "disarm": {
         "Name": "Strzał Rozbrajający",
-        "Desc": "Pewna ręka – precyzyjny bełt trafia prosto w dłoń, rękojeść broni lub pas rywala.",
+        "Desc": "Celne uderzenie w dłoń lub broń rywala pozbawia go głównego atutu w starciu.",
         "Effect": "Przeciwnik musi zdać natychmiastowy Trudny (-10) test Siły lub upuszcza trzymaną broń na ziemię!"
       },
       "distract": {
         "Name": "Zmyłka / Kradzież Przewagi",
-        "Desc": "Prowokator drze się wniebogłosy, rzuca kamieniami i wykrzykuje obelgi o matce wroga.",
+        "Desc": "Głośna prowokacja i zręczny zwód wybijają przeciwnika z rytmu, oddając inicjatywę kompanii.",
         "Effect": "Przy teście Dowodzenia Herszt zyskuje +1 Przewagi (+2 przy SL 3+), a prowokowany wróg traci 1 Przewagę!"
       },
       "smoke": {
         "Name": "Zasłona Dymna",
-        "Desc": "Rzucenie torebek z pieprzem, sadzą lub odpalenie alchemicznej świecy dymnej.",
+        "Desc": "Rozsypany proszek lub zasłona dymna gwałtownie ograniczają widoczność w rejonie starcia.",
         "Effect": "Dym zasłania pole walki do końca następnej rundy: wrogowie mają -10 do Percepcji i testów Broni Zasięgowej. Drużyna może wycofać się ze zwarcia bez testu."
       },
       "sand": {
         "Name": "Piasek w Oczy",
-        "Desc": "Niespodziewany rzut garścią żwiru, sproszkowanego szkła i popiołu prosto w ślepia.",
+        "Desc": "Garść pyłu lub popiołu ciśnięta prosto w oczy odbiera przeciwnikowi orientację.",
         "Effect": "Przeciwnik musi zdać test Zwinności (trudność rośnie z rangą wykonawcy) lub otrzymuje Stan Oślepiony (Blinded)."
       },
       "resupply": {
         "Name": "Bojowe Zaopatrzenie",
-        "Desc": "Szabrownik podbiega pod ostrzałem, wręczając nową broń, bełt lub alchemiczny eliksir.",
+        "Desc": "Sprawne wsparcie z zaplecza dostarcza amunicję, broń lub szybki opatrunek w samym środku walki.",
         "Effect": "Natychmiastowe darmowe przeładowanie broni, podanie przedmiotu do ręki lub opatrzenie 1 Krwawienia."
       },
       "retreat": {
         "Name": "Barykada i Odwrót",
-        "Desc": "Poplecznik przewraca stragan, podpala beczki w zaułku lub zatrzaskuje kratę.",
+        "Desc": "Zorganizowana zapora i dym zamykają drogę pościgu, dając kompanii czas na odwrót.",
         "Effect": "Blokada pościgu – drużyna może natychmiast zerwać kontakt bojowy i bezpiecznie opuścić starcie."
       },
       "draught": {
         "Name": "Gorzka Nalewka Bojowa",
-        "Desc": "Łyk śmierdzącego, palącego gardło bimbru felczera ze szponem drapieżnika.",
+        "Desc": "Mocny łyk pobudzającej mikstury ze spiżarni polowej stawia wyczerpanego kompana na nogi.",
         "Effect": "Herszt lub wskazany sojusznik usuwa 1 Stan Zmęczony (Fatigued) albo ignoruje go do końca następnej rundy."
       },
       "rally": {
         "Name": "Okrzyk Bojowy",
-        "Desc": "Herszt ryczy rozkaz, motywując kompanów i budząc strach u przeciwników.",
+        "Desc": "Pewny, donośny rozkaz przywraca dyscyplinę w szeregach i łamie zawahanie.",
         "Effect": "Usuwa ze wskazanego sojusznika Stan Złamany (Broken). Przy teście Dowodzenia Herszt zyskuje Przewagę równą SL (1–3)."
       },
       "coordinate": {
         "Name": "Koordynacja Szyku",
-        "Desc": "Prawa Ręka przejmuje komendę nad linią, wskazując luki w obronie przeciwnika.",
+        "Desc": "Krótkie komendy porządkują szyk kompanii, pozwalając płynnie zmienić pozycję bez chaosu.",
         "Effect": "Herszt i do trzech sojuszników w promieniu 6 metrów mogą wykonać darmowy ruch o połowę Szybkości; wychodząc ze zwarcia nie muszą zdawać testu."
       },
       "retaliation": {
         "Name": "Odwet Szajki",
-        "Desc": "Wściekły kontratak! Poplecznik natychmiast rzuca się pomścić ranionego przywódcę.",
+        "Desc": "Natychmiastowa odpowiedź na krzywdę dowódcy zamienia obronę w zacięty kontratak.",
         "Effect": "Jeśli Herszt lub sojusznik otrzyma obrażenia, Prawa Ręka natychmiast kontratakuje LUB Herszt zyskuje +2 Przewagi w rewanżu."
       },
       "Order": "Rozkaz",
@@ -1788,112 +1818,112 @@
       },
       "bodyblock": {
         "Name": "Zasłona Ciałem",
-        "Desc": "Ochroniarz zachodzi Herszta od frontu i przyjmuje uderzenia na tarczę i na plecy.",
+        "Desc": "Wyszkolona zasłona ciałem i tarczą przechwytuje uderzenie zmierzające w przywódcę.",
         "Effect": "Do końca rundy pierwszy atak wręcz na Herszta trafia ochroniarza zamiast niego. Herszt zyskuje 1 Przewagi (jeśli nie wydał Przewagi na ten rozkaz)."
       },
       "grapple": {
         "Name": "Chwyt za Kark",
-        "Desc": "Goryl łapie przeciwnika wpół albo za kołnierz i nie puszcza.",
+        "Desc": "Zdecydowany chwyt za przedramię, pas lub kołnierz unieruchamia wroga w miejscu.",
         "Effect": "Przeciwnik musi zdać test Siły albo zyskuje stan Oplątany."
       },
       "circle": {
         "Name": "Krąg Ochrony",
-        "Desc": "Ludzie zamykają krąg wokół Herszta, plecami do siebie, twarzami do wroga.",
+        "Desc": "Zwarcie szyku bark w bark chroni dowódcę przed oskrzydleniem i przywraca gotowość.",
         "Effect": "Ludzie zamykają krąg: Herszt i sojusznicy (do 4) tracą stan Zaskoczony i zyskują 1 Przewagi (jeśli nie wydano Przewagi na rozkaz)."
       },
       "parry": {
         "Name": "Parada",
-        "Desc": "Szermierz wchodzi między Herszta a przeciwnika i odbija cios klingą.",
+        "Desc": "Błyskawiczne wejście w linię natarcia zbija impet pierwszego uderzenia przeciwnika.",
         "Effect": "Pierwszy atak wręcz na Herszta w tej rundzie ma −20 do trafienia. Herszt zyskuje 1 Przewagi (jeśli nie wydał Przewagi na ten rozkaz)."
       },
       "riposte": {
         "Name": "Riposta",
-        "Desc": "Zawadiaka prowokuje atak, żeby w tej samej chwili odpowiedzieć szybkim pchnięciem.",
+        "Desc": "Kontrolowana prowokacja otwiera przeciwnika na natychmiastową kontrę przy najmniejszym błędzie.",
         "Effect": "Wskazany przeciwnik traci 1 Przewagi. Jeśli w tej rundzie zaatakuje Herszta i nie trafi, Herszt może od razu zadać mu cios z kontry."
       },
       "challenge": {
         "Name": "Wyzwanie na Pojedynek",
-        "Desc": "Szermierz z uśmiechem obraża przeciwnika i wzywa go do honorowej walki.",
+        "Desc": "Zuchwałe wyzwanie odciąga uwagę głównego rywala wyłącznie na prowokatora.",
         "Effect": "Przeciwnik musi zdać test Siły Woli; przy porażce rzuca się na szermierza i ignoruje resztę szajki do końca rundy."
       },
       "pindown": {
         "Name": "Przygwożdżenie Ogniem",
-        "Desc": "Seria strzałów tuż nad głową zmusza do przylgnięcia do ziemi.",
+        "Desc": "Seria celnych strzałów tuż nad celem przygważdża go i odbiera swobodę manewru.",
         "Effect": "Wskazany cel musi zdać test Siły Woli albo zyskuje stan Zaskoczony (kryje się i nie rusza z miejsca)."
       },
       "fireoil": {
         "Name": "Beczułka Oleju",
-        "Desc": "Podpalacz toczy w przeciwników beczułkę lampowego oleju i rzuca za nią zapaloną szmatę.",
+        "Desc": "Flaszka palnego oleju rozbita przed celem zamienia ziemię w groźną barierę ognia.",
         "Effect": "Cel musi zdać test Zwinności albo zyskuje stan Płonący."
       },
       "caltrops": {
         "Name": "Żelazne Kolce",
-        "Desc": "Garść kolców rzucona pod nogi szarżujących.",
+        "Desc": "Garść żelaznych kolców rozsypana na ścieżce natarcia bezlitośnie spowalnia pościg i szarżę.",
         "Effect": "Cel musi zdać test Zwinności albo zyskuje stan Powalony."
       },
       "collapse": {
         "Name": "Podcięta Belka",
-        "Desc": "Podpora zerwana na linie, ciężar skrzyń albo kawał dachu spada na głowy.",
+        "Desc": "Zerwanie obciążenia lub prowizorycznej podpory sprowadza na wroga nagłe zagrożenie z góry.",
         "Effect": "Cel musi zdać (trudny) test Zwinności albo zyskuje stan Ogłuszony."
       },
       "wagonwall": {
         "Name": "Wóz w Poprzek",
-        "Desc": "Woźnica zatrzymuje wóz tak, by zasłonić Herszta od ognia.",
+        "Desc": "Osłona z wozu, tarczy taborowej lub ciężkiej przeszkody odcina linię strzału napastników.",
         "Effect": "Wóz daje osłonę: ataki dystansowe na Herszta w tej rundzie mają −10. Herszt zyskuje 1 Przewagi (jeśli nie wydał Przewagi na ten rozkaz)."
       },
       "spooked": {
         "Name": "Spłoszone Konie",
-        "Desc": "Trzask bata i konie wroga stają dęba.",
+        "Desc": "Nagły huk i ruch płoszą wierzchowce lub zwierzęta pociągowe po stronie przeciwnej.",
         "Effect": "Wskazany przeciwnik konny lub stojący przy wozie traci 1 Przewagi. Jeśli dosiada konia, MG może zażądać testu Jeździectwa – porażka to stan Powalony."
       },
       "getaway": {
         "Name": "Wciągnięcie na Wóz",
-        "Desc": "Woźnica chwyta Herszta za ramię i wyrywa go z kłębowiska prosto na kozioł.",
+        "Desc": "Błyskawiczne podchwycenie i wyciągnięcie dowódcy poza strefę bezpośredniego zwarcia.",
         "Effect": "Herszt traci stan Powalony i może oddalić się o 4 metry bez prowokowania ataków okazyjnych."
       },
       "spot": {
         "Name": "Słaby Punkt",
-        "Desc": "Zwiadowca wskazuje szczelinę w pancerzu, lukę w szeregu albo kulejącą nogę.",
+        "Desc": "Chłodna obserwacja wskazuje słaby punkt w pancerzu, postawie lub obronie przeciwnika.",
         "Effect": "Pierwszy atak Herszta w tej rundzie zyskuje +10 do trafienia. Herszt zyskuje 1 Przewagi (jeśli nie wydał Przewagi na ten rozkaz)."
       },
       "lure": {
         "Name": "Wabik",
-        "Desc": "Zwiadowca pokazuje się w oknie albo na grzbiecie wzgórza i znika, ściągając uwagę wroga.",
+        "Desc": "Krótki, wyraźny sygnał z flanki ściąga uwagę wroga z dala od właściwego celu.",
         "Effect": "Przeciwnik musi zdać test Inteligencji; przy porażce traci 1 Przewagi i daje się zwabić."
       },
       "snare": {
         "Name": "Wnyki i Sidła",
-        "Desc": "Naciągnięta linka z pętlą na ścieżce pościgu.",
+        "Desc": "Ukryta pętla lub naciągnięta linka zaciska się na nodze nacierającego przeciwnika.",
         "Effect": "Cel musi zdać test Zwinności albo zyskuje stan Oplątany."
       },
       "forgedorder": {
         "Name": "Fałszywy Rozkaz",
-        "Desc": "Paser macha lakowaną pieczęcią i wrzeszczy rozkaz w imieniu miejscowego wójta.",
+        "Desc": "Pewny ton i oficjalnie wyglądające pismo wprowadzają zamęt w szeregi przeciwnika.",
         "Effect": "Cel musi zdać test Inteligencji albo zyskuje stan Zaskoczony (zamarł, nie wiedząc, komu wierzyć)."
       },
       "payoff": {
         "Name": "Hojny Datek",
-        "Desc": "Paser wciska żołdakowi sakiewkę i szepcze, ile mogłoby ich być więcej.",
+        "Desc": "Zręcznie podsunięta sakiewka i cicha obietnica zysku studzą zapał najemnego przeciwnika.",
         "Effect": "Przeciwnik-człowiek musi zdać test Siły Woli; przy porażce wycofuje się z walki (MG decyduje, czy odejdzie, czy zmieni stronę). Sakiewka (1d10 SS) przepada."
       },
       "salve": {
         "Name": "Maść Znachora",
-        "Desc": "Znachor smaruje ranę cuchnącą, ale zadziwiająco skuteczną maścią.",
+        "Desc": "Sprawdzone polowe smarowidło i mocny ucisk tamują krwawienie w kilka chwil.",
         "Effect": "Herszt (lub wskazany sojusznik) traci stan Krwawienie."
       },
       "fumes": {
         "Name": "Cuchnące Wyziewy",
-        "Desc": "Szarlatan rozbija flaszkę z płynem o woni zgniłych jaj i zdechłego kota.",
+        "Desc": "Rozbita fiolka uwalnia gryzący opar, odbierając przeciwnikowi dech i skupienie.",
         "Effect": "Cel musi zdać test Wytrzymałości albo zyskuje stan Zmęczony."
       },
       "evileye": {
         "Name": "Zły Urok",
-        "Desc": "Znachor wyszeptuje klątwę po staremu i pokazuje palcem.",
+        "Desc": "Przeszywające spojrzenie i mroczna formuła sieją niepokój w szeregach zabobonnych wrogów.",
         "Effect": "Przesądny cel musi zdać test Siły Woli albo traci 1 Przewagi i do końca rundy ma −10 do ataków."
       },
       "regroup": {
         "Name": "Przegrupowanie",
-        "Desc": "Prawa Ręka klaszcze, gwiżdże i szajka wraca do szyku.",
+        "Desc": "Krótki sygnał dowódcy zbiera rozproszonych ludzi z powrotem w spójny szyk.",
         "Effect": "Herszt traci stan Zaskoczony i zyskuje 1 Przewagi (jeśli nie wydano Przewagi); sojusznicy ze Świty mogą przemieścić się o 2 metry bez kosztu."
       },
       "PayoffCost": "Wręczona łapówka: {cost} SS ze skarbca (lub sakwy)."
@@ -2743,7 +2773,11 @@
       "ArrestDuration": "Noce aresztu",
       "ChangePortrait": "Zmień portret (MG)",
       "Notes": "Notatki o członku",
-      "NotesPlaceholder": "Krótki opis, blizny, kontakty, długi..."
+      "NotesPlaceholder": "Krótki opis, blizny, kontakty, długi...",
+      "QuirkSection": "Osobowość / Zwyczaj (fabularne)",
+      "QuirkPlaceholder": "np. Zawsze ostrzy nóż przed rozmową...",
+      "QuirkReroll": "Wylosuj",
+      "QuirkPreset": "Wybierz z listy..."
     },
     "Close": "Zamknij",
     "TreasuryDialog": {
@@ -2804,7 +2838,8 @@
       "Strength": "Zaleta",
       "Flaw": "Wada",
       "Recruit": "Zwerbuj {name}",
-      "Footer": "Rekrutacja Szajki"
+      "Footer": "Rekrutacja Szajki",
+      "Quirk": "Osobowość"
     },
     "TacticCard": {
       "Gives": "{name} wydaje rozkaz:",
@@ -2833,7 +2868,8 @@
       "MoraleTitle": "Morale Szajki: {value}/10",
       "Morale": "Morale",
       "SuppliesTitle": "Zapasy Żywności w Spiżarni: {value}/30 racji",
-      "Supplies": "Zapasy"
+      "Supplies": "Zapasy",
+      "Treasury": "Skarbiec"
     },
     "Tabs": {
       "Info": "Informacje",
@@ -2841,7 +2877,8 @@
       "Roster": "Świta",
       "Tasks": "Przydziały",
       "Loot": "Łupy",
-      "Tactics": "Taktyka"
+      "Tactics": "Taktyka",
+      "Settings": "Ustawienia"
     },
     "LootTab": {
       "TerrainHint": "Teren zmienia dostępne zlecenia, plotki, wydarzenia nocy, koszt noclegu i pasera.",
@@ -2928,7 +2965,10 @@
         "Busy": "Zajęci / Świta",
         "Injured": "Ranni / Areszt"
       },
-      "UpgradeReady": "Dostępny awans lub atut za DO!"
+      "UpgradeReady": "Dostępny awans lub atut za DO!",
+      "QuirkLabel": "Osobowość",
+      "QuirkHint": "Cecha fabularna do odgrywania (bez wpływu na mechanikę).",
+      "NoTraits": "Brak cech"
     },
     "InfoTab": {
       "Profile": "Profil i Teren Działań",
@@ -3101,7 +3141,15 @@
       "OrderUsed": "Rozkaz wydany w tej rundzie",
       "ReactionReady": "Reakcja dostępna",
       "ReactionUsed": "Reakcja użyta w tej rundzie",
-      "OutOfCombat": "Poza walką"
+      "OutOfCombat": "Poza walką",
+      "PickRetinueSlotHint": "Kliknij, aby wybrać członka do obstawy (albo przeciągnij portret).",
+      "PickRetinueTitle": "Wybierz członka do Świty ({current}/{max})",
+      "PickRetinueHint": "Wybierz gotowego członka kompanii, aby dołączył do obstawy Herszta i odblokował jego rozkazy taktyczne w walce.",
+      "AddRetinueBtn": "Dodaj do Świty",
+      "NoAvailableForRetinue": "Brak gotowych i nieprzydzielonych członków, których można dodać do Świty.",
+      "UnlocksOrders": "Odblokowywane rozkazy taktyczne",
+      "NewOrder": "NOWY",
+      "NoSpecificOrders": "Brak specjalnych rozkazów klasowych (wspiera walkę jako obstawa)."
     },
     "Packs": {
       "Tables": "Szajka – Plotki i Wydarzenia"
@@ -3110,7 +3158,7 @@
       "Pool": "Gotowi do zadań",
       "DragHint": "Przeciągnij portret na kartę zlecenia albo na wolne miejsce w Świcie. Szare portrety są już zajęte.",
       "SlotEmpty": "Wolne miejsce",
-      "SlotHint": "Upuść tu portret, aby dołączyć do Świty",
+      "SlotHint": "Kliknij, aby wybrać członka, lub przeciągnij portret.",
       "ToggleAllCategories": "Rozwiń / zwiń kategorie"
     },
     "Profiles": {
@@ -3300,7 +3348,7 @@
             "Desc": "Kusznik wskazuje szczelinę w pancerzu, którą widzi przez celownik."
           },
           "forgedorder": {
-            "Desc": "Kupiec macha lakowaną pieczęcią i wrzeszczy rozkaz w imieniu miejscowego wójta."
+            "Desc": "Kwatermistrz macha rozkazem z lakowaną pieczęcią i wymusza posłuch powagą szarży."
           },
           "salve": {
             "Effect": "Kapitan (lub wskazany sojusznik) traci stan Krwawienie.",
@@ -3334,7 +3382,7 @@
           },
           "lure": {
             "Name": "Sztandar na Wzgórzu",
-            "Desc": "Chorąży pokazuje barwy na skraju pola i ściąga uwagę wroga w złą stronę."
+            "Desc": "Chorąży ukazuje barwy z flanki i odciąga uwagę przeciwnika od głównego uderzenia."
           },
           "resupply": {
             "Name": "Opatrunek i Bełty",
@@ -3350,7 +3398,7 @@
           },
           "retreat": {
             "Name": "Odwrót za Tabor",
-            "Desc": "Kompania cofa się za wozy, które zamykają drogę pościgowi."
+            "Desc": "Kompania cofa się pod osłonę taboru lub zwartej ściany pawęży, zamykając drogę pościgu."
           }
         },
         "Meta": {
@@ -4460,11 +4508,11 @@
           "bullrush": {
             "Effect": "Wróg zostaje odepchnięty o 2 metry, traci 1 Przewagę, a Szyper natychmiast zamyka dystans do zwarcia bez testu.",
             "Name": "Za Burtę!",
-            "Desc": "Flisak spycha przeciwnika wiosłem albo barkiem, najlepiej prosto do wody."
+            "Desc": "Flisak uderza ciężkim drągiem lub barkiem, spychając przeciwnika z dogodnej pozycji."
           },
           "flank": {
             "Effect": "Cel traci gardę – nie może wykonać Uniku ani Parowania przeciwko najbliższemu atakowi Szypra!",
-            "Desc": "Czujka zachodzi wroga od strony wody."
+            "Desc": "Czujka zachodzi wroga z osłoniętej flanki, zanim ten zdąży obrócić tarczę."
           },
           "distract": {
             "Effect": "Przy teście Dowodzenia Szyper zyskuje +1 Przewagi (+2 przy SL 3+), a prowokowany wróg traci 1 Przewagę!",
@@ -4524,7 +4572,7 @@
           },
           "spot": {
             "Effect": "Pierwszy atak Szypra w tej rundzie zyskuje +10 do trafienia. Zyskuje 1 Przewagi (jeśli nie wydano Przewagi na rozkaz).",
-            "Desc": "Sternik widzi, że wróg stoi na śliskiej desce."
+            "Desc": "Sternik wskazuje niestabilne podłoże pod nogami przeciwnika."
           },
           "salve": {
             "Effect": "Szyper (lub wskazany sojusznik) traci stan Krwawienie."
@@ -4542,20 +4590,20 @@
           },
           "retreat": {
             "Name": "Odbić od Brzegu!",
-            "Desc": "Sternik odpycha barkę od nabrzeża, zanim pościg zdąży wskoczyć."
+            "Desc": "Sternik odcina linę lub stawia zaporę na trasie odwrotu, zyskując cenne sekundy."
           },
           "wagonwall": {
             "Name": "Osłona za Burtą",
-            "Desc": "Sternik obraca barkę burtą do strzelców.",
+            "Desc": "Osłona z wozu, burty lub ciężkich pakunków odcina linię strzału napastników.",
             "Effect": "Burta daje osłonę: ataki dystansowe w tej rundzie mają −10. Szyper zyskuje 1 Przewagi (jeśli nie wydano Przewagi na rozkaz)."
           },
           "smoke": {
             "Name": "Zgasić Latarnie",
-            "Desc": "Czujka zrzuca latarnie do wody i przystań tonie w ciemności.",
+            "Desc": "Czujka gasi źródła światła lub rozrzuca zasłonę dymną, pogrążając starcie w półmroku.",
             "Effect": "Ciemność zasłania pole walki do końca następnej rundy: wrogowie mają −10 do Percepcji i testów Broni Zasięgowej. Załoga może wycofać się ze zwarcia bez testu."
           },
           "lure": {
-            "Desc": "Czujka gwiżdże z drugiego brzegu i ściąga pościg w złą stronę."
+            "Desc": "Czujka daje fałszywy sygnał z boku pola walki i ściąga pościg w złą stronę."
           },
           "forgedorder": {
             "Name": "Fałszywy Glejt",
@@ -5198,7 +5246,7 @@
           "getaway": {
             "Effect": "Mistrz szpiegów traci stan Powalony i może oddalić się o 4 metry bez prowokowania ataków okazyjnych.",
             "Name": "Przez Okno!",
-            "Desc": "Kurier otwiera okno i wypycha mistrza szpiegów na daszek nad straganem."
+            "Desc": "Kurier otwiera boczne wyjście lub lukę w kordonie i wyprowadza mistrza poza zwarcie."
           },
           "spot": {
             "Effect": "Pierwszy atak Mistrza szpiegów w tej rundzie zyskuje +10 do trafienia. Zyskuje 1 Przewagi (jeśli nie wydano Przewagi na rozkaz).",
@@ -5223,13 +5271,13 @@
           },
           "retreat": {
             "Name": "Ucieczka Dachami",
-            "Desc": "Kurier prowadzi wszystkich przez strych i po dachach na sąsiednią ulicę."
+            "Desc": "Kurier zna każdy skrót — wyprowadza siatkę przez boczne przejście lub osłony terenowe."
           },
           "resupply": {
             "Desc": "Kurier przynosi to, czego brakuje: nóż, bandaż albo wiadomość."
           },
           "lure": {
-            "Desc": "Podsłuchiwacz woła imię kogoś, kogo wróg zna, i ściąga go w zaułek."
+            "Desc": "Podsłuchiwacz woła znajomo brzmiące imię z boku i odciąga uwagę przeciwnika."
           },
           "grapple": {
             "Desc": "Pięść łapie przeciwnika za kołnierz i nie puszcza."
@@ -5924,10 +5972,10 @@
           },
           "retreat": {
             "Name": "Tajne Przejście",
-            "Desc": "Akolita otwiera ukryte drzwi i sekta znika w piwnicach."
+            "Desc": "Akolita otwiera przygotowaną drogę ucieczki i wyprowadza bractwo poza zasięg pościgu."
           },
           "lure": {
-            "Desc": "Szpieg pokazuje się na końcu ulicy i znika za rogiem."
+            "Desc": "Szpieg ukazuje się na skraju pola widzenia i znika, wabiąc przeciwnika w gorszą pozycję."
           },
           "kidneystrike": {
             "Name": "Zatrute Ostrze",
@@ -6349,6 +6397,22 @@
       "HoursMinutes": "{h}h {m}m",
       "HoursOnly": "{h}h",
       "MinutesOnly": "{m}m"
+    },
+    "SettingsTab": {
+      "Title": "Ustawienia modułu (tylko MG)",
+      "Subtitle": "Zmiany zapisują się natychmiast i obowiązują cały świat — każdy stół może włączyć lub wyłączyć wybrane mechaniki.",
+      "ResetBtn": "Przywróć domyślne",
+      "ResetHint": "Przywróć wszystkie światowe ustawienia modułu do wartości domyślnych.",
+      "ResetTitle": "Przywrócić domyślne ustawienia?",
+      "ResetConfirm": "Przywrócić wszystkie opcje modułu do wartości początkowych? Nadpisania zapisane wyłącznie na tej kompanii pozostaną bez zmian.",
+      "ResetDone": "Przywrócono domyślne ustawienia modułu.",
+      "GroupTiming": "Czas, rytm i kolejka",
+      "GroupEconomy": "Ekonomia, żołd i łupy",
+      "GroupScale": "Skala kompanii i rozwój",
+      "GroupCombat": "Walka, zagrożenia i dostęp",
+      "GroupCompany": "Nadpisania wyłącznie tej kompanii",
+      "CompanySupplyPrice": "Cena racji w tej kompanii (pensy)",
+      "CompanySupplyPriceHint": "Lokalna cena 1 racji używana przy zakupie zapasów (domyślnie z ustawień świata)."
     }
   }
 }

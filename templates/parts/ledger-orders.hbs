@@ -9,9 +9,10 @@
             <img src="{{this.npc.img}}" alt=""/>
             <span class="uw-l-slot-name">{{this.npc.name}}</span>
             <span class="uw-l-slot-role">{{uwIcon this.npc.roleGlyph}} {{this.npc.roleConfig.name}}</span>
+            <button type="button" class="uw-plain uw-l-slot-out" data-action="toggle-retinue" data-npc-id="{{this.npc.id}}" title="{{underworldT 'RosterTab.LeaveRetinue'}}"><i class="fas fa-times"></i></button>
           </div>
         {{else}}
-          <div class="uw-l-slot is-empty">{{uwIcon "ui-retinue"}} <span>{{underworldT "Plan.SlotEmpty"}}</span></div>
+          <div class="uw-l-slot is-empty is-clickable" data-action="pick-retinue" title="{{underworldT 'TacticsTab.PickRetinueSlotHint'}}">{{uwIcon "ui-retinue"}} <span>{{underworldT "Plan.SlotEmpty"}}</span></div>
         {{/if}}
       {{/each}}
     </div>

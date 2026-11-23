@@ -1,0 +1,324 @@
+{{!-- Zakładka tylko dla MG: centralna konfiguracja mechanik, limitów i nadpisań tej kompanii --}}
+<div class="uw-gm-settings flexcol">
+  <div class="uw-settings-header">
+    <div>
+      <h3><i class="fas fa-cogs"></i> {{underworldT "SettingsTab.Title"}}</h3>
+      <p class="notes">{{underworldT "SettingsTab.Subtitle"}}</p>
+    </div>
+    <button type="button" class="btn-theme-action uw-btn-sm" data-action="reset-gm-settings" title="{{underworldT 'SettingsTab.ResetHint'}}">
+      <i class="fas fa-rotate-left"></i> {{underworldT "SettingsTab.ResetBtn"}}
+    </button>
+  </div>
+
+  <div class="uw-settings-grid">
+    {{!-- 1. CZAS I OPERACJE --}}
+    <section class="uw-settings-card">
+      <h4><i class="fas fa-hourglass-half"></i> {{underworldT "SettingsTab.GroupTiming"}}</h4>
+
+      <label class="uw-setting-row">
+        <span class="uw-setting-label">
+          <strong>{{underworldT "Settings.Cycle.Name"}}</strong>
+          <small>{{underworldT "Settings.Cycle.Hint"}}</small>
+        </span>
+        <select data-world-setting="cycleMode" data-setting-type="string">
+          {{#bajerySelect gmSettings.cycleMode}}
+          <option value="daily">{{underworldT "Settings.Cycle.Daily"}}</option>
+          <option value="weekly">{{underworldT "Settings.Cycle.Weekly"}}</option>
+          {{/bajerySelect}}
+        </select>
+      </label>
+
+      <label class="uw-setting-row">
+        <span class="uw-setting-label">
+          <strong>{{underworldT "Settings.OperationTiming.Name"}}</strong>
+          <small>{{underworldT "Settings.OperationTiming.Hint"}}</small>
+        </span>
+        <select data-world-setting="operationTiming" data-setting-type="string">
+          {{#bajerySelect gmSettings.operationTiming}}
+          <option value="timed">{{underworldT "Settings.OperationTiming.Timed"}}</option>
+          <option value="instant">{{underworldT "Settings.OperationTiming.Instant"}}</option>
+          {{/bajerySelect}}
+        </select>
+      </label>
+
+      <label class="uw-setting-row">
+        <span class="uw-setting-label">
+          <strong>{{underworldT "Settings.OperationRestHours.Name"}}</strong>
+          <small>{{underworldT "Settings.OperationRestHours.Hint"}}</small>
+        </span>
+        <input type="number" min="0" max="24" step="1" value="{{gmSettings.operationRestHours}}" data-world-setting="operationRestHours" data-setting-type="number"/>
+      </label>
+
+      <label class="uw-setting-row is-toggle">
+        <span class="uw-setting-label">
+          <strong>{{underworldT "Settings.Queue.Name"}}</strong>
+          <small>{{underworldT "Settings.Queue.Hint"}}</small>
+        </span>
+        <input type="checkbox" {{#if gmSettings.dailyQueue}}checked{{/if}} data-world-setting="dailyQueue" data-setting-type="boolean"/>
+      </label>
+
+      <label class="uw-setting-row is-toggle">
+        <span class="uw-setting-label">
+          <strong>{{underworldT "Settings.CampReminder.Name"}}</strong>
+          <small>{{underworldT "Settings.CampReminder.Hint"}}</small>
+        </span>
+        <input type="checkbox" {{#if gmSettings.campReminder}}checked{{/if}} data-world-setting="campReminder" data-setting-type="boolean"/>
+      </label>
+    </section>
+
+    {{!-- 2. EKONOMIA I ZAOPATRZENIE --}}
+    <section class="uw-settings-card">
+      <h4><i class="fas fa-coins"></i> {{underworldT "SettingsTab.GroupEconomy"}}</h4>
+
+      <label class="uw-setting-row is-toggle">
+        <span class="uw-setting-label">
+          <strong>{{underworldT "Settings.Upkeep.Name"}}</strong>
+          <small>{{underworldT "Settings.Upkeep.Hint"}}</small>
+        </span>
+        <input type="checkbox" {{#if gmSettings.upkeepEnabled}}checked{{/if}} data-world-setting="upkeepEnabled" data-setting-type="boolean"/>
+      </label>
+
+      <label class="uw-setting-row">
+        <span class="uw-setting-label">
+          <strong>{{underworldT "Settings.UpkeepMultiplier.Name"}}</strong>
+          <small>{{underworldT "Settings.UpkeepMultiplier.Hint"}}</small>
+        </span>
+        <select data-world-setting="upkeepMultiplier" data-setting-type="number">
+          {{#bajerySelect gmSettings.upkeepMultiplier}}
+          <option value="0.5">0.5×</option>
+          <option value="1">1×</option>
+          <option value="1.5">1.5×</option>
+          <option value="2">2×</option>
+          {{/bajerySelect}}
+        </select>
+      </label>
+
+      <label class="uw-setting-row">
+        <span class="uw-setting-label">
+          <strong>{{underworldT "Settings.RationsMode.Name"}}</strong>
+          <small>{{underworldT "Settings.RationsMode.Hint"}}</small>
+        </span>
+        <select data-world-setting="rationsMode" data-setting-type="string">
+          {{#bajerySelect gmSettings.rationsMode}}
+          <option value="scaled">{{underworldT "Settings.RationsMode.Scaled"}}</option>
+          <option value="flat1">{{underworldT "Settings.RationsMode.Flat1"}}</option>
+          <option value="off">{{underworldT "Settings.RationsMode.Off"}}</option>
+          {{/bajerySelect}}
+        </select>
+      </label>
+
+      <label class="uw-setting-row">
+        <span class="uw-setting-label">
+          <strong>{{underworldT "Settings.DefaultSupplyPrice.Name"}}</strong>
+          <small>{{underworldT "Settings.DefaultSupplyPrice.Hint"}}</small>
+        </span>
+        <input type="number" min="1" max="240" step="1" value="{{gmSettings.defaultSupplyPrice}}" data-world-setting="defaultSupplyPrice" data-setting-type="number"/>
+      </label>
+
+      <label class="uw-setting-row">
+        <span class="uw-setting-label">
+          <strong>{{underworldT "Settings.Cut.Name"}}</strong>
+          <small>{{underworldT "Settings.Cut.Hint"}}</small>
+        </span>
+        <input type="number" min="0" max="100" step="5" value="{{gmSettings.cutPercentage}}" data-world-setting="cutPercentage" data-setting-type="number"/>
+      </label>
+
+      <label class="uw-setting-row">
+        <span class="uw-setting-label">
+          <strong>{{underworldT "Settings.LootTransfer.Name"}}</strong>
+          <small>{{underworldT "Settings.LootTransfer.Hint"}}</small>
+        </span>
+        <select data-world-setting="lootTransferMode" data-setting-type="string">
+          {{#bajerySelect gmSettings.lootTransferMode}}
+          <option value="gm">{{underworldT "Settings.LootTransfer.GM"}}</option>
+          <option value="coolOnly">{{underworldT "Settings.LootTransfer.CoolOnly"}}</option>
+          <option value="all">{{underworldT "Settings.LootTransfer.All"}}</option>
+          {{/bajerySelect}}
+        </select>
+      </label>
+    </section>
+
+    {{!-- 3. SKALA KOMPANII I ROZWÓJ --}}
+    <section class="uw-settings-card">
+      <h4><i class="fas fa-users-cog"></i> {{underworldT "SettingsTab.GroupScale"}}</h4>
+
+      <label class="uw-setting-row">
+        <span class="uw-setting-label">
+          <strong>{{underworldT "Settings.MaxRetinue.Name"}}</strong>
+          <small>{{underworldT "Settings.MaxRetinue.Hint"}}</small>
+        </span>
+        <input type="number" min="1" max="6" step="1" value="{{gmSettings.maxRetinue}}" data-world-setting="maxRetinue" data-setting-type="number"/>
+      </label>
+
+      <label class="uw-setting-row">
+        <span class="uw-setting-label">
+          <strong>{{underworldT "Settings.MaxRoster.Name"}}</strong>
+          <small>{{underworldT "Settings.MaxRoster.Hint"}}</small>
+        </span>
+        <input type="number" min="0" max="30" step="1" value="{{gmSettings.maxRoster}}" data-world-setting="maxRoster" data-setting-type="number"/>
+      </label>
+
+      <label class="uw-setting-row">
+        <span class="uw-setting-label">
+          <strong>{{underworldT "Settings.MaxGearSlots.Name"}}</strong>
+          <small>{{underworldT "Settings.MaxGearSlots.Hint"}}</small>
+        </span>
+        <input type="number" min="1" max="5" step="1" value="{{gmSettings.maxGearSlots}}" data-world-setting="maxGearSlots" data-setting-type="number"/>
+      </label>
+
+      <label class="uw-setting-row">
+        <span class="uw-setting-label">
+          <strong>{{underworldT "Settings.OxpMultiplier.Name"}}</strong>
+          <small>{{underworldT "Settings.OxpMultiplier.Hint"}}</small>
+        </span>
+        <select data-world-setting="oxpMultiplier" data-setting-type="number">
+          {{#bajerySelect gmSettings.oxpMultiplier}}
+          <option value="0.5">0.5×</option>
+          <option value="1">1×</option>
+          <option value="1.5">1.5×</option>
+          <option value="2">2×</option>
+          {{/bajerySelect}}
+        </select>
+      </label>
+    </section>
+
+    {{!-- 4. WALKA, ZAGROŻENIA I INTERFEJS --}}
+    <section class="uw-settings-card">
+      <h4><i class="fas fa-chess-knight"></i> {{underworldT "SettingsTab.GroupCombat"}}</h4>
+
+      <label class="uw-setting-row">
+        <span class="uw-setting-label">
+          <strong>{{underworldT "Settings.OrderAutomation.Name"}}</strong>
+          <small>{{underworldT "Settings.OrderAutomation.Hint"}}</small>
+        </span>
+        <select data-world-setting="orderAutomation" data-setting-type="string">
+          {{#bajerySelect gmSettings.orderAutomation}}
+          <option value="full">{{underworldT "Settings.OrderAutomation.Full"}}</option>
+          <option value="chatOnly">{{underworldT "Settings.OrderAutomation.ChatOnly"}}</option>
+          {{/bajerySelect}}
+        </select>
+      </label>
+
+      <label class="uw-setting-row">
+        <span class="uw-setting-label">
+          <strong>{{underworldT "Settings.OrderRoundLimit.Name"}}</strong>
+          <small>{{underworldT "Settings.OrderRoundLimit.Hint"}}</small>
+        </span>
+        <select data-world-setting="orderRoundLimit" data-setting-type="string">
+          {{#bajerySelect gmSettings.orderRoundLimit}}
+          <option value="one">{{underworldT "Settings.OrderRoundLimit.One"}}</option>
+          <option value="unlimited">{{underworldT "Settings.OrderRoundLimit.Unlimited"}}</option>
+          {{/bajerySelect}}
+        </select>
+      </label>
+
+      <label class="uw-setting-row">
+        <span class="uw-setting-label">
+          <strong>{{underworldT "Settings.DirectOrders.Name"}}</strong>
+          <small>{{underworldT "Settings.DirectOrders.Hint"}}</small>
+        </span>
+        <select data-world-setting="directOrdersMode" data-setting-type="string">
+          {{#bajerySelect gmSettings.directOrdersMode}}
+          <option value="all">{{underworldT "Settings.DirectOrders.All"}}</option>
+          <option value="gm">{{underworldT "Settings.DirectOrders.GM"}}</option>
+          <option value="off">{{underworldT "Settings.DirectOrders.Off"}}</option>
+          {{/bajerySelect}}
+        </select>
+      </label>
+
+      <label class="uw-setting-row is-toggle">
+        <span class="uw-setting-label">
+          <strong>{{underworldT "Settings.RaidsEnabled.Name"}}</strong>
+          <small>{{underworldT "Settings.RaidsEnabled.Hint"}}</small>
+        </span>
+        <input type="checkbox" {{#if gmSettings.raidsEnabled}}checked{{/if}} data-world-setting="raidsEnabled" data-setting-type="boolean"/>
+      </label>
+
+      <label class="uw-setting-row is-toggle">
+        <span class="uw-setting-label">
+          <strong>{{underworldT "Settings.DesertionEnabled.Name"}}</strong>
+          <small>{{underworldT "Settings.DesertionEnabled.Hint"}}</small>
+        </span>
+        <input type="checkbox" {{#if gmSettings.desertionEnabled}}checked{{/if}} data-world-setting="desertionEnabled" data-setting-type="boolean"/>
+      </label>
+
+      <label class="uw-setting-row is-toggle">
+        <span class="uw-setting-label">
+          <strong>{{underworldT "Settings.CampRestGMOnly.Name"}}</strong>
+          <small>{{underworldT "Settings.CampRestGMOnly.Hint"}}</small>
+        </span>
+        <input type="checkbox" {{#if gmSettings.campRestGMOnly}}checked{{/if}} data-world-setting="campRestGMOnly" data-setting-type="boolean"/>
+      </label>
+
+      <label class="uw-setting-row is-toggle">
+        <span class="uw-setting-label">
+          <strong>{{underworldT "Settings.GmRumorTruthWhisper.Name"}}</strong>
+          <small>{{underworldT "Settings.GmRumorTruthWhisper.Hint"}}</small>
+        </span>
+        <input type="checkbox" {{#if gmSettings.gmRumorTruthWhisper}}checked{{/if}} data-world-setting="gmRumorTruthWhisper" data-setting-type="boolean"/>
+      </label>
+
+      <label class="uw-setting-row">
+        <span class="uw-setting-label">
+          <strong>{{underworldT "Settings.MaxHistoryEntries.Name"}}</strong>
+          <small>{{underworldT "Settings.MaxHistoryEntries.Hint"}}</small>
+        </span>
+        <input type="number" min="5" max="100" step="5" value="{{gmSettings.maxHistoryEntries}}" data-world-setting="maxHistoryEntries" data-setting-type="number"/>
+      </label>
+
+      <label class="uw-setting-row">
+        <span class="uw-setting-label">
+          <strong>{{underworldT "Settings.SheetStyle.Name"}}</strong>
+          <small>{{underworldT "Settings.SheetStyle.Hint"}}</small>
+        </span>
+        <select data-world-setting="sheetStyle" data-setting-type="string">
+          {{#bajerySelect gmSettings.sheetStyle}}
+          <option value="ledger">{{underworldT "Settings.SheetStyle.Ledger"}}</option>
+          <option value="classic">{{underworldT "Settings.SheetStyle.Classic"}}</option>
+          {{/bajerySelect}}
+        </select>
+      </label>
+    </section>
+
+    {{!-- 5. NADPISANIA TEJ KOMPANII I NARZĘDZIA MG --}}
+    <section class="uw-settings-card is-wide">
+      <h4><i class="fas fa-sliders-h"></i> {{underworldT "SettingsTab.GroupCompany"}}</h4>
+
+      <div class="uw-settings-company-grid">
+        <label class="uw-setting-row">
+          <span class="uw-setting-label">
+            <strong>{{underworldT "InfoTab.MaxRetinueOverride"}}</strong>
+            <small>{{underworldT "InfoTab.MaxRetinueOverrideHint"}}</small>
+          </span>
+          <input type="number" min="0" max="6" step="1" value="{{gmSettings.maxRetinueOverride}}" data-gang-setting="maxRetinueOverride"/>
+        </label>
+
+        <label class="uw-setting-row">
+          <span class="uw-setting-label">
+            <strong>{{underworldT "InfoTab.UpkeepOverride"}}</strong>
+          </span>
+          <select data-gang-setting="upkeepOverride">
+            {{#bajerySelect gmSettings.upkeepOverride}}
+            <option value="default">{{underworldT "InfoTab.UpkeepDefault"}}</option>
+            <option value="free">{{underworldT "InfoTab.UpkeepFree"}}</option>
+            {{/bajerySelect}}
+          </select>
+        </label>
+
+        <label class="uw-setting-row">
+          <span class="uw-setting-label">
+            <strong>{{underworldT "SettingsTab.CompanySupplyPrice"}}</strong>
+            <small>{{underworldT "SettingsTab.CompanySupplyPriceHint"}}</small>
+          </span>
+          <input type="number" min="1" max="240" step="1" value="{{gmSettings.supplyPricePennies}}" data-gang-setting="supplyPricePennies"/>
+        </label>
+      </div>
+
+      <div class="uw-gm-tools-row" style="margin-top: 8px;">
+        <button type="button" class="btn-theme-action uw-btn-sm" data-action="open-world-editor" title="{{underworldT 'DashTab.TablesHint'}}"><i class="fas fa-table-list"></i> {{underworldT "DashTab.Tables"}}</button>
+        <button type="button" class="btn-theme-action uw-btn-sm" data-action="reset-world-tables" title="{{underworldT 'Tables.ResetTitle'}}"><i class="fas fa-rotate"></i> {{underworldT "Tables.ResetBtn"}}</button>
+        <button type="button" class="btn-theme-action uw-btn-sm" data-action="reset-locks" title="{{underworldT 'Camp.ResetLocksTitle'}}"><i class="fas fa-unlock"></i> {{underworldT "Camp.ResetLocksBtn"}}</button>
+      </div>
+    </section>
+  </div>
+</div>
