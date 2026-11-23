@@ -1633,7 +1633,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       }
 
       return `
-        <button type="button" class="uw-retinue-pick-card" data-npc-id="${escapeHTML(npc.id)}">
+        <div class="uw-retinue-pick-card" role="button" tabindex="0" data-npc-id="${escapeHTML(npc.id)}">
           <div class="uw-retinue-pick-head">
             <img src="${escapeHTML(npc.img || "icons/svg/mystery-man.svg")}" alt="${escapeHTML(npc.name)}"/>
             <div class="uw-retinue-pick-id">
@@ -1655,12 +1655,12 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
               ${orderChips.length ? orderChips.join("") : `<em>${t("TacticsTab.NoSpecificOrders")}</em>`}
             </div>
           </div>
-        </button>`;
+        </div>`;
     }).join("");
 
     await DialogV2.wait({
       window: { title: t("TacticsTab.PickRetinueTitle", { current: activeRetinue.length, max: maxRetinue }) },
-      position: { width: 580 },
+      position: { width: 640 },
       classes: ["wfrp4e", "underworld-dialog-window"],
       content: dialogContent(`
         <div class="underworld-dialog uw-retinue-picker">
@@ -1670,22 +1670,29 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       `),
       render: (event, dlg) => {
         const root = dlg.element ?? dlg;
-        root.querySelectorAll(".uw-retinue-pick-card").forEach(btn => {
-          btn.addEventListener("click", async () => {
-            const npcId = btn.dataset.npcId;
-            const latestGang = GangData.getGang(this.actor);
-            const npc = latestGang.roster.find(n => n.id === npcId);
-            if (!npc || npc.status !== "ready" || (npc.assignment && npc.assignment !== "none")) return;
-            const curCount = latestGang.roster.filter(n => n.assignment === "retinue").length;
-            if (curCount >= UnderworldOperations.maxRetinue(latestGang)) {
-              ui.notifications.warn(t("Retinue.Full", { max: UnderworldOperations.maxRetinue(latestGang) }));
-              return;
+        const selectCard = async (card) => {
+          const npcId = card.dataset.npcId;
+          const latestGang = GangData.getGang(this.actor);
+          const npc = latestGang.roster.find(n => n.id === npcId);
+          if (!npc || npc.status !== "ready" || (npc.assignment && npc.assignment !== "none")) return;
+          const curCount = latestGang.roster.filter(n => n.assignment === "retinue").length;
+          if (curCount >= UnderworldOperations.maxRetinue(latestGang)) {
+            ui.notifications.warn(t("Retinue.Full", { max: UnderworldOperations.maxRetinue(latestGang) }));
+            return;
+          }
+          npc.assignment = "retinue";
+          await GangData.saveGang(this.actor, latestGang);
+          ui.notifications.info(t("Retinue.Joined", { name: npc.name }));
+          dlg.close();
+          this.render();
+        };
+        root.querySelectorAll(".uw-retinue-pick-card").forEach(card => {
+          card.addEventListener("click", () => selectCard(card));
+          card.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              selectCard(card);
             }
-            npc.assignment = "retinue";
-            await GangData.saveGang(this.actor, latestGang);
-            ui.notifications.info(t("Retinue.Joined", { name: npc.name }));
-            dlg.close();
-            this.render();
           });
         });
       },

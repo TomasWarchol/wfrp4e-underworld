@@ -244,9 +244,9 @@
         "Desc": "Łapówka dla strażnika, urzędnika lub celnika: uwolnić aresztowanego, uciszyć sprawę albo kupić przysługę."
       },
       "theman": {
-        "Name": "Siatka „Człowieka”",
-        "Reward": "gryps do syndykatu (bez testu)",
-        "Desc": "Zaszyfrowany gryps do lokalnej komórki syndykatu."
+        "Name": "Siatka Patrona",
+        "Reward": "gryps do patrona (bez testu)",
+        "Desc": "Zaszyfrowany gryps do lokalnej komórki sieci kontaktów patrona."
       },
       "distract": {
         "Name": "Dywersja i Zadyma",
@@ -1700,7 +1700,7 @@
       "trip": {
         "Name": "Podcięcie z Nóg",
         "Desc": "Gwałtowne szarpnięcie lub uderzenie pod kolano wytrąca przeciwnika z równowagi.",
-        "Effect": "Przeciwnik musi zdać test Zwinności lub natychmiast otrzymuje Stan Powalony (Prone)."
+        "Effect": "Przeciwnik musi zdać test Zwinności lub natychmiast otrzymuje Stan Powalony."
       },
       "bullrush": {
         "Name": "Taran i Przełom",
@@ -1720,7 +1720,7 @@
       "kidneystrike": {
         "Name": "Cios w Nerkę",
         "Desc": "Błyskawiczny cios wymierzony w odsłonięty bok w chwili, gdy uwaga rywala ucieka.",
-        "Effect": "Przeciwnik musi zdać test Zwinności (trudność rośnie z rangą wykonawcy) lub otrzymuje Stan Krwawienie (Bleeding) oraz traci 1 punkt Przewagi!"
+        "Effect": "Przeciwnik musi zdać test Zwinności (trudność rośnie z rangą wykonawcy) lub otrzymuje Stan Krwawienie oraz traci 1 punkt Przewagi!"
       },
       "cover": {
         "Name": "Ostrzał Nękający",
@@ -1745,7 +1745,7 @@
       "sand": {
         "Name": "Piasek w Oczy",
         "Desc": "Garść pyłu lub popiołu ciśnięta prosto w oczy odbiera przeciwnikowi orientację.",
-        "Effect": "Przeciwnik musi zdać test Zwinności (trudność rośnie z rangą wykonawcy) lub otrzymuje Stan Oślepiony (Blinded)."
+        "Effect": "Przeciwnik musi zdać test Zwinności (trudność rośnie z rangą wykonawcy) lub otrzymuje Stan Oślepiony."
       },
       "resupply": {
         "Name": "Bojowe Zaopatrzenie",
@@ -1760,12 +1760,12 @@
       "draught": {
         "Name": "Gorzka Nalewka Bojowa",
         "Desc": "Mocny łyk pobudzającej mikstury ze spiżarni polowej stawia wyczerpanego kompana na nogi.",
-        "Effect": "Herszt lub wskazany sojusznik usuwa 1 Stan Zmęczony (Fatigued) albo ignoruje go do końca następnej rundy."
+        "Effect": "Herszt lub wskazany sojusznik usuwa 1 Stan Zmęczony albo ignoruje go do końca następnej rundy."
       },
       "rally": {
         "Name": "Okrzyk Bojowy",
         "Desc": "Pewny, donośny rozkaz przywraca dyscyplinę w szeregach i łamie zawahanie.",
-        "Effect": "Usuwa ze wskazanego sojusznika Stan Złamany (Broken). Przy teście Dowodzenia Herszt zyskuje Przewagę równą SL (1–3)."
+        "Effect": "Usuwa ze wskazanego sojusznika Stan Złamany. Przy teście Dowodzenia Herszt zyskuje Przewagę równą SL (1–3)."
       },
       "coordinate": {
         "Name": "Koordynacja Szyku",
@@ -2078,8 +2078,8 @@
     },
     "Settings": {
       "Cut": {
-        "Name": "Procent Doli dla Człowieka",
-        "Hint": "Jaki procent zysku brutto z operacji odbiera syndykat Człowieka (domyślnie 25%)."
+        "Name": "Procent doli dla patrona",
+        "Hint": "Jaki procent zysku brutto z operacji pobiera patron (domyślnie 25%)."
       },
       "Cycle": {
         "Name": "Rytm szajki",
@@ -2370,7 +2370,7 @@
       "TheMan": {
         "Courier": "Uliczny Kurier",
         "Role": "Łącznik",
-        "Note": "Zaszyfrowany gryps przekazano do lokalnej komórki syndykatu „Człowieka”. Odpowiedź nadejdzie drogą konspiracyjną."
+        "Note": "Zaszyfrowany gryps przekazano do lokalnej komórki sieci kontaktów patrona. Odpowiedź nadejdzie drogą konspiracyjną."
       },
       "Diversion": {
         "Success": "{name} wywołuje zamieszanie (bójka w szynku, fałszywy alarm, zrzucone beczki). Straż jest zaabsorbowana; drużyna może wykorzystać okazję.",
@@ -3290,13 +3290,13 @@
             "Desc": "Chorąży podnosi sztandar, a kompania odpowiada okrzykiem, który zagłusza wroga."
           },
           "draught": {
-            "Effect": "Kapitan lub wskazany sojusznik usuwa 1 Stan Zmęczony (Fatigued) albo ignoruje go do końca następnej rundy.",
+            "Effect": "Kapitan lub wskazany sojusznik usuwa 1 Stan Zmęczony albo ignoruje go do końca następnej rundy.",
             "Name": "Gorzałka Cyrulika",
             "Desc": "Łyk mocnej gorzałki z manierki cyrulika stawia na nogi."
           },
           "rally": {
             "Desc": "Kapitan ryczy rozkaz, motywując kompanów i budząc strach u przeciwników.",
-            "Effect": "Usuwa ze wskazanego sojusznika Stan Złamany (Broken). Przy teście Dowodzenia Kapitan zyskuje Przewagę równą SL (1–3)."
+            "Effect": "Usuwa ze wskazanego sojusznika Stan Złamany. Przy teście Dowodzenia Kapitan zyskuje Przewagę równą SL (1–3)."
           },
           "coordinate": {
             "Effect": "Kapitan i do trzech sojuszników w promieniu 6 metrów mogą wykonać darmowy ruch o połowę Szybkości; wychodząc ze zwarcia nie muszą zdawać testu."
@@ -4520,13 +4520,13 @@
             "Desc": "Fałszerz zaczyna głośną awanturę o papiery i nikt nie wie, kto tu rządzi."
           },
           "draught": {
-            "Effect": "Szyper lub wskazany sojusznik usuwa 1 Stan Zmęczony (Fatigued) albo ignoruje go do końca następnej rundy.",
+            "Effect": "Szyper lub wskazany sojusznik usuwa 1 Stan Zmęczony albo ignoruje go do końca następnej rundy.",
             "Name": "Łyk z Beczki",
             "Desc": "Szafarz otwiera beczułkę przemycanej brandy."
           },
           "rally": {
             "Desc": "Szyper ryczy rozkaz, motywując kompanów i budząc strach u przeciwników.",
-            "Effect": "Usuwa ze wskazanego sojusznika Stan Złamany (Broken). Przy teście Dowodzenia Szyper zyskuje Przewagę równą SL (1–3)."
+            "Effect": "Usuwa ze wskazanego sojusznika Stan Złamany. Przy teście Dowodzenia Szyper zyskuje Przewagę równą SL (1–3)."
           },
           "coordinate": {
             "Effect": "Szyper i do trzech sojuszników w promieniu 6 metrów mogą wykonać darmowy ruch o połowę Szybkości; wychodząc ze zwarcia nie muszą zdawać testu."
@@ -5196,11 +5196,11 @@
             "Desc": "Podsłuchiwacz wykrzykuje sekret przeciwnika tak, by wszyscy usłyszeli."
           },
           "draught": {
-            "Effect": "Mistrz szpiegów lub wskazany sojusznik usuwa 1 Stan Zmęczony (Fatigued) albo ignoruje go do końca następnej rundy."
+            "Effect": "Mistrz szpiegów lub wskazany sojusznik usuwa 1 Stan Zmęczony albo ignoruje go do końca następnej rundy."
           },
           "rally": {
             "Desc": "Mistrz szpiegów ryczy rozkaz, motywując kompanów i budząc strach u przeciwników.",
-            "Effect": "Usuwa ze wskazanego sojusznika Stan Złamany (Broken). Przy teście Dowodzenia Mistrz szpiegów zyskuje Przewagę równą SL (1–3)."
+            "Effect": "Usuwa ze wskazanego sojusznika Stan Złamany. Przy teście Dowodzenia Mistrz szpiegów zyskuje Przewagę równą SL (1–3)."
           },
           "coordinate": {
             "Effect": "Mistrz szpiegów i do trzech sojuszników w promieniu 6 metrów mogą wykonać darmowy ruch o połowę Szybkości; wychodząc ze zwarcia nie muszą zdawać testu."
@@ -5895,13 +5895,13 @@
             "Desc": "Mówca zaczyna litanię w zapomnianym języku i wrogowi drżą ręce."
           },
           "draught": {
-            "Effect": "Arcykapłan lub wskazany sojusznik usuwa 1 Stan Zmęczony (Fatigued) albo ignoruje go do końca następnej rundy.",
+            "Effect": "Arcykapłan lub wskazany sojusznik usuwa 1 Stan Zmęczony albo ignoruje go do końca następnej rundy.",
             "Name": "Święty Napój",
             "Desc": "Gorzki napój z kielicha bractwa przywraca siły."
           },
           "rally": {
             "Desc": "Arcykapłan ryczy rozkaz, motywując kompanów i budząc strach u przeciwników.",
-            "Effect": "Usuwa ze wskazanego sojusznika Stan Złamany (Broken). Przy teście Dowodzenia Arcykapłan zyskuje Przewagę równą SL (1–3)."
+            "Effect": "Usuwa ze wskazanego sojusznika Stan Złamany. Przy teście Dowodzenia Arcykapłan zyskuje Przewagę równą SL (1–3)."
           },
           "coordinate": {
             "Effect": "Arcykapłan i do trzech sojuszników w promieniu 6 metrów mogą wykonać darmowy ruch o połowę Szybkości; wychodząc ze zwarcia nie muszą zdawać testu."

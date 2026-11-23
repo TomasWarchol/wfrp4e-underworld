@@ -244,9 +244,9 @@
         "Desc": "A bribe for a guard, clerk or toll officer: free a prisoner, hush things up or buy a favour."
       },
       "theman": {
-        "Name": "The Man's Network",
-        "Reward": "a message to the syndicate (no test)",
-        "Desc": "A coded message to the local cell of the syndicate."
+        "Name": "Patron's Network",
+        "Reward": "message to the patron (no test)",
+        "Desc": "A coded message to the local cell of the patron's network."
       },
       "distract": {
         "Name": "Diversion and Brawl",
@@ -2078,8 +2078,8 @@
     },
     "Settings": {
       "Cut": {
-        "Name": "The Man's cut (%)",
-        "Hint": "What percentage of the gross profit from jobs goes to The Man's syndicate (default 25%)."
+        "Name": "Patron's cut (%)",
+        "Hint": "What percentage of gross profit from jobs goes to the patron (default 25%)."
       },
       "Cycle": {
         "Name": "Crew rhythm",
@@ -2370,7 +2370,7 @@
       "TheMan": {
         "Courier": "Street Courier",
         "Role": "Go-between",
-        "Note": "A coded message was passed to the local cell of The Man's syndicate. The answer will come through secret channels."
+        "Note": "A coded message was passed to the local cell of the patron's network. The answer will come through secret channels."
       },
       "Diversion": {
         "Success": "{name} causes a commotion (a tavern brawl, a false alarm, tipped-over barrels). The watch is busy; the party can seize the moment.",

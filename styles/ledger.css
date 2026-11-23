@@ -417,7 +417,25 @@
 .underworld-app.uw-ledger .uw-l-slot.is-filled img { width: 44px; height: 44px; object-fit: cover; border: 2px solid var(--l-gold); border-radius: 50%; }
 .underworld-app.uw-ledger .uw-l-slot-name { font-family: var(--l-name); font-size: 0.82rem; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .underworld-app.uw-ledger .uw-l-slot-role { font-size: 0.68rem; color: var(--l-gold-pale); }
-:is(html, #uw) .underworld-app.uw-ledger .uw-l-slot-out { position: absolute; top: 2px; right: 2px; color: var(--l-gold-pale); }
+:is(html, #uw) .underworld-app.uw-ledger button.uw-plain.uw-l-slot-out {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 20px;
+  height: 20px;
+  min-height: 0;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  line-height: 1;
+  font-size: 0.78rem;
+  color: var(--l-gold-pale);
+  opacity: 0.85;
+}
+:is(html, #uw) .underworld-app.uw-ledger button.uw-plain.uw-l-slot-out:hover {
+  color: #fff;
+  opacity: 1;
+}
 
 :is(html, #uw) .underworld-app.uw-ledger .uw-l-board { margin: 0; border: none; background: none; }
 :is(html, #uw) .underworld-app.uw-ledger .uw-l-board .category-header {
@@ -640,6 +658,7 @@
 .underworld-app.uw-ledger .uw-l-orders { display: flex; flex-direction: column; gap: 10px; }
 :is(html, #uw) .underworld-app.uw-ledger .uw-l-orders-head h3 small { margin-left: auto; font-family: var(--l-name); color: var(--l-ink-soft); }
 .underworld-app.uw-ledger .uw-l-slots.is-compact .uw-l-slot { min-height: 0; grid-template-columns: 34px minmax(0, 1fr); justify-items: start; text-align: left; padding: 4px 6px; }
+.underworld-app.uw-ledger .uw-l-slots.is-compact .uw-l-slot.is-filled { padding-right: 24px; }
 .underworld-app.uw-ledger .uw-l-slots.is-compact .uw-l-slot img { grid-row: span 2; width: 32px; height: 32px; }
 .underworld-app.uw-ledger .uw-l-slots.is-compact .uw-l-slot.is-empty { display: flex; align-items: center; gap: 6px; min-height: 46px; }
 .underworld-app.uw-ledger .uw-l-slots.is-compact .uw-l-slot.is-empty .uw-icon { font-size: 1.1rem; }

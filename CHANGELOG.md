@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.12.4
+- **New Patron's Network action**: send a coded message to the local cell of the patron's network (no test); the answer comes through secret channels. The Patron's cut hint now states the default of 25%.
+- Retinue picker dialog is wider, its cards are keyboard accessible (Enter and Space), and the remove button on retinue slots in the Ledger is sized and centred properly.
+
 ## 1.12.3
 - **GM Settings tab** (GM only): one place on the company sheet to set the mechanics, limits and per-company overrides (timing, operations, camp, upkeep, orders and more), with a button to reset them.
 - **Personality quirks** for crew members (28 in English and Polish), and a rewritten description for every combat order.
