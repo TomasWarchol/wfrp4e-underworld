@@ -7,7 +7,7 @@
 import { UnderworldRollTables } from "./roll-tables.mjs";
 import { MISSIONS, TERRAINS, TERRAIN_RUMORS, TERRAIN_EVENTS } from "./world-data.mjs";
 import { t, contentList, textConfig, withText } from "./i18n.mjs";
-import { DEFAULT_PROFILE, PROFILE_ROLES, convertRole, profileOf } from "./company-profiles.mjs";
+import { DEFAULT_PROFILE, PROFILES, PROFILE_ROLES, convertRole, profileOf } from "./company-profiles.mjs";
 
 /** Teren szajki (miasto, gdy nieustawiony). */
 const terrainOf = gang => (TERRAINS[gang?.terrain] ? gang.terrain : "city");
@@ -34,6 +34,7 @@ export class UnderworldTables {
   // WYNIKI ZASTRASZANIA (Zastraszanie / Wymuszenie)
   // ────────────────────────────────────────────
   static get INTIMIDATION_RESULTS() { return contentList("Content.IntimidationResults"); }
+  static get INTIMIDATION_FAIL_RESULTS() { return contentList("Content.IntimidationFailResults"); }
 
   // ────────────────────────────────────────────
   // TYPY SFAŁSZOWANYCH DOKUMENTÓW (Fałszowanie)
@@ -44,6 +45,7 @@ export class UnderworldTables {
   // KOMPLIKACJE PRZEMYTU (Przemyt)
   // ────────────────────────────────────────────
   static get SMUGGLE_COMPLICATIONS() { return contentList("Content.SmuggleComplications"); }
+  static get SMUGGLE_FAIL_RESULTS() { return contentList("Content.SmuggleFailResults"); }
 
   // ────────────────────────────────────────────
   // ZDARZENIA LOSOWE NOCNEGO POSTOJU
@@ -166,15 +168,15 @@ export class UnderworldTables {
         displayed: false
       };
     }
-    const text = item.text || item.title || "";
+    const text = item.text || item.Text || item.title || "";
     const slug = this._slugify(text);
     return {
       id: item.id || `rumor-${index + 1}-${slug}`,
       text: text.trim(),
-      source: item.source || null,
-      location: item.location || t("Rumor.DefaultLocation"),
-      category: item.category || t("Rumor.DefaultCategory"),
-      truth: item.truth || null,
+      source: item.source ?? item.Source ?? null,
+      location: item.location || item.Location || t("Rumor.DefaultLocation"),
+      category: item.category || item.Category || t("Rumor.DefaultCategory"),
+      truth: item.truth ?? item.Truth ?? null,
       displayed: item.displayed === true || item.shown === true || item.wyswietlona === true
     };
   }
@@ -190,7 +192,8 @@ export class UnderworldTables {
         text: item.trim(),
         moraleDelta: 0,
         suppliesFound: 0,
-        coinsFoundSS: 0
+        coinsFoundSS: 0,
+        notorietyDelta: 0
       };
     }
     const title = item.title || t("CampEvent.DefaultTitle");
@@ -201,16 +204,24 @@ export class UnderworldTables {
       text: text.trim(),
       moraleDelta: item.morale !== undefined ? Number(item.morale) : (item.moraleDelta !== undefined ? Number(item.moraleDelta) : 0),
       suppliesFound: item.supplies !== undefined ? Number(item.supplies) : (item.suppliesFound !== undefined ? Number(item.suppliesFound) : 0),
-      coinsFoundSS: item.coinsSS !== undefined ? Number(item.coinsSS) : (item.coinsFoundSS !== undefined ? Number(item.coinsFoundSS) : 0)
+      coinsFoundSS: item.coinsSS !== undefined ? Number(item.coinsSS) : (item.coinsFoundSS !== undefined ? Number(item.coinsFoundSS) : 0),
+      notorietyDelta: item.notoriety !== undefined ? Number(item.notoriety) : (item.notorietyDelta !== undefined ? Number(item.notorietyDelta) : 0)
     };
+    if (item.prepToken) event.prepToken = String(item.prepToken);
     // Rozszerzenia: zdarzenie dla roli (okText/ok = rozwiązanie), hak na następną noc (next) i wpis tylko-następnik (only)
     if (item.role && this.ROLES_CONFIG[item.role]) {
       event.role = item.role;
       event.okText = String(item.okText || "").trim();
       const ok = item.ok || {};
-      event.ok = { moraleDelta: Number(ok.morale ?? ok.moraleDelta) || 0, suppliesFound: Number(ok.supplies ?? ok.suppliesFound) || 0, coinsFoundSS: Number(ok.coinsSS ?? ok.coinsFoundSS) || 0 };
+      event.ok = {
+        moraleDelta: Number(ok.morale ?? ok.moraleDelta) || 0,
+        suppliesFound: Number(ok.supplies ?? ok.suppliesFound) || 0,
+        coinsFoundSS: Number(ok.coinsSS ?? ok.coinsFoundSS) || 0,
+        notorietyDelta: Number(ok.notoriety ?? ok.notorietyDelta) || 0,
+        ...(ok.prepToken ? { prepToken: String(ok.prepToken) } : {})
+      };
     }
-    if (Array.isArray(item.types)) event.types = item.types;
+    if (Array.isArray(item.types) && item.types.length) event.types = item.types.map(String);
     // Zdarzenie typu ograniczone do terenów (np. piwnica w mieście, barka na rzece)
     if (Array.isArray(item.terrains) && item.terrains.length) event.terrains = item.terrains;
     if (item.next) event.next = String(item.next);
@@ -273,16 +284,19 @@ export class UnderworldTables {
   }
 
   /**
-   * Warstwa terenu. Szajka i typy z tabelami świata dostają wszystkie zdarzenia terenu, pozostałe typy
-   * tylko wspólne: bez motywów przestępczych i bez zdarzeń ról, które z nazwy mówią o rolach Szajki.
+   * Warstwa terenu. Każdy profil dostaje wydarzenia bez ograniczenia `types` albo z własnym identyfikatorem na liście `types`.
+   * Dzięki temu inne profile korzystają również ze wspólnych zdarzeń ról mapowanych przez PROFILE_ROLES.actsAs.
    */
   static async terrainPool(gang, terrain) {
+    const profile = profileOf(gang);
     const loaded = await this.loadTerrainEvents(terrain);
-    if (profileOf(gang).worldTables) {
-      if (loaded.length) return loaded;
-      return terrain === "city" ? this.getCampEvents(gang) : (TERRAIN_EVENTS[terrain] || []).map((e, i) => this.normalizeEvent(e, i));
+    if (profile.worldTables) {
+      const base = loaded.length
+        ? loaded
+        : (terrain === "city" ? this.getCampEvents(gang) : (TERRAIN_EVENTS[terrain] || []).map((e, i) => this.normalizeEvent(e, i)));
+      return base.filter(e => !e.types?.length || e.types.includes(profile.id));
     }
-    return loaded.filter(e => !e.types && !e.role);
+    return loaded.filter(e => !e.types?.length || e.types.includes(profile.id));
   }
 
   /** Wszystkie zdarzenia, które kompania może spotkać w terenie: warstwa terenu i tabela typu. */
@@ -292,8 +306,10 @@ export class UnderworldTables {
     return [...await this.terrainPool(gang, terrain), ...own];
   }
 
-  static getRandomSource() {
-    return this.RUMOR_SOURCES[Math.floor(Math.random() * this.RUMOR_SOURCES.length)];
+  static getRandomSource(terrain = "city") {
+    const list = contentList(`Content.TerrainRumorSources.${terrain}`);
+    const pool = list.length ? list : this.RUMOR_SOURCES;
+    return pool[Math.floor(Math.random() * pool.length)];
   }
 
   static getDisplayedRumorIds() {
@@ -340,6 +356,30 @@ export class UnderworldTables {
   static async drawRumor(gang, options = {}) {
     // Tabele RollTable (świat / kompendium) mają pierwszeństwo; stare listy z Edytora Świata są tylko zapasem
     const terrain = terrainOf(gang);
+    if (options.tavern && terrain === "city") {
+      const gossipList = this.TAVERN_GOSSIP || [];
+      if (gossipList.length) {
+        const tavernRumors = gossipList.map((text, i) => ({
+          id: `tavern-gossip-${i + 1}`,
+          text: String(text).trim(),
+          source: this.getRandomSource("city"),
+          location: t("Rumor.DefaultLocation"),
+          category: t("Badges.tavern"),
+          truth: null
+        }));
+        let displayedIds = this.getDisplayedRumorIds();
+        let available = tavernRumors.filter(r => !displayedIds.includes(r.id));
+        if (available.length === 0) {
+          displayedIds = displayedIds.filter(id => !String(id).startsWith("tavern-gossip-"));
+          available = [...tavernRumors];
+        }
+        const picked = available[Math.floor(Math.random() * available.length)];
+        displayedIds.push(picked.id);
+        await this.setDisplayedRumorIds(displayedIds);
+        return { ...picked };
+      }
+    }
+
     if (!options.category) {
       const fromTable = await UnderworldRollTables.draw("rumors", terrain);
       if (fromTable) return fromTable;
@@ -373,7 +413,7 @@ export class UnderworldTables {
     await this.setDisplayedRumorIds(displayedIds);
 
     if (!selected.source) {
-      selected.source = this.getRandomSource();
+      selected.source = this.getRandomSource(terrain);
     }
     return selected;
   }
@@ -401,12 +441,22 @@ export class UnderworldTables {
     return this._random(this.INTIMIDATION_RESULTS);
   }
 
+  static getRandomIntimidationFailResult() {
+    const list = this.INTIMIDATION_FAIL_RESULTS;
+    return list.length ? this._random(list) : this.getRandomIntimidationResult();
+  }
+
   static getRandomForgeDocument() {
     return this._random(this.FORGE_DOCUMENTS);
   }
 
   static getRandomSmuggleComplication() {
     return this._random(this.SMUGGLE_COMPLICATIONS);
+  }
+
+  static getRandomSmuggleFailResult() {
+    const list = this.SMUGGLE_FAIL_RESULTS;
+    return list.length ? this._random(list) : this.getRandomSmuggleComplication();
   }
 
   static getRandomCampEvent(gang) {
@@ -421,28 +471,36 @@ export class UnderworldTables {
    */
   static async drawCampEvent(gang) {
     const terrain = terrainOf(gang);
+    const profile = profileOf(gang);
     let event = null;
     const hook = gang?.eventHook;
-    if (hook?.id && (!hook.terrain || hook.terrain === terrain)) {
-      if (profileOf(gang).worldTables) event = await UnderworldRollTables.findEvent(terrain, hook.id);
-      else {
-        const found = (await this.eventPool(gang, terrain)).find(e => e.id === hook.id);
-        event = found ? { ...found } : null;
+    if (hook?.id) {
+      if (!hook.terrain || hook.terrain === terrain) {
+        const hookProfile = hook.profile && PROFILES[hook.profile] ? hook.profile : profile.id;
+        if (profile.worldTables || hook.profile) event = await UnderworldRollTables.findEvent(terrain, hook.id, hookProfile);
+        if (!event) {
+          const found = (await this.eventPool(gang, terrain)).find(e => e.id === hook.id);
+          event = found ? { ...found } : null;
+        }
+        if (event) {
+          event.followUp = true;
+          this._remember(gang, event.id);
+        }
+        gang.eventHook = null;
+      } else {
+        const stale = (Number(hook.stale) || 0) + 1;
+        if (stale >= 2) gang.eventHook = null;
+        else gang.eventHook = { ...hook, stale };
       }
-      if (event) {
-        event.followUp = true;
-        this._remember(gang, event.id);
-      }
-      gang.eventHook = null;
     }
     if (!event) event = await this._drawRandomCampEvent(gang, terrain);
-    if (event?.next && gang) gang.eventHook = { id: event.next, terrain, from: event.id };
+    if (event?.next && gang) gang.eventHook = { id: event.next, terrain, from: event.id, profile: event._fromProfile || null, stale: 0 };
     return event;
   }
 
   /**
    * Dwie warstwy: tabela typu (część nocy według ownShare profilu) i zdarzenia terenu.
-   * Szajka i Banici biorą zdarzenia terenu z tabel świata, pozostałe typy ze wspólnej puli bez powtórzeń.
+   * Szajka i Banici biorą zdarzenia terenu z tabel świata (z pamięcią seenEvents), pozostałe typy ze wspólnej puli bez powtórzeń.
    */
   static async _drawRandomCampEvent(gang, terrain) {
     const profile = profileOf(gang);
@@ -451,8 +509,11 @@ export class UnderworldTables {
       if (own) return own;
     }
     if (profile.worldTables) {
-      const fromTable = await UnderworldRollTables.draw("events", terrain);
-      if (fromTable) return fromTable;
+      const fromTable = await UnderworldRollTables.draw("events", terrain, { exclude: this._seen(gang), companyType: profile.id });
+      if (fromTable) {
+        this._remember(gang, fromTable.id);
+        return fromTable;
+      }
     }
     return this._drawUnseen(gang, (await this.terrainPool(gang, terrain)).filter(e => !e.only));
   }
@@ -463,10 +524,12 @@ export class UnderworldTables {
     const fromTable = await UnderworldRollTables.drawProfileEvent(profile.id, terrain, this._seen(gang));
     if (fromTable) {
       this._remember(gang, fromTable.id);
-      return fromTable;
+      return { ...fromTable, _fromProfile: profile.id };
     }
     const own = this.forTerrain(await this.loadProfileEvents(profile.id), terrain).filter(e => !e.only);
-    return own.length ? this._drawUnseen(gang, own) : null;
+    if (!own.length) return null;
+    const picked = this._drawUnseen(gang, own);
+    return picked ? { ...picked, _fromProfile: profile.id } : null;
   }
 
   /** Id zdarzeń, które kompania już widziała (pamięć jest osobna dla każdej kompanii). */
@@ -503,7 +566,7 @@ export class UnderworldTables {
       icon: "fas fa-user",
       badgeClass: "rank-rookie",
       costOperationalXP: 0,
-      slBonus: 0,
+      testBonus: 0,
     },
     {
       level: 1,
@@ -511,7 +574,7 @@ export class UnderworldTables {
       icon: "fas fa-star",
       badgeClass: "rank-seasoned",
       costOperationalXP: 120,
-      slBonus: 1,
+      testBonus: 5,
     },
     {
       level: 2,
@@ -519,7 +582,7 @@ export class UnderworldTables {
       icon: "fas fa-award",
       badgeClass: "rank-veteran",
       costOperationalXP: 300,
-      slBonus: 2,
+      testBonus: 10,
     },
     {
       level: 3,
@@ -527,7 +590,7 @@ export class UnderworldTables {
       icon: "fas fa-crown",
       badgeClass: "rank-lieutenant",
       costOperationalXP: 650,
-      slBonus: 3,
+      testBonus: 15,
       unique: true,
     }
   ].map(rank => withText(rank, `Ranks.${rank.id}`, { name: "Name", desc: "Desc" }));
@@ -606,7 +669,7 @@ export class UnderworldTables {
       icon: "fas fa-toolbox",
       badgeClass: "role-scavenger",
       tactics: ["resupply", "retreat", "draught"],
-      bonusAssignments: ["procure", "fence", "tend_wounded", "farm_theft", "mine_raid"]
+      bonusAssignments: ["procure", "fence", "farm_theft", "mine_raid"]
     },
     smuggler: {
       id: "smuggler",
@@ -1186,9 +1249,9 @@ export class UnderworldTables {
     if (/cień|nożownik|nożownicz|złodziej|włamywacz|skrytobój|zabójca|shadow|knife|thief|burglar|assassin|cutthroat/i.test(r)) return "shadow";
     if (/strzelec|kłusownik|kusznik|łucznik|snajper|marksman|poacher|archer|crossbow|sniper|shooter/i.test(r)) return "marksman";
     if (/prowokator|szuler|kuglarz|karciarz|żebrak|aktor|krzykacz|provocateur|sharper|juggler|gambler|beggar|actor/i.test(r)) return "provocateur";
-    if (/szarlatan|znachor|guślarz|wiedźm|charlatan|quack|hedge|mountebank/i.test(r)) return "charlatan";
+    if (/szarlatan|znachor|felczer|zielar|medyk|doktor|guślarz|wiedźm|charlatan|quack|hedge|mountebank|surgeon|herb|medic|doctor/i.test(r)) return "charlatan";
     if (/paser|fałszerz|pośrednik|handlarz|kupiec|lichwiarz|\bfence\b|forger|broker|trader|merchant|moneylender/i.test(r)) return "fixer";
-    if (/szabrownik|felczer|zielar|medyk|zbieracz|doktor|scavenger|surgeon|herb|medic|forager|doctor/i.test(r)) return "scavenger";
+    if (/szabrownik|zbieracz|scavenger|forager/i.test(r)) return "scavenger";
     if (/woźnic|woznica|przemyt|furman|woźba|przewoźnik|stangret|smuggler|carter|driver|coachman|teamster/i.test(r)) return "smuggler";
     if (/podpal|sabota|pirotech|saper|ogniomistrz|arson|saboteur|pyro|sapper|demolition/i.test(r)) return "saboteur";
     if (/zwiad|tropiciel|leśnik|przewodnik|łowca|scout|tracker|ranger|guide|woodsman|huntsman/i.test(r)) return "scout";

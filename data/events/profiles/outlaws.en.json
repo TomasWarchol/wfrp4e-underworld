@@ -1,18 +1,560 @@
 [
-  {"id": "outl-001", "title": "A Boar in Camp", "text": "A wild boar charges into camp at night. After a brief scuffle there is meat for a week.", "morale": 1, "supplies": 2, "coinsSS": 0},
-  {"id": "outl-002", "title": "The Forester's Trail", "text": "In the morning someone finds fresh boot prints around the camp. The count's forester knows where you are.", "morale": -1, "supplies": 0, "coinsSS": 0},
-  {"id": "outl-003", "title": "A Song about the Band", "text": "At the crossroads inn they already sing about your band. The men are proud, though it is dangerous.", "morale": 1, "supplies": 0, "coinsSS": 0},
-  {"id": "outl-004", "title": "Downpour in the Woods", "text": "Rain pours all night. The shelters leak and the fire goes out every hour.", "morale": -1, "supplies": 0, "coinsSS": 0},
-  {"id": "outl-005", "title": "Peasants with a Basket", "text": "Peasants from a nearby village bring bread and cheese. They remember who chased off the tax collector.", "morale": 1, "supplies": 2, "coinsSS": 0},
-  {"id": "outl-006", "title": "A Quarrel over the Share", "text": "Two outlaws quarrel over a purse from the last robbery. Knives come out before the chief separates them.", "morale": -1, "supplies": 0, "coinsSS": 0},
-  {"id": "outl-007", "title": "A Fugitive from Town", "text": "A prisoner on the run walks into camp. For a place by the fire they give everything they have.", "morale": 0, "supplies": 0, "coinsSS": 4},
-  {"id": "outl-008", "title": "Wolves in the Night", "text": "The howling of wolves does not stop until dawn. Nobody sleeps and the watch changes every hour.", "morale": -1, "supplies": 0, "coinsSS": 0},
-  {"id": "outl-009", "title": "Treasure under a Root", "text": "Digging a refuse pit, someone hits a rotten box with a few coins in it.", "morale": 1, "supplies": 0, "coinsSS": 6},
-  {"id": "outl-010", "title": "A Wanted Poster at the Inn", "text": "A scout brings back a torn wanted poster. The description of the chief is surprisingly accurate.", "morale": -1, "supplies": 0, "coinsSS": 0},
-  {"id": "outl-011", "title": "Taal's Feast", "text": "The band keeps Taal's feast under an old oak. Tonight the forest seems friendly.", "morale": 1, "supplies": -1, "coinsSS": 0},
-  {"id": "outl-012", "title": "A Lost Satchel", "text": "Someone left a satchel of food by the stream. By morning only fox tracks remain.", "morale": 0, "supplies": -2, "coinsSS": 0},
-  {"id": "outl-r01", "title": "A Stranger in the Woods", "text": "The sentry hears someone circling the camp.", "morale": -1, "supplies": 0, "coinsSS": 0, "role": "scout", "okText": "The scout comes up behind the intruder. It is only a lost shepherd, but they know where the hunters are camped.", "ok": {"morale": 1, "supplies": 0, "coinsSS": 0}},
-  {"id": "outl-r02", "title": "A Stag at the Clearing", "text": "At dawn a stag steps into the clearing. One shot and there will be meat.", "morale": 0, "supplies": 0, "coinsSS": 0, "role": "marksman", "okText": "The poacher does not miss. The band eats its fill for the first time in a week.", "ok": {"morale": 1, "supplies": 3, "coinsSS": 0}},
-  {"id": "outl-r03", "title": "Marsh Fever", "text": "After a night by the marsh several men shake with chills and fever.", "morale": -2, "supplies": 0, "coinsSS": 0, "role": "charlatan", "okText": "The hedge healer brews willow bark and the fever breaks by noon.", "ok": {"morale": 1, "supplies": 0, "coinsSS": 0}},
-  {"id": "outl-r04", "title": "A Drunken Giant", "text": "A drunken woodcutter staggers into camp looking for a fight.", "morale": -1, "supplies": 0, "coinsSS": 0, "role": "bodyguard", "okText": "The bruiser hoists him over a shoulder and carries him back to the woods. Everyone laughs.", "ok": {"morale": 1, "supplies": 0, "coinsSS": 0}}
+  {
+    "id": "outl-001",
+    "title": "A Boar in Camp",
+    "text": "A wild boar charges into camp at night. After a brief scuffle there is meat for a week.",
+    "morale": 1,
+    "supplies": 2,
+    "coinsSS": 0,
+    "terrains": [
+      "forest",
+      "village"
+    ]
+  },
+  {
+    "id": "outl-002",
+    "title": "The Forester's Trail",
+    "text": "In the morning someone finds fresh boot prints around the camp. The count's forester knows where you are.",
+    "morale": -1,
+    "supplies": 0,
+    "coinsSS": 0,
+    "terrains": [
+      "forest",
+      "mountains"
+    ],
+    "notoriety": 1
+  },
+  {
+    "id": "outl-003",
+    "title": "A Song about the Band",
+    "text": "At the crossroads inn they already sing about your band. The men are proud, though it is dangerous.",
+    "morale": 1,
+    "supplies": 0,
+    "coinsSS": 0,
+    "terrains": [
+      "city",
+      "village"
+    ],
+    "notoriety": 1
+  },
+  {
+    "id": "outl-004",
+    "title": "Downpour in the Woods",
+    "text": "Rain pours all night. The shelters leak and the fire goes out every hour.",
+    "morale": -1,
+    "supplies": 0,
+    "coinsSS": 0,
+    "terrains": [
+      "forest",
+      "mountains"
+    ]
+  },
+  {
+    "id": "outl-005",
+    "title": "Peasants with a Basket",
+    "text": "Peasants from a nearby village bring bread and cheese. They remember who chased off the tax collector.",
+    "morale": 1,
+    "supplies": 2,
+    "coinsSS": 0,
+    "terrains": [
+      "village",
+      "forest"
+    ]
+  },
+  {
+    "id": "outl-006",
+    "title": "A Quarrel over the Share",
+    "text": "Two outlaws quarrel over a purse from the last robbery. Knives come out before the chief separates them.",
+    "morale": -1,
+    "supplies": 0,
+    "coinsSS": 0
+  },
+  {
+    "id": "outl-007",
+    "title": "A Fugitive from Town",
+    "text": "A prisoner on the run walks into camp. For a place by the fire they give everything they have.",
+    "morale": 0,
+    "supplies": 0,
+    "coinsSS": 4,
+    "terrains": [
+      "city",
+      "village",
+      "forest"
+    ]
+  },
+  {
+    "id": "outl-008",
+    "title": "Wolves in the Night",
+    "text": "The howling of wolves does not stop until dawn. Nobody sleeps and the watch changes every hour.",
+    "morale": -1,
+    "supplies": 0,
+    "coinsSS": 0,
+    "terrains": [
+      "forest",
+      "mountains"
+    ]
+  },
+  {
+    "id": "outl-009",
+    "title": "Treasure under a Root",
+    "text": "Digging a refuse pit, someone hits a rotten box with a few coins in it.",
+    "morale": 1,
+    "supplies": 0,
+    "coinsSS": 6,
+    "terrains": [
+      "forest",
+      "mountains"
+    ]
+  },
+  {
+    "id": "outl-010",
+    "title": "A Wanted Poster at the Inn",
+    "text": "A scout brings back a torn wanted poster. The description of the chief is surprisingly accurate.",
+    "morale": -1,
+    "supplies": 0,
+    "coinsSS": 0,
+    "terrains": [
+      "city",
+      "village"
+    ],
+    "notoriety": 1
+  },
+  {
+    "id": "outl-011",
+    "title": "Taal's Feast",
+    "text": "The band keeps Taal's feast under an old oak. Tonight the forest seems friendly.",
+    "morale": 1,
+    "supplies": -1,
+    "coinsSS": 0,
+    "terrains": [
+      "forest"
+    ]
+  },
+  {
+    "id": "outl-012",
+    "title": "A Lost Satchel",
+    "text": "Someone left a satchel of food by the stream. By morning only fox tracks remain.",
+    "morale": 0,
+    "supplies": -2,
+    "coinsSS": 0,
+    "terrains": [
+      "village",
+      "forest",
+      "mountains"
+    ]
+  },
+  {
+    "id": "outl-r01",
+    "title": "A Stranger in the Woods",
+    "text": "The sentry hears someone circling the camp.",
+    "morale": -1,
+    "supplies": 0,
+    "coinsSS": 0,
+    "role": "scout",
+    "okText": "The scout comes up behind the intruder. It is only a lost shepherd, but they know where the hunters are camped.",
+    "ok": {
+      "morale": 1,
+      "supplies": 0,
+      "coinsSS": 0,
+      "prepToken": "recon"
+    },
+    "terrains": [
+      "forest",
+      "mountains"
+    ]
+  },
+  {
+    "id": "outl-r02",
+    "title": "A Stag at the Clearing",
+    "text": "At dawn a stag steps into the clearing. One shot and there will be meat.",
+    "morale": 0,
+    "supplies": 0,
+    "coinsSS": 0,
+    "role": "marksman",
+    "okText": "The poacher does not miss. The band eats its fill for the first time in a week.",
+    "ok": {
+      "morale": 1,
+      "supplies": 3,
+      "coinsSS": 0
+    },
+    "terrains": [
+      "forest",
+      "village"
+    ]
+  },
+  {
+    "id": "outl-r03",
+    "title": "Marsh Fever",
+    "text": "After a night by the marsh several men shake with chills and fever.",
+    "morale": -2,
+    "supplies": 0,
+    "coinsSS": 0,
+    "role": "charlatan",
+    "okText": "The hedge healer brews willow bark and the fever breaks by noon.",
+    "ok": {
+      "morale": 1,
+      "supplies": 0,
+      "coinsSS": 0
+    },
+    "terrains": [
+      "forest",
+      "village"
+    ]
+  },
+  {
+    "id": "outl-r04",
+    "title": "A Drunken Giant",
+    "text": "A drunken woodcutter staggers into camp looking for a fight.",
+    "morale": -1,
+    "supplies": 0,
+    "coinsSS": 0,
+    "role": "bodyguard",
+    "okText": "The bruiser hoists him over a shoulder and carries him back to the woods. Everyone laughs.",
+    "ok": {
+      "morale": 1,
+      "supplies": 0,
+      "coinsSS": 0
+    },
+    "terrains": [
+      "village",
+      "forest"
+    ]
+  },
+  {
+    "id": "outl-013",
+    "title": "Shelter in an Old Adit",
+    "text": "You find a dry, forgotten mine adit in the cliff face. For the first time in days everyone sleeps out of the wind.",
+    "morale": 1,
+    "supplies": 0,
+    "coinsSS": 0,
+    "terrains": [
+      "mountains"
+    ]
+  },
+  {
+    "id": "outl-014",
+    "title": "Pass Guard Toll",
+    "text": "Toll guards look the other way at outlaws camping in the hollow in return for a quiet \"tribute\".",
+    "morale": 0,
+    "supplies": 0,
+    "coinsSS": -4,
+    "notoriety": -1,
+    "terrains": [
+      "mountains"
+    ]
+  },
+  {
+    "id": "outl-015",
+    "title": "Dwarf Muleteer",
+    "text": "A lone dwarf with a laden mule shares your fire and pays silver for an escort down the ridge.",
+    "morale": 1,
+    "supplies": 0,
+    "coinsSS": 5,
+    "terrains": [
+      "mountains"
+    ]
+  },
+  {
+    "id": "outl-016",
+    "title": "Rockslide on the Trail",
+    "text": "A night rockslide blocks the path behind camp. You have to take a detour over slick scree.",
+    "morale": -1,
+    "supplies": -1,
+    "coinsSS": 0,
+    "terrains": [
+      "mountains"
+    ]
+  },
+  {
+    "id": "outl-017",
+    "title": "Friendly Innkeeper",
+    "text": "A landlord on the outskirts hides the band in his barn and slips you word of a wealthy merchant.",
+    "morale": 1,
+    "supplies": 1,
+    "coinsSS": 0,
+    "prepToken": "lead",
+    "terrains": [
+      "city",
+      "village"
+    ]
+  },
+  {
+    "id": "outl-018",
+    "title": "Lost Nobleman’s Hunt",
+    "text": "A young lordling gets lost with his hounds in the thicket. He hands over his signet ring and purse to be led back to the road.",
+    "morale": 1,
+    "supplies": 0,
+    "coinsSS": 6,
+    "terrains": [
+      "forest",
+      "village"
+    ]
+  },
+  {
+    "id": "outl-019",
+    "title": "Treacherous Valley Fog",
+    "text": "White fog hangs in the valley until noon. Two riders lose the path and return empty-handed at dusk.",
+    "morale": -1,
+    "supplies": 0,
+    "coinsSS": 0,
+    "terrains": [
+      "forest",
+      "mountains"
+    ]
+  },
+  {
+    "id": "outl-020",
+    "title": "Charcoal Burner’s Cart",
+    "text": "An old charcoal burner yields a cart of salted pork and groats without a fight, valuing his skin more than cargo.",
+    "morale": 0,
+    "supplies": 3,
+    "coinsSS": 0,
+    "terrains": [
+      "forest",
+      "village"
+    ]
+  },
+  {
+    "id": "outl-021",
+    "title": "Thief in Camp",
+    "text": "One of the newer recruits sneaks into the shared larder at night. He gets the lash, but ill feeling lingers.",
+    "morale": -1,
+    "supplies": -1,
+    "coinsSS": 0
+  },
+  {
+    "id": "outl-022",
+    "title": "Smokeless Fire",
+    "text": "Old hands teach the young ones to burn dry alder beneath an overhang. The night passes warm and unseen.",
+    "morale": 1,
+    "supplies": 0,
+    "coinsSS": 0
+  },
+  {
+    "id": "outl-023",
+    "title": "Road Warden Patrol",
+    "text": "Cloaked Road Wardens ride past the thicket twenty paces from camp. Someone may have caught a glint of steel.",
+    "morale": -1,
+    "supplies": 0,
+    "coinsSS": 0,
+    "notoriety": 1,
+    "terrains": [
+      "village",
+      "forest",
+      "mountains"
+    ]
+  },
+  {
+    "id": "outl-024",
+    "title": "Cache of an Old Band",
+    "text": "Under the collapsed roof of a forester’s hut you uncover a buried stash of silver and hardtack.",
+    "morale": 1,
+    "supplies": 1,
+    "coinsSS": 5,
+    "terrains": [
+      "forest",
+      "mountains"
+    ]
+  },
+  {
+    "id": "outl-025",
+    "title": "Recognised at the Gate",
+    "text": "At the town gate one of the watchmen stared a little too long at your follower’s scars.",
+    "morale": -1,
+    "supplies": 0,
+    "coinsSS": 0,
+    "notoriety": 1,
+    "terrains": [
+      "city",
+      "village"
+    ]
+  },
+  {
+    "id": "outl-r05",
+    "title": "Snooper by the Highroad",
+    "text": "Someone at the roadside tavern is asking pointed questions about tracks leading into the woods.",
+    "morale": -1,
+    "supplies": 0,
+    "coinsSS": 0,
+    "notoriety": 1,
+    "role": "shadow",
+    "okText": "The shadow corners the informer in the dark, lifts his purse and sends him down a false trail.",
+    "ok": {
+      "morale": 1,
+      "supplies": 0,
+      "coinsSS": 3,
+      "notoriety": 0,
+      "prepToken": "recon"
+    },
+    "terrains": [
+      "city",
+      "village",
+      "forest"
+    ]
+  },
+  {
+    "id": "outl-r06",
+    "title": "Brawl at the Crossroads",
+    "text": "Several followers started a drunken brawl at the inn and the watch will be here any minute.",
+    "morale": -1,
+    "supplies": 0,
+    "coinsSS": -2,
+    "notoriety": 1,
+    "role": "provocateur",
+    "okText": "The provocateur turns the row into a fairground jest, buys the watchman a pint and picks up news of a convoy.",
+    "ok": {
+      "morale": 1,
+      "supplies": 0,
+      "coinsSS": 0,
+      "notoriety": 0,
+      "prepToken": "lead"
+    },
+    "terrains": [
+      "city",
+      "village"
+    ]
+  },
+  {
+    "id": "outl-r07",
+    "title": "Burned Merchant Wagon",
+    "text": "On a side trail lies a wagon stripped yesterday by another band.",
+    "morale": 0,
+    "supplies": 0,
+    "coinsSS": 0,
+    "role": "scavenger",
+    "okText": "The scavenger pries up the false floorboards and pulls out intact hardtack and a hidden coin pouch.",
+    "ok": {
+      "morale": 1,
+      "supplies": 3,
+      "coinsSS": 4
+    }
+  },
+  {
+    "id": "outl-r08",
+    "title": "Crossing the Swollen Ford",
+    "text": "The river has risen and cut off your escape route with the loot.",
+    "morale": -1,
+    "supplies": -1,
+    "coinsSS": 0,
+    "role": "smuggler",
+    "okText": "The smuggler remembers an old sunken stone ford and leads men and pack animals across without losing a strap.",
+    "ok": {
+      "morale": 1,
+      "supplies": 1,
+      "coinsSS": 0
+    },
+    "terrains": [
+      "village",
+      "forest",
+      "mountains"
+    ]
+  },
+  {
+    "id": "outl-r09",
+    "title": "Posse on Your Heels",
+    "text": "An armed posse has camped half a mile away and plans to ride down your trail at dawn.",
+    "morale": -1,
+    "supplies": 0,
+    "coinsSS": 0,
+    "notoriety": 1,
+    "role": "saboteur",
+    "okText": "The saboteur saws through their supply wagon axles in the night and scatters their horses. The pursuit stalls.",
+    "ok": {
+      "morale": 1,
+      "supplies": 0,
+      "coinsSS": 0,
+      "notoriety": -1
+    },
+    "terrains": [
+      "village",
+      "forest",
+      "mountains"
+    ]
+  },
+  {
+    "id": "outl-r10",
+    "title": "Greedy Village Fence",
+    "text": "A local middleman threatens to tip off the bailiff unless you slash your asking price.",
+    "morale": -1,
+    "supplies": 0,
+    "coinsSS": -3,
+    "role": "fixer",
+    "okText": "The fixer reminds him of forged receipts bearing his mark; the trader pays in full and adds a sack of grain.",
+    "ok": {
+      "morale": 1,
+      "supplies": 1,
+      "coinsSS": 4
+    }
+  },
+  {
+    "id": "outl-r11",
+    "title": "Challenger in Camp",
+    "text": "A runaway cutthroat tries to win over the younger outlaws and seize command.",
+    "morale": -2,
+    "supplies": 0,
+    "coinsSS": 0,
+    "role": "duelist",
+    "okText": "The duelist disarms him in three cuts before the whole band. Order snaps back into place.",
+    "ok": {
+      "morale": 1,
+      "supplies": 0,
+      "coinsSS": 2
+    }
+  },
+  {
+    "id": "outl-ch01a",
+    "title": "Wounded Peddler by the Road",
+    "text": "A beaten peddler lies in the ditch beside a smashed cart. The band debates whether to patch him up or take his boots.",
+    "morale": 0,
+    "supplies": 1,
+    "coinsSS": 0,
+    "terrains": [
+      "village",
+      "forest"
+    ],
+    "next": "outl-ch01b"
+  },
+  {
+    "id": "outl-ch01b",
+    "title": "The Peddler’s Gratitude",
+    "text": "The grateful peddler steals back by night with a crate of spirits and the exact route of tomorrow’s tax coach.",
+    "morale": 1,
+    "supplies": 1,
+    "coinsSS": 5,
+    "prepToken": "lead",
+    "terrains": [
+      "village",
+      "forest"
+    ],
+    "only": true
+  },
+  {
+    "id": "outl-ch02a",
+    "title": "Road Warden Hounds",
+    "text": "Hounds bay along the ravine in the dark. Trackers have picked up your trail from the last hold-up.",
+    "morale": -1,
+    "supplies": 0,
+    "coinsSS": 0,
+    "notoriety": 1,
+    "terrains": [
+      "forest",
+      "mountains"
+    ],
+    "next": "outl-ch02b"
+  },
+  {
+    "id": "outl-ch02b",
+    "title": "False Trail in the Gorge",
+    "text": "Pepper-baited snares and a false scent send the posse crashing into the wrong gorge, leaving spare packs behind.",
+    "morale": 1,
+    "supplies": 2,
+    "coinsSS": 0,
+    "notoriety": -1,
+    "prepToken": "recon",
+    "terrains": [
+      "forest",
+      "mountains"
+    ],
+    "only": true
+  }
 ]

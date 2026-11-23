@@ -2,11 +2,13 @@
 <div class="dashboard-container uw-l-camp">
   <div class="uw-l-camp-grid">
     <section class="uw-l-panel uw-l-night">
-      <h3>{{uwIcon "ui-night"}} {{underworldT "DashTab.CampStandard"}}</h3>
-      <div class="uw-l-shelters" role="radiogroup">
+      <h3>{{uwIcon "ui-night"}} {{underworldT "DashTab.CampStandard"}}
+        {{#unless isGM}}<span class="uw-l-lock" title="{{underworldT 'InfoTab.SetByGMHint'}}"><i class="fas fa-lock"></i> {{underworldT "InfoTab.SetByGM"}}</span>{{/unless}}
+      </h3>
+      <div class="uw-l-shelters {{#unless isGM}}is-readonly{{/unless}}" role="radiogroup">
         {{#each ledgerView.shelters}}
         <label class="uw-l-shelter {{#if this.checked}}is-chosen{{/if}} {{#if this.bad}}is-bad{{/if}} {{#if this.good}}is-good{{/if}}">
-          <input type="radio" name="camp.type" value="{{this.id}}" {{#if this.checked}}checked{{/if}}/>
+          <input type="radio" name="camp.type" value="{{this.id}}" {{#if this.checked}}checked{{/if}} {{#unless ../isGM}}disabled{{/unless}}/>
           {{uwIcon this.glyph "uw-l-shelter-art"}}
           <span class="uw-l-shelter-label">{{this.label}}</span>
           {{#if this.effect}}<span class="uw-l-shelter-effect">{{this.effect}}</span>{{/if}}

@@ -2,18 +2,21 @@
   <div class="dashboard-grid">
     <!-- LEWA KOLUMNA: OBOZOWISKO, MORALE I ZAPASY -->
     <div class="stats-panel flexcol">
-      <!-- Standard Kwater -->
+      <!-- Standard Kwater (decyzja MG, bez kosztu monet) -->
       <div class="dashboard-card camp-standard-card">
-        <div class="card-mini-header">
-          <i class="fas fa-campground text-gold"></i>
-          <strong>{{underworldT "DashTab.CampStandard"}}</strong>
+        <div class="card-mini-header" style="justify-content: space-between;">
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <i class="fas fa-campground text-gold"></i>
+            <strong>{{underworldT "DashTab.CampStandard"}}</strong>
+          </div>
+          {{#unless isGM}}<span class="badge-locked" title="{{underworldT 'InfoTab.SetByGMHint'}}"><i class="fas fa-lock"></i> {{underworldT "InfoTab.SetByGM"}}</span>{{/unless}}
         </div>
         <div class="card-mini-body">
-          <select name="camp.type" class="styled-camp-select">
+          <select name="camp.type" class="styled-camp-select" {{#unless isGM}}disabled{{/unless}}>
             {{#bajerySelect gang.camp.type}}
             <option value="makeshift">⛺ {{underworldT "DashTab.Makeshift" place=terrain.makeshiftLabel}} ({{#if terrain.coldMakeshift}}-2{{else}}-1{{/if}} {{underworldT "DashTab.MoralePerCamp"}})</option>
             <option value="basic">🏕️ {{underworldT "DashTab.Basic"}}</option>
-            <option value="comfortable">🏰 {{underworldT "DashTab.Comfortable" place=terrain.comfortableLabel cost=comfortableCostLabel}}</option>
+            <option value="comfortable">🏰 {{underworldT "DashTab.Comfortable" place=terrain.comfortableLabel}}</option>
             {{/bajerySelect}}
           </select>
           <div class="card-caption">{{{underworldT "DashTab.CampCaption" terrain=terrain.name}}}</div>

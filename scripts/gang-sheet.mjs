@@ -123,6 +123,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
 
     // Na pierwszym otwarciu pokazuj zwartą listę; szczegóły można rozwinąć pojedynczo.
     if (!this._collapsedNpcIds) this._collapsedNpcIds = new Set(gang.roster.map(npc => npc.id));
+    const isWeekly = UnderworldOperations.isWeekly();
 
     // Aktualizacja danych aktorów
     for (const npc of gang.roster) {
@@ -153,6 +154,8 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
         && (npc.status !== "busy" || npc.assignment === "guard");
       npc.canToggleRetinue = npc.assignment === "retinue"
         || (npc.status === "ready" && (!npc.assignment || npc.assignment === "none"));
+      npc.upkeepSS = UnderworldOperations.memberUpkeepSS(npc, gang, isWeekly);
+      npc.upkeepLabel = `${npc.upkeepSS} ${t("Units.SS")}`;
       Object.assign(npc, this._memberGlyphs(npc));
 
       if (npc.actorId) {
@@ -254,6 +257,21 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     data.campRestGMOnly = UnderworldOperations.campRestGMOnly();
     data.canTriggerCampRest = data.isGM || (!data.isWeekly && !data.campRestGMOnly);
     data.profileHasPatronCut = !!profileOf(gang).patronCut;
+    const rawCut = String(gang.patron?.cut ?? "").trim();
+    const cutMatch = rawCut.match(/(\d+)/);
+    const currentCutVal = gang.patron?.noCut
+      ? "0%"
+      : (cutMatch ? `${Math.min(100, Math.max(0, Math.round(Number(cutMatch[1]) / 5) * 5))}%` : "");
+    const worldDefaultCut = Number(UnderworldOperations._setting("cutPercentage", 25)) || 25;
+    data.patronCutValue = currentCutVal;
+    data.patronCutDisplay = currentCutVal || `${worldDefaultCut}%`;
+    data.patronCutOptions = [
+      { value: "", label: `${t("InfoTab.UpkeepDefault")} (${worldDefaultCut}%)`, selected: currentCutVal === "" },
+      ...Array.from({ length: 21 }, (_, i) => {
+        const val = `${i * 5}%`;
+        return { value: val, label: val, selected: currentCutVal === val };
+      })
+    ];
     data.plannedCount = gang.roster.filter(n => n.plannedMission).length;
     data.requiredRations = UnderworldOperations.requiredRations(gang, data.isWeekly);
     data.upkeepSS = UnderworldOperations.calculateUpkeepSS(gang, data.isWeekly);
@@ -264,7 +282,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     const terrain = TERRAINS[terrainId];
     data.terrain = { id: terrainId, ...terrain };
     data.terrainOptions = TERRAIN_IDS.map(id => ({ id, name: TERRAINS[id].name, icon: TERRAINS[id].icon, glyph: `ui-terrain_${id}`, active: id === terrainId }));
-    data.comfortableCostLabel = terrain.comfortableCostSS ? `${terrain.comfortableCostSS} ${t("Units.SS")}` : t("Free");
+    data.comfortableCostLabel = t("Free");
 
     data.activeTokens = Object.entries(TOKENS).flatMap(([id, cfg]) => {
       const token = UnderworldOperations.getToken(gang, id);
@@ -411,14 +429,14 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     };
   }
 
-  /** Kafle schronienia na noc (Księga): zamiast listy wyboru trzy ilustrowane opcje z efektem. */
+  /** Kafle schronienia na noc (Księga): trzy ilustrowane opcje z efektem (decyzja MG, bez kosztu monet). */
   _shelterTiles(gang, data) {
     const terrain = data.terrain || {};
     const current = gang.camp?.type || "basic";
     return [
       { id: "makeshift", glyph: "ui-shelter_makeshift", label: t("DashTab.Makeshift", { place: terrain.makeshiftLabel }), effect: t("DashTab.MakeshiftEffect", { morale: terrain.coldMakeshift ? -2 : -1 }), bad: true },
       { id: "basic", glyph: "ui-shelter_basic", label: t("DashTab.Basic"), effect: "" },
-      { id: "comfortable", glyph: "ui-shelter_comfortable", label: t("DashTab.Comfortable", { place: terrain.comfortableLabel, cost: data.comfortableCostLabel }), effect: "", good: true }
+      { id: "comfortable", glyph: "ui-shelter_comfortable", label: t("DashTab.Comfortable", { place: terrain.comfortableLabel }), effect: "", good: true }
     ].map(tile => ({ ...tile, checked: tile.id === current }));
   }
 
@@ -557,9 +575,20 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     this.element.addEventListener("dragover", (ev) => {
       ev.preventDefault();
       if (ev.dataTransfer) ev.dataTransfer.dropEffect = "copy";
+      const card = ev.target?.closest?.(".npc-card-box, .npc-card");
+      for (const el of this.element.querySelectorAll(".uw-drop-target")) {
+        if (el !== card) el.classList.remove("uw-drop-target");
+      }
+      if (card && game.user?.isGM) card.classList.add("uw-drop-target");
+    });
+    this.element.addEventListener("dragleave", (ev) => {
+      if (!this.element.contains(ev.relatedTarget)) {
+        for (const el of this.element.querySelectorAll(".uw-drop-target")) el.classList.remove("uw-drop-target");
+      }
     });
     this.element.addEventListener("drop", async (ev) => {
       ev.preventDefault();
+      for (const el of this.element.querySelectorAll(".uw-drop-target")) el.classList.remove("uw-drop-target");
       await this._handleActorDrop(ev);
     });
   }
@@ -916,7 +945,8 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
         if (!item) return;
         const confirmed = await DialogV2.confirm({
           window: { title: t("Loot.DiscardTitle") },
-          content: `<p>${t("Loot.DiscardText", { name: escapeHTML(item.name), value: item.valueSS })}</p>`
+          classes: ["wfrp4e", "underworld-dialog-window"],
+          content: dialogContent(`<div class="underworld-dialog"><p>${t("Loot.DiscardText", { name: escapeHTML(item.name), value: item.valueSS })}</p></div>`)
         });
         if (!confirmed) return;
         await UnderworldOperations.discardLoot(this.actor, item.id);
@@ -984,7 +1014,8 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
         if (!npc) return;
         const confirmed = await DialogV2.confirm({
           window: { title: t("Roster.DeleteTitle") },
-          content: `<p>${t("Roster.DeleteText", { name: Handlebars.escapeExpression(npc.name) })}</p><p>${t("Roster.DeleteNote")}</p>`
+          classes: ["wfrp4e", "underworld-dialog-window"],
+          content: dialogContent(`<div class="underworld-dialog"><p>${t("Roster.DeleteText", { name: Handlebars.escapeExpression(npc.name) })}</p><p>${t("Roster.DeleteNote")}</p></div>`)
         });
         if (!confirmed) return;
         gang.roster = gang.roster.filter(n => n.id !== npcId);
@@ -1129,7 +1160,8 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
         if (!Array.isArray(gang.history) || index >= gang.history.length) return;
         const confirmed = await DialogV2.confirm({
           window: { title: t("History.DeleteTitle") },
-          content: `<p>${t("History.DeleteConfirm")}</p>`
+          classes: ["wfrp4e", "underworld-dialog-window"],
+          content: dialogContent(`<div class="underworld-dialog"><p>${t("History.DeleteConfirm")}</p></div>`)
         });
         if (!confirmed) return;
         gang.history.splice(index, 1);
@@ -1141,7 +1173,8 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
         if (!game.user.isGM) return;
         const confirmed = await DialogV2.confirm({
           window: { title: t("Camp.ResetLocksTitle") },
-          content: `<p>${t("Camp.ResetLocksConfirm")}</p>`
+          classes: ["wfrp4e", "underworld-dialog-window"],
+          content: dialogContent(`<div class="underworld-dialog"><p>${t("Camp.ResetLocksConfirm")}</p></div>`)
         });
         if (!confirmed) return;
         await UnderworldOperations.resetCycleLocks(this.actor);
@@ -1154,7 +1187,8 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
         const terrainId = UnderworldOperations.getTerrain(gang);
         const confirmed = await DialogV2.confirm({
           window: { title: t("Tables.ResetTitle") },
-          content: `<p>${t("Tables.ResetConfirm", { terrain: TERRAINS[terrainId]?.name ?? terrainId })}</p>`
+          classes: ["wfrp4e", "underworld-dialog-window"],
+          content: dialogContent(`<div class="underworld-dialog"><p>${t("Tables.ResetConfirm", { terrain: TERRAINS[terrainId]?.name ?? terrainId })}</p></div>`)
         });
         if (!confirmed) return;
         await UnderworldRollTables.regenerateTables(terrainId, gang.type);
@@ -1242,6 +1276,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     if (orderId === "meatshield") {
       await DialogV2.wait({
         window: { title: `Rozkaz: ${orderConfig.name}` },
+        classes: ["wfrp4e", "underworld-dialog-window"],
         content: dialogContent(`
           <div class="underworld-dialog" style="font-size: 0.9rem;">
             ${executorHtml}
@@ -1276,37 +1311,38 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
 
     await DialogV2.wait({
       window: { title: `${t("Orders.Flavor")}: ${orderConfig.name}` },
+      classes: ["wfrp4e", "underworld-dialog-window"],
       content: dialogContent(`
         <div class="underworld-dialog" style="font-size: 0.9rem;">
           ${executorHtml}
-          <p style="margin-bottom: 6px;"><em>${orderConfig.desc}</em></p>
-          <div style="background: rgba(255, 255, 255, 0.7); padding: 8px; border-radius: 4px; border: 1px solid #c9bca9; margin-bottom: 10px;">
-            <strong style="color: #5a3d28;"><i class="fas fa-gavel"></i> Efekt:</strong> ${orderConfig.effect}
+          <p style="margin-bottom: 6px; color: #3b2616;"><em>${orderConfig.desc}</em></p>
+          <div style="background: rgba(255, 255, 255, 0.78); color: #27231e; padding: 8px; border-radius: 4px; border: 1px solid #c9bca9; margin-bottom: 10px;">
+            <strong style="color: #5a3d28;"><i class="fas fa-gavel"></i> Efekt:</strong> <span style="color: #27231e;">${orderConfig.effect}</span>
             ${OrderEffects.isAutomated(orderId) ? `<div style="margin-top: 4px; font-size: 0.78rem; color: #1b5e20;"><i class="fas fa-crosshairs"></i> ${t("Orders.Dialog.TargetHint")}</div>` : ""}
           </div>
-          <div class="form-group" style="background: rgba(0,0,0,0.03); padding: 8px; border-radius: 4px; border: 1px dashed #8e735b;">
+          <div class="form-group" style="background: rgba(255, 255, 255, 0.45); color: #27231e; padding: 8px; border-radius: 4px; border: 1px dashed #8e735b;">
             <label style="font-weight: bold; display: block; margin-bottom: 6px; color: #3b2616;">${t("Orders.Dialog.ChooseMethod")}</label>
             <div style="display: flex; flex-direction: column; gap: 8px;">
-              <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+              <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; color: #27231e;">
                 <input type="radio" name="tactic_method" value="leadership" checked />
                 <div>
-                  <strong>🎲 ${t("Orders.Dialog.Leadership")}</strong>
+                  <strong style="color: #27231e;">🎲 ${t("Orders.Dialog.Leadership")}</strong>
                   <div style="font-size: 0.78rem; color: #554433;">${t("Orders.Dialog.LeadershipHint")}</div>
                 </div>
               </label>
 
-              ${cost > 0 ? `<label style="display: flex; align-items: center; gap: 8px; cursor: pointer; ${canSpendAdvantage ? '' : 'opacity: 0.45;'}">
+              ${cost > 0 ? `<label style="display: flex; align-items: center; gap: 8px; cursor: pointer; color: #27231e; ${canSpendAdvantage ? '' : 'opacity: 0.55;'}">
                 <input type="radio" name="tactic_method" value="advantage" ${canSpendAdvantage ? '' : 'disabled'} />
                 <div>
-                  <strong>⚡ ${t("Orders.Dialog.Advantage")}</strong>
+                  <strong style="color: #27231e;">⚡ ${t("Orders.Dialog.Advantage")}</strong>
                   <div style="font-size: 0.78rem; color: #554433;">${t("Orders.Dialog.AdvantageHint", { cost, current: curAdvantage })}</div>
                 </div>
               </label>` : ""}
 
-              ${showDirect ? `<label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+              ${showDirect ? `<label style="display: flex; align-items: center; gap: 8px; cursor: pointer; color: #27231e;">
                 <input type="radio" name="tactic_method" value="direct" />
                 <div>
-                  <strong>📢 ${t("Orders.Dialog.Direct")}</strong>
+                  <strong style="color: #27231e;">📢 ${t("Orders.Dialog.Direct")}</strong>
                   <div style="font-size: 0.78rem; color: #554433;">${t("Orders.Dialog.DirectHint")}</div>
                 </div>
               </label>` : ""}
@@ -1416,6 +1452,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     await DialogV2.wait({
       window: { title: `${t("Mission.Title")}: ${label}` },
       position: { width: mission.tiered || mission.fencePicker ? 520 : 440 },
+      classes: ["wfrp4e", "underworld-dialog-window"],
       content: dialogContent(`
         <div class="underworld-dialog uw-mission-dialog">
           <p class="uw-dialog-note">${escapeHTML(missionDesc(mission, terrainId))}</p>
@@ -1624,6 +1661,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
 
     await DialogV2.wait({
       window: { title: missionName(MISSIONS.tend_wounded, UnderworldOperations.getTerrain(GangData.getGang(this.actor))) },
+      classes: ["wfrp4e", "underworld-dialog-window"],
       content: dialogContent(`
         <div class="underworld-dialog" style="font-size: 0.9rem;">
           <div class="form-group">
@@ -1680,9 +1718,6 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     }
     const gang = GangData.getGang(this.actor);
     const terrain = TERRAINS[UnderworldOperations.getTerrain(gang)];
-    const comfortableCost = terrain.comfortableCostSS
-      ? (weekly ? t("Camp.CostPerWeek", { cost: terrain.comfortableCostSS * 3 }) : `${terrain.comfortableCostSS} ${t("Units.SS")}`)
-      : t("Free");
     const plannedCount = gang.roster.filter(n => n.plannedMission).length;
     const availableWatchmen = gang.roster.filter(n =>
       !["dead", "arrested"].includes(n.status)
@@ -1691,6 +1726,11 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     const requiredRations = UnderworldOperations.requiredRations(gang, weekly);
     const rationsOff = UnderworldOperations.rationsMode() === "off";
     const upkeepSS = UnderworldOperations.calculateUpkeepSS(gang, weekly);
+    const shelterSummaryLabel = gang.camp?.type === "makeshift"
+      ? `⛺ ${t("CampDialog.Makeshift", { place: terrain.makeshiftLabel, effect: t("DashTab.MakeshiftEffect", { morale: terrain.coldMakeshift ? -2 : -1 }) })}`
+      : gang.camp?.type === "comfortable"
+        ? `🛏️ ${t("CampDialog.Comfortable", { place: terrain.comfortableLabel })}`
+        : `🏕️ ${t("CampDialog.Basic")}`;
 
     let watchmenHtml = availableWatchmen.map(n => {
       const isChecked = n.assignment === "guard" ? "checked" : "";
@@ -1722,16 +1762,20 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
             <span>${t("CampDialog.AdvanceTime")}</span>
           </label>
         </div>` : ""}        
-        <!-- 1. MIEJSCE NOCLEGU -->
+        <!-- 1. MIEJSCE NOCLEGU (decyzja MG, bez kosztu monet) -->
         <div class="dialog-section" style="margin-bottom: 12px; border-bottom: 1px dashed #9e856f; padding-bottom: 10px;">
           <label style="font-weight: bold; display: block; margin-bottom: 5px; color: #3b2616; font-size: 0.92rem;">
             <i class="fas fa-campground"></i> ${t("CampDialog.Shelter")}
           </label>
+          ${isGM ? `
           <select id="rest-shelter" style="width: 100%; padding: 5px 8px; font-size: 0.88rem; border-radius: 4px; border: 1px solid #7c5e44;">
             <option value="makeshift" ${gang.camp.type === "makeshift" ? "selected" : ""}>⛺ ${t("CampDialog.Makeshift", { place: terrain.makeshiftLabel, effect: t("DashTab.MakeshiftEffect", { morale: terrain.coldMakeshift ? -2 : -1 }) })}</option>
             <option value="basic" ${gang.camp.type === "basic" ? "selected" : ""}>🏕️ ${t("CampDialog.Basic")}</option>
-            <option value="comfortable" ${gang.camp.type === "comfortable" ? "selected" : ""}>🛏️ ${t("CampDialog.Comfortable", { place: terrain.comfortableLabel, cost: comfortableCost })}</option>
-          </select>
+            <option value="comfortable" ${gang.camp.type === "comfortable" ? "selected" : ""}>🛏️ ${t("CampDialog.Comfortable", { place: terrain.comfortableLabel })}</option>
+          </select>` : `
+          <div style="background: rgba(0,0,0,0.03); border: 1px solid #c0b0a0; border-radius: 4px; padding: 6px 10px; font-size: 0.86rem; color: #3b2616;">
+            <strong>${shelterSummaryLabel}</strong> <small style="color: #775544;">(${t("InfoTab.SetByGM")})</small>
+          </div>`}
         </div>
 
         <!-- 2. WARTOWNICY -->
@@ -1840,54 +1884,102 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
 
   async _onSelectActorDialog(npcId) {
     if (!game.user.isGM) return;
-    const actors = game.actors.filter(a => a.id !== this.actor.id);
-    if (!actors.length) {
-      ui.notifications.warn(t("LinkDialog.NoActors"));
-      return;
-    }
+    const gang = GangData.getGang(this.actor);
+    const npc = gang.roster.find(n => n.id === npcId);
+    if (!npc) return;
 
-    const optionsHtml = actors
-      .sort((a, b) => a.name.localeCompare(b.name))
-      .map(a => `<option value="${a.id}">${a.name} [${a.type}]</option>`)
-      .join("");
+    const currentActor = npc.actorId ? game.actors.get(npc.actorId) : null;
+    const currentHtml = currentActor ? `
+      <div class="uw-actor-linked-preview">
+        <img src="${escapeHTML(currentActor.img || 'icons/svg/mystery-man.svg')}" alt="" />
+        <div class="uw-actor-linked-info">
+          <strong>${escapeHTML(currentActor.name)}</strong>
+          <span>${t("RosterTab.Linked")}</span>
+        </div>
+      </div>` : "";
+
+    const linkActor = async (selectedActor, dialog) => {
+      if (!selectedActor || selectedActor.id === this.actor.id) return false;
+      const freshGang = GangData.getGang(this.actor);
+      const targetNpc = freshGang.roster.find(n => n.id === npcId);
+      if (!targetNpc) return false;
+      targetNpc.actorId = selectedActor.id;
+      targetNpc.img = selectedActor.img || targetNpc.img || "icons/svg/mystery-man.svg";
+      if (!targetNpc.name || ["Nowy Podwładny", "New Follower", t("Roster.NewFollower")].includes(targetNpc.name)) {
+        targetNpc.name = selectedActor.name;
+      }
+      await GangData.saveGang(this.actor, freshGang);
+      ui.notifications.info(t("Roster.Linked", { actor: selectedActor.name, name: targetNpc.name }));
+      dialog?.close?.();
+      this.render();
+      return true;
+    };
 
     await DialogV2.wait({
-      window: { title: t("LinkDialog.Title") },
+      window: { title: `${t("LinkDialog.Title")}: ${npc.name}` },
+      position: { width: 440 },
+      modal: false,
+      classes: ["wfrp4e", "underworld-dialog-window"],
       content: dialogContent(`
-        <div class="underworld-dialog" style="margin-bottom: 10px;">
-          <p>${t("LinkDialog.Choose")}</p>
-          <div class="form-group" style="margin-top: 8px;">
-            <label style="font-weight: bold; margin-bottom: 4px; display: block;">${t("LinkDialog.Available")}</label>
-            <select id="actor-select" style="width: 100%; padding: 4px;">
-              ${optionsHtml}
-            </select>
+        <div class="underworld-dialog uw-link-actor-dialog">
+          ${currentHtml}
+          <div class="uw-actor-dropzone" data-npc-id="${escapeHTML(npcId)}">
+            <i class="fas fa-user-plus uw-actor-dropzone-icon"></i>
+            <div class="uw-actor-dropzone-title">${t("LinkDialog.DropTitle")}</div>
+            <div class="uw-actor-dropzone-hint">${t("LinkDialog.DropHint")}</div>
           </div>
         </div>
       `),
+      render: (event, dialog) => {
+        const root = dialog.element ?? dialog;
+        const zone = root?.querySelector?.(".uw-actor-dropzone");
+        if (!zone) return;
+        zone.addEventListener("dragover", (ev) => {
+          ev.preventDefault();
+          ev.stopPropagation();
+          if (ev.dataTransfer) ev.dataTransfer.dropEffect = "copy";
+          zone.classList.add("is-dragover");
+        });
+        zone.addEventListener("dragleave", (ev) => {
+          if (!zone.contains(ev.relatedTarget)) zone.classList.remove("is-dragover");
+        });
+        zone.addEventListener("drop", async (ev) => {
+          ev.preventDefault();
+          ev.stopPropagation();
+          zone.classList.remove("is-dragover");
+          let dropData = null;
+          try {
+            const raw = ev.dataTransfer ? ev.dataTransfer.getData("text/plain") : null;
+            dropData = JSON.parse(raw);
+          } catch (_) {
+            return;
+          }
+          if (!dropData || dropData.type !== "Actor") return;
+          let droppedActor = null;
+          if (dropData.uuid) droppedActor = await fromUuid(dropData.uuid);
+          else if (dropData.id) droppedActor = game.actors.get(dropData.id);
+          if (droppedActor?.documentName === "Token" && droppedActor.actor) droppedActor = droppedActor.actor;
+          if (!droppedActor) return;
+          await linkActor(droppedActor, dialog);
+        });
+      },
       buttons: [
-        {
-          action: "link",
-          icon: "fas fa-link",
-          label: t("LinkDialog.Link"),
-          default: true,
-          callback: async (event, button, dialog) => {
-            const selectedActorId = dialogValue(dialog, "#actor-select");
-            const selectedActor = game.actors.get(selectedActorId);
-            if (!selectedActor) return;
-
-            const gang = GangData.getGang(this.actor);
-            const npc = gang.roster.find(n => n.id === npcId);
-            if (npc) {
-              npc.actorId = selectedActor.id;
-              npc.img = selectedActor.img;
-              if (!npc.name || ["Nowy Podwładny", "New Follower", t("Roster.NewFollower")].includes(npc.name)) npc.name = selectedActor.name;
-              await GangData.saveGang(this.actor, gang);
-              ui.notifications.info(t("Roster.Linked", { actor: selectedActor.name, name: npc.name }));
+        ...(currentActor ? [{
+          action: "unlink",
+          icon: "fas fa-unlink",
+          label: t("RosterTab.Unlink"),
+          callback: async () => {
+            const freshGang = GangData.getGang(this.actor);
+            const targetNpc = freshGang.roster.find(n => n.id === npcId);
+            if (targetNpc) {
+              targetNpc.actorId = null;
+              await GangData.saveGang(this.actor, freshGang);
+              ui.notifications.info(t("Roster.Unlinked", { name: targetNpc.name }));
               this.render();
             }
           }
-        },
-        { action: "cancel", icon: "fas fa-times", label: "WFRP4E_COMPANION.Cancel" }
+        }] : []),
+        { action: "cancel", icon: "fas fa-times", label: t("Close") }
       ],
       rejectClose: false
     });
@@ -2270,8 +2362,8 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
               <button type="button" class="btn-add-xp btn-actor-action" data-amount="10" title="+10 ${oxp}" style="padding: 4px 8px;">
                 <i class="fas fa-plus"></i> +10
               </button>
-              <button type="button" class="btn-add-xp btn-actor-action" data-amount="25" title="+25 ${oxp}" style="padding: 4px 8px;">
-                <i class="fas fa-plus"></i> +25
+              <button type="button" class="btn-add-xp btn-actor-action" data-amount="15" title="+15 ${oxp}" style="padding: 4px 8px;">
+                <i class="fas fa-plus"></i> +15
               </button>
             </div>
           </div>
@@ -2786,6 +2878,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
 
     await DialogV2.wait({
       window: { title: t("Treasury.DepositTitle") },
+      classes: ["wfrp4e", "underworld-dialog-window"],
       content: dialogContent(depositHtml),
       buttons: [
         {
@@ -2843,6 +2936,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
 
     await DialogV2.wait({
       window: { title: t("Treasury.WithdrawTitle") },
+      classes: ["wfrp4e", "underworld-dialog-window"],
       content: dialogContent(withdrawHtml),
       buttons: [
         {
@@ -2917,6 +3011,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
 
     await DialogV2.wait({
       window: { title: t("SuppliesDialog.Title") },
+      classes: ["wfrp4e", "underworld-dialog-window"],
       content: dialogContent(suppliesHtml),
       buttons: [
         {
@@ -2960,6 +3055,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
 
     await DialogV2.wait({
       window: { title: t("PriceDialog.Title") },
+      classes: ["wfrp4e", "underworld-dialog-window"],
       content: dialogContent(priceHtml),
       buttons: [
         {
@@ -3031,6 +3127,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     await DialogV2.wait({
       window: { title: existing ? t("LootDialog.EditTitle") : t("LootDialog.AddTitle") },
       position: { width: 420 },
+      classes: ["wfrp4e", "underworld-dialog-window"],
       content: dialogContent(html),
       buttons: [
         {
@@ -3092,6 +3189,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     await DialogV2.wait({
       window: { title: t("TokensDialog.Title") },
       position: { width: 420 },
+      classes: ["wfrp4e", "underworld-dialog-window"],
       content: dialogContent(html),
       buttons: [
         {
@@ -3132,6 +3230,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     await DialogV2.wait({
       window: { title: t("RacketDialog.Title") },
       position: { width: 400 },
+      classes: ["wfrp4e", "underworld-dialog-window"],
       content: dialogContent(html),
       buttons: [
         {
@@ -3186,6 +3285,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     await DialogV2.wait({
       window: { title: t("History.AddTitle") },
       position: { width: 420 },
+      classes: ["wfrp4e", "underworld-dialog-window"],
       content: dialogContent(html),
       buttons: [
         {
@@ -3241,7 +3341,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       }
     }
 
-    // Zabezpieczenie skarbca, statystyk, patrona i ustawień per-kompania (Gracz NIE może ich ręcznie edytować)
+    // Zabezpieczenie skarbca, statystyk, patrona, kwater i ustawień per-kompania (Gracz NIE może ich ręcznie edytować)
     if (!game.user.isGM) {
       expanded.type = gang.type;
       expanded.treasury = gang.treasury;
@@ -3257,20 +3357,21 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       expanded.loot = gang.loot;
       expanded.history = gang.history;
       expanded.eventHook = gang.eventHook;
-      if (expanded.camp) {
-        const campType = ["makeshift", "basic", "comfortable"].includes(expanded.camp.type)
-          ? expanded.camp.type
-          : (gang.camp?.type || "basic");
-        expanded.camp = { ...(gang.camp || {}), type: campType };
-      }
+      expanded.camp = gang.camp;
     } else {
       if (expanded.treasury) {
         if (expanded.treasury.gc !== undefined) expanded.treasury.gc = Math.max(0, parseInt(expanded.treasury.gc, 10) || 0);
         if (expanded.treasury.ss !== undefined) expanded.treasury.ss = Math.max(0, parseInt(expanded.treasury.ss, 10) || 0);
         if (expanded.treasury.d !== undefined) expanded.treasury.d = Math.max(0, parseInt(expanded.treasury.d, 10) || 0);
       }
-      if (expanded.patron && "noCut" in expanded.patron) {
-        expanded.patron.noCut = Boolean(expanded.patron.noCut);
+      if (expanded.patron) {
+        if (expanded.patron.cut !== undefined) {
+          const cutStr = String(expanded.patron.cut ?? "").trim();
+          expanded.patron.cut = cutStr;
+          expanded.patron.noCut = cutStr === "0%";
+        } else if ("noCut" in expanded.patron) {
+          expanded.patron.noCut = Boolean(expanded.patron.noCut);
+        }
       }
       if (expanded.maxRetinueOverride !== undefined) {
         expanded.maxRetinueOverride = Math.max(0, Math.min(6, parseInt(expanded.maxRetinueOverride, 10) || 0));
@@ -3348,7 +3449,8 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     if (typeChanged && gang.roster.length) {
       const confirmed = await DialogV2.confirm({
         window: { title: t("InfoTab.TypeChangeTitle") },
-        content: `<p>${t("InfoTab.TypeChangeText", { count: gang.roster.length })}</p>`,
+        classes: ["wfrp4e", "underworld-dialog-window"],
+        content: dialogContent(`<div class="underworld-dialog"><p>${t("InfoTab.TypeChangeText", { count: gang.roster.length })}</p></div>`),
         rejectClose: false
       });
       if (!confirmed) {

@@ -1,0 +1,212 @@
+[
+  {
+    "id": "mid-kopalnie-01",
+    "text": "In Middenheim they say that in the deep mines beneath the Fauschlag, workers heard scratching and squeaking in the solid rock at night.",
+    "category": "mystery",
+    "location": "Middenheim",
+    "source": "Fauschlag Miner",
+    "truth": "true",
+    "displayed": false
+  },
+  {
+    "id": "mid-graf-02",
+    "text": "Graf Boris Todbringer appears in public less and less. In the palace corridors people whisper of deepening apathy and black melancholy.",
+    "category": "politics",
+    "location": "Middenheim",
+    "source": "Court Physician",
+    "truth": "half",
+    "displayed": false
+  },
+  {
+    "id": "alt-podatki-03",
+    "text": "Word has come from Altdorf of new war taxes imposed by the Chancellor. The nobles of Middenland openly speak of treason.",
+    "category": "politics",
+    "location": "Altdorf",
+    "source": "Toll Collector",
+    "truth": "true",
+    "displayed": false
+  },
+  {
+    "id": "car-kulty-04",
+    "text": "Cultists of the Purple Hand and the Yellow Crown are making contact with bands of deserters and outlaws in the woods around Carroburg.",
+    "category": "cults",
+    "location": "Carroburg",
+    "source": "Forest Fugitive",
+    "truth": "true",
+    "displayed": false
+  },
+  {
+    "id": "kem-reik-05",
+    "text": "River barge traffic on the Reik has stalled; toll collectors in Kemperbad demand a triple war tariff under threat of confiscation.",
+    "category": "trade",
+    "location": "Kemperbad",
+    "source": "Reik Raftsman",
+    "truth": "true",
+    "displayed": false
+  },
+  {
+    "id": "alt-tunele-06",
+    "text": "In the merchant alleys shady figures in long cloaks have been seen buying up old plans of dwarf tunnels and sewers beneath the city.",
+    "category": "mystery",
+    "location": "Altdorf",
+    "source": "Antiquarian",
+    "truth": "true",
+    "displayed": false
+  },
+  {
+    "id": "str-dezercja-07",
+    "text": "A patrol of Road Wardens outside Altdorf deserted with full kit and black-powder weapons after their captain vanished with the entire payroll.",
+    "category": "military",
+    "location": "Reikland",
+    "source": "Former Road Warden",
+    "truth": "true",
+    "displayed": false
+  },
+  {
+    "id": "nul-pies-08",
+    "text": "At 'The Leaping Hound' tavern someone is offering heavy gold rewards for word on mysterious deaths among physicians and scholars.",
+    "category": "contracts",
+    "location": "Nuln",
+    "source": "Innkeeper",
+    "truth": "true",
+    "displayed": false
+  },
+  {
+    "id": "alt-niebiosa-09",
+    "text": "Wizards of the Celestial College in the capital warn of an ominous alignment of stars — foretelling bloody civil strife in the Reikland.",
+    "category": "magic",
+    "location": "Altdorf",
+    "source": "Astrologer's Apprentice",
+    "truth": "true",
+    "displayed": false
+  },
+  {
+    "id": "del-krasnoludy-10",
+    "text": "Smugglers along the River Delb report that dwarf holds in the Middle Mountains are shutting their gates against refugees from the lowlands.",
+    "category": "dwarfs",
+    "location": "Middle Mountains",
+    "source": "Iron Merchant",
+    "truth": "true",
+    "displayed": false
+  },
+  {
+    "id": "tra-wojsko-11",
+    "text": "On the road from Middenheim to Altdorf, columns of Middenland soldiers have been spotted marching south with a full siege train.",
+    "category": "military",
+    "location": "Middenland",
+    "source": "Mail Coachman",
+    "truth": "true",
+    "displayed": false
+  },
+  {
+    "id": "sig-relikwie-12",
+    "text": "Bounty hunters are looking for a scar-faced man said to be stealing relics of Sigmar from roadside shrines.",
+    "category": "religion",
+    "location": "Reikland",
+    "source": "Wandering Priest",
+    "truth": "true",
+    "displayed": false
+  },
+  {
+    "id": "mar-podatek-13",
+    "text": "Merchants from Marienburg talk of a steep new war levy — anyone who refuses to pay has both ship and cargo seized on the spot.",
+    "category": "trade",
+    "location": "Marienburg",
+    "source": "Trade Factor",
+    "truth": "half",
+    "displayed": false
+  },
+  {
+    "id": "dra-swiatla-14",
+    "text": "Talk spreads of eerie greenish lights over the Drakwald. Foresters call it witchfire, while scholars whisper of a warpstone storm.",
+    "category": "chaos",
+    "location": "Drakwald",
+    "source": "Drakwald Woodcutter",
+    "truth": "half",
+    "displayed": false
+  },
+  {
+    "id": "rec-herold-15",
+    "text": "Someone saw heralds in the Emperor's livery riding from village to village recruiting peasants with promises of 5 shillings a day and hot meals.",
+    "category": "military",
+    "location": "Reikland Villages",
+    "truth": "false",
+    "displayed": false
+  },
+  {
+    "id": "tav-zlotnik-16",
+    "text": "The local goldsmith actually fences stolen goods for a shadow guild. He keeps a double-locked stash beneath his workshop floorboards.",
+    "category": "crime",
+    "source": "Drunken Cutpurse",
+    "truth": "true",
+    "displayed": false
+  },
+  {
+    "id": "tav-przejscie-17",
+    "text": "A forgotten smuggler tunnel runs beneath the city walls, dug back during the Great Plague.",
+    "category": "passages",
+    "source": "Old Smuggler",
+    "truth": "half",
+    "displayed": false
+  },
+  {
+    "id": "tav-piraci-18",
+    "text": "A crew of river pirates wearing green kerchiefs prowls the river — striking only barges hauling gunpowder and firearms out of Nuln.",
+    "category": "pirates",
+    "source": "Gunsmith Merchant",
+    "truth": "true",
+    "displayed": false
+  },
+  {
+    "id": "tav-brama-19",
+    "text": "The watch is short-handed this week — after midnight the west gate is guarded by a single half-asleep old greybeard.",
+    "category": "watch",
+    "source": "Watchman on Duty",
+    "truth": "false",
+    "displayed": false
+  },
+  {
+    "id": "tav-trucizna-20",
+    "text": "Someone saw a black-robed figure in the night dropping a suspicious pouch into the market square well.",
+    "category": "mystery",
+    "source": "Alley Washerwoman",
+    "truth": "false",
+    "displayed": false
+  },
+  {
+    "id": "tav-karty-21",
+    "text": "The card-sharp in the corner loses on purpose — it is a trick. He watches who flashes gold coin and signals boys waiting by the gatehouse.",
+    "category": "crime",
+    "truth": "true",
+    "displayed": false
+  },
+  {
+    "id": "syl-marsz-22",
+    "text": "A traveller from Sylvania swears the dead march by night in the east. Nobody believes him, yet he flinches at every shadow.",
+    "category": "undead",
+    "location": "Eastern Border",
+    "truth": "half",
+    "displayed": false
+  },
+  {
+    "id": "alt-mandragora-23",
+    "text": "The College of Alchemy in Altdorf has put up an astronomical sum for an undamaged mandrake root from deep inside the Shadow Wood.",
+    "category": "alchemy",
+    "truth": "half",
+    "displayed": false
+  },
+  {
+    "id": "ube-mnisi-24",
+    "text": "At a Sigmarite abbey outside Ubersreik the monks bolted the doors from inside and toll the bells at midnight. Nobody knows what they saw.",
+    "category": "mystery",
+    "truth": "false",
+    "displayed": false
+  },
+  {
+    "id": "alt-proch-25",
+    "text": "One of the noble houses in the capital is quietly buying up huge stores of black powder and brimstone, paying gold without haggling.",
+    "category": "conspiracy",
+    "truth": "true",
+    "displayed": false
+  }
+]

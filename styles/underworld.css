@@ -2016,14 +2016,37 @@
 /*  DIALOGI SYSTEMU SZAJKI (UNDERWORLD DIALOGS) */
 /* ──────────────────────────────────────────── */
 
-:is(html, #uw) .underworld-dialog-window{
-  min-width: 520px;
+:is(html, #uw) .underworld-dialog-window,
+:is(html, #uw) .application.dialog:has(.underworld-dialog){
+  min-width: 420px;
 }
 
-:is(html, #uw) .underworld-dialog-window .window-content{
-  background: var(--uw-paper);
-  color: var(--uw-ink);
+:is(html, #uw) .underworld-dialog-window .window-content,
+:is(html, #uw) .application.dialog:has(.underworld-dialog) .window-content{
+  background: var(--uw-paper) !important;
+  color: var(--uw-ink) !important;
   font-family: var(--uw-font-title), Palatino, serif;
+}
+
+:is(html, #uw) .underworld-dialog{
+  color: var(--uw-ink);
+}
+
+:is(html, #uw) .underworld-dialog :is(p, label, span, div, strong, em){
+  color: inherit;
+}
+
+:is(html, #uw) .underworld-dialog :is(select, input[type="text"], input[type="number"], textarea){
+  background: var(--uw-white);
+  color: var(--uw-ink);
+  border: 1px solid #8e735b;
+  border-radius: 3px;
+  font-family: inherit;
+}
+
+:is(html, #uw) .underworld-dialog select option{
+  background: var(--uw-white);
+  color: var(--uw-ink);
 }
 
 :is(html, #uw) .underworld-dialog .form-group{
@@ -2037,7 +2060,7 @@
 :is(html, #uw) .underworld-dialog .form-group label{
   flex: none;
   font-weight: bold;
-  color: inherit;
+  color: var(--uw-ink);
 }
 
 :is(html, #uw) .camp-rest-dialog .dialog-section{
@@ -2103,7 +2126,8 @@
   box-shadow: 0 1px 3px rgba(46, 125, 50, 0.2);
 }
 
-:is(html, #uw) .underworld-dialog-window .dialog-buttons button{
+:is(html, #uw) .underworld-dialog-window :is(.dialog-buttons, .form-footer) button,
+:is(html, #uw) .application.dialog:has(.underworld-dialog) :is(.dialog-buttons, .form-footer) button{
   background: var(--uw-umber);
   color: var(--uw-parchment);
   border: 1px solid var(--uw-night);
@@ -2115,13 +2139,15 @@
   transition: background 0.15s ease;
 }
 
-:is(html, #uw) .underworld-dialog-window .dialog-buttons button:hover{
+:is(html, #uw) .underworld-dialog-window :is(.dialog-buttons, .form-footer) button:hover,
+:is(html, #uw) .application.dialog:has(.underworld-dialog) :is(.dialog-buttons, .form-footer) button:hover{
   background: var(--uw-leather-dark);
   color: var(--uw-gold);
   border-color: var(--uw-leather);
 }
 
-:is(html, #uw) .underworld-dialog-window .dialog-buttons button.default{
+:is(html, #uw) .underworld-dialog-window :is(.dialog-buttons, .form-footer) button.default,
+:is(html, #uw) .application.dialog:has(.underworld-dialog) :is(.dialog-buttons, .form-footer) button.default{
   border-color: var(--uw-gold);
 }
 
@@ -6333,6 +6359,8 @@
 .camp-rest-card .camp-block-flaws { background: rgba(183, 28, 28, 0.08); border-left-color: #c62828; }
 .camp-rest-card .camp-block-flaws > strong > i { color: #c62828; }
 .camp-rest-card .camp-event-text { font-style: italic; }
+.camp-rest-card .camp-event-chips { margin-top: 6px; gap: 4px; display: flex; flex-wrap: wrap; }
+.camp-rest-card .camp-event-chips .uw-chip { font-family: var(--uw-body); }
 .camp-rest-card .camp-ok { color: #1b5e20; }
 .camp-rest-card .camp-bad { color: #b71c1c; }
 .camp-rest-card span.camp-ok, .camp-rest-card span.camp-bad { font-weight: bold; }
@@ -6362,3 +6390,82 @@
 :is(html, #uw) .uw-check-label { display: flex; align-items: center; gap: 6px; cursor: pointer; }
 :is(html, #uw) .uw-check-label input[type="checkbox"] { margin: 0; }
 :is(html, #uw) .uw-npc-note { font-style: italic; color: #554433; white-space: pre-wrap; }
+
+/* ─── Strefa Drag & Drop łączenia aktora z członkiem kompanii ─── */
+:is(html, #uw) .uw-link-actor-dialog {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 4px 0;
+}
+:is(html, #uw) .uw-actor-linked-preview {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  background: rgba(46, 125, 50, 0.1);
+  border: 1px solid var(--uw-ok);
+  border-radius: 4px;
+}
+:is(html, #uw) .uw-actor-linked-preview img {
+  width: 38px;
+  height: 38px;
+  border-radius: 4px;
+  object-fit: cover;
+  border: 1px solid var(--uw-ok);
+}
+:is(html, #uw) .uw-actor-linked-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+:is(html, #uw) .uw-actor-linked-info strong {
+  color: var(--uw-ink);
+  font-size: 0.92rem;
+}
+:is(html, #uw) .uw-actor-linked-info span {
+  color: var(--uw-ok-dark, #1b5e20);
+  font-size: 0.76rem;
+}
+:is(html, #uw) .uw-actor-dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 130px;
+  padding: 18px 14px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.65);
+  border: 2px dashed var(--uw-leather);
+  border-radius: 6px;
+  color: var(--uw-ink);
+  transition: background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+:is(html, #uw) .uw-actor-dropzone.is-dragover {
+  background: var(--uw-ok-bg);
+  border-color: var(--uw-ok);
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
+}
+:is(html, #uw) .uw-actor-dropzone-icon {
+  font-size: 1.75rem;
+  color: var(--uw-leather-dark);
+}
+:is(html, #uw) .uw-actor-dropzone.is-dragover .uw-actor-dropzone-icon {
+  color: var(--uw-ok);
+}
+:is(html, #uw) .uw-actor-dropzone-title {
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: var(--uw-ink);
+}
+:is(html, #uw) .uw-actor-dropzone-hint {
+  font-size: 0.8rem;
+  color: var(--uw-muted);
+  max-width: 340px;
+}
+:is(html, #uw) :is(.npc-card-box, .npc-card).uw-drop-target {
+  outline: 2px dashed var(--uw-ok);
+  outline-offset: -2px;
+  background-color: var(--uw-ok-bg) !important;
+}

@@ -80,8 +80,8 @@ Pole **Typ** w zakładce Informacje decyduje, czym jest kompania. Każdy typ ma 
 - **Szajka Półświatka**: wszystko, co opisano niżej.
 - **Zbrojna Kompania**: Kapitan i Pracodawca, który płaci, zamiast pobierać dolę. Zła sława zastępuje Rozgłos. Role: Sierżant, Halabardnik, Kusznik, Chorąży, Cyrulik, Kwatermistrz. Zlecenia: Patrol, Warta, Rekwizycja, Eskorta, Kontrakt, Musztra, spieniężenie trofeów, opieka nad rannymi. Zdobycz to trofea, które nie są gorącym towarem. Ten typ nie korzysta z tabel RollTable świata.
 - **Banda Banitów**: role i słownictwo Szajki, a zamiast Patrona Protektor, który bierze dolę. Zlecenia pasujące do gościńców i lasów (bez haraczu, włamań i kieszonkostwa) oraz Odwet na Łowcach (Rozgłos −1 i broń), Okup i Myto na Moście. Korzysta z tabel RollTable świata i dokłada własne zdarzenia nocy.
-- **Flotylla Przemytników**: Szyper i Odbiorca, który płaci za towar. Czujność celników zastępuje Rozgłos. Role: Woźnica / Przemytnik, Sternik, Flisak, Czujka, Fałszerz, Szafarz. Odbiór Kontrabandy przynosi towar do skrytki, a Kurs Barką 🎯 zabiera najcenniejszy ładunek do odbiorcy za 2× jego wartości (cel to trasa kursu). Nieudany kurs topi ładunek. Skrytka obniża Czujność.
-- **Siatka Informatorów**: Mistrz Szpiegów i Mocodawca, który płaci za raporty. Zdemaskowanie zastępuje Rozgłos. Role: Cień / Tajniak, Pośrednik / Fałszerz, Kameleon / Znachor, Podsłuchiwacz, Kurier, Pięść. Kupno Sekretu, Przechwycenie Gońca i Podmiana Listu 🎯 przynoszą dokumenty. Można je sprzedać kupcowi sekretów albo oddać najcenniejszy mocodawcy w Raporcie, za 1,75 wartości i bez ryzyka.
+- **Flotylla Przemytników**: Szyper i Odbiorca, który płaci za towar. Czujność celników zastępuje Rozgłos. Role: Przemytnik, Sternik, Flisak, Czujka, Fałszerz, Szafarz. Odbiór Kontrabandy przynosi towar do skrytki, a Kurs Barką 🎯 zabiera najcenniejszy ładunek do odbiorcy za 2× jego wartości (cel to trasa kursu). Nieudany kurs topi ładunek. Skrytka obniża Czujność.
+- **Siatka Informatorów**: Mistrz Szpiegów i Mocodawca, który płaci za raporty. Zdemaskowanie zastępuje Rozgłos. Role: Tajniak, Pośrednik, Znachor, Podsłuchiwacz, Kurier, Pięść. Kupno Sekretu, Przechwycenie Gońca i Podmiana Listu 🎯 przynoszą dokumenty. Można je sprzedać kupcowi sekretów albo oddać najcenniejszy mocodawcy w Raporcie, za 1,75 wartości i bez ryzyka.
 - **Sekretne Bractwo**: Arcykapłan i Mroczny Mistrz, który pobiera dziesięcinę. Podejrzliwość zastępuje Rozgłos. Role: Akolita, Zelota, Szpieg, Skrytobójca, Mówca, Alchemik. Zlecenia: Rytuał, Infiltracja, Porwanie 🎯 i Kamienny Krąg na bezdrożach. Nowi wyznawcy dołączają przez rekrutację, fabularnie.
 
 Każda rola tych typów wydaje własne 3–5 rozkazów bojowych, nazwanych po swojemu (Hak Halabardy halabardnika, Za Burtę! flisaka, Męczeństwo zeloty). Mechanika jest ta sama co w rozkazach Szajki.
@@ -153,14 +153,14 @@ Włamania, napady, kradzieże z obejść i grabieże kopalń przynoszą **łupy*
 
 ### 🗺️ Tereny
 
-MG przełącza teren w zakładce **Łupy**. Teren zmienia dostępne zlecenia, pasera, plotki i wydarzenia nocy (osobne tabele), koszt i opis noclegu oraz obławę:
+MG przełącza teren w zakładce **Łupy**. Teren zmienia dostępne zlecenia, pasera, plotki i wydarzenia nocy (osobne tabele), opis noclegu (rodzaj kwater ustala MG bez kosztu monet) oraz obławę:
 
 | Teren | Wygodny nocleg | Biwak | Wydarzenie bez warty / z wartą | Obława od Rozgłosu |
 |---|---|---|---|---|
-| Miasto | 10 ss (gospoda) | zaułek, −1 Morale, ½ obławy | 60% / 40% | 4 (straż miejska) |
-| Wieś | 5 ss (izba u chłopa) | stodoła, −1 Morale, ½ obławy | 55% / 35% | 3 (sołtys ze strażą) |
-| Las | 3 ss (ziemianka) | pod gołym niebem, −1 Morale, ½ obławy | 70% / 40% | 4 (łowcy nagród) |
-| Góry | 8 ss (schronisko) | nawis skalny, **−2 Morale** (mróz), ½ obławy | 60% / 40% | 4 (strażnicy przełęczy) |
+| Miasto | gospoda (+1 Morale) | zaułek, −1 Morale, ½ obławy | 60% / 40% | 4 (straż miejska) |
+| Wieś | izba u chłopa (+1 Morale) | stodoła, −1 Morale, ½ obławy | 55% / 35% | 3 (sołtys ze strażą) |
+| Las | ziemianka (+1 Morale) | pod gołym niebem, −1 Morale, ½ obławy | 70% / 40% | 4 (łowcy nagród) |
+| Góry | schronisko (+1 Morale) | nawis skalny, **−2 Morale** (mróz), ½ obławy | 60% / 40% | 4 (strażnicy przełęczy) |
 
 **Haracz** działa tylko w mieście. Poza miastem czeka uśpiony na powrót szajki. Na 1 (1d10 co noc, 1d6 w tygodniu) konkurencja przejmuje rewir: haracz przepada, Rozgłos +1.
 
@@ -168,7 +168,7 @@ MG przełącza teren w zakładce **Łupy**. Teren zmienia dostępne zlecenia, pa
 
 Modyfikatory dodają się do progu testu (jak modyfikator trudności w WFRP), łącznie od **−30** do **+40**:
 
-* zalety i wady (±10 za stopień), specjalizacja roli (+10), ranga (+10 za rangę, pomijana przy powiązanym aktorze), rynsztunek (+10), atuty (+10/+20), relacja z Patronem, bonus MG,
+* zalety i wady (±10 za stopień), specjalizacja roli (+10), ranga (+5 za rangę, pomijana przy powiązanym aktorze), rynsztunek (+10), atuty (+10/+20), relacja z Patronem, bonus MG,
 * **Morale**: 8–10 → +10, 3–4 → −10, 0–2 → −20,
 * **Rozgłos**: −10 za każde 2 punkty (nie dotyczy Maskowania Śladów),
 * **cel** (łatwy +20, bogaty −20) i **żetony przygotowania** (+20).
@@ -189,13 +189,13 @@ Porażka z **SL −2 lub gorszym** ma skutki zależne od charakteru zlecenia:
 
 W trybie dziennym raz na dzień świata (o 3:00 czasu gry moduł przypomina o nim na czacie); w trybie tygodniowym ten sam przebieg obejmuje cały tydzień:
 
-1. **Nocleg**: prowizoryczny (−1 Morale, w górach −2, zmniejsza szansę obławy o połowę), podstawowy, wygodny (+1 Morale, koszt zależny od terenu; ×3 w tygodniu).
+1. **Nocleg** (rodzaj kwater ustala MG bez kosztu monet): prowizoryczny (−1 Morale, w górach −2, zmniejsza szansę obławy o połowę), podstawowy, wygodny (+1 Morale).
 2. **Warty**: wartownicy dostają +3 DO (×3 w tygodniu); bez warty nocne kłopoty są częstsze. Ranny z atutem *Wojenne Blizny* także może pełnić wartę.
 3. **Wyżywienie**: racje ze spiżarni (dziennie 1 na 3 aktywnych ludzi, tygodniowo 1 na osobę), inne źródło albo głodówka (−1 Morale).
 4. **Żołd i utrzymanie** (opcjonalne ustawienie świata, domyślnie włączone): opłata ze skarbca za aktywnych ludzi; brak środków obniża Morale.
 5. **Regeneracja**: Odpoczywa → Gotowy, Ranny → Odpoczywa, areszt skraca się o noc; przydziały się zerują.
 6. **Wydarzenie nocy** z tabeli bieżącego terenu (po **300 wydarzeń** na miasto, wieś, las i góry): szansa zależy od terenu (np. miasto 60% bez warty, 40% z wartą), o połowę mniej po Maskowaniu Śladów. Część wydarzeń to:
-   * **Zdarzenia dla ról** (po 6 na rolę w każdej tabeli): jeśli w szajce jest zdolny członek z daną rolą (główną lub drugą), rzuca k100 (50 + 10 za rangę, maks. 80). Sukces zamienia skutki zdarzenia na korzystne i dopisuje rozwiązanie; porażka albo brak specjalisty zostawia skutki podstawowe.
+   * **Zdarzenia dla ról** (po 6 na rolę w każdej tabeli): jeśli w szajce jest zdolny członek z daną rolą (główną lub drugą), rzuca k100 (50 + 5 za rangę, maks. 80). Sukces zamienia skutki zdarzenia na korzystne i dopisuje rozwiązanie; porażka albo brak specjalisty zostawia skutki podstawowe.
    * **Łańcuchy** (18 na teren): wydarzenie A zostawia hak, a najbliższej nocy z wydarzeniem pada jego ciąg dalszy B. Wpisy B nie wypadają losowo.
 7. **Obława** od progu Rozgłosu terenu (20% na progu, +20% za każdy punkt wyżej): z wartą lub *Wtyką w Straży* szajka ucieka, tracąc 1d3 racji i 1d6 ss; bez warty i wtyki jeden człowiek trafia do aresztu, straż zabiera 1d6 ss i cały gorący towar, spada Morale. Po obławie Rozgłos −1.
 8. **Haracz** (tylko w mieście) i upływ czasu: żetony przygotowania wygasają, łupy stygną.
@@ -206,7 +206,7 @@ W trybie dziennym raz na dzień świata (o 3:00 czasu gry moduł przypomina o ni
 
 ## ⚔️ Świta i rozkazy taktyczne
 
-Do Świty Herszta należy do 3 członków. Jest **39 rozkazów** w trzech grupach (ofensywne, kontrola, ochrona), a w szajce **11 ról**: Ochroniarz, Cień, Strzelec, Prowokator, Szabrownik, Woźnica, Podpalacz oraz Zwiadowca, Paser / Fałszerz, Szarlatan / Znachor i Zawadiaka / Szermierz. Rozkaz wymaga w Świcie członka z odpowiednią rolą (**główną lub drugą**) albo Prawej Ręki; wiele rozkazów jest wspólnych dla kilku ról (np. Zasłona Dymna: Prowokator, Podpalacz, Woźnica). Rozkaz można wydać:
+Do Świty Herszta należy do 3 członków. Jest **39 rozkazów** w trzech grupach (ofensywne, kontrola, ochrona), a w szajce **11 ról**: Ochroniarz, Cień, Strzelec, Prowokator, Szabrownik, Przemytnik, Sabotażysta, Zwiadowca, Paser, Znachor i Szermierz. Rozkaz wymaga w Świcie członka z odpowiednią rolą (**główną lub drugą**) albo Prawej Ręki; wiele rozkazów jest wspólnych dla kilku ról (np. Zasłona Dymna: Prowokator, Sabotażysta, Przemytnik). Rozkaz można wydać:
 
 * **testem Dowodzenia** Herszta (Wymagający +0) – porażka oznacza brak efektu,
 * **za Przewagę** (obsługuje Przewagę Osobistą oraz Przewagę Grupową *Up in Arms*) – automatyczny sukces bez zwrotu Przewagi z efektów sojuszniczych,
@@ -241,7 +241,7 @@ Pozostałe rozkazy (np. Salwa z Ukrycia, Zasłona Dymna, Żywa Tarcza) rozstrzyg
 
 ## 📈 Rozwój popleczników
 
-* **Rangi** za DO: 120 / 300 / 650 DO (+10 / +20 / +30 do testów); ranga 3 to unikalna **Prawa Ręka**.
+* **Rangi** za DO: 120 / 300 / 650 DO (+5 / +10 / +15 do testów); ranga 3 to unikalna **Prawa Ręka**.
 * **Druga rola** za 80 DO (od rangi 1): poplecznik zyskuje rozkazy i specjalizację drugiej roli (premia za specjalizację liczy się raz). MG może ją też nadać w kartotece Świty.
 * **Dawny Fach** (jeden na członka) i **atuty fabularne** za DO.
 * **Rynsztunek** ze skarbca (maks. 2 przedmioty): Pancerz Skórzany, Dobra Broń, Wytrychy, Przebranie, Torba Felczera, Wierzchowiec. Można go sprzedać (50%) lub przekazać.

@@ -1,18 +1,560 @@
 [
-  {"id": "outl-001", "title": "Dzik przy obozie", "text": "Nocą do obozu wpada dzik. Po krótkiej awanturze jest mięso na tydzień.", "morale": 1, "supplies": 2, "coinsSS": 0},
-  {"id": "outl-002", "title": "Leśniczy na tropie", "text": "Rano ktoś znajduje świeże ślady butów wokół obozu. Leśniczy grafa wie, gdzie jesteście.", "morale": -1, "supplies": 0, "coinsSS": 0},
-  {"id": "outl-003", "title": "Pieśń o bandzie", "text": "W karczmie na rozstajach śpiewają już o waszej bandzie. Ludzie są dumni, choć to niebezpieczne.", "morale": 1, "supplies": 0, "coinsSS": 0},
-  {"id": "outl-004", "title": "Ulewa w lesie", "text": "Deszcz leje całą noc. Szałasy przeciekają, a ognisko gaśnie co godzinę.", "morale": -1, "supplies": 0, "coinsSS": 0},
-  {"id": "outl-005", "title": "Chłopi z koszem", "text": "Chłopi z pobliskiej wsi przynoszą chleb i ser. Pamiętają, kto przegonił poborcę.", "morale": 1, "supplies": 2, "coinsSS": 0},
-  {"id": "outl-006", "title": "Kłótnia o podział", "text": "Dwóch banitów kłóci się o sakiewkę z ostatniego napadu. Noże idą w ruch, zanim herszt ich rozdzieli.", "morale": -1, "supplies": 0, "coinsSS": 0},
-  {"id": "outl-007", "title": "Zbieg z miasta", "text": "Do obozu przychodzi uciekinier z więzienia. Za miejsce przy ogniu oddaje wszystko, co ma.", "morale": 0, "supplies": 0, "coinsSS": 4},
-  {"id": "outl-008", "title": "Wilki w nocy", "text": "Wycie wilków nie milknie do świtu. Nikt nie śpi, a straż zmienia się co godzinę.", "morale": -1, "supplies": 0, "coinsSS": 0},
-  {"id": "outl-009", "title": "Skarb pod korzeniem", "text": "Kopiąc dół na odpadki, ktoś trafia na zbutwiałą skrzynkę z kilkoma monetami.", "morale": 1, "supplies": 0, "coinsSS": 6},
-  {"id": "outl-010", "title": "List gończy w karczmie", "text": "Zwiadowca przynosi zerwany list gończy. Rysopis herszta jest zaskakująco trafny.", "morale": -1, "supplies": 0, "coinsSS": 0},
-  {"id": "outl-011", "title": "Święto Taala", "text": "Banda obchodzi święto Taala pod starym dębem. Tej nocy las wydaje się przyjazny.", "morale": 1, "supplies": -1, "coinsSS": 0},
-  {"id": "outl-012", "title": "Zgubiona sakwa", "text": "Ktoś zostawił sakwę z prowiantem przy strumieniu. Rano zostały tylko ślady lisa.", "morale": 0, "supplies": -2, "coinsSS": 0},
-  {"id": "outl-r01", "title": "Obcy w lesie", "text": "Wartownik słyszy, że ktoś krąży wokół obozu.", "morale": -1, "supplies": 0, "coinsSS": 0, "role": "scout", "okText": "Zwiadowca zachodzi intruza od tyłu. To tylko zabłąkany pastuch, ale wie, gdzie stoją łowcy.", "ok": {"morale": 1, "supplies": 0, "coinsSS": 0}},
-  {"id": "outl-r02", "title": "Jeleń na skraju polany", "text": "O świcie na polanę wychodzi jeleń. Jeden strzał i będzie mięso.", "morale": 0, "supplies": 0, "coinsSS": 0, "role": "marksman", "okText": "Kłusownik nie chybia. Banda je do syta pierwszy raz od tygodnia.", "ok": {"morale": 1, "supplies": 3, "coinsSS": 0}},
-  {"id": "outl-r03", "title": "Gorączka bagienna", "text": "Po nocy przy bagnie kilku ludzi trzęsie się z zimna i gorączki.", "morale": -2, "supplies": 0, "coinsSS": 0, "role": "charlatan", "okText": "Znachor parzy korę wierzby i do południa gorączka spada.", "ok": {"morale": 1, "supplies": 0, "coinsSS": 0}},
-  {"id": "outl-r04", "title": "Pijany olbrzym", "text": "Do obozu wtacza się pijany drwal i szuka bójki.", "morale": -1, "supplies": 0, "coinsSS": 0, "role": "bodyguard", "okText": "Rębacz bierze go na bary i odnosi do lasu. Wszyscy się śmieją.", "ok": {"morale": 1, "supplies": 0, "coinsSS": 0}}
+  {
+    "id": "outl-001",
+    "title": "Dzik przy obozie",
+    "text": "Nocą do obozu wpada dzik. Po krótkiej awanturze jest mięso na tydzień.",
+    "morale": 1,
+    "supplies": 2,
+    "coinsSS": 0,
+    "terrains": [
+      "forest",
+      "village"
+    ]
+  },
+  {
+    "id": "outl-002",
+    "title": "Leśniczy na tropie",
+    "text": "Rano ktoś znajduje świeże ślady butów wokół obozu. Leśniczy grafa wie, gdzie jesteście.",
+    "morale": -1,
+    "supplies": 0,
+    "coinsSS": 0,
+    "terrains": [
+      "forest",
+      "mountains"
+    ],
+    "notoriety": 1
+  },
+  {
+    "id": "outl-003",
+    "title": "Pieśń o bandzie",
+    "text": "W karczmie na rozstajach śpiewają już o waszej bandzie. Ludzie są dumni, choć to niebezpieczne.",
+    "morale": 1,
+    "supplies": 0,
+    "coinsSS": 0,
+    "terrains": [
+      "city",
+      "village"
+    ],
+    "notoriety": 1
+  },
+  {
+    "id": "outl-004",
+    "title": "Ulewa w lesie",
+    "text": "Deszcz leje całą noc. Szałasy przeciekają, a ognisko gaśnie co godzinę.",
+    "morale": -1,
+    "supplies": 0,
+    "coinsSS": 0,
+    "terrains": [
+      "forest",
+      "mountains"
+    ]
+  },
+  {
+    "id": "outl-005",
+    "title": "Chłopi z koszem",
+    "text": "Chłopi z pobliskiej wsi przynoszą chleb i ser. Pamiętają, kto przegonił poborcę.",
+    "morale": 1,
+    "supplies": 2,
+    "coinsSS": 0,
+    "terrains": [
+      "village",
+      "forest"
+    ]
+  },
+  {
+    "id": "outl-006",
+    "title": "Kłótnia o podział",
+    "text": "Dwóch banitów kłóci się o sakiewkę z ostatniego napadu. Noże idą w ruch, zanim herszt ich rozdzieli.",
+    "morale": -1,
+    "supplies": 0,
+    "coinsSS": 0
+  },
+  {
+    "id": "outl-007",
+    "title": "Zbieg z miasta",
+    "text": "Do obozu przychodzi uciekinier z więzienia. Za miejsce przy ogniu oddaje wszystko, co ma.",
+    "morale": 0,
+    "supplies": 0,
+    "coinsSS": 4,
+    "terrains": [
+      "city",
+      "village",
+      "forest"
+    ]
+  },
+  {
+    "id": "outl-008",
+    "title": "Wilki w nocy",
+    "text": "Wycie wilków nie milknie do świtu. Nikt nie śpi, a straż zmienia się co godzinę.",
+    "morale": -1,
+    "supplies": 0,
+    "coinsSS": 0,
+    "terrains": [
+      "forest",
+      "mountains"
+    ]
+  },
+  {
+    "id": "outl-009",
+    "title": "Skarb pod korzeniem",
+    "text": "Kopiąc dół na odpadki, ktoś trafia na zbutwiałą skrzynkę z kilkoma monetami.",
+    "morale": 1,
+    "supplies": 0,
+    "coinsSS": 6,
+    "terrains": [
+      "forest",
+      "mountains"
+    ]
+  },
+  {
+    "id": "outl-010",
+    "title": "List gończy w karczmie",
+    "text": "Zwiadowca przynosi zerwany list gończy. Rysopis herszta jest zaskakująco trafny.",
+    "morale": -1,
+    "supplies": 0,
+    "coinsSS": 0,
+    "terrains": [
+      "city",
+      "village"
+    ],
+    "notoriety": 1
+  },
+  {
+    "id": "outl-011",
+    "title": "Święto Taala",
+    "text": "Banda obchodzi święto Taala pod starym dębem. Tej nocy las wydaje się przyjazny.",
+    "morale": 1,
+    "supplies": -1,
+    "coinsSS": 0,
+    "terrains": [
+      "forest"
+    ]
+  },
+  {
+    "id": "outl-012",
+    "title": "Zgubiona sakwa",
+    "text": "Ktoś zostawił sakwę z prowiantem przy strumieniu. Rano zostały tylko ślady lisa.",
+    "morale": 0,
+    "supplies": -2,
+    "coinsSS": 0,
+    "terrains": [
+      "village",
+      "forest",
+      "mountains"
+    ]
+  },
+  {
+    "id": "outl-r01",
+    "title": "Obcy w lesie",
+    "text": "Wartownik słyszy, że ktoś krąży wokół obozu.",
+    "morale": -1,
+    "supplies": 0,
+    "coinsSS": 0,
+    "role": "scout",
+    "okText": "Zwiadowca zachodzi intruza od tyłu. To tylko zabłąkany pastuch, ale wie, gdzie stoją łowcy.",
+    "ok": {
+      "morale": 1,
+      "supplies": 0,
+      "coinsSS": 0,
+      "prepToken": "recon"
+    },
+    "terrains": [
+      "forest",
+      "mountains"
+    ]
+  },
+  {
+    "id": "outl-r02",
+    "title": "Jeleń na skraju polany",
+    "text": "O świcie na polanę wychodzi jeleń. Jeden strzał i będzie mięso.",
+    "morale": 0,
+    "supplies": 0,
+    "coinsSS": 0,
+    "role": "marksman",
+    "okText": "Kłusownik nie chybia. Banda je do syta pierwszy raz od tygodnia.",
+    "ok": {
+      "morale": 1,
+      "supplies": 3,
+      "coinsSS": 0
+    },
+    "terrains": [
+      "forest",
+      "village"
+    ]
+  },
+  {
+    "id": "outl-r03",
+    "title": "Gorączka bagienna",
+    "text": "Po nocy przy bagnie kilku ludzi trzęsie się z zimna i gorączki.",
+    "morale": -2,
+    "supplies": 0,
+    "coinsSS": 0,
+    "role": "charlatan",
+    "okText": "Znachor parzy korę wierzby i do południa gorączka spada.",
+    "ok": {
+      "morale": 1,
+      "supplies": 0,
+      "coinsSS": 0
+    },
+    "terrains": [
+      "forest",
+      "village"
+    ]
+  },
+  {
+    "id": "outl-r04",
+    "title": "Pijany olbrzym",
+    "text": "Do obozu wtacza się pijany drwal i szuka bójki.",
+    "morale": -1,
+    "supplies": 0,
+    "coinsSS": 0,
+    "role": "bodyguard",
+    "okText": "Rębacz bierze go na bary i odnosi do lasu. Wszyscy się śmieją.",
+    "ok": {
+      "morale": 1,
+      "supplies": 0,
+      "coinsSS": 0
+    },
+    "terrains": [
+      "village",
+      "forest"
+    ]
+  },
+  {
+    "id": "outl-013",
+    "title": "Schronisko w starej sztolni",
+    "text": "W górskiej ścianie znajdujecie suchą, zapomnianą sztolnię. Po raz pierwszy od dni śpicie bez wiatru.",
+    "morale": 1,
+    "supplies": 0,
+    "coinsSS": 0,
+    "terrains": [
+      "mountains"
+    ]
+  },
+  {
+    "id": "outl-014",
+    "title": "Myto u przełęczy",
+    "text": "Strażnicy przełęczy przymykają oko na nocujących w dolinie zbójów w zamian za drobną „daninę”.",
+    "morale": 0,
+    "supplies": 0,
+    "coinsSS": -4,
+    "notoriety": -1,
+    "terrains": [
+      "mountains"
+    ]
+  },
+  {
+    "id": "outl-015",
+    "title": "Krasnoludzki przemytnik",
+    "text": "Samotny krasnolud z osłem dzieli z wami ogień i w zamian za eskortę w dół grani płaci srebrem.",
+    "morale": 1,
+    "supplies": 0,
+    "coinsSS": 5,
+    "terrains": [
+      "mountains"
+    ]
+  },
+  {
+    "id": "outl-016",
+    "title": "Lawina kamieni",
+    "text": "Nocny zawał zasypuje ścieżkę za obozem. Trzeba szukać objazdu po śliskich graniach.",
+    "morale": -1,
+    "supplies": -1,
+    "coinsSS": 0,
+    "terrains": [
+      "mountains"
+    ]
+  },
+  {
+    "id": "outl-017",
+    "title": "Karczmarz sprzymierzeniec",
+    "text": "Gospodarz z podgrodzia chowa bandę w stodole za karczmą i podsuwa wieści o bogatym kupcu.",
+    "morale": 1,
+    "supplies": 1,
+    "coinsSS": 0,
+    "prepToken": "lead",
+    "terrains": [
+      "city",
+      "village"
+    ]
+  },
+  {
+    "id": "outl-018",
+    "title": "Szlachcic na polowaniu",
+    "text": "Młody paniczyk zabłądził z chartami w gęstwinie. Oddaje sygnet i mieszek za bezpieczne wyprowadzenie na trakt.",
+    "morale": 1,
+    "supplies": 0,
+    "coinsSS": 6,
+    "terrains": [
+      "forest",
+      "village"
+    ]
+  },
+  {
+    "id": "outl-019",
+    "title": "Zdradziecka mgła",
+    "text": "Biała mgła wisi w dolinie do południa. Dwóch ludzi gubi drogę i wraca dopiero wieczorem o pustych rękach.",
+    "morale": -1,
+    "supplies": 0,
+    "coinsSS": 0,
+    "terrains": [
+      "forest",
+      "mountains"
+    ]
+  },
+  {
+    "id": "outl-020",
+    "title": "Wóz węglarza",
+    "text": "Stary węglarz oddaje bez oporu wózek pełen słoniny i kaszy, bo woli żyć niż się spierać.",
+    "morale": 0,
+    "supplies": 3,
+    "coinsSS": 0,
+    "terrains": [
+      "forest",
+      "village"
+    ]
+  },
+  {
+    "id": "outl-021",
+    "title": "Złodziej w obozie",
+    "text": "Ktoś ze świeżych rekrutów dobiera się nocą do wspólnych zapasów. Zostaje ukarany chłostą, ale niesmak zostaje.",
+    "morale": -1,
+    "supplies": -1,
+    "coinsSS": 0
+  },
+  {
+    "id": "outl-022",
+    "title": "Ognisko bez dymu",
+    "text": "Starzy banici uczą młodych palić suchą olchą pod okapem skały. Noc mija ciepło i bezpiecznie.",
+    "morale": 1,
+    "supplies": 0,
+    "coinsSS": 0
+  },
+  {
+    "id": "outl-023",
+    "title": "Patrol Straży Dróg",
+    "text": "Jeźdźcy w płaszczach Straży Dróg mijają zarośla o dwadzieścia kroków od obozu. Ktoś widział połysk waszej stali.",
+    "morale": -1,
+    "supplies": 0,
+    "coinsSS": 0,
+    "notoriety": 1,
+    "terrains": [
+      "village",
+      "forest",
+      "mountains"
+    ]
+  },
+  {
+    "id": "outl-024",
+    "title": "Skrytka dawnej bandy",
+    "text": "Pod zapadniętym dachem leśniczówki trafiacie na skrytkę dawnej szajki ze sztabką srebra i prowiantem.",
+    "morale": 1,
+    "supplies": 1,
+    "coinsSS": 5,
+    "terrains": [
+      "forest",
+      "mountains"
+    ]
+  },
+  {
+    "id": "outl-025",
+    "title": "Ktoś rozpoznał twarz",
+    "text": "Na rogatkach miasta jeden z miejskich strażników zbyt długo przyglądał się bliznom waszego człowieka.",
+    "morale": -1,
+    "supplies": 0,
+    "coinsSS": 0,
+    "notoriety": 1,
+    "terrains": [
+      "city",
+      "village"
+    ]
+  },
+  {
+    "id": "outl-r05",
+    "title": "Szpicel przy gościńcu",
+    "text": "Ktoś wypytuje karczmarza o ślady wiodące od traktu w głąb lasu.",
+    "morale": -1,
+    "supplies": 0,
+    "coinsSS": 0,
+    "notoriety": 1,
+    "role": "shadow",
+    "okText": "Cień zachodzi szpicla w nocnej ciemności, odbiera mu sakiewkę i posyła z fałszywym tropem w drugą stronę.",
+    "ok": {
+      "morale": 1,
+      "supplies": 0,
+      "coinsSS": 3,
+      "notoriety": 0,
+      "prepToken": "recon"
+    },
+    "terrains": [
+      "city",
+      "village",
+      "forest"
+    ]
+  },
+  {
+    "id": "outl-r06",
+    "title": "Kłótnia w karczmie",
+    "text": "Kilku popleczników wdało się w pijacką awanturę przy gościńcu i lada chwila zleci się straż.",
+    "morale": -1,
+    "supplies": 0,
+    "coinsSS": -2,
+    "notoriety": 1,
+    "role": "provocateur",
+    "okText": "Prowokator obraca burdę w jarmarczny żart, stawia strażnikowi piwo i zyskuje nawet plotkę o konwoju.",
+    "ok": {
+      "morale": 1,
+      "supplies": 0,
+      "coinsSS": 0,
+      "notoriety": 0,
+      "prepToken": "lead"
+    },
+    "terrains": [
+      "city",
+      "village"
+    ]
+  },
+  {
+    "id": "outl-r07",
+    "title": "Spalony wóz kupiecki",
+    "text": "Na bocznym szlaku leży wóz obrabowany dzień wcześniej przez innych zbójców.",
+    "morale": 0,
+    "supplies": 0,
+    "coinsSS": 0,
+    "role": "scavenger",
+    "okText": "Szabrownik przeszukuje schowki pod deskami i wyciąga ocalałe suchary oraz mieszek monet.",
+    "ok": {
+      "morale": 1,
+      "supplies": 3,
+      "coinsSS": 4
+    }
+  },
+  {
+    "id": "outl-r08",
+    "title": "Przejście przez bród",
+    "text": "Rzeka wezbrała i odcięła drogę z łupem do leśnej kryjówki.",
+    "morale": -1,
+    "supplies": -1,
+    "coinsSS": 0,
+    "role": "smuggler",
+    "okText": "Przemytnik odnajduje stary, zatopiony bród i przeprowadza ludzi oraz juki bez jednej straty.",
+    "ok": {
+      "morale": 1,
+      "supplies": 1,
+      "coinsSS": 0
+    },
+    "terrains": [
+      "village",
+      "forest",
+      "mountains"
+    ]
+  },
+  {
+    "id": "outl-r09",
+    "title": "Ścigający oddział",
+    "text": "Zbrojny podjazd zatrzymał się pół mili dalej i o świcie ruszy za waszym tropem.",
+    "morale": -1,
+    "supplies": 0,
+    "coinsSS": 0,
+    "notoriety": 1,
+    "role": "saboteur",
+    "okText": "Sabotażysta podcina w nocy koła ich wozu zaopatrzeniowego i puszcza konie w las. Pościg stoi w miejscu.",
+    "ok": {
+      "morale": 1,
+      "supplies": 0,
+      "coinsSS": 0,
+      "notoriety": -1
+    },
+    "terrains": [
+      "village",
+      "forest",
+      "mountains"
+    ]
+  },
+  {
+    "id": "outl-r10",
+    "title": "Chciwy paser",
+    "text": "Pośrednik z okolicznej wsi grozi, że doniesie wójtowi, jeśli nie opuścicie ceny.",
+    "morale": -1,
+    "supplies": 0,
+    "coinsSS": -3,
+    "role": "fixer",
+    "okText": "Paser przypomina mu o starych rachunkach i sfałszowanym kwicie; handlarz płaci pełną stawkę i dorzuca worek kaszy.",
+    "ok": {
+      "morale": 1,
+      "supplies": 1,
+      "coinsSS": 4
+    }
+  },
+  {
+    "id": "outl-r11",
+    "title": "Wyzwanie obcego zabijaki",
+    "text": "Zbiegły rzezimieszek chce przejąć przywództwo nad częścią młodych w obozie.",
+    "morale": -2,
+    "supplies": 0,
+    "coinsSS": 0,
+    "role": "duelist",
+    "okText": "Szermierz rozbraja go w trzech cięciach na oczach całej bandy. Porządek wraca natychmiast.",
+    "ok": {
+      "morale": 1,
+      "supplies": 0,
+      "coinsSS": 2
+    }
+  },
+  {
+    "id": "outl-ch01a",
+    "title": "Ranny kramarz na trakcie",
+    "text": "W krzakach przy drodze leży pobity kramarz z rozbitym wozem. Banda zastanawia się, czy go opatrzyć, czy dobić.",
+    "morale": 0,
+    "supplies": 1,
+    "coinsSS": 0,
+    "terrains": [
+      "village",
+      "forest"
+    ],
+    "next": "outl-ch01b"
+  },
+  {
+    "id": "outl-ch01b",
+    "title": "Dług wdzięcznego kramarza",
+    "text": "Uratowany kramarz wraca nocą ze skrzynką wódki i dokładną informacją, którędy jedzie jutro bogaty poborca.",
+    "morale": 1,
+    "supplies": 1,
+    "coinsSS": 5,
+    "prepToken": "lead",
+    "terrains": [
+      "village",
+      "forest"
+    ],
+    "only": true
+  },
+  {
+    "id": "outl-ch02a",
+    "title": "Psy Straży Dróg",
+    "text": "W nocy słychać ujadanie ogarów wzdłuż wąwozu. Tropiciele złapali wasz ślad z ostatniego napadu.",
+    "morale": -1,
+    "supplies": 0,
+    "coinsSS": 0,
+    "notoriety": 1,
+    "terrains": [
+      "forest",
+      "mountains"
+    ],
+    "next": "outl-ch02b"
+  },
+  {
+    "id": "outl-ch02b",
+    "title": "Fałszywy trop w wąwozie",
+    "text": "Zastawione sidła i zmylony zapach wyprowadzają pościg na manowce, a banda zabiera porzucone przez nich juki.",
+    "morale": 1,
+    "supplies": 2,
+    "coinsSS": 0,
+    "notoriety": -1,
+    "prepToken": "recon",
+    "terrains": [
+      "forest",
+      "mountains"
+    ],
+    "only": true
+  }
 ]

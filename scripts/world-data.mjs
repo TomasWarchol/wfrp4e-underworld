@@ -17,7 +17,7 @@ const TERRAIN_DATA = {
   city: {
     icon: "fas fa-city",
     fence: { rate: 50, likes: ["valuables", "documents"], refuses: [] },
-    comfortableCostSS: 10,
+    comfortableCostSS: 0,
     raidMinNotoriety: 4,
     eventChance: { unguarded: 60, guarded: 40 },
     coldMakeshift: false
@@ -25,7 +25,7 @@ const TERRAIN_DATA = {
   village: {
     icon: "fas fa-wheat-awn",
     fence: { rate: 35, likes: ["goods"], refuses: ["weapons", "documents"] },
-    comfortableCostSS: 5,
+    comfortableCostSS: 0,
     raidMinNotoriety: 3,
     eventChance: { unguarded: 55, guarded: 35 },
     coldMakeshift: false
@@ -33,7 +33,7 @@ const TERRAIN_DATA = {
   forest: {
     icon: "fas fa-tree",
     fence: { rate: 40, likes: ["weapons", "goods"], refuses: ["documents"] },
-    comfortableCostSS: 3,
+    comfortableCostSS: 0,
     raidMinNotoriety: 4,
     eventChance: { unguarded: 70, guarded: 40 },
     coldMakeshift: false
@@ -41,7 +41,7 @@ const TERRAIN_DATA = {
   mountains: {
     icon: "fas fa-mountain",
     fence: { rate: 45, likes: ["metal", "weapons"], refuses: [] },
-    comfortableCostSS: 8,
+    comfortableCostSS: 0,
     raidMinNotoriety: 4,
     eventChance: { unguarded: 60, guarded: 40 },
     coldMakeshift: true
@@ -250,7 +250,14 @@ export const TERRAIN_RUMORS = {};
 for (const terrain of ["village", "forest", "mountains"]) {
   Object.defineProperty(TERRAIN_RUMORS, terrain, {
     enumerable: true,
-    get: () => Object.entries(content(`TerrainRumors.${terrain}`) ?? {}).map(([id, r]) => ({ id, category: r.Category, text: r.Text }))
+    get: () => Object.entries(content(`TerrainRumors.${terrain}`) ?? {}).map(([id, r]) => ({
+      id,
+      category: r.Category,
+      text: r.Text,
+      ...(r.Truth ? { truth: r.Truth } : {}),
+      ...(r.Source ? { source: r.Source } : {}),
+      ...(r.Location ? { location: r.Location } : {})
+    }))
   });
 }
 

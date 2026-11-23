@@ -104,7 +104,8 @@
     "category": "religia",
     "location": "Reikland",
     "source": "Kapłan wędrowny",
-    "displayed": false
+    "displayed": false,
+    "truth": "prawda"
   },
   {
     "id": "mar-podatek-13",
@@ -112,7 +113,8 @@
     "category": "handel",
     "location": "Marienburg",
     "source": "Faktor handlowy",
-    "displayed": false
+    "displayed": false,
+    "truth": "półprawda"
   },
   {
     "id": "dra-swiatla-14",
@@ -120,79 +122,91 @@
     "category": "chaos",
     "location": "Drakwald",
     "source": "Drwal z Drakwaldu",
-    "displayed": false
+    "displayed": false,
+    "truth": "półprawda"
   },
   {
     "id": "rec-herold-15",
     "text": "Ktoś widział heroldów w barwach Imperatora, którzy jeżdżą po wsiach i rekrutują chłopów obietnicą 5 szylingów dziennie i gorącego posiłku.",
     "category": "wojsko",
     "location": "Wsie Reiklandu",
-    "displayed": false
+    "displayed": false,
+    "truth": "fałsz"
   },
   {
     "id": "tav-zlotnik-16",
     "text": "Miejscowy złotnik to w rzeczywistości paser obsługujący gildię cieni. Ma ukrytą skrytkę pod podłogą warsztatu za podwójnym zamkiem.",
     "category": "przestępczość",
     "source": "Pijany złodziejaszek",
-    "displayed": false
+    "displayed": false,
+    "truth": "prawda"
   },
   {
     "id": "tav-przejscie-17",
     "text": "Istnieje zapomniane przejście pod murami miejskimi, którego używali przemytnicy jeszcze za czasów Wielkiej Zarazy.",
     "category": "przejścia",
     "source": "Stary przemytnik",
-    "displayed": false
+    "displayed": false,
+    "truth": "półprawda"
   },
   {
     "id": "tav-piraci-18",
     "text": "Na rzece grasuje banda rzecznych piratów z zielonymi chustami – atakują wyłącznie barki przewożące proch i broń palną z Nuln.",
     "category": "piraci",
     "source": "Kupiec rusznikarz",
-    "displayed": false
+    "displayed": false,
+    "truth": "prawda"
   },
   {
     "id": "tav-brama-19",
     "text": "Od tygodnia brakuje ludzi na zmianie wartowniczej – zachodnia brama po północy jest pilnowana przez jednego, wiecznie śpiącego staruszka.",
     "category": "straż",
     "source": "Żołnierz z warty",
-    "displayed": false
+    "displayed": false,
+    "truth": "fałsz"
   },
   {
     "id": "tav-trucizna-20",
     "text": "Ktoś widział w nocy postać w czarnej szacie wrzucającą podejrzany woreczek do miejskiej studni na placu targowym.",
     "category": "tajemnica",
     "source": "Praczka z zaułka",
-    "displayed": false
+    "displayed": false,
+    "truth": "fałsz"
   },
   {
     "id": "tav-karty-21",
     "text": "Karciarz w rogu szynku przegrywa celowo – to trik. Obserwuje, kto wyciąga złoty bilon i daje dyskretny znak chłopakom czekającym w cieniu bramy.",
     "category": "przestępczość",
-    "displayed": false
+    "displayed": false,
+    "truth": "prawda"
   },
   {
     "id": "syl-marsz-22",
     "text": "Podróżny z Sylvanii opowiada o nocnych marszach nieumarłych na wschodzie. Nikt mu nie wierzy, ale sam drży ze strachu na widok każdego cienia.",
     "category": "nieumarli",
     "location": "Wschodnie pogranicze",
-    "displayed": false
+    "displayed": false,
+    "truth": "półprawda"
   },
   {
     "id": "alt-mandragora-23",
     "text": "Kolegium Alchemii w Altdorfie zaoferowało astronomiczną sumę za dostarczenie nienaruszonego korzenia mandragory z głębi Lasu Cieni.",
     "category": "alchemia",
-    "displayed": false
+    "displayed": false,
+    "truth": "półprawda"
   },
   {
     "id": "ube-mnisi-24",
     "text": "W klasztorze Sigmara pod Ubersreikiem mnisi zamknęli się od środka i biją w dzwony o północy. Nikt nie wie, co tam zobaczyli.",
     "category": "tajemnica",
-    "displayed": false
+    "displayed": false,
+    "truth": "fałsz"
   },
   {
     "id": "alt-proch-25",
     "text": "Jeden ze szlacheckich rodów w stolicy potajemnie skupuje wielkie zapasy czarnego prochu i siarki, płacąc złotem bez targowania.",
     "category": "spisek",
-    "displayed": false
+    "displayed": false,
+    "truth": "prawda"
   }
 ]

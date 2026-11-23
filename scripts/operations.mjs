@@ -260,7 +260,7 @@ export class UnderworldOperations {
     return roll.total;
   }
 
-  /** Procent doli Patrona uwzględniający indywidualny wpis kompanii i relację z Patronem. */
+  /** Procent doli Patrona uwzględniający indywidualny wybór MG (0%–100% co 5%) i relację z Patronem. */
   static effectiveCutPercentage(gang) {
     if (!profileOf(gang).patronCut || gang?.patron?.noCut) return 0;
     let base;
@@ -275,7 +275,7 @@ export class UnderworldOperations {
     if (!Number.isFinite(base)) base = 25;
     const relation = gang?.patron?.relation || "neutral";
     const relMod = relation === "favorite" ? -5 : relation === "strained" ? 5 : relation === "hostile" ? 10 : 0;
-    return Math.max(0, Math.min(75, base + relMod));
+    return Math.max(0, Math.min(100, base + relMod));
   }
 
   static _creditMissionProfit(gang, grossPennies) {
@@ -346,7 +346,7 @@ export class UnderworldOperations {
     if (perks.includes("craft_innkeeper") && assignment === "tavern") add(t("Mod.CraftInnkeeper"), 10);
 
     // 3. Ranga i rynsztunek (powiązany aktor rozwija własne umiejętności na karcie, więc nie dublujemy rangi)
-    if (!opts.forLinkedActor) add(t("Mod.Rank"), 10 * (Number(npc.rank) || 0));
+    if (!opts.forLinkedActor) add(t("Mod.Rank"), 5 * (Number(npc.rank) || 0));
 
     const gear = Array.isArray(npc.gear) ? npc.gear : [];
     if (gear.includes("weapon") && ["distract", "intimidate", "sabotage"].includes(like)) add(t("Mod.Weapon"), 10);
@@ -960,6 +960,7 @@ export class UnderworldOperations {
         : t("Card.Scout.Fail")
     };
     await this.postMissionChatCard(actor, card);
+    if (r.isSuccess && rumorObj) await this._whisperRumorTruth(actor, rumorObj);
     return card;
 
   }
@@ -992,8 +993,9 @@ export class UnderworldOperations {
     const r = await this._prepareMission(actor, npcId, "tavern", MISSION_INFO.tavern.target);
     if (!r) return;
 
-    const rumorObj = r.isSuccess ? await UnderworldTables.drawRumor(r.gang) : null;
+    const rumorObj = r.isSuccess ? await UnderworldTables.drawRumor(r.gang, { tavern: true }) : null;
     const gossip = rumorObj ? (typeof rumorObj === "string" ? rumorObj : rumorObj.text) : null;
+    let extraObj = null;
     let extraRumorText = "";
 
     // Drobny koszt: kolejki dla gadatliwych + dodatkowa plotka przy Dawnym Fachu Szynkarza
@@ -1004,10 +1006,12 @@ export class UnderworldOperations {
       r.gang.treasury = GangData.penniesToTreasury(Math.max(0, curP - drinksSS * 12));
 
       if (Array.isArray(r.npc.narrativePerks) && r.npc.narrativePerks.includes("craft_innkeeper")) {
-        const extraObj = await UnderworldTables.drawRumor(r.gang);
+        extraObj = await UnderworldTables.drawRumor(r.gang);
         const extraText = extraObj ? (typeof extraObj === "string" ? extraObj : extraObj.text) : null;
         if (extraText && extraText !== gossip) {
           extraRumorText = ` ${t("Card.Tavern.ExtraRumor", { rumor: escapeHTML(extraText) })}`;
+        } else {
+          extraObj = null;
         }
       }
     }
@@ -1023,8 +1027,46 @@ export class UnderworldOperations {
         : t("Card.Tavern.Fail", { name: escapeHTML(r.npc.name) })
     };
     await this.postMissionChatCard(actor, card);
+    if (r.isSuccess && rumorObj) await this._whisperRumorTruth(actor, rumorObj);
+    if (r.isSuccess && extraObj) await this._whisperRumorTruth(actor, extraObj);
     return card;
 
+  }
+
+  /** Wysyła szept do MG z informacją o prawdziwości plotki (o ile włączone w ustawieniach świata). */
+  static async _whisperRumorTruth(actor, rumorObj) {
+    if (!rumorObj || this._setting("gmRumorTruthWhisper", true) === false) return null;
+    const gmRecipients = ChatMessage.getWhisperRecipients?.("GM")
+      ?? [...(game.users?.values?.() ?? (game.users?.activeGM ? [game.users.activeGM] : []))].filter(u => u.isGM).map(u => u.id);
+    if (!gmRecipients?.length) return null;
+
+    const rawTruth = String(rumorObj.truth ?? "").trim().toLowerCase();
+    let key;
+    if (["fałsz", "falsz", "false", "kłamstwo", "lie"].includes(rawTruth)) key = "false";
+    else if (["półprawda", "polprawda", "half", "partial", "half-truth"].includes(rawTruth)) key = "half";
+    else if (["prawda", "true", "fact"].includes(rawTruth)) key = "true";
+    else {
+      const roll = Math.random();
+      key = roll < 0.5 ? "true" : (roll < 0.85 ? "half" : "false");
+    }
+
+    const fullText = String(rumorObj.text || "");
+    const snippet = fullText.slice(0, 140);
+    const truthLabel = t(`Chat.RumorTruth.${key}`);
+    const toneClass = key === "true" ? "camp-ok" : (key === "false" ? "camp-bad" : "");
+    const html = `<div class="wfrp4e-underworld-chat">
+      <p><strong><i class="fas fa-eye"></i> ${t("Chat.RumorTruthHeader")}</strong></p>
+      <p class="camp-quote">„${escapeHTML(snippet)}${fullText.length > 140 ? "…" : ""}”</p>
+      <p>${t("Chat.RumorTruthLabel")}: <strong class="${toneClass}">${escapeHTML(truthLabel)}</strong>${rumorObj.category ? ` <em>(${escapeHTML(rumorObj.category)})</em>` : ""}</p>
+    </div>`;
+
+    return ChatMessage.create({
+      user: game.user.id,
+      speaker: ChatMessage.getSpeaker({ actor }),
+      whisper: gmRecipients,
+      content: html,
+      flavor: t("Chat.RumorTruthHeader")
+    });
   }
 
   // ════════════════════════════════════════════
@@ -1274,30 +1316,48 @@ export class UnderworldOperations {
 
   /**
    * Zdarzenie dla roli: jeśli w szajce jest zdolny członek z daną rolą (główną lub drugą), rzuca k100
-   * (50 + 10 za rangę, maks. 80). Sukces zamienia skutki zdarzenia na korzystne, porażka zostawia je bez zmian.
+   * (50 + 5 za rangę, maks. 80). Sukces zamienia skutki zdarzenia na korzystne, porażka zostawia je bez zmian.
    */
   static async _resolveEventRole(gang, event, rolls) {
     if (!event?.role) return event;
-    const roleName = UnderworldTables.ROLES_CONFIG[event.role]?.name || event.role;
+    const profileRoles = profileOf(gang).roles || [];
+    const displayRoleId = profileRoles.includes(event.role)
+      ? event.role
+      : UnderworldTables.roleForCompany(event.role, gang);
+    const roleName = UnderworldTables.ROLES_CONFIG[displayRoleId]?.name
+      || UnderworldTables.ROLES_CONFIG[event.role]?.name
+      || event.role;
     const specialists = gang.roster.filter(n => !["dead", "wounded", "arrested"].includes(n.status) && UnderworldTables.hasRole(n, [event.role]));
     if (!specialists.length) {
       return { ...event, roleNote: t("CampEvent.NoSpecialist", { role: escapeHTML(roleName) }) };
     }
     const hero = specialists.sort((a, b) => (Number(b.rank) || 0) - (Number(a.rank) || 0))[0];
-    const target = Math.min(80, 50 + 10 * (Number(hero.rank) || 0));
+    let target = 50 + 5 * (Number(hero.rank) || 0);
+    const strengths = Array.isArray(hero.strengths) ? hero.strengths : [hero.strength].filter(Boolean);
+    const flaws = Array.isArray(hero.flaws) ? hero.flaws : [hero.flaw].filter(Boolean);
+    if (strengths.includes("veteran") || strengths.includes("lucky")) target += 5;
+    if (flaws.includes("jinxed")) target -= 5;
+    target = Math.max(20, Math.min(85, target));
+
     const roll = await this._roll("1d100", rolls);
     const name = escapeHTML(hero.name);
     if (roll > target) {
       return { ...event, roleNote: t("CampEvent.RoleFailed", { name, role: escapeHTML(roleName), roll, target }) };
     }
+    const xpGain = 5;
+    hero.operationalXP = (Number(hero.operationalXP) || 0) + xpGain;
     const ok = event.ok || {};
     return {
       ...event,
       text: event.okText ? `${event.text} ${event.okText}` : event.text,
-      moraleDelta: Number(ok.moraleDelta) || 0,
-      suppliesFound: Number(ok.suppliesFound) || 0,
-      coinsFoundSS: Number(ok.coinsFoundSS) || 0,
-      roleNote: t("CampEvent.RoleSaved", { name, role: escapeHTML(roleName), roll, target })
+      moraleDelta: Number(ok.moraleDelta ?? ok.morale) || 0,
+      suppliesFound: Number(ok.suppliesFound ?? ok.supplies) || 0,
+      coinsFoundSS: Number(ok.coinsFoundSS ?? ok.coinsSS) || 0,
+      notorietyDelta: Number(ok.notorietyDelta ?? ok.notoriety) || 0,
+      prepToken: ok.prepToken || null,
+      roleXpGained: xpGain,
+      roleHeroName: hero.name,
+      roleNote: `${t("CampEvent.RoleSaved", { name, role: escapeHTML(roleName), roll, target })} ${t("CampEvent.RoleSavedXp", { xp: xpGain })}`
     };
   }
 
@@ -1389,7 +1449,9 @@ export class UnderworldOperations {
     if (!r) return;
 
     let coinsFoundSS = 0;
-    const flavor = UnderworldTables.getRandomIntimidationResult();
+    const flavor = r.isSuccess
+      ? UnderworldTables.getRandomIntimidationResult()
+      : UnderworldTables.getRandomIntimidationFailResult();
 
     if (r.isSuccess) {
       coinsFoundSS = await this._roll(LOOT_FORMULAS.intimidateCoins, r.rolls);
@@ -1570,7 +1632,9 @@ export class UnderworldOperations {
     const r = await this._prepareMission(actor, npcId, "smuggle", MISSION_INFO.smuggle.target);
     if (!r) return;
 
-    const complication = UnderworldTables.getRandomSmuggleComplication();
+    const complication = r.isSuccess
+      ? UnderworldTables.getRandomSmuggleComplication()
+      : UnderworldTables.getRandomSmuggleFailResult();
     let coinsFoundSS = 0;
     if (r.isSuccess) {
       const terrainBonus = this.getTerrain(r.gang) === "mountains" ? 1.5 : 1; // przemyt przez przełęcz płaci lepiej
@@ -1712,20 +1776,28 @@ export class UnderworldOperations {
     return weekly ? mouths : Math.max(1, Math.ceil(mouths / 3));
   }
 
+  /** Żołd / koszt utrzymania pojedynczego członka kompanii w szylingach (0, gdy wyłączone lub martwy/aresztowany). */
+  static memberUpkeepSS(npc, gang, weekly = false) {
+    if (!npc || ["dead", "arrested"].includes(npc.status)) return 0;
+    if (gang?.upkeepOverride === "free") return 0;
+    if (this._setting("upkeepEnabled", true) === false) return 0;
+    const isMerc = profileOf(gang).id === "mercenaries";
+    const rank = Math.max(0, Number(npc.rank) || 0);
+    const base = weekly ? ((isMerc ? 2 : 1) + rank) : (1 + (rank >= 2 ? 1 : 0) + (isMerc ? 1 : 0));
+    const mult = Number(this._setting("upkeepMultiplier", 1)) || 1;
+    return Math.max(1, Math.round(base * mult));
+  }
+
   /** Żołd / koszt utrzymania kompanii w szylingach (0, gdy wyłączone globalnie lub dla tej kompanii). */
   static calculateUpkeepSS(gang, weekly = false) {
     if (gang?.upkeepOverride === "free") return 0;
     if (this._setting("upkeepEnabled", true) === false) return 0;
-    const isMerc = profileOf(gang).id === "mercenaries";
     const active = (gang?.roster || []).filter(n => !["dead", "arrested"].includes(n.status));
     let total = 0;
     for (const n of active) {
-      const rank = Math.max(0, Number(n.rank) || 0);
-      total += weekly ? ((isMerc ? 2 : 1) + rank) : (1 + (rank >= 2 ? 1 : 0) + (isMerc ? 1 : 0));
+      total += this.memberUpkeepSS(n, gang, weekly);
     }
-    if (total <= 0) return 0;
-    const mult = Number(this._setting("upkeepMultiplier", 1)) || 1;
-    return Math.max(1, Math.round(total * mult));
+    return total;
   }
 
   /**
@@ -1775,11 +1847,11 @@ export class UnderworldOperations {
     const rolls = [...(options.extraRolls || [])];
     const missionCards = options.missionCards || [];
 
-    // 1. Schronienie (zależne od terenu)
+    // 1. Schronienie (zależne od terenu — decyzja MG, bez kosztu monet)
     const terrainId = this.getTerrain(gang);
     const terrain = TERRAINS[terrainId];
     const allowedShelters = ["makeshift", "basic", "comfortable"];
-    const requestedShelter = options.shelterType || gang.camp.type || "basic";
+    const requestedShelter = (game.user.isGM && options.shelterType) ? options.shelterType : (gang.camp.type || "basic");
     const shelterType = allowedShelters.includes(requestedShelter) ? requestedShelter : "basic";
     const isMakeshift = shelterType === "makeshift";
     gang.camp.type = shelterType;
@@ -1792,17 +1864,7 @@ export class UnderworldOperations {
       if (terrain.coldMakeshift) shelterName += ` – ${t("Camp.Shelter.Frost")}`;
     } else if (shelterType === "comfortable") {
       shelterName = t("Camp.Shelter.Comfortable", { place: terrain.comfortableLabel });
-      const curP = GangData.treasuryToPennies(gang.treasury);
-      const costSS = terrain.comfortableCostSS * (weekly ? 3 : 1);
-      const costP = costSS * 12;
-      if (curP >= costP) {
-        shelterMoraleDelta = 1;
-        gang.treasury = GangData.penniesToTreasury(curP - costP);
-      } else {
-        shelterName = t("Camp.Shelter.BasicNoFunds");
-        gang.camp.type = "basic";
-        ui.notifications.warn(t("Camp.Shelter.NoFundsNotify", { cost: costSS }));
-      }
+      shelterMoraleDelta = 1;
     }
 
     // 2. Wartownicy (nagradzani +3 DO × mnożnik rytmu; ranni z Wojennymi Bliznami też mogą pełnić wartę)
@@ -1946,26 +2008,56 @@ export class UnderworldOperations {
       n.assignment = "none";
     });
 
-    // 6. Losowe wydarzenie nocy: bez warty 60%, z wartą 40%, z maskowaniem śladów o połowę mniej
+    // 6. Losowe wydarzenie nocy: stała szansa terenu; warta i maskowanie chronią przed negatywnymi skutkami (nie odbierając pozytywnych)
     let event = null;
     const tracksCovered = gang.camp.tracksCovered || false;
-    let eventChance = isUnprotected ? terrain.eventChance.unguarded : terrain.eventChance.guarded;
-    if (tracksCovered) eventChance = Math.floor(eventChance / 2);
+    const eventChance = terrain.eventChance.unguarded;
 
     if (await this._roll("1d100", rolls) <= eventChance) {
       event = await UnderworldTables.drawCampEvent(gang);
       event = await this._resolveEventRole(gang, event, rolls);
-      const sup = Number(event.suppliesFound ?? event.supplies) || 0;
+
+      let sup = Number(event.suppliesFound ?? event.supplies) || 0;
+      let coins = Number(event.coinsFoundSS ?? event.coinsSS) || 0;
+      let mor = Number(event.moraleDelta ?? event.morale) || 0;
+      let noto = Number(event.notorietyDelta ?? event.notoriety) || 0;
+
+      const isNegative = (mor < 0 || sup < 0 || coins < 0 || noto > 0) && !event.followUp;
+      const guardProtectChance = (!isUnprotected ? 35 : 0) + (tracksCovered ? 35 : 0);
+      if (isNegative && guardProtectChance > 0 && (await this._roll("1d100", rolls)) <= guardProtectChance) {
+        mor = Math.max(0, mor);
+        sup = Math.max(0, sup);
+        coins = Math.max(0, coins);
+        noto = Math.min(0, noto);
+        event.moraleDelta = mor;
+        event.suppliesFound = sup;
+        event.coinsFoundSS = coins;
+        event.notorietyDelta = noto;
+        event.sentryPrevented = true;
+        event.sentryNote = t("CampEvent.SentryPrevented");
+      }
+
       if (sup) {
         gang.supplies = Math.max(0, Math.min(30, (gang.supplies || 0) + sup));
       }
-      const coins = Number(event.coinsFoundSS ?? event.coinsSS) || 0;
       if (coins) {
         const curP = GangData.treasuryToPennies(gang.treasury);
         gang.treasury = GangData.penniesToTreasury(Math.max(0, curP + coins * 12));
       }
-      const mor = Number(event.moraleDelta ?? event.morale) || 0;
       if (mor) this.changeMorale(gang, mor);
+      if (noto) this.changeNotoriety(gang, noto);
+
+      const effectChips = [];
+      const signed = n => (n > 0 ? `+${n}` : `${n}`);
+      if (mor) effectChips.push({ label: t("CampEvent.ChipMorale", { val: signed(mor) }), tone: mor > 0 ? "good" : "bad" });
+      if (sup) effectChips.push({ label: t("CampEvent.ChipSupplies", { val: signed(sup) }), tone: sup > 0 ? "good" : "bad" });
+      if (coins) effectChips.push({ label: t("CampEvent.ChipCoins", { val: signed(coins) }), tone: coins > 0 ? "good" : "bad" });
+      if (noto) effectChips.push({ label: t("CampEvent.ChipNotoriety", { val: signed(noto) }), tone: noto < 0 ? "good" : "bad" });
+      if (event.roleXpGained) effectChips.push({ label: t("CampEvent.ChipRoleXp", { val: event.roleXpGained }), tone: "good" });
+      if (event.prepToken && TOKENS[event.prepToken]) {
+        effectChips.push({ label: t("CampEvent.ChipToken", { name: TOKENS[event.prepToken].name }), tone: "good" });
+      }
+      event.effectChips = effectChips;
     }
 
     // 7. Obława straży przy wysokim Rozgłosie (maskowanie, prowizoryczne kryjówki i wtyka zmniejszają ryzyko)
@@ -1980,8 +2072,11 @@ export class UnderworldOperations {
     // 7b. Haracz: dochód z rewiru (tylko w mieście), czasem konkurencja zrywa układ
     const racket = await this._resolveRacket(gang, { weekly, terrainId, rolls });
 
-    // 7c. Żetony przygotowania wygasają, łupy stygną
+    // 7c. Żetony przygotowania wygasają, łupy stygną (żeton z nocnego eventu przyznajemy PO wygaśnięciu starych!)
     this.tickPreparationAndLoot(gang, weekly);
+    if (event?.prepToken && TOKENS[event.prepToken]) {
+      this.setToken(gang, event.prepToken);
+    }
 
     // 8. Efekty wad i zalet popleczników podczas postoju
     const flawEffects = [];
@@ -2394,7 +2489,7 @@ export class UnderworldOperations {
       requiredRoles: ["provocateur", "smuggler", "scout"]
     },
 
-    // 🧰 SZABROWNIK / FELCZER
+    // 🧰 SZABROWNIK
     "resupply": {
       advantageCost: 1,
       modifier: 0,
@@ -2408,7 +2503,7 @@ export class UnderworldOperations {
     "draught": {
       advantageCost: 1,
       modifier: 0,
-      requiredRoles: ["scavenger", "charlatan"]
+      requiredRoles: ["charlatan", "scavenger"]
     },
 
     // 📢 PRAWA RĘKA / ZASTĘPCA
@@ -2520,7 +2615,7 @@ export class UnderworldOperations {
     "salve": {
       advantageCost: 1,
       modifier: 0,
-      requiredRoles: ["charlatan", "scavenger"]
+      requiredRoles: ["charlatan"]
     },
     "fumes": {
       advantageCost: 1,

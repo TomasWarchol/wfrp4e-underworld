@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.12.1
+- **40 new night events** for the company profiles (Outlaws +24, and +4 each for Cult, Investigators, Mercenaries and Smugglers), in English and Polish, and about 190 existing events and rumours corrected (English and Polish entries counted together; the city, forest, mountain and village terrain events included).
+- **Rumours can be true or false, and the GM is told which.** Rumours carry a truth flag and can name their source and location; when a company hears one, the GM gets a whisper saying whether it is true (world setting "GM whisper: rumour truth", on by default). Tavern rumours are drawn separately, and a rumour's source now fits the terrain.
+- Events can change the company's notoriety, hand out a preparation token or apply only to certain company types. The roll tables are regenerated once (seed version 4).
+- **The Patron's cut can be set by the GM from 0% to 100% in 5% steps** (it was capped at 75%), still adjusted by the relation with the Patron.
+- **Rank bonuses on tests are +5 per rank** in the code, as the 1.12.0 notes and the rules text already said (the code still gave +10).
+- **Lodging is the GM's choice and costs no coin**: comfortable lodging no longer charges silver in any terrain.
+- Role names were aligned with what each role does (for example Smuggler, Healer, Agent, Duellist, Saboteur), and each crew member's pay is shown on their card.
+- The ledger, dashboard, roster, camp and chronicle views and the camp rest chat card got layout and style fixes; README and the Polish README describe the current rules.
+
 ## 1.12.0
 - **Bug & exploit fixes**:
   - Night watch now properly recognises sentries assigned via the Plan tab (`assignment === "guard"`) as well as `battle_scarred` wounded followers.

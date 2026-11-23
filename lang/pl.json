@@ -493,103 +493,307 @@
       "village": {
         "v-r1": {
           "Text": "Pastuch z Altenhof przysięga, że widział w lesie postać z rogami, która niosła owcę na ramieniu jak dziecko.",
-          "Category": "zwierzoludzie"
+          "Category": "zwierzoludzie",
+          "Truth": "prawda"
         },
         "v-r2": {
           "Text": "Poborca hrabiego przyjedzie w przyszłym tygodniu – i tym razem ma ze sobą sześciu zbrojnych.",
-          "Category": "podatki"
+          "Category": "podatki",
+          "Truth": "prawda"
         },
         "v-r3": {
           "Text": "Córka młynarza leczy dotykiem. Kapłan Sigmara już o nią pytał w karczmie.",
-          "Category": "czarownice"
+          "Category": "czarownice",
+          "Truth": "półprawda"
         },
         "v-r4": {
           "Text": "W ruinach starej wieży za bagnem dziadkowie chowali kosztowności przed wojną. Nikt nie wrócił, kto szukał.",
-          "Category": "skarby"
+          "Category": "skarby",
+          "Truth": "fałsz"
         },
         "v-r5": {
           "Text": "Kupiec bławatny ze Streissen jedzie na jarmark z pełnym wozem – i tylko dwoma pachołkami.",
-          "Category": "handel"
+          "Category": "handel",
+          "Truth": "prawda"
         },
         "v-r6": {
           "Text": "Sołtys bierze od przemytników działkę za przymykanie oka na ścieżkę przez moczary.",
-          "Category": "władza"
+          "Category": "władza",
+          "Truth": "prawda"
         },
         "v-r7": {
           "Text": "Na sąsiednim folwarku padło bydło. Mówią, że to klątwa, ale woda w studni śmierdzi siarką.",
-          "Category": "zaraza"
+          "Category": "zaraza",
+          "Truth": "półprawda"
         },
         "v-r8": {
           "Text": "Łowca czarownic zatrzymał się w gospodzie. Pyta o obcych, którzy przybyli w tym miesiącu.",
-          "Category": "straż"
+          "Category": "straż",
+          "Truth": "prawda"
+        },
+        "v-r9": {
+          "Text": "Zarządca folwarku nie płaci parobkom od żniw, ale w piwnicy pod stodołą trzyma trzy baryłki przedniej bretońskiej gorzałki i mieszek srebra.",
+          "Category": "folwark",
+          "Truth": "prawda"
+        },
+        "v-r10": {
+          "Text": "W okolicy kręci się niby-zakonnik Sigmara, który spowiada wdowy i wypytuje, gdzie trzymają posagowe srebro.",
+          "Category": "przestępczość",
+          "Truth": "prawda"
+        },
+        "v-r11": {
+          "Text": "Skrzynia z podatkami z trzech sąsiednich wsi utknęła w kuźni, bo powóz stracił oba tylne koła na wybojach.",
+          "Category": "podatki",
+          "Truth": "półprawda"
+        },
+        "v-r12": {
+          "Text": "Nowo przybyły grabarz zawsze grzebie ciała dopiero po zachodzie słońca i kupuje od zielarki niezwykłe ilości soli.",
+          "Category": "kult",
+          "Truth": "półprawda"
+        },
+        "v-r13": {
+          "Text": "Stary weteran spod młyna chowa pod podłogą krasnoludzki pancerz z wojny z zielonoskórymi, lecz nikomu nie pozwala wejść do chaty.",
+          "Category": "skarby",
+          "Truth": "fałsz"
+        },
+        "v-r14": {
+          "Text": "Barkowy kupiec z rzeki obiecał wójtowi sowitą łapówkę, jeśli chłopi przeładują nocą beczki bez pytania o zawartość.",
+          "Category": "handel",
+          "Truth": "prawda"
+        },
+        "v-r15": {
+          "Text": "Dwóch strażników dróg pokłóciło się o podział łapówek i jeden z nich grozi, że wyda przemytników z przystani.",
+          "Category": "straż",
+          "Truth": "prawda"
+        },
+        "v-r16": {
+          "Text": "Przy opuszczonej owczarni zniknęło już sześć psów pasterskich; ślady kończą się zawsze na skraju mokradeł.",
+          "Category": "potwory",
+          "Truth": "prawda"
+        },
+        "v-r17": {
+          "Text": "Po drodze przeszedł oddział najemników z Tilei z ciężko rannym kapitanem na wozie i pełnym kufrem srebra.",
+          "Category": "wojsko",
+          "Truth": "półprawda"
+        },
+        "v-r18": {
+          "Text": "Na rozstajach dróg w nocy zapalają się niebieskie ogniki; miejscowi mówią, że wskazują zakopane kości skazańca.",
+          "Category": "magia",
+          "Truth": "fałsz"
+        },
+        "v-r19": {
+          "Text": "Bogaty młynarz szuka dyskretnych ludzi do „rozmowy” z wierzycielem z miasta, zanim ten pojawi się z woźnym.",
+          "Category": "zlecenia",
+          "Truth": "prawda"
+        },
+        "v-r20": {
+          "Text": "Młody syn dziedzica przegrał rodowy sygnet w kości i teraz po cichu wyprzedaje zbroje ze zbrojowni dworu.",
+          "Category": "władza",
+          "Truth": "prawda"
         }
       },
       "forest": {
         "f-r1": {
           "Text": "Banda Rudego Ottona rozbiła obóz przy starym dębie. Płacą za wieści o konwojach.",
-          "Category": "banici"
+          "Category": "banici",
+          "Truth": "prawda"
         },
         "f-r2": {
           "Text": "Kamienie znaczone krwią pojawiły się przy trakcie. Gajowy mówi, by nie chodzić tamtędy po zmroku.",
-          "Category": "zwierzoludzie"
+          "Category": "zwierzoludzie",
+          "Truth": "prawda"
         },
         "f-r3": {
           "Text": "Konwój z solą wyjeżdża z Kemperbadu za trzy dni. Eskorta to najemnicy, którym zalegają z żołdem.",
-          "Category": "trakt"
+          "Category": "trakt",
+          "Truth": "prawda"
         },
         "f-r4": {
           "Text": "Hrabia wyznaczył nagrodę za kłusowników. Dwóch wisi już przy rozstaju.",
-          "Category": "łowcy"
+          "Category": "łowcy",
+          "Truth": "prawda"
         },
         "f-r5": {
           "Text": "W wąwozie leży rozbity wóz poczty. Nikt nie zabrał skrzyni, bo wszyscy boją się tego, co ją rozbiło.",
-          "Category": "skarby"
+          "Category": "skarby",
+          "Truth": "półprawda"
         },
         "f-r6": {
           "Text": "Nocą w lesie widać światła i słychać bębny. Drwale omijają polanę przy źródle.",
-          "Category": "kult"
+          "Category": "kult",
+          "Truth": "prawda"
         },
         "f-r7": {
           "Text": "Zielarka z chaty na skraju lasu kupi każdą mandragorę i nie zadaje pytań.",
-          "Category": "zioła"
+          "Category": "zioła",
+          "Truth": "prawda"
         },
         "f-r8": {
           "Text": "Patrol drogowców szuka zbiegłego więźnia. Za wskazanie kryjówki płacą srebrem.",
-          "Category": "straż"
+          "Category": "straż",
+          "Truth": "fałsz"
+        },
+        "f-r9": {
+          "Text": "Pod korzeniami wielkiego buka w głębi puszczy ktoś poustawiał kręgi z białych czaszek i wyrył runy z Północy.",
+          "Category": "kulty",
+          "Truth": "prawda"
+        },
+        "f-r10": {
+          "Text": "Na leśnej polanie przy spalonej smolarni przemytnicy trzymają zapasowe konie i skrzynie z bretońskim winem.",
+          "Category": "przemytnicy",
+          "Truth": "prawda"
+        },
+        "f-r11": {
+          "Text": "Wielki odyniec z białą blizną na boku poturbował już trzech łowczych hrabiego; sam zarządca obiecuje 10 koron za jego łeb.",
+          "Category": "potwory",
+          "Truth": "półprawda"
+        },
+        "f-r12": {
+          "Text": "Stary bartnik widział, jak wóz poborcy zjechał z traktu i ugrzązł w torfowisku bez żadnej eskorty.",
+          "Category": "zlecenia",
+          "Truth": "półprawda"
+        },
+        "f-r13": {
+          "Text": "W chacie dawno zmarłego pustelnika nadal pali się wieczorami światło, choć nikt nie przynosi tam drewna.",
+          "Category": "magia",
+          "Truth": "prawda"
+        },
+        "f-r14": {
+          "Text": "Jeden z ludzi Rudego Ottona chce zdradzić kryjówkę bandy w zamian za ułaskawienie i garść srebra.",
+          "Category": "banici",
+          "Truth": "prawda"
+        },
+        "f-r15": {
+          "Text": "Podczas wielkiej burzy dwa lata temu w wąwozie przewrócił się dąb i odsłonił kamienne drzwi wykute jeszcze przez dawnych ludzi.",
+          "Category": "skarby",
+          "Truth": "półprawda"
+        },
+        "f-r16": {
+          "Text": "Leśniczy z północnego rewiru bierze srebro za milczenie, ale tylko jeśli myśliwi nie zostawiają po sobie popiołu ani kości.",
+          "Category": "straż",
+          "Truth": "prawda"
+        },
+        "f-r17": {
+          "Text": "Stado zdziczałych psów w zachodniej kniei roznosi czarną wściekliznę – ugryziony człowiek dostaje piany po dwóch dniach.",
+          "Category": "zaraza",
+          "Truth": "fałsz"
+        },
+        "f-r18": {
+          "Text": "Most na leśnym potoku został podmyty; kupcy zmuszeni są rozładowywać wozy i przenosić towary ręcznie przez cały dzień.",
+          "Category": "trakt",
+          "Truth": "prawda"
+        },
+        "f-r19": {
+          "Text": "Na skraju wycinki zniknął cały obóz drwali – zostały tylko niedopalone ogniska i zapach mokrej sierści.",
+          "Category": "zwierzoludzie",
+          "Truth": "prawda"
+        },
+        "f-r20": {
+          "Text": "Na starym cmentarzysku w gęstwinie rośnie rzadki księżycowy kwiat, którego potrzebują alchemicy z wielkich miast.",
+          "Category": "zioła",
+          "Truth": "półprawda"
         }
       },
       "mountains": {
         "m-r1": {
           "Text": "Krasnoludzki klan z Karak Hirn szuka ludzi do przeniesienia ładunku przez przełęcz – bez zadawania pytań.",
-          "Category": "krasnoludy"
+          "Category": "krasnoludy",
+          "Truth": "prawda"
         },
         "m-r2": {
           "Text": "Na wschodnim zboczu widziano dymy ognisk. Pasterze mówią o zielonoskórych.",
-          "Category": "orkowie"
+          "Category": "orkowie",
+          "Truth": "półprawda"
         },
         "m-r3": {
           "Text": "Opuszczona sztolnia nad wioską wciąż ma żyłę srebra. Właściciel zmarł, a spadkobiercy siedzą w Nuln.",
-          "Category": "kopalnie"
+          "Category": "kopalnie",
+          "Truth": "prawda"
         },
         "m-r4": {
           "Text": "Za dwa dni przyjdzie śnieżyca. Kto nie zejdzie z przełęczy, ten zostanie na niej do wiosny.",
-          "Category": "pogoda"
+          "Category": "pogoda",
+          "Truth": "prawda"
         },
         "m-r5": {
           "Text": "Strażnicy przełęczy biorą myto od każdego wozu – i drugie, nieoficjalne, od tych, którzy nie chcą być przeszukani.",
-          "Category": "straż"
+          "Category": "straż",
+          "Truth": "prawda"
         },
         "m-r6": {
           "Text": "Pod lawiną z zeszłego roku leży karawana z Tilei. Wiosną spod śniegu wystają koła.",
-          "Category": "skarby"
+          "Category": "skarby",
+          "Truth": "półprawda"
         },
         "m-r7": {
           "Text": "W jaskini nad wodospadem mieszka coś dużego. Kozy znikają, a ślady są większe od ludzkiej dłoni.",
-          "Category": "potwory"
+          "Category": "potwory",
+          "Truth": "prawda"
         },
         "m-r8": {
           "Text": "W karczmie na przełęczy można sprzedać wszystko – pod warunkiem, że krasnolud za ladą dostanie swoją dolę.",
-          "Category": "handel"
+          "Category": "handel",
+          "Truth": "prawda"
+        },
+        "m-r9": {
+          "Text": "Górnicy w nowej żyle dokopali się do zasypanej krasnoludzkiej sali z zapieczętowanymi dzbanami – nikt nie śmie ich otworzyć.",
+          "Category": "kopalnie",
+          "Truth": "prawda"
+        },
+        "m-r10": {
+          "Text": "Przemytnicy z Przełęczy Czarnego Ognia płacą złotem za bezpieczny przerzut skrzyń z krasnoludzkim prochem w dół doliny.",
+          "Category": "przemytnicy",
+          "Truth": "prawda"
+        },
+        "m-r11": {
+          "Text": "W wyższych partiach grani krąży młody gryf lub mantikora – pasterze widzieli wielkie skrzydła na tle chmur.",
+          "Category": "potwory",
+          "Truth": "półprawda"
+        },
+        "m-r12": {
+          "Text": "Mały posterunek graniczny ma tylko sześciu żołnierzy, a sierżant od miesiąca pije na umór zamiast pisać raporty.",
+          "Category": "wojsko",
+          "Truth": "prawda"
+        },
+        "m-r13": {
+          "Text": "Pasterz znalazł w szczelinie zamarzniętego posłańca w płaszczu książęcym; nie ruszył go z lęku przed klątwą.",
+          "Category": "skarby",
+          "Truth": "półprawda"
+        },
+        "m-r14": {
+          "Text": "Zielonoskórzy z podziemi zaczęli zatykać nocami otwory wentylacyjne w dolnych sztolniach i zbierają żelastwo.",
+          "Category": "orkowie",
+          "Truth": "prawda"
+        },
+        "m-r15": {
+          "Text": "Tileańska karawana z winem i jedwabiem czeka pod przełęczą na zbrojną eskortę – połowa najemników uciekła im w nocy.",
+          "Category": "handel",
+          "Truth": "prawda"
+        },
+        "m-r16": {
+          "Text": "W opuszczonej kaplicy na grani ktoś rozłożył krwawe dary wokół rozbitego posągu Sigmara i śpiewał w obcym języku.",
+          "Category": "kulty",
+          "Truth": "fałsz"
+        },
+        "m-r17": {
+          "Text": "Stary kowal runiczny z Karak Hirn szuka trzech odważnych ludzi, by odzyskać skradziony młot rodowy z rąk zbójców.",
+          "Category": "krasnoludy",
+          "Truth": "półprawda"
+        },
+        "m-r18": {
+          "Text": "W połowie drogi zeszła cicha lawina błotna i odsłoniła starą brukowaną drogę, którą można ominąć punkt myta.",
+          "Category": "pogoda",
+          "Truth": "prawda"
+        },
+        "m-r19": {
+          "Text": "Strażnik przełęczy trzyma w lochu młodego przemytnika z bogatej kupieckiej rodziny i szykuje cichą licytację za jego wolność.",
+          "Category": "straż",
+          "Truth": "prawda"
+        },
+        "m-r20": {
+          "Text": "Namiestnik górniczej osady fałszuje księgi wytopu srebra i chowa różnicę w skrytce pod kantorem.",
+          "Category": "władza",
+          "Truth": "fałsz"
         }
       }
     },
@@ -737,7 +941,7 @@
         "Cel wysłał list przez kuriera. Kurier pojechał na zachód, w stronę traktu do Marienburga.",
         "Cel prowadził długą rozmowę ze strażnikiem przy bramie. Wyglądało na to, że znają się dobrze – strażnik wpuścił go po cichu.",
         "Cel odwiedził dom publiczny 'Pod Złotą Panną', ale nie dla rozrywki – spotkał się na piętrze z mężczyzną o wojskowej postawie.",
-        "Cel spędził dwie godziny w bibliotece świątyni Vérenay, czytając stare pergaminy. Przepisał coś i schował notatki za pazuchę.",
+        "Cel spędził dwie godziny w bibliotece świątyni Vereny, czytając stare pergaminy. Przepisał coś i schował notatki za pazuchę.",
         "Cel kupił na czarnym rynku fiolkę niezidentyfikowanej cieczy od starej zielarki. Zapłacił dwa razy więcej niż wypadało.",
         "Cel poszedł do kuźni krasnoluda i zamówił duplikat klucza. Krasnoludowi nie spodobał się ten interes, ale pieniądze go przekonały."
       ],
@@ -745,12 +949,12 @@
         "Karczmarz trzęsie się ze strachu i oddaje całą dzienną kasę. Nie powie nikomu – przynajmniej na razie.",
         "Kupiec płaci haracze bez mrugnięcia okiem – widać, że nie pierwszy raz. Daje informację o konkurencji w prezencie.",
         "Rzemieślnik płaci, ale jest wściekły. Może poskarżyć się straży, jeśli znajdzie odwagę.",
-        "Wieśniak oddaje ostatnie grosze i błaga o litość. Ludzie ze szajki czują się nieswojo (-1 Morale).",
+        "Wieśniak oddaje ostatnie grosze i błaga o litość. Ludzie ze szajki odwracają wzrok i milczą przez resztę wieczoru.",
         "Strażnik miejski zgadza się przymknąć oko w zamian za regularne 'datki'. Przydatny kontakt na przyszłość.",
         "Handlarz płaci, ale ostrzega: 'Mój brat jest w Straży Dróg. Lepiej, żebyśmy się nie spotkali ponownie.'"
       ],
       "ForgeDocuments": [
-        "Glejt podróżny z pieczęcią Grafa von Todtbringera – upoważnia do swobodnego przejazdu przez Middenland.",
+        "Glejt podróżny z pieczęcią Grafa von Todbringera – upoważnia do swobodnego przejazdu przez Middenland.",
         "List polecający od 'Gildii Kupców z Altdorfu' – otwiera drzwi w handlowych kręgach.",
         "Fałszywy nakaz aresztowania z podpisem sędziego – przydatny do zastraszenia lub porwania celu.",
         "Podrobiony patent oficerski Armii Reiklandu – daje prawo do rekwizycji koni i zapasów.",
@@ -762,12 +966,12 @@
       "SmuggleComplications": [
         "Kontrola na bramie jest luźna – strażnik drzemie na posterunku. Przemyt przechodzi gładko.",
         "Straż zwiększyła czujność po nocnym alarmie. Trzeba czekać i spróbować o świcie.",
-        "Celnik podejrzliwie przygląda się ładunkowi, ale łapówka w wysokości 2 szylingów załatwia sprawę.",
+        "Celnik podejrzliwie przygląda się ładunkowi, ale uśmiech, flaszka gorzałki i zgrabna gadka załatwiają sprawę.",
         "Patrol na drodze zatrzymuje podróżnych i sprawdza wozy. Na szczęście podwójna podłoga wytrzymuje inspekcję.",
         "Przemyt idzie dobrze, ale konkurencyjny gang zauważa trasę i może chcieć ją przejąć.",
         "Straż portowa używa psów tropiących – jeden z nich prawie zwęszył ukryty towar.",
         "Kontrabanda jest na miejscu, ale odbiorca nie pojawia się o umówionej porze. Trzeba czekać w ryzykownym miejscu.",
-        "Wszystko poszło gładko. Odbiorca jest zadowolony i daje napiwek oraz informację o następnej robocie."
+        "Wszystko poszło gładko. Odbiorca jest zadowolony, chwali jakość roboty i obiecuje pamięć przy następnym kursie."
       ],
       "CampEvents": [
         {
@@ -849,7 +1053,73 @@
         "Albrecht 'Szybki' Hartmann",
         "Gerda 'Wilczyca' Lange",
         "Udo 'Topór' Werner"
-      ]
+      ],
+      "IntimidationFailResults": [
+        "Ofiara okazuje się twardsza niż wyglądała – zatrzaskuje okiennice i wzywa sąsiadów z widłami.",
+        "Cel śmieje się wam w twarz, wspominając o wpływowym krewnym w radzie miejskiej. Lepiej się ulotnić.",
+        "Hałas stawia na nogi patrol straży za rogiem. Ludzie muszą wycofać się z pustymi rękami.",
+        "Kupiec zdążył wcześniej wynająć dwóch osiłków z pałkami – tym razem to nie wy dyktujecie warunki.",
+        "Poplecznik przesadził z groźbami, a przerażony rzemieślnik uciekł tylnymi drzwiami prosto po stróżów.",
+        "Rzekomy słabeusz wyciąga spod lady nabity pistolet. Rozsądek nakazuje odwrót."
+      ],
+      "SmuggleFailResults": [
+        "Celnik nie dał się nabrać na fałszywe dno – towar przepadł lub trzeba było uciekać pod osłoną nocy.",
+        "Patrol z psami tropiącymi zablokował rogatkę dokładnie w momencie przerzutu. Kurs spalił na panewce.",
+        "Odbiorca zniknął z umówionego miejsca, a w zaułku czekali ludzie konkurencyjnego gangu.",
+        "Barka zaczęła nabierać wody na mieliźnie i część pakunków trzeba było zatopić, by ratować ludzi.",
+        "Ktoś z miejscowych doniósł straży portowej – wóz został zatrzymany przed samą bramą.",
+        "Zdradliwa pogoda i gorliwy dziesiętnik na moście przekreśliły przemyt zanim zdążył się zacząć."
+      ],
+      "TerrainRumorSources": {
+        "city": [
+          "Karczmarz z podłym wzrokiem",
+          "Przekupka z targu rybnego",
+          "Pijany żołnierz z garnizonu",
+          "Praczka z zaułka ubogich",
+          "Czeladnik kowalski",
+          "Strażnik bramy miejskiej",
+          "Były skazaniec z lochów",
+          "Karciarz z szynku",
+          "Szczurołap z kanałów",
+          "Pisarz z magistratu"
+        ],
+        "village": [
+          "Sołtys po dwóch kuflach piwa",
+          "Młynarz ze starego młyna",
+          "Wiejski kowal",
+          "Pasterz owiec z pastwisk",
+          "Gospodyni z przydrożnego zajazdu",
+          "Stara zielarka spod lasu",
+          "Parobek z folwarku",
+          "Furman z gościńca",
+          "Kościelny spod kapliczki Sigmara",
+          "Wędrowny druciarz"
+        ],
+        "forest": [
+          "Drwal z leśnej poręby",
+          "Węglarz znad dymiącego mielerza",
+          "Miejscowy kłusownik",
+          "Zbiegły chłop pańszczyźniany",
+          "Zielarka z chaty na polanie",
+          "Emerytowany gajowy",
+          "Wędrowny smolarz",
+          "Samotny myśliwy",
+          "Bartnik z puszczańskiej pasieki",
+          "Posłaniec zgubiony na ścieżce"
+        ],
+        "mountains": [
+          "Górnik ze starej sztolni",
+          "Pasterz kóz z hali",
+          "Krasnoludzki kupiec żelaza",
+          "Zmęczony strażnik przełęczy",
+          "Tragarz z górskiej karawany",
+          "Stary kamieniarz",
+          "Przewodnik po graniach",
+          "Karczmarz ze schroniska na przełęczy",
+          "Zwiadowca klanowy z Karak Hirn",
+          "Łowca goblinów przy ognisku"
+        ]
+      }
     },
     "Ranks": {
       "rookie": {
@@ -858,15 +1128,15 @@
       },
       "seasoned": {
         "Name": "Zaprawiony",
-        "Desc": "+10 do testów we wszystkich zleceniach."
+        "Desc": "+5 do testów we wszystkich zleceniach."
       },
       "veteran": {
         "Name": "Weteran",
-        "Desc": "+20 do testów + 50% szans na ocalenie przed raną."
+        "Desc": "+10 do testów + 50% szans na ocalenie przed raną."
       },
       "lieutenant": {
         "Name": "Prawa Ręka",
-        "Desc": "+30 do testów, autorytet (+1 Morale szajki gdy < 7), rozkazy dowódcze (unikalna ranga — limit 1 na szajkę)."
+        "Desc": "+15 do testów, autorytet (+1 Morale szajki gdy < 7), rozkazy dowódcze (unikalna ranga — limit 1 na szajkę)."
       }
     },
     "Gear": {
@@ -897,47 +1167,47 @@
     },
     "Roles": {
       "bodyguard": {
-        "Name": "Rębacz / Ochroniarz",
+        "Name": "Ochroniarz",
         "Desc": "Brutalna siła i twarda skóra. Osłania Herszta w zwarciu i toruje przejście taranem."
       },
       "shadow": {
-        "Name": "Cień / Nożownik",
-        "Desc": "Skrytobójca z ciemnych zaułków. Działa bezszelestnie, wbija nóż w plecy i śledzi cele bez śladu."
+        "Name": "Cień",
+        "Desc": "Skrytobójca i włamywacz z ciemnych zaułków. Działa bezszelestnie, wbija nóż w plecy i śledzi cele bez śladu."
       },
       "marksman": {
-        "Name": "Kłusownik / Strzelec",
-        "Desc": "Myśliwy i snajper. Ubezpiecza kompanów z dystansu, zdejmuje wartowników i poluje w głuszy."
+        "Name": "Strzelec",
+        "Desc": "Snajper i myśliwy. Ubezpiecza kompanów z dystansu, zdejmuje wartowników i poluje w głuszy."
       },
       "provocateur": {
-        "Name": "Szuler / Prowokator",
-        "Desc": "Karczemny krętacz i kuglarz. Mąci w głowach straży, wywołuje zamieszki i kradnie inicjatywę."
+        "Name": "Prowokator",
+        "Desc": "Karczemny krętacz, szuler i kuglarz. Mąci w głowach straży, wywołuje zamieszki i kradnie inicjatywę."
       },
       "scavenger": {
-        "Name": "Szabrownik / Felczer",
-        "Desc": "Zbieracz i opatrywacz. Zszywa połamane kości, warzy maści i odnajduje łupy tam, gdzie inni widzą śmieci."
+        "Name": "Szabrownik",
+        "Desc": "Zbieracz i łupieżca zaopatrzenia. Przeczesuje ruiny, wynosi zapasy i odnajduje łupy tam, gdzie inni widzą śmieci."
       },
       "smuggler": {
-        "Name": "Woźnica / Przemytnik",
-        "Desc": "Mistrz traktów i ucieczek. Zna leśne skróty, potrafi zorganizować wóz i bezpiecznie wywieźć trefny towar."
+        "Name": "Przemytnik",
+        "Desc": "Mistrz traktów, wozów i ucieczek. Zna leśne skróty, prowadzi zaprzęg i bezpiecznie wywozi trefny towar."
       },
       "saboteur": {
-        "Name": "Podpalacz / Sabotażysta",
+        "Name": "Sabotażysta",
         "Desc": "Pirotechnik i niszczyciel. Wznieca pożary, pali mosty pod odwrót i wysadza wozy zaopatrzeniowe."
       },
       "scout": {
-        "Name": "Zwiadowca / Tropiciel",
+        "Name": "Zwiadowca",
         "Desc": "Leśny i gościńcowy tropiciel. Czyta ślady, wypatruje pościgu i prowadzi szajkę ścieżkami, którymi nie chodzą strażnicy."
       },
       "fixer": {
-        "Name": "Paser / Fałszerz",
-        "Desc": "Człowiek od papierów, pieczęci i dobrze ulokowanych koron. Podrabia listy żelazne, kupuje przychylność i upłynnia, co trzeba."
+        "Name": "Paser",
+        "Desc": "Człowiek od trefnego towaru, papierów, pieczęci i dobrze ulokowanych koron. Podrabia listy żelazne, kupuje przychylność i upłynnia łupy."
       },
       "charlatan": {
-        "Name": "Szarlatan / Znachor",
-        "Desc": "Wędrowny znachor, zielarz i sprzedawca cudownych maści. Leczy, zagaduje i straszy gawiedź starymi gusłami."
+        "Name": "Znachor",
+        "Desc": "Obozowy felczer, zielarz i warzyciel maści. Zszywa rany, stawia na nogi nalewką, zagaduje i straszy gawiedź starymi gusłami."
       },
       "duelist": {
-        "Name": "Zawadiaka / Szermierz",
+        "Name": "Szermierz",
         "Desc": "Dawny pojedynkowicz albo najemny rębajło. Ma niewiele honoru, ale za to rapier w ręku; walczy z wdziękiem i na pokaz."
       },
       "sergeant": {
@@ -1345,7 +1615,15 @@
       "RoleFailed": "<strong>{name}</strong> ({role}) próbuje, ale nie daje rady (k100 {roll} > {target}).",
       "FollowUp": "Ciąg dalszy wczorajszych wydarzeń.",
       "HookSet": "Ta sprawa jeszcze da o sobie znać.",
-      "ClearHook": "Wyczyść wiszący hak zdarzenia (MG)"
+      "ClearHook": "Wyczyść wiszący hak zdarzenia (MG)",
+      "RoleSavedXp": "(+{xp} DO)",
+      "SentryPrevented": "Wartownicy w porę udaremnili zagrożenie (warta / zatarte ślady).",
+      "ChipMorale": "Morale {val}",
+      "ChipSupplies": "Zapasy {val}",
+      "ChipCoins": "Skarbiec {val} SS",
+      "ChipNotoriety": "Rozgłos {val}",
+      "ChipRoleXp": "+{val} DO",
+      "ChipToken": "Żeton: {name}"
     },
     "Notify": {
       "RumorPoolReset": "Wszystkie plotki z puli zostały już wyświetlone! Pula plotek została odświeżona.",
@@ -1867,6 +2145,10 @@
       "MaxHistoryEntries": {
         "Name": "Długość Kroniki kompanii",
         "Hint": "Ile ostatnich wpisów historii przechowuje karta każdej kompanii (5–100)."
+      },
+      "GmRumorTruthWhisper": {
+        "Name": "Szept MG o prawdziwości plotek",
+        "Hint": "Po udanym Zwiadzie lub Nasłuchu wysyła prywatną wiadomość do MG z oceną, czy plotka jest prawdą, półprawdą czy fałszem."
       }
     },
     "Recruit": {
@@ -2291,9 +2573,9 @@
       "AdvanceTime": "Przesuń czas świata o 7 dni po rozpatrzeniu",
       "Shelter": "Poziom odpoczynku (Miejsce noclegu):",
       "MoraleFrost": "-2 Morale, mróz",
-      "Makeshift": "Prowizoryczne ({place}) [{effect}, darmowe]",
+      "Makeshift": "Prowizoryczne ({place}) [{effect}]",
       "Basic": "Podstawowe (Namioty / stajnia) [Morale stabilne]",
-      "Comfortable": "Wygodne ({place}) [+1 Morale, koszt: {cost}]",
+      "Comfortable": "Wygodne ({place}) [+1 Morale]",
       "Watch": "Wartownicy na tę noc:",
       "WatchHint": "(Czuwają podczas snu)",
       "NoWatchWarning": "Brak wartowników zwiększa ryzyko nocnych komplikacji i kradzieży.",
@@ -2319,7 +2601,9 @@
       "Title": "Połącz Aktora z Postacią Świty",
       "Choose": "Wybierz aktora z bazy świata:",
       "Available": "Dostępni Aktorzy:",
-      "Link": "Połącz"
+      "Link": "Połącz",
+      "DropTitle": "Przeciągnij i upuść tutaj Aktora",
+      "DropHint": "Chwyć aktora z paska Aktorów Foundry VTT (lub z kompendium) i upuść w tym polu, aby połączyć go z tą postacią."
     },
     "RecruitDialog": {
       "Intro": "Przedstaw graczom propozycje banitów na czacie. Gracze będą mogli wybrać jednego rekruta, który dołączy do szajki.",
@@ -2459,7 +2743,14 @@
       "Rumor": "Wieść / plotka",
       "Preparation": "Przygotowanie",
       "Consequences": "Skutki wpadki",
-      "Footer": "Świta Herszta"
+      "Footer": "Świta Herszta",
+      "RumorTruthHeader": "Sekret MG — Prawdziwość plotki",
+      "RumorTruthLabel": "Ocena",
+      "RumorTruth": {
+        "true": "Prawda",
+        "half": "Półprawda (wyolbrzymiona lub niepełna)",
+        "false": "Fałsz / Dezinformacja"
+      }
     },
     "RecruitCard": {
       "Title": "Nowe Twarze w Szajce: Rekrutacja",
@@ -2582,6 +2873,8 @@
       "BonusHint": "Modyfikator specjalistyczny do rzutów",
       "RoleTitle": "Mistrz Gry: Wybierz rolę poplecznika",
       "Perks": "Atuty",
+      "Upkeep": "Żołd",
+      "UpkeepHint": "Koszt żołdu / utrzymania tego członka za postój (lub tydzień w trybie tygodniowym)",
       "EmptyTitle": "Brak popleczników w świcie!",
       "EmptyText": "Skorzystaj z rekrutacji lub przeciągnij postać z paska bocznego Foundry VTT."
     },
@@ -2657,10 +2950,10 @@
     },
     "DashTab": {
       "CampStandard": "Standard Kwater / Obozowiska",
-      "Makeshift": "Prowizoryczne ({place}",
-      "MoralePerCamp": "Morale/postój, ½ obławy)",
+      "Makeshift": "Prowizoryczne ({place})",
+      "MoralePerCamp": "Morale/postój, ½ obławy",
       "Basic": "Podstawowe (Namioty, stajnia, prosta gospoda)",
-      "Comfortable": "Wygodne ({place}, +1 Morale, {cost})",
+      "Comfortable": "Wygodne ({place}, +1 Morale)",
       "CampCaption": "Wpływa na regenerację sił i nastroje w szajce podczas odpoczynku. Teren: <strong>{terrain}</strong> (zmiana w zakładce Łupy).",
       "Morale": "Morale Szajki",
       "TierFanatic": "Fanatyzm",
@@ -2763,7 +3056,7 @@
             "Desc": "Świeży najemnik bez większego doświadczenia na szlaku."
           },
           "lieutenant": {
-            "Desc": "+30 do testów, autorytet (+1 Morale kompanii gdy < 7), rozkazy dowódcze (unikalna ranga — limit 1 na kompanię)."
+            "Desc": "+15 do testów, autorytet (+1 Morale kompanii gdy < 7), rozkazy dowódcze (unikalna ranga — limit 1 na kompanię)."
           }
         },
         "Flaws": {
@@ -3511,7 +3804,7 @@
         },
         "Ranks": {
           "lieutenant": {
-            "Desc": "+30 do testów, autorytet (+1 Morale bandy gdy < 7), rozkazy dowódcze (unikalna ranga — limit 1 na bandę)."
+            "Desc": "+15 do testów, autorytet (+1 Morale bandy gdy < 7), rozkazy dowódcze (unikalna ranga — limit 1 na bandę)."
           }
         },
         "Roles": {
@@ -3900,7 +4193,7 @@
             "Desc": "Świeży przemytnik bez większego doświadczenia na szlaku."
           },
           "lieutenant": {
-            "Desc": "+30 do testów, autorytet (+1 Morale załogi gdy < 7), rozkazy dowódcze (unikalna ranga — limit 1 na załogę)."
+            "Desc": "+15 do testów, autorytet (+1 Morale załogi gdy < 7), rozkazy dowódcze (unikalna ranga — limit 1 na załogę)."
           }
         },
         "Strengths": {
@@ -4590,7 +4883,7 @@
             "Desc": "Świeży informator bez większego doświadczenia na szlaku."
           },
           "lieutenant": {
-            "Desc": "+30 do testów, autorytet (+1 Morale siatki gdy < 7), rozkazy dowódcze (unikalna ranga — limit 1 na siatkę)."
+            "Desc": "+15 do testów, autorytet (+1 Morale siatki gdy < 7), rozkazy dowódcze (unikalna ranga — limit 1 na siatkę)."
           }
         },
         "Strengths": {
@@ -5160,13 +5453,13 @@
         },
         "Roles": {
           "shadow": {
-            "Name": "Cień / Tajniak"
+            "Name": "Tajniak"
           },
           "fixer": {
-            "Name": "Pośrednik / Fałszerz"
+            "Name": "Pośrednik"
           },
           "charlatan": {
-            "Name": "Kameleon / Znachor"
+            "Name": "Znachor"
           }
         },
         "Title": "Siatka",
@@ -5280,7 +5573,7 @@
             "Desc": "Świeży wyznawca bez większego doświadczenia na szlaku."
           },
           "lieutenant": {
-            "Desc": "+30 do testów, autorytet (+1 Morale sekty gdy < 7), rozkazy dowódcze (unikalna ranga — limit 1 na sektę)."
+            "Desc": "+15 do testów, autorytet (+1 Morale sekty gdy < 7), rozkazy dowódcze (unikalna ranga — limit 1 na sektę)."
           }
         },
         "Strengths": {

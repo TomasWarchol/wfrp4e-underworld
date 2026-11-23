@@ -277,6 +277,15 @@ Hooks.once("init", async function () {
     default: 20
   });
 
+  game.settings.register(MODULE_ID, "gmRumorTruthWhisper", {
+    name: "UNDERWORLD.Settings.GmRumorTruthWhisper.Name",
+    hint: "UNDERWORLD.Settings.GmRumorTruthWhisper.Hint",
+    scope: "world",
+    config: true,
+    type: Boolean,
+    default: true
+  });
+
   // Wygląd panelu: nowa „Księga Kompanii” albo dotychczasowy (na czas przebudowy oba działają)
   game.settings.register(MODULE_ID, "sheetStyle", {
     name: "UNDERWORLD.Settings.SheetStyle.Name",

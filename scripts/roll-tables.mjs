@@ -19,7 +19,7 @@ import { DEFAULT_PROFILE, PROFILES, profileOf } from "./company-profiles.mjs";
 const MODULE_ID = "wfrp4e-underworld";
 const PACK_ID = `${MODULE_ID}.underworld-tables`;
 /** Podnieś, gdy zmieniają się wbudowane plotki lub wydarzenia – kompendium zostanie odbudowane. */
-const SEED_VERSION = 3;
+const SEED_VERSION = 4;
 
 const TABLE_CONFIG = {
   rumors: {
@@ -70,7 +70,7 @@ export class UnderworldRollTables {
         weight: 1,
         range: [i + 1, i + 1],
         drawn: displayedIds.includes(r.id),
-        flags: { [MODULE_ID]: { id: r.id, source: r.source || null, location: r.location || null, category: r.category || null } }
+        flags: { [MODULE_ID]: { id: r.id, source: r.source || null, location: r.location || null, category: r.category || null, truth: r.truth || null } }
       }))
     };
   }
@@ -98,7 +98,10 @@ export class UnderworldRollTables {
             moraleDelta: Number(e.moraleDelta) || 0,
             suppliesFound: Number(e.suppliesFound) || 0,
             coinsFoundSS: Number(e.coinsFoundSS) || 0,
+            notorietyDelta: Number(e.notorietyDelta) || 0,
+            ...(e.prepToken ? { prepToken: e.prepToken } : {}),
             ...(e.role ? { role: e.role, okText: e.okText || "", ok: e.ok || {} } : {}),
+            ...(Array.isArray(e.types) && e.types.length ? { types: e.types } : {}),
             ...(e.terrains ? { terrains: e.terrains } : {}),
             ...(e.next ? { next: e.next } : {}),
             ...(e.only ? { only: true } : {})
@@ -331,14 +334,15 @@ export class UnderworldRollTables {
   // LOSOWANIE
   // ════════════════════════════════════════════
 
-  static _resultToRumor(result) {
+  static _resultToRumor(result, terrain = "city") {
     const data = result.getFlag?.(MODULE_ID) ?? result.flags?.[MODULE_ID] ?? {};
     return {
       id: data.id || result.id,
       text: this._plainText(result.description) || result.name,
-      source: data.source || UnderworldTables.getRandomSource(),
+      source: data.source || UnderworldTables.getRandomSource(terrain),
       location: data.location || null,
-      category: data.category || null
+      category: data.category || null,
+      truth: data.truth || null
     };
   }
 
@@ -351,15 +355,26 @@ export class UnderworldRollTables {
       moraleDelta: Number(data.moraleDelta) || 0,
       suppliesFound: Number(data.suppliesFound) || 0,
       coinsFoundSS: Number(data.coinsFoundSS) || 0,
+      notorietyDelta: Number(data.notorietyDelta) || 0,
+      ...(data.prepToken ? { prepToken: data.prepToken } : {}),
       ...(data.role ? { role: data.role, okText: data.okText || "", ok: data.ok || {} } : {}),
+      ...(Array.isArray(data.types) && data.types.length ? { types: data.types } : {}),
       ...(Array.isArray(data.terrains) && data.terrains.length ? { terrains: data.terrains } : {}),
       ...(data.next ? { next: String(data.next) } : {}),
       ...(data.only ? { only: true } : {})
     };
   }
 
-  /** Wydarzenie o danym id z tabeli terenu (świata, potem kompendium, potem plik) – dla haków łańcuchów. */
-  static async findEvent(terrain, id) {
+  /** Wydarzenie o danym id z tabeli profilu lub terenu (świata, potem kompendium, potem plik) – dla haków łańcuchów. */
+  static async findEvent(terrain, id, profile = null) {
+    if (profile && profile !== DEFAULT_PROFILE) {
+      const pTable = this.findWorldTable("events", null, profile);
+      const pResult = pTable?.results?.find(r => (r.getFlag?.(MODULE_ID, "id") ?? r.flags?.[MODULE_ID]?.id) === id);
+      if (pResult) return this._resultToEvent(pResult);
+      const profileShipped = await UnderworldTables.loadProfileEvents(profile);
+      const pFound = profileShipped.find(e => e.id === id);
+      if (pFound) return { ...pFound };
+    }
     const table = await this.getTable("events", terrain);
     const result = table?.results?.find(r => (r.getFlag?.(MODULE_ID, "id") ?? r.flags?.[MODULE_ID]?.id) === id);
     if (result) return this._resultToEvent(result);
@@ -373,32 +388,36 @@ export class UnderworldRollTables {
    * wymaga prawa edycji (MG), więc gracz prosi o losowanie aktywnego MG. Zwraca null, gdy tabeli nie ma.
    * @param {"rumors"|"events"} type
    * @param {string} terrain
-   * @param {{profile?: string, exclude?: string[]}} options  tabela typu i id wydarzeń, które kompania już widziała
+   * @param {{profile?: string, exclude?: string[], companyType?: string}} options  tabela typu, id wydarzeń już widzianych i typ kompanii do filtra types
    */
-  static async draw(type, terrain = "city", { profile = null, exclude = [] } = {}) {
+  static async draw(type, terrain = "city", { profile = null, exclude = [], companyType = null } = {}) {
     const table = profile ? this.findWorldTable("events", null, profile) : await this.getTable(type, terrain);
     if (!table) return null;
     const canMark = !table.pack && table.canUserModify(game.user, "update");
 
     if (!canMark && !table.pack && game.users.activeGM && !game.user.isGM) {
-      return queryGM(`${MODULE_ID}.drawTable`, { type, terrain, profile, exclude });
+      return queryGM(`${MODULE_ID}.drawTable`, { type, terrain, profile, exclude, companyType });
     }
 
     if (canMark && !table.replacement && table.results.every(r => r.drawn)) {
       await table.resetResults();
     }
-    // Losujemy ponownie wpisy „tylko następnik” (zakończenia łańcuchów), zdarzenia typu spoza terenu
+    // Losujemy ponownie wpisy „tylko następnik” (zakończenia łańcuchów), zdarzenia typu spoza terenu/profilu
     // i (dopóki się da) zdarzenia, które kompania już widziała
     const flag = (result, key) => result?.getFlag?.(MODULE_ID, key) ?? result?.flags?.[MODULE_ID]?.[key];
     const seen = new Set(exclude);
     let roll = null, result = null, fallback = null;
-    for (let attempt = 0; attempt < 60; attempt++) {
+    for (let attempt = 0; attempt < 80; attempt++) {
       const drawn = canMark ? await table.draw({ displayChat: false }) : await table.roll();
       const candidate = drawn.results?.[0];
       if (!candidate) break;
       if (type === "events" && flag(candidate, "only")) continue;
       const terrains = flag(candidate, "terrains");
       if (Array.isArray(terrains) && terrains.length && !terrains.includes(terrain)) continue;
+      if (type === "events" && !profile && companyType) {
+        const types = flag(candidate, "types");
+        if (Array.isArray(types) && types.length && !types.includes(companyType)) continue;
+      }
       fallback ??= { roll: drawn.roll, result: candidate };
       if (seen.has(flag(candidate, "id") || candidate.id)) continue;
       roll = drawn.roll;
@@ -407,7 +426,7 @@ export class UnderworldRollTables {
     }
     if (!result && fallback) ({ roll, result } = fallback);
     if (!result) return null;
-    const data = type === "rumors" ? this._resultToRumor(result) : this._resultToEvent(result);
+    const data = type === "rumors" ? this._resultToRumor(result, terrain) : this._resultToEvent(result);
     data.tableRoll = roll ? { formula: roll.formula, total: roll.total } : null;
     return data;
   }
@@ -420,9 +439,10 @@ export class UnderworldRollTables {
   }
 
   /** Handler zapytania (u MG): losowanie dla gracza bez prawa edycji tabeli. */
-  static async onDrawQuery({ type, terrain = "city", profile = null, exclude = [] } = {}) {
+  static async onDrawQuery({ type, terrain = "city", profile = null, exclude = [], companyType = null } = {}) {
     if (!["rumors", "events"].includes(type) || !TERRAIN_IDS.includes(terrain)) return null;
     if (profile && !PROFILES[profile]) return null;
-    return this.draw(type, terrain, { profile, exclude: Array.isArray(exclude) ? exclude.slice(-400) : [] });
+    const safeCompany = companyType && PROFILES[companyType] ? companyType : null;
+    return this.draw(type, terrain, { profile, exclude: Array.isArray(exclude) ? exclude.slice(-400) : [], companyType: safeCompany });
   }
 }

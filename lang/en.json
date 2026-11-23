@@ -493,103 +493,307 @@
       "village": {
         "v-r1": {
           "Text": "The shepherd from Altenhof swears he saw a horned figure in the woods carrying a sheep on its shoulders like a child.",
-          "Category": "beastmen"
+          "Category": "beastmen",
+          "Truth": "true"
         },
         "v-r2": {
           "Text": "The count's tax collector comes next week – and this time he brings six armed men.",
-          "Category": "taxes"
+          "Category": "taxes",
+          "Truth": "true"
         },
         "v-r3": {
           "Text": "The miller's daughter heals with a touch. The priest of Sigmar has already asked about her at the inn.",
-          "Category": "witches"
+          "Category": "witches",
+          "Truth": "half"
         },
         "v-r4": {
           "Text": "Grandfathers hid valuables before the war in the ruined tower beyond the marsh. No one who went looking came back.",
-          "Category": "treasure"
+          "Category": "treasure",
+          "Truth": "false"
         },
         "v-r5": {
           "Text": "A cloth merchant from Streissen is heading to the fair with a full wagon – and only two servants.",
-          "Category": "trade"
+          "Category": "trade",
+          "Truth": "true"
         },
         "v-r6": {
           "Text": "The reeve takes a cut from the smugglers for turning a blind eye to the path through the marshes.",
-          "Category": "authority"
+          "Category": "authority",
+          "Truth": "true"
         },
         "v-r7": {
           "Text": "The cattle died on the neighbouring farm. They say it's a curse, but the well water stinks of sulphur.",
-          "Category": "plague"
+          "Category": "plague",
+          "Truth": "half"
         },
         "v-r8": {
           "Text": "A witch hunter has stopped at the inn. He is asking about strangers who arrived this month.",
-          "Category": "watch"
+          "Category": "watch",
+          "Truth": "true"
+        },
+        "v-r9": {
+          "Text": "The manor bailiff has withheld wages since harvest, yet keeps three casks of fine Bretonnian brandy and a silver pouch beneath the barn.",
+          "Category": "manor",
+          "Truth": "true"
+        },
+        "v-r10": {
+          "Text": "A man posing as a wandering Sigmarite monk has been confessing local widows and asking where they hide their dowry silver.",
+          "Category": "crime",
+          "Truth": "true"
+        },
+        "v-r11": {
+          "Text": "The tax chest from three neighbouring villages is stuck at the smithy after the coach lost both rear wheels in the mud.",
+          "Category": "taxes",
+          "Truth": "half"
+        },
+        "v-r12": {
+          "Text": "The new gravedigger only buries bodies after sundown and buys suspicious amounts of salt from the herbwife.",
+          "Category": "cult",
+          "Truth": "half"
+        },
+        "v-r13": {
+          "Text": "An old veteran by the mill keeps a dwarf-forged breastplate hidden beneath his floorboards, letting nobody past his threshold.",
+          "Category": "treasure",
+          "Truth": "false"
+        },
+        "v-r14": {
+          "Text": "A river trader promised the bailiff a fat purse if the villagers unload his unmarked casks by night without asking questions.",
+          "Category": "trade",
+          "Truth": "true"
+        },
+        "v-r15": {
+          "Text": "Two Road Wardens fell out over bribe shares, and one threatens to turn in the river-landing smugglers.",
+          "Category": "watch",
+          "Truth": "true"
+        },
+        "v-r16": {
+          "Text": "Six sheepdogs have vanished near the abandoned fold; the paw prints always stop dead at the edge of the fen.",
+          "Category": "monsters",
+          "Truth": "true"
+        },
+        "v-r17": {
+          "Text": "A Tilean mercenary company passed through with a badly wounded captain in a wagon and a heavy iron pay-chest.",
+          "Category": "military",
+          "Truth": "half"
+        },
+        "v-r18": {
+          "Text": "Blue corpse-lights flicker over the crossroads at night; locals say they mark the buried bones of a hanged highwayman.",
+          "Category": "magic",
+          "Truth": "false"
+        },
+        "v-r19": {
+          "Text": "A prosperous miller is looking for discreet hands to \"reason\" with a town creditor before he arrives with a bailiff.",
+          "Category": "contracts",
+          "Truth": "true"
+        },
+        "v-r20": {
+          "Text": "The squire’s young son lost his signet ring at dice and is quietly selling off plate from the manor armoury.",
+          "Category": "authority",
+          "Truth": "true"
         }
       },
       "forest": {
         "f-r1": {
           "Text": "Red Otto's band has made camp by the old oak. They pay for news of convoys.",
-          "Category": "outlaws"
+          "Category": "outlaws",
+          "Truth": "true"
         },
         "f-r2": {
           "Text": "Blood-marked stones have appeared by the road. The gamekeeper says not to go that way after dark.",
-          "Category": "beastmen"
+          "Category": "beastmen",
+          "Truth": "true"
         },
         "f-r3": {
           "Text": "A salt convoy leaves Kemperbad in three days. The escort are mercenaries owed back pay.",
-          "Category": "road"
+          "Category": "road",
+          "Truth": "true"
         },
         "f-r4": {
           "Text": "The count has set a bounty on poachers. Two already hang at the crossroads.",
-          "Category": "hunters"
+          "Category": "hunters",
+          "Truth": "true"
         },
         "f-r5": {
           "Text": "A wrecked mail coach lies in the ravine. No one took the strongbox, because everyone fears whatever wrecked it.",
-          "Category": "treasure"
+          "Category": "treasure",
+          "Truth": "half"
         },
         "f-r6": {
           "Text": "At night there are lights in the forest and the sound of drums. Woodcutters avoid the clearing by the spring.",
-          "Category": "cult"
+          "Category": "cult",
+          "Truth": "true"
         },
         "f-r7": {
           "Text": "The herbwife in the hut at the forest's edge buys any mandrake and asks no questions.",
-          "Category": "herbs"
+          "Category": "herbs",
+          "Truth": "true"
         },
         "f-r8": {
           "Text": "A roadwarden patrol is looking for an escaped prisoner. They pay silver for his hiding place.",
-          "Category": "watch"
+          "Category": "watch",
+          "Truth": "false"
+        },
+        "f-r9": {
+          "Text": "Beneath a gnarled beech deep in the woods someone arranged rings of bleached skulls and carved northern runes into the bark.",
+          "Category": "cults",
+          "Truth": "true"
+        },
+        "f-r10": {
+          "Text": "By a burned tar-kiln glade smugglers keep fresh pack-horses and crates of Bretonnian brandy.",
+          "Category": "smugglers",
+          "Truth": "true"
+        },
+        "f-r11": {
+          "Text": "A massive white-scarred boar has gored three of the count’s huntsmen; the steward offers ten crowns for its tusks.",
+          "Category": "monsters",
+          "Truth": "half"
+        },
+        "f-r12": {
+          "Text": "An old beekeeper saw the tax collector’s cart leave the highroad and mire itself in a peat bog without any escort.",
+          "Category": "contracts",
+          "Truth": "half"
+        },
+        "f-r13": {
+          "Text": "A lantern still burns at dusk inside the long-dead hermit’s hut, though no one ever hauls firewood up the ridge.",
+          "Category": "magic",
+          "Truth": "true"
+        },
+        "f-r14": {
+          "Text": "One of Red Otto’s outlaws wants to sell out his band’s hideout in return for a pardon and a pouch of silver.",
+          "Category": "outlaws",
+          "Truth": "true"
+        },
+        "f-r15": {
+          "Text": "A storm two years ago toppled an ancient oak in the ravine, uncovering a stone door carved by forgotten hands.",
+          "Category": "treasure",
+          "Truth": "half"
+        },
+        "f-r16": {
+          "Text": "The northern ranger takes silver to look the other way, provided poachers leave neither ash nor bones behind.",
+          "Category": "watch",
+          "Truth": "true"
+        },
+        "f-r17": {
+          "Text": "A pack of feral hounds in the western woods spreads black madness – a bitten man foams at the mouth within two days.",
+          "Category": "plague",
+          "Truth": "false"
+        },
+        "f-r18": {
+          "Text": "The forest creek bridge is washed out; merchants must unload their wagons and haul cargo across by hand all day.",
+          "Category": "road",
+          "Truth": "true"
+        },
+        "f-r19": {
+          "Text": "An entire lumber camp vanished at the edge of the clearing – leaving only cold ash and the stench of wet fur.",
+          "Category": "beastmen",
+          "Truth": "true"
+        },
+        "f-r20": {
+          "Text": "Moon-blossom needed by city alchemists grows wild across an overgrown burial mound deep in the thicket.",
+          "Category": "herbs",
+          "Truth": "half"
         }
       },
       "mountains": {
         "m-r1": {
           "Text": "A dwarf clan from Karak Hirn is looking for people to carry a load over the pass – no questions asked.",
-          "Category": "dwarfs"
+          "Category": "dwarfs",
+          "Truth": "true"
         },
         "m-r2": {
           "Text": "Campfire smoke was seen on the eastern slope. The herders talk of greenskins.",
-          "Category": "orcs"
+          "Category": "orcs",
+          "Truth": "half"
         },
         "m-r3": {
           "Text": "The abandoned shaft above the village still has a vein of silver. The owner died, and the heirs sit in Nuln.",
-          "Category": "mines"
+          "Category": "mines",
+          "Truth": "true"
         },
         "m-r4": {
           "Text": "A blizzard comes in two days. Whoever doesn't get off the pass will stay on it until spring.",
-          "Category": "weather"
+          "Category": "weather",
+          "Truth": "true"
         },
         "m-r5": {
           "Text": "The pass wardens take a toll from every wagon – and a second, unofficial one from those who don't want to be searched.",
-          "Category": "watch"
+          "Category": "watch",
+          "Truth": "true"
         },
         "m-r6": {
           "Text": "A Tilean caravan lies under last year's avalanche. In spring its wheels poke out of the snow.",
-          "Category": "treasure"
+          "Category": "treasure",
+          "Truth": "half"
         },
         "m-r7": {
           "Text": "Something big lives in the cave above the waterfall. Goats go missing, and the tracks are larger than a man's hand.",
-          "Category": "monsters"
+          "Category": "monsters",
+          "Truth": "true"
         },
         "m-r8": {
           "Text": "You can sell anything at the inn on the pass – as long as the dwarf behind the counter gets his cut.",
-          "Category": "trade"
+          "Category": "trade",
+          "Truth": "true"
+        },
+        "m-r9": {
+          "Text": "Miners digging a new seam broke into a sealed dwarf vault filled with waxed jars – none of them dares break the seals.",
+          "Category": "mines",
+          "Truth": "true"
+        },
+        "m-r10": {
+          "Text": "Smugglers from Black Fire Pass pay gold for safe passage of dwarf powder kegs down into the valley.",
+          "Category": "smugglers",
+          "Truth": "true"
+        },
+        "m-r11": {
+          "Text": "Something huge with wide wings circles the upper ridges – shepherds swear it took a ram straight off the crag.",
+          "Category": "monsters",
+          "Truth": "half"
+        },
+        "m-r12": {
+          "Text": "A tiny border watchpost holds just six soldiers, and their sergeant has been drinking himself blind instead of filing dispatches.",
+          "Category": "military",
+          "Truth": "true"
+        },
+        "m-r13": {
+          "Text": "A goatherd spotted a frozen royal courier wedged in a crevasse; he left the satchel untouched out of superstition.",
+          "Category": "treasure",
+          "Truth": "half"
+        },
+        "m-r14": {
+          "Text": "Greenskins from the deeps have been blocking ventilation shafts in the lower adits at night and hauling away scrap iron.",
+          "Category": "orcs",
+          "Truth": "true"
+        },
+        "m-r15": {
+          "Text": "A Tilean silk-and-wine caravan is stalled below the pass begging for armed escort after half their guards deserted.",
+          "Category": "trade",
+          "Truth": "true"
+        },
+        "m-r16": {
+          "Text": "Someone left bloody offerings around a shattered statue of Sigmar in the ridge chapel and chanted in a harsh tongue.",
+          "Category": "cults",
+          "Truth": "false"
+        },
+        "m-r17": {
+          "Text": "An ageing smith out of Karak Hirn seeks three bold hands to recover a stolen clan hammer from ridge bandits.",
+          "Category": "dwarfs",
+          "Truth": "half"
+        },
+        "m-r18": {
+          "Text": "A mudslide halfway up the slope uncovered an ancient paved track that bypasses the main tollhouse completely.",
+          "Category": "weather",
+          "Truth": "true"
+        },
+        "m-r19": {
+          "Text": "The pass warden holds a young smuggler from a rich merchant house in his cells and is quietly taking bids for a ransom.",
+          "Category": "watch",
+          "Truth": "true"
+        },
+        "m-r20": {
+          "Text": "The mining town steward cooks the silver smelting ledgers and hides the skimmed ingots beneath his counting-house.",
+          "Category": "authority",
+          "Truth": "false"
         }
       }
     },
@@ -745,7 +949,7 @@
         "The innkeeper shakes with fear and hands over the whole day's takings. He won't tell anyone – at least for now.",
         "The merchant pays protection without blinking – clearly not the first time. He throws in information about his competitors as a gift.",
         "The craftsman pays, but he is furious. He may complain to the watch if he finds the courage.",
-        "The peasant hands over his last pennies and begs for mercy. The crew feels uneasy (−1 Morale).",
+        "The peasant hands over his last pennies and begs for mercy. The crew look away and keep quiet for the rest of the evening.",
         "A town watchman agrees to look the other way in exchange for regular 'donations'. A useful contact for the future.",
         "The trader pays, but warns: 'My brother is in the Road Wardens. Better we don't meet again.'"
       ],
@@ -762,12 +966,12 @@
       "SmuggleComplications": [
         "The gate check is lax – the guard is dozing at his post. The goods pass smoothly.",
         "The watch is more alert after a night alarm. Wait and try again at dawn.",
-        "A customs officer eyes the cargo suspiciously, but a 2-shilling bribe settles the matter.",
+        "A customs officer eyes the cargo suspiciously, but a smile, a flask of spirits and smooth talking settle the matter.",
         "A road patrol stops travellers and checks wagons. Luckily the false floor survives the inspection.",
         "The run goes well, but a rival gang spots the route and may want to take it over.",
         "The harbour watch uses tracking dogs – one of them nearly sniffed out the hidden goods.",
         "The contraband arrives, but the buyer doesn't show at the agreed time. You have to wait somewhere risky.",
-        "Everything went smoothly. The buyer is pleased and adds a tip and news of the next job."
+        "Everything went smoothly. The buyer is pleased, praises the tidy work and promises to remember you on the next run."
       ],
       "CampEvents": [
         {
@@ -849,7 +1053,73 @@
         "Albrecht 'Quick' Hartmann",
         "Gerda 'She-Wolf' Lange",
         "Udo 'Axe' Werner"
-      ]
+      ],
+      "IntimidationFailResults": [
+        "The mark turns out tougher than expected – slamming the shutters and yelling for neighbours with pitchforks.",
+        "The target laughs in your face and drops the name of a cousin on the town council. Better slip away.",
+        "The commotion draws a watch patrol around the corner. Your people have to retreat empty-handed.",
+        "The merchant hired two cudgel-swinging toughs earlier this week – today you are not setting the terms.",
+        "Your follower pushed too hard, and the terrified craftsman bolted out the back door straight for the watch.",
+        "The meek shopkeeper pulls a loaded pistol from beneath the counter. Discretion wins the day."
+      ],
+      "SmuggleFailResults": [
+        "The customs officer spotted the false floor – the cargo had to be abandoned to slip away under cover of darkness.",
+        "A patrol with tracking hounds sealed the tollgate at the exact hour of the drop. The run fell apart.",
+        "The buyer never showed at the drop, and thugs from a rival gang were waiting in the alley instead.",
+        "The barge took on water over a sandbar and half the crates had to be dumped overboard to save the crew.",
+        "Someone tipped off the harbour watch – the wagon was stopped right outside the gate.",
+        "Foul weather and an overzealous toll-sergeant on the bridge ruined the run before it truly began."
+      ],
+      "TerrainRumorSources": {
+        "city": [
+          "A shifty-eyed innkeeper",
+          "A fishwife from the fish market",
+          "A drunk soldier from the garrison",
+          "A washerwoman from the slums",
+          "A blacksmith's journeyman",
+          "A town gate guard",
+          "A former convict from the dungeons",
+          "A card player from the tavern",
+          "A sewer rat-catcher",
+          "A town hall clerk"
+        ],
+        "village": [
+          "The village bailiff two pints in",
+          "The miller from the old mill",
+          "The village blacksmith",
+          "A shepherd from the pastures",
+          "The hostess of the crossroads inn",
+          "An old herbwife by the woodline",
+          "A farmhand from the manor",
+          "A carter from the highroad",
+          "The sexton of Sigmar’s chapel",
+          "A wandering tinker"
+        ],
+        "forest": [
+          "A woodcutter from the clearing",
+          "A charcoal burner by his smoking kiln",
+          "A local poacher",
+          "A runaway serf",
+          "An herbwife from the glade cabin",
+          "A retired forester",
+          "A wandering tar-burner",
+          "A lone huntsman",
+          "A forest beekeeper",
+          "A lost courier on the back trail"
+        ],
+        "mountains": [
+          "A silver miner from an old adit",
+          "A goatherd from the high pasture",
+          "A dwarf iron merchant",
+          "A weary pass warden",
+          "A porter from a mountain caravan",
+          "An old stonemason",
+          "A ridge guide",
+          "The keeper of the pass hostel",
+          "A clan scout out of Karak Hirn",
+          "A goblin-hunter by the campfire"
+        ]
+      }
     },
     "Ranks": {
       "rookie": {
@@ -858,15 +1128,15 @@
       },
       "seasoned": {
         "Name": "Seasoned",
-        "Desc": "+10 to tests in all jobs."
+        "Desc": "+5 to tests in all jobs."
       },
       "veteran": {
         "Name": "Veteran",
-        "Desc": "+20 to tests + 50% chance to escape a wound."
+        "Desc": "+10 to tests + 50% chance to escape a wound."
       },
       "lieutenant": {
         "Name": "Right Hand",
-        "Desc": "+30 to tests, authority (+1 crew Morale when < 7), command orders (unique rank – one per crew)."
+        "Desc": "+15 to tests, authority (+1 crew Morale when < 7), command orders (unique rank – one per crew)."
       }
     },
     "Gear": {
@@ -897,47 +1167,47 @@
     },
     "Roles": {
       "bodyguard": {
-        "Name": "Bruiser / Bodyguard",
+        "Name": "Bodyguard",
         "Desc": "Brute strength and thick skin. Shields the chief in melee and bulls a way through."
       },
       "shadow": {
-        "Name": "Shadow / Knifeman",
-        "Desc": "An assassin from dark alleys. Moves silently, puts a knife in your back and shadows targets without a trace."
+        "Name": "Shadow",
+        "Desc": "An assassin and burglar from dark alleys. Moves silently, puts a knife in your back and shadows targets without a trace."
       },
       "marksman": {
-        "Name": "Poacher / Marksman",
-        "Desc": "Hunter and sharpshooter. Covers comrades from range, takes down sentries and hunts in the wilds."
+        "Name": "Marksman",
+        "Desc": "Sharpshooter and hunter. Covers comrades from range, takes down sentries and hunts in the wilds."
       },
       "provocateur": {
-        "Name": "Sharper / Provocateur",
-        "Desc": "Tavern trickster and juggler. Confuses the watch, stirs up riots and steals the initiative."
+        "Name": "Provocateur",
+        "Desc": "Tavern trickster, sharper and juggler. Confuses the watch, stirs up riots and steals the initiative."
       },
       "scavenger": {
-        "Name": "Scavenger / Barber-Surgeon",
-        "Desc": "Forager and patcher. Sets broken bones, brews salves and finds loot where others see rubbish."
+        "Name": "Scavenger",
+        "Desc": "Forager and supply looter. Rummages through ruins, hauls provisions and finds loot where others see rubbish."
       },
       "smuggler": {
-        "Name": "Carter / Smuggler",
-        "Desc": "Master of roads and getaways. Knows forest shortcuts, can arrange a wagon and safely move hot goods."
+        "Name": "Smuggler",
+        "Desc": "Master of roads, wagons and getaways. Knows forest shortcuts, drives the cart and safely moves hot goods."
       },
       "saboteur": {
-        "Name": "Arsonist / Saboteur",
+        "Name": "Saboteur",
         "Desc": "Pyrotechnician and wrecker. Starts fires, burns bridges behind a retreat and blows up supply wagons."
       },
       "scout": {
-        "Name": "Scout / Tracker",
+        "Name": "Scout",
         "Desc": "A woodland and highway tracker. Reads sign, spots pursuit and leads the crew along paths the watch never walks."
       },
       "fixer": {
-        "Name": "Fence / Forger",
-        "Desc": "The man for papers, seals and well-placed crowns. Forges safe-conducts, buys favours and moves whatever needs moving."
+        "Name": "Fence",
+        "Desc": "The man for hot goods, papers, seals and well-placed crowns. Forges safe-conducts, buys favours and moves whatever needs moving."
       },
       "charlatan": {
-        "Name": "Charlatan / Hedge Healer",
-        "Desc": "A wandering quack, herbalist and seller of miracle ointments. Heals, patters and frightens the crowd with old superstitions."
+        "Name": "Healer",
+        "Desc": "Camp healer, herbalist and brewer of salves. Stitches wounds, puts comrades back on their feet, patters and frightens the crowd with old superstitions."
       },
       "duelist": {
-        "Name": "Swashbuckler / Duellist",
+        "Name": "Duellist",
         "Desc": "A former duellist or hired blade. Has little honour but a fine sword; fights with flair and for show."
       },
       "sergeant": {
@@ -1345,7 +1615,15 @@
       "RoleFailed": "<strong>{name}</strong> ({role}) tries but fails (d100 {roll} > {target}).",
       "FollowUp": "A sequel to an earlier event.",
       "HookSet": "This matter will make itself known again.",
-      "ClearHook": "Clear pending event hook (GM)"
+      "ClearHook": "Clear pending event hook (GM)",
+      "RoleSavedXp": "(+{xp} OXP)",
+      "SentryPrevented": "Sentries thwarted the threat in time (watch / covered tracks).",
+      "ChipMorale": "Morale {val}",
+      "ChipSupplies": "Supplies {val}",
+      "ChipCoins": "Treasury {val} SS",
+      "ChipNotoriety": "Heat {val}",
+      "ChipRoleXp": "+{val} OXP",
+      "ChipToken": "Token: {name}"
     },
     "Notify": {
       "RumorPoolReset": "Every rumour in the pool has been shown! The rumour pool has been refreshed.",
@@ -1867,6 +2145,10 @@
       "MaxHistoryEntries": {
         "Name": "Company Chronicle length",
         "Hint": "Maximum number of history entries kept per company sheet (5–100)."
+      },
+      "GmRumorTruthWhisper": {
+        "Name": "GM Whisper for Rumour Veracity",
+        "Hint": "After a successful Scout or Tavern job, whispers the GM whether the rumour is true, a half-truth or false."
       }
     },
     "Recruit": {
@@ -2291,9 +2573,9 @@
       "AdvanceTime": "Advance world time by 7 days after resolving",
       "Shelter": "Rest level (where to sleep):",
       "MoraleFrost": "-2 Morale, frost",
-      "Makeshift": "Makeshift ({place}) [{effect}, free]",
+      "Makeshift": "Makeshift ({place}) [{effect}]",
       "Basic": "Basic (tents / stable) [Morale steady]",
-      "Comfortable": "Comfortable ({place}) [+1 Morale, cost: {cost}]",
+      "Comfortable": "Comfortable ({place}) [+1 Morale]",
       "Watch": "Sentries for the night:",
       "WatchHint": "(They stay awake while the others sleep)",
       "NoWatchWarning": "Without sentries the risk of night trouble and theft grows.",
@@ -2319,7 +2601,9 @@
       "Title": "Link an Actor to a Retinue Member",
       "Choose": "Choose an actor from the world:",
       "Available": "Available actors:",
-      "Link": "Link"
+      "Link": "Link",
+      "DropTitle": "Drag and drop an Actor here",
+      "DropHint": "Drag an actor from the Foundry VTT Actors sidebar (or a compendium) and drop it into this box to link it to this member."
     },
     "RecruitDialog": {
       "Intro": "Present outlaw proposals to the players in the chat. The players can choose one recruit to join the crew.",
@@ -2459,7 +2743,14 @@
       "Rumor": "News / rumour",
       "Preparation": "Preparation",
       "Consequences": "Consequences",
-      "Footer": "The Chief's Retinue"
+      "Footer": "The Chief's Retinue",
+      "RumorTruthHeader": "GM Secret — Rumour Veracity",
+      "RumorTruthLabel": "Veracity",
+      "RumorTruth": {
+        "true": "True",
+        "half": "Half-truth (exaggerated or incomplete)",
+        "false": "False / Disinformation"
+      }
     },
     "RecruitCard": {
       "Title": "New Faces in the Crew: Recruitment",
@@ -2582,6 +2873,8 @@
       "BonusHint": "Specialist roll modifier",
       "RoleTitle": "Game Master: choose the follower's role",
       "Perks": "Perks",
+      "Upkeep": "Pay",
+      "UpkeepHint": "Upkeep / pay cost for this member per camp rest (or per week in weekly mode)",
       "EmptyTitle": "No followers in the retinue!",
       "EmptyText": "Use recruitment or drag a character from the Foundry VTT sidebar."
     },
@@ -2657,10 +2950,10 @@
     },
     "DashTab": {
       "CampStandard": "Lodging / Camp Standard",
-      "Makeshift": "Makeshift ({place}",
-      "MoralePerCamp": "Morale per camp, ½ raid risk)",
+      "Makeshift": "Makeshift ({place})",
+      "MoralePerCamp": "Morale per camp, ½ raid risk",
       "Basic": "Basic (tents, a stable, a simple inn)",
-      "Comfortable": "Comfortable ({place}, +1 Morale, {cost})",
+      "Comfortable": "Comfortable ({place}, +1 Morale)",
       "CampCaption": "Affects recovery and the crew's mood while resting. Terrain: <strong>{terrain}</strong> (change it in the Loot tab).",
       "Morale": "Crew Morale",
       "TierFanatic": "Fanatical",
@@ -2763,7 +3056,7 @@
             "Desc": "A fresh mercenary without much experience on the road."
           },
           "lieutenant": {
-            "Desc": "+30 to tests, authority (+1 company Morale when < 7), command orders (unique rank – one per company)."
+            "Desc": "+15 to tests, authority (+1 company Morale when < 7), command orders (unique rank – one per company)."
           }
         },
         "Flaws": {
@@ -3511,7 +3804,7 @@
         },
         "Ranks": {
           "lieutenant": {
-            "Desc": "+30 to tests, authority (+1 band Morale when < 7), command orders (unique rank – one per band)."
+            "Desc": "+15 to tests, authority (+1 band Morale when < 7), command orders (unique rank – one per band)."
           }
         },
         "Roles": {
@@ -3900,7 +4193,7 @@
             "Desc": "A fresh smuggler without much experience on the road."
           },
           "lieutenant": {
-            "Desc": "+30 to tests, authority (+1 crew Morale when < 7), command orders (unique rank – one per crew)."
+            "Desc": "+15 to tests, authority (+1 crew Morale when < 7), command orders (unique rank – one per crew)."
           }
         },
         "Flaws": {
@@ -4590,7 +4883,7 @@
             "Desc": "A fresh agent without much experience on the road."
           },
           "lieutenant": {
-            "Desc": "+30 to tests, authority (+1 network Morale when < 7), command orders (unique rank – one per network)."
+            "Desc": "+15 to tests, authority (+1 network Morale when < 7), command orders (unique rank – one per network)."
           }
         },
         "Strengths": {
@@ -5152,13 +5445,13 @@
         },
         "Roles": {
           "shadow": {
-            "Name": "Shadow / Tail"
+            "Name": "Agent"
           },
           "fixer": {
-            "Name": "Go-Between / Forger"
+            "Name": "Go-Between"
           },
           "charlatan": {
-            "Name": "Chameleon / Hedge Healer"
+            "Name": "Healer"
           }
         },
         "Title": "Network",
@@ -5275,7 +5568,7 @@
             "Desc": "A fresh cultist without much experience on the road."
           },
           "lieutenant": {
-            "Desc": "+30 to tests, authority (+1 cult Morale when < 7), command orders (unique rank – one per cult)."
+            "Desc": "+15 to tests, authority (+1 cult Morale when < 7), command orders (unique rank – one per cult)."
           }
         },
         "Strengths": {

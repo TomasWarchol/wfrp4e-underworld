@@ -58,10 +58,11 @@
               <i class="fas fa-chevron-down toggle-icon"></i>
             </button>
             <input class="npc-name-input" type="text" name="roster.{{@index}}.name" value="{{this.name}}" placeholder="{{underworldT 'RosterTab.NamePlaceholder'}}" title="{{underworldT 'RosterTab.NameTitle'}}"/>
-            <!-- Ranga, rola i bieżący stan – zawsze w nagłówku karty -->
+            <!-- Ranga, rola, żołd i bieżący stan – zawsze w nagłówku karty -->
             <div class="npc-header-badges">
               {{{underworldRankChip this.rank}}}
               <span class="npc-role-chip">{{{underworldRoleBadge this.role}}}{{#if this.role2}} {{{underworldRoleBadge this.role2}}}{{/if}}</span>
+              <span class="rank-chip npc-upkeep-chip" title="{{underworldT 'RosterTab.UpkeepHint'}}"><i class="fas fa-coins"></i> {{underworldT "RosterTab.Upkeep"}}: {{this.upkeepLabel}}</span>
               {{{underworldAssignmentBadge this.assignment this.status}}}
             </div>
           </div>
@@ -129,10 +130,11 @@
 
         <!-- SEKCJA ROZWIJALNA (Ranga, DO, Rola, Cechy) -->
         <div class="npc-expandable-body">
-          <!-- PASEK RANGI, DO I EKWIPUNKU -->
+          <!-- PASEK RANGI, DO, ŻOŁDU I EKWIPUNKU -->
           <div class="npc-submeta-row">
             <div class="submeta-badges-group">
               {{{underworldRankBadge this.rank this.operationalXP}}}
+              <span class="rank-badge npc-upkeep-badge" title="{{underworldT 'RosterTab.UpkeepHint'}}"><i class="fas fa-coins"></i> {{underworldT "RosterTab.Upkeep"}}: <strong>{{this.upkeepLabel}}</strong></span>
               {{{underworldGearIcons this.gear}}}
             </div>
 

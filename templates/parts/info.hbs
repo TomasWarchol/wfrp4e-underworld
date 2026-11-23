@@ -165,19 +165,15 @@
         <div class="info-field">
           <label><i class="fas fa-percentage"></i> {{underworldT "InfoTab.PatronCut"}}</label>
           {{#if isGM}}
-            <input type="text" name="patron.cut" value="{{gang.patron.cut}}" placeholder="{{underworldT 'InfoTab.PatronCutPlaceholder'}}"/>
+            <select name="patron.cut" class="gm-editable-select">
+              {{#each patronCutOptions}}
+              <option value="{{this.value}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>
+              {{/each}}
+            </select>
           {{else}}
-            <input type="text" value="{{gang.patron.cut}}" disabled class="input-readonly"/>
+            <div class="readonly-display-field">{{patronCutDisplay}}</div>
           {{/if}}
         </div>
-        {{#if isGM}}{{#if profileHasPatronCut}}
-        <div class="info-field">
-          <label class="uw-check-label">
-            <input type="checkbox" name="patron.noCut" {{#if gang.patron.noCut}}checked{{/if}} />
-            <span>{{underworldT "InfoTab.PatronNoCut"}}</span>
-          </label>
-        </div>
-        {{/if}}{{/if}}
 
         <div class="info-field">
           <label><i class="fas fa-envelope-open-text"></i> {{underworldT "InfoTab.PatronNotes"}}</label>

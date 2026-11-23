@@ -54,6 +54,12 @@
     <strong>{{underworldT "Camp.NightEvent"}}: {{event.title}}</strong>
     <p class="camp-event-text">{{event.text}}</p>
     {{#if event.roleNote}}<p class="camp-small"><i class="fas fa-id-badge"></i> {{{event.roleNote}}}</p>{{/if}}
+    {{#if event.sentryNote}}<p class="camp-small camp-ok"><i class="fas fa-shield-halved"></i> {{{event.sentryNote}}}</p>{{/if}}
+    {{#if event.effectChips.length}}
+    <div class="uw-chips camp-event-chips">
+      {{#each event.effectChips}}<span class="uw-chip {{#if (bajeryEq this.tone "good")}}is-good{{else}}is-bad{{/if}}">{{this.label}}</span>{{/each}}
+    </div>
+    {{/if}}
     {{#if event.followUp}}<p class="camp-small camp-muted"><i class="fas fa-link"></i> {{underworldT "CampEvent.FollowUp"}}</p>{{/if}}
     {{#if event.next}}<p class="camp-small camp-muted"><i class="fas fa-link"></i> {{underworldT "CampEvent.HookSet"}}</p>{{/if}}
   </div>
