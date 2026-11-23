@@ -123,7 +123,12 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
 
     // Na pierwszym otwarciu pokazuj zwartą listę; szczegóły można rozwinąć pojedynczo.
     if (!this._collapsedNpcIds) this._collapsedNpcIds = new Set(gang.roster.map(npc => npc.id));
+    this._rosterFilter ??= "all";
     const isWeekly = UnderworldOperations.isWeekly();
+    const usesTimedOps = UnderworldOperations.usesTimedOperations();
+    const restHours = UnderworldOperations.operationRestHours();
+    const now = time.now();
+    const terrainForOps = UnderworldOperations.getTerrain(gang);
 
     // Aktualizacja danych aktorów
     for (const npc of gang.roster) {
@@ -151,11 +156,64 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       npc.hasBattleScarred = Array.isArray(npc.narrativePerks) && npc.narrativePerks.includes("battle_scarred");
       npc.canGuard = !["dead", "arrested"].includes(npc.status)
         && (npc.status !== "wounded" || npc.hasBattleScarred)
-        && (npc.status !== "busy" || npc.assignment === "guard");
+        && (npc.status !== "busy" || npc.assignment === "guard")
+        && !npc.activeOperation;
       npc.canToggleRetinue = npc.assignment === "retinue"
         || (npc.status === "ready" && (!npc.assignment || npc.assignment === "none"));
       npc.upkeepSS = UnderworldOperations.memberUpkeepSS(npc, gang, isWeekly);
       npc.upkeepLabel = `${npc.upkeepSS} ${t("Units.SS")}`;
+
+      if (npc.activeOperation && npc.status === "busy") {
+        const op = npc.activeOperation;
+        const m = MISSIONS[op.assignment] || {};
+        const rem = Math.max(0, Number(op.doneAt) - now);
+        const durTotal = Math.max(1, (Number(op.doneAt) - Number(op.startedAt)) || ((Number(op.durationHours) || 1) * 3600));
+        const elapsed = Math.max(0, durTotal - rem);
+        const isDone = rem <= 0;
+        npc.activeOpView = {
+          id: op.id,
+          mission: op.assignment,
+          title: missionName(m, terrainForOps),
+          eta: UnderworldOperations.formatHour(op.doneAt),
+          remaining: UnderworldOperations.formatDuration(rem),
+          pct: Math.min(100, Math.round((elapsed / durTotal) * 100)),
+          isDone,
+          awaitingPlayerRoll: !!op.awaitingPlayerRoll || (isDone && UnderworldOperations._needsInteractivePlayerRoll(npc, op.assignment))
+        };
+      } else {
+        npc.activeOpView = null;
+      }
+
+      if (npc.status === "resting" && Number(npc.restUntil) > 0) {
+        const rem = Math.max(0, Number(npc.restUntil) - now);
+        npc.restView = {
+          until: UnderworldOperations.formatHour(npc.restUntil),
+          remaining: UnderworldOperations.formatDuration(rem),
+          isDone: rem <= 0
+        };
+      } else {
+        npc.restView = null;
+      }
+
+      const nextRankCfg = UnderworldTables.RANKS_CONFIG?.[npc.rank + 1];
+      const ltTaken = nextRankCfg?.unique && gang.roster.some(n => n.id !== npc.id && Number(n.rank) >= 3);
+      const canAffordRank = !!(nextRankCfg && !ltTaken && npc.operationalXP >= (Number(nextRankCfg.costOperationalXP) || 9999));
+      const ownedPerks = new Set(npc.narrativePerks);
+      const hasCraft = [...ownedPerks].some(id => UnderworldTables.NARRATIVE_PERKS?.[id]?.isCraft);
+      const canAffordPerk = Object.values(UnderworldTables.NARRATIVE_PERKS || {}).some(p => {
+        if (ownedPerks.has(p.id)) return false;
+        if (p.isCraft && hasCraft) return false;
+        return npc.operationalXP >= (Number(p.costOperationalXP) || 9999);
+      });
+      npc.canUpgrade = npc.status !== "dead" && (canAffordRank || canAffordPerk);
+
+      const filterCats = ["all"];
+      if (npc.status === "ready" && (!npc.assignment || npc.assignment === "none")) filterCats.push("ready");
+      if (npc.status === "busy" || npc.status === "resting" || npc.assignment === "retinue" || npc.assignment === "guard") filterCats.push("busy");
+      if (["wounded", "arrested"].includes(npc.status)) filterCats.push("injured");
+      npc.filterCategories = filterCats.join(" ");
+      npc.isFilteredOut = this._rosterFilter !== "all" && !filterCats.includes(this._rosterFilter);
+
       Object.assign(npc, this._memberGlyphs(npc));
 
       if (npc.actorId) {
@@ -252,9 +310,56 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     data.gang = gang;
     data.companyTypeLabel = t(`InfoTab.Types.${gang.type}`);
     data.isGM = game.user.isGM;
-    data.isWeekly = UnderworldOperations.isWeekly();
+    data.isWeekly = isWeekly;
+    data.usesTimedOps = usesTimedOps;
+    data.operationRestHours = restHours;
+    data.worldClock = UnderworldOperations.formatWorldClock(now);
     data.dailyQueue = !data.isWeekly && UnderworldOperations.usesDailyQueue();
     data.campRestGMOnly = UnderworldOperations.campRestGMOnly();
+    data.rosterFilter = this._rosterFilter;
+    data.filterCounts = {
+      all: gang.roster.length,
+      ready: gang.roster.filter(n => n.status === "ready" && (!n.assignment || n.assignment === "none")).length,
+      busy: gang.roster.filter(n => n.status === "busy" || n.status === "resting" || n.assignment === "retinue" || n.assignment === "guard").length,
+      injured: gang.roster.filter(n => ["wounded", "arrested"].includes(n.status)).length
+    };
+    data.activeOperations = gang.roster
+      .filter(n => n.status === "busy" && n.activeOpView)
+      .map(n => ({
+        npcId: n.id,
+        name: n.name,
+        img: n.img,
+        roleName: UnderworldOperations.roleName(n.role),
+        ...n.activeOpView
+      }));
+    data.restingMembers = gang.roster
+      .filter(n => n.status === "resting" && n.restView)
+      .map(n => ({
+        npcId: n.id,
+        name: n.name,
+        img: n.img,
+        roleName: UnderworldOperations.roleName(n.role),
+        ...n.restView
+      }));
+    data.activeOpsTotal = data.activeOperations.length + data.restingMembers.length;
+
+    let isGroupAdvantage = false;
+    try { isGroupAdvantage = !!game.settings?.get?.("wfrp4e", "useGroupAdvantage"); } catch (_) {}
+    const advantageVal = getAdvantage(this.actor);
+    const combat = game.combat ?? null;
+    const inCombat = !!combat?.started;
+    const round = inCombat ? (Number(combat.round) || 1) : 0;
+    const roundKey = inCombat ? `${combat.id}:${combat.round}` : null;
+    const orderLimit = UnderworldOperations.orderRoundLimit();
+    data.combatStatus = {
+      advantage: advantageVal,
+      isGroupAdvantage,
+      advantageLabel: isGroupAdvantage ? t("TacticsTab.GroupAdvantageNow") : t("TacticsTab.AdvantageNow"),
+      inCombat,
+      round,
+      orderUsedThisRound: !!(roundKey && orderLimit !== "unlimited" && gang.lastOrderRound === roundKey),
+      reactionUsedThisRound: !!(roundKey && orderLimit !== "unlimited" && gang.lastReactionRound === roundKey)
+    };
     data.canTriggerCampRest = data.isGM || (!data.isWeekly && !data.campRestGMOnly);
     data.profileHasPatronCut = !!profileOf(gang).patronCut;
     const rawCut = String(gang.patron?.cut ?? "").trim();
@@ -337,7 +442,8 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
           name: missionName(m, terrainId),
           desc: missionDesc(m, terrainId),
           tiered: !!m.tiered,
-          noNpc: !!m.noNpc
+          noNpc: !!m.noNpc,
+          durationHours: usesTimedOps ? UnderworldOperations.operationDurationHours(missionId) : 0
         }))
     })).filter(cat => cat.missions.length);
 
@@ -590,6 +696,17 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       ev.preventDefault();
       for (const el of this.element.querySelectorAll(".uw-drop-target")) el.classList.remove("uw-drop-target");
       await this._handleActorDrop(ev);
+    });
+    this.element.addEventListener("keydown", (ev) => {
+      if (ev.altKey || ev.ctrlKey || ev.metaKey || ev.shiftKey) return;
+      const tag = ev.target?.tagName;
+      if (["INPUT", "TEXTAREA", "SELECT", "OPTION"].includes(tag) || ev.target?.isContentEditable) return;
+      const tabMap = { "1": "info", "2": "dashboard", "3": "roster", "4": "tasks", "5": "loot", "6": "tactics" };
+      const nextTab = tabMap[ev.key];
+      if (nextTab) {
+        ev.preventDefault();
+        this.changeTab(nextTab, "primary");
+      }
     });
   }
 
@@ -930,11 +1047,64 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
         return;
       }
 
+      case "toggle-all-categories": {
+        const cats = Array.from(this.element.querySelectorAll(".mission-category"));
+        if (!cats.length) return;
+        const collapse = cats.some(c => !c.classList.contains("collapsed"));
+        this._categoryCollapsed ??= {};
+        for (const cat of cats) {
+          cat.classList.toggle("collapsed", collapse);
+          if (cat.dataset.category) this._categoryCollapsed[cat.dataset.category] = collapse;
+        }
+        return;
+      }
+
+      case "set-roster-filter": {
+        const filter = target.dataset.filter || "all";
+        this._rosterFilter = filter;
+        this.element.querySelectorAll('[data-action="set-roster-filter"]').forEach(btn => {
+          btn.classList.toggle("is-active", btn.dataset.filter === filter);
+          btn.setAttribute("aria-pressed", String(btn.dataset.filter === filter));
+        });
+        this.element.querySelectorAll(".npc-card-box").forEach(card => {
+          const cats = String(card.dataset.filterCats || "").split(/\s+/);
+          card.classList.toggle("is-filtered-out", filter !== "all" && !cats.includes(filter));
+        });
+        return;
+      }
+
+      case "open-tab": {
+        const tabId = target.dataset.tabTarget;
+        if (tabId) this.changeTab(tabId, "primary");
+        return;
+      }
+
+      case "pick-terrain": {
+        if (!game.user.isGM) return;
+        const gang = GangData.getGang(this.actor);
+        const currentId = UnderworldOperations.getTerrain(gang);
+        const buttons = TERRAIN_IDS.map(id => ({
+          action: `terrain-${id}`,
+          label: TERRAINS[id].name,
+          default: id === currentId,
+          callback: () => this._onSetTerrain(id)
+        }));
+        return DialogV2.wait({
+          window: { title: t("Terrain.PickTitle") },
+          classes: ["wfrp4e", "underworld-dialog-window"],
+          content: dialogContent(`<div class="underworld-dialog"><p>${t("Terrain.PickHint")}</p></div>`),
+          buttons: [...buttons, { action: "cancel", label: "WFRP4E_COMPANION.Cancel" }],
+          rejectClose: false
+        });
+      }
+
       // ─── TEREN I ŁUPY ───
       case "set-terrain":
         return this._onSetTerrain(target.dataset.terrain);
       case "loot-sell":
         return this._onSendMission("fence");
+      case "loot-sell-one":
+        return this._onSendMission("fence", { preselectLootId: target.dataset.lootId });
       case "loot-transfer":
         await UnderworldOperations.transferLootToActor(this.actor, target.dataset.lootId);
         this.render();
@@ -1038,12 +1208,63 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
           npc.status = "ready";
           npc.assignment = "none";
           delete npc.plannedMission;
+          delete npc.activeOperation;
+          delete npc.restUntil;
           delete npc.arrestedNights;
           delete npc.arrestedOn;
           await GangData.saveGang(this.actor, gang);
           ui.notifications.info(t("Roster.ReadyAgain", { name: npc.name }));
           this.render();
         }
+        return;
+      }
+
+      // ─── OPERACJE CZASOWE I ODPOCZYNEK ───
+      case "claim-operation": {
+        const npcId = target.dataset.npcId;
+        if (!npcId) return;
+        await UnderworldOperations.resolveOperation(this.actor, npcId, { interactive: true });
+        this.render();
+        return;
+      }
+
+      case "accelerate-operation": {
+        if (!game.user.isGM) return;
+        const npcId = target.dataset.npcId;
+        if (!npcId) return;
+        await UnderworldOperations.resolveOperation(this.actor, npcId, { force: true, interactive: true });
+        this.render();
+        return;
+      }
+
+      case "accelerate-all-operations": {
+        if (!game.user.isGM) return;
+        await UnderworldOperations.resolveAllActiveOperations(this.actor);
+        this.render();
+        return;
+      }
+
+      case "cancel-operation": {
+        const npcId = target.dataset.npcId;
+        if (!npcId) return;
+        await UnderworldOperations.cancelOperation(this.actor, npcId);
+        this.render();
+        return;
+      }
+
+      case "finish-rest": {
+        if (!game.user.isGM) return;
+        const npcId = target.dataset.npcId;
+        if (!npcId) return;
+        await UnderworldOperations.finishRest(this.actor, npcId);
+        this.render();
+        return;
+      }
+
+      case "advance-time": {
+        if (!game.user.isGM) return;
+        const hours = Math.max(1, Number(target.dataset.hours) || 1);
+        await game.time.advance(hours * 3600);
         return;
       }
 
@@ -1380,7 +1601,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
    * Wysyła członka na zlecenie. Bez npcId otwiera okno wyboru; z npcId (portret upuszczony na kartę
    * zlecenia) wysyła od razu, a okno pokazuje tylko wtedy, gdy zlecenie wymaga wyborów (cel, poziom, łupy).
    */
-  async _onSendMission(missionType, { npcId: chosenId = null } = {}) {
+  async _onSendMission(missionType, { npcId: chosenId = null, preselectLootId = null } = {}) {
     const mission = MISSIONS[missionType];
     if (!mission) {
       ui.notifications.error(t("Mission.Unknown", { type: missionType }));
@@ -1426,14 +1647,28 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       return;
     }
 
-    const npcOptions = available.map(n =>
-      `<option value="${n.id}" ${n.id === chosenId ? "selected" : ""}>${escapeHTML(n.name)} (${escapeHTML(UnderworldOperations.roleName(n.role))})</option>`
-    ).join("");
+    const previews = new Map(available.map(n => [n.id, UnderworldOperations.previewMissionChance(gang, n, missionType)]));
+    const sortedAvailable = [...available].sort((a, b) => {
+      const pa = previews.get(a.id);
+      const pb = previews.get(b.id);
+      const specDiff = Number(!!pb?.isSpecialist) - Number(!!pa?.isSpecialist);
+      if (specDiff !== 0) return specDiff;
+      const chanceDiff = (pb?.chance ?? 0) - (pa?.chance ?? 0);
+      if (chanceDiff !== 0) return chanceDiff;
+      return String(a.name || "").localeCompare(String(b.name || ""));
+    });
+    const defaultNpcId = chosenId || sortedAvailable[0]?.id;
+    const npcOptions = sortedAvailable.map(n => {
+      const p = previews.get(n.id);
+      const star = p?.isSpecialist ? "★ " : "";
+      const chanceTag = mission.target && p ? ` · ${p.chance}%` : "";
+      return `<option value="${n.id}" ${n.id === defaultNpcId ? "selected" : ""}>${star}${escapeHTML(n.name)} (${escapeHTML(UnderworldOperations.roleName(n.role))}${chanceTag})</option>`;
+    }).join("");
 
     // Dodatkowe pola zależne od zlecenia
     let extraHtml = "";
     if (mission.fencePicker) {
-      extraHtml = this._fencePickerHtml(gang, terrainId);
+      extraHtml = this._fencePickerHtml(gang, terrainId, preselectLootId);
       if (!extraHtml) return;
     } else if (mission.bribePicker) {
       extraHtml = this._bribePickerHtml(gang);
@@ -1448,10 +1683,11 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     if (mission.target && UnderworldOperations.getToken(gang, "commotion")) {
       extraHtml += `<p class="uw-dialog-note is-gain"><i class="${TOKENS.commotion.icon}"></i> ${t("Mission.CommotionNote", { name: TOKENS.commotion.name, bonus: TOKENS.commotion.bonus })}</p>`;
     }
+    const initialPreviewHtml = this._missionPreviewHtml(gang, defaultNpcId, missionType, mission.tiered ? "normal" : null);
 
     await DialogV2.wait({
       window: { title: `${t("Mission.Title")}: ${label}` },
-      position: { width: mission.tiered || mission.fencePicker ? 520 : 440 },
+      position: { width: mission.tiered || mission.fencePicker ? 520 : 460 },
       classes: ["wfrp4e", "underworld-dialog-window"],
       content: dialogContent(`
         <div class="underworld-dialog uw-mission-dialog">
@@ -1460,10 +1696,11 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
             <label>${t("Mission.Who")}</label>
             <select id="mission-npc-select">${npcOptions}</select>
           </div>
+          <div id="mission-chance-preview" class="uw-mission-preview">${initialPreviewHtml}</div>
           ${extraHtml}
         </div>
       `),
-      render: (event, dialog) => this._bindMissionDialog(dialog.element ?? dialog),
+      render: (event, dialog) => this._bindMissionDialog(dialog.element ?? dialog, { gang, missionType }),
       buttons: [
         {
           action: "send",
@@ -1503,7 +1740,28 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     });
   }
 
-  /** Wykonuje zlecenie albo, w trybie tygodnia lub kolejki MG, tylko je planuje. */
+  /** Renderuje podgląd szansy powodzenia, modyfikatorów oraz przewidywanego czasu operacji. */
+  _missionPreviewHtml(gang, npcId, missionType, tier = null) {
+    const npc = gang?.roster?.find(n => n.id === npcId);
+    const preview = UnderworldOperations.previewMissionChance(gang, npc, missionType, { tier });
+    if (!preview) return "";
+    const parts = [];
+    if (MISSIONS[missionType]?.target) {
+      const modList = preview.modifiers.length
+        ? preview.modifiers.map(m => `${escapeHTML(m.label)}: ${m.value >= 0 ? `+${m.value}` : m.value}`).join(", ")
+        : t("Mission.PreviewNoMods");
+      parts.push(`<div class="uw-preview-chance"><strong><i class="fas fa-dice-d20"></i> ${t("Mission.PreviewChance", { chance: preview.chance })}</strong> <small>(${modList})</small></div>`);
+    }
+    if (preview.durationHours > 0 && UnderworldOperations.usesTimedOperations()) {
+      const rest = UnderworldOperations.operationRestHours();
+      const eta = UnderworldOperations.formatHour(time.now() + preview.durationHours * 3600);
+      const restNote = rest > 0 ? ` · ${t("Mission.PreviewRest", { hours: rest })}` : "";
+      parts.push(`<div class="uw-preview-time"><i class="fas fa-hourglass-half"></i> ${t("Mission.PreviewDuration", { hours: preview.durationHours, eta })}${restNote}</div>`);
+    }
+    return parts.join("");
+  }
+
+  /** Wykonuje zlecenie albo, w trybie tygodnia lub kolejki MG, tylko je planuje; w trybie czasowym uruchamia zegar. */
   async _dispatchMission(mission, npcId, input, tier, label) {
     if (UnderworldOperations.usesPlanning()) {
       if (await UnderworldOperations.planMission(this.actor, npcId, mission.fn, input, tier)) {
@@ -1511,6 +1769,11 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
           ? t("Mission.PlannedWeek", { label })
           : t("Mission.Queued", { label }));
       }
+      this.render();
+      return;
+    }
+    if (UnderworldOperations.usesTimedOperations()) {
+      await UnderworldOperations.startOperation(this.actor, npcId, mission.fn, input, { tier });
       this.render();
       return;
     }
@@ -1547,26 +1810,27 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
   }
 
   /** Lista łupów do sprzedaży u pasera bieżącego terenu (null, gdy nie ma czego sprzedać). */
-  _fencePickerHtml(gang, terrainId) {
+  _fencePickerHtml(gang, terrainId, preselectLootId = null) {
     const fence = TERRAINS[terrainId].fence;
     const loot = Array.isArray(gang.loot) ? gang.loot : [];
     if (!loot.length) {
       ui.notifications.warn(t("Fence.NoLoot"));
       return null;
     }
-    const reserved = UnderworldOperations.usesPlanning()
+    const reserved = (UnderworldOperations.usesPlanning() || UnderworldOperations.usesTimedOperations())
       ? UnderworldOperations.plannedResourceUsage(gang).lootIds
       : new Set();
     const rows = loot.map(item => {
       const refused = fence.refuses.includes(item.category);
       const isReserved = reserved.has(item.id);
       const disabled = refused || isReserved;
+      const checked = !disabled && (!preselectLootId || item.id === preselectLootId);
       const rate = UnderworldOperations.fenceRate(terrainId, item, 0);
       const estimate = Math.max(1, Math.floor(item.valueSS * rate / 100));
       const cat = LOOT_CATEGORIES[item.category];
       return `
         <label class="uw-loot-option ${disabled ? "is-refused" : ""}">
-          <input type="checkbox" name="fence-loot" value="${item.id}" ${disabled ? "disabled" : "checked"} />
+          <input type="checkbox" name="fence-loot" value="${item.id}" ${disabled ? "disabled" : ""} ${checked ? "checked" : ""} />
           <i class="${cat?.icon || "fas fa-box"}"></i>
           <span class="uw-loot-name">${escapeHTML(item.name)}${item.hot ? ` <span class="uw-hot-badge"><i class="fas fa-fire"></i> ${t("Fence.Hot")}</span>` : ""}</span>
           <span class="uw-loot-price">${refused ? t("Fence.Refuses") : isReserved ? t("Card.PlannedReserved") : `~${estimate} ${t("Units.SS")} <small>${t("Fence.RateOf", { rate, value: item.valueSS })}</small>`}</span>
@@ -1606,17 +1870,30 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       <p class="uw-dialog-note">${t("Bribe.LostOnFail")}</p>`;
   }
 
-  /** Pokazuje tylko pola pasujące do wybranego rodzaju łapówki. */
-  _bindMissionDialog(root) {
+  /** Pokazuje pola pasujące do wybranego rodzaju łapówki i odświeża podgląd szans/czasu. */
+  _bindMissionDialog(root, { gang = null, missionType = null } = {}) {
     const mode = root?.querySelector?.("#bribe-mode");
-    if (!mode) return;
-    const sync = () => {
-      for (const field of root.querySelectorAll("[data-bribe-mode]")) {
-        field.hidden = field.dataset.bribeMode !== mode.value;
-      }
-    };
-    mode.addEventListener("change", sync);
-    sync();
+    if (mode) {
+      const syncBribe = () => {
+        for (const field of root.querySelectorAll("[data-bribe-mode]")) {
+          field.hidden = field.dataset.bribeMode !== mode.value;
+        }
+      };
+      mode.addEventListener("change", syncBribe);
+      syncBribe();
+    }
+
+    const previewEl = root?.querySelector?.("#mission-chance-preview");
+    const npcSelect = root?.querySelector?.("#mission-npc-select");
+    if (previewEl && npcSelect && gang && missionType) {
+      const updatePreview = () => {
+        const tier = root.querySelector('input[name="mission-tier"]:checked')?.value || null;
+        previewEl.innerHTML = this._missionPreviewHtml(gang, npcSelect.value, missionType, tier);
+      };
+      npcSelect.addEventListener("change", updatePreview);
+      root.querySelectorAll('input[name="mission-tier"]').forEach(el => el.addEventListener("change", updatePreview));
+      updatePreview();
+    }
   }
 
   /** MG zmienia teren szajki (miasto / wieś / las / góry). */
@@ -1637,7 +1914,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
    */
   async _onTendWoundedDialog(gang) {
     const available = gang.roster.filter(n => n.status === "ready" && (!n.assignment || n.assignment === "none"));
-    const reservedWounded = UnderworldOperations.usesPlanning()
+    const reservedWounded = (UnderworldOperations.usesPlanning() || UnderworldOperations.usesTimedOperations())
       ? UnderworldOperations.plannedResourceUsage(gang).woundedIds
       : new Set();
     const wounded = gang.roster.filter(n => n.status === "wounded" && !reservedWounded.has(n.id));
@@ -1651,13 +1928,26 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       return;
     }
 
-    const npcOptions = available.map(n =>
-      `<option value="${n.id}">${n.name} (${n.role})</option>`
-    ).join("");
+    const previews = new Map(available.map(n => [n.id, UnderworldOperations.previewMissionChance(gang, n, "tend_wounded")]));
+    const sortedMedics = [...available].sort((a, b) => {
+      const pa = previews.get(a.id);
+      const pb = previews.get(b.id);
+      const specDiff = Number(!!pb?.isSpecialist) - Number(!!pa?.isSpecialist);
+      if (specDiff !== 0) return specDiff;
+      return (pb?.chance ?? 0) - (pa?.chance ?? 0);
+    });
+    const npcOptions = sortedMedics.map(n => {
+      const p = previews.get(n.id);
+      const star = p?.isSpecialist ? "★ " : "";
+      const chanceTag = p ? ` · ${p.chance}%` : "";
+      return `<option value="${n.id}">${star}${escapeHTML(n.name)} (${escapeHTML(UnderworldOperations.roleName(n.role))}${chanceTag})</option>`;
+    }).join("");
 
     const woundedOptions = wounded.map(n =>
-      `<option value="${n.id}">${n.name} (${UnderworldOperations.roleName(n.role)}) – ${t("Status.Wounded")}</option>`
+      `<option value="${n.id}">${escapeHTML(n.name)} (${escapeHTML(UnderworldOperations.roleName(n.role))}) – ${t("Status.Wounded")}</option>`
     ).join("");
+
+    const previewHtml = sortedMedics[0] ? this._missionPreviewHtml(gang, sortedMedics[0].id, "tend_wounded", null) : "";
 
     await DialogV2.wait({
       window: { title: missionName(MISSIONS.tend_wounded, UnderworldOperations.getTerrain(GangData.getGang(this.actor))) },
@@ -1670,6 +1960,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
               ${npcOptions}
             </select>
           </div>
+          <div id="tend-chance-preview" class="uw-mission-preview">${previewHtml}</div>
           <div class="form-group" style="margin-top: 8px;">
             <label style="font-weight: bold; display: block; margin-bottom: 4px;">${t("Tend.Whom")}</label>
             <select id="wounded-npc-select" style="width: 100%; padding: 4px;">
@@ -1678,6 +1969,16 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
           </div>
         </div>
       `),
+      render: (event, dialog) => {
+        const root = dialog.element ?? dialog;
+        const selectEl = root?.querySelector?.("#tender-npc-select");
+        const prevEl = root?.querySelector?.("#tend-chance-preview");
+        if (selectEl && prevEl) {
+          selectEl.addEventListener("change", () => {
+            prevEl.innerHTML = this._missionPreviewHtml(gang, selectEl.value, "tend_wounded", null);
+          });
+        }
+      },
       buttons: [
         {
           action: "send",
@@ -1690,6 +1991,13 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
             if (UnderworldOperations.usesPlanning()) {
               if (await UnderworldOperations.planMission(this.actor, tenderId, "executeTendWoundedMission", woundedId)) {
                 ui.notifications.info(t("Tend.Planned"));
+              }
+              this.render();
+              return;
+            }
+            if (UnderworldOperations.usesTimedOperations()) {
+              if (await UnderworldOperations.startOperation(this.actor, tenderId, "executeTendWoundedMission", woundedId)) {
+                ui.notifications.info(t("Tend.StartedTimed"));
               }
               this.render();
               return;
@@ -3422,6 +3730,8 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
               }
               if (mergedItem.status === "ready" && existing.status !== "ready") {
                 mergedItem.assignment = "none";
+                delete mergedItem.activeOperation;
+                delete mergedItem.restUntil;
               }
             }
             const wantedRole2 = game.user.isGM && item.role2 !== undefined ? item.role2 : existing.role2;

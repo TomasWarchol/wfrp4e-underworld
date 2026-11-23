@@ -31,10 +31,17 @@
   </div>
   {{/if}}
 
+  <div class="uw-roster-filters" role="group">
+    <button type="button" class="uw-filter-btn {{#if (bajeryEq rosterFilter 'all')}}is-active{{/if}}" data-action="set-roster-filter" data-filter="all" aria-pressed="{{#if (bajeryEq rosterFilter 'all')}}true{{else}}false{{/if}}">{{underworldT "RosterTab.Filter.All"}} <small>({{filterCounts.all}})</small></button>
+    <button type="button" class="uw-filter-btn {{#if (bajeryEq rosterFilter 'ready')}}is-active{{/if}}" data-action="set-roster-filter" data-filter="ready" aria-pressed="{{#if (bajeryEq rosterFilter 'ready')}}true{{else}}false{{/if}}">{{underworldT "RosterTab.Filter.Ready"}} <small>({{filterCounts.ready}})</small></button>
+    <button type="button" class="uw-filter-btn {{#if (bajeryEq rosterFilter 'busy')}}is-active{{/if}}" data-action="set-roster-filter" data-filter="busy" aria-pressed="{{#if (bajeryEq rosterFilter 'busy')}}true{{else}}false{{/if}}">{{underworldT "RosterTab.Filter.Busy"}} <small>({{filterCounts.busy}})</small></button>
+    <button type="button" class="uw-filter-btn {{#if (bajeryEq rosterFilter 'injured')}}is-active{{/if}}" data-action="set-roster-filter" data-filter="injured" aria-pressed="{{#if (bajeryEq rosterFilter 'injured')}}true{{else}}false{{/if}}">{{underworldT "RosterTab.Filter.Injured"}} <small>({{filterCounts.injured}})</small></button>
+  </div>
+
   <!-- LISTA KART POPLECZNIKÓW -->
   <div class="npc-cards-grid">
     {{#each gang.roster}}
-    <div class="npc-card-box {{#if (bajeryEq this.status 'dead')}}npc-dead{{else if (bajeryEq this.status 'wounded')}}npc-wounded{{else if (bajeryEq this.status 'arrested')}}npc-wounded{{/if}} {{#if this.isCollapsed}}collapsed{{/if}}" data-npc-id="{{this.id}}">
+    <div class="npc-card-box {{#if (bajeryEq this.status 'dead')}}npc-dead{{else if (bajeryEq this.status 'wounded')}}npc-wounded{{else if (bajeryEq this.status 'arrested')}}npc-wounded{{/if}} {{#if this.isCollapsed}}collapsed{{/if}} {{#if this.isFilteredOut}}is-filtered-out{{/if}}" data-npc-id="{{this.id}}" data-filter-cats="{{this.filterCategories}}">
       <!-- LEWA: PORTRET / MEDALION -->
       <div class="npc-portrait-column">
         <div class="avatar-medallion {{#if this.actorId}}is-linked{{/if}}" 
@@ -98,8 +105,8 @@
                 </button>
               {{/if}}
 
-              <button type="button" class="tool-btn btn-upgrade" data-action="upgrade-npc" data-npc-id="{{this.id}}" title="{{underworldT 'RosterTab.UpgradeHint'}}">
-                <i class="fas fa-hammer text-gold"></i> {{underworldT "RosterTab.Upgrade"}}
+              <button type="button" class="tool-btn btn-upgrade {{#if this.canUpgrade}}uw-upgrade-ready{{/if}}" data-action="upgrade-npc" data-npc-id="{{this.id}}" title="{{underworldT 'RosterTab.UpgradeHint'}}">
+                <i class="fas fa-hammer text-gold"></i> {{underworldT "RosterTab.Upgrade"}}{{#if this.canUpgrade}} <span class="uw-upgrade-dot" title="{{underworldT 'RosterTab.UpgradeReady'}}">!</span>{{/if}}
               </button>
 
               {{#if (bajeryEq this.assignment "retinue")}}
@@ -128,6 +135,36 @@
           </div>
         </div>
 
+        {{#if this.activeOpView}}
+        <div class="uw-card-op-strip {{#if this.activeOpView.isDone}}is-ready{{/if}}">
+          <span class="uw-card-op-text">
+            <i class="fas fa-hourglass-half"></i> <strong>{{this.activeOpView.title}}</strong>
+            {{#if this.activeOpView.awaitingPlayerRoll}}
+              · {{underworldT "Ops.AwaitingRoll"}}
+            {{else if this.activeOpView.isDone}}
+              · {{underworldT "Ops.ReadyToClaim"}}
+            {{else}}
+              · {{underworldT "Ops.Remaining" time=this.activeOpView.remaining eta=this.activeOpView.eta}}
+            {{/if}}
+          </span>
+          <span class="uw-card-op-btns">
+            {{#if this.activeOpView.isDone}}
+              <button type="button" class="uw-btn-mini is-primary" data-action="claim-operation" data-npc-id="{{this.id}}"><i class="fas fa-dice"></i> {{underworldT "Ops.Claim"}}</button>
+            {{else if ../isGM}}
+              <button type="button" class="uw-btn-mini is-accent" data-action="accelerate-operation" data-npc-id="{{this.id}}" title="{{underworldT 'Ops.SpeedOneHint'}}"><i class="fas fa-bolt"></i> {{underworldT "Ops.SpeedOne"}}</button>
+            {{/if}}
+            <button type="button" class="uw-btn-mini is-danger" data-action="cancel-operation" data-npc-id="{{this.id}}" title="{{underworldT 'Ops.CancelHint'}}"><i class="fas fa-times"></i></button>
+          </span>
+        </div>
+        {{else if this.restView}}
+        <div class="uw-card-op-strip is-resting">
+          <span class="uw-card-op-text"><i class="fas fa-bed"></i> {{underworldT "Ops.RestingUntil" time=this.restView.remaining until=this.restView.until}}</span>
+          {{#if ../isGM}}
+            <button type="button" class="uw-btn-mini" data-action="finish-rest" data-npc-id="{{this.id}}" title="{{underworldT 'Ops.FinishRestHint'}}"><i class="fas fa-sun"></i> {{underworldT "Ops.FinishRest"}}</button>
+          {{/if}}
+        </div>
+        {{/if}}
+
         <!-- SEKCJA ROZWIJALNA (Ranga, DO, Rola, Cechy) -->
         <div class="npc-expandable-body">
           <!-- PASEK RANGI, DO, ŻOŁDU I EKWIPUNKU -->
@@ -147,18 +184,14 @@
 
           <!-- ROLA I CECHY BANITY -->
           <div class="npc-traits-grid">
+            {{#if ../isGM}}
             <!-- Rola w szajce -->
             <div class="trait-line">
               <span class="trait-line-label"><i class="fas fa-id-badge text-gold"></i> {{underworldT "Upgrade.Role"}}:</span>
               <div class="trait-line-content">
-                {{#if ../isGM}}
-                  <select class="npc-role-select" name="roster.{{@index}}.role" title="{{underworldT 'RosterTab.RoleTitle'}}">
-                    {{{underworldRoleSelectOptions this.role}}}
-                  </select>
-                {{else}}
-                  {{{underworldRoleBadge this.role}}}
-                  <input type="hidden" name="roster.{{@index}}.role" value="{{this.role}}"/>
-                {{/if}}
+                <select class="npc-role-select" name="roster.{{@index}}.role" title="{{underworldT 'RosterTab.RoleTitle'}}">
+                  {{{underworldRoleSelectOptions this.role}}}
+                </select>
               </div>
             </div>
 
@@ -166,16 +199,15 @@
             <div class="trait-line">
               <span class="trait-line-label"><i class="fas fa-id-badge text-gold"></i> {{underworldT "Upgrade.SecondRole"}}:</span>
               <div class="trait-line-content">
-                {{#if ../isGM}}
-                  <select class="npc-role-select" name="roster.{{@index}}.role2" title="{{underworldT 'Upgrade.SecondRoleHint'}}">
-                    <option value="">—</option>
-                    {{{underworldRoleSelectOptions this.role2}}}
-                  </select>
-                {{else}}
-                  {{#if this.role2}}{{{underworldRoleBadge this.role2}}}{{else}}<em>—</em>{{/if}}
-                {{/if}}
+                <select class="npc-role-select" name="roster.{{@index}}.role2" title="{{underworldT 'Upgrade.SecondRoleHint'}}">
+                  <option value="">—</option>
+                  {{{underworldRoleSelectOptions this.role2}}}
+                </select>
               </div>
             </div>
+            {{else}}
+              <input type="hidden" name="roster.{{@index}}.role" value="{{this.role}}"/>
+            {{/if}}
 
             <!-- Zalety -->
             <div class="trait-line">

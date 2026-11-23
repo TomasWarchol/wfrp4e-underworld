@@ -6469,3 +6469,335 @@
   outline-offset: -2px;
   background-color: var(--uw-ok-bg) !important;
 }
+
+/* ─── Filtry rejestru (CSS-only, formularz submitOnChange zachowuje wszystkie pola) ─── */
+:is(html, #uw) .npc-card-box.is-filtered-out {
+  display: none !important;
+}
+
+:is(html, #uw) .is-clickable {
+  cursor: pointer;
+  transition: filter 0.12s ease, border-color 0.12s ease;
+}
+:is(html, #uw) .is-clickable:hover {
+  filter: brightness(1.1);
+}
+
+:is(html, #uw) .submeta-clock,
+:is(html, #uw) .uw-ops-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+:is(html, #uw) .uw-ops-pill {
+  background: rgba(180, 118, 40, 0.22);
+  border: 1px solid rgba(212, 165, 80, 0.55);
+  border-radius: 10px;
+  padding: 1px 7px;
+  color: #f3d799;
+}
+
+:is(html, #uw) .uw-roster-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 4px 0 8px;
+}
+:is(html, #uw) .uw-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 14px;
+  border: 1px solid rgba(110, 82, 56, 0.45);
+  background: rgba(255, 252, 244, 0.72);
+  color: var(--uw-ink, #2b1f15);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+:is(html, #uw) .uw-filter-btn.is-active {
+  background: #5a3d28;
+  border-color: #3a2415;
+  color: #fdf6e2;
+}
+:is(html, #uw) .uw-filter-btn small {
+  opacity: 0.8;
+  font-weight: normal;
+}
+
+:is(html, #uw) .btn-upgrade.uw-upgrade-ready {
+  position: relative;
+  border-color: #9e6b18;
+  background: rgba(214, 158, 46, 0.16);
+}
+:is(html, #uw) .uw-upgrade-dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #b7791f;
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ─── Mini przyciski i paski operacji czasowych ─── */
+:is(html, #uw) .uw-btn-mini {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  border-radius: 4px;
+  border: 1px solid rgba(90, 61, 40, 0.45);
+  background: rgba(255, 250, 240, 0.85);
+  color: #2b1f15;
+  cursor: pointer;
+}
+:is(html, #uw) .uw-btn-mini:hover { filter: brightness(0.95); }
+:is(html, #uw) .uw-btn-mini.is-primary {
+  background: #2e6b3b;
+  border-color: #1c4726;
+  color: #fff;
+}
+:is(html, #uw) .uw-btn-mini.is-accent {
+  background: #8a5617;
+  border-color: #5c370b;
+  color: #fff;
+}
+:is(html, #uw) .uw-btn-mini.is-danger {
+  background: rgba(183, 28, 28, 0.12);
+  border-color: rgba(183, 28, 28, 0.45);
+  color: #9b1c1c;
+}
+
+:is(html, #uw) .uw-ops-panel {
+  background: rgba(255, 250, 238, 0.78);
+  border: 1px solid #9e856f;
+  border-radius: 5px;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+}
+:is(html, #uw) .uw-ops-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+:is(html, #uw) .uw-ops-head h3 {
+  margin: 0;
+  font-size: 0.96rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+:is(html, #uw) .uw-ops-gm-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+:is(html, #uw) .uw-ops-list,
+:is(html, #uw) .uw-ops-rest-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+:is(html, #uw) .uw-ops-rest-list { margin-top: 6px; }
+:is(html, #uw) .uw-op-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid #bcae98;
+  border-radius: 4px;
+}
+:is(html, #uw) .uw-op-row.is-ready {
+  border-color: #2e6b3b;
+  background: rgba(46, 107, 59, 0.08);
+}
+:is(html, #uw) .uw-op-row.is-resting {
+  border-color: #456990;
+  background: rgba(69, 105, 144, 0.08);
+}
+:is(html, #uw) .uw-op-row img {
+  width: 28px;
+  height: 28px;
+  border-radius: 3px;
+  object-fit: cover;
+  border: 1px solid #7c5838;
+  flex-shrink: 0;
+}
+:is(html, #uw) .uw-op-main {
+  flex: 1;
+  min-width: 0;
+}
+:is(html, #uw) .uw-op-title {
+  font-size: 0.84rem;
+  color: #2b1f15;
+}
+:is(html, #uw) .uw-op-meta {
+  font-size: 0.75rem;
+  color: #5c4938;
+  margin-top: 1px;
+}
+:is(html, #uw) .uw-op-awaiting {
+  color: #1f5c2e;
+  font-weight: 700;
+}
+:is(html, #uw) .uw-op-progress {
+  height: 4px;
+  margin-top: 4px;
+  border-radius: 2px;
+  background: rgba(90, 61, 40, 0.18);
+  overflow: hidden;
+}
+:is(html, #uw) .uw-op-progress > span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #8a5617, #c98a2c);
+}
+:is(html, #uw) .uw-op-row.is-ready .uw-op-progress > span {
+  background: #2e6b3b;
+}
+:is(html, #uw) .uw-op-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+:is(html, #uw) .uw-ops-empty {
+  margin: 2px 0 0;
+  font-size: 0.78rem;
+  font-style: italic;
+  color: #6b5644;
+}
+
+:is(html, #uw) .uw-card-op-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin: 4px 0;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: rgba(138, 86, 23, 0.1);
+  border: 1px solid rgba(138, 86, 23, 0.35);
+  font-size: 0.76rem;
+  color: #3a2614;
+}
+:is(html, #uw) .uw-card-op-strip.is-ready {
+  background: rgba(46, 107, 59, 0.12);
+  border-color: rgba(46, 107, 59, 0.45);
+}
+:is(html, #uw) .uw-card-op-strip.is-resting {
+  background: rgba(69, 105, 144, 0.1);
+  border-color: rgba(69, 105, 144, 0.4);
+}
+:is(html, #uw) .uw-card-op-btns {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+/* ─── Podgląd szans i czasu w dialogu misji ─── */
+:is(html, #uw) .uw-mission-preview {
+  padding: 6px 8px;
+  margin: 6px 0 8px;
+  border-radius: 4px;
+  background: rgba(138, 86, 23, 0.08);
+  border: 1px solid rgba(138, 86, 23, 0.3);
+  font-size: 0.8rem;
+  color: #2b1f15;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+:is(html, #uw) .uw-mission-preview:empty {
+  display: none;
+}
+
+/* ─── Koszty postoju, skróty kategorii, status bojowy i detale ─── */
+:is(html, #uw) .uw-camp-costs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 5px 8px;
+  margin-bottom: 6px;
+  background: rgba(90, 61, 40, 0.08);
+  border: 1px dashed rgba(90, 61, 40, 0.35);
+  border-radius: 4px;
+  font-size: 0.78rem;
+  color: #3b2616;
+}
+:is(html, #uw) .uw-camp-ops-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 5px 8px;
+  border-radius: 4px;
+  background: rgba(138, 86, 23, 0.1);
+  border: 1px solid rgba(138, 86, 23, 0.3);
+  font-size: 0.78rem;
+}
+
+:is(html, #uw) .uw-categories-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin: 4px 0 6px;
+}
+
+:is(html, #uw) .uw-combat-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+:is(html, #uw) .uw-combat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.76rem;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(200, 175, 130, 0.4);
+}
+:is(html, #uw) .uw-combat-pill.is-ready {
+  background: rgba(46, 125, 50, 0.25);
+  border-color: rgba(129, 199, 132, 0.6);
+}
+:is(html, #uw) .uw-combat-pill.is-used {
+  background: rgba(183, 28, 28, 0.25);
+  border-color: rgba(229, 115, 115, 0.55);
+}
+
+:is(html, #uw) .uw-gm-overrides,
+:is(html, #uw) .uw-prep-help-details {
+  margin-top: 6px;
+  border: 1px dashed rgba(110, 82, 56, 0.4);
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+:is(html, #uw) :is(.uw-gm-overrides, .uw-prep-help-details) > summary {
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #5a3d28;
+  list-style-position: inside;
+}
+:is(html, #uw) .uw-gm-overrides[open] > summary,
+:is(html, #uw) .uw-prep-help-details[open] > summary {
+  margin-bottom: 6px;
+}

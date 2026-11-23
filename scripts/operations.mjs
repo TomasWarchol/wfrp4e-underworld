@@ -84,6 +84,9 @@ export class UnderworldOperations {
 
   /** Gdy ustawione, karty zleceń są zbierane do raportu tygodnia zamiast trafiać osobno na czat. */
   static _batch = null;
+  static _lastMissionAborted = false;
+  static _autoRoll = false;
+  static _resolvingOps = new Set();
 
   /** Rytm szajki: "daily" (każdy dzień osobno) lub "weekly" (Tydzień Szajki). */
   static isWeekly() {
@@ -92,6 +95,94 @@ export class UnderworldOperations {
     } catch (e) {
       return false;
     }
+  }
+
+  /** Czy w trybie dziennym zlecenia trwają określoną liczbę godzin z kalendarza gry. */
+  static usesTimedOperations() {
+    return !this.isWeekly() && this._setting("operationTiming", "timed") !== "instant";
+  }
+
+  /** Liczba godzin obowiązkowego odpoczynku po zakończeniu operacji czasowej (0–24). */
+  static operationRestHours() {
+    const val = Number(this._setting("operationRestHours", 8));
+    return Number.isFinite(val) ? Math.max(0, Math.min(24, Math.trunc(val))) : 8;
+  }
+
+  /** Czas trwania operacji w godzinach (bogaty cel +1h, wierzchowiec -1h przy >= 3h). */
+  static operationDurationHours(assignment, npc = null, tier = null) {
+    const mission = MISSIONS[assignment] || DATA_MISSIONS[assignment];
+    let hours = Number(mission?.durationHours) || 0;
+    if (hours <= 0) return 0;
+    const tierId = typeof tier === "string" ? tier : tier?.id;
+    if (tierId === "rich") hours += 1;
+    const gear = Array.isArray(npc?.gear) ? npc.gear : [];
+    if (gear.includes("horse") && hours >= 3) hours -= 1;
+    return Math.max(1, hours);
+  }
+
+  /** Formatuje godzinę z podanego znacznika czasu świata (GG:MM). */
+  static formatHour(timestamp) {
+    const ts = Number(timestamp) || 0;
+    const { hour } = time.components(ts);
+    const minute = Math.floor((((ts % 3600) + 3600) % 3600) / 60);
+    return `${String(Math.max(0, Number(hour) || 0)).padStart(2, "0")}:${String(minute).padStart(2, "0")}`;
+  }
+
+  /** Formatuje datę z kalendarza świata oraz godzinę do nagłówka karty. */
+  static formatWorldClock(timestamp = time.now()) {
+    const ts = Number(timestamp) || 0;
+    const { day } = time.components(ts);
+    const formatted = time.format(ts, { dayLabel: t("Time.DayLabel") });
+    return `${formatted || `${t("Time.DayLabel")} ${day + 1}`} · ${this.formatHour(ts)}`;
+  }
+
+  /** Formatuje pozostały czas trwania w sekundach (np. „3h 15m” lub „8h”). */
+  static formatDuration(seconds) {
+    const s = Math.max(0, Math.trunc(Number(seconds) || 0));
+    const h = Math.floor(s / 3600);
+    const m = Math.floor((s % 3600) / 60);
+    if (h > 0 && m > 0) return t("Time.HoursMinutes", { h, m });
+    if (h > 0) return t("Time.HoursOnly", { h });
+    return t("Time.MinutesOnly", { m: Math.max(1, m) });
+  }
+
+  /** Podgląd szansy powodzenia (%), listy modyfikatorów i czasu operacji dla okna wyboru zlecenia. */
+  static previewMissionChance(gang, npc, assignment, { tier = null } = {}) {
+    const mission = MISSIONS[assignment] || DATA_MISSIONS[assignment];
+    if (!mission || !gang || !npc) return null;
+    const baseTarget = Number(mission.target) || 50;
+    const linkedActor = npc.actorId ? game.actors.get(npc.actorId) : null;
+    const forLinkedActor = !!(linkedActor?.setupSkill && (game.user.isGM || linkedActor.isOwner));
+    const { modifiers, total, capped } = this._collectTargetModifiers(gang, npc, assignment, { tier, forLinkedActor });
+
+    let effBase = baseTarget;
+    let testSource = "gang";
+    if (forLinkedActor) {
+      testSource = "linkedActor";
+      const skillName = game.i18n.localize(mission.skill || "NAME.Leadership");
+      const skill = linkedActor.itemTags?.skill?.find?.(i => i.name === skillName)
+        ?? linkedActor.items?.find?.(i => i.type === "skill" && i.name === skillName);
+      const actorSkillTotal = Number(skill?.system?.total?.value ?? skill?.total?.value);
+      if (Number.isFinite(actorSkillTotal) && actorSkillTotal > 0) {
+        effBase = actorSkillTotal + (baseTarget - 50);
+      }
+    }
+
+    const chance = Math.max(5, Math.min(95, effBase + total));
+    const isSpecialist = UnderworldTables.rolesOf(npc).some(r => {
+      const ba = UnderworldTables.ROLES_CONFIG[r]?.bonusAssignments;
+      return !!(ba?.includes(assignment) || (mission.like && ba?.includes(mission.like)));
+    });
+    return {
+      chance,
+      baseTarget,
+      modifierTotal: total,
+      capped,
+      modifiers,
+      isSpecialist,
+      testSource,
+      durationHours: this.operationDurationHours(assignment, npc, tier)
+    };
   }
 
   /** Kolejka MG w trybie dziennym: przydziały graczy czekają na rozpatrzenie przez MG. */
@@ -613,6 +704,7 @@ export class UnderworldOperations {
    * Test misji przyznaje Doświadczenie Operacyjne; to nie są standardowe PD WFRP.
    */
   static async _prepareMission(actor, npcId, assignment, baseTarget, opts = {}) {
+    this._lastMissionAborted = false;
     if (!this._canManageGang(actor)) {
       ui.notifications.warn(t("Notify.NoAccess"));
       return null;
@@ -626,7 +718,7 @@ export class UnderworldOperations {
     }
 
     const linkedActor = npc.actorId ? game.actors.get(npc.actorId) : null;
-    const testActor = linkedActor?.setupSkill && (game.user.isGM || linkedActor.isOwner) ? linkedActor : null;
+    const testActor = !(this._autoRoll || opts.autoRoll) && linkedActor?.setupSkill && (game.user.isGM || linkedActor.isOwner) ? linkedActor : null;
     const skillName = game.i18n.localize(MISSION_INFO[assignment]?.skill || "NAME.Leadership");
 
     const { modifiers, total: baseTotalModifier, capped, tier, tokensUsed } = this._collectTargetModifiers(
@@ -644,7 +736,10 @@ export class UnderworldOperations {
           title: `${t("Title")}: ${npc.name}`,
           modifier: baseTotalModifier + missionDiffMod
         });
-        if (!result) return null; // okno testu zamknięte – misja nie wystartowała
+        if (!result) {
+          this._lastMissionAborted = true;
+          return null; // okno testu zamknięte – misja nie wystartowała
+        }
         testSource = "linkedActor";
         if (missionDiffMod) {
           modifiers.push({ label: t("Mod.MissionDifficulty"), value: missionDiffMod });
@@ -772,22 +867,38 @@ export class UnderworldOperations {
   // TYDZIEŃ SZAJKI: PLANOWANIE I ROZPATRZENIE
   // ════════════════════════════════════════════
 
-  /** Zwraca zbiór łupów i rannych już zarezerwowanych w aktywnych planach. */
+  /** Zwraca zbiór łupów i rannych już zarezerwowanych w aktywnych planach lub operacjach w toku. */
   static plannedResourceUsage(gang) {
     const lootIds = new Set();
     const woundedIds = new Set();
     for (const npc of gang?.roster || []) {
-      const plan = npc.plannedMission;
-      if (!plan || npc.status !== "busy") continue;
-      const assignment = PLANNABLE_MISSIONS[plan.fn];
-      if (assignment === "fence") {
-        for (const id of String(plan.input || "").split(",").map(s => s.trim()).filter(Boolean)) {
-          lootIds.add(id);
+      if (npc.status !== "busy") continue;
+      const entries = [];
+      if (npc.plannedMission) {
+        entries.push({
+          ...npc.plannedMission,
+          assignment: PLANNABLE_MISSIONS[npc.plannedMission.fn]
+        });
+      }
+      if (npc.activeOperation) {
+        entries.push({
+          fn: npc.activeOperation.fn,
+          assignment: npc.activeOperation.assignment,
+          input: npc.activeOperation.input,
+          cargoId: npc.activeOperation.cargoId
+        });
+      }
+      for (const entry of entries) {
+        const assignment = entry.assignment || PLANNABLE_MISSIONS[entry.fn];
+        if (assignment === "fence") {
+          for (const id of String(entry.input || "").split(",").map(s => s.trim()).filter(Boolean)) {
+            lootIds.add(id);
+          }
+        } else if (assignment === "tend_wounded" && entry.input) {
+          woundedIds.add(String(entry.input));
+        } else if (entry.cargoId) {
+          lootIds.add(String(entry.cargoId));
         }
-      } else if (assignment === "tend_wounded" && plan.input) {
-        woundedIds.add(String(plan.input));
-      } else if (plan.cargoId) {
-        lootIds.add(String(plan.cargoId));
       }
     }
     return { lootIds, woundedIds };
@@ -934,6 +1045,369 @@ export class UnderworldOperations {
       flavor: t("Report.QueueFlavor")
     });
     return true;
+  }
+
+  // ════════════════════════════════════════════
+  // OPERACJE CZASOWE (KALENDARZ GRY)
+  // ════════════════════════════════════════════
+
+  /** Parsuje cel łapówki oraz koszt w srebrnych szylingach i pensach. */
+  static _parseBribeInput(gang, input) {
+    const raw = String(input || "");
+    let mode = "favor";
+    let detail = raw;
+    if (raw.startsWith("release:")) { mode = "release"; detail = raw.slice(8); }
+    else if (raw === "notoriety") { mode = "notoriety"; detail = ""; }
+    else if (raw.startsWith("favor:")) { detail = raw.slice(6); }
+
+    let costSS = 5;
+    if (mode === "release") costSS = 15;
+    else if (mode === "notoriety") costSS = 20;
+    else {
+      const costMatch = detail.match(/(\d+)\s*(?:ss|s\b|szyling|shilling)/i);
+      if (costMatch) costSS = Math.max(1, Math.min(10000, parseInt(costMatch[1], 10) || 5));
+    }
+    if (gang?.patron?.relation === "favorite") {
+      costSS = Math.max(1, Math.round(costSS * 0.8));
+    }
+    const prisoner = mode === "release" ? gang.roster.find(n => n.id === detail && n.status === "arrested") : null;
+    const costPennies = costSS * 12;
+    return { mode, detail, costSS, costPennies, prisoner };
+  }
+
+  /**
+   * Wysyła poplecznika na zlecenie trwające określoną liczbę godzin z kalendarza gry.
+   * Rezerwuje wymagany towar/łup/pacjenta i zapisuje `npc.activeOperation`.
+   */
+  static async startOperation(actor, npcId, fn, input = "", opts = {}) {
+    if (!this._canManageGang(actor)) {
+      ui.notifications.warn(t("Notify.NoAccess"));
+      return false;
+    }
+    const assignment = opts.assignment || PLANNABLE_MISSIONS[fn];
+    const mission = MISSIONS[assignment] || DATA_MISSIONS[assignment];
+    if (!assignment || !mission || typeof this[fn] !== "function") return false;
+
+    const gang = GangData.getGang(actor);
+    if (!profileHasMission(gang, mission)) return false;
+
+    const npc = gang.roster.find(n => n.id === npcId);
+    if (!npc || npc.status !== "ready" || npc.assignment === "retinue") {
+      ui.notifications.warn(t("Notify.NotReadyForAssignment", { name: npc?.name || t("ThisMember") }));
+      return false;
+    }
+
+    const usage = this.plannedResourceUsage(gang);
+    let plannedInput = String(input ?? "").slice(0, 300);
+    let cargoId = null;
+
+    if (mission.consumes) {
+      const cargo = this.cargoFor(gang, mission, usage.lootIds);
+      if (!cargo) {
+        ui.notifications.warn(t("Ops.NoCargo", { mission: t(`Missions.${assignment}.Name`) }));
+        return false;
+      }
+      cargoId = cargo.id;
+    } else if (assignment === "fence") {
+      const freeIds = plannedInput.split(",").map(s => s.trim()).filter(id => id && !usage.lootIds.has(id));
+      if (!freeIds.length) {
+        ui.notifications.warn(t("Card.PlannedReserved"));
+        return false;
+      }
+      plannedInput = freeIds.join(",");
+    } else if (assignment === "tend_wounded") {
+      const patient = gang.roster.find(n => n.id === plannedInput && n.status === "wounded");
+      if (!patient || usage.woundedIds.has(plannedInput)) {
+        ui.notifications.warn(t("Card.PlannedReserved"));
+        return false;
+      }
+    } else if (assignment === "bribe") {
+      const bribe = this._parseBribeInput(gang, plannedInput);
+      if (bribe.mode === "release" && !bribe.prisoner) {
+        ui.notifications.warn(t("Card.Bribe.NotArrested"));
+        return false;
+      }
+      if (GangData.treasuryToPennies(gang.treasury) < bribe.costPennies) {
+        ui.notifications.warn(t("Notify.NotEnoughFunds", { cost: bribe.costSS }));
+        return false;
+      }
+    }
+
+    const tier = TARGET_TIERS[opts.tier] ? opts.tier : null;
+    const hours = this.operationDurationHours(assignment, npc, tier);
+    const now = time.now();
+    const doneAt = now + hours * 3600;
+
+    const operation = {
+      id: foundry.utils.randomID(),
+      fn,
+      assignment,
+      input: plannedInput,
+      tier,
+      ...(cargoId ? { cargoId } : {}),
+      startedAt: now,
+      doneAt,
+      durationHours: hours,
+      awaitingPlayerRoll: false,
+      playerPrompted: false,
+      startedBy: game.user?.id || null
+    };
+
+    npc.status = "busy";
+    npc.assignment = assignment;
+    npc.activeOperation = operation;
+    await GangData.saveGang(actor, gang);
+
+    const title = missionName(mission, this.getTerrain(gang));
+    ui.notifications.info(t("Mission.StartedTimed", {
+      name: npc.name,
+      mission: title,
+      hours,
+      eta: this.formatHour(doneAt)
+    }));
+    return operation;
+  }
+
+  /** Czy po zakończeniu czasu operacji gracz powinien wykonać interaktywny rzut powiązanego aktora. */
+  static _needsInteractivePlayerRoll(npc, assignment) {
+    const mission = MISSIONS[assignment] || DATA_MISSIONS[assignment];
+    if (!mission?.target) return false;
+    const linkedActor = npc?.actorId ? game.actors.get(npc.actorId) : null;
+    return !!(linkedActor?.hasPlayerOwner && linkedActor?.setupSkill);
+  }
+
+  /** Wysyła na czat powiadomienie z przyciskiem rozstrzygnięcia dla zakończonej operacji gracza. */
+  static async _postOperationReadyPrompt(actor, gang, npc, op) {
+    const mission = MISSIONS[op.assignment] || DATA_MISSIONS[op.assignment];
+    const title = missionName(mission, this.getTerrain(gang));
+    const linkedActor = npc?.actorId ? game.actors.get(npc.actorId) : null;
+    const recipients = game.users?.filter?.(
+      u => u.isGM || actor.testUserPermission?.(u, "OWNER") || linkedActor?.testUserPermission?.(u, "OWNER")
+    ) || [];
+    const whisper = recipients.length ? recipients.map(u => u.id) : undefined;
+
+    const content = `
+      <div class="wfrp4e-underworld chat-card operation-ready-card" style="background: #fdfaf3; border: 2px solid #5a3d28; border-radius: 4px; padding: 10px; font-family: Caslon Antique, Palatino, serif;">
+        <div style="border-bottom: 1px solid #8e735b; padding-bottom: 4px; margin-bottom: 6px;">
+          <h3 style="margin: 0; color: #4a2810; font-size: 1.05rem;"><i class="fas fa-hourglass-end"></i> ${escapeHTML(title)}</h3>
+        </div>
+        <p style="margin: 4px 0; font-size: 0.88rem; color: #2b231d;">
+          ${t("Ops.ChatReadyPrompt", { name: escapeHTML(npc.name), mission: escapeHTML(title) })}
+        </p>
+        <button type="button" class="btn-chat-claim-operation" data-actor-id="${escapeHTML(actor.id)}" data-npc-id="${escapeHTML(npc.id)}" style="width: 100%; padding: 7px 10px; margin-top: 6px; background: #4a3424; color: #fff; font-weight: bold; border-radius: 3px; cursor: pointer; border: 1px solid #2b1f15;">
+          <i class="fas fa-dice"></i> ${t("Ops.ChatClaimBtn")}
+        </button>
+      </div>
+    `;
+
+    return ChatMessage.create({
+      user: game.user.id,
+      speaker: ChatMessage.getSpeaker({ actor }),
+      content,
+      ...(whisper ? { whisper } : {}),
+      flavor: t("Ops.ChatReadyFlavor")
+    });
+  }
+
+  /**
+   * Rozstrzyga aktywną operację poplecznika (po upływie czasu lub po przyspieszeniu przez MG).
+   * Po rozstrzygnięciu wprowadza poplecznika w obowiązkowy odpoczynek (jeśli nie odniósł ran ani nie trafił do aresztu).
+   */
+  static async resolveOperation(actor, npcId, { force = false, interactive = false } = {}) {
+    if (!actor || !npcId || !this._canManageGang(actor)) return null;
+    const lockKey = `${actor.id}:${npcId}`;
+    if (this._resolvingOps.has(lockKey)) return null;
+
+    this._resolvingOps.add(lockKey);
+    try {
+      const gang = GangData.getGang(actor);
+      const npc = gang.roster.find(n => n.id === npcId);
+      const op = npc?.activeOperation;
+      if (!npc || !op || !PLANNABLE_MISSIONS[op.fn] || typeof this[op.fn] !== "function") return null;
+
+      const now = time.now();
+      if (!force && now < Number(op.doneAt)) return null;
+
+      const opSnapshot = foundry.utils.deepClone(op);
+      npc.status = "ready";
+      npc.assignment = "none";
+      delete npc.activeOperation;
+      await GangData.saveGang(actor, gang);
+
+      let result = null;
+      this._lastMissionAborted = false;
+      const prevAutoRoll = this._autoRoll;
+      this._autoRoll = !interactive;
+      try {
+        result = await this[opSnapshot.fn](actor, npcId, opSnapshot.input, {
+          tier: opSnapshot.tier,
+          cargoId: opSnapshot.cargoId,
+          autoRoll: !interactive
+        });
+      } catch (err) {
+        console.error("wfrp4e-underworld | Failed to resolve operation:", err);
+        result = null;
+      } finally {
+        this._autoRoll = prevAutoRoll;
+      }
+
+      if (this._lastMissionAborted) {
+        const restoreGang = GangData.getGang(actor);
+        const restoreNpc = restoreGang.roster.find(n => n.id === npcId);
+        if (restoreNpc) {
+          restoreNpc.status = "busy";
+          restoreNpc.assignment = opSnapshot.assignment;
+          restoreNpc.activeOperation = { ...opSnapshot, awaitingPlayerRoll: true };
+          await GangData.saveGang(actor, restoreGang);
+        }
+        return null;
+      }
+
+      if (!result) {
+        const cleanGang = GangData.getGang(actor);
+        const cleanNpc = cleanGang.roster.find(n => n.id === npcId);
+        if (cleanNpc) {
+          cleanNpc.status = "ready";
+          cleanNpc.assignment = "none";
+          delete cleanNpc.activeOperation;
+          delete cleanNpc.restUntil;
+          await GangData.saveGang(actor, cleanGang);
+        }
+        return null;
+      }
+
+      const afterGang = GangData.getGang(actor);
+      const afterNpc = afterGang.roster.find(n => n.id === npcId);
+      if (afterNpc) {
+        if (afterNpc.status === "busy") {
+          const restHours = this.operationRestHours();
+          const anchor = Number(opSnapshot.doneAt) <= now ? Number(opSnapshot.doneAt) : now;
+          const restUntil = anchor + restHours * 3600;
+          if (restHours > 0 && now < restUntil) {
+            afterNpc.status = "resting";
+            afterNpc.assignment = "none";
+            afterNpc.restUntil = restUntil;
+          } else {
+            afterNpc.status = "ready";
+            afterNpc.assignment = "none";
+            delete afterNpc.restUntil;
+          }
+        } else {
+          afterNpc.assignment = "none";
+          delete afterNpc.restUntil;
+        }
+        delete afterNpc.activeOperation;
+        await GangData.saveGang(actor, afterGang);
+      }
+
+      return result;
+    } finally {
+      this._resolvingOps.delete(lockKey);
+    }
+  }
+
+  /** Przyspiesza i rozstrzyga wszystkie aktywne operacje kompanii (tylko MG). */
+  static async resolveAllActiveOperations(actor) {
+    if (!game.user.isGM || !this._canManageGang(actor)) return 0;
+    const gang = GangData.getGang(actor);
+    const activeIds = (gang.roster || [])
+      .filter(n => n.status === "busy" && n.activeOperation)
+      .map(n => n.id);
+    let count = 0;
+    for (const npcId of activeIds) {
+      const res = await this.resolveOperation(actor, npcId, { force: true, interactive: true });
+      if (res) count += 1;
+    }
+    return count;
+  }
+
+  /** Anuluje trwającą operację i przywraca poplecznika do gotowości bez wyniku. */
+  static async cancelOperation(actor, npcId) {
+    if (!this._canManageGang(actor)) {
+      ui.notifications.warn(t("Notify.NoAccess"));
+      return false;
+    }
+    const gang = GangData.getGang(actor);
+    const npc = gang.roster.find(n => n.id === npcId);
+    if (!npc || (!npc.activeOperation && !npc.plannedMission)) return false;
+
+    delete npc.activeOperation;
+    delete npc.plannedMission;
+    npc.status = "ready";
+    npc.assignment = "none";
+    await GangData.saveGang(actor, gang);
+    ui.notifications.info(t("Ops.Cancelled", { name: npc.name }));
+    return true;
+  }
+
+  /** Kończy odpoczynek poplecznika przed czasem (tylko MG). */
+  static async finishRest(actor, npcId) {
+    if (!game.user.isGM || !this._canManageGang(actor)) return false;
+    const gang = GangData.getGang(actor);
+    const npc = gang.roster.find(n => n.id === npcId);
+    if (!npc || npc.status !== "resting") return false;
+
+    npc.status = "ready";
+    npc.assignment = "none";
+    delete npc.restUntil;
+    await GangData.saveGang(actor, gang);
+    ui.notifications.info(t("Ops.RestFinished", { name: npc.name }));
+    return true;
+  }
+
+  /**
+   * Przetwarza upływ czasu świata dla wszystkich szajek (wywołuje aktywny MG przy updateWorldTime):
+   * - rozstrzyga gotowe operacje (lub wysyła prośbę o rzut graczowi),
+   * - zwalnia członków, którym minął czas odpoczynku po operacji.
+   */
+  static async processWorldTimeTick(worldTime = time.now()) {
+    if (!game.user?.isGM) return false;
+    const now = Number(worldTime) || time.now();
+    let anyChanged = false;
+
+    for (const actor of game.actors?.values?.() ?? game.actors ?? []) {
+      const hasGangFlag = actor.getFlag?.(GangData.MODULE_ID, GangData.FLAG_KEY) || actor.flags?.[GangData.MODULE_ID]?.[GangData.FLAG_KEY];
+      if (!hasGangFlag) continue;
+
+      const gang = GangData.getGang(actor);
+      const dueOps = (gang.roster || []).filter(
+        n => n.status === "busy" && n.activeOperation && Number(n.activeOperation.doneAt) <= now
+      );
+
+      for (const dueNpc of dueOps) {
+        if (this._needsInteractivePlayerRoll(dueNpc, dueNpc.activeOperation.assignment)) {
+          const curGang = GangData.getGang(actor);
+          const curNpc = curGang.roster.find(n => n.id === dueNpc.id);
+          if (curNpc?.activeOperation && !curNpc.activeOperation.playerPrompted) {
+            curNpc.activeOperation.playerPrompted = true;
+            curNpc.activeOperation.awaitingPlayerRoll = true;
+            await GangData.saveGang(actor, curGang);
+            await this._postOperationReadyPrompt(actor, curGang, curNpc, curNpc.activeOperation);
+            anyChanged = true;
+          }
+        } else {
+          const res = await this.resolveOperation(actor, dueNpc.id, { force: false, interactive: false });
+          if (res) anyChanged = true;
+        }
+      }
+
+      const latestGang = GangData.getGang(actor);
+      let restChanged = false;
+      for (const n of latestGang.roster || []) {
+        if (n.status === "resting" && Number(n.restUntil) > 0 && now >= Number(n.restUntil)) {
+          n.status = "ready";
+          n.assignment = "none";
+          delete n.restUntil;
+          restChanged = true;
+        }
+      }
+      if (restChanged) {
+        await GangData.saveGang(actor, latestGang);
+        anyChanged = true;
+      }
+    }
+
+    return anyChanged;
   }
 
   // ════════════════════════════════════════════
@@ -1507,29 +1981,11 @@ export class UnderworldOperations {
   static async executeBribeMission(actor, npcId, input) {
     if (!this._canManageGang(actor)) return;
     const gang = GangData.getGang(actor);
-    const raw = String(input || "");
-    let mode = "favor";
-    let detail = raw;
-    if (raw.startsWith("release:")) { mode = "release"; detail = raw.slice(8); }
-    else if (raw === "notoriety") { mode = "notoriety"; detail = ""; }
-    else if (raw.startsWith("favor:")) { detail = raw.slice(6); }
-
-    let costSS = 5;
-    if (mode === "release") costSS = 15;
-    else if (mode === "notoriety") costSS = 20;
-    else {
-      const costMatch = detail.match(/(\d+)\s*(?:ss|s\b|szyling|shilling)/i);
-      if (costMatch) costSS = Math.max(1, Math.min(10000, parseInt(costMatch[1], 10) || 5));
-    }
-    if (gang?.patron?.relation === "favorite") {
-      costSS = Math.max(1, Math.round(costSS * 0.8));
-    }
-    const prisoner = mode === "release" ? gang.roster.find(n => n.id === detail && n.status === "arrested") : null;
+    const { mode, detail, costSS, costPennies, prisoner } = this._parseBribeInput(gang, input);
     if (mode === "release" && !prisoner) {
       ui.notifications.warn(t("Card.Bribe.NotArrested"));
       return;
     }
-    const costPennies = costSS * 12;
     if (GangData.treasuryToPennies(gang.treasury) < costPennies) {
       ui.notifications.warn(t("Notify.NotEnoughFunds", { cost: costSS }));
       return;
@@ -1973,6 +2429,7 @@ export class UnderworldOperations {
       delete n.coldBloodedUsedCycle;
       if (n.status === "resting") {
         n.status = "ready";
+        delete n.restUntil;
         healedList.push(t("Camp.Heal.Rested", { name: n.name }));
       } else if (n.status === "wounded") {
         if (weekly) {
@@ -2003,6 +2460,7 @@ export class UnderworldOperations {
           healedList.push(t("Camp.Heal.StillArrested", { name: n.name, time: this.cycleLabel(n.arrestedNights) }));
         }
       } else if (n.status === "busy") {
+        if (n.activeOperation) return;
         n.status = "ready";
       }
       n.assignment = "none";

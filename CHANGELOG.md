@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.12.2
+- **Timed operations (Daily mode)**: new world settings "Operation Duration" (timed in the in-game calendar or instant) and "Post-Operation Rest (Hours)" (0–24, default 8). Jobs take several in-game hours, then the member rests before taking a new job. Each job shows its estimated duration and the member's skill.
+- **Ongoing Operations & Rest panel**: lists running operations and resting members with the remaining time and ETA. The GM can advance world time by 1 h or 4 h, speed up one or all operations, finish a rest early or cancel an operation; players resolve the finished report with their own roll. A chat card announces when a report is ready.
+- Keybinding to open the company sheet, plus layout and style fixes in the ledger, roster, loot, tactics and plan views. English and Polish texts are complete.
+
 ## 1.12.1
 - **40 new night events** for the company profiles (Outlaws +24, and +4 each for Cult, Investigators, Mercenaries and Smugglers), in English and Polish, and about 190 existing events and rumours corrected (English and Polish entries counted together; the city, forest, mountain and village terrain events included).
 - **Rumours can be true or false, and the GM is told which.** Rumours carry a truth flag and can name their source and location; when a company hears one, the GM gets a whisper saying whether it is true (world setting "GM whisper: rumour truth", on by default). Tavern rumours are drawn separately, and a rumour's source now fits the terrain.

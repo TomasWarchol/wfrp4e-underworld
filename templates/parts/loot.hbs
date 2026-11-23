@@ -59,6 +59,7 @@
           <small>{{#if this.refused}}{{underworldT "LootTab.CannotSellHere"}}{{else}}~{{this.estimateSS}} {{underworldT "Units.SS"}} ({{this.rate}}%){{/if}}</small>
         </div>
         <div class="uw-loot-actions">
+          {{#unless this.refused}}<button type="button" class="uw-icon-btn" data-action="loot-sell-one" data-loot-id="{{this.id}}" data-tooltip="{{underworldT 'LootTab.SellOne'}}"><i class="fas fa-scale-balanced"></i></button>{{/unless}}
           {{#if ../isGM}}<button type="button" class="uw-icon-btn" data-action="loot-edit" data-loot-id="{{this.id}}" data-tooltip="{{underworldT 'LootDialog.EditTitle'}}"><i class="fas fa-pen"></i></button>{{/if}}
           {{#if this.canTransfer}}<button type="button" class="uw-icon-btn" data-action="loot-transfer" data-loot-id="{{this.id}}" data-tooltip="{{underworldT 'LootTab.GiveChief'}}"><i class="fas fa-hand-holding"></i></button>{{/if}}
           <button type="button" class="uw-icon-btn is-danger" data-action="loot-discard" data-loot-id="{{this.id}}" data-tooltip="{{underworldT 'LootTab.Discard'}}"><i class="fas fa-trash"></i></button>
@@ -89,11 +90,14 @@
       <button type="button" class="btn-theme-action uw-btn-sm" data-action="edit-racket"><i class="fas fa-store"></i> {{underworldT "RacketDialog.EditBtn"}}</button>
     </div>
     {{/if}}
-    <ul class="uw-prep-help">
-      <li>{{{underworldT "LootTab.HelpRecon"}}}</li>
-      <li>{{{underworldT "LootTab.HelpCommotion"}}}</li>
-      <li>{{{underworldT "LootTab.HelpLead"}}}</li>
-      <li>{{#if isWeekly}}{{{underworldT "LootTab.HelpHotWeek"}}}{{else}}{{{underworldT "LootTab.HelpHotNight"}}}{{/if}}</li>
-    </ul>
+    <details class="uw-prep-help-details">
+      <summary><i class="fas fa-circle-question"></i> {{underworldT "LootTab.HelpToggle"}}</summary>
+      <ul class="uw-prep-help">
+        <li>{{{underworldT "LootTab.HelpRecon"}}}</li>
+        <li>{{{underworldT "LootTab.HelpCommotion"}}}</li>
+        <li>{{{underworldT "LootTab.HelpLead"}}}</li>
+        <li>{{#if isWeekly}}{{{underworldT "LootTab.HelpHotWeek"}}}{{else}}{{{underworldT "LootTab.HelpHotNight"}}}{{/if}}</li>
+      </ul>
+    </details>
   </div>
 </div>

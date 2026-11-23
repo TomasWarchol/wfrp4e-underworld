@@ -42,6 +42,20 @@
     <p class="notes" style="margin-top: 0; margin-bottom: 0;">
       {{{underworldT "TacticsTab.HowTo"}}}
     </p>
+    <div class="uw-combat-bar">
+      <span class="uw-combat-pill"><i class="fas fa-bolt"></i> {{combatStatus.advantageLabel}}: <strong>{{combatStatus.advantage}}</strong></span>
+      {{#if combatStatus.inCombat}}
+        <span class="uw-combat-pill"><i class="fas fa-swords"></i> {{underworldT "TacticsTab.RoundStatus" round=combatStatus.round}}</span>
+        <span class="uw-combat-pill {{#if combatStatus.orderUsedThisRound}}is-used{{else}}is-ready{{/if}}">
+          {{#if combatStatus.orderUsedThisRound}}{{underworldT "TacticsTab.OrderUsed"}}{{else}}{{underworldT "TacticsTab.OrderReady"}}{{/if}}
+        </span>
+        <span class="uw-combat-pill {{#if combatStatus.reactionUsedThisRound}}is-used{{else}}is-ready{{/if}}">
+          {{#if combatStatus.reactionUsedThisRound}}{{underworldT "TacticsTab.ReactionUsed"}}{{else}}{{underworldT "TacticsTab.ReactionReady"}}{{/if}}
+        </span>
+      {{else}}
+        <span class="uw-combat-pill is-idle"><i class="fas fa-shield-alt"></i> {{underworldT "TacticsTab.OutOfCombat"}}</span>
+      {{/if}}
+    </div>
   </div>
 
   <div class="tactics-filter-empty" role="status" hidden>

@@ -27,11 +27,17 @@
         <div class="master-submeta">
           <span class="submeta-item"><i class="fas fa-user-shield"></i> {{underworldT "Sheet.Leader"}}: <strong>{{actor.name}}</strong></span>
           <span class="submeta-divider">•</span>
-          <span class="submeta-item">{{{underworldNotorietyBadge gang.notoriety}}}</span>
+          <span class="submeta-item is-clickable" data-action="open-tab" data-tab-target="info">{{{underworldNotorietyBadge gang.notoriety}}}</span>
           <span class="submeta-divider">•</span>
           <span class="submeta-item">{{{underworldRelationBadge gang.patron.relation}}}</span>
           <span class="submeta-divider">•</span>
-          <span class="submeta-item"><span class="uw-terrain-badge"><i class="{{terrain.icon}}"></i> {{terrain.name}}</span></span>
+          <span class="submeta-item"><span class="uw-terrain-badge {{#if isGM}}is-clickable{{/if}}" {{#if isGM}}data-action="pick-terrain" title="{{underworldT 'Terrain.PickTitle'}}"{{/if}}><i class="{{terrain.icon}}"></i> {{terrain.name}}</span></span>
+          <span class="submeta-divider">•</span>
+          <span class="submeta-item submeta-clock"><i class="fas fa-clock"></i> {{worldClock}}</span>
+          {{#if activeOpsTotal}}
+            <span class="submeta-divider">•</span>
+            <span class="submeta-item is-clickable uw-ops-pill" data-action="open-tab" data-tab-target="tasks" title="{{underworldT 'Ops.PanelTitle'}}"><i class="fas fa-hourglass-half"></i> {{activeOpsTotal}}</span>
+          {{/if}}
         </div>
       </div>
 
@@ -43,13 +49,13 @@
           <strong>{{gang.morale}}</strong><small>/10</small>
         </div>
 
-        <div class="stat-pill supplies-pill" title="{{underworldT 'Sheet.SuppliesTitle' value=gang.supplies}}">
+        <div class="stat-pill supplies-pill is-clickable" data-action="buy-supplies" title="{{underworldT 'Sheet.SuppliesTitle' value=gang.supplies}}">
           <i class="fas fa-bread-slice text-gold"></i>
           <span class="stat-label">{{underworldT "Sheet.Supplies"}}:</span>
           <strong>{{gang.supplies}}</strong><small>/30</small>
         </div>
 
-        <div class="stat-pill treasury-pill" title="{{underworldT 'Upgrade.Stash'}}">
+        <div class="stat-pill treasury-pill is-clickable" data-action="deposit-treasury" title="{{underworldT 'Upgrade.Stash'}}">
           <i class="fas fa-coins text-gold"></i>
           <span class="treasury-short-val"><strong>{{{underworldFormatCoins gang.treasury}}}</strong></span>
         </div>

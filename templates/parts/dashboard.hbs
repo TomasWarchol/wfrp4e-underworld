@@ -199,7 +199,25 @@
       </div>
 
       <!-- Akcje Obozowe: Nocny Postój i Edytor MG -->
+      <div class="uw-camp-costs">
+        <span><i class="fas fa-bread-slice"></i> {{underworldT "DashTab.CampRationsNeed" count=requiredRations}}</span>
+        <span><i class="fas fa-coins"></i> {{underworldT "DashTab.CampUpkeepNeed" cost=upkeepSS}}</span>
+      </div>
       <div class="camp-action-buttons flexcol">
+        {{#if usesTimedOps}}
+          <div class="uw-camp-ops-bar">
+            <span><i class="fas fa-hourglass-half"></i> {{underworldT "Ops.PanelTitle"}}: <strong>{{activeOpsTotal}}</strong></span>
+            {{#if isGM}}
+              <div class="uw-ops-gm-tools">
+                <button type="button" class="uw-btn-mini" data-action="advance-time" data-hours="1" title="{{underworldT 'Ops.Advance1hHint'}}"><i class="fas fa-forward"></i> {{underworldT "Ops.Advance1h"}}</button>
+                <button type="button" class="uw-btn-mini" data-action="advance-time" data-hours="4" title="{{underworldT 'Ops.Advance4hHint'}}"><i class="fas fa-fast-forward"></i> {{underworldT "Ops.Advance4h"}}</button>
+                {{#if activeOperations.length}}
+                  <button type="button" class="uw-btn-mini is-accent" data-action="accelerate-all-operations" title="{{underworldT 'Ops.SpeedAllHint'}}"><i class="fas fa-bolt"></i> {{underworldT "Ops.SpeedAll"}}</button>
+                {{/if}}
+              </div>
+            {{/if}}
+          </div>
+        {{/if}}
         {{#if dailyQueue}}
           {{#if isGM}}
           <button type="button" class="btn-hero-camp-rest" data-action="resolve-queue" title="{{underworldT 'DashTab.ResolveQueueHint'}}">

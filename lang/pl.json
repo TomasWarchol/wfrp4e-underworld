@@ -1994,7 +1994,9 @@
     "Meta": {
       "Target": "Próg {value}",
       "TargetHint": "Próg testu uproszczonego (przed modyfikatorami szajki)",
-      "SkillHint": "Umiejętność przy teście z karty członka"
+      "SkillHint": "Umiejętność przy teście z karty członka",
+      "Duration": "{value}h",
+      "DurationHint": "Przewidywany czas trwania operacji w godzinach z kalendarza gry."
     },
     "Notoriety": {
       "0": {
@@ -2149,6 +2151,16 @@
       "GmRumorTruthWhisper": {
         "Name": "Szept MG o prawdziwości plotek",
         "Hint": "Po udanym Zwiadzie lub Nasłuchu wysyła prywatną wiadomość do MG z oceną, czy plotka jest prawdą, półprawdą czy fałszem."
+      },
+      "OperationTiming": {
+        "Name": "Czas trwania operacji (tryb dzienny)",
+        "Hint": "Gdy ustawione na operacje czasowe, przydziały w trybie dziennym trwają kilka godzin z kalendarza gry zamiast dawać natychmiastowy wynik.",
+        "Timed": "Operacje czasowe (kalendarz gry)",
+        "Instant": "Natychmiastowe (od razu)"
+      },
+      "OperationRestHours": {
+        "Name": "Odpoczynek po operacji (godz.)",
+        "Hint": "Liczba godzin odpoczynku po zakończeniu czasowej operacji (0–24, domyślnie 8). W tym czasie poplecznik nie może rozpocząć kolejnego zlecenia."
       }
     },
     "Recruit": {
@@ -2201,7 +2213,30 @@
       },
       "NoCargo": "{mission}: brak pasującego łupu, który można by zabrać.",
       "Cargo": "Ładunek: {item}.",
-      "CargoLost": "Stracony ładunek: {item}."
+      "CargoLost": "Stracony ładunek: {item}.",
+      "PanelTitle": "Operacje w toku i odpoczynek",
+      "Empty": "Brak aktywnych operacji ani członków odpoczywających po zadaniu.",
+      "Advance1h": "+1h",
+      "Advance1hHint": "Przesuń czas świata o 1 godzinę (MG).",
+      "Advance4h": "+4h",
+      "Advance4hHint": "Przesuń czas świata o 4 godziny (MG).",
+      "SpeedAll": "Przyspiesz wszystkie",
+      "SpeedAllHint": "Rozstrzygnij natychmiast wszystkie aktywne operacje kompanii (MG).",
+      "SpeedOne": "Przyspiesz",
+      "SpeedOneHint": "Rozstrzygnij tę operację od razu przed czasem (MG).",
+      "Claim": "Rozstrzygnij raport",
+      "CancelHint": "Anuluj operację i przywróć członka do gotowości bez wyniku.",
+      "FinishRest": "Zakończ odpoczynek",
+      "FinishRestHint": "Przywróć poplecznika do gotowości przed upływem odpoczynku (MG).",
+      "Remaining": "Pozostało: {time} (koniec ok. {eta})",
+      "RestingUntil": "Odpoczynek po zadaniu · {time} (do {until})",
+      "AwaitingRoll": "Oczekuje na rzut gracza",
+      "ReadyToClaim": "Czas minął — gotowe do rozstrzygnięcia",
+      "Cancelled": "Anulowano operację członka {name}.",
+      "RestFinished": "{name} wraca do pełnej gotowości.",
+      "ChatReadyFlavor": "Operacja kompanii — raport gotowy",
+      "ChatReadyPrompt": "<strong>{name}</strong> zakończył zadanie <strong>{mission}</strong>. Wykonaj rzut i odbierz raport.",
+      "ChatClaimBtn": "Rozstrzygnij raport"
     },
     "Loot": {
       "Hot": "gorący towar",
@@ -2526,7 +2561,12 @@
       "Queued": "Przydział „{label}” czeka na rozpatrzenie przez MG.",
       "DoneCheckChat": "Misja „{label}” – wykonano! Sprawdź czat.",
       "Unknown": "Nieznany typ misji: {type}",
-      "NoFollower": "Nie wybrano poplecznika!"
+      "NoFollower": "Nie wybrano poplecznika!",
+      "StartedTimed": "{name} rusza na zadanie: {mission} ({hours}h, koniec ok. {eta}).",
+      "PreviewChance": "Szansa powodzenia: {chance}%",
+      "PreviewNoMods": "brak modyfikatorów",
+      "PreviewDuration": "Czas operacji: {hours}h (koniec ok. {eta})",
+      "PreviewRest": "+{hours}h odpoczynku"
     },
     "Tier": {
       "LeadApplies": "{name}: bez kary, podwójny łup",
@@ -2556,7 +2596,9 @@
     },
     "Terrain": {
       "RacketWaits": "Haracz w mieście czeka na powrót szajki.",
-      "Changed": "Szajka zmienia teren: {terrain}. Paser: {fence}."
+      "Changed": "Szajka zmienia teren: {terrain}. Paser: {fence}.",
+      "PickTitle": "Zmień teren kompanii (MG)",
+      "PickHint": "Wybierz aktualny teren działań kompanii (zmienia dostępne zlecenia i pasera):"
     },
     "Tend": {
       "NobodyFree": "Brak dostępnych ludzi do opieki!",
@@ -2565,7 +2607,8 @@
       "Whom": "Którego rannego leczyć?",
       "Start": "Rozpocznij opiekę",
       "Planned": "Opieka nad rannym zaplanowana – rozpatrzy ją MG.",
-      "Started": "Opieka nad rannym rozpoczęta! Sprawdź czat."
+      "Started": "Opieka nad rannym rozpoczęta! Sprawdź czat.",
+      "StartedTimed": "Rozpoczęto opiekę nad rannym — wynik za kilka godzin według kalendarza gry."
     },
     "Free": "za darmo",
     "CampDialog": {
@@ -2824,7 +2867,9 @@
       "HelpCommotion": "<strong>Zamieszanie</strong> (Dywersja): +20 do następnego zlecenia z testem tego dnia. Drużyna graczy też może z niego skorzystać.",
       "HelpLead": "<strong>Trop</strong> (Zwiad lub Szynk z SL 3+): bogaty cel bez kary −20.",
       "HelpHotWeek": "<strong>Gorący towar</strong> stygnie po tygodniu. Do tego czasu paser płaci o 20 pkt mniej.",
-      "HelpHotNight": "<strong>Gorący towar</strong> stygnie po dwóch nocach. Do tego czasu paser płaci o 20 pkt mniej."
+      "HelpHotNight": "<strong>Gorący towar</strong> stygnie po dwóch nocach. Do tego czasu paser płaci o 20 pkt mniej.",
+      "SellOne": "Sprzedaj ten przedmiot u pasera",
+      "HelpToggle": "Zasady żetonów i gorącego towaru"
     },
     "TasksTab": {
       "Intro": "Wyślij ludzi w teren lub weź do swojej osobistej świty. Każdego poplecznika można przypisać do <strong>jednego zadania dziennie</strong>.",
@@ -2876,7 +2921,14 @@
       "Upkeep": "Żołd",
       "UpkeepHint": "Koszt żołdu / utrzymania tego członka za postój (lub tydzień w trybie tygodniowym)",
       "EmptyTitle": "Brak popleczników w świcie!",
-      "EmptyText": "Skorzystaj z rekrutacji lub przeciągnij postać z paska bocznego Foundry VTT."
+      "EmptyText": "Skorzystaj z rekrutacji lub przeciągnij postać z paska bocznego Foundry VTT.",
+      "Filter": {
+        "All": "Wszyscy",
+        "Ready": "Dostępni",
+        "Busy": "Zajęci / Świta",
+        "Injured": "Ranni / Areszt"
+      },
+      "UpgradeReady": "Dostępny awans lub atut za DO!"
     },
     "InfoTab": {
       "Profile": "Profil i Teren Działań",
@@ -2946,7 +2998,8 @@
       "UpkeepOverride": "Żołd tej kompanii",
       "UpkeepDefault": "Wg ustawienia świata",
       "UpkeepFree": "Zwolniona z żołdu",
-      "PatronNoCut": "Zwolniona z doli Patrona (0%)"
+      "PatronNoCut": "Zwolniona z doli Patrona (0%)",
+      "GMOverrides": "Nadpisania zasad (MG)"
     },
     "DashTab": {
       "CampStandard": "Standard Kwater / Obozowiska",
@@ -3016,7 +3069,9 @@
       "Chronicle": "Kronika Zdarzeń Obozowiska",
       "ChronicleEmpty": "Brak odnotowanych zdarzeń. Szajka dopiero wyrusza na trakt...",
       "MakeshiftEffect": "{morale} Morale, ½ obławy",
-      "NightByGM": "Postój rozpatruje MG"
+      "NightByGM": "Postój rozpatruje MG",
+      "CampRationsNeed": "Wymagane racje na postój: {count}",
+      "CampUpkeepNeed": "Żołd za postój: {cost} SS"
     },
     "TacticsTab": {
       "Title": "Rozkazy Taktyczne w Walce",
@@ -3038,7 +3093,15 @@
       "Assists": "Asystuje",
       "PersonalAlways": "Rozkaz osobisty Herszta (dostępny zawsze)",
       "WoundRisk": "Ryzyko Rany Poplecznika",
-      "GuardReady": "Ochroniarz w gotowości"
+      "GuardReady": "Ochroniarz w gotowości",
+      "AdvantageNow": "Przewaga Herszta",
+      "GroupAdvantageNow": "Przewaga Grupowa",
+      "RoundStatus": "Runda {round}",
+      "OrderReady": "Rozkaz dostępny",
+      "OrderUsed": "Rozkaz wydany w tej rundzie",
+      "ReactionReady": "Reakcja dostępna",
+      "ReactionUsed": "Reakcja użyta w tej rundzie",
+      "OutOfCombat": "Poza walką"
     },
     "Packs": {
       "Tables": "Szajka – Plotki i Wydarzenia"
@@ -3047,7 +3110,8 @@
       "Pool": "Gotowi do zadań",
       "DragHint": "Przeciągnij portret na kartę zlecenia albo na wolne miejsce w Świcie. Szare portrety są już zajęte.",
       "SlotEmpty": "Wolne miejsce",
-      "SlotHint": "Upuść tu portret, aby dołączyć do Świty"
+      "SlotHint": "Upuść tu portret, aby dołączyć do Świty",
+      "ToggleAllCategories": "Rozwiń / zwiń kategorie"
     },
     "Profiles": {
       "mercenaries": {
@@ -6275,6 +6339,16 @@
       "Summary": "Treść wpisu",
       "SummaryPlaceholder": "Opisz wydarzenie z życia kompanii...",
       "Add": "Dodaj do Kroniki"
+    },
+    "Keybindings": {
+      "OpenSheet": "Otwórz panel kompanii",
+      "OpenSheetHint": "Otwiera lub przywołuje okno kompanii wybranej albo pierwszej posiadanej postaci."
+    },
+    "Time": {
+      "DayLabel": "Dzień",
+      "HoursMinutes": "{h}h {m}m",
+      "HoursOnly": "{h}h",
+      "MinutesOnly": "{m}m"
     }
   }
 }

@@ -16,6 +16,77 @@
     {{#if lootCount}}<span class="uw-token-chip is-loot"><i class="fas fa-sack-xmark"></i> {{underworldT "Tabs.Loot"}}: {{lootCount}}{{#if hotLootCount}} ({{underworldT "TasksTab.HotCount" count=hotLootCount}}){{/if}}</span>{{/if}}
   </div>
 
+  {{#if usesTimedOps}}
+  <div class="uw-ops-panel">
+    <div class="uw-ops-head">
+      <h3><i class="fas fa-hourglass-half"></i> {{underworldT "Ops.PanelTitle"}} {{#if activeOpsTotal}}<small>({{activeOpsTotal}})</small>{{/if}}</h3>
+      <div class="uw-ops-gm-tools">
+        {{#if isGM}}
+          <button type="button" class="uw-btn-mini" data-action="advance-time" data-hours="1" title="{{underworldT 'Ops.Advance1hHint'}}"><i class="fas fa-forward"></i> {{underworldT "Ops.Advance1h"}}</button>
+          <button type="button" class="uw-btn-mini" data-action="advance-time" data-hours="4" title="{{underworldT 'Ops.Advance4hHint'}}"><i class="fas fa-fast-forward"></i> {{underworldT "Ops.Advance4h"}}</button>
+          {{#if activeOperations.length}}
+            <button type="button" class="uw-btn-mini is-accent" data-action="accelerate-all-operations" title="{{underworldT 'Ops.SpeedAllHint'}}"><i class="fas fa-bolt"></i> {{underworldT "Ops.SpeedAll"}}</button>
+          {{/if}}
+        {{/if}}
+      </div>
+    </div>
+    {{#if activeOperations.length}}
+      <div class="uw-ops-list">
+        {{#each activeOperations}}
+        <div class="uw-op-row {{#if this.isDone}}is-ready{{/if}}">
+          <img src="{{this.img}}" alt=""/>
+          <div class="uw-op-main">
+            <div class="uw-op-title"><strong>{{this.name}}</strong> · <span>{{this.title}}</span></div>
+            <div class="uw-op-meta">
+              {{#if this.awaitingPlayerRoll}}
+                <span class="uw-op-awaiting"><i class="fas fa-dice"></i> {{underworldT "Ops.AwaitingRoll"}}</span>
+              {{else if this.isDone}}
+                <span class="uw-op-awaiting"><i class="fas fa-check"></i> {{underworldT "Ops.ReadyToClaim"}}</span>
+              {{else}}
+                <span><i class="fas fa-clock"></i> {{underworldT "Ops.Remaining" time=this.remaining eta=this.eta}}</span>
+              {{/if}}
+            </div>
+            <div class="uw-op-progress"><span style="width: {{this.pct}}%"></span></div>
+          </div>
+          <div class="uw-op-actions">
+            {{#if this.isDone}}
+              <button type="button" class="uw-btn-mini is-primary" data-action="claim-operation" data-npc-id="{{this.npcId}}"><i class="fas fa-dice"></i> {{underworldT "Ops.Claim"}}</button>
+            {{else}}
+              {{#if ../isGM}}
+                <button type="button" class="uw-btn-mini is-accent" data-action="accelerate-operation" data-npc-id="{{this.npcId}}" title="{{underworldT 'Ops.SpeedOneHint'}}"><i class="fas fa-bolt"></i> {{underworldT "Ops.SpeedOne"}}</button>
+              {{/if}}
+            {{/if}}
+            <button type="button" class="uw-btn-mini is-danger" data-action="cancel-operation" data-npc-id="{{this.npcId}}" title="{{underworldT 'Ops.CancelHint'}}"><i class="fas fa-times"></i></button>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    {{else}}
+      {{#unless restingMembers.length}}
+        <p class="notes uw-ops-empty">{{underworldT "Ops.Empty"}}</p>
+      {{/unless}}
+    {{/if}}
+    {{#if restingMembers.length}}
+      <div class="uw-ops-rest-list">
+        {{#each restingMembers}}
+        <div class="uw-op-row is-resting">
+          <img src="{{this.img}}" alt=""/>
+          <div class="uw-op-main">
+            <div class="uw-op-title"><strong>{{this.name}}</strong> · <span>{{underworldT "Status.Resting"}}</span></div>
+            <div class="uw-op-meta"><i class="fas fa-bed"></i> {{underworldT "Ops.RestingUntil" time=this.remaining until=this.until}}</div>
+          </div>
+          <div class="uw-op-actions">
+            {{#if ../isGM}}
+              <button type="button" class="uw-btn-mini" data-action="finish-rest" data-npc-id="{{this.npcId}}" title="{{underworldT 'Ops.FinishRestHint'}}"><i class="fas fa-sun"></i> {{underworldT "Ops.FinishRest"}}</button>
+            {{/if}}
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    {{/if}}
+  </div>
+  {{/if}}
+
   <!-- ═══════ SEKCJA SPECJALNA: ŚWITA HERSZTA ═══════ -->
   <div class="retinue-section">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
@@ -59,6 +130,9 @@
   </div>
 
   <!-- ═══════ ZLECENIA (zależne od terenu) ═══════ -->
+  <div class="uw-categories-toolbar">
+    <button type="button" class="uw-btn-mini" data-action="toggle-all-categories"><i class="fas fa-layer-group"></i> {{underworldT "Plan.ToggleAllCategories"}}</button>
+  </div>
   {{#each missionCategories}}
   <div class="mission-category {{#if this.collapsed}}collapsed{{/if}}" data-category="{{this.cssKey}}">
     <div class="category-header" data-action="toggle-category">

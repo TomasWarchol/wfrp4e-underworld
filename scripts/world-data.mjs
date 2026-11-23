@@ -90,78 +90,78 @@ export const MISSIONS = {
   // ─── WYWIAD ───
   scout: {
     id: "scout", category: "intel", icon: "fas fa-binoculars", terrains: "all", fn: "executeScoutMission",
-    target: 55, skill: "NAME.Perception", risk: "low",
+    target: 55, skill: "NAME.Perception", risk: "low", durationHours: 4,
     produces: "recon", leadOnGreat: true
   },
   shadow: {
     id: "shadow", category: "intel", icon: "fas fa-user-secret", terrains: ["city", "village"], fn: "executeShadowMission",
-    target: 50, skill: "NAME.Stealth", risk: "stealth",
+    target: 50, skill: "NAME.Stealth", risk: "stealth", durationHours: 6,
     produces: "recon", needsInput: true
   },
   tavern: {
     id: "tavern", category: "intel", icon: "fas fa-beer-mug-empty", terrains: ["city", "village"], fn: "executeTavernMission",
-    target: 55, skill: "NAME.Gossip", risk: "low",
+    target: 55, skill: "NAME.Gossip", risk: "low", durationHours: 3,
     leadOnGreat: true
   },
 
   // ─── ZASOBY I ŁUPY ───
   procure: {
     id: "procure", category: "resources", icon: "fas fa-basket-shopping", terrains: "all", fn: "executeProcureMission",
-    target: 50, skill: "NAME.Stealth", risk: "stealth"
+    target: 50, skill: "NAME.Stealth", risk: "stealth", durationHours: 4
   },
   pickpocket: {
     id: "pickpocket", category: "resources", icon: "fas fa-hand-holding-dollar", terrains: ["city", "village"], fn: "executePickpocketMission",
-    target: 45, skill: "NAME.SleightOfHand", risk: "stealth",
+    target: 45, skill: "NAME.SleightOfHand", risk: "stealth", durationHours: 2,
     tiered: true, loot: ["valuables"]
   },
   burglary: {
     id: "burglary", category: "resources", icon: "fas fa-key", terrains: ["city"], fn: "executeBurglaryMission",
-    target: 40, skill: "NAME.PickLock", risk: "stealth",
+    target: 40, skill: "NAME.PickLock", risk: "stealth", durationHours: 8,
     tiered: true, loot: ["valuables", "documents", "goods"], needsInput: true
   },
   farm_theft: {
     id: "farm_theft", category: "resources", icon: "fas fa-horse", terrains: ["village"], fn: "executeFarmTheftMission",
-    target: 50, skill: "NAME.Stealth", risk: "stealth",
+    target: 50, skill: "NAME.Stealth", risk: "stealth", durationHours: 6,
     tiered: true, loot: ["goods"]
   },
   poaching: {
     id: "poaching", category: "resources", icon: "fas fa-paw", terrains: ["forest", "mountains"], fn: "executePoachingMission",
-    target: 50, skill: "NAME.OutdoorSurvival", risk: "low"
+    target: 50, skill: "NAME.OutdoorSurvival", risk: "low", durationHours: 5
   },
   highway_robbery: {
     id: "highway_robbery", category: "resources", icon: "fas fa-road", terrains: ["forest", "mountains"], fn: "executeHighwayRobberyMission",
-    target: 45, skill: "NAME.Intimidate", risk: "violent",
+    target: 45, skill: "NAME.Intimidate", risk: "violent", durationHours: 8,
     tiered: true, loot: ["goods", "weapons", "valuables"], lootByTerrain: { mountains: ["metal", "goods", "weapons"] }
   },
   mine_raid: {
     id: "mine_raid", category: "resources", icon: "fas fa-hammer", terrains: ["mountains"], fn: "executeMineRaidMission",
-    target: 40, skill: "NAME.Stealth", risk: "violent",
+    target: 40, skill: "NAME.Stealth", risk: "violent", durationHours: 10,
     tiered: true, loot: ["metal"]
   },
   fence: {
     id: "fence", category: "resources", icon: "fas fa-scale-balanced", terrains: "all", fn: "executeFenceMission",
-    target: 45, skill: "NAME.Haggle", risk: "stealth",
+    target: 45, skill: "NAME.Haggle", risk: "stealth", durationHours: 2,
     fencePicker: true
   },
 
   // ─── WPŁYWY ───
   intimidate: {
     id: "intimidate", category: "influence", icon: "fas fa-hand-fist", terrains: ["city", "village"], fn: "executeIntimidateMission",
-    target: 45, skill: "NAME.Intimidate", risk: "violent"
+    target: 45, skill: "NAME.Intimidate", risk: "violent", durationHours: 4
   },
   racket: {
     id: "racket", category: "influence", icon: "fas fa-store", terrains: ["city"], fn: "executeRacketMission",
-    target: 45, skill: "NAME.Intimidate", risk: "violent",
+    target: 45, skill: "NAME.Intimidate", risk: "violent", durationHours: 6,
     needsInput: true
   },
   rumor_spread: {
     id: "rumor_spread", category: "influence", icon: "fas fa-bullhorn", terrains: ["city", "village"], fn: "executeRumorSpreadMission",
-    target: null, skill: null, risk: null,
+    target: null, skill: null, risk: null, durationHours: 2,
     needsInput: true
   },
   bribe: {
     id: "bribe", category: "influence", icon: "fas fa-coins", terrains: ["city", "village", "mountains"], fn: "executeBribeMission",
-    target: 45, skill: "NAME.Gossip", risk: "stealth",
+    target: 45, skill: "NAME.Gossip", risk: "stealth", durationHours: 2,
     bribePicker: true
   },
   theman: {
@@ -172,33 +172,33 @@ export const MISSIONS = {
   // ─── OPERACJE ───
   distract: {
     id: "distract", category: "operations", icon: "fas fa-fire", terrains: "all", fn: "executeDiversionMission",
-    target: 45, skill: "NAME.Gossip", risk: "violent",
+    target: 45, skill: "NAME.Gossip", risk: "violent", durationHours: 4,
     produces: "commotion"
   },
   sabotage: {
     id: "sabotage", category: "operations", icon: "fas fa-bomb", terrains: "all", fn: "executeSabotageMission",
-    target: 40, skill: "NAME.Trade", risk: "violent",
+    target: 40, skill: "NAME.Trade", risk: "violent", durationHours: 6,
     needsInput: true
   },
   smuggle: {
     id: "smuggle", category: "operations", icon: "fas fa-box-open", terrains: "all", fn: "executeSmuggleMission",
-    target: 45, skill: "NAME.Stealth", risk: "stealth",
+    target: 45, skill: "NAME.Stealth", risk: "stealth", durationHours: 8,
     needsInput: true
   },
   forge: {
     id: "forge", category: "operations", icon: "fas fa-file-signature", terrains: ["city"], fn: "executeForgeMission",
-    target: 40, skill: "NAME.Trade", risk: "stealth",
+    target: 40, skill: "NAME.Trade", risk: "stealth", durationHours: 6,
     needsInput: true
   },
 
   // ─── OBÓZ ───
   cover_tracks: {
     id: "cover_tracks", category: "camp", icon: "fas fa-shoe-prints", terrains: "all", fn: "executeCoverTracksMission",
-    target: 45, skill: "NAME.Stealth", risk: "low"
+    target: 45, skill: "NAME.Stealth", risk: "low", durationHours: 4
   },
   tend_wounded: {
     id: "tend_wounded", category: "camp", icon: "fas fa-kit-medical", terrains: "all", fn: "executeTendWoundedMission",
-    target: null, skill: null, risk: null, targetWounded: true
+    target: null, skill: null, risk: null, durationHours: 6, targetWounded: true
   }
 };
 

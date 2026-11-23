@@ -34,19 +34,22 @@
             <input type="text" name="territory" value="{{gang.territory}}" placeholder="{{underworldT 'InfoTab.TerritoryPlaceholder'}}"/>
           </label>
           {{#if isGM}}
-          <label class="uw-l-field">
-            <span>{{underworldT "InfoTab.MaxRetinueOverride"}}</span>
-            <input type="number" name="maxRetinueOverride" value="{{gang.maxRetinueOverride}}" min="0" max="6" title="{{underworldT 'InfoTab.MaxRetinueOverrideHint'}}"/>
-          </label>
-          <label class="uw-l-field">
-            <span>{{underworldT "InfoTab.UpkeepOverride"}}</span>
-            <select name="upkeepOverride">
-              {{#bajerySelect gang.upkeepOverride}}
-              <option value="default">{{underworldT "InfoTab.UpkeepDefault"}}</option>
-              <option value="free">{{underworldT "InfoTab.UpkeepFree"}}</option>
-              {{/bajerySelect}}
-            </select>
-          </label>
+          <details class="uw-gm-overrides">
+            <summary><i class="fas fa-sliders-h"></i> {{underworldT "InfoTab.GMOverrides"}}</summary>
+            <label class="uw-l-field">
+              <span>{{underworldT "InfoTab.MaxRetinueOverride"}}</span>
+              <input type="number" name="maxRetinueOverride" value="{{gang.maxRetinueOverride}}" min="0" max="6" title="{{underworldT 'InfoTab.MaxRetinueOverrideHint'}}"/>
+            </label>
+            <label class="uw-l-field">
+              <span>{{underworldT "InfoTab.UpkeepOverride"}}</span>
+              <select name="upkeepOverride">
+                {{#bajerySelect gang.upkeepOverride}}
+                <option value="default">{{underworldT "InfoTab.UpkeepDefault"}}</option>
+                <option value="free">{{underworldT "InfoTab.UpkeepFree"}}</option>
+                {{/bajerySelect}}
+              </select>
+            </label>
+          </details>
           {{/if}}
         </div>
       </section>
@@ -135,6 +138,7 @@
             <span class="uw-l-readonly">{{{underworldRelationBadge gang.patron.relation}}}</span>
           {{/if}}
         </label>
+        {{#if profileHasPatronCut}}
         <label class="uw-l-field">
           <span>{{underworldT "InfoTab.PatronCut"}}</span>
           {{#if isGM}}
@@ -147,6 +151,7 @@
             <span class="uw-l-readonly">{{patronCutDisplay}}</span>
           {{/if}}
         </label>
+        {{/if}}
         <label class="uw-l-field">
           <span>{{underworldT "InfoTab.PatronNotes"}}</span>
           {{#if isGM}}<textarea name="patron.notes" rows="3" placeholder="{{underworldT 'InfoTab.PatronNotesPlaceholder'}}">{{gang.patron.notes}}</textarea>{{else}}<textarea disabled rows="3">{{gang.patron.notes}}</textarea>{{/if}}

@@ -25,8 +25,12 @@
       <span class="uw-l-leader" title="{{underworldT 'Sheet.LeaderTitle' name=actor.name}}">
         <img src="{{actor.img}}" alt=""/> <span class="uw-l-leader-role">{{underworldT "Sheet.Chief"}}</span> {{actor.name}}
       </span>
-      <span class="uw-l-chip" title="{{terrain.name}}">{{uwIcon ledgerView.terrainIcon}} {{terrain.name}}</span>
+      <span class="uw-l-chip {{#if isGM}}is-clickable{{/if}}" {{#if isGM}}data-action="pick-terrain" title="{{underworldT 'Terrain.PickTitle'}}"{{else}}title="{{terrain.name}}"{{/if}}>{{uwIcon ledgerView.terrainIcon}} {{terrain.name}}</span>
       <span class="uw-l-chip">{{{underworldRelationBadge gang.patron.relation}}}</span>
+      <span class="uw-l-chip uw-l-clock" title="{{worldClock}}"><i class="fas fa-clock"></i> {{worldClock}}</span>
+      {{#if activeOpsTotal}}
+        <span class="uw-l-chip uw-l-ops-chip is-clickable" data-action="open-tab" data-tab-target="tasks" title="{{underworldT 'Ops.PanelTitle'}}"><i class="fas fa-hourglass-half"></i> {{activeOpsTotal}}</span>
+      {{/if}}
     </div>
   </div>
 
@@ -39,13 +43,13 @@
       <strong class="uw-l-meter-value">{{ledgerView.morale.value}}</strong>
     </div>
 
-    <div class="uw-l-meter" title="{{underworldT 'Sheet.SuppliesTitle' value=ledgerView.supplies.value}}">
+    <div class="uw-l-meter is-clickable" data-action="buy-supplies" title="{{underworldT 'Sheet.SuppliesTitle' value=ledgerView.supplies.value}}">
       <span class="uw-l-meter-label">{{uwIcon "ui-supplies"}} {{underworldT "Sheet.Supplies"}}</span>
       <span class="uw-l-bar"><span style="width: {{ledgerView.supplies.pct}}%"></span></span>
       <strong class="uw-l-meter-value">{{ledgerView.supplies.value}}<small>/{{ledgerView.supplies.max}}</small></strong>
     </div>
 
-    <div class="uw-l-meter uw-l-meter-coins" title="{{underworldT 'Upgrade.Stash'}}">
+    <div class="uw-l-meter uw-l-meter-coins is-clickable" data-action="deposit-treasury" title="{{underworldT 'Upgrade.Stash'}}">
       <span class="uw-l-meter-label">{{uwIcon "ui-treasury"}} {{underworldT "Upgrade.Stash"}}</span>
       <span class="uw-l-coins">
         <span class="uw-l-coin gc">{{uwIcon "ui-coin_gc"}}<b>{{ledgerView.treasury.gc}}</b><small>{{underworldT "Units.GC"}}</small></span>
@@ -54,7 +58,7 @@
       </span>
     </div>
 
-    <div class="uw-l-meter uw-l-meter-pressure" title="{{ledgerView.pressure.level}}: {{ledgerView.pressure.desc}}">
+    <div class="uw-l-meter uw-l-meter-pressure is-clickable" data-action="open-tab" data-tab-target="info" title="{{ledgerView.pressure.level}}: {{ledgerView.pressure.desc}}">
       <span class="uw-l-meter-label">{{uwIcon ledgerView.pressureIcon}} {{ledgerView.pressure.label}}</span>
       <span class="uw-l-pips uw-l-pips-pressure">
         {{#each ledgerView.pressure.pips}}<span class="uw-l-pip {{#if this.on}}on{{/if}}">{{uwIcon "orn-pip_seal"}}</span>{{/each}}

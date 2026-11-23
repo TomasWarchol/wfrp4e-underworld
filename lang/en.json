@@ -1994,7 +1994,9 @@
     "Meta": {
       "Target": "Target {value}",
       "TargetHint": "Target for the simplified test (before crew modifiers)",
-      "SkillHint": "Skill used when testing from the member's sheet"
+      "SkillHint": "Skill used when testing from the member's sheet",
+      "Duration": "{value}h",
+      "DurationHint": "Estimated operation duration in in-game calendar hours."
     },
     "Notoriety": {
       "0": {
@@ -2149,6 +2151,16 @@
       "GmRumorTruthWhisper": {
         "Name": "GM Whisper for Rumour Veracity",
         "Hint": "After a successful Scout or Tavern job, whispers the GM whether the rumour is true, a half-truth or false."
+      },
+      "OperationTiming": {
+        "Name": "Operation Duration (Daily Mode)",
+        "Hint": "When enabled, daily-mode assignments take several in-game calendar hours instead of resolving immediately.",
+        "Timed": "Timed operations (in-game calendar)",
+        "Instant": "Instant resolution"
+      },
+      "OperationRestHours": {
+        "Name": "Post-Operation Rest (Hours)",
+        "Hint": "Hours a follower rests after finishing a timed operation (0–24, default 8) before taking a new job."
       }
     },
     "Recruit": {
@@ -2201,7 +2213,30 @@
       },
       "NoCargo": "{mission}: no suitable loot to take along.",
       "Cargo": "Load: {item}.",
-      "CargoLost": "Lost load: {item}."
+      "CargoLost": "Lost load: {item}.",
+      "PanelTitle": "Ongoing Operations & Rest",
+      "Empty": "No ongoing operations or members resting after an assignment.",
+      "Advance1h": "+1h",
+      "Advance1hHint": "Advance world time by 1 hour (GM).",
+      "Advance4h": "+4h",
+      "Advance4hHint": "Advance world time by 4 hours (GM).",
+      "SpeedAll": "Speed up all",
+      "SpeedAllHint": "Resolve all active company operations immediately (GM).",
+      "SpeedOne": "Speed up",
+      "SpeedOneHint": "Resolve this operation early (GM).",
+      "Claim": "Resolve report",
+      "CancelHint": "Cancel operation and return follower to ready with no result.",
+      "FinishRest": "Finish rest",
+      "FinishRestHint": "Return resting follower to ready early (GM).",
+      "Remaining": "Remaining: {time} (ETA ~{eta})",
+      "RestingUntil": "Resting after job · {time} (until {until})",
+      "AwaitingRoll": "Awaiting player roll",
+      "ReadyToClaim": "Time elapsed — ready to resolve",
+      "Cancelled": "Cancelled {name}'s operation.",
+      "RestFinished": "{name} is ready for duty again.",
+      "ChatReadyFlavor": "Crew Operation — Report Ready",
+      "ChatReadyPrompt": "<strong>{name}</strong> has finished <strong>{mission}</strong>. Make the roll and resolve the report.",
+      "ChatClaimBtn": "Resolve Report"
     },
     "Loot": {
       "Hot": "hot goods",
@@ -2526,7 +2561,12 @@
       "Queued": "Assignment “{label}” is waiting for the GM.",
       "DoneCheckChat": "Job “{label}” – done! Check the chat.",
       "Unknown": "Unknown job type: {type}",
-      "NoFollower": "No follower selected!"
+      "NoFollower": "No follower selected!",
+      "StartedTimed": "{name} departs on {mission} ({hours}h, ETA ~{eta}).",
+      "PreviewChance": "Success chance: {chance}%",
+      "PreviewNoMods": "no modifiers",
+      "PreviewDuration": "Operation time: {hours}h (ETA ~{eta})",
+      "PreviewRest": "+{hours}h rest"
     },
     "Tier": {
       "LeadApplies": "{name}: no penalty, double loot",
@@ -2556,7 +2596,9 @@
     },
     "Terrain": {
       "RacketWaits": "The city racket waits for the crew to return.",
-      "Changed": "The crew moves to a new terrain: {terrain}. Fence: {fence}."
+      "Changed": "The crew moves to a new terrain: {terrain}. Fence: {fence}.",
+      "PickTitle": "Change Company Terrain (GM)",
+      "PickHint": "Choose the company's active operating terrain (changes available jobs and fence):"
     },
     "Tend": {
       "NobodyFree": "Nobody is free to tend the wounded!",
@@ -2565,7 +2607,8 @@
       "Whom": "Which wounded member to treat?",
       "Start": "Start tending",
       "Planned": "Tending the wounded is planned – the GM will resolve it.",
-      "Started": "Tending the wounded has begun! Check the chat."
+      "Started": "Tending the wounded has begun! Check the chat.",
+      "StartedTimed": "Treatment started — outcome will be ready in a few in-game hours."
     },
     "Free": "free",
     "CampDialog": {
@@ -2824,7 +2867,9 @@
       "HelpCommotion": "<strong>Commotion</strong> (Diversion): +20 to the next tested job that day. The players' party can use it too.",
       "HelpLead": "<strong>Lead</strong> (Scouting or Tavern with SL 3+): rich target without the −20 penalty.",
       "HelpHotWeek": "<strong>Hot goods</strong> cool down after a week. Until then the fence pays 20 points less.",
-      "HelpHotNight": "<strong>Hot goods</strong> cool down after two nights. Until then the fence pays 20 points less."
+      "HelpHotNight": "<strong>Hot goods</strong> cool down after two nights. Until then the fence pays 20 points less.",
+      "SellOne": "Sell this item at the fence",
+      "HelpToggle": "Tokens & hot goods rules"
     },
     "TasksTab": {
       "Intro": "Send your people out or take them into your personal retinue. Each follower can be given <strong>one task per day</strong>.",
@@ -2876,7 +2921,14 @@
       "Upkeep": "Pay",
       "UpkeepHint": "Upkeep / pay cost for this member per camp rest (or per week in weekly mode)",
       "EmptyTitle": "No followers in the retinue!",
-      "EmptyText": "Use recruitment or drag a character from the Foundry VTT sidebar."
+      "EmptyText": "Use recruitment or drag a character from the Foundry VTT sidebar.",
+      "Filter": {
+        "All": "All",
+        "Ready": "Ready",
+        "Busy": "Busy / Retinue",
+        "Injured": "Wounded / Arrested"
+      },
+      "UpgradeReady": "Rank promotion or perk available for OXP!"
     },
     "InfoTab": {
       "Profile": "Profile and Area of Operations",
@@ -2946,7 +2998,8 @@
       "UpkeepOverride": "Company upkeep",
       "UpkeepDefault": "Use world setting",
       "UpkeepFree": "Exempt from upkeep",
-      "PatronNoCut": "Exempt from Patron cut (0%)"
+      "PatronNoCut": "Exempt from Patron cut (0%)",
+      "GMOverrides": "Rule Overrides (GM)"
     },
     "DashTab": {
       "CampStandard": "Lodging / Camp Standard",
@@ -3016,7 +3069,9 @@
       "Chronicle": "Camp Chronicle",
       "ChronicleEmpty": "No events recorded yet. The crew is just setting out on the road...",
       "MakeshiftEffect": "{morale} Morale, ½ raid risk",
-      "NightByGM": "Camp resolved by GM"
+      "NightByGM": "Camp resolved by GM",
+      "CampRationsNeed": "Rations needed for rest: {count}",
+      "CampUpkeepNeed": "Upkeep for rest: {cost} SS"
     },
     "TacticsTab": {
       "Title": "Combat Tactical Orders",
@@ -3038,7 +3093,15 @@
       "Assists": "Assisted by",
       "PersonalAlways": "The chief's personal order (always available)",
       "WoundRisk": "Risk of a Follower's Wound",
-      "GuardReady": "Bodyguard ready"
+      "GuardReady": "Bodyguard ready",
+      "AdvantageNow": "Chief Advantage",
+      "GroupAdvantageNow": "Group Advantage",
+      "RoundStatus": "Round {round}",
+      "OrderReady": "Order ready",
+      "OrderUsed": "Order used this round",
+      "ReactionReady": "Reaction ready",
+      "ReactionUsed": "Reaction used this round",
+      "OutOfCombat": "Out of combat"
     },
     "Packs": {
       "Tables": "Underworld Crew – Rumours and Events"
@@ -3047,7 +3110,8 @@
       "Pool": "Ready for tasks",
       "DragHint": "Drag a portrait onto a job card or onto a free place in the retinue. Grey portraits are already busy.",
       "SlotEmpty": "Free place",
-      "SlotHint": "Drop a portrait here to join the retinue"
+      "SlotHint": "Drop a portrait here to join the retinue",
+      "ToggleAllCategories": "Expand / collapse categories"
     },
     "Profiles": {
       "mercenaries": {
@@ -6275,6 +6339,16 @@
       "Summary": "Entry text",
       "SummaryPlaceholder": "Describe an event in the company’s history...",
       "Add": "Add to Chronicle"
+    },
+    "Keybindings": {
+      "OpenSheet": "Open Crew Sheet",
+      "OpenSheetHint": "Opens or focuses the company sheet for the selected or owned character."
+    },
+    "Time": {
+      "DayLabel": "Day",
+      "HoursMinutes": "{h}h {m}m",
+      "HoursOnly": "{h}h",
+      "MinutesOnly": "{m}m"
     }
   }
 }

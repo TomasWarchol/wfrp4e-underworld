@@ -141,105 +141,105 @@ export const DATA_MISSIONS = {
   // ─── ZBROJNI ───
   patrol: {
     category: "intel", icon: "fas fa-person-hiking", badge: "scout", terrains: "all", target: 55, skill: "NAME.OutdoorSurvival",
-    risk: "violent", like: "scout", produces: "recon", leadOnGreat: true,
+    risk: "violent", like: "scout", durationHours: 4, produces: "recon", leadOnGreat: true,
     loot: ["weapons", "metal"], success: {}, great: { loot: "easy" }, failure: {}
   },
   garrison: {
     category: "resources", icon: "fas fa-chess-rook", badge: "guard", terrains: "all", target: 55, skill: "NAME.Perception",
-    risk: "low", like: "scout", success: { coins: "1d6+3" }, great: { coins: "1d6" }, failure: {}
+    risk: "low", like: "scout", durationHours: 8, success: { coins: "1d6+3" }, great: { coins: "1d6" }, failure: {}
   },
   requisition: {
     category: "resources", icon: "fas fa-wheat-awn", badge: "procure", terrains: "all", target: 50, skill: "NAME.Intimidate",
-    risk: "low", like: "intimidate", success: { supplies: "1d3+1" }, great: { supplies: "1" }, failure: { notoriety: 1 }
+    risk: "low", like: "intimidate", durationHours: 4, success: { supplies: "1d3+1" }, great: { supplies: "1" }, failure: { notoriety: 1 }
   },
   escort: {
     category: "operations", icon: "fas fa-shield-halved", badge: "guard", terrains: "all", target: 50, skill: "NAME.Perception",
-    risk: "violent", like: "distract", needsInput: true,
+    risk: "violent", like: "distract", durationHours: 8, needsInput: true,
     success: { coins: "2d8+4", notoriety: -1 }, great: { coins: "1d8" }, failure: { morale: -1 }
   },
   contract: {
     category: "operations", icon: "fas fa-file-contract", badge: "intimidate", terrains: "all", target: 45, skill: "NAME.Leadership",
-    risk: "violent", like: "intimidate", tiered: true, needsInput: true,
+    risk: "violent", like: "intimidate", durationHours: 12, tiered: true, needsInput: true,
     loot: ["weapons", "metal", "valuables"],
     success: { coins: "2d10+6" }, great: { loot: "normal" }, failure: { morale: -1, notoriety: 1 }
   },
   drill: {
     category: "camp", icon: "fas fa-person-military-rifle", badge: "tend-wounded", terrains: "all", target: 55, skill: "NAME.Leadership",
-    risk: "low", produces: "commotion", success: { xp: 5 }, great: { morale: 1 }, failure: {}
+    risk: "low", durationHours: 3, produces: "commotion", success: { xp: 5 }, great: { morale: 1 }, failure: {}
   },
 
   // ─── BANICI ───
   ambush: {
     category: "operations", icon: "fas fa-tree", badge: "intimidate", terrains: ["forest", "mountains", "village"], target: 40, skill: "NAME.Stealth",
-    risk: "violent", like: "highway_robbery", loot: ["weapons", "metal"],
+    risk: "violent", like: "highway_robbery", durationHours: 8, loot: ["weapons", "metal"],
     success: { notoriety: -1, loot: "easy" }, great: { morale: 1 }, failure: { morale: -1 }
   },
   ransom: {
     category: "resources", icon: "fas fa-people-robbery", badge: "intimidate", terrains: "all", target: 45, skill: "NAME.Intimidate",
-    risk: "violent", like: "intimidate", needsInput: true,
+    risk: "violent", like: "intimidate", durationHours: 12, needsInput: true,
     success: { coins: "3d10+5", notoriety: 1 }, great: { coins: "2d10" }, failure: { notoriety: 1, morale: -1 }
   },
   toll: {
     category: "resources", icon: "fas fa-bridge", badge: "intimidate", terrains: ["forest", "mountains", "village"], target: 50, skill: "NAME.Intimidate",
-    risk: "violent", like: "highway_robbery", success: { coins: "1d10+3" }, great: { supplies: "1" }, failure: { notoriety: 1 }
+    risk: "violent", like: "highway_robbery", durationHours: 4, success: { coins: "1d10+3" }, great: { supplies: "1" }, failure: { notoriety: 1 }
   },
 
   // ─── PRZEMYTNICY ───
   river_run: {
     category: "operations", icon: "fas fa-ship", badge: "smuggle", terrains: "all", target: 45, skill: "NAME.Stealth",
-    risk: "stealth", like: "smuggle", tiered: true,
+    risk: "stealth", like: "smuggle", durationHours: 12, tiered: true,
     consumes: { categories: ["contraband", "goods", "valuables"], multiplier: 2, always: true },
     success: {}, great: { notoriety: -1 }, failure: { notoriety: 1 }
   },
   cache: {
     category: "camp", icon: "fas fa-box-archive", badge: "cover-tracks", terrains: "all", target: 50, skill: "NAME.Stealth",
-    risk: "low", like: "cover_tracks", success: { notoriety: -1 }, great: { supplies: "1" }, failure: {}
+    risk: "low", like: "cover_tracks", durationHours: 4, success: { notoriety: -1 }, great: { supplies: "1" }, failure: {}
   },
   contraband: {
     category: "resources", icon: "fas fa-wine-bottle", badge: "smuggle", terrains: "all", target: 50, skill: "NAME.Haggle",
-    risk: "stealth", like: "procure", loot: ["contraband", "goods"],
+    risk: "stealth", like: "procure", durationHours: 6, loot: ["contraband", "goods"],
     success: { loot: "normal" }, great: { loot: "easy" }, failure: { notoriety: 1 }
   },
 
   // ─── SIATKA INFORMATORÓW ───
   buy_secret: {
     category: "intel", icon: "fas fa-envelope-open-text", badge: "tavern", terrains: ["city", "village"], target: 50, skill: "NAME.Gossip",
-    risk: "stealth", like: "tavern", leadOnGreat: true, loot: ["documents"],
+    risk: "stealth", like: "tavern", durationHours: 3, leadOnGreat: true, loot: ["documents"],
     success: { loot: "normal" }, great: {}, failure: { notoriety: 1 }
   },
   intercept: {
     category: "intel", icon: "fas fa-horse", badge: "shadow", terrains: ["village", "forest", "mountains"], target: 45, skill: "NAME.Stealth",
-    risk: "stealth", like: "shadow", loot: ["documents"],
+    risk: "stealth", like: "shadow", durationHours: 8, loot: ["documents"],
     success: { loot: "normal" }, great: { notoriety: -1 }, failure: { notoriety: 1 }
   },
   letter_swap: {
     category: "operations", icon: "fas fa-envelopes-bulk", badge: "forge", terrains: ["city", "village"], target: 40, skill: "NAME.SleightOfHand",
-    risk: "stealth", like: "forge", tiered: true, needsInput: true, loot: ["documents"],
+    risk: "stealth", like: "forge", durationHours: 8, tiered: true, needsInput: true, loot: ["documents"],
     success: { coins: "1d10+5", xp: 5 }, great: { loot: "normal" }, failure: { notoriety: 1 }
   },
   report: {
     category: "resources", icon: "fas fa-file-lines", badge: "rumor", terrains: "all", target: 50, skill: "NAME.Intuition",
-    risk: null, like: "tavern", consumes: { categories: ["documents"], multiplier: 1.75 },
+    risk: null, like: "tavern", durationHours: 2, consumes: { categories: ["documents"], multiplier: 1.75 },
     success: {}, great: { coins: "1d10" }, failure: { morale: -1 }
   },
 
   // ─── SEKRETNE BRACTWO ───
   ritual: {
     category: "camp", icon: "fas fa-fire-flame-curved", badge: "tend-wounded", terrains: "all", target: 50, skill: "NAME.Cool",
-    risk: "low", produces: "commotion", success: { xp: 5 }, great: { morale: 1 }, failure: { morale: -1 }
+    risk: "low", durationHours: 6, produces: "commotion", success: { xp: 5 }, great: { morale: 1 }, failure: { morale: -1 }
   },
   infiltrate: {
     category: "intel", icon: "fas fa-masks-theater", badge: "shadow", terrains: ["city", "village"], target: 45, skill: "NAME.Charm",
-    risk: "stealth", like: "shadow", produces: "recon", leadOnGreat: true, success: {}, great: {}, failure: {}
+    risk: "stealth", like: "shadow", durationHours: 6, produces: "recon", leadOnGreat: true, success: {}, great: {}, failure: {}
   },
   stone_circle: {
     category: "camp", icon: "fas fa-circle-notch", badge: "rumor", terrains: ["forest", "mountains"], target: 50, skill: "NAME.Cool",
-    risk: "low", like: "scout", produces: "recon", leadOnGreat: true, loot: ["contraband", "valuables"],
+    risk: "low", like: "scout", durationHours: 6, produces: "recon", leadOnGreat: true, loot: ["contraband", "valuables"],
     success: { morale: 1, xp: 5 }, great: { loot: "normal" }, failure: { morale: -1 }
   },
   abduction: {
     category: "operations", icon: "fas fa-user-lock", badge: "intimidate", terrains: "all", target: 40, skill: "NAME.Stealth",
-    risk: "violent", like: "intimidate", tiered: true, needsInput: true, loot: ["valuables", "documents"],
+    risk: "violent", like: "intimidate", durationHours: 10, tiered: true, needsInput: true, loot: ["valuables", "documents"],
     success: { coins: "2d10+5", morale: 1 }, great: { xp: 5, loot: "easy" }, failure: { notoriety: 2 }
   }
 };

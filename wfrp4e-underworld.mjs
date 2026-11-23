@@ -76,6 +76,41 @@ Hooks.once("init", async function () {
     onChange: rerenderSheets
   });
 
+  game.settings.register(MODULE_ID, "operationTiming", {
+    name: "UNDERWORLD.Settings.OperationTiming.Name",
+    hint: "UNDERWORLD.Settings.OperationTiming.Hint",
+    scope: "world",
+    config: true,
+    type: String,
+    choices: {
+      timed: "UNDERWORLD.Settings.OperationTiming.Timed",
+      instant: "UNDERWORLD.Settings.OperationTiming.Instant"
+    },
+    default: "timed",
+    onChange: rerenderSheets
+  });
+
+  game.settings.register(MODULE_ID, "operationRestHours", {
+    name: "UNDERWORLD.Settings.OperationRestHours.Name",
+    hint: "UNDERWORLD.Settings.OperationRestHours.Hint",
+    scope: "world",
+    config: true,
+    type: Number,
+    range: { min: 0, max: 24, step: 1 },
+    default: 8,
+    onChange: rerenderSheets
+  });
+
+  game.keybindings?.register?.(MODULE_ID, "openCrewSheet", {
+    name: "UNDERWORLD.Keybindings.OpenSheet",
+    hint: "UNDERWORLD.Keybindings.OpenSheetHint",
+    editable: [{ key: "KeyU", modifiers: ["Shift"] }],
+    onDown: () => {
+      game.underworld?.openGangSheet?.();
+      return true;
+    }
+  });
+
   game.settings.register(MODULE_ID, "campRestGMOnly", {
     name: "UNDERWORLD.Settings.CampRestGMOnly.Name",
     hint: "UNDERWORLD.Settings.CampRestGMOnly.Hint",
@@ -553,6 +588,9 @@ Hooks.once("init", async function () {
     const chips = [];
     if (info.target) chips.push(`<span class="meta-chip meta-target" data-tooltip="${t("Meta.TargetHint")}"><i class="fas fa-bullseye"></i> ${t("Meta.Target", { value: info.target })}</span>`);
     if (info.skill) chips.push(`<span class="meta-chip meta-skill" data-tooltip="${t("Meta.SkillHint")}"><i class="fas fa-dice-d20"></i> ${esc(game.i18n.localize(info.skill))}</span>`);
+    if (info.durationHours > 0 && !UnderworldOperations.isWeekly() && UnderworldOperations.usesTimedOperations()) {
+      chips.push(`<span class="meta-chip meta-duration" data-tooltip="${t("Meta.DurationHint")}"><i class="fas fa-hourglass-half"></i> ${t("Meta.Duration", { value: info.durationHours })}</span>`);
+    }
     if (info.risk) chips.push(`<span class="meta-chip ${riskLabels[info.risk].cls}"><i class="fas fa-triangle-exclamation"></i> ${riskLabels[info.risk].text}</span>`);
     if (info.reward) chips.push(`<span class="meta-chip meta-reward"><i class="fas fa-sack-dollar"></i> ${esc(info.reward)}</span>`);
     return new Handlebars.SafeString(`<div class="mission-meta">${chips.join("")}</div>`);
@@ -689,8 +727,24 @@ Hooks.once("ready", function () {
     }
   };
 
-  // Obsługa przycisku rozpoczęcia postoju bezpośrednio z karty na czacie
+  // Obsługa przycisków z kart na czacie: rozpoczęcie postoju lub odbiór raportu operacji
   document.addEventListener("click", (ev) => {
+    const claimBtn = ev.target.closest?.(".btn-chat-claim-operation");
+    if (claimBtn) {
+      ev.preventDefault();
+      const actor = game.actors.get(claimBtn.dataset.actorId);
+      const npcId = claimBtn.dataset.npcId;
+      if (!actor || !npcId) return;
+      if (!UnderworldOperations._canManageGang(actor)) {
+        ui.notifications.warn(t("Notify.NoAccess"));
+        return;
+      }
+      claimBtn.disabled = true;
+      UnderworldOperations.resolveOperation(actor, npcId, { interactive: true })
+        .finally(() => { claimBtn.disabled = false; });
+      return;
+    }
+
     if (!ev.target.closest?.(".btn-chat-open-rest")) return;
     ev.preventDefault();
     const character = canvas.tokens?.controlled[0]?.actor || game.user.character || game.actors.find(a => a.type === "character" && a.isOwner);
@@ -718,12 +772,18 @@ Hooks.on("chatMessage", (chatLog, message) => {
 });
 
 /* -------------------------------------------- */
-/*  Śledzenie czasu w świecie gry (3:00 w nocy) */
+/*  Śledzenie czasu w świecie gry               */
 /* -------------------------------------------- */
 
-Hooks.on("updateWorldTime", (worldTime, delta) => {
-  if (!game.user.isGM) return;
-  UnderworldOperations.checkCalendarReminder(worldTime);
+Hooks.on("updateWorldTime", async (worldTime, delta) => {
+  const isActiveGM = game.users?.activeGM ? game.user === game.users.activeGM : !!game.user?.isGM;
+  if (isActiveGM) {
+    await UnderworldOperations.processWorldTimeTick(worldTime);
+    await UnderworldOperations.checkCalendarReminder(worldTime);
+  }
+  for (const app of foundry.applications?.instances?.values() ?? []) {
+    if (app instanceof GangSheet) app.render();
+  }
 });
 
 /* -------------------------------------------- */

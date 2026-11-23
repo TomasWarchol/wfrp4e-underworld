@@ -37,19 +37,22 @@
           <input type="text" name="territory" value="{{gang.territory}}" placeholder="{{underworldT 'InfoTab.TerritoryPlaceholder'}}"/>
         </div>
         {{#if isGM}}
-        <div class="info-field">
-          <label><i class="fas fa-user-shield"></i> {{underworldT "InfoTab.MaxRetinueOverride"}}</label>
-          <input type="number" name="maxRetinueOverride" value="{{gang.maxRetinueOverride}}" min="0" max="6" title="{{underworldT 'InfoTab.MaxRetinueOverrideHint'}}"/>
-        </div>
-        <div class="info-field">
-          <label><i class="fas fa-coins"></i> {{underworldT "InfoTab.UpkeepOverride"}}</label>
-          <select name="upkeepOverride">
-            {{#bajerySelect gang.upkeepOverride}}
-            <option value="default">{{underworldT "InfoTab.UpkeepDefault"}}</option>
-            <option value="free">{{underworldT "InfoTab.UpkeepFree"}}</option>
-            {{/bajerySelect}}
-          </select>
-        </div>
+        <details class="uw-gm-overrides">
+          <summary><i class="fas fa-sliders-h"></i> {{underworldT "InfoTab.GMOverrides"}}</summary>
+          <div class="info-field">
+            <label><i class="fas fa-user-shield"></i> {{underworldT "InfoTab.MaxRetinueOverride"}}</label>
+            <input type="number" name="maxRetinueOverride" value="{{gang.maxRetinueOverride}}" min="0" max="6" title="{{underworldT 'InfoTab.MaxRetinueOverrideHint'}}"/>
+          </div>
+          <div class="info-field">
+            <label><i class="fas fa-coins"></i> {{underworldT "InfoTab.UpkeepOverride"}}</label>
+            <select name="upkeepOverride">
+              {{#bajerySelect gang.upkeepOverride}}
+              <option value="default">{{underworldT "InfoTab.UpkeepDefault"}}</option>
+              <option value="free">{{underworldT "InfoTab.UpkeepFree"}}</option>
+              {{/bajerySelect}}
+            </select>
+          </div>
+        </details>
         {{/if}}
       </div>
 
@@ -162,6 +165,7 @@
           {{/if}}
         </div>
 
+        {{#if profileHasPatronCut}}
         <div class="info-field">
           <label><i class="fas fa-percentage"></i> {{underworldT "InfoTab.PatronCut"}}</label>
           {{#if isGM}}
@@ -174,6 +178,7 @@
             <div class="readonly-display-field">{{patronCutDisplay}}</div>
           {{/if}}
         </div>
+        {{/if}}
 
         <div class="info-field">
           <label><i class="fas fa-envelope-open-text"></i> {{underworldT "InfoTab.PatronNotes"}}</label>
