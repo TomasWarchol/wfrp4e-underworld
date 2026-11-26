@@ -275,6 +275,21 @@ Hooks.once("init", async function () {
     default: "one"
   });
 
+  for (const [key, label, defaultValue] of [
+    ["retinueRestRounds", "RetinueRestRounds", 1],
+    ["retinueChangeHours", "RetinueChangeHours", 2]
+  ]) {
+    game.settings.register(MODULE_ID, key, {
+      name: `UNDERWORLD.Settings.${label}.Name`,
+      hint: `UNDERWORLD.Settings.${label}.Hint`,
+      scope: "world",
+      config: true,
+      type: Number,
+      default: defaultValue,
+      onChange: renderGangSheets
+    });
+  }
+
   game.settings.register(MODULE_ID, "raidsEnabled", {
     name: "UNDERWORLD.Settings.RaidsEnabled.Name",
     hint: "UNDERWORLD.Settings.RaidsEnabled.Hint",
@@ -674,6 +689,9 @@ Hooks.once("init", async function () {
 
 Hooks.once("ready", function () {
   console.log(`${MODULE_ID} | Ready.`);
+  if (game.users.activeGM?.isSelf) {
+    UnderworldOperations.processRetinueChanges().catch(err => console.error(`${MODULE_ID} | Could not update the retinue:`, err));
+  }
   // Karty czatu w wyglądzie Księgi (to samo ustawienie klienta co panel kompanii)
   document.body.classList.toggle("uw-ledger-chat", game.settings.get(MODULE_ID, "sheetStyle") !== "classic");
 
@@ -780,12 +798,22 @@ Hooks.on("updateWorldTime", async (worldTime, delta) => {
   const isActiveGM = game.users?.activeGM ? game.user === game.users.activeGM : !!game.user?.isGM;
   if (isActiveGM) {
     await UnderworldOperations.processWorldTimeTick(worldTime);
+    await UnderworldOperations.processRetinueChanges();
     await UnderworldOperations.checkCalendarReminder(worldTime);
   }
+  renderGangSheets();
+});
+
+function renderGangSheets() {
   for (const app of foundry.applications?.instances?.values() ?? []) {
     if (app instanceof GangSheet) app.render();
   }
+}
+
+Hooks.on("updateCombat", (_combat, changes) => {
+  if ("round" in changes || "active" in changes) renderGangSheets();
 });
+Hooks.on("deleteCombat", renderGangSheets);
 
 /* -------------------------------------------- */
 /*  Synchronizacja otwartych okien szajki       */
@@ -975,6 +1003,41 @@ Hooks.on("renderChatMessageHTML", (message, html) => {
     svg.append(use);
     el.append(svg);
   }
+});
+
+Hooks.on("renderChatMessageHTML", (message, html) => {
+  const button = html.querySelector(".btn-uw-apply-order-effect");
+  if (!button) return;
+  const effect = message.getFlag(MODULE_ID, "orderEffect");
+  const result = message.getFlag(MODULE_ID, "orderEffectResult");
+  const canApply = effect && (game.user.isGM || message.isAuthor);
+  if (result) {
+    button.disabled = true;
+    const status = { applying: "ApplyingEffect", applied: "EffectApplied", failed: "EffectFailed" }[result.status];
+    button.textContent = tFor("underworld", `TacticCard.${status || "EffectFailed"}`);
+    if (result.lines?.length) {
+      const list = document.createElement("ul");
+      for (const line of result.lines) {
+        const entry = document.createElement("li");
+        entry.textContent = line;
+        list.append(entry);
+      }
+      button.after(list);
+    }
+    return;
+  }
+  if (!canApply || game.settings.get(MODULE_ID, "orderAutomation") !== "full") {
+    button.parentElement.remove();
+    return;
+  }
+  button.addEventListener("click", async () => {
+    const targeted = OrderEffects.targetUuids();
+    const targets = targeted.length || !game.user.isGM ? targeted : OrderEffects.targetUuids(canvas.tokens?.controlled);
+    if (!targets.length) return ui.notifications.warn(tFor("underworld", "Orders.Effects.SelectTarget"));
+    button.disabled = true;
+    await OrderEffects.applyFromCard(message, targets);
+    button.disabled = !!message.getFlag(MODULE_ID, "orderEffectResult");
+  });
 });
 
 Hooks.on("renderChatMessageHTML", (message, html) => {

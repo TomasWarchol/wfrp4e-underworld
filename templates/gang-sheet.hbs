@@ -75,6 +75,17 @@
   </nav>
   {{/if}}
 
+  {{#if retinueChanges.length}}
+  <ul class="uw-retinue-changes" aria-label="{{underworldT 'Retinue.Changes'}}">
+    {{#each retinueChanges}}
+    <li>
+      <i class="fas fa-hourglass-half" aria-hidden="true"></i> {{this.label}}
+      <button type="button" class="uw-plain" data-action="toggle-retinue" data-npc-id="{{this.id}}">{{underworldT "Retinue.CancelChange"}}</button>
+    </li>
+    {{/each}}
+  </ul>
+  {{/if}}
+
   <!-- ZAWARTOŚĆ ZAKŁADEK -->
   <section class="sheet-body underworld-sheet-body">
     <div class="tab" data-group="primary" data-tab="info">

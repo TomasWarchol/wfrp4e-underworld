@@ -212,9 +212,9 @@ Do Świty Herszta należy do 3 członków. Jest **39 rozkazów** w trzech grupac
 * **za Przewagę** (obsługuje Przewagę Osobistą oraz Przewagę Grupową *Up in Arms*) – automatyczny sukces bez zwrotu Przewagi z efektów sojuszniczych,
 * **zwykłym poleceniem** – efekt rozstrzyga MG.
 
-Podczas walki Herszt wydaje **jeden rozkaz na rundę** – rozkaz zużywa jego Akcję (wyjątkiem jest *Żywa Tarcza*, działająca jako Reakcja raz na rundę). Przewagę daje tylko rozkaz z efektem Przewagi wydany inaczej niż za Przewagę.
+Rozkaz w walce zużywa Akcję Herszta, a *Żywa Tarcza* zużywa Reakcję. Domyślnie cała świta odpoczywa przez jedną pełną rundę po użyciu taktyki. Po rozkazie w rundzie 1 następny jest dostępny w rundzie 3. Zmiany składu zlecone przez graczy wchodzą w życie po 2 godzinach czasu gry. MG może zmienić obie wartości w ustawieniach modułu i edytować skład od razu.
 
-**Efekty na tokenach**: wskaż cel (klawisz **T** na tokenie) przed wydaniem rozkazu (standardowo 1 cel, rozkazy obszarowe do 3–4 celów). Trudność testów obronnych wroga rośnie wraz z rangą wykonawcy. Po udanym rozkazie klient MG nakłada efekt przez API systemu WFRP4e – również gdy rozkaz wydaje gracz:
+Wskaż cel klawiszem **T** przed wydaniem rozkazu, aby zastosować efekt automatycznie. Możesz też wskazać cel później i użyć przycisku **Nałóż efekt na wybrany cel** na karcie czatu. Standardowo rozkaz obejmuje jeden cel, a taktyki obszarowe do 3–4 celów. Klient MG rozpatruje efekty przez API WFRP4e. Trudność testu obronnego wroga rośnie wraz z rangą wykonawcy.
 
 | Rozkaz | Efekt automatyczny |
 |---|---|
@@ -224,7 +224,7 @@ Podczas walki Herszt wydaje **jeden rozkaz na rundę** – rozkaz zużywa jego A
 | Ostrzał Nękający, Taran i Przełom, Zmyłka | cel −1 Przewagi |
 | Strzał Rozbrajający | Trudny (−10) test Siły celu; porażka → upuszcza broń (opis) |
 | Okrzyk Bojowy | usuwa stan **Złamany (Broken)** ze wskazanego sojusznika |
-| Gorzka Nalewka Bojowa | usuwa 1 stan **Zmęczony** ze wskazanego sojusznika (bez celu – z Herszta) |
+| Gorzka Nalewka Bojowa | usuwa 1 stan **Zmęczony** ze wskazanego sojusznika |
 | Chwyt za Kark, Wnyki i Sidła | test Siły / Zwinności celu; porażka → **Oplątany** |
 | Przygwożdżenie Ogniem, Fałszywy Rozkaz | test Siły Woli / Inteligencji celu; porażka → **Zaskoczony** |
 | Beczułka Oleju | test Zwinności; porażka → **Płonący** |

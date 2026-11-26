@@ -16,9 +16,6 @@ import { registry, dialogContent, dialogValue, escapeHTML, time } from "../../wf
 import { t } from "./i18n.mjs";
 import { profileHasMission, profileOf } from "./company-profiles.mjs";
 
-/** Nazwa stanu członka w bieżącym języku (ready → „Dostępny” itd.). */
-const statusLabel = status => t(`Status.${String(status || "ready").charAt(0).toUpperCase()}${String(status || "ready").slice(1)}`);
-
 const { ApplicationV2, HandlebarsApplicationMixin, DialogV2 } = foundry.applications.api;
 
 /** Kategorie zleceń rozwinięte przy pierwszym otwarciu panelu. */
@@ -43,6 +40,8 @@ const WORLD_SETTING_DEFAULTS = {
   oxpMultiplier: 1,
   orderAutomation: "full",
   orderRoundLimit: "one",
+  retinueRestRounds: 1,
+  retinueChangeHours: 2,
   directOrdersMode: "gm",
   raidsEnabled: true,
   desertionEnabled: true,
@@ -267,7 +266,14 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     data.activeRetinue = retinueMembers;
     data.retinueCount = retinueMembers.length;
     data.maxRetinue = UnderworldOperations.maxRetinue(gang);
-    data.canAddRetinue = retinueMembers.length < data.maxRetinue;
+    data.canAddRetinue = UnderworldOperations.projectedRetinueCount(gang) < data.maxRetinue;
+    data.hasQueuedRetinueSpace = data.canAddRetinue && retinueMembers.length >= data.maxRetinue;
+    data.retinueChanges = gang.roster.flatMap(npc => {
+      const change = gang.retinueChanges?.[npc.id];
+      if (!change) return [];
+      const key = change.assignment === "retinue" ? "Retinue.JoinScheduled" : "Retinue.LeaveScheduled";
+      return [{ id: npc.id, label: t(key, { name: npc.name, when: UnderworldOperations.formatWorldClock(change.doneAt) }) }];
+    });
     data.maxRoster = UnderworldOperations.maxRoster();
     data.activeRosterCount = gang.roster.filter(n => n.status !== "dead").length;
 
@@ -307,6 +313,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
         universal: orderId === "rally",
         isUnlocked: orderId === "rally" ? true : isUnlocked,
         executor,
+        blocked: UnderworldOperations.tacticalOrderBlock(gang, orderId),
         reqRoleNames
       };
     }
@@ -387,6 +394,8 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       advantageLabel: isGroupAdvantage ? t("TacticsTab.GroupAdvantageNow") : t("TacticsTab.AdvantageNow"),
       inCombat,
       round,
+      orderBlocked: UnderworldOperations.tacticalOrderBlock(gang, "rally", combat),
+      reactionBlocked: UnderworldOperations.tacticalOrderBlock(gang, "meatshield", combat),
       orderUsedThisRound: !!(roundKey && orderLimit !== "unlimited" && gang.lastOrderRound === roundKey),
       reactionUsedThisRound: !!(roundKey && orderLimit !== "unlimited" && gang.lastReactionRound === roundKey)
     };
@@ -564,9 +573,8 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     }
     for (const slot of html.querySelectorAll(".uw-l-slot.is-empty")) {
       target(slot, async (npcId) => {
-        const npc = GangData.getGang(this.actor).roster.find(n => n.id === npcId);
-        if (!npc || npc.assignment === "retinue") return;
-        await this._onClickAction({ preventDefault() {}, stopPropagation() {} }, { dataset: { action: "toggle-retinue", npcId } });
+        if (GangData.getGang(this.actor).retinueChanges?.[npcId]) return;
+        if (await UnderworldOperations.changeRetinue(this.actor, npcId, true)) this.render();
       });
     }
   }
@@ -985,35 +993,10 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     });
 
     on(".retinue-checkbox", "change", async (ev) => {
-      const npcId = ev.currentTarget.dataset.npcId;
-      const isChecked = ev.currentTarget.checked;
-      const gang = GangData.getGang(this.actor);
-      const npc = gang.roster.find(n => n.id === npcId);
-      if (!npc) return;
-
-      if (!isChecked) {
-        npc.assignment = "none";
-        await GangData.saveGang(this.actor, gang);
-        ui.notifications.info(t("Retinue.Left", { name: npc.name }));
-        this.render();
-      } else {
-        if (npc.status !== "ready" || (npc.assignment && npc.assignment !== "none")) {
-          ui.notifications.warn(t("Retinue.CannotJoin", { name: npc.name, status: statusLabel(npc.status) }));
-          ev.currentTarget.checked = false;
-          return;
-        }
-        const activeCount = gang.roster.filter(n => n.assignment === "retinue").length;
-        const maxRetinue = UnderworldOperations.maxRetinue(gang);
-        if (activeCount >= maxRetinue) {
-          ui.notifications.warn(t("Retinue.Full", { max: maxRetinue }));
-          ev.currentTarget.checked = false;
-          return;
-        }
-        npc.assignment = "retinue";
-        await GangData.saveGang(this.actor, gang);
-        ui.notifications.info(t("Retinue.Joined", { name: npc.name }));
-        this.render();
-      }
+      const input = ev.currentTarget;
+      const join = input.checked;
+      input.checked = !join;
+      if (await UnderworldOperations.changeRetinue(this.actor, input.dataset.npcId, join)) this.render();
     });
   }
 
@@ -1417,31 +1400,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
 
       // ─── ROSTER / PRZYDZIAŁY: Przełącz Świtę Herszta ───
       case "toggle-retinue": {
-        const gang = GangData.getGang(this.actor);
-        const npc = gang.roster.find(n => n.id === target.dataset.npcId);
-        if (!npc) return;
-
-        if (npc.assignment === "retinue") {
-          npc.assignment = "none";
-          await GangData.saveGang(this.actor, gang);
-          ui.notifications.info(t("Retinue.Left", { name: npc.name }));
-          this.render();
-        } else {
-          if (npc.status !== "ready" || (npc.assignment && npc.assignment !== "none")) {
-            ui.notifications.warn(t("Retinue.CannotJoin", { name: npc.name, status: statusLabel(npc.status) }));
-            return;
-          }
-          const activeCount = gang.roster.filter(n => n.assignment === "retinue").length;
-          const maxRetinue = UnderworldOperations.maxRetinue(gang);
-          if (activeCount >= maxRetinue) {
-            ui.notifications.warn(t("Retinue.Full", { max: maxRetinue }));
-            return;
-          }
-          npc.assignment = "retinue";
-          await GangData.saveGang(this.actor, gang);
-          ui.notifications.info(t("Retinue.Joined", { name: npc.name }));
-          this.render();
-        }
+        if (await UnderworldOperations.changeRetinue(this.actor, target.dataset.npcId)) this.render();
         return;
       }
 
@@ -1578,12 +1537,13 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       n.assignment === "retinue" && !["dead", "wounded", "arrested"].includes(n.status)
     );
     const maxRetinue = UnderworldOperations.maxRetinue(gang);
-    if (activeRetinue.length >= maxRetinue) {
+    const count = UnderworldOperations.projectedRetinueCount(gang);
+    if (count >= maxRetinue) {
       ui.notifications.warn(t("Retinue.Full", { max: maxRetinue }));
       return;
     }
 
-    const eligible = gang.roster.filter(n => n.status === "ready" && (!n.assignment || n.assignment === "none"));
+    const eligible = gang.roster.filter(n => UnderworldOperations.canJoinRetinue(n) && !gang.retinueChanges?.[n.id]);
     if (!eligible.length) {
       ui.notifications.warn(t("TacticsTab.NoAvailableForRetinue"));
       return;
@@ -1671,18 +1631,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
       render: (event, dlg) => {
         const root = dlg.element ?? dlg;
         const selectCard = async (card) => {
-          const npcId = card.dataset.npcId;
-          const latestGang = GangData.getGang(this.actor);
-          const npc = latestGang.roster.find(n => n.id === npcId);
-          if (!npc || npc.status !== "ready" || (npc.assignment && npc.assignment !== "none")) return;
-          const curCount = latestGang.roster.filter(n => n.assignment === "retinue").length;
-          if (curCount >= UnderworldOperations.maxRetinue(latestGang)) {
-            ui.notifications.warn(t("Retinue.Full", { max: UnderworldOperations.maxRetinue(latestGang) }));
-            return;
-          }
-          npc.assignment = "retinue";
-          await GangData.saveGang(this.actor, latestGang);
-          ui.notifications.info(t("Retinue.Joined", { name: npc.name }));
+          if (!await UnderworldOperations.changeRetinue(this.actor, card.dataset.npcId, true)) return;
           dlg.close();
           this.render();
         };
@@ -1722,6 +1671,8 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
     if (!orderConfig) return;
 
     const gang = GangData.getGang(actor);
+    const blocked = UnderworldOperations.tacticalOrderBlock(gang, orderId);
+    if (blocked) return ui.notifications.warn(blocked);
     const activeRetinue = gang.roster.filter(n =>
       n.assignment === "retinue" && !["dead", "wounded", "arrested"].includes(n.status)
     );
@@ -1800,7 +1751,7 @@ export class GangSheet extends HandlebarsApplicationMixin(ApplicationV2) {
           <p style="margin-bottom: 6px; color: #3b2616;"><em>${orderConfig.desc}</em></p>
           <div style="background: rgba(255, 255, 255, 0.78); color: #27231e; padding: 8px; border-radius: 4px; border: 1px solid #c9bca9; margin-bottom: 10px;">
             <strong style="color: #5a3d28;"><i class="fas fa-gavel"></i> Efekt:</strong> <span style="color: #27231e;">${orderConfig.effect}</span>
-            ${OrderEffects.isAutomated(orderId) ? `<div style="margin-top: 4px; font-size: 0.78rem; color: #1b5e20;"><i class="fas fa-crosshairs"></i> ${t("Orders.Dialog.TargetHint")}</div>` : ""}
+            ${OrderEffects.isAutomated(orderId) && UnderworldOperations.orderAutomation() === "full" ? `<div style="margin-top: 4px; font-size: 0.78rem; color: #1b5e20;"><i class="fas fa-crosshairs"></i> ${t("Orders.Dialog.TargetHint")}</div>` : ""}
           </div>
           <div class="form-group" style="background: rgba(255, 255, 255, 0.45); color: #27231e; padding: 8px; border-radius: 4px; border: 1px dashed #8e735b;">
             <label style="font-weight: bold; display: block; margin-bottom: 6px; color: #3b2616;">${t("Orders.Dialog.ChooseMethod")}</label>

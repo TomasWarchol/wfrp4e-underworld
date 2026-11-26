@@ -46,6 +46,7 @@ export class GangData {
       racket: null,
       eventHook: null,
       roster: [],
+      retinueChanges: {},
       history: []
     };
   }

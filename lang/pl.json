@@ -1677,14 +1677,15 @@
     },
     "Orders": {
       "Effects": {
+        "CancelledTest": "{name} — anulowano test obronny.",
         "DropsWeapon": "upuszcza trzymaną broń",
-        "NoTarget": "Nie wskazano celu – nałóż efekt ręcznie (wskaż token klawiszem T przed wydaniem rozkazu).",
+        "SelectTarget": "Wskaż token klawiszem T. MG może też zaznaczyć token na scenie.",
         "GMFailed": "MG nie mógł zastosować efektów – nałóż je ręcznie.",
         "DefenceTitle": "obrona przed rozkazem",
-        "TestFailed": "{name}: test {test} – <strong>porażka</strong>.",
+        "TestFailed": "{name}: test {test} – porażka.",
         "TestPassed": "{name}: test {test} – sukces, unika efektu.",
-        "GainsCondition": "{name}: otrzymuje stan <strong>{condition}</strong>.",
-        "LosesCondition": "{name}: traci stan <strong>{condition}</strong>.",
+        "GainsCondition": "{name}: otrzymuje stan {condition}.",
+        "LosesCondition": "{name}: traci stan {condition}.",
         "NoCondition": "{name}: nie ma stanu {condition}.",
         "Advantage": "{name}: Przewaga {value}.",
         "MustFace": "rzuca się na szermierza i ignoruje resztę szajki do końca rundy",
@@ -1740,7 +1741,7 @@
       "smoke": {
         "Name": "Zasłona Dymna",
         "Desc": "Rozsypany proszek lub zasłona dymna gwałtownie ograniczają widoczność w rejonie starcia.",
-        "Effect": "Dym zasłania pole walki do końca następnej rundy: wrogowie mają -10 do Percepcji i testów Broni Zasięgowej. Drużyna może wycofać się ze zwarcia bez testu."
+        "Effect": "Dym zasłania pole walki do końca następnej rundy: wrogowie mają -10 do Percepcji i testów Broni Zasięgowej."
       },
       "sand": {
         "Name": "Piasek w Oczy",
@@ -1781,6 +1782,7 @@
       "Flavor": "Rozkaz Taktyczny Świty",
       "NoLeadership": "Ogłada (brak Dowodzenia)",
       "Notify": {
+        "RetinueRest": "Świta odpoczywa. Kolejny rozkaz jest dostępny od rundy {round}.",
         "NoAdvantage": "Postać nie ma wystarczającej Przewagi na ten rozkaz.",
         "AlreadyThisRound": "Herszt wydał już rozkaz w tej rundzie (rozkaz zużywa jego Akcję).",
         "NotInRetinue": "Wybrany wykonawca nie należy do aktywnej Świty.",
@@ -1805,7 +1807,7 @@
         "Follower": "Podwładny",
         "MeatShieldWarning": "<strong>Uwaga:</strong> {name} rzuci się pod cios miecza, ryzykując ciężkie rany lub śmierć!",
         "MeatShieldButton": "Rzuć pod cios!",
-        "TargetHint": "Wskaż cel (klawisz T na tokenie) przed wydaniem rozkazu – stan nałoży się automatycznie.",
+        "TargetHint": "Wskaż token klawiszem T przed wydaniem rozkazu albo użyj przycisku na karcie czatu po wybraniu celu.",
         "ChooseMethod": "Wybierz sposób wydania rozkazu:",
         "LeadershipHint": "Herszt wykonuje test Dowodzenia. Sukces – rozkaz działa; porażka – brak efektu. Rozkaz zużywa Akcję Herszta (jeden na rundę).",
         "Advantage": "Wydaj Przewagę",
@@ -2155,6 +2157,14 @@
         "Hint": "Czy rozkazy taktyczne automatycznie wywołują testy obronne i nakładają stany na cele, czy wysyłają tylko karty na czat.",
         "Full": "Pełna (testy obronne i stany na tokenach)",
         "ChatOnly": "Tylko karty na czacie"
+      },
+      "RetinueRestRounds": {
+        "Name": "Odpoczynek świty między rozkazami",
+        "Hint": "Liczba pełnych rund odpoczynku po rozkazie lub reakcji świty. 0 wyłącza odpoczynek."
+      },
+      "RetinueChangeHours": {
+        "Name": "Czas zmiany świty (godziny gry)",
+        "Hint": "Po tylu godzinach świata gry zmiana zlecona przez gracza wchodzi w życie. 0 oznacza zmianę od razu. MG może zmieniać skład od ręki."
       },
       "OrderRoundLimit": {
         "Name": "Limit rozkazów na rundę walki",
@@ -2559,6 +2569,11 @@
       "OverMaxWarning": "Uwaga (MG): dodano członka ponad limit świata ({count}/{max})."
     },
     "Retinue": {
+      "Changes": "Zaplanowane zmiany świty",
+      "CancelChange": "Anuluj zmianę",
+      "ChangeCancelled": "Anulowano zmianę świty dla {name}.",
+      "JoinScheduled": "{name} dołączy do świty — {when}.",
+      "LeaveScheduled": "{name} opuści świtę — {when}.",
       "Left": "{name} opuścił(a) Świtę Herszta.",
       "Joined": "{name} dołączył(a) do Świty Herszta!",
       "Full": "Świta Herszta może liczyć maksymalnie {max} popleczników!",
@@ -2567,7 +2582,7 @@
       "CannotJoin": "{name} nie może dołączyć do Świty (stan: {status})!"
     },
     "Tactics": {
-      "AutoHint": "Efekt nakłada się automatycznie na wskazany token (klawisz T)",
+      "AutoHint": "Efekt można zastosować z karty czatu na wskazanym tokenie",
       "ExpandOne": "Rozwiń opis taktyki",
       "CollapseOne": "Zwiń opis taktyki",
       "ShowAllHint": "Pokaż wszystkie taktyki",
@@ -2842,6 +2857,11 @@
       "Quirk": "Osobowość"
     },
     "TacticCard": {
+      "ApplyEffect": "Nałóż efekt na wybrany cel",
+      "ApplyingEffect": "Nakładanie efektu…",
+      "EffectApplied": "Rozpatrzono efekt",
+      "EffectFailed": "Wystąpił błąd podczas nakładania efektu",
+      "UsesReaction": "Żywa Tarcza zużywa Reakcję Herszta w tej rundzie.",
       "Gives": "{name} wydaje rozkaz:",
       "Executor": "Wykonawca ze Świty:",
       "Success": "SUKCES",
@@ -3114,6 +3134,7 @@
       "CampUpkeepNeed": "Żołd za postój: {cost} SS"
     },
     "TacticsTab": {
+      "RetinueResting": "Świta odpoczywa",
       "Title": "Rozkazy Taktyczne w Walce",
       "AtYourSide": "Przy Twoim boku:",
       "NoRetinue": "<strong>Brak popleczników w Świcie!</strong> Herszt walczy sam. Rozkazy specjalistyczne są zablokowane. Przypisz ludzi w zakładce <em>Przydziały</em>.",

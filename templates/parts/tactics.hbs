@@ -53,11 +53,11 @@
       <span class="uw-combat-pill"><i class="fas fa-bolt"></i> {{combatStatus.advantageLabel}}: <strong>{{combatStatus.advantage}}</strong></span>
       {{#if combatStatus.inCombat}}
         <span class="uw-combat-pill"><i class="fas fa-swords"></i> {{underworldT "TacticsTab.RoundStatus" round=combatStatus.round}}</span>
-        <span class="uw-combat-pill {{#if combatStatus.orderUsedThisRound}}is-used{{else}}is-ready{{/if}}">
-          {{#if combatStatus.orderUsedThisRound}}{{underworldT "TacticsTab.OrderUsed"}}{{else}}{{underworldT "TacticsTab.OrderReady"}}{{/if}}
+        <span class="uw-combat-pill {{#if combatStatus.orderBlocked}}is-used{{else}}is-ready{{/if}}" title="{{combatStatus.orderBlocked}}">
+          {{#if combatStatus.orderUsedThisRound}}{{underworldT "TacticsTab.OrderUsed"}}{{else if combatStatus.orderBlocked}}{{underworldT "TacticsTab.RetinueResting"}}{{else}}{{underworldT "TacticsTab.OrderReady"}}{{/if}}
         </span>
-        <span class="uw-combat-pill {{#if combatStatus.reactionUsedThisRound}}is-used{{else}}is-ready{{/if}}">
-          {{#if combatStatus.reactionUsedThisRound}}{{underworldT "TacticsTab.ReactionUsed"}}{{else}}{{underworldT "TacticsTab.ReactionReady"}}{{/if}}
+        <span class="uw-combat-pill {{#if combatStatus.reactionBlocked}}is-used{{else}}is-ready{{/if}}" title="{{combatStatus.reactionBlocked}}">
+          {{#if combatStatus.reactionUsedThisRound}}{{underworldT "TacticsTab.ReactionUsed"}}{{else if combatStatus.reactionBlocked}}{{underworldT "TacticsTab.RetinueResting"}}{{else}}{{underworldT "TacticsTab.ReactionReady"}}{{/if}}
         </span>
       {{else}}
         <span class="uw-combat-pill is-idle"><i class="fas fa-shield-alt"></i> {{underworldT "TacticsTab.OutOfCombat"}}</span>
@@ -92,7 +92,7 @@
               {{underworldT "TacticsTab.PersonalAlways"}}
             {{/if}}
           </div>
-          <button type="button" class="btn-order-tactic" data-action="order-tactic" data-order="{{this.id}}">
+          <button type="button" class="btn-order-tactic" data-action="order-tactic" data-order="{{this.id}}" {{#if this.blocked}}disabled title="{{this.blocked}}"{{/if}}>
             <i class="fas fa-bullhorn"></i> {{underworldT "TacticsTab.Issue"}}
           </button>
         {{else if this.isUnlocked}}
@@ -103,7 +103,7 @@
               <i class="fas fa-check-circle color-green"></i> {{underworldT "TacticsTab.Executes"}}: <strong>{{this.executor.name}}</strong> ({{{underworldRoleBadge this.executor.role}}})
             {{/if}}
           </div>
-          <button type="button" class="btn-order-tactic {{#if this.danger}}btn-danger{{/if}}" data-action="order-tactic" data-order="{{this.id}}">
+          <button type="button" class="btn-order-tactic {{#if this.danger}}btn-danger{{/if}}" data-action="order-tactic" data-order="{{this.id}}" {{#if this.blocked}}disabled title="{{this.blocked}}"{{/if}}>
             {{#if this.danger}}
               <i class="fas fa-shield-virus"></i> {{underworldT "Orders.Dialog.MeatShieldButton"}}
             {{else}}

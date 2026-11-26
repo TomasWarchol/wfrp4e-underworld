@@ -280,6 +280,115 @@ export class UnderworldOperations {
     return this._setting("orderRoundLimit", "one") === "unlimited" ? "unlimited" : "one";
   }
 
+  static tacticalOrderBlock(gang, orderId, combat = game.combat) {
+    if (!combat?.started) return null;
+    const prefix = `${combat.id}:`;
+    const roundKey = `${prefix}${combat.round}`;
+    const lastOfKind = orderId === "meatshield" ? gang.lastReactionRound : gang.lastOrderRound;
+    if (this.orderRoundLimit() !== "unlimited" && lastOfKind === roundKey) {
+      return t("Orders.Notify.AlreadyThisRound");
+    }
+
+    const rest = Math.max(0, Math.trunc(Number(this._setting("retinueRestRounds", 1)) || 0));
+    if (!rest) return null;
+    const lastRound = Math.max(-Infinity, ...[gang.lastOrderRound, gang.lastReactionRound]
+      .filter(key => key?.startsWith(prefix)).map(key => Number(key.slice(prefix.length))));
+    const readyRound = lastRound + rest + 1;
+    return combat.round < readyRound ? t("Orders.Notify.RetinueRest", { round: readyRound }) : null;
+  }
+
+  static canJoinRetinue(npc) {
+    return (npc.status || "ready") === "ready" && (!npc.assignment || npc.assignment === "none");
+  }
+
+  static retinueChangeDelay() {
+    return game.user.isGM ? 0 : Math.max(0, Number(this._setting("retinueChangeHours", 2)) || 0) * 3600;
+  }
+
+  static projectedRetinueCount(gang) {
+    if (!this.retinueChangeDelay()) return gang.roster.filter(npc => npc.assignment === "retinue").length;
+    return gang.roster.filter(npc => {
+      const change = gang.retinueChanges?.[npc.id];
+      if (npc.assignment === "retinue") return change?.assignment !== "none";
+      return change?.assignment === "retinue" && this.canJoinRetinue(npc);
+    }).length;
+  }
+
+  static async changeRetinue(actor, npcId, join) {
+    if (!this._canManageGang(actor)) return false;
+    const gang = GangData.getGang(actor);
+    const npc = gang.roster.find(member => member.id === npcId);
+    if (!npc) return false;
+
+    const pending = gang.retinueChanges?.[npcId];
+    if (pending) {
+      delete gang.retinueChanges[npcId];
+      await GangData.saveGang(actor, gang);
+      ui.notifications.info(t("Retinue.ChangeCancelled", { name: npc.name }));
+      return true;
+    }
+
+    const inRetinue = npc.assignment === "retinue";
+    join ??= !inRetinue;
+    if (join === inRetinue) return false;
+    const delay = this.retinueChangeDelay();
+    if (join) {
+      if (!this.canJoinRetinue(npc)) {
+        const status = npc.status || "ready";
+        ui.notifications.warn(t("Retinue.CannotJoin", { name: npc.name, status: t(`Status.${status[0].toUpperCase()}${status.slice(1)}`) }));
+        return false;
+      }
+      const count = this.projectedRetinueCount(gang);
+      const max = this.maxRetinue(gang);
+      if (count >= max) {
+        ui.notifications.warn(t("Retinue.Full", { max }));
+        return false;
+      }
+    }
+
+    const assignment = join ? "retinue" : "none";
+    if (delay) {
+      const doneAt = time.now() + delay;
+      gang.retinueChanges ??= {};
+      gang.retinueChanges[npcId] = { assignment, doneAt };
+      await GangData.saveGang(actor, gang);
+      ui.notifications.info(t(join ? "Retinue.JoinScheduled" : "Retinue.LeaveScheduled", { name: npc.name, when: this.formatWorldClock(doneAt) }));
+    } else {
+      npc.assignment = assignment;
+      await GangData.saveGang(actor, gang);
+      ui.notifications.info(t(join ? "Retinue.Joined" : "Retinue.Left", { name: npc.name }));
+    }
+    return true;
+  }
+
+  static async processRetinueChanges(worldTime = time.now()) {
+    if (!game.user.isGM) return;
+    for (const actor of game.actors ?? []) {
+      const storedChanges = actor.getFlag(GangData.MODULE_ID, GangData.FLAG_KEY)?.retinueChanges;
+      if (!storedChanges || !Object.values(storedChanges).some(change => change.doneAt <= worldTime)) continue;
+      const gang = GangData.getGang(actor);
+      const due = Object.entries(gang.retinueChanges)
+        .filter(([, change]) => change.doneAt <= worldTime)
+        .sort(([, a], [, b]) => a.doneAt - b.doneAt || Number(a.assignment === "retinue") - Number(b.assignment === "retinue"));
+      if (!due.length) continue;
+
+      let count = gang.roster.filter(n => n.assignment === "retinue").length;
+      const max = this.maxRetinue(gang);
+      for (const [id, change] of due) {
+        const npc = gang.roster.find(member => member.id === id);
+        if (change.assignment === "none" && npc?.assignment === "retinue") {
+          npc.assignment = "none";
+          count--;
+        } else if (change.assignment === "retinue" && npc && this.canJoinRetinue(npc) && count < max) {
+          npc.assignment = "retinue";
+          count++;
+        }
+        delete gang.retinueChanges[id];
+      }
+      await GangData.saveGang(actor, gang);
+    }
+  }
+
   static maxHistoryEntries() {
     return Math.max(5, Math.min(100, Math.trunc(Number(this._setting("maxHistoryEntries", 20)) || 20)));
   }
@@ -2866,6 +2975,7 @@ export class UnderworldOperations {
     const gang = GangData.getGang(actor);
     const retinue = gang.roster.filter(n => n.assignment === "retinue" && !["dead", "wounded", "arrested"].includes(n.status));
     return Object.entries(this.TACTICAL_ORDERS).flatMap(([id, order]) => {
+      if (this.tacticalOrderBlock(gang, id)) return [];
       const roles = Array.isArray(order.requiredRoles) ? order.requiredRoles : [];
       const executor = roles.length
         ? retinue.find(n => UnderworldTables.canGiveOrder(n, id, order))
@@ -3135,8 +3245,20 @@ export class UnderworldOperations {
     regroup: ["control", "fas fa-users"]
   };
 
+  static _ordersInProgress = new Set();
+
   static async postTacticalOrder(actor, orderId, options = {}) {
     if (!this._canManageGang(actor)) return ui.notifications.warn(t("Notify.NoAccess"));
+    if (this._ordersInProgress.has(actor.uuid)) return false;
+    this._ordersInProgress.add(actor.uuid);
+    try {
+      return await this._postTacticalOrder(actor, orderId, options);
+    } finally {
+      this._ordersInProgress.delete(actor.uuid);
+    }
+  }
+
+  static async _postTacticalOrder(actor, orderId, options) {
     const order = foundry.utils.duplicate(this.TACTICAL_ORDERS[orderId] || {});
     if (!order || !order.name) return;
 
@@ -3152,14 +3274,15 @@ export class UnderworldOperations {
       ui.notifications.warn(t("Orders.Notify.NoAdvantage"));
       return false;
     }
-    // Limit: jeden rozkaz na rundę walki (akcja Herszta), a Żywa Tarcza osobno jako Reakcja
     const combat = game.combat;
     const roundKey = combat?.started ? `${combat.id}:${combat.round}` : null;
     const isReaction = orderId === "meatshield";
-    if (roundKey && this.orderRoundLimit() !== "unlimited" && (isReaction ? gang.lastReactionRound === roundKey : gang.lastOrderRound === roundKey)) {
-      ui.notifications.warn(t("Orders.Notify.AlreadyThisRound"));
+    const blocked = this.tacticalOrderBlock(gang, orderId, combat);
+    if (blocked) {
+      ui.notifications.warn(blocked);
       return false;
     }
+    const targetUuids = OrderEffects.targetUuids();
 
     let rollResult = null;
     const orderRolls = [];
@@ -3284,10 +3407,9 @@ export class UnderworldOperations {
       order.effect += `<br><br><strong>${t("Orders.PayoffCost", { cost: bribeSS })}</strong>`;
     }
 
-    // Efekty na wskazanych tokenach (stany WFRP4e, Przewaga) – wykonuje MG (o ile automatyzacja jest włączona)
-    const automationLines = !orderFailed && method !== "direct" && this.orderAutomation() !== "chatOnly" && OrderEffects.isAutomated(orderId)
-      ? await OrderEffects.applyFromIssuer(actor, orderId, { method, executorRank: Number(executorNpc?.rank) || 0 })
-      : [];
+    const orderEffect = !orderFailed && method !== "direct" && this.orderAutomation() === "full" && OrderEffects.isAutomated(orderId)
+      ? { orderId, issuerUuid: actor.uuid, method, executorRank: Number(executorNpc?.rank) || 0 }
+      : null;
 
     // Dołącz dane roli wykonawcy na kopii (bez zanieczyszczania flag aktora)
     const cardExecutor = executorNpc ? {
@@ -3305,19 +3427,23 @@ export class UnderworldOperations {
       method,
       rollResult,
       orderFailed,
-      automationLines,
+      canApplyEffect: !!orderEffect,
       inCombat: !!roundKey,
+      isReaction,
       executor: cardExecutor
     });
     await GangData.saveGang(actor, gang);
 
-    return ChatMessage.create({
-      user: game.user.id,
+    const message = await ChatMessage.create({
+      author: game.user.id,
       speaker: ChatMessage.getSpeaker({ actor }),
       content: html,
       rolls: orderRolls,
+      flags: orderEffect ? { [GangData.MODULE_ID]: { orderEffect } } : {},
       flavor: `${t("Orders.Flavor")}: ${order.name}`
     });
+    if (message && orderEffect && targetUuids.length) await OrderEffects.applyFromCard(message, targetUuids);
+    return message;
   }
 
   // ════════════════════════════════════════════

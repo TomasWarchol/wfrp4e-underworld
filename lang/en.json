@@ -1677,14 +1677,15 @@
     },
     "Orders": {
       "Effects": {
+        "CancelledTest": "{name} — defence test cancelled.",
         "DropsWeapon": "drops the weapon in hand",
-        "NoTarget": "No target selected – apply the effect by hand (target a token with T before issuing the order).",
+        "SelectTarget": "Target a token with T. The GM can also select a token on the scene.",
         "GMFailed": "The GM could not apply the effects – apply them by hand.",
         "DefenceTitle": "defending against an order",
-        "TestFailed": "{name}: {test} test – <strong>failed</strong>.",
+        "TestFailed": "{name}: {test} test – failed.",
         "TestPassed": "{name}: {test} test – success, avoids the effect.",
-        "GainsCondition": "{name}: gains the <strong>{condition}</strong> condition.",
-        "LosesCondition": "{name}: loses the <strong>{condition}</strong> condition.",
+        "GainsCondition": "{name}: gains the {condition} condition.",
+        "LosesCondition": "{name}: loses the {condition} condition.",
         "NoCondition": "{name}: does not have the {condition} condition.",
         "Advantage": "{name}: Advantage {value}.",
         "MustFace": "goes for the duellist and ignores the rest of the crew until the end of the round",
@@ -1740,7 +1741,7 @@
       "smoke": {
         "Name": "Smoke Screen",
         "Desc": "Scattered powder or a lit smoke mix rapidly cuts visibility across the clash.",
-        "Effect": "Smoke covers the battlefield until the end of the next round: enemies suffer −10 to Perception and Ranged tests. The party may leave melee without a test."
+        "Effect": "Smoke covers the battlefield until the end of the next round: enemies suffer −10 to Perception and Ranged tests."
       },
       "sand": {
         "Name": "Sand in the Eyes",
@@ -1781,6 +1782,7 @@
       "Flavor": "Retinue Tactical Order",
       "NoLeadership": "Fellowship (no Leadership)",
       "Notify": {
+        "RetinueRest": "The retinue is resting. Orders resume in round {round}.",
         "NoAdvantage": "The character doesn't have enough Advantage for this order.",
         "AlreadyThisRound": "The chief has already given an order this round (an order uses their Action).",
         "NotInRetinue": "The chosen member is not part of the active retinue.",
@@ -1805,7 +1807,7 @@
         "Follower": "The follower",
         "MeatShieldWarning": "<strong>Warning:</strong> {name} will throw themself in front of the sword blow, risking grave wounds or death!",
         "MeatShieldButton": "Into the blow!",
-        "TargetHint": "Target an enemy (T key on a token) before giving the order – the condition will be applied automatically.",
+        "TargetHint": "Target a token with T before giving the order, or choose a target and use the button on the chat card.",
         "ChooseMethod": "Choose how to give the order:",
         "LeadershipHint": "The chief makes a Leadership test. Success – the order works; failure – no effect. The order uses the chief's Action (one per round).",
         "Advantage": "Spend Advantage",
@@ -2155,6 +2157,14 @@
         "Hint": "Whether tactical orders trigger automatic defence tests and conditions on targeted tokens, or post chat cards only.",
         "Full": "Full (defence tests and token conditions)",
         "ChatOnly": "Chat cards only"
+      },
+      "RetinueRestRounds": {
+        "Name": "Retinue rest between orders",
+        "Hint": "Number of full combat rounds the retinue rests after an order or reaction. Set to 0 to disable rest."
+      },
+      "RetinueChangeHours": {
+        "Name": "Retinue change delay (in-game hours)",
+        "Hint": "Number of world hours before a player's requested change takes effect. Set to 0 for immediate changes. Gamemasters can change the retinue immediately."
       },
       "OrderRoundLimit": {
         "Name": "Combat order limit per round",
@@ -2559,6 +2569,11 @@
       "OverMaxWarning": "GM note: added a member above the world roster cap ({count}/{max})."
     },
     "Retinue": {
+      "Changes": "Scheduled retinue changes",
+      "CancelChange": "Cancel change",
+      "ChangeCancelled": "Cancelled the retinue change for {name}.",
+      "JoinScheduled": "{name} will join the retinue — {when}.",
+      "LeaveScheduled": "{name} will leave the retinue — {when}.",
       "Left": "{name} left the chief's retinue.",
       "Joined": "{name} joined the chief's retinue!",
       "Full": "The chief’s retinue can have at most {max} followers!",
@@ -2567,7 +2582,7 @@
       "CannotJoin": "{name} cannot join the retinue (status: {status})!"
     },
     "Tactics": {
-      "AutoHint": "The effect is applied automatically to the targeted token (T key)",
+      "AutoHint": "The effect can be applied to a targeted token from the chat card",
       "ExpandOne": "Expand the tactic description",
       "CollapseOne": "Collapse the tactic description",
       "ShowAllHint": "Show all tactics",
@@ -2842,6 +2857,11 @@
       "Quirk": "Personality"
     },
     "TacticCard": {
+      "ApplyEffect": "Apply effect to selected target",
+      "ApplyingEffect": "Applying effect…",
+      "EffectApplied": "Effect resolved",
+      "EffectFailed": "An error occurred while applying the effect",
+      "UsesReaction": "Meat Shield uses the chief's Reaction this round.",
       "Gives": "{name} gives an order:",
       "Executor": "Executor from the retinue:",
       "Success": "SUCCESS",
@@ -3114,6 +3134,7 @@
       "CampUpkeepNeed": "Upkeep for rest: {cost} SS"
     },
     "TacticsTab": {
+      "RetinueResting": "Retinue resting",
       "Title": "Combat Tactical Orders",
       "AtYourSide": "At your side:",
       "NoRetinue": "<strong>No followers in the retinue!</strong> The chief fights alone. Specialist orders are locked. Assign people in the <em>Assignments</em> tab.",

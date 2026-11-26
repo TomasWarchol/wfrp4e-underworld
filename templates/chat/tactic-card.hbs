@@ -44,13 +44,14 @@
     <p>{{{order.effect}}}</p>
   </div>
   {{/if}}
-  {{#if automationLines.length}}
+  {{#if canApplyEffect}}
   <div class="tactic-automation">
-    <strong><i class="fas fa-crosshairs"></i> {{underworldT "TacticCard.TargetEffects"}}</strong>
-    <ul>{{#each automationLines}}<li>{{{this}}}</li>{{/each}}</ul>
+    <button type="button" class="btn-uw-apply-order-effect" title="{{underworldT 'Orders.Effects.SelectTarget'}}">
+      <i class="fas fa-crosshairs"></i> {{underworldT "TacticCard.ApplyEffect"}}
+    </button>
   </div>
   {{/if}}
   {{#if inCombat}}
-  <div class="tactic-uses-action"><i class="fas fa-hourglass-half"></i> {{underworldT "TacticCard.UsesAction"}}</div>
+  <div class="tactic-uses-action"><i class="fas fa-hourglass-half"></i> {{#if isReaction}}{{underworldT "TacticCard.UsesReaction"}}{{else}}{{underworldT "TacticCard.UsesAction"}}{{/if}}</div>
   {{/if}}
 </div>

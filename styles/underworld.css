@@ -6341,6 +6341,10 @@
 .tactic-card-chat .tactic-effect.is-failure { background: rgba(198, 40, 40, 0.08); border-color: #c62828; font-size: 0.85rem; color: #b71c1c; }
 .tactic-card-chat .tactic-automation { margin-top: 6px; background: rgba(46, 125, 50, 0.06); border: 1px solid #2e7d32; border-radius: 4px; padding: 4px 8px; font-size: 0.82rem; }
 .tactic-card-chat .tactic-automation ul { margin: 2px 0 0 0; padding-left: 16px; }
+.tactic-card-chat .btn-uw-apply-order-effect { width: 100%; }
+
+:is(html, #uw) .underworld-app .uw-retinue-changes { margin: 4px 0; padding: 0 10px; list-style: none; }
+:is(html, #uw) .underworld-app .uw-retinue-changes li { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
 .tactic-card-chat .tactic-uses-action { margin-top: 4px; font-size: 0.8rem; color: #5e584f; }
 
 .camp-rest-card .camp-card-header { border-bottom: 1px solid #7c5e44; padding-bottom: 6px; margin-bottom: 8px; }

@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.12.5
+- **Retinue rest between orders**: after an order or reaction the retinue rests for a set number of combat rounds (new world setting "Retinue rest between orders", default 1; 0 disables it). The orders card says when the retinue is ready again.
+- **Scheduled retinue changes**: a player's request to join or leave the retinue takes effect after a delay (new setting "Retinue change delay", in-game hours, default 2; 0 means immediate). Requests can be cancelled, and the GM always changes the retinue immediately.
+- **Order effects can target a token**: target a token with T before giving an order, or pick a target and press "Apply effect to selected target" on the chat card. The GM can also select a token on the scene. Smoke covers the battlefield for the next round, and the chat card reports failed tests and conditions gained or lost.
+- **Retinue picker changes** and the Meat Shield reaction now show that it uses the chief's Reaction this round.
+- README and Polish README describe the new orders (39 orders, 11 roles) and how to apply effects. English and Polish texts are complete.
+
 ## 1.12.4
 - **New Patron's Network action**: send a coded message to the local cell of the patron's network (no test); the answer comes through secret channels. The Patron's cut hint now states the default of 25%.
 - Retinue picker dialog is wider, its cards are keyboard accessible (Enter and Space), and the remove button on retinue slots in the Ledger is sized and centred properly.

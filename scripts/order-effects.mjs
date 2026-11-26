@@ -5,12 +5,12 @@
  * testy obronne celów (okna testów WFRP4e), stany przez actor.addCondition / removeCondition, Przewaga.
  */
 
-import { queryGM } from "../../wfrp4e-companion-lib/scripts/companion-lib.mjs";
+import { queryGM, registry } from "../../wfrp4e-companion-lib/scripts/companion-lib.mjs";
 import { t } from "./i18n.mjs";
 
 const MODULE_ID = "wfrp4e-underworld";
 const QUERY_NAME = `${MODULE_ID}.applyOrder`;
-const DIFFICULTY_STEPS = ["average", "challenging", "difficult", "hard", "veryHard"];
+const DIFFICULTY_STEPS = ["average", "challenging", "difficult", "hard", "vhard"];
 
 /**
  * Zwraca aktualną Przewagę postaci, obsługując zarówno Przewagę Osobistą z podstawki WFRP4e,
@@ -104,72 +104,77 @@ export const ORDER_AUTOMATION = {
 
 export class OrderEffects {
   static QUERY_NAME = QUERY_NAME;
+  static _applying = new Set();
 
   /** Czy rozkaz ma automatyczne efekty. */
   static isAutomated(orderId) {
-    return !!ORDER_AUTOMATION[orderId];
+    return Object.hasOwn(ORDER_AUTOMATION, orderId);
   }
 
-  /**
-   * Wywoływane po stronie wydającego rozkaz: zbiera wskazane cele i prosi MG o zastosowanie efektów.
-   * @returns {Promise<string[]>} opisy zastosowanych efektów do karty rozkazu
-   */
-  static async applyFromIssuer(actor, orderId, { method = "leadership", executorRank = 0 } = {}) {
-    const automation = ORDER_AUTOMATION[orderId];
-    if (!automation) return [];
+  static targetUuids(tokens = game.user.targets) {
+    return Array.from(tokens ?? []).filter(token => token.actor).map(token => token.document.uuid);
+  }
 
-    let targetUuids = Array.from(game.user.targets ?? [])
-      .map(token => token.actor?.uuid)
-      .filter(Boolean);
-    if (!targetUuids.length && automation.ally) targetUuids = [actor.uuid];
-    if (!targetUuids.length) {
-      return [t("Orders.Effects.NoTarget")];
+  static async applyFromCard(message, targetUuids) {
+    try {
+      const result = await queryGM(QUERY_NAME, { messageId: message.id, targetUuids });
+      if (result === "noTarget") ui.notifications.warn(t("Orders.Effects.SelectTarget"));
+      else if (!result) ui.notifications.warn(t("Orders.Effects.GMFailed"));
+      return result;
+    } catch (err) {
+      console.error(`${MODULE_ID} | Could not apply tactical order:`, err);
+      ui.notifications.warn(t("Orders.Effects.GMFailed"));
+      return null;
     }
-
-    const result = await queryGM(QUERY_NAME, {
-      orderId,
-      issuerUuid: actor.uuid,
-      targetUuids,
-      method,
-      executorRank: Math.max(0, Math.min(3, Math.trunc(Number(executorRank) || 0)))
-    });
-    return Array.isArray(result) ? result : [t("Orders.Effects.GMFailed")];
   }
 
-  /**
-   * Handler zapytania wykonywany u MG. Wydający musi być właścicielem Herszta.
-   */
-  static async onQuery({ orderId, issuerUuid, targetUuids, method = "leadership", executorRank = 0 } = {}, { user } = {}) {
-    const automation = ORDER_AUTOMATION[orderId];
-    if (!automation || !Array.isArray(targetUuids)) return [];
-    const issuer = issuerUuid ? await fromUuid(issuerUuid) : null;
-    if (!user || !issuer || (!user.isGM && !issuer.testUserPermission(user, "OWNER"))) return [];
+  static async onQuery({ messageId, targetUuids } = {}, { user } = {}) {
+    const message = game.messages.get(messageId);
+    const effect = message?.getFlag(MODULE_ID, "orderEffect");
+    const automation = effect && this.isAutomated(effect.orderId) && ORDER_AUTOMATION[effect.orderId];
+    if (!user || !automation || !Array.isArray(targetUuids) || game.settings.get(MODULE_ID, "orderAutomation") !== "full") return null;
+    if (!user.isGM && !message.canUserModify(user, "update")) return null;
+    if (message.getFlag(MODULE_ID, "orderEffectResult") || this._applying.has(messageId)) return "used";
 
-    const safeMethod = ["leadership", "advantage", "direct"].includes(method) ? method : "leadership";
-    let safeRank = Math.max(0, Math.min(3, Math.trunc(Number(executorRank) || 0)));
-    const roster = issuer.getFlag?.(MODULE_ID, "gang")?.roster;
-    if (Array.isArray(roster)) {
-      const activeRetinue = roster.filter(n => n.assignment === "retinue" && !["dead", "wounded", "arrested"].includes(n.status));
-      if (activeRetinue.length) {
-        const maxRank = activeRetinue.reduce((m, n) => Math.max(m, Math.max(0, Math.min(3, Math.trunc(Number(n.rank) || 0)))), 0);
-        safeRank = Math.min(safeRank, maxRank);
-      } else {
-        safeRank = 0;
+    this._applying.add(messageId);
+    try {
+      const issuer = await fromUuid(effect.issuerUuid);
+      if (!issuer || (!user.isGM && (!issuer.testUserPermission(user, "OWNER") || !registry.isFeatureUnlocked(issuer, "underworld")))) return null;
+
+      const targets = new Map();
+      for (const uuid of new Set(targetUuids)) {
+        if (typeof uuid !== "string" || !/^Scene\.[^.]+\.Token\.[^.]+$/.test(uuid)) continue;
+        const token = await fromUuid(uuid);
+        const actor = token?.actor;
+        if (!actor || (!user.isGM && token.parent?.id !== user.viewedScene)) continue;
+        if (!["npc", "character"].includes(actor.type)) continue;
+        targets.set(actor.uuid, actor);
+        if (targets.size >= (automation.maxTargets ?? 1)) break;
       }
-    }
+      if (!targets.size) return "noTarget";
 
-    const limit = automation.maxTargets ?? 1;
-    const lines = [];
-    for (const uuid of targetUuids.slice(0, limit)) {
-      const target = await fromUuid(uuid);
-      if (!target) continue;
-      lines.push(...await this._applyToTarget(target, automation, { method: safeMethod, executorRank: safeRank }));
+      const executorRank = Math.max(0, Math.min(3, Math.trunc(Number(effect.executorRank) || 0)));
+      const method = effect.method === "advantage" ? "advantage" : "leadership";
+      const lines = [];
+      let failed = false;
+      await message.setFlag(MODULE_ID, "orderEffectResult", { status: "applying" });
+      try {
+        for (const target of targets.values()) {
+          lines.push(...await this._applyToTarget(target, automation, { method, executorRank }));
+        }
+      } catch (err) {
+        failed = true;
+        console.error(`${MODULE_ID} | Tactical order effects failed:`, err);
+      }
+      await message.setFlag(MODULE_ID, "orderEffectResult", { status: failed ? "failed" : "applied", lines });
+      return "used";
+    } finally {
+      this._applying.delete(messageId);
     }
-    return lines;
   }
 
   static async _applyToTarget(target, automation, { method = "leadership", executorRank = 0 } = {}) {
-    const name = Handlebars.escapeExpression(target.name ?? "");
+    const name = target.name ?? "";
     const lines = [];
     let effects = automation.apply ?? [];
 
@@ -177,20 +182,14 @@ export class OrderEffects {
       const { characteristic, difficulty } = automation.test;
       const effectiveDifficulty = stepDifficulty(difficulty, executorRank);
       const label = game.i18n.localize(game.wfrp4e?.config?.characteristics?.[characteristic] ?? characteristic);
-      let failed = true;
-      try {
-        const test = await target.setupCharacteristic?.(characteristic, {
-          appendTitle: ` – ${t("Orders.Effects.DefenceTitle")}`,
-          skipTargets: true,
-          fields: { difficulty: effectiveDifficulty }
-        });
-        if (test) {
-          await test.roll();
-          failed = !test.succeeded;
-        }
-      } catch (err) {
-        console.error(`${MODULE_ID} | Defence test failed:`, err);
-      }
+      const test = await target.setupCharacteristic(characteristic, {
+        appendTitle: ` – ${t("Orders.Effects.DefenceTitle")}`,
+        skipTargets: true,
+        fields: { difficulty: effectiveDifficulty }
+      });
+      if (!test) return [t("Orders.Effects.CancelledTest", { name })];
+      await test.roll();
+      const failed = !test.succeeded;
       lines.push(t(failed ? "Orders.Effects.TestFailed" : "Orders.Effects.TestPassed", { name, test: label }));
       if (!failed) return lines;
       effects = automation.onFail ?? [];
